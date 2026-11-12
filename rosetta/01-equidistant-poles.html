@@ -1,0 +1,769 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benchmark 1: Equidistant Poles &amp; Equilateral Triangle &mdash; GEOMETOR • codes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=66998e95" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <h1>GEOMETOR • codes</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">codes</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../hierarchy/index.html"  >Hierarchy</a>
+        </li>
+        <li>
+          <a href="../syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a>
+        </li>
+        <li>
+          <a href="../systems/index.html"  >Systems</a>
+        </li>
+        <li>
+          <a href="index.html" class="is-active" aria-selected="true" >Rosetta Stone Benchmarks</a>
+        </li>
+        <li>
+          <a href="../opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a>
+        </li>
+        <li>
+          <a href="../glossary.html"  >Glossary</a>
+        </li>
+        <li>
+          <a href="../persons.html"  >Persons</a>
+        </li>
+        <li>
+          <a href="../bibliography.html"  >Bibliography</a>
+        </li>
+        <li>
+          <a href="../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../modules/index.html"  >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; codes</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Breadcrumbs">
+            <a class="book-crumb-link" href="index.html">Rosetta Stone Benchmarks</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="index.html" title="Rosetta Stone Benchmarks">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="02-perpendicular-bisector-midpoint.html" title="Benchmark 2: Perpendicular Bisector &amp; Midpoint"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="benchmark-1-equidistant-poles-equilateral-triangle">
+        <span id="rosetta-01-equidistant-poles"></span><h1>Benchmark 1: Equidistant Poles &amp; Equilateral Triangle<a class="headerlink" href="#benchmark-1-equidistant-poles-equilateral-triangle" title="Link to this heading">¶</a></h1>
+        <ul class="simple">
+        <li><p><strong>Canonical GEOMETOR Signature</strong>: <code class="docutils literal notranslate"><span class="pre">equidistant_poles(A,</span> <span class="pre">B)</span> <span class="pre">-&gt;</span> <span class="pre">(F,</span> <span class="pre">E)</span></code></p></li>
+        <li><p><strong>Classical Citation</strong>: <em>Euclid Book I, Proposition 1</em></p></li>
+        <li><p><strong>Core Phenomenon</strong>: From two distinct seed points A and B, construct the two congruent circles (A, B) and (B, A) and select their intersection poles F and E to form equilateral triangle ABF. Tests whether a system can actually prove circle-circle intersection existence and select one of the two quadratic roots.</p></li>
+        </ul>
+        <figure class="align-center" id="id1">
+        <a class="reference internal image-reference" href="../_images/01-seven-ontologies.svg"><svg xmlns="http://www.w3.org/2000/svg" class="euclid-graphic codes-diagram" viewBox="-3.1000 -3.6000 7.7000 6.9500">
+          <style>
+        svg.codes-diagram {
+            background-color: #111318;
+            border: 1px solid #2e3440;
+            border-radius: 6px;
+            width: 100%;
+            height: auto;
+            max-height: 560px;
+            display: block;
+            margin: 0.75rem auto;
+            user-select: none;
+            overflow: hidden;
+            cursor: grab;
+        }
+        svg.codes-diagram:active {
+            cursor: grabbing;
+        }
+        @media (prefers-color-scheme: light) {
+            svg.codes-diagram {
+                background-color: #fbfbfd;
+                border-color: #d8dee9;
+            }
+            svg.codes-diagram .Point {
+                stroke: #fbfbfd !important;
+            }
+            svg.codes-diagram .Point.given {
+                fill: #1a1d24 !important;
+            }
+            svg.codes-diagram .label-halo {
+                stroke: #fbfbfd !important;
+            }
+            svg.codes-diagram .label-fill {
+                fill: #1a1d24 !important;
+            }
+            svg.codes-diagram .Line,
+            svg.codes-diagram .Segment {
+                stroke: #4c566a;
+            }
+            svg.codes-diagram .callout-box {
+                fill: rgba(255, 255, 255, 0.92);
+            }
+            svg.codes-diagram .callout-text {
+                fill: #1a1d24;
+            }
+        }
+        .Line, .Segment {
+            stroke: #9aa5b4;
+            stroke-linecap: round;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.35px;
+            fill: none;
+            opacity: 0.84;
+            transition: stroke-width 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
+        }
+        .Circle {
+            stroke: #c678dd;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.45px;
+            fill: none;
+            opacity: 0.86;
+            transition: stroke-width 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
+        }
+        .Polygon {
+            fill: rgba(97, 175, 239, 0.09);
+            stroke: #61afef;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.85px;
+            stroke-linejoin: round;
+            transition: stroke-width 0.15s ease, fill-opacity 0.15s ease;
+        }
+        .Polygon.golden {
+            fill: rgba(229, 192, 123, 0.14);
+            stroke: #e5c07b;
+        }
+        .Point {
+            fill: #e5c07b;
+            stroke: #111318;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.4px;
+            transition: r 0.15s ease, filter 0.15s ease;
+        }
+        .Point.given {
+            fill: #ffffff;
+        }
+        .Point.result, .Point.center, .Point.target {
+            fill: #00e5ff;
+        }
+        .Point.golden {
+            fill: #f0c674;
+        }
+        .Point.midpoint, .Point.foot {
+            fill: #98c379;
+        }
+        .Line.guide, .Circle.guide, .Segment.guide, .Point.guide {
+            stroke-dasharray: 4 4;
+            opacity: 0.42;
+            stroke-width: 0.95px;
+        }
+        .Line.axis, .Segment.axis, .Line.euler, .Segment.euler {
+            stroke: #e06c75;
+            stroke-width: 1.9px;
+            opacity: 0.94;
+        }
+        .Line.bisector, .Segment.bisector, .Line.altitude, .Segment.altitude, .Line.median, .Segment.median {
+            stroke: #98c379;
+            stroke-width: 1.5px;
+            opacity: 0.88;
+        }
+        .Line.golden, .Segment.golden, .Circle.golden {
+            stroke: #e5c07b;
+            stroke-width: 1.85px;
+        }
+        .Circle.circumcircle {
+            stroke: #e06c75;
+            stroke-width: 1.55px;
+        }
+        .Circle.ninepoint {
+            stroke: #61afef;
+            stroke-width: 1.65px;
+        }
+        .Circle.incircle {
+            stroke: #e5c07b;
+            stroke-width: 1.55px;
+        }
+        .callout-box {
+            fill: rgba(24, 28, 36, 0.88);
+            stroke: #61afef;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1px;
+            rx: 3px;
+        }
+        .callout-box.spread-box {
+            stroke: #e5c07b;
+        }
+        .callout-box.paradigm-box {
+            stroke: #c678dd;
+        }
+        .callout-text {
+            fill: #eceff4;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-weight: 600;
+            text-anchor: middle;
+            dominant-baseline: central;
+            pointer-events: none;
+        }
+        .element-group {
+            cursor: pointer;
+        }
+        .element-group.svg-hovered .Line,
+        .element-group.svg-hovered .Segment,
+        .element-group.svg-hovered .Circle,
+        .element-group.svg-hovered .Polygon {
+            stroke: #00e5ff !important;
+            stroke-width: 2.8px !important;
+            opacity: 1.0 !important;
+            filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.75));
+        }
+        .element-group.svg-hovered .Point {
+            fill: #00e5ff !important;
+            filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.9));
+        }
+        .svg-control-btn {
+            cursor: pointer;
+        }
+        .svg-control-btn rect {
+            fill: rgba(30, 34, 42, 0.85);
+            stroke: #5c6370;
+            stroke-width: 1px;
+            vector-effect: non-scaling-stroke;
+            rx: 3px;
+        }
+        .svg-control-btn:hover rect {
+            fill: rgba(55, 62, 76, 0.95);
+            stroke: #00e5ff;
+        }
+        .svg-control-btn text {
+            fill: #e5e9f0;
+            font-family: sans-serif;
+            font-weight: 600;
+            text-anchor: middle;
+            dominant-baseline: central;
+            pointer-events: none;
+        }
+        svg.hide-labels .labels-layer,
+        svg.hide-labels .callouts-layer {
+            display: none;
+        }
+        svg.hide-guides .guide {
+            display: none;
+        }
+        </style>
+          <g class="svg-viewport">
+            <g class="polygons-layer">
+            <g class="element-group" data-ref="&lt; A B F &gt;"><polygon class="Polygon " points="0.0000,-0.0000 2.0000,-0.0000 1.0000,-1.7321"><title>&lt; A B F &gt;</title></polygon></g>
+            </g>
+            <g class="circles-layer">
+            <g class="element-group" data-ref="( A B )"><circle class="Circle " cx="0.0000" cy="-0.0000" r="2.0000" data-quadrance="4"><title>( A B ) (Q = 4)</title></circle></g>
+            <g class="element-group" data-ref="( B A )"><circle class="Circle guide" cx="2.0000" cy="-0.0000" r="2.0000" data-quadrance="4"><title>( B A ) (Q = 4)</title></circle></g>
+            </g>
+            <g class="lines-layer">
+            <g class="element-group" data-ref="[ A B ]"><line class="Line " x1="-13.7500" y1="-0.0000" x2="13.7500" y2="-0.0000"><title>[ A B ]</title></line></g>
+            <g class="element-group" data-ref="/ A F /"><path class="Segment " d="M 0.0000,-0.0000 L 0.5000,-0.8660 L 1.0000,-1.7321" data-quadrance="4"><title>/ A F / (Q = 4)</title></path></g>
+            <g class="element-group" data-ref="/ B F /"><path class="Segment " d="M 2.0000,-0.0000 L 1.5000,-0.8660 L 1.0000,-1.7321" data-quadrance="4"><title>/ B F / (Q = 4)</title></path></g>
+            </g>
+            <g class="points-layer">
+            <g class="element-group" data-ref="A"><circle class="Point given" cx="0.0000" cy="-0.0000" r="0.1107" data-latex-xy="(0, 0)" data-exact-xy="[0, 0]"><title>A = [0, 0]</title></circle></g>
+            <g class="element-group" data-ref="B"><circle class="Point given" cx="2.0000" cy="-0.0000" r="0.1107" data-latex-xy="(2, 0)" data-exact-xy="[2, 0]"><title>B = [2, 0]</title></circle></g>
+            <g class="element-group" data-ref="F"><circle class="Point result" cx="1.0000" cy="-1.7321" r="0.1107" data-latex-xy="(1, \sqrt{3})" data-exact-xy="[1, sqrt(3)]"><title>F = [1, sqrt(3)]</title></circle></g>
+            </g>
+            <g class="callouts-layer">
+            <g class="element-group" data-ref="F"><rect class="callout-box paradigm-box" x="-0.6353" y="-2.6225" width="3.2707" height="0.2449" /><text class="callout-text" x="1.0000" y="-2.5000" font-size="0.1580">System E: F = intersect_same_side</text></g>
+            <g class="element-group" data-ref="( A B )"><rect class="callout-box paradigm-box" x="-3.2775" y="-1.6225" width="3.5551" height="0.2449" /><text class="callout-text" x="-1.5000" y="-1.5000" font-size="0.1580">Tarski: Cong A B A F /\ Cong B A B F</text></g>
+            <g class="element-group" data-ref="/ B F /"><rect class="callout-box paradigm-box" x="2.0543" y="-1.6225" width="2.8915" height="0.2449" /><text class="callout-text" x="3.5000" y="-1.5000" font-size="0.1580">Mathlib4: dist F A = dist A B</text></g>
+            <g class="element-group" data-ref="( A B )"><rect class="callout-box paradigm-box" x="-2.6613" y="1.1275" width="2.3227" height="0.2449" /><text class="callout-text" x="-1.5000" y="1.2500" font-size="0.1580">2DCGA: C = P1 ^ P2 ^ P3</text></g>
+            <g class="element-group" data-ref="[ A B ]"><rect class="callout-box paradigm-box" x="2.2913" y="1.1275" width="2.4175" height="0.2449" /><text class="callout-text" x="3.5000" y="1.2500" font-size="0.1580">CP^2: conic through I, J</text></g>
+            <g class="element-group" data-ref="&lt; A B F &gt;"><rect class="callout-box spread-box" x="-0.5879" y="2.1275" width="3.1759" height="0.2449" /><text class="callout-text" x="1.0000" y="2.2500" font-size="0.1580">GEOMETOR: Q(A,F)=Q(B,F)=4, s=3/4</text></g>
+            </g>
+            <g class="labels-layer">
+            <g class="element-group" data-ref="A"><text class="label-halo" x="0.1461" y="-0.1284" font-family="sans-serif" font-size="0.2195" font-weight="600" stroke="#111318" stroke-width="0.0549" stroke-linejoin="round" fill="none">A</text><text class="label-fill" x="0.1461" y="-0.1284" font-family="sans-serif" font-size="0.2195" font-weight="600" fill="#f0f4f8">A</text></g>
+            <g class="element-group" data-ref="B"><text class="label-halo" x="2.1461" y="-0.1284" font-family="sans-serif" font-size="0.2195" font-weight="600" stroke="#111318" stroke-width="0.0549" stroke-linejoin="round" fill="none">B</text><text class="label-fill" x="2.1461" y="-0.1284" font-family="sans-serif" font-size="0.2195" font-weight="600" fill="#f0f4f8">B</text></g>
+            <g class="element-group" data-ref="F"><text class="label-halo" x="1.1461" y="-1.8604" font-family="sans-serif" font-size="0.2195" font-weight="600" stroke="#111318" stroke-width="0.0549" stroke-linejoin="round" fill="none">F</text><text class="label-fill" x="1.1461" y="-1.8604" font-family="sans-serif" font-size="0.2195" font-weight="600" fill="#f0f4f8">F</text></g>
+            </g>
+          </g>
+          <g class="svg-controls">
+            <g class="svg-control-btn" data-action="zoom-in"><rect x="1.7735" y="-3.5127" width="0.5013" height="0.3234" /><text x="2.0241" y="-3.3510" style="font-size:0.1455px">+</text></g>
+            <g class="svg-control-btn" data-action="zoom-out"><rect x="2.3330" y="-3.5127" width="0.5013" height="0.3234" /><text x="2.5836" y="-3.3510" style="font-size:0.1455px">−</text></g>
+            <g class="svg-control-btn" data-action="reset"><rect x="2.8924" y="-3.5127" width="0.5013" height="0.3234" /><text x="3.1431" y="-3.3510" style="font-size:0.1455px">⟲</text></g>
+            <g class="svg-control-btn" data-action="labels"><rect x="3.4519" y="-3.5127" width="0.5013" height="0.3234" /><text x="3.7026" y="-3.3510" style="font-size:0.1455px">Lbl</text></g>
+            <g class="svg-control-btn" data-action="guides"><rect x="4.0114" y="-3.5127" width="0.5013" height="0.3234" /><text x="4.2620" y="-3.3510" style="font-size:0.1455px">Gde</text></g>
+          </g>
+          <script>
+        (function() {
+          if (window.__codesSvgInit) return;
+          window.__codesSvgInit = true;
+
+          function initDiagram(svg) {
+            if (svg.dataset.initialized) return;
+            svg.dataset.initialized = "true";
+            const vp = svg.querySelector(".svg-viewport");
+            if (!vp) return;
+
+            let scale = 1, tx = 0, ty = 0;
+            let dragging = false, startX = 0, startY = 0;
+
+            function applyTransform() {
+              vp.setAttribute("transform", `translate(${tx},${ty}) scale(${scale})`);
+            }
+
+            svg.addEventListener("wheel", function(e) {
+              e.preventDefault();
+              const rect = svg.getBoundingClientRect();
+              const vb = svg.viewBox.baseVal;
+              const mx = vb.x + ((e.clientX - rect.left) / rect.width) * vb.width;
+              const my = vb.y + ((e.clientY - rect.top) / rect.height) * vb.height;
+              const factor = e.deltaY > 0 ? 1 / 1.15 : 1.15;
+              const newScale = Math.min(Math.max(scale * factor, 0.25), 12);
+              tx = mx - (mx - tx) * (newScale / scale);
+              ty = my - (my - ty) * (newScale / scale);
+              scale = newScale;
+              applyTransform();
+            }, { passive: false });
+
+            svg.addEventListener("mousedown", function(e) {
+              if (e.target.closest(".svg-controls")) return;
+              dragging = true;
+              startX = e.clientX;
+              startY = e.clientY;
+            });
+
+            window.addEventListener("mousemove", function(e) {
+              if (!dragging) return;
+              const rect = svg.getBoundingClientRect();
+              const vb = svg.viewBox.baseVal;
+              const dx = ((e.clientX - startX) / rect.width) * vb.width;
+              const dy = ((e.clientY - startY) / rect.height) * vb.height;
+              startX = e.clientX;
+              startY = e.clientY;
+              tx += dx;
+              ty += dy;
+              applyTransform();
+            });
+
+            window.addEventListener("mouseup", function() {
+              dragging = false;
+            });
+
+            svg.querySelectorAll(".svg-control-btn").forEach(function(btn) {
+              btn.addEventListener("click", function(e) {
+                e.stopPropagation();
+                const action = btn.dataset.action;
+                if (action === "zoom-in") { scale = Math.min(scale * 1.25, 12); applyTransform(); }
+                else if (action === "zoom-out") { scale = Math.max(scale / 1.25, 0.25); applyTransform(); }
+                else if (action === "reset") { scale = 1; tx = 0; ty = 0; applyTransform(); }
+                else if (action === "labels") { svg.classList.toggle("hide-labels"); }
+                else if (action === "guides") { svg.classList.toggle("hide-guides"); }
+              });
+            });
+          }
+
+          function setupHoverSync() {
+            document.querySelectorAll("svg.codes-diagram").forEach(initDiagram);
+
+            document.addEventListener("mouseover", function(e) {
+              const refEl = e.target.closest("[data-ref]");
+              if (!refEl) return;
+              const ref = refEl.dataset.ref;
+              if (!ref) return;
+              document.querySelectorAll(`.element-group[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.add("svg-hovered"));
+              document.querySelectorAll(`.geom-ref[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.add("ref-hovered"));
+            });
+
+            document.addEventListener("mouseout", function(e) {
+              const refEl = e.target.closest("[data-ref]");
+              if (!refEl) return;
+              const ref = refEl.dataset.ref;
+              if (!ref) return;
+              document.querySelectorAll(`.element-group[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.remove("svg-hovered"));
+              document.querySelectorAll(`.geom-ref[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.remove("ref-hovered"));
+            });
+          }
+
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", setupHoverSync);
+          } else {
+            setupHoverSync();
+          }
+        })();
+        </script>
+        </svg>
+
+        </a>
+        <figcaption>
+        <p><span class="caption-text">Exact float-free <code class="docutils literal notranslate"><span class="pre">geometor.model</span></code> construction illustrating <strong>Equidistant Poles &amp; Equilateral Triangle</strong> (<code class="docutils literal notranslate"><span class="pre">equidistant_poles(A,</span> <span class="pre">B)</span> <span class="pre">-&gt;</span> <span class="pre">(F,</span> <span class="pre">E)</span></code>).</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        <section class="level-2" id="cross-system-revelation-matrix">
+        <h2>Cross-System Revelation Matrix<a class="headerlink" href="#cross-system-revelation-matrix" title="Link to this heading">¶</a></h2>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 20.0%" />
+        <col style="width: 40.0%" />
+        <col style="width: 40.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>System</p></th>
+        <th class="head"><p>What This Encoding Reveals</p></th>
+        <th class="head"><p>What This Encoding Hides</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>LeanEuclid &amp; Formal System E</strong></p></td>
+        <td><p>Explicitly justifies why circles α and β must intersect via System E’s diagrammatic circle-intersection axiom (filling Euclid’s famous Book I.1 gap). Prop01.lean also proves proposition_1’ selecting the pole on a chosen side via intersect_circles_same_side!</p></td>
+        <td><p>Delegates all interior/exterior circle-containment verification to external Z3/CVC5 via SMT_VERIF, and yields no coordinates for c.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>GeoCoq (Tarski / Hilbert / Euclid)</strong></p></td>
+        <td><p>Isolates the exact continuity axiom (circle_circle, equivalent over Tarski neutral geometry to nested-circle continuity) required for I.1 to hold over Euclidean fields rather than Q^2.</p></td>
+        <td><p>In pure Tarski point-only files, circles do not exist as objects—circle_circle is stated as a 6-point existential sentence on Bet and Cong.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Lean 4 Mathlib (Euclidean &amp; Affine)</strong></p></td>
+        <td><p>Shows sharply that mathlib4 is an analytic deductive library over arbitrary dimension n (where two spheres in R^3 meet in a circle, not 2 points!), not a planar constructive system.</p></td>
+        <td><p>Cannot construct the two planar apexes without choosing an explicit 2D Orientation and invoking Orientation.rotation (π / 3).</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>AlphaGeometry (DD + AR)</strong></p></td>
+        <td><p>Compact 1-line locus intersection syntax; also exposes the silent ‘;’ drop quirk in defs.txt:40 where the post-semicolon eqangle is ignored by Graph.add_clause and re-proved by r13.</p></td>
+        <td><p>Cannot prove absolute angle π/3 (aconst a b a c 1 3) from circle intersections alone because AngleTable works modulo π without triangle interior-sum orientation!</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Newclid &amp; Yuclid</strong></p></td>
+        <td><p>Multi-goal ‘;’ syntax after ‘?’ verifies both side congruence and base-angle equality in a single run.</p></td>
+        <td><p>Which of the two poles c lands on depends on random float64 sampling inside the numerical sketcher.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Java Geometry Expert (JGEX / Area Method)</strong></p></td>
+        <td><p>Expresses the 60-degree cosine relation purely rationally via Pythagoras difference P_CAB / P_ABA = 1/2.</p></td>
+        <td><p>Root branch selection between upper and lower equilateral apexes.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Projective &amp; Conformal Geometric Algebra (kingdon / galgebra)</strong></p></td>
+        <td><p>The circle-circle intersection is a single algebraic object—the grade-2 bivector point pair T = F ^ E—before splitting its two roots via idempotent projectors (T ± s)!</p></td>
+        <td><p>Requires lifting 2D plane into 4D Minkowski space R^{3,1} (since 2D PGA lacks circle blades).</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>CindyJS (Complex Projective CP^2 &amp; Cayley-Klein)</strong></p></td>
+        <td><p>Maintains continuous identity of poles F and E under arbitrary dragging via Riemann-surface homotopy continuation.</p></td>
+        <td><p>Coordinates are complex floats (F = [1, 1.7320508…, 1]); requires PSLQ guess() to recover sqrt(3).</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>SymPy Geometry (sympy.geometry 1.14.0)</strong></p></td>
+        <td><p>Concise object-oriented syntax returning two exact symbolic Point2D instances over Q(sqrt(3)).</p></td>
+        <td><p>Calls generic Buchberger/CAS solve() under the hood (stalling on nested steps) and returns roots sorted arbitrarily without a half-plane selector.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Oliver Byrne’s Coloured Euclid (1847 / Rougeux)</strong></p></td>
+        <td><p>Zero vertex letters! Every segment and circle is a direct coloured value-token whose equality follows visually from shared circle-radius membership.</p></td>
+        <td><p>Like classical Euclid, assumes visually that [red ○] and [blue ○] intersect without an explicit continuity axiom, and addresses the apex only as ‘their intersection’.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>GEOMETOR (geometor.model + Ecosystem)</strong></p></td>
+        <td><p>Combines closed-form radical-axis algebra (zero solve()), System E half-plane root selection side_of=(a, b, ±1), exact Q(sqrt(3)) coordinates, and rational spread verification s = 3/4.</p></td>
+        <td><p>Currently 2D planar; selector AST should be persisted on Step for direct LeanEuclid export.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="side-by-side-formal-visual-implementations-11-systems">
+        <h2>Side-by-Side Formal &amp; Visual Implementations (11 Systems)<a class="headerlink" href="#side-by-side-formal-visual-implementations-11-systems" title="Link to this heading">¶</a></h2>
+        <section class="level-3" id="leaneuclid-formal-system-e-leaneuclid">
+        <h3>LeanEuclid &amp; Formal System E (<code class="docutils literal notranslate"><span class="pre">leaneuclid</span></code>)<a class="headerlink" href="#leaneuclid-formal-system-e-leaneuclid" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">LeanEuclid/Book/Prop01.lean:9-24</span></code></p>
+        <div class="highlight-lean4 notranslate"><div class="highlight"><pre><span></span><span class="kn">theorem</span><span class="w"> </span><span class="n">proposition_1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="bp">∀</span><span class="w"> </span><span class="o">(</span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Point</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="n">AB</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Line</span><span class="o">),</span>
+        <span class="w">    </span><span class="n">distinctPointsOnLine</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">AB</span><span class="w"> </span><span class="bp">→</span>
+        <span class="w">    </span><span class="bp">∃</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Point</span><span class="o">,</span><span class="w"> </span><span class="bp">|</span><span class="o">(</span><span class="n">a</span><span class="bp">─</span><span class="n">c</span><span class="o">)</span><span class="bp">|</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="bp">|</span><span class="o">(</span><span class="n">a</span><span class="bp">─</span><span class="n">b</span><span class="o">)</span><span class="bp">|</span><span class="w"> </span><span class="bp">∧</span><span class="w"> </span><span class="bp">|</span><span class="o">(</span><span class="n">b</span><span class="bp">─</span><span class="n">c</span><span class="o">)</span><span class="bp">|</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="bp">|</span><span class="o">(</span><span class="n">b</span><span class="bp">─</span><span class="n">a</span><span class="o">)</span><span class="bp">|</span><span class="w"> </span><span class="bp">∧</span><span class="w"> </span><span class="bp">¬</span><span class="o">(</span><span class="n">c</span><span class="bp">.</span><span class="n">onLine</span><span class="w"> </span><span class="n">AB</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">by</span>
+        <span class="w">  </span><span class="n">euclid_intros</span>
+        <span class="w">  </span><span class="n">euclid_apply</span><span class="w"> </span><span class="o">(</span><span class="n">Circles</span><span class="bp">.</span><span class="n">from_points</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="o">)</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">α</span>
+        <span class="w">  </span><span class="n">euclid_apply</span><span class="w"> </span><span class="o">(</span><span class="n">Circles</span><span class="bp">.</span><span class="n">from_points</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">a</span><span class="o">)</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">β</span>
+        <span class="w">  </span><span class="n">euclid_apply</span><span class="w"> </span><span class="o">(</span><span class="n">Intersections</span><span class="bp">.</span><span class="n">intersect_circles</span><span class="w"> </span><span class="n">α</span><span class="w"> </span><span class="n">β</span><span class="o">)</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">c</span>
+        <span class="w">  </span><span class="n">use</span><span class="w"> </span><span class="n">c</span>
+        <span class="w">  </span><span class="n">euclid_finish</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Explicitly justifies why circles α and β must intersect via System E’s diagrammatic circle-intersection axiom (filling Euclid’s famous Book I.1 gap). Prop01.lean also proves proposition_1’ selecting the pole on a chosen side via intersect_circles_same_side!</p></li>
+        <li><p><strong>Hides</strong>: Delegates all interior/exterior circle-containment verification to external Z3/CVC5 via SMT_VERIF, and yields no coordinates for c.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="geocoq-tarski-hilbert-euclid-geocoq">
+        <h3>GeoCoq (Tarski / Hilbert / Euclid) (<code class="docutils literal notranslate"><span class="pre">geocoq</span></code>)<a class="headerlink" href="#geocoq-tarski-hilbert-euclid-geocoq" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">GeoCoq/Elements/OriginalProofs/proposition_01.v:7-32</span></code></p>
+        <div class="highlight-coq notranslate"><div class="highlight"><pre><span></span><span class="kn">Theorem</span> <span class="n">proposition_01</span> <span class="o">:</span>
+          <span class="k">forall</span> <span class="n">A</span> <span class="n">B</span><span class="o">,</span> <span class="n">neq</span> <span class="n">A</span> <span class="n">B</span> <span class="o">-&gt;</span> <span class="k">exists</span> <span class="n">X</span><span class="o">,</span> <span class="n">equilateral</span> <span class="n">A</span> <span class="n">B</span> <span class="n">X</span> <span class="o">/\</span> <span class="n">Triangle</span> <span class="n">A</span> <span class="n">B</span> <span class="n">X</span><span class="o">.</span>
+        <span class="kn">Proof</span><span class="o">.</span>
+          <span class="k">intros</span><span class="o">.</span>
+          <span class="k">pose</span> <span class="n">proof</span> <span class="o">(</span><span class="n">postulate_Euclid3</span> <span class="n">A</span> <span class="n">B</span> <span class="n">H</span><span class="o">)</span> <span class="k">as</span> <span class="o">[</span><span class="n">J</span> <span class="n">HJ</span><span class="o">].</span>
+          <span class="k">pose</span> <span class="n">proof</span> <span class="o">(</span><span class="n">postulate_Euclid3</span> <span class="n">B</span> <span class="n">A</span> <span class="o">(</span><span class="n">neq_sym</span> <span class="o">_</span> <span class="o">_</span> <span class="n">H</span><span class="o">))</span> <span class="k">as</span> <span class="o">[</span><span class="n">K</span> <span class="n">HK</span><span class="o">].</span>
+          <span class="o">...</span> <span class="c">(* applies postulate_circle_circle to obtain witness C *)</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Isolates the exact continuity axiom (circle_circle, equivalent over Tarski neutral geometry to nested-circle continuity) required for I.1 to hold over Euclidean fields rather than Q^2.</p></li>
+        <li><p><strong>Hides</strong>: In pure Tarski point-only files, circles do not exist as objects—circle_circle is stated as a 6-point existential sentence on Bet and Cong.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="lean-4-mathlib-euclidean-affine-mathlib4">
+        <h3>Lean 4 Mathlib (Euclidean &amp; Affine) (<code class="docutils literal notranslate"><span class="pre">mathlib4</span></code>)<a class="headerlink" href="#lean-4-mathlib-euclidean-affine-mathlib4" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">Absent</span> <span class="pre">constructively</span> <span class="pre">(cf.</span> <span class="pre">Geometry/Euclidean/Angle/Unoriented/Affine.lean)</span></code></p>
+        <div class="highlight-lean4 notranslate"><div class="highlight"><pre><span></span><span class="c1">-- NO constructive Euclid I.1 existence theorem in Mathlib/Geometry/Euclidean/!</span>
+        <span class="c1">-- Equilateral triangles appear only hypothetically as dist-equality assumptions:</span>
+        <span class="kn">variable</span><span class="w"> </span><span class="o">{</span><span class="n">V</span><span class="w"> </span><span class="n">P</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Type</span><span class="bp">*</span><span class="o">}</span><span class="w"> </span><span class="o">[</span><span class="n">NormedAddCommGroup</span><span class="w"> </span><span class="n">V</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="n">InnerProductSpace</span><span class="w"> </span><span class="n">ℝ</span><span class="w"> </span><span class="n">V</span><span class="o">]</span>
+        <span class="w">  </span><span class="o">[</span><span class="n">MetricSpace</span><span class="w"> </span><span class="n">P</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="n">NormedAddTorsor</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="n">P</span><span class="o">]</span>
+        <span class="c1">-- Hypothesis form: dist a b = r ∧ dist b c = r ∧ dist c a = r</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Shows sharply that mathlib4 is an analytic deductive library over arbitrary dimension n (where two spheres in R^3 meet in a circle, not 2 points!), not a planar constructive system.</p></li>
+        <li><p><strong>Hides</strong>: Cannot construct the two planar apexes without choosing an explicit 2D Orientation and invoking Orientation.rotation (π / 3).</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="alphageometry-dd-ar-alphageometry">
+        <h3>AlphaGeometry (DD + AR) (<code class="docutils literal notranslate"><span class="pre">alphageometry</span></code>)<a class="headerlink" href="#alphageometry-dd-ar-alphageometry" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">alphageometry/defs.txt:37-41</span> <span class="pre">&amp;</span> <span class="pre">rules.txt:14</span> <span class="pre">(r13)</span></code></p>
+        <div class="highlight-text notranslate"><div class="highlight"><pre><span></span># Primitive two-circle locus intersection + Pons Asinorum (r13):
+        a b = segment a b; c = on_circle c a b, on_circle c b a ? eqangle a b a c b c b a
+
+        # Or macro stanza in defs.txt:37-41:
+        eq_triangle x a b
+        x : a b
+        a b = diff a b
+        x : cong x a a b, cong x b a b; eqangle a b a x b x b a
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Compact 1-line locus intersection syntax; also exposes the silent ‘;’ drop quirk in defs.txt:40 where the post-semicolon eqangle is ignored by Graph.add_clause and re-proved by r13.</p></li>
+        <li><p><strong>Hides</strong>: Cannot prove absolute angle π/3 (aconst a b a c 1 3) from circle intersections alone because AngleTable works modulo π without triangle interior-sum orientation!</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="newclid-yuclid-newclid">
+        <h3>Newclid &amp; Yuclid (<code class="docutils literal notranslate"><span class="pre">newclid</span></code>)<a class="headerlink" href="#newclid-yuclid-newclid" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">Newclid/newclid/src/newclid/jgex/constructions/</span></code></p>
+        <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>a b = segment a b; c = on_circle c a b, on_circle c b a ? cong c a c b; eqangle a b a c b c b a
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Multi-goal ‘;’ syntax after ‘?’ verifies both side congruence and base-angle equality in a single run.</p></li>
+        <li><p><strong>Hides</strong>: Which of the two poles c lands on depends on random float64 sampling inside the numerical sketcher.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="java-geometry-expert-jgex-area-method-jgex">
+        <h3>Java Geometry Expert (JGEX / Area Method) (<code class="docutils literal notranslate"><span class="pre">jgex</span></code>)<a class="headerlink" href="#java-geometry-expert-jgex-area-method-jgex" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">Java-Geometry-Expert</span> <span class="pre">Area</span> <span class="pre">Method</span> <span class="pre">/</span> <span class="pre">GDD</span></code></p>
+        <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>EXAMPLE EUCLID_I_1
+        HYPOTHESES:
+          POINT A B;
+          INTERSECTION_CC C A B B A;
+        SHOW: EQANGLE C A B A B C.
+        # Area/Pythagoras encoding: P_CAC = P_BAB, P_CBC = P_BAB =&gt; P_CAB = AB^2 = (1/2) P_ABA
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Expresses the 60-degree cosine relation purely rationally via Pythagoras difference P_CAB / P_ABA = 1/2.</p></li>
+        <li><p><strong>Hides</strong>: Root branch selection between upper and lower equilateral apexes.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="projective-conformal-geometric-algebra-kingdon-galgebra-pga-cga">
+        <h3>Projective &amp; Conformal Geometric Algebra (kingdon / galgebra) (<code class="docutils literal notranslate"><span class="pre">pga_cga</span></code>)<a class="headerlink" href="#projective-conformal-geometric-algebra-kingdon-galgebra-pga-cga" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">2D</span> <span class="pre">CGA</span> <span class="pre">Cl(3,1)</span> <span class="pre">in</span> <span class="pre">kingdon</span> <span class="pre">(Algebra(3,</span> <span class="pre">1))</span></code></p>
+        <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">q_AB</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">A</span> <span class="o">|</span> <span class="n">B</span><span class="p">)</span>                        <span class="c1"># exact quadrance |A - B|^2</span>
+        <span class="n">kA</span> <span class="o">=</span> <span class="n">A</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">Rational</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">q_AB</span> <span class="o">*</span> <span class="n">ni</span>     <span class="c1"># dual circle centered at A through B</span>
+        <span class="n">kB</span> <span class="o">=</span> <span class="n">B</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">Rational</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">q_AB</span> <span class="o">*</span> <span class="n">ni</span>     <span class="c1"># dual circle centered at B through A</span>
+        <span class="n">T</span> <span class="o">=</span> <span class="p">(</span><span class="n">kA</span> <span class="o">^</span> <span class="n">kB</span><span class="p">)</span><span class="o">.</span><span class="n">dual</span><span class="p">()</span>                       <span class="c1"># OPNS grade-2 point pair F ^ E</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">T</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>                     <span class="c1"># invariant scalar separation</span>
+        <span class="n">F</span> <span class="o">=</span> <span class="n">norm_pt</span><span class="p">((</span><span class="n">T</span> <span class="o">+</span> <span class="n">s</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span> <span class="o">|</span> <span class="n">ni</span><span class="p">))</span>            <span class="c1"># upper pole via projector split</span>
+        <span class="n">E</span> <span class="o">=</span> <span class="n">norm_pt</span><span class="p">((</span><span class="n">T</span> <span class="o">-</span> <span class="n">s</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span> <span class="o">|</span> <span class="n">ni</span><span class="p">))</span>            <span class="c1"># lower pole via projector split</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: The circle-circle intersection is a single algebraic object—the grade-2 bivector point pair T = F ^ E—before splitting its two roots via idempotent projectors (T ± s)!</p></li>
+        <li><p><strong>Hides</strong>: Requires lifting 2D plane into 4D Minkowski space R^{3,1} (since 2D PGA lacks circle blades).</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="cindyjs-complex-projective-cp-2-cayley-klein-cindyjs">
+        <h3>CindyJS (Complex Projective CP^2 &amp; Cayley-Klein) (<code class="docutils literal notranslate"><span class="pre">cindyjs</span></code>)<a class="headerlink" href="#cindyjs-complex-projective-cp-2-cayley-klein-cindyjs" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">CindyJS/src/js/libgeo/GeoOps.js:2038-2068</span> <span class="pre">&amp;</span> <span class="pre">Tracing.js</span></code></p>
+        <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">create</span><span class="p">([</span><span class="s2">"c1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"CircleMP"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"A"</span><span class="p">,</span><span class="w"> </span><span class="s2">"B"</span><span class="p">]]);</span>
+        <span class="nx">create</span><span class="p">([</span><span class="s2">"c2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"CircleMP"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"B"</span><span class="p">,</span><span class="w"> </span><span class="s2">"A"</span><span class="p">]]);</span>
+        <span class="nx">create</span><span class="p">([</span><span class="s2">"F"</span><span class="p">,</span><span class="w"> </span><span class="s2">"E"</span><span class="p">],</span><span class="w"> </span><span class="s2">"IntersectCirCir"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"c1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"c2"</span><span class="p">]);</span>
+        <span class="c1">// Subtracts monic 3x3 circle matrices to get radical axis, then splits rank-1 skew matrix;</span>
+        <span class="c1">// Tracing.js tracks F and E continuously over C^3 when A or B is dragged!</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Maintains continuous identity of poles F and E under arbitrary dragging via Riemann-surface homotopy continuation.</p></li>
+        <li><p><strong>Hides</strong>: Coordinates are complex floats (F = [1, 1.7320508…, 1]); requires PSLQ guess() to recover sqrt(3).</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="sympy-geometry-sympy-geometry-1-14-0-sympy-geometry">
+        <h3>SymPy Geometry (sympy.geometry 1.14.0) (<code class="docutils literal notranslate"><span class="pre">sympy_geometry</span></code>)<a class="headerlink" href="#sympy-geometry-sympy-geometry-1-14-0-sympy-geometry" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">sympy/geometry/ellipse.py:676-691</span></code></p>
+        <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+        <span class="n">E</span><span class="p">,</span> <span class="n">F</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">Circle</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>  <span class="c1"># invokes generic CAS solve()!</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Concise object-oriented syntax returning two exact symbolic Point2D instances over Q(sqrt(3)).</p></li>
+        <li><p><strong>Hides</strong>: Calls generic Buchberger/CAS solve() under the hood (stalling on nested steps) and returns roots sorted arbitrarily without a half-plane selector.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="oliver-byrne-s-coloured-euclid-1847-rougeux-byrne-1847">
+        <h3>Oliver Byrne’s Coloured Euclid (1847 / Rougeux) (<code class="docutils literal notranslate"><span class="pre">byrne_1847</span></code>)<a class="headerlink" href="#oliver-byrne-s-coloured-euclid-1847-rougeux-byrne-1847" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">Byrne</span> <span class="pre">(1847)</span> <span class="pre">Book</span> <span class="pre">I,</span> <span class="pre">Prop.</span> <span class="pre">1</span> <span class="pre">/</span> <span class="pre">Rougeux</span> <span class="pre">c82.net/euclid/book1#prop1</span></code></p>
+        <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Given:        [black ━━]                       (seed segment)
+        To Construct: △([black ━━], [red ━━], [yellow ━━]) equilateral
+        Construction: Describe [red ○] about left end with radius [black ━━]   (Post. 3)
+                      Describe [blue ○] about right end with radius [black ━━] (Post. 3)
+                      From intersection draw [red ━━] and [yellow ━━]          (Post. 1)
+        Proof:        [red ━━]    = [black ━━]   (radii of [red ○], Def. 15)
+                      [yellow ━━] = [black ━━]   (radii of [blue ○], Def. 15)
+                    ∴ [red ━━] = [yellow ━━] = [black ━━]                      (Ax. 1)
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Zero vertex letters! Every segment and circle is a direct coloured value-token whose equality follows visually from shared circle-radius membership.</p></li>
+        <li><p><strong>Hides</strong>: Like classical Euclid, assumes visually that [red ○] and [blue ○] intersect without an explicit continuity axiom, and addresses the apex only as ‘their intersection’.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="geometor-geometor-model-ecosystem-geometor-model">
+        <h3>GEOMETOR (geometor.model + Ecosystem) (<code class="docutils literal notranslate"><span class="pre">geometor_model</span></code>)<a class="headerlink" href="#geometor-geometor-model-ecosystem-geometor-model" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">geometor/codes/figures.py:100-115</span> <span class="pre">(geometor.model)</span></code></p>
+        <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="s2">"equidistant_poles"</span><span class="p">,</span> <span class="n">auto_intersect</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">set_point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ID</span><span class="o">=</span><span class="s2">"A"</span><span class="p">);</span> <span class="n">b</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">set_point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ID</span><span class="o">=</span><span class="s2">"B"</span><span class="p">)</span>
+        <span class="n">c_a</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">construct_circle</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">ID</span><span class="o">=</span><span class="s2">"( A B )"</span><span class="p">)</span>
+        <span class="n">c_b</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">construct_circle</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">ID</span><span class="o">=</span><span class="s2">"( B A )"</span><span class="p">)</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">c_a</span><span class="p">,</span> <span class="n">c_b</span><span class="p">,</span> <span class="n">side_of</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">ID</span><span class="o">=</span><span class="s2">"F"</span><span class="p">)</span>  <span class="c1"># exact (1, sqrt(3))</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">c_a</span><span class="p">,</span> <span class="n">c_b</span><span class="p">,</span> <span class="n">side_of</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">ID</span><span class="o">=</span><span class="s2">"E"</span><span class="p">)</span>  <span class="c1"># exact (1, -sqrt(3))</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">assert_equal</span><span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">f</span><span class="p">),</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">f</span><span class="p">),</span> <span class="n">by</span><span class="o">=</span><span class="s2">"I.1"</span><span class="p">)</span>       <span class="c1"># Q = 4, spread = 3/4</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Combines closed-form radical-axis algebra (zero solve()), System E half-plane root selection side_of=(a, b, ±1), exact Q(sqrt(3)) coordinates, and rational spread verification s = 3/4.</p></li>
+        <li><p><strong>Hides</strong>: Currently 2D planar; selector AST should be persisted on Step for direct LeanEuclid export.</p></li>
+        </ul>
+        </section>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="index.html" title="Rosetta Stone Benchmarks">&larr; <span class="nav-label">Rosetta Stone Benchmarks</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="02-perpendicular-bisector-midpoint.html" title="Benchmark 2: Perpendicular Bisector &amp; Midpoint"><span class="nav-label">Benchmark 2: Perpendicular Bisector & Midpoint</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="../tags/byrne.html">byrne</a></li>
+        <li><a href="../tags/formal-systems.html">formal-systems</a></li>
+        <li><a href="../tags/geometor-model.html">geometor-model</a></li>
+        <li><a href="../tags/opus.html">opus</a></li>
+        <li><a href="../tags/rosetta.html">rosetta</a></li>
+        <li><a href="../tags/sympy.html">sympy</a></li>
+        <li><a href="../tags/syntax.html">syntax</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=01f34227"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

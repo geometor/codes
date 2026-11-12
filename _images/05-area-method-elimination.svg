@@ -1,0 +1,345 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="euclid-graphic codes-diagram" viewBox="-1.3800 -7.3800 8.7600 9.6600">
+  <style>
+svg.codes-diagram {
+    background-color: #111318;
+    border: 1px solid #2e3440;
+    border-radius: 6px;
+    width: 100%;
+    height: auto;
+    max-height: 560px;
+    display: block;
+    margin: 0.75rem auto;
+    user-select: none;
+    overflow: hidden;
+    cursor: grab;
+}
+svg.codes-diagram:active {
+    cursor: grabbing;
+}
+@media (prefers-color-scheme: light) {
+    svg.codes-diagram {
+        background-color: #fbfbfd;
+        border-color: #d8dee9;
+    }
+    svg.codes-diagram .Point {
+        stroke: #fbfbfd !important;
+    }
+    svg.codes-diagram .Point.given {
+        fill: #1a1d24 !important;
+    }
+    svg.codes-diagram .label-halo {
+        stroke: #fbfbfd !important;
+    }
+    svg.codes-diagram .label-fill {
+        fill: #1a1d24 !important;
+    }
+    svg.codes-diagram .Line,
+    svg.codes-diagram .Segment {
+        stroke: #4c566a;
+    }
+    svg.codes-diagram .callout-box {
+        fill: rgba(255, 255, 255, 0.92);
+    }
+    svg.codes-diagram .callout-text {
+        fill: #1a1d24;
+    }
+}
+.Line, .Segment {
+    stroke: #9aa5b4;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+    stroke-width: 1.35px;
+    fill: none;
+    opacity: 0.84;
+    transition: stroke-width 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
+}
+.Circle {
+    stroke: #c678dd;
+    vector-effect: non-scaling-stroke;
+    stroke-width: 1.45px;
+    fill: none;
+    opacity: 0.86;
+    transition: stroke-width 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
+}
+.Polygon {
+    fill: rgba(97, 175, 239, 0.09);
+    stroke: #61afef;
+    vector-effect: non-scaling-stroke;
+    stroke-width: 1.85px;
+    stroke-linejoin: round;
+    transition: stroke-width 0.15s ease, fill-opacity 0.15s ease;
+}
+.Polygon.golden {
+    fill: rgba(229, 192, 123, 0.14);
+    stroke: #e5c07b;
+}
+.Point {
+    fill: #e5c07b;
+    stroke: #111318;
+    vector-effect: non-scaling-stroke;
+    stroke-width: 1.4px;
+    transition: r 0.15s ease, filter 0.15s ease;
+}
+.Point.given {
+    fill: #ffffff;
+}
+.Point.result, .Point.center, .Point.target {
+    fill: #00e5ff;
+}
+.Point.golden {
+    fill: #f0c674;
+}
+.Point.midpoint, .Point.foot {
+    fill: #98c379;
+}
+.Line.guide, .Circle.guide, .Segment.guide, .Point.guide {
+    stroke-dasharray: 4 4;
+    opacity: 0.42;
+    stroke-width: 0.95px;
+}
+.Line.axis, .Segment.axis, .Line.euler, .Segment.euler {
+    stroke: #e06c75;
+    stroke-width: 1.9px;
+    opacity: 0.94;
+}
+.Line.bisector, .Segment.bisector, .Line.altitude, .Segment.altitude, .Line.median, .Segment.median {
+    stroke: #98c379;
+    stroke-width: 1.5px;
+    opacity: 0.88;
+}
+.Line.golden, .Segment.golden, .Circle.golden {
+    stroke: #e5c07b;
+    stroke-width: 1.85px;
+}
+.Circle.circumcircle {
+    stroke: #e06c75;
+    stroke-width: 1.55px;
+}
+.Circle.ninepoint {
+    stroke: #61afef;
+    stroke-width: 1.65px;
+}
+.Circle.incircle {
+    stroke: #e5c07b;
+    stroke-width: 1.55px;
+}
+.callout-box {
+    fill: rgba(24, 28, 36, 0.88);
+    stroke: #61afef;
+    vector-effect: non-scaling-stroke;
+    stroke-width: 1px;
+    rx: 3px;
+}
+.callout-box.spread-box {
+    stroke: #e5c07b;
+}
+.callout-box.paradigm-box {
+    stroke: #c678dd;
+}
+.callout-text {
+    fill: #eceff4;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-weight: 600;
+    text-anchor: middle;
+    dominant-baseline: central;
+    pointer-events: none;
+}
+.element-group {
+    cursor: pointer;
+}
+.element-group.svg-hovered .Line,
+.element-group.svg-hovered .Segment,
+.element-group.svg-hovered .Circle,
+.element-group.svg-hovered .Polygon {
+    stroke: #00e5ff !important;
+    stroke-width: 2.8px !important;
+    opacity: 1.0 !important;
+    filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.75));
+}
+.element-group.svg-hovered .Point {
+    fill: #00e5ff !important;
+    filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.9));
+}
+.svg-control-btn {
+    cursor: pointer;
+}
+.svg-control-btn rect {
+    fill: rgba(30, 34, 42, 0.85);
+    stroke: #5c6370;
+    stroke-width: 1px;
+    vector-effect: non-scaling-stroke;
+    rx: 3px;
+}
+.svg-control-btn:hover rect {
+    fill: rgba(55, 62, 76, 0.95);
+    stroke: #00e5ff;
+}
+.svg-control-btn text {
+    fill: #e5e9f0;
+    font-family: sans-serif;
+    font-weight: 600;
+    text-anchor: middle;
+    dominant-baseline: central;
+    pointer-events: none;
+}
+svg.hide-labels .labels-layer,
+svg.hide-labels .callouts-layer {
+    display: none;
+}
+svg.hide-guides .guide {
+    display: none;
+}
+</style>
+  <g class="svg-viewport">
+    <g class="polygons-layer">
+    <g class="element-group" data-ref="&lt; A B C &gt;"><polygon class="Polygon " points="0.0000,-0.0000 6.0000,-0.0000 2.0000,-6.0000"><title>&lt; A B C &gt;</title></polygon></g>
+    </g>
+    <g class="circles-layer">
+    <g class="element-group" data-ref="( B C )"><circle class="Circle guide" cx="6.0000" cy="-0.0000" r="7.2111" data-quadrance="52"><title>( B C ) (Q = 52)</title></circle></g>
+    <g class="element-group" data-ref="( C B )"><circle class="Circle guide" cx="2.0000" cy="-6.0000" r="7.2111" data-quadrance="52"><title>( C B ) (Q = 52)</title></circle></g>
+    <g class="element-group" data-ref="( A C )"><circle class="Circle guide" cx="0.0000" cy="-0.0000" r="6.3246" data-quadrance="40"><title>( A C ) (Q = 40)</title></circle></g>
+    <g class="element-group" data-ref="( C A )"><circle class="Circle guide" cx="2.0000" cy="-6.0000" r="6.3246" data-quadrance="40"><title>( C A ) (Q = 40)</title></circle></g>
+    <g class="element-group" data-ref="( A B )"><circle class="Circle guide" cx="0.0000" cy="-0.0000" r="6.0000" data-quadrance="36"><title>( A B ) (Q = 36)</title></circle></g>
+    <g class="element-group" data-ref="( B A )"><circle class="Circle guide" cx="6.0000" cy="-0.0000" r="6.0000" data-quadrance="36"><title>( B A ) (Q = 36)</title></circle></g>
+    </g>
+    <g class="lines-layer">
+    <g class="element-group" data-ref="[ B C ]"><line class="Line guide" x1="15.5686" y1="14.3529" x2="-3.5686" y2="-14.3529"><title>[ B C ]</title></line></g>
+    <g class="element-group" data-ref="[ D E ]"><line class="Line guide" x1="-15.5490" y1="10.0327" x2="13.1567" y2="-9.1045"><title>[ D E ]</title></line></g>
+    <g class="element-group" data-ref="[ A C ]"><line class="Line guide" x1="-5.4549" y1="16.3648" x2="5.4549" y2="-16.3648"><title>[ A C ]</title></line></g>
+    <g class="element-group" data-ref="[ F G ]"><line class="Line guide" x1="-20.5609" y1="-10.1870" x2="12.1686" y2="0.7229"><title>[ F G ]</title></line></g>
+    <g class="element-group" data-ref="[ A B ]"><line class="Line guide" x1="-17.2500" y1="-0.0000" x2="17.2500" y2="-0.0000"><title>[ A B ]</title></line></g>
+    <g class="element-group" data-ref="[ H I ]"><line class="Line guide" x1="3.0000" y1="-22.4462" x2="3.0000" y2="12.0538"><title>[ H I ]</title></line></g>
+    <g class="element-group" data-ref="[ A Ma ]"><line class="Line median" x1="-13.8000" y1="10.3500" x2="13.8000" y2="-10.3500"><title>[ A Ma ]</title></line></g>
+    <g class="element-group" data-ref="[ B Mb ]"><line class="Line median" x1="20.7918" y1="8.8751" x2="-8.7918" y2="-8.8751"><title>[ B Mb ]</title></line></g>
+    <g class="element-group" data-ref="[ C Mc ]"><line class="Line median" x1="-0.8359" y1="-23.0153" x2="4.8359" y2="11.0153"><title>[ C Mc ]</title></line></g>
+    </g>
+    <g class="points-layer">
+    <g class="element-group" data-ref="A"><circle class="Point given" cx="0.0000" cy="-0.0000" r="0.1389" data-latex-xy="(0, 0)" data-exact-xy="[0, 0]"><title>A = [0, 0]</title></circle></g>
+    <g class="element-group" data-ref="B"><circle class="Point given" cx="6.0000" cy="-0.0000" r="0.1389" data-latex-xy="(6, 0)" data-exact-xy="[6, 0]"><title>B = [6, 0]</title></circle></g>
+    <g class="element-group" data-ref="C"><circle class="Point given" cx="2.0000" cy="-6.0000" r="0.1389" data-latex-xy="(2, 6)" data-exact-xy="[2, 6]"><title>C = [2, 6]</title></circle></g>
+    <g class="element-group" data-ref="Ma"><circle class="Point midpoint" cx="4.0000" cy="-3.0000" r="0.1111" data-latex-xy="(4, 3)" data-exact-xy="[4, 3]"><title>Ma = [4, 3]</title></circle></g>
+    <g class="element-group" data-ref="Mb"><circle class="Point midpoint" cx="1.0000" cy="-3.0000" r="0.1111" data-latex-xy="(1, 3)" data-exact-xy="[1, 3]"><title>Mb = [1, 3]</title></circle></g>
+    <g class="element-group" data-ref="Mc"><circle class="Point midpoint" cx="3.0000" cy="-0.0000" r="0.1111" data-latex-xy="(3, 0)" data-exact-xy="[3, 0]"><title>Mc = [3, 0]</title></circle></g>
+    <g class="element-group" data-ref="G"><circle class="Point result" cx="2.6667" cy="-2.0000" r="0.1389" data-latex-xy="(\frac{8}{3}, 2)" data-exact-xy="[8/3, 2]"><title>G = [8/3, 2]</title></circle></g>
+    </g>
+    <g class="callouts-layer">
+    <g class="element-group" data-ref="&lt; A B C &gt;"><rect class="callout-box" x="0.8889" y="0.7464" width="4.2222" height="0.3072" /><text class="callout-text" x="3.0000" y="0.9000" font-size="0.1982">S_ABC = 18 (signed area invariant)</text></g>
+    <g class="element-group" data-ref="G"><rect class="callout-box paradigm-box" x="0.1375" y="-4.7536" width="6.1251" height="0.3072" /><text class="callout-text" x="3.2000" y="-4.6000" font-size="0.1982">Co-side Elimination: AG / GMa = S_ABC / S_MaBC = 2</text></g>
+    <g class="element-group" data-ref="[ B Mb ]"><rect class="callout-box spread-box" x="-0.3543" y="-2.3536" width="3.5086" height="0.3072" /><text class="callout-text" x="1.4000" y="-2.2000" font-size="0.1982">P_ABC = Q(A,B)+Q(B,C)-Q(A,C)</text></g>
+    </g>
+    <g class="labels-layer">
+    <g class="element-group" data-ref="A"><text class="label-halo" x="0.1833" y="-0.1611" font-family="sans-serif" font-size="0.2753" font-weight="600" stroke="#111318" stroke-width="0.0688" stroke-linejoin="round" fill="none">A</text><text class="label-fill" x="0.1833" y="-0.1611" font-family="sans-serif" font-size="0.2753" font-weight="600" fill="#f0f4f8">A</text></g>
+    <g class="element-group" data-ref="B"><text class="label-halo" x="6.1833" y="-0.1611" font-family="sans-serif" font-size="0.2753" font-weight="600" stroke="#111318" stroke-width="0.0688" stroke-linejoin="round" fill="none">B</text><text class="label-fill" x="6.1833" y="-0.1611" font-family="sans-serif" font-size="0.2753" font-weight="600" fill="#f0f4f8">B</text></g>
+    <g class="element-group" data-ref="C"><text class="label-halo" x="2.1833" y="-6.1611" font-family="sans-serif" font-size="0.2753" font-weight="600" stroke="#111318" stroke-width="0.0688" stroke-linejoin="round" fill="none">C</text><text class="label-fill" x="2.1833" y="-6.1611" font-family="sans-serif" font-size="0.2753" font-weight="600" fill="#f0f4f8">C</text></g>
+    <g class="element-group" data-ref="Ma"><text class="label-halo" x="4.1833" y="-3.1611" font-family="sans-serif" font-size="0.2753" font-weight="600" stroke="#111318" stroke-width="0.0688" stroke-linejoin="round" fill="none">Ma</text><text class="label-fill" x="4.1833" y="-3.1611" font-family="sans-serif" font-size="0.2753" font-weight="600" fill="#f0f4f8">Ma</text></g>
+    <g class="element-group" data-ref="Mb"><text class="label-halo" x="1.1833" y="-3.1611" font-family="sans-serif" font-size="0.2753" font-weight="600" stroke="#111318" stroke-width="0.0688" stroke-linejoin="round" fill="none">Mb</text><text class="label-fill" x="1.1833" y="-3.1611" font-family="sans-serif" font-size="0.2753" font-weight="600" fill="#f0f4f8">Mb</text></g>
+    <g class="element-group" data-ref="Mc"><text class="label-halo" x="3.1833" y="-0.1611" font-family="sans-serif" font-size="0.2753" font-weight="600" stroke="#111318" stroke-width="0.0688" stroke-linejoin="round" fill="none">Mc</text><text class="label-fill" x="3.1833" y="-0.1611" font-family="sans-serif" font-size="0.2753" font-weight="600" fill="#f0f4f8">Mc</text></g>
+    <g class="element-group" data-ref="G"><text class="label-halo" x="2.8500" y="-2.1611" font-family="sans-serif" font-size="0.2753" font-weight="600" stroke="#111318" stroke-width="0.0688" stroke-linejoin="round" fill="none">G</text><text class="label-fill" x="2.8500" y="-2.1611" font-family="sans-serif" font-size="0.2753" font-weight="600" fill="#f0f4f8">G</text></g>
+    </g>
+  </g>
+  <g class="svg-controls">
+    <g class="svg-control-btn" data-action="zoom-in"><rect x="3.8340" y="-7.2705" width="0.6289" height="0.4057" /><text x="4.1484" y="-7.0676" style="font-size:0.1826px">+</text></g>
+    <g class="svg-control-btn" data-action="zoom-out"><rect x="4.5359" y="-7.2705" width="0.6289" height="0.4057" /><text x="4.8503" y="-7.0676" style="font-size:0.1826px">−</text></g>
+    <g class="svg-control-btn" data-action="reset"><rect x="5.2378" y="-7.2705" width="0.6289" height="0.4057" /><text x="5.5522" y="-7.0676" style="font-size:0.1826px">⟲</text></g>
+    <g class="svg-control-btn" data-action="labels"><rect x="5.9397" y="-7.2705" width="0.6289" height="0.4057" /><text x="6.2541" y="-7.0676" style="font-size:0.1826px">Lbl</text></g>
+    <g class="svg-control-btn" data-action="guides"><rect x="6.6416" y="-7.2705" width="0.6289" height="0.4057" /><text x="6.9560" y="-7.0676" style="font-size:0.1826px">Gde</text></g>
+  </g>
+  <script>
+(function() {
+  if (window.__codesSvgInit) return;
+  window.__codesSvgInit = true;
+
+  function initDiagram(svg) {
+    if (svg.dataset.initialized) return;
+    svg.dataset.initialized = "true";
+    const vp = svg.querySelector(".svg-viewport");
+    if (!vp) return;
+
+    let scale = 1, tx = 0, ty = 0;
+    let dragging = false, startX = 0, startY = 0;
+
+    function applyTransform() {
+      vp.setAttribute("transform", `translate(${tx},${ty}) scale(${scale})`);
+    }
+
+    svg.addEventListener("wheel", function(e) {
+      e.preventDefault();
+      const rect = svg.getBoundingClientRect();
+      const vb = svg.viewBox.baseVal;
+      const mx = vb.x + ((e.clientX - rect.left) / rect.width) * vb.width;
+      const my = vb.y + ((e.clientY - rect.top) / rect.height) * vb.height;
+      const factor = e.deltaY > 0 ? 1 / 1.15 : 1.15;
+      const newScale = Math.min(Math.max(scale * factor, 0.25), 12);
+      tx = mx - (mx - tx) * (newScale / scale);
+      ty = my - (my - ty) * (newScale / scale);
+      scale = newScale;
+      applyTransform();
+    }, { passive: false });
+
+    svg.addEventListener("mousedown", function(e) {
+      if (e.target.closest(".svg-controls")) return;
+      dragging = true;
+      startX = e.clientX;
+      startY = e.clientY;
+    });
+
+    window.addEventListener("mousemove", function(e) {
+      if (!dragging) return;
+      const rect = svg.getBoundingClientRect();
+      const vb = svg.viewBox.baseVal;
+      const dx = ((e.clientX - startX) / rect.width) * vb.width;
+      const dy = ((e.clientY - startY) / rect.height) * vb.height;
+      startX = e.clientX;
+      startY = e.clientY;
+      tx += dx;
+      ty += dy;
+      applyTransform();
+    });
+
+    window.addEventListener("mouseup", function() {
+      dragging = false;
+    });
+
+    svg.querySelectorAll(".svg-control-btn").forEach(function(btn) {
+      btn.addEventListener("click", function(e) {
+        e.stopPropagation();
+        const action = btn.dataset.action;
+        if (action === "zoom-in") { scale = Math.min(scale * 1.25, 12); applyTransform(); }
+        else if (action === "zoom-out") { scale = Math.max(scale / 1.25, 0.25); applyTransform(); }
+        else if (action === "reset") { scale = 1; tx = 0; ty = 0; applyTransform(); }
+        else if (action === "labels") { svg.classList.toggle("hide-labels"); }
+        else if (action === "guides") { svg.classList.toggle("hide-guides"); }
+      });
+    });
+  }
+
+  function setupHoverSync() {
+    document.querySelectorAll("svg.codes-diagram").forEach(initDiagram);
+
+    document.addEventListener("mouseover", function(e) {
+      const refEl = e.target.closest("[data-ref]");
+      if (!refEl) return;
+      const ref = refEl.dataset.ref;
+      if (!ref) return;
+      document.querySelectorAll(`.element-group[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.add("svg-hovered"));
+      document.querySelectorAll(`.geom-ref[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.add("ref-hovered"));
+    });
+
+    document.addEventListener("mouseout", function(e) {
+      const refEl = e.target.closest("[data-ref]");
+      if (!refEl) return;
+      const ref = refEl.dataset.ref;
+      if (!ref) return;
+      document.querySelectorAll(`.element-group[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.remove("svg-hovered"));
+      document.querySelectorAll(`.geom-ref[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.remove("ref-hovered"));
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupHoverSync);
+  } else {
+    setupHoverSync();
+  }
+})();
+</script>
+</svg>

@@ -1,0 +1,753 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benchmark 4: Pythagorean Theorem &amp; Right-Triangle Orthogonality &mdash; GEOMETOR • codes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=66998e95" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <h1>GEOMETOR • codes</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">codes</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../hierarchy/index.html"  >Hierarchy</a>
+        </li>
+        <li>
+          <a href="../syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a>
+        </li>
+        <li>
+          <a href="../systems/index.html"  >Systems</a>
+        </li>
+        <li>
+          <a href="index.html" class="is-active" aria-selected="true" >Rosetta Stone Benchmarks</a>
+        </li>
+        <li>
+          <a href="../opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a>
+        </li>
+        <li>
+          <a href="../glossary.html"  >Glossary</a>
+        </li>
+        <li>
+          <a href="../persons.html"  >Persons</a>
+        </li>
+        <li>
+          <a href="../bibliography.html"  >Bibliography</a>
+        </li>
+        <li>
+          <a href="../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../modules/index.html"  >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; codes</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Breadcrumbs">
+            <a class="book-crumb-link" href="index.html">Rosetta Stone Benchmarks</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="03-parallel-line.html" title="Benchmark 3: Parallel Line Through an External Point">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="05-triangle-centers.html" title="Benchmark 5: Classical Triangle Centers X(1)-X(5) &amp; Euler Line"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="benchmark-4-pythagorean-theorem-right-triangle-orthogonality">
+        <span id="rosetta-04-pythagoras"></span><h1>Benchmark 4: Pythagorean Theorem &amp; Right-Triangle Orthogonality<a class="headerlink" href="#benchmark-4-pythagorean-theorem-right-triangle-orthogonality" title="Link to this heading">¶</a></h1>
+        <ul class="simple">
+        <li><p><strong>Canonical GEOMETOR Signature</strong>: <code class="docutils literal notranslate"><span class="pre">pythagoras(A,</span> <span class="pre">B,</span> <span class="pre">C)</span> <span class="pre">-&gt;</span> <span class="pre">Q(A,</span> <span class="pre">B)</span> <span class="pre">==</span> <span class="pre">Q(A,</span> <span class="pre">C)</span> <span class="pre">+</span> <span class="pre">Q(B,</span> <span class="pre">C)</span></code></p></li>
+        <li><p><strong>Classical Citation</strong>: <em>Euclid Book I, Proposition 47</em></p></li>
+        <li><p><strong>Core Phenomenon</strong>: For right-angled triangle ABC (orthogonality at C), the quadrance on the hypotenuse equals the sum of the quadrances on the legs—and geometrically, the area of the hypotenuse square equals the sum of the two leg squares (Euclid’s Bride’s Chair). Exposes a stunning expressiveness cliff in AlphaGeometry!</p></li>
+        </ul>
+        <figure class="align-center" id="id1">
+        <a class="reference internal image-reference" href="../_images/04-torsor-oangle-spread.svg"><svg xmlns="http://www.w3.org/2000/svg" class="euclid-graphic codes-diagram" viewBox="-1.5200 -3.9200 6.4400 5.5400">
+          <style>
+        svg.codes-diagram {
+            background-color: #111318;
+            border: 1px solid #2e3440;
+            border-radius: 6px;
+            width: 100%;
+            height: auto;
+            max-height: 560px;
+            display: block;
+            margin: 0.75rem auto;
+            user-select: none;
+            overflow: hidden;
+            cursor: grab;
+        }
+        svg.codes-diagram:active {
+            cursor: grabbing;
+        }
+        @media (prefers-color-scheme: light) {
+            svg.codes-diagram {
+                background-color: #fbfbfd;
+                border-color: #d8dee9;
+            }
+            svg.codes-diagram .Point {
+                stroke: #fbfbfd !important;
+            }
+            svg.codes-diagram .Point.given {
+                fill: #1a1d24 !important;
+            }
+            svg.codes-diagram .label-halo {
+                stroke: #fbfbfd !important;
+            }
+            svg.codes-diagram .label-fill {
+                fill: #1a1d24 !important;
+            }
+            svg.codes-diagram .Line,
+            svg.codes-diagram .Segment {
+                stroke: #4c566a;
+            }
+            svg.codes-diagram .callout-box {
+                fill: rgba(255, 255, 255, 0.92);
+            }
+            svg.codes-diagram .callout-text {
+                fill: #1a1d24;
+            }
+        }
+        .Line, .Segment {
+            stroke: #9aa5b4;
+            stroke-linecap: round;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.35px;
+            fill: none;
+            opacity: 0.84;
+            transition: stroke-width 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
+        }
+        .Circle {
+            stroke: #c678dd;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.45px;
+            fill: none;
+            opacity: 0.86;
+            transition: stroke-width 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
+        }
+        .Polygon {
+            fill: rgba(97, 175, 239, 0.09);
+            stroke: #61afef;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.85px;
+            stroke-linejoin: round;
+            transition: stroke-width 0.15s ease, fill-opacity 0.15s ease;
+        }
+        .Polygon.golden {
+            fill: rgba(229, 192, 123, 0.14);
+            stroke: #e5c07b;
+        }
+        .Point {
+            fill: #e5c07b;
+            stroke: #111318;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.4px;
+            transition: r 0.15s ease, filter 0.15s ease;
+        }
+        .Point.given {
+            fill: #ffffff;
+        }
+        .Point.result, .Point.center, .Point.target {
+            fill: #00e5ff;
+        }
+        .Point.golden {
+            fill: #f0c674;
+        }
+        .Point.midpoint, .Point.foot {
+            fill: #98c379;
+        }
+        .Line.guide, .Circle.guide, .Segment.guide, .Point.guide {
+            stroke-dasharray: 4 4;
+            opacity: 0.42;
+            stroke-width: 0.95px;
+        }
+        .Line.axis, .Segment.axis, .Line.euler, .Segment.euler {
+            stroke: #e06c75;
+            stroke-width: 1.9px;
+            opacity: 0.94;
+        }
+        .Line.bisector, .Segment.bisector, .Line.altitude, .Segment.altitude, .Line.median, .Segment.median {
+            stroke: #98c379;
+            stroke-width: 1.5px;
+            opacity: 0.88;
+        }
+        .Line.golden, .Segment.golden, .Circle.golden {
+            stroke: #e5c07b;
+            stroke-width: 1.85px;
+        }
+        .Circle.circumcircle {
+            stroke: #e06c75;
+            stroke-width: 1.55px;
+        }
+        .Circle.ninepoint {
+            stroke: #61afef;
+            stroke-width: 1.65px;
+        }
+        .Circle.incircle {
+            stroke: #e5c07b;
+            stroke-width: 1.55px;
+        }
+        .callout-box {
+            fill: rgba(24, 28, 36, 0.88);
+            stroke: #61afef;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1px;
+            rx: 3px;
+        }
+        .callout-box.spread-box {
+            stroke: #e5c07b;
+        }
+        .callout-box.paradigm-box {
+            stroke: #c678dd;
+        }
+        .callout-text {
+            fill: #eceff4;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-weight: 600;
+            text-anchor: middle;
+            dominant-baseline: central;
+            pointer-events: none;
+        }
+        .element-group {
+            cursor: pointer;
+        }
+        .element-group.svg-hovered .Line,
+        .element-group.svg-hovered .Segment,
+        .element-group.svg-hovered .Circle,
+        .element-group.svg-hovered .Polygon {
+            stroke: #00e5ff !important;
+            stroke-width: 2.8px !important;
+            opacity: 1.0 !important;
+            filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.75));
+        }
+        .element-group.svg-hovered .Point {
+            fill: #00e5ff !important;
+            filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.9));
+        }
+        .svg-control-btn {
+            cursor: pointer;
+        }
+        .svg-control-btn rect {
+            fill: rgba(30, 34, 42, 0.85);
+            stroke: #5c6370;
+            stroke-width: 1px;
+            vector-effect: non-scaling-stroke;
+            rx: 3px;
+        }
+        .svg-control-btn:hover rect {
+            fill: rgba(55, 62, 76, 0.95);
+            stroke: #00e5ff;
+        }
+        .svg-control-btn text {
+            fill: #e5e9f0;
+            font-family: sans-serif;
+            font-weight: 600;
+            text-anchor: middle;
+            dominant-baseline: central;
+            pointer-events: none;
+        }
+        svg.hide-labels .labels-layer,
+        svg.hide-labels .callouts-layer {
+            display: none;
+        }
+        svg.hide-guides .guide {
+            display: none;
+        }
+        </style>
+          <g class="svg-viewport">
+            <g class="polygons-layer">
+            <g class="element-group" data-ref="&lt; A B C &gt;"><polygon class="Polygon " points="0.0000,-0.0000 4.0000,-0.0000 1.0000,-3.0000"><title>&lt; A B C &gt;</title></polygon></g>
+            </g>
+            <g class="circles-layer">
+            <g class="element-group" data-ref="( C A )"><circle class="Circle guide" cx="1.0000" cy="-3.0000" r="3.1623" data-quadrance="10"><title>( C A ) (Q = 10)</title></circle></g>
+            <g class="element-group" data-ref="( A D )"><circle class="Circle guide" cx="0.0000" cy="-0.0000" r="2.0000" data-quadrance="4"><title>( A D ) (Q = 4)</title></circle></g>
+            <g class="element-group" data-ref="( D A )"><circle class="Circle guide" cx="2.0000" cy="-0.0000" r="2.0000" data-quadrance="4"><title>( D A ) (Q = 4)</title></circle></g>
+            </g>
+            <g class="lines-layer">
+            <g class="element-group" data-ref="[ A B ]"><line class="Line guide" x1="-11.5000" y1="-0.0000" x2="11.5000" y2="-0.0000"><title>[ A B ]</title></line></g>
+            <g class="element-group" data-ref="[ C H ]"><line class="Line bisector" x1="1.0000" y1="-13.2321" x2="1.0000" y2="9.7679"><title>[ C H ]</title></line></g>
+            <g class="element-group" data-ref="/ A B /"><path class="Segment axis" d="M 0.0000,-0.0000 L 2.0000,-0.0000 L 4.0000,-0.0000" data-quadrance="16"><title>/ A B / (Q = 16)</title></path></g>
+            <g class="element-group" data-ref="/ A C /"><path class="Segment golden" d="M 0.0000,-0.0000 L 0.5000,-1.5000 L 1.0000,-3.0000" data-quadrance="10"><title>/ A C / (Q = 10)</title></path></g>
+            <g class="element-group" data-ref="/ B C /"><path class="Segment " d="M 4.0000,-0.0000 L 2.5000,-1.5000 L 1.0000,-3.0000" data-quadrance="18"><title>/ B C / (Q = 18)</title></path></g>
+            <g class="element-group" data-ref="/ C H /"><path class="Segment altitude" d="M 1.0000,-3.0000 L 1.0000,-1.5000 L 1.0000,-0.0000" data-quadrance="9"><title>/ C H / (Q = 9)</title></path></g>
+            </g>
+            <g class="points-layer">
+            <g class="element-group" data-ref="A"><circle class="Point given" cx="0.0000" cy="-0.0000" r="0.0926" data-latex-xy="(0, 0)" data-exact-xy="[0, 0]"><title>A = [0, 0]</title></circle></g>
+            <g class="element-group" data-ref="B"><circle class="Point given" cx="4.0000" cy="-0.0000" r="0.0926" data-latex-xy="(4, 0)" data-exact-xy="[4, 0]"><title>B = [4, 0]</title></circle></g>
+            <g class="element-group" data-ref="C"><circle class="Point given" cx="1.0000" cy="-3.0000" r="0.0926" data-latex-xy="(1, 3)" data-exact-xy="[1, 3]"><title>C = [1, 3]</title></circle></g>
+            <g class="element-group" data-ref="H"><circle class="Point midpoint" cx="1.0000" cy="-0.0000" r="0.0741" data-latex-xy="(1, 0)" data-exact-xy="[1, 0]"><title>H = [1, 0]</title></circle></g>
+            </g>
+            <g class="callouts-layer">
+            <g class="element-group" data-ref="/ A C /"><rect class="callout-box paradigm-box" x="-1.6506" y="-1.7024" width="2.1012" height="0.2048" /><text class="callout-text" x="-0.6000" y="-1.6000" font-size="0.1321">v = C -v A = (1, 3), Q=10</text></g>
+            <g class="element-group" data-ref="/ A B /"><rect class="callout-box" x="0.9494" y="0.5976" width="2.1012" height="0.2048" /><text class="callout-text" x="2.0000" y="0.7000" font-size="0.1321">u = B -v A = (4, 0), Q=16</text></g>
+            <g class="element-group" data-ref="&lt; A B C &gt;"><rect class="callout-box spread-box" x="2.0701" y="-2.3024" width="2.2597" height="0.2048" /><text class="callout-text" x="3.2000" y="-2.2000" font-size="0.1321">s(BAC) = 9/10 | S_A = 4 &gt; 0</text></g>
+            <g class="element-group" data-ref="/ C H /"><rect class="callout-box paradigm-box" x="0.4719" y="-1.1024" width="2.6562" height="0.2048" /><text class="callout-text" x="1.8000" y="-1.0000" font-size="0.1321">oangle mod 2pi vs eqangle mod pi</text></g>
+            </g>
+            <g class="labels-layer">
+            <g class="element-group" data-ref="A"><text class="label-halo" x="0.1222" y="-0.1074" font-family="sans-serif" font-size="0.1835" font-weight="600" stroke="#111318" stroke-width="0.0459" stroke-linejoin="round" fill="none">A</text><text class="label-fill" x="0.1222" y="-0.1074" font-family="sans-serif" font-size="0.1835" font-weight="600" fill="#f0f4f8">A</text></g>
+            <g class="element-group" data-ref="B"><text class="label-halo" x="4.1222" y="-0.1074" font-family="sans-serif" font-size="0.1835" font-weight="600" stroke="#111318" stroke-width="0.0459" stroke-linejoin="round" fill="none">B</text><text class="label-fill" x="4.1222" y="-0.1074" font-family="sans-serif" font-size="0.1835" font-weight="600" fill="#f0f4f8">B</text></g>
+            <g class="element-group" data-ref="C"><text class="label-halo" x="1.1222" y="-3.1074" font-family="sans-serif" font-size="0.1835" font-weight="600" stroke="#111318" stroke-width="0.0459" stroke-linejoin="round" fill="none">C</text><text class="label-fill" x="1.1222" y="-3.1074" font-family="sans-serif" font-size="0.1835" font-weight="600" fill="#f0f4f8">C</text></g>
+            <g class="element-group" data-ref="H"><text class="label-halo" x="1.1222" y="-0.1074" font-family="sans-serif" font-size="0.1835" font-weight="600" stroke="#111318" stroke-width="0.0459" stroke-linejoin="round" fill="none">H</text><text class="label-fill" x="1.1222" y="-0.1074" font-family="sans-serif" font-size="0.1835" font-weight="600" fill="#f0f4f8">H</text></g>
+            </g>
+          </g>
+          <g class="svg-controls">
+            <g class="svg-control-btn" data-action="zoom-in"><rect x="2.5560" y="-3.8470" width="0.4192" height="0.2705" /><text x="2.7656" y="-3.7117" style="font-size:0.1217px">+</text></g>
+            <g class="svg-control-btn" data-action="zoom-out"><rect x="3.0239" y="-3.8470" width="0.4192" height="0.2705" /><text x="3.2336" y="-3.7117" style="font-size:0.1217px">−</text></g>
+            <g class="svg-control-btn" data-action="reset"><rect x="3.4919" y="-3.8470" width="0.4192" height="0.2705" /><text x="3.7015" y="-3.7117" style="font-size:0.1217px">⟲</text></g>
+            <g class="svg-control-btn" data-action="labels"><rect x="3.9598" y="-3.8470" width="0.4192" height="0.2705" /><text x="4.1694" y="-3.7117" style="font-size:0.1217px">Lbl</text></g>
+            <g class="svg-control-btn" data-action="guides"><rect x="4.4277" y="-3.8470" width="0.4192" height="0.2705" /><text x="4.6373" y="-3.7117" style="font-size:0.1217px">Gde</text></g>
+          </g>
+          <script>
+        (function() {
+          if (window.__codesSvgInit) return;
+          window.__codesSvgInit = true;
+
+          function initDiagram(svg) {
+            if (svg.dataset.initialized) return;
+            svg.dataset.initialized = "true";
+            const vp = svg.querySelector(".svg-viewport");
+            if (!vp) return;
+
+            let scale = 1, tx = 0, ty = 0;
+            let dragging = false, startX = 0, startY = 0;
+
+            function applyTransform() {
+              vp.setAttribute("transform", `translate(${tx},${ty}) scale(${scale})`);
+            }
+
+            svg.addEventListener("wheel", function(e) {
+              e.preventDefault();
+              const rect = svg.getBoundingClientRect();
+              const vb = svg.viewBox.baseVal;
+              const mx = vb.x + ((e.clientX - rect.left) / rect.width) * vb.width;
+              const my = vb.y + ((e.clientY - rect.top) / rect.height) * vb.height;
+              const factor = e.deltaY > 0 ? 1 / 1.15 : 1.15;
+              const newScale = Math.min(Math.max(scale * factor, 0.25), 12);
+              tx = mx - (mx - tx) * (newScale / scale);
+              ty = my - (my - ty) * (newScale / scale);
+              scale = newScale;
+              applyTransform();
+            }, { passive: false });
+
+            svg.addEventListener("mousedown", function(e) {
+              if (e.target.closest(".svg-controls")) return;
+              dragging = true;
+              startX = e.clientX;
+              startY = e.clientY;
+            });
+
+            window.addEventListener("mousemove", function(e) {
+              if (!dragging) return;
+              const rect = svg.getBoundingClientRect();
+              const vb = svg.viewBox.baseVal;
+              const dx = ((e.clientX - startX) / rect.width) * vb.width;
+              const dy = ((e.clientY - startY) / rect.height) * vb.height;
+              startX = e.clientX;
+              startY = e.clientY;
+              tx += dx;
+              ty += dy;
+              applyTransform();
+            });
+
+            window.addEventListener("mouseup", function() {
+              dragging = false;
+            });
+
+            svg.querySelectorAll(".svg-control-btn").forEach(function(btn) {
+              btn.addEventListener("click", function(e) {
+                e.stopPropagation();
+                const action = btn.dataset.action;
+                if (action === "zoom-in") { scale = Math.min(scale * 1.25, 12); applyTransform(); }
+                else if (action === "zoom-out") { scale = Math.max(scale / 1.25, 0.25); applyTransform(); }
+                else if (action === "reset") { scale = 1; tx = 0; ty = 0; applyTransform(); }
+                else if (action === "labels") { svg.classList.toggle("hide-labels"); }
+                else if (action === "guides") { svg.classList.toggle("hide-guides"); }
+              });
+            });
+          }
+
+          function setupHoverSync() {
+            document.querySelectorAll("svg.codes-diagram").forEach(initDiagram);
+
+            document.addEventListener("mouseover", function(e) {
+              const refEl = e.target.closest("[data-ref]");
+              if (!refEl) return;
+              const ref = refEl.dataset.ref;
+              if (!ref) return;
+              document.querySelectorAll(`.element-group[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.add("svg-hovered"));
+              document.querySelectorAll(`.geom-ref[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.add("ref-hovered"));
+            });
+
+            document.addEventListener("mouseout", function(e) {
+              const refEl = e.target.closest("[data-ref]");
+              if (!refEl) return;
+              const ref = refEl.dataset.ref;
+              if (!ref) return;
+              document.querySelectorAll(`.element-group[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.remove("svg-hovered"));
+              document.querySelectorAll(`.geom-ref[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.remove("ref-hovered"));
+            });
+          }
+
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", setupHoverSync);
+          } else {
+            setupHoverSync();
+          }
+        })();
+        </script>
+        </svg>
+
+        </a>
+        <figcaption>
+        <p><span class="caption-text">Exact float-free <code class="docutils literal notranslate"><span class="pre">geometor.model</span></code> construction illustrating <strong>Pythagorean Theorem &amp; Right-Triangle Orthogonality</strong> (<code class="docutils literal notranslate"><span class="pre">pythagoras(A,</span> <span class="pre">B,</span> <span class="pre">C)</span> <span class="pre">-&gt;</span> <span class="pre">Q(A,</span> <span class="pre">B)</span> <span class="pre">==</span> <span class="pre">Q(A,</span> <span class="pre">C)</span> <span class="pre">+</span> <span class="pre">Q(B,</span> <span class="pre">C)</span></code>).</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        <section class="level-2" id="cross-system-revelation-matrix">
+        <h2>Cross-System Revelation Matrix<a class="headerlink" href="#cross-system-revelation-matrix" title="Link to this heading">¶</a></h2>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 20.0%" />
+        <col style="width: 40.0%" />
+        <col style="width: 40.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>System</p></th>
+        <th class="head"><p>What This Encoding Reveals</p></th>
+        <th class="head"><p>What This Encoding Hides</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>LeanEuclid &amp; Formal System E</strong></p></td>
+        <td><p>Formalizes Euclid’s authentic cut-and-paste area proof (Bride’s Chair) AND explicitly isolates 6 ‘– Missed by Euclid’ topological lemmas (Prop47.lean:25-60) proving the outward squares don’t fold across the triangle!</p></td>
+        <td><p>Verbose 9-point, 10-line theorem signature because Square is an unbundled 12-argument relational macro.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>GeoCoq (Tarski / Hilbert / Euclid)</strong></p></td>
+        <td><p>Proves a^2 + b^2 = c^2 purely synthetically inside Tarski’s internal geometric segment field (Sum and Prod constructed on line OE with unit E via Pappus/Thales) with zero real numbers!</p></td>
+        <td><p>Requires carrying coordinate-line frame witnesses (O, E, E’) through every arithmetic relation.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Lean 4 Mathlib (Euclidean &amp; Affine)</strong></p></td>
+        <td><p>Immediate consequence of ‖u - v‖^2 = ‖u‖^2 + ‖v‖^2 - 2⟪u, v⟫ in any Hilbert/inner-product space of arbitrary dimension n, including degenerate endpoint disjuncts!</p></td>
+        <td><p>Reduces Euclid’s deep geometric theorem to a 3-line inner-product expansion, hiding the constructive equivalence of geometric squares.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>AlphaGeometry (DD + AR)</strong></p></td>
+        <td><p>Major architectural revelation: AlphaGeometry’s RatioTable (log-lengths) and DistanceTable (collinear 1st-power lengths) CANNOT express a^2 + b^2 = c^2!</p></td>
+        <td><p>Any theorem requiring additive quadratic relations (Stewart, Apollonius median, disjoint radical axis) hits a hard wall in pure AlphaGeometry.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Newclid &amp; Yuclid</strong></p></td>
+        <td><p>Shows exactly how Newclid/Yuclid broke past AlphaGeometry’s ceiling by adding a dedicated additive squared-length Gaussian elimination table!</p></td>
+        <td><p>In Newclid’s Python engine, lequation is not yet wired into SympyARDeductor (only active in C++ Yuclid).</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Java Geometry Expert (JGEX / Area Method)</strong></p></td>
+        <td><p>By choosing P_ACB = AC^2 + CB^2 - AB^2 as a primitive coordinate-free invariant, Chou-Gao-Zhang make Pythagoras literally 0 = 0, AND ship 20 visual dissection proofs in 4_PYTH/!</p></td>
+        <td><p>Area.java GUI tab is disabled in the Java port.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Projective &amp; Conformal Geometric Algebra (kingdon / galgebra)</strong></p></td>
+        <td><p>Both PGA line norms (l | l) and CGA null-point contractions -2*(A | B) natively compute Wildberger quadrances without a single square root.</p></td>
+        <td><p>Algebraic expansion rather than geometric square dissection.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>CindyJS (Complex Projective CP^2 &amp; Cayley-Klein)</strong></p></td>
+        <td><p>Interprets perpendicularity projectively as conjugate polarity with respect to the circular points I, J at infinity.</p></td>
+        <td><p>Numeric complex float evaluation.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>SymPy Geometry (sympy.geometry 1.14.0)</strong></p></td>
+        <td><p>Direct readable verification, though A.distance(B)**2 first takes sqrt(…) and then squares it back!</p></td>
+        <td><p>Unnecessary sqrt-then-square roundtrip unless one manually computes dot products.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Oliver Byrne’s Coloured Euclid (1847 / Rougeux)</strong></p></td>
+        <td><p>Byrne’s most celebrated plate: turns Euclid’s 40-letter Bride’s Chair labyrinth into a self-evident chromatic conservation law [red □] + [blue □] = [yellow ▭] + [black ▭]!</p></td>
+        <td><p>Relies on visual outward-square orientation (the exact 6 topological lemmas LeanEuclid had to prove explicitly in Prop47.lean:25-60).</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>GEOMETOR (geometor.model + Ecosystem)</strong></p></td>
+        <td><p>Supports BOTH Wildberger’s polynomial Pythagoras Law (s(CA, CB) = 1 &lt;=&gt; Q_c = Q_a + Q_b) AND Euclid’s exact polygon-area Bride’s Chair proof (assert_area_equal)!</p></td>
+        <td><p>None—this dual algebraic + dissection capability is a signature strength of GEOMETOR.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="side-by-side-formal-visual-implementations-11-systems">
+        <h2>Side-by-Side Formal &amp; Visual Implementations (11 Systems)<a class="headerlink" href="#side-by-side-formal-visual-implementations-11-systems" title="Link to this heading">¶</a></h2>
+        <section class="level-3" id="leaneuclid-formal-system-e-leaneuclid">
+        <h3>LeanEuclid &amp; Formal System E (<code class="docutils literal notranslate"><span class="pre">leaneuclid</span></code>)<a class="headerlink" href="#leaneuclid-formal-system-e-leaneuclid" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">LeanEuclid/Book/Prop47.lean:160-290</span> <span class="pre">(+</span> <span class="pre">lines</span> <span class="pre">25-60</span> <span class="pre">missed</span> <span class="pre">lemmas!)</span></code></p>
+        <div class="highlight-lean4 notranslate"><div class="highlight"><pre><span></span><span class="kn">theorem</span><span class="w"> </span><span class="n">proposition_47</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="bp">∀</span><span class="w"> </span><span class="o">(</span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Point</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="n">AB</span><span class="w"> </span><span class="n">BC</span><span class="w"> </span><span class="n">AC</span><span class="w"> </span><span class="bp">...</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Line</span><span class="o">),</span>
+        <span class="w">    </span><span class="n">formTriangle</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">AB</span><span class="w"> </span><span class="n">BC</span><span class="w"> </span><span class="n">CA</span><span class="w"> </span><span class="bp">∧</span><span class="w"> </span><span class="bp">∠</span><span class="o">(</span><span class="n">b</span><span class="o">:</span><span class="n">a</span><span class="o">:</span><span class="n">c</span><span class="o">)</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="bp">∟</span><span class="w"> </span><span class="bp">∧</span>
+        <span class="w">    </span><span class="n">Square</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="bp">...</span><span class="w"> </span><span class="bp">∧</span><span class="w"> </span><span class="n">Square</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="bp">...</span><span class="w"> </span><span class="bp">∧</span><span class="w"> </span><span class="n">Square</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="bp">...</span><span class="w"> </span><span class="bp">→</span>
+        <span class="w">    </span><span class="o">(</span><span class="bp">△</span><span class="o">(</span><span class="n">b</span><span class="o">:</span><span class="n">c</span><span class="o">:</span><span class="n">d</span><span class="o">)</span><span class="w"> </span><span class="bp">+</span><span class="w"> </span><span class="bp">△</span><span class="o">(</span><span class="n">c</span><span class="o">:</span><span class="n">e</span><span class="o">:</span><span class="n">d</span><span class="o">))</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="o">(</span><span class="bp">△</span><span class="o">(</span><span class="n">a</span><span class="o">:</span><span class="n">b</span><span class="o">:</span><span class="n">f</span><span class="o">)</span><span class="w"> </span><span class="bp">+</span><span class="w"> </span><span class="bp">△</span><span class="o">(</span><span class="n">b</span><span class="o">:</span><span class="n">g</span><span class="o">:</span><span class="n">f</span><span class="o">))</span><span class="w"> </span><span class="bp">+</span><span class="w"> </span><span class="o">(</span><span class="bp">△</span><span class="o">(</span><span class="n">a</span><span class="o">:</span><span class="n">c</span><span class="o">:</span><span class="n">k</span><span class="o">)</span><span class="w"> </span><span class="bp">+</span><span class="w"> </span><span class="bp">△</span><span class="o">(</span><span class="n">c</span><span class="o">:</span><span class="n">h</span><span class="o">:</span><span class="n">k</span><span class="o">))</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Formalizes Euclid’s authentic cut-and-paste area proof (Bride’s Chair) AND explicitly isolates 6 ‘– Missed by Euclid’ topological lemmas (Prop47.lean:25-60) proving the outward squares don’t fold across the triangle!</p></li>
+        <li><p><strong>Hides</strong>: Verbose 9-point, 10-line theorem signature because Square is an unbundled 12-argument relational macro.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="geocoq-tarski-hilbert-euclid-geocoq">
+        <h3>GeoCoq (Tarski / Hilbert / Euclid) (<code class="docutils literal notranslate"><span class="pre">geocoq</span></code>)<a class="headerlink" href="#geocoq-tarski-hilbert-euclid-geocoq" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">GeoCoq/Main/Tarski_dev/Ch15_lengths.v:260-310</span> <span class="pre">(pythagoras)</span></code></p>
+        <div class="highlight-coq notranslate"><div class="highlight"><pre><span></span><span class="kn">Lemma</span> <span class="n">pythagoras</span> <span class="o">:</span>
+          <span class="k">forall</span> <span class="n">O</span> <span class="n">E</span> <span class="n">E'</span> <span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="n">AC</span> <span class="n">BC</span> <span class="n">AB</span> <span class="n">AC2</span> <span class="n">BC2</span> <span class="n">AB2</span><span class="o">,</span>
+          <span class="o">~</span> <span class="n">Col</span> <span class="n">O</span> <span class="n">E</span> <span class="n">E'</span> <span class="o">-&gt;</span> <span class="n">Per</span> <span class="n">A</span> <span class="n">C</span> <span class="n">B</span> <span class="o">-&gt;</span>
+          <span class="n">Length</span> <span class="n">O</span> <span class="n">E</span> <span class="n">E'</span> <span class="n">A</span> <span class="n">C</span> <span class="n">AC</span> <span class="o">-&gt;</span> <span class="n">Length</span> <span class="n">O</span> <span class="n">E</span> <span class="n">E'</span> <span class="n">B</span> <span class="n">C</span> <span class="n">BC</span> <span class="o">-&gt;</span> <span class="n">Length</span> <span class="n">O</span> <span class="n">E</span> <span class="n">E'</span> <span class="n">A</span> <span class="n">B</span> <span class="n">AB</span> <span class="o">-&gt;</span>
+          <span class="n">Prod</span> <span class="n">O</span> <span class="n">E</span> <span class="n">E'</span> <span class="n">AC</span> <span class="n">AC</span> <span class="n">AC2</span> <span class="o">-&gt;</span> <span class="n">Prod</span> <span class="n">O</span> <span class="n">E</span> <span class="n">E'</span> <span class="n">BC</span> <span class="n">BC</span> <span class="n">BC2</span> <span class="o">-&gt;</span>
+          <span class="n">Sum</span> <span class="n">O</span> <span class="n">E</span> <span class="n">E'</span> <span class="n">AC2</span> <span class="n">BC2</span> <span class="n">AB2</span> <span class="o">-&gt;</span> <span class="n">Prod</span> <span class="n">O</span> <span class="n">E</span> <span class="n">E'</span> <span class="n">AB</span> <span class="n">AB</span> <span class="n">AB2</span><span class="o">.</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Proves a^2 + b^2 = c^2 purely synthetically inside Tarski’s internal geometric segment field (Sum and Prod constructed on line OE with unit E via Pappus/Thales) with zero real numbers!</p></li>
+        <li><p><strong>Hides</strong>: Requires carrying coordinate-line frame witnesses (O, E, E’) through every arithmetic relation.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="lean-4-mathlib-euclidean-affine-mathlib4">
+        <h3>Lean 4 Mathlib (Euclidean &amp; Affine) (<code class="docutils literal notranslate"><span class="pre">mathlib4</span></code>)<a class="headerlink" href="#lean-4-mathlib-euclidean-affine-mathlib4" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">Mathlib/Geometry/Euclidean/Angle/Unoriented/Affine.lean:245-268</span></code></p>
+        <div class="highlight-lean4 notranslate"><div class="highlight"><pre><span></span><span class="kn">theorem</span><span class="w"> </span><span class="n">dist_sq_eq_dist_sq_add_dist_sq_iff_angle_eq_pi_div_two</span><span class="w"> </span><span class="o">(</span><span class="n">p₁</span><span class="w"> </span><span class="n">p₂</span><span class="w"> </span><span class="n">p₃</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">P</span><span class="o">)</span><span class="w"> </span><span class="o">:</span>
+        <span class="w">    </span><span class="n">dist</span><span class="w"> </span><span class="n">p₁</span><span class="w"> </span><span class="n">p₃</span><span class="w"> </span><span class="bp">*</span><span class="w"> </span><span class="n">dist</span><span class="w"> </span><span class="n">p₁</span><span class="w"> </span><span class="n">p₃</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">dist</span><span class="w"> </span><span class="n">p₁</span><span class="w"> </span><span class="n">p₂</span><span class="w"> </span><span class="bp">*</span><span class="w"> </span><span class="n">dist</span><span class="w"> </span><span class="n">p₁</span><span class="w"> </span><span class="n">p₂</span><span class="w"> </span><span class="bp">+</span><span class="w"> </span><span class="n">dist</span><span class="w"> </span><span class="n">p₃</span><span class="w"> </span><span class="n">p₂</span><span class="w"> </span><span class="bp">*</span><span class="w"> </span><span class="n">dist</span><span class="w"> </span><span class="n">p₃</span><span class="w"> </span><span class="n">p₂</span><span class="w"> </span><span class="bp">↔</span>
+        <span class="w">      </span><span class="bp">∠</span><span class="w"> </span><span class="n">p₁</span><span class="w"> </span><span class="n">p₂</span><span class="w"> </span><span class="n">p₃</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">π</span><span class="w"> </span><span class="bp">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="bp">∨</span><span class="w"> </span><span class="n">p₁</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">p₂</span><span class="w"> </span><span class="bp">∨</span><span class="w"> </span><span class="n">p₃</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">p₂</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Immediate consequence of ‖u - v‖^2 = ‖u‖^2 + ‖v‖^2 - 2⟪u, v⟫ in any Hilbert/inner-product space of arbitrary dimension n, including degenerate endpoint disjuncts!</p></li>
+        <li><p><strong>Hides</strong>: Reduces Euclid’s deep geometric theorem to a 3-line inner-product expansion, hiding the constructive equivalence of geometric squares.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="alphageometry-dd-ar-alphageometry">
+        <h3>AlphaGeometry (DD + AR) (<code class="docutils literal notranslate"><span class="pre">alphageometry</span></code>)<a class="headerlink" href="#alphageometry-dd-ar-alphageometry" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">Expressiveness</span> <span class="pre">Ceiling!</span> <span class="pre">(ar.py</span> <span class="pre">lacks</span> <span class="pre">squared</span> <span class="pre">lengths;</span> <span class="pre">uses</span> <span class="pre">eqratio</span> <span class="pre">/</span> <span class="pre">contri)</span></code></p>
+        <div class="highlight-text notranslate"><div class="highlight"><pre><span></span># CANNOT state AB^2 + AC^2 = BC^2! Must reformulate multiplicatively as AB^2 = BH * BC:
+        a b c = r_triangle a b c; h = foot h a b c ? eqratio b a b c b h b a
+        # Or prove Bride's Chair triangle congruence ΔABD ≅ ΔFBC:
+        a b c = r_triangle a b c; f g = square b a f g; d e = square b c d e ? contri a b d f b c
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Major architectural revelation: AlphaGeometry’s RatioTable (log-lengths) and DistanceTable (collinear 1st-power lengths) CANNOT express a^2 + b^2 = c^2!</p></li>
+        <li><p><strong>Hides</strong>: Any theorem requiring additive quadratic relations (Stewart, Apollonius median, disjoint radical axis) hits a hard wall in pure AlphaGeometry.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="newclid-yuclid-newclid">
+        <h3>Newclid &amp; Yuclid (<code class="docutils literal notranslate"><span class="pre">newclid</span></code>)<a class="headerlink" href="#newclid-yuclid-newclid" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">Newclid/yuclid/README.md:78-84</span> <span class="pre">&amp;</span> <span class="pre">all_rules.py:1005</span> <span class="pre">(R85)</span></code></p>
+        <div class="highlight-text notranslate"><div class="highlight"><pre><span></span># C++ Yuclid additive squared-length AR table + Newclid lequation rule R85:
+        a b = segment a b; c = free c; d = on_tline d c a b ? lequation 1/1 a c * a c 1/1 b d * b d -1/1 a d * a d -1/1 b c * b c 0
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Shows exactly how Newclid/Yuclid broke past AlphaGeometry’s ceiling by adding a dedicated additive squared-length Gaussian elimination table!</p></li>
+        <li><p><strong>Hides</strong>: In Newclid’s Python engine, lequation is not yet wired into SympyARDeductor (only active in C++ Yuclid).</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="java-geometry-expert-jgex-area-method-jgex">
+        <h3>Java Geometry Expert (JGEX / Area Method) (<code class="docutils literal notranslate"><span class="pre">jgex</span></code>)<a class="headerlink" href="#java-geometry-expert-jgex-area-method-jgex" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">Java-Geometry-Expert/src/main/java/gprover/Elim.java:134</span> <span class="pre">&amp;</span> <span class="pre">examples/4_PYTH/</span></code></p>
+        <div class="highlight-text notranslate"><div class="highlight"><pre><span></span># In the Area Method, Pythagoras is a 0-step DEFINITIONAL identity:
+        # P_ACB := AC^2 + CB^2 - AB^2, and PERPENDICULAR(C,A, C,B) &lt;=&gt; P_ACB = 0!
+        SHOW: (AREA A B F G) + (AREA A C K H) = (AREA B C E D).  # 4-line TRATIO proof!
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: By choosing P_ACB = AC^2 + CB^2 - AB^2 as a primitive coordinate-free invariant, Chou-Gao-Zhang make Pythagoras literally 0 = 0, AND ship 20 visual dissection proofs in 4_PYTH/!</p></li>
+        <li><p><strong>Hides</strong>: Area.java GUI tab is disabled in the Java port.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="projective-conformal-geometric-algebra-kingdon-galgebra-pga-cga">
+        <h3>Projective &amp; Conformal Geometric Algebra (kingdon / galgebra) (<code class="docutils literal notranslate"><span class="pre">pga_cga</span></code>)<a class="headerlink" href="#projective-conformal-geometric-algebra-kingdon-galgebra-pga-cga" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">2D</span> <span class="pre">PGA</span> <span class="pre">Cl(2,0,1)</span> <span class="pre">&amp;</span> <span class="pre">2D</span> <span class="pre">CGA</span> <span class="pre">Cl(3,1)</span> <span class="pre">in</span> <span class="pre">kingdon</span></code></p>
+        <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2D PGA: squared norm of join line (A &amp; B) IS Euclidean quadrance!</span>
+        <span class="n">la</span><span class="p">,</span> <span class="n">lb</span><span class="p">,</span> <span class="n">lc</span> <span class="o">=</span> <span class="n">B</span> <span class="o">&amp;</span> <span class="n">C</span><span class="p">,</span> <span class="n">C</span> <span class="o">&amp;</span> <span class="n">A</span><span class="p">,</span> <span class="n">A</span> <span class="o">&amp;</span> <span class="n">B</span>
+        <span class="k">assert</span> <span class="p">(</span><span class="n">la</span> <span class="o">|</span> <span class="n">lb</span><span class="p">)</span><span class="o">.</span><span class="n">e</span> <span class="o">==</span> <span class="mi">0</span>                                  <span class="c1"># orthogonality</span>
+        <span class="k">assert</span> <span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">((</span><span class="n">lc</span> <span class="o">|</span> <span class="n">lc</span><span class="p">)</span><span class="o">.</span><span class="n">e</span> <span class="o">-</span> <span class="p">(</span><span class="n">la</span> <span class="o">|</span> <span class="n">la</span><span class="p">)</span><span class="o">.</span><span class="n">e</span> <span class="o">-</span> <span class="p">(</span><span class="n">lb</span> <span class="o">|</span> <span class="n">lb</span><span class="p">)</span><span class="o">.</span><span class="n">e</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+
+        <span class="c1"># 2D CGA: null inner product -2*(A | B) IS quadrance!</span>
+        <span class="k">assert</span> <span class="p">((</span><span class="n">C</span> <span class="o">^</span> <span class="n">A</span> <span class="o">^</span> <span class="n">ni</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">C</span> <span class="o">^</span> <span class="n">B</span> <span class="o">^</span> <span class="n">ni</span><span class="p">))</span><span class="o">.</span><span class="n">e</span> <span class="o">==</span> <span class="mi">0</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Both PGA line norms (l | l) and CGA null-point contractions -2*(A | B) natively compute Wildberger quadrances without a single square root.</p></li>
+        <li><p><strong>Hides</strong>: Algebraic expansion rather than geometric square dissection.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="cindyjs-complex-projective-cp-2-cayley-klein-cindyjs">
+        <h3>CindyJS (Complex Projective CP^2 &amp; Cayley-Klein) (<code class="docutils literal notranslate"><span class="pre">cindyjs</span></code>)<a class="headerlink" href="#cindyjs-complex-projective-cp-2-cayley-klein-cindyjs" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">CindyJS/src/js/libcs/List.js:125</span> <span class="pre">(fundDual)</span></code></p>
+        <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">l_CA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cross</span><span class="p">(</span><span class="nx">C</span><span class="p">,</span><span class="w"> </span><span class="nx">A</span><span class="p">);</span><span class="w"> </span><span class="nx">l_CB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cross</span><span class="p">(</span><span class="nx">C</span><span class="p">,</span><span class="w"> </span><span class="nx">B</span><span class="p">);</span>
+        <span class="nx">is_ortho</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">l_CA</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">fundDual</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">l_CB</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// harmonic conjugacy wrt I=(1,i,0), J=(1,-i,0)</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Interprets perpendicularity projectively as conjugate polarity with respect to the circular points I, J at infinity.</p></li>
+        <li><p><strong>Hides</strong>: Numeric complex float evaluation.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="sympy-geometry-sympy-geometry-1-14-0-sympy-geometry">
+        <h3>SymPy Geometry (sympy.geometry 1.14.0) (<code class="docutils literal notranslate"><span class="pre">sympy_geometry</span></code>)<a class="headerlink" href="#sympy-geometry-sympy-geometry-1-14-0-sympy-geometry" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">sympy/geometry/polygon.py:2195</span> <span class="pre">(Triangle.is_right)</span></code></p>
+        <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">Triangle</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span><span class="o">.</span><span class="n">is_right</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">B</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">C</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">B</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">C</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Direct readable verification, though A.distance(B)**2 first takes sqrt(…) and then squares it back!</p></li>
+        <li><p><strong>Hides</strong>: Unnecessary sqrt-then-square roundtrip unless one manually computes dot products.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="oliver-byrne-s-coloured-euclid-1847-rougeux-byrne-1847">
+        <h3>Oliver Byrne’s Coloured Euclid (1847 / Rougeux) (<code class="docutils literal notranslate"><span class="pre">byrne_1847</span></code>)<a class="headerlink" href="#oliver-byrne-s-coloured-euclid-1847-rougeux-byrne-1847" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">Byrne</span> <span class="pre">(1847)</span> <span class="pre">Book</span> <span class="pre">I,</span> <span class="pre">Prop.</span> <span class="pre">47</span> <span class="pre">/</span> <span class="pre">Rougeux</span> <span class="pre">c82.net/euclid/book1#prop47</span></code></p>
+        <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Given:        Right wedge [black ◣] = [∟]
+        To Prove:     [red □] + [blue □] = [yellow+black □]
+        Construction: Drop [yellow ╌╌╌] ∥ square side, splitting hypotenuse square
+                      into [yellow ▭] + [black ▭]; draw shear diagonals [╌╌╌]
+        Proof:        2 △_left = [red □]  and  2 △_shear = [yellow ▭]          (I.41)
+                      △_left   = △_shear                                       (I.4)
+                    ∴ [red □]  = [yellow ▭],  likewise [blue □] = [black ▭]
+                    ∴ [red □] + [blue □] = [yellow ▭] + [black ▭]              (Ax. 2)
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Byrne’s most celebrated plate: turns Euclid’s 40-letter Bride’s Chair labyrinth into a self-evident chromatic conservation law [red □] + [blue □] = [yellow ▭] + [black ▭]!</p></li>
+        <li><p><strong>Hides</strong>: Relies on visual outward-square orientation (the exact 6 topological lemmas LeanEuclid had to prove explicitly in Prop47.lean:25-60).</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="geometor-geometor-model-ecosystem-geometor-model">
+        <h3>GEOMETOR (geometor.model + Ecosystem) (<code class="docutils literal notranslate"><span class="pre">geometor_model</span></code>)<a class="headerlink" href="#geometor-geometor-model-ecosystem-geometor-model" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">geometor.model.invariants</span> <span class="pre">&amp;</span> <span class="pre">geometor.wildberger</span></code></p>
+        <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">assert_perpendicular</span><span class="p">((</span><span class="n">c</span><span class="p">,</span> <span class="n">a</span><span class="p">),</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="n">at</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">"I.47"</span><span class="p">)</span>  <span class="c1"># line_spread == 1</span>
+        <span class="k">assert</span> <span class="n">zero_test</span><span class="p">(</span><span class="n">quadrance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">quadrance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">+</span> <span class="n">quadrance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)))</span>
+        <span class="c1"># Plus cut-and-paste Bride's Chair area verification:</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">assert_area_equal</span><span class="p">(</span><span class="n">hyp_square</span><span class="p">,</span> <span class="n">leg_poly_union</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">"I.47"</span><span class="p">)</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Supports BOTH Wildberger’s polynomial Pythagoras Law (s(CA, CB) = 1 &lt;=&gt; Q_c = Q_a + Q_b) AND Euclid’s exact polygon-area Bride’s Chair proof (assert_area_equal)!</p></li>
+        <li><p><strong>Hides</strong>: None—this dual algebraic + dissection capability is a signature strength of GEOMETOR.</p></li>
+        </ul>
+        </section>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="03-parallel-line.html" title="Benchmark 3: Parallel Line Through an External Point">&larr; <span class="nav-label">Benchmark 3: Parallel Line Through an External Point</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="05-triangle-centers.html" title="Benchmark 5: Classical Triangle Centers X(1)-X(5) &amp; Euler Line"><span class="nav-label">Benchmark 5: Classical Triangle Centers X(1)-X(5) & Euler Line</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="../tags/byrne.html">byrne</a></li>
+        <li><a href="../tags/formal-systems.html">formal-systems</a></li>
+        <li><a href="../tags/geometor-model.html">geometor-model</a></li>
+        <li><a href="../tags/opus.html">opus</a></li>
+        <li><a href="../tags/rosetta.html">rosetta</a></li>
+        <li><a href="../tags/sympy.html">sympy</a></li>
+        <li><a href="../tags/syntax.html">syntax</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=01f34227"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

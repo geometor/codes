@@ -1,0 +1,1379 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opus Coverage Matrix (69 Topics x 11 Systems) &mdash; GEOMETOR • codes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=66998e95" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <h1>GEOMETOR • codes</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">codes</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../hierarchy/index.html"  >Hierarchy</a>
+        </li>
+        <li>
+          <a href="../syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a>
+        </li>
+        <li>
+          <a href="../systems/index.html"  >Systems</a>
+        </li>
+        <li>
+          <a href="../rosetta/index.html"  >Rosetta Stone Benchmarks</a>
+        </li>
+        <li>
+          <a href="#" class="is-active" aria-selected="true" aria-current="page">Opus Coverage Matrix (69 Topics x 11 Systems)</a>
+        </li>
+        <li>
+          <a href="../glossary.html"  >Glossary</a>
+        </li>
+        <li>
+          <a href="../persons.html"  >Persons</a>
+        </li>
+        <li>
+          <a href="../bibliography.html"  >Bibliography</a>
+        </li>
+        <li>
+          <a href="../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../modules/index.html"  >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; codes</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../rosetta/07-projective-harmonic.html" title="Benchmark 7: Projective Collinearity, Cross-Ratio &amp; Pappus Hexagon">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../glossary.html" title="Glossary"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="opus-coverage-matrix-69-topics-x-11-systems">
+        <span id="opus-index"></span><h1>Opus Coverage Matrix (69 Topics x 11 Systems)<a class="headerlink" href="#opus-coverage-matrix-69-topics-x-11-systems" title="Link to this heading">¶</a></h1>
+        <p>What portion of the classical and modern geometric canon—the <strong>Opus</strong>—has actually been formalized across interactive theorem provers, Olympiad deduction engines, Clifford algebras, visual pseudocodes, and symbolic CAS libraries? Below is our complete <strong>69-topic across 8 domains</strong> audit (<code class="docutils literal notranslate"><span class="pre">759</span></code> cells), using canonical <code class="docutils literal notranslate"><span class="pre">snake_case</span></code> identifiers aligned with GEOMETOR’s <em>Principles of Geometry</em> (<code class="docutils literal notranslate"><span class="pre">elements</span></code> 2.0).</p>
+        <section class="level-2" id="quantitative-coverage-scoreboard-across-69-canonical-topics">
+        <h2>Quantitative Coverage Scoreboard (Across 69 Canonical Topics)<a class="headerlink" href="#quantitative-coverage-scoreboard-across-69-canonical-topics" title="Link to this heading">¶</a></h2>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 28.0%" />
+        <col style="width: 14.0%" />
+        <col style="width: 14.0%" />
+        <col style="width: 14.0%" />
+        <col style="width: 14.0%" />
+        <col style="width: 16.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>System</p></th>
+        <th class="head"><p>Native</p></th>
+        <th class="head"><p>Derived</p></th>
+        <th class="head"><p>Partial</p></th>
+        <th class="head"><p>Broken</p></th>
+        <th class="head"><p>Absent</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>LeanEuclid &amp; Formal System E</strong> (<code class="docutils literal notranslate"><span class="pre">leaneuclid</span></code>)</p></td>
+        <td><p><strong>19</strong></p></td>
+        <td><p>2</p></td>
+        <td><p>2</p></td>
+        <td><p>0</p></td>
+        <td><p>46</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>GeoCoq (Tarski / Hilbert / Euclid)</strong> (<code class="docutils literal notranslate"><span class="pre">geocoq</span></code>)</p></td>
+        <td><p><strong>27</strong></p></td>
+        <td><p>8</p></td>
+        <td><p>9</p></td>
+        <td><p>0</p></td>
+        <td><p>25</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Lean 4 Mathlib (Euclidean &amp; Affine)</strong> (<code class="docutils literal notranslate"><span class="pre">mathlib4</span></code>)</p></td>
+        <td><p><strong>34</strong></p></td>
+        <td><p>6</p></td>
+        <td><p>9</p></td>
+        <td><p>0</p></td>
+        <td><p>20</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>AlphaGeometry (DD + AR)</strong> (<code class="docutils literal notranslate"><span class="pre">alphageometry</span></code>)</p></td>
+        <td><p><strong>23</strong></p></td>
+        <td><p>4</p></td>
+        <td><p>22</p></td>
+        <td><p>0</p></td>
+        <td><p>20</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Newclid &amp; Yuclid</strong> (<code class="docutils literal notranslate"><span class="pre">newclid</span></code>)</p></td>
+        <td><p><strong>30</strong></p></td>
+        <td><p>4</p></td>
+        <td><p>21</p></td>
+        <td><p>0</p></td>
+        <td><p>14</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Java Geometry Expert (JGEX / Area Method)</strong> (<code class="docutils literal notranslate"><span class="pre">jgex</span></code>)</p></td>
+        <td><p><strong>48</strong></p></td>
+        <td><p>3</p></td>
+        <td><p>4</p></td>
+        <td><p>0</p></td>
+        <td><p>14</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Projective &amp; Conformal Geometric Algebra (kingdon / galgebra)</strong> (<code class="docutils literal notranslate"><span class="pre">pga_cga</span></code>)</p></td>
+        <td><p><strong>36</strong></p></td>
+        <td><p>22</p></td>
+        <td><p>4</p></td>
+        <td><p>0</p></td>
+        <td><p>7</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>CindyJS (Complex Projective CP^2 &amp; Cayley-Klein)</strong> (<code class="docutils literal notranslate"><span class="pre">cindyjs</span></code>)</p></td>
+        <td><p><strong>44</strong></p></td>
+        <td><p>14</p></td>
+        <td><p>6</p></td>
+        <td><p>0</p></td>
+        <td><p>5</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>SymPy Geometry (sympy.geometry 1.14.0)</strong> (<code class="docutils literal notranslate"><span class="pre">sympy_geometry</span></code>)</p></td>
+        <td><p><strong>22</strong></p></td>
+        <td><p>13</p></td>
+        <td><p>7</p></td>
+        <td><p>2</p></td>
+        <td><p>25</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Oliver Byrne’s Coloured Euclid (1847 / Rougeux)</strong> (<code class="docutils literal notranslate"><span class="pre">byrne_1847</span></code>)</p></td>
+        <td><p><strong>27</strong></p></td>
+        <td><p>1</p></td>
+        <td><p>11</p></td>
+        <td><p>0</p></td>
+        <td><p>30</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>GEOMETOR (geometor.model + Ecosystem)</strong> (<code class="docutils literal notranslate"><span class="pre">geometor_model</span></code>)</p></td>
+        <td><p><strong>53</strong></p></td>
+        <td><p>10</p></td>
+        <td><p>6</p></td>
+        <td><p>0</p></td>
+        <td><p>0</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="six-structural-blind-spots-exposed-by-the-opus-matrix">
+        <h2>Six Structural Blind Spots Exposed by the Opus Matrix<a class="headerlink" href="#six-structural-blind-spots-exposed-by-the-opus-matrix" title="Link to this heading">¶</a></h2>
+        <ol class="arabic simple">
+        <li><p><strong>The Golden Ratio &amp; Polyhedral Blind Spot (Domain 8)</strong>: Across <code class="docutils literal notranslate"><span class="pre">LeanEuclid</span></code>, <code class="docutils literal notranslate"><span class="pre">GeoCoq</span></code>, <code class="docutils literal notranslate"><span class="pre">mathlib4</span></code> Geometry, <code class="docutils literal notranslate"><span class="pre">AlphaGeometry</span></code>, and <code class="docutils literal notranslate"><span class="pre">Newclid</span></code>, division in extreme and mean ratio (<span class="math notranslate nohighlight">\(\phi\)</span>, Euclid <code class="docutils literal notranslate"><span class="pre">II.11</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">VI.30</span></code>), the 5-step vesica golden chain, and the five Platonic solids (<code class="docutils literal notranslate"><span class="pre">Book</span> <span class="pre">XIII</span></code>) have <strong>zero</strong> geometric theorems—whereas <a class="person-ref" id="occ-person-byrne-1" href="../persons.html#person-byrne" data-person="byrne" title="Person: byrne">Oliver Byrne</a> (<code class="docutils literal notranslate"><span class="pre">1847</span></code>) formalized <code class="docutils literal notranslate"><span class="pre">II.11</span></code>, <code class="docutils literal notranslate"><span class="pre">IV.10–11</span></code>, and <code class="docutils literal notranslate"><span class="pre">VI.30</span></code> in primary colors, and GEOMETOR (<code class="docutils literal notranslate"><span class="pre">model</span></code>, <code class="docutils literal notranslate"><span class="pre">fundamentals</span></code>, <code class="docutils literal notranslate"><span class="pre">divine</span></code>, <code class="docutils literal notranslate"><span class="pre">pacioli</span></code>, <code class="docutils literal notranslate"><span class="pre">kepler</span></code>, <code class="docutils literal notranslate"><span class="pre">euclid</span></code>) treats <span class="math notranslate nohighlight">\(\mathbb{Q}(\phi)\)</span> as foundational DNA.</p></li>
+        <li><p><strong>The General Conic Desert (Domain 6)</strong>: Among all 10 external systems, <strong>only ``CindyJS``</strong> represents general rotated ellipses, parabolas, and hyperbolas uniformly via <span class="math notranslate nohighlight">\(3\times 3\)</span> symmetric matrices and Plücker 5-point pencils (<code class="docutils literal notranslate"><span class="pre">ConicBy5</span></code>). <code class="docutils literal notranslate"><span class="pre">sympy.geometry</span></code> lacks <code class="docutils literal notranslate"><span class="pre">Hyperbola</span></code> altogether and raises <code class="docutils literal notranslate"><span class="pre">NotImplementedError</span></code> on rotated <code class="docutils literal notranslate"><span class="pre">Ellipse</span></code>.</p></li>
+        <li><p><strong>The Coaxial &amp; Inversive Gap (Domain 4)</strong>: <code class="docutils literal notranslate"><span class="pre">GeoCoq</span></code> (<code class="docutils literal notranslate"><span class="pre">4,671</span></code> lemmas) and <code class="docutils literal notranslate"><span class="pre">sympy.geometry</span></code> have <strong>zero</strong> circle power, radical axis, inversion, or pole–polar support, and even <code class="docutils literal notranslate"><span class="pre">mathlib4</span></code> (which shines on <code class="docutils literal notranslate"><span class="pre">Sphere.power</span></code> and <code class="docutils literal notranslate"><span class="pre">PolePolar</span></code>) omits <code class="docutils literal notranslate"><span class="pre">radicalAxis</span></code>! Meanwhile, 2D CGA (<code class="docutils literal notranslate"><span class="pre">kingdon</span></code>) expresses radical axis as <code class="docutils literal notranslate"><span class="pre">kappa1</span> <span class="pre">-</span> <span class="pre">kappa2</span></code> and circle inversion as <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">&gt;&gt;</span> <span class="pre">P</span></code>.</p></li>
+        <li><p><strong>The Projective Cross-Ratio &amp; Pappus Wall (Domain 6)</strong>: <code class="docutils literal notranslate"><span class="pre">mathlib4</span></code> and <code class="docutils literal notranslate"><span class="pre">sympy.geometry</span></code> both lack <code class="docutils literal notranslate"><span class="pre">cross_ratio</span></code>, <code class="docutils literal notranslate"><span class="pre">Pappus</span></code>, <code class="docutils literal notranslate"><span class="pre">Desargues</span></code>, and <code class="docutils literal notranslate"><span class="pre">Menelaus</span></code>, while bare <code class="docutils literal notranslate"><span class="pre">AlphaGeometry</span></code> <code class="docutils literal notranslate"><span class="pre">DD+AR</span></code> cannot prove Pappus without auxiliary parallel lines.</p></li>
+        <li><p><strong>Triangle Centers Beyond Textbook Classics (Domain 5)</strong>: External systems top out between <code class="docutils literal notranslate"><span class="pre">0</span></code> centers (<code class="docutils literal notranslate"><span class="pre">LeanEuclid</span></code>), <code class="docutils literal notranslate"><span class="pre">2</span></code> (<code class="docutils literal notranslate"><span class="pre">Byrne</span></code>), <code class="docutils literal notranslate"><span class="pre">4</span></code> (<code class="docutils literal notranslate"><span class="pre">GeoCoq</span></code>), and <code class="docutils literal notranslate"><span class="pre">6</span></code> (<code class="docutils literal notranslate"><span class="pre">mathlib4</span></code>, <code class="docutils literal notranslate"><span class="pre">AlphaGeometry</span></code>), and <code class="docutils literal notranslate"><span class="pre">sympy.geometry</span></code> <code class="docutils literal notranslate"><span class="pre">1.14.0</span></code> has a <strong>live double bug in ``Triangle.excenters``</strong>—leaving <code class="docutils literal notranslate"><span class="pre">geometor.etc</span></code> (<code class="docutils literal notranslate"><span class="pre">X(1)</span></code>–<code class="docutils literal notranslate"><span class="pre">X(53144)</span></code>) unmatched.</p></li>
+        <li><p><strong>Operational Construction Complexity (Domain 7)</strong>: Zero external systems measure <a class="person-ref" id="occ-person-lemoine-1" href="../persons.html#person-lemoine" data-person="lemoine" title="Person: lemoine">Émile Lemoine</a>’s <em>Géométrographie</em> (<code class="docutils literal notranslate"><span class="pre">R1,</span> <span class="pre">R2,</span> <span class="pre">C1,</span> <span class="pre">C2,</span> <span class="pre">C3</span></code>), positioning <code class="docutils literal notranslate"><span class="pre">geometor.model</span></code> + <code class="docutils literal notranslate"><span class="pre">geometor/lemoine</span></code> to own constructive complexity analysis.</p></li>
+        </ol>
+        </section>
+        <section class="level-2" id="domain-1-axiomatic-topological-foundations">
+        <h2>Domain 1 — Axiomatic &amp; Topological Foundations<a class="headerlink" href="#domain-1-axiomatic-topological-foundations" title="Link to this heading">¶</a></h2>
+        <p>Points, lines, circles, betweenness, plane separation (Pasch), continuity intersections, and root selection.</p>
+        <table class="docutils align-default">
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Canonical Topic (<code class="docutils literal notranslate"><span class="pre">snake_case</span></code>)</p></th>
+        <th class="head"><p>LeanEuc</p></th>
+        <th class="head"><p>GeoCoq</p></th>
+        <th class="head"><p>Mathlib</p></th>
+        <th class="head"><p>AlphaG</p></th>
+        <th class="head"><p>Newclid</p></th>
+        <th class="head"><p>JGEX</p></th>
+        <th class="head"><p>PGA/CGA</p></th>
+        <th class="head"><p>CindyJS</p></th>
+        <th class="head"><p>SymPy</p></th>
+        <th class="head"><p>Byrne</p></th>
+        <th class="head"><p>GEOMETOR</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Point Primitive &amp; Constructibility</strong> (<code class="docutils literal notranslate"><span class="pre">point_primitive</span></code>)</p></td>
+        <td><p><strong>native</strong>: Point : Type</p></td>
+        <td><p><strong>native</strong>: Tpoint : Type</p></td>
+        <td><p><strong>native</strong>: P : Type* [NormedAddTorsor V P]</p></td>
+        <td><p><strong>native</strong>: gm.Point / free</p></td>
+        <td><p><strong>native</strong>: Point / free</p></td>
+        <td><p><strong>native</strong>: POINT</p></td>
+        <td><p><strong>native</strong>: bivector (PGA) / null vector (CGA)</p></td>
+        <td><p><strong>native</strong>: homog [x, y, z] in CP^2</p></td>
+        <td><p><strong>native</strong>: Point2D / Point3D</p></td>
+        <td><p><em>partial</em>: Implicit vertex intersections (no point glyph!)</p></td>
+        <td><p><strong>native</strong>: Model.set_point (exact Q/ANP)</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Line Joining Two Distinct Points (Postulate 1)</strong> (<code class="docutils literal notranslate"><span class="pre">line_join</span></code>)</p></td>
+        <td><p><strong>native</strong>: Lines.from_points</p></td>
+        <td><p>derived: Col A B X (point-only)</p></td>
+        <td><p><strong>native</strong>: line[ℝ, p₁, p₂]</p></td>
+        <td><p><strong>native</strong>: on_line / gm.Line</p></td>
+        <td><p><strong>native</strong>: on_line</p></td>
+        <td><p><strong>native</strong>: LINE / ON_LINE</p></td>
+        <td><p><strong>native</strong>: P1 &amp; P2 (PGA) / P1^P2^ni (CGA)</p></td>
+        <td><p><strong>native</strong>: List.cross(A, B)</p></td>
+        <td><p><strong>native</strong>: Line(p1, p2)</p></td>
+        <td><p><strong>native</strong>: Byrne Postulate 1 ([coloured ━━] glyph)</p></td>
+        <td><p><strong>native</strong>: Model.construct_line</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Circle from Center and Radius Point (Postulate 3)</strong> (<code class="docutils literal notranslate"><span class="pre">circle_center_point</span></code>)</p></td>
+        <td><p><strong>native</strong>: Circles.from_points</p></td>
+        <td><p>derived: Cong O X O A / OnCirc</p></td>
+        <td><p><strong>native</strong>: Sphere.mk center radius</p></td>
+        <td><p><strong>native</strong>: on_circle</p></td>
+        <td><p><strong>native</strong>: on_circle</p></td>
+        <td><p><strong>native</strong>: CIRCLE / ON_CIRCLE</p></td>
+        <td><p><strong>native</strong>: A - 0.5*q*ni (2D CGA)</p></td>
+        <td><p><strong>native</strong>: CircleMP(A, B)</p></td>
+        <td><p><strong>native</strong>: Circle(A, A.distance(B))</p></td>
+        <td><p><strong>native</strong>: Byrne Postulate 3 (coloured circle/ring)</p></td>
+        <td><p><strong>native</strong>: Model.construct_circle</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Collinear Betweenness Order</strong> (<code class="docutils literal notranslate"><span class="pre">collinear_betweenness</span></code>)</p></td>
+        <td><p><strong>native</strong>: between a b c (strict)</p></td>
+        <td><p><strong>native</strong>: Bet A B C (non-strict)</p></td>
+        <td><p><strong>native</strong>: Wbtw ℝ a b c / Sbtw ℝ a b c</p></td>
+        <td><p><em>partial</em>: sameside (float guard)</p></td>
+        <td><p>derived: between / sameside (float)</p></td>
+        <td><p>derived: LRATIO / signed r</p></td>
+        <td><p>derived: oriented weight ratio</p></td>
+        <td><p><em>partial</em>: real-part param check</p></td>
+        <td><p>derived: Segment(a, c).contains(b)</p></td>
+        <td><p><em>partial</em>: Visual diagram inspection only</p></td>
+        <td><p><strong>native</strong>: between=(a, c) exact selector</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Plane Separation &amp; Pasch’s Axiom</strong> (<code class="docutils literal notranslate"><span class="pre">plane_separation_pasch</span></code>)</p></td>
+        <td><p><strong>native</strong>: Point.sameSide / opposingSides</p></td>
+        <td><p><strong>native</strong>: outer_pasch / OS / TS</p></td>
+        <td><p>derived: AffineSubspace.SameSide / WeakSameSide</p></td>
+        <td><p><em>partial</em>: sameclock (float guard)</p></td>
+        <td><p><em>partial</em>: sameclock / nsameside (float)</p></td>
+        <td><p>derived: sign(S_ABP * S_ABQ)</p></td>
+        <td><p>derived: sign((l ^ P) * ~(l ^ Q))</p></td>
+        <td><p><em>partial</em>: orientation det sign</p></td>
+        <td><p>—: No half-plane / Pasch API</p></td>
+        <td><p><em>partial</em>: Implicit chromatic region topology</p></td>
+        <td><p><strong>native</strong>: side_of=(a, b, ±1) via signed_area2</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Line-Circle Intersection Existence</strong> (<code class="docutils literal notranslate"><span class="pre">line_circle_continuity</span></code>)</p></td>
+        <td><p><strong>native</strong>: Intersections.intersect_line_circle</p></td>
+        <td><p><strong>native</strong>: segment_circle (continuity_axioms.v)</p></td>
+        <td><p><em>partial</em>: Sphere.secondInter (analytic)</p></td>
+        <td><p><strong>native</strong>: intersection_lc (float sketch)</p></td>
+        <td><p><strong>native</strong>: intersection_lc</p></td>
+        <td><p><strong>native</strong>: INTERSECTION_LC</p></td>
+        <td><p><strong>native</strong>: (L.dual() ^ kappa).dual() (CGA)</p></td>
+        <td><p><strong>native</strong>: IntersectLC (always 2 in CP^2)</p></td>
+        <td><p>derived: Circle.intersection(Line) via solve()</p></td>
+        <td><p><em>partial</em>: Visual diagram intersection</p></td>
+        <td><p><strong>native</strong>: exact_intersect_line_circle</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Circle-Circle Intersection Existence (Euclid I.1 Gap)</strong> (<code class="docutils literal notranslate"><span class="pre">circle_circle_continuity</span></code>)</p></td>
+        <td><p><strong>native</strong>: Intersections.intersect_circles</p></td>
+        <td><p><strong>native</strong>: circle_circle &lt;-&gt; segment_circle</p></td>
+        <td><p>—: No 2D 2-point construction</p></td>
+        <td><p><strong>native</strong>: intersection_cc / HoleCircle</p></td>
+        <td><p><strong>native</strong>: intersection_cc</p></td>
+        <td><p><strong>native</strong>: INTERSECTION_CC</p></td>
+        <td><p><strong>native</strong>: (kA ^ kB).dual() point-pair (CGA)</p></td>
+        <td><p><strong>native</strong>: IntersectCirCir (via radical axis)</p></td>
+        <td><p>derived: Circle.intersection(Circle) via solve()</p></td>
+        <td><p><em>partial</em>: Byrne I.1 visual circle overlap</p></td>
+        <td><p><strong>native</strong>: exact_intersect_circle_circle</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Deterministic Quadratic Root Disambiguation</strong> (<code class="docutils literal notranslate"><span class="pre">topological_root_selection</span></code>)</p></td>
+        <td><p><strong>native</strong>: intersect_circles_same_side / opposing</p></td>
+        <td><p>derived: TS / OS witness selection</p></td>
+        <td><p><em>partial</em>: Sphere.secondInter (other_than only)</p></td>
+        <td><p><em>partial</em>: HoleCircle puncturing + &#64;x_y pin</p></td>
+        <td><p><em>partial</em>: HoleCircle puncturing</p></td>
+        <td><p><em>partial</em>: ordered root index</p></td>
+        <td><p>derived: projector (T ± sqrt(T^2))*(T|ni)</p></td>
+        <td><p><strong>native</strong>: Tracing.js Riemann homotopy</p></td>
+        <td><p>—: Arbitrary solve() list order</p></td>
+        <td><p><strong>native</strong>: Unique colour/stroke token disambiguation</p></td>
+        <td><p><strong>native</strong>: side_of, between, beyond, on_ray, other_than</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="domain-2-congruence-orthogonality-metric-laws">
+        <h2>Domain 2 — Congruence, Orthogonality &amp; Metric Laws<a class="headerlink" href="#domain-2-congruence-orthogonality-metric-laws" title="Link to this heading">¶</a></h2>
+        <p>Segment congruence, triangle congruence (SAS/SSS/ASA/HL), bisectors, perpendiculars, quadrance/spread, Pythagoras, and Stewart.</p>
+        <table class="docutils align-default">
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Canonical Topic (<code class="docutils literal notranslate"><span class="pre">snake_case</span></code>)</p></th>
+        <th class="head"><p>LeanEuc</p></th>
+        <th class="head"><p>GeoCoq</p></th>
+        <th class="head"><p>Mathlib</p></th>
+        <th class="head"><p>AlphaG</p></th>
+        <th class="head"><p>Newclid</p></th>
+        <th class="head"><p>JGEX</p></th>
+        <th class="head"><p>PGA/CGA</p></th>
+        <th class="head"><p>CindyJS</p></th>
+        <th class="head"><p>SymPy</p></th>
+        <th class="head"><p>Byrne</p></th>
+        <th class="head"><p>GEOMETOR</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Equilateral Triangle Construction (Euclid I.1)</strong> (<code class="docutils literal notranslate"><span class="pre">equilateral_triangle</span></code>)</p></td>
+        <td><p><strong>native</strong>: Prop01.proposition_1 / proposition_1’</p></td>
+        <td><p><strong>native</strong>: proposition_01 / l10_15</p></td>
+        <td><p>—: No constructive existence lemma</p></td>
+        <td><p><strong>native</strong>: eq_triangle / ieq_triangle</p></td>
+        <td><p><strong>native</strong>: eq_triangle / ieq_triangle</p></td>
+        <td><p><strong>native</strong>: INTERSECTION_CC + r13</p></td>
+        <td><p><strong>native</strong>: CGA circle split / PGA pi/3 rotor</p></td>
+        <td><p><strong>native</strong>: IntersectCirCir</p></td>
+        <td><p>derived: RegularPolygon / Circle.intersection</p></td>
+        <td><p><strong>native</strong>: Byrne Book I, Prop. 1 (red/blue/black)</p></td>
+        <td><p><strong>native</strong>: equidistant_poles (figures.py)</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Non-Collapsing Compass Segment Transfer (Euclid I.2-I.3)</strong> (<code class="docutils literal notranslate"><span class="pre">segment_transfer</span></code>)</p></td>
+        <td><p><strong>native</strong>: Prop02 / Prop03</p></td>
+        <td><p><strong>native</strong>: segment_construction (primitive axiom!)</p></td>
+        <td><p>derived: norm-scaled vadd</p></td>
+        <td><p><strong>native</strong>: eqdistance</p></td>
+        <td><p><strong>native</strong>: eqdistance / lconst</p></td>
+        <td><p><strong>native</strong>: LRATIO / EQDISTANCE</p></td>
+        <td><p><strong>native</strong>: translator / motor sandwich</p></td>
+        <td><p><strong>native</strong>: Compass / CircleMP</p></td>
+        <td><p>derived: Circle(C, A.distance(B))</p></td>
+        <td><p><strong>native</strong>: Byrne Book I, Props. 2-3</p></td>
+        <td><p><strong>native</strong>: construct_circle_by_length / I.2</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Triangle Congruence (SAS, SSS, ASA / Euclid I.4, I.8, I.26)</strong> (<code class="docutils literal notranslate"><span class="pre">triangle_congruence_sas_sss_asa</span></code>)</p></td>
+        <td><p><strong>native</strong>: Prop04, Prop08, Prop26</p></td>
+        <td><p><strong>native</strong>: l11_49 (SAS), l11_51 (SSS), l11_50 (ASA)</p></td>
+        <td><p><strong>native</strong>: Congruence.lean (dist/angle eq)</p></td>
+        <td><p><strong>native</strong>: r32 (SSS), r33 (SAS), r36/r37 (ASA)</p></td>
+        <td><p><strong>native</strong>: R64-R67 + R36-R37 (orientation split)</p></td>
+        <td><p><strong>native</strong>: GDD contri rules</p></td>
+        <td><p>derived: isometry versor existence</p></td>
+        <td><p>derived: Prover.js metric identity</p></td>
+        <td><p>derived: Polygon congruence manual check</p></td>
+        <td><p><strong>native</strong>: Byrne Book I, Props. 4, 8, 26</p></td>
+        <td><p><strong>native</strong>: Model.assert_congruent (Q + signed s)</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Isosceles Base Angles — Pons Asinorum (Euclid I.5-I.6)</strong> (<code class="docutils literal notranslate"><span class="pre">isosceles_pons_asinorum</span></code>)</p></td>
+        <td><p><strong>native</strong>: Prop05 / Prop06</p></td>
+        <td><p><strong>native</strong>: l11_44_1 / l11_44_2</p></td>
+        <td><p><strong>native</strong>: angle_eq_angle_of_dist_eq (Isosceles)</p></td>
+        <td><p><strong>native</strong>: r13 / r14</p></td>
+        <td><p><strong>native</strong>: R13 / R14</p></td>
+        <td><p><strong>native</strong>: GDD r13 / Full-Angle</p></td>
+        <td><p>derived: reflection symmetry in bisector blade</p></td>
+        <td><p>derived: Laguerre angle symmetry</p></td>
+        <td><p><strong>native</strong>: Triangle.is_isosceles</p></td>
+        <td><p><strong>native</strong>: Byrne Book I, Props. 5-6 (wedge sum)</p></td>
+        <td><p><strong>native</strong>: Equal quadrance &lt;=&gt; equal spread</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Right-Triangle Hypotenuse-Leg Congruence (HL)</strong> (<code class="docutils literal notranslate"><span class="pre">hypotenuse_leg_congruence</span></code>)</p></td>
+        <td><p>derived: Via Prop47 + Prop08</p></td>
+        <td><p><strong>native</strong>: Ch08 / Ch11 right congruence</p></td>
+        <td><p>derived: Via Pythagoras + SSS</p></td>
+        <td><p>—: Missing in r00-r42 (blocks bare incenter!)</p></td>
+        <td><p><strong>native</strong>: R52 / R53 (explicitly added!)</p></td>
+        <td><p><strong>native</strong>: Pythagoras difference P_ABC</p></td>
+        <td><p>derived: Orthogonal quadrance subtraction</p></td>
+        <td><p>derived: Algebraic consequence</p></td>
+        <td><p>derived: Via distance/Pythagoras</p></td>
+        <td><p>derived: Via Byrne I.47 + I.8</p></td>
+        <td><p><strong>native</strong>: Pythagoras Q_b = Q_c - Q_a + assert_congruent</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Rectilinear Angle Bisector (Euclid I.9)</strong> (<code class="docutils literal notranslate"><span class="pre">angle_bisector_construction</span></code>)</p></td>
+        <td><p><strong>native</strong>: Prop09.proposition_9 / proposition_9’</p></td>
+        <td><p><strong>native</strong>: angle_bisector (Ch11_angles.v)</p></td>
+        <td><p><strong>native</strong>: Incenter/Basic.lean (oangle bisector)</p></td>
+        <td><p><em>partial</em>: angle_bisector (conflates ext bisector mod pi!)</p></td>
+        <td><p><em>partial</em>: angle_bisector (mod pi)</p></td>
+        <td><p><em>partial</em>: BISECT (full-angle mod pi)</p></td>
+        <td><p><strong>native</strong>: l1.normalized() ± l2.normalized() (PGA)</p></td>
+        <td><p><strong>native</strong>: AngularBisector (2 orthogonal lines)</p></td>
+        <td><p><strong>native</strong>: Line.bisectors() / Triangle.bisectors()</p></td>
+        <td><p><strong>native</strong>: Byrne Book I, Prop. 9</p></td>
+        <td><p><strong>native</strong>: Compass equilateral/midpoint bisector</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Midpoint &amp; Perpendicular Bisector (Euclid I.10-I.11)</strong> (<code class="docutils literal notranslate"><span class="pre">midpoint_perpendicular_bisector</span></code>)</p></td>
+        <td><p><strong>native</strong>: Prop10 / Prop11</p></td>
+        <td><p><strong>native</strong>: midpoint_existence (neutral, no circles!)</p></td>
+        <td><p><strong>native</strong>: midpoint / perpBisector</p></td>
+        <td><p><strong>native</strong>: midpoint / on_bline / r22-r23</p></td>
+        <td><p><strong>native</strong>: midpoint / on_bline / R54</p></td>
+        <td><p><strong>native</strong>: MIDPOINT / BLINE</p></td>
+        <td><p><strong>native</strong>: (A&amp;B)|(A+B) (PGA) / A - B (CGA)</p></td>
+        <td><p><strong>native</strong>: Midpoint / Perp</p></td>
+        <td><p><strong>native</strong>: Segment.midpoint / perpendicular_bisector</p></td>
+        <td><p><strong>native</strong>: Byrne Book I, Props. 10-11</p></td>
+        <td><p><strong>native</strong>: _midpoint_via_vesica</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Perpendicular Foot onto a Line (Euclid I.12)</strong> (<code class="docutils literal notranslate"><span class="pre">dropped_perpendicular_foot</span></code>)</p></td>
+        <td><p><strong>native</strong>: Prop12.proposition_12</p></td>
+        <td><p><strong>native</strong>: l8_18_existence (Ch08_orthogonality.v)</p></td>
+        <td><p><strong>native</strong>: orthogonalProjection s p</p></td>
+        <td><p><strong>native</strong>: foot (defs.txt:61)</p></td>
+        <td><p><strong>native</strong>: foot</p></td>
+        <td><p><strong>native</strong>: FOOT (linear P_PUV/P_UVU elim!)</p></td>
+        <td><p><strong>native</strong>: (l | P) ^ l (2D PGA)</p></td>
+        <td><p><strong>native</strong>: meet(L, perp(L, P))</p></td>
+        <td><p><strong>native</strong>: Line.projection(P)</p></td>
+        <td><p><strong>native</strong>: Byrne Book I, Prop. 12</p></td>
+        <td><p><strong>native</strong>: Mirror-chord + vesica foot</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Rational Quadrance &amp; Spread Calculus (Wildberger)</strong> (<code class="docutils literal notranslate"><span class="pre">quadrance_and_spread</span></code>)</p></td>
+        <td><p>—: Uses real length |(a─b)| &amp; ∠(a:b:c)</p></td>
+        <td><p>—: Synthetic Cong &amp; Angle CongA</p></td>
+        <td><p>derived: dist^2 &amp; sin^2(angle) over R</p></td>
+        <td><p>—: Log-ratios &amp; angles mod pi</p></td>
+        <td><p><em>partial</em>: l2const / r2const (squared lengths only)</p></td>
+        <td><p>derived: P_ABA = 2*Q(A,B) &amp; S_ABC^2</p></td>
+        <td><p>derived: (l|l) &amp; (l1^l2)^2 / ((l1|l1)*(l2|l2))</p></td>
+        <td><p>derived: Rational Cayley-Klein cross-ratio</p></td>
+        <td><p>—: Uses sqrt distance &amp; acos angle</p></td>
+        <td><p>—: Visual segment/wedge icons, not polynomial Q/s</p></td>
+        <td><p><strong>native</strong>: quadrance, line_spread, vertex_spread + wildberger</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Pythagorean Theorem (Euclid I.47-I.48)</strong> (<code class="docutils literal notranslate"><span class="pre">pythagorean_theorem</span></code>)</p></td>
+        <td><p><strong>native</strong>: Prop47 / Prop48 (+ 6 missed lemmas)</p></td>
+        <td><p><strong>native</strong>: pythagoras (Ch15_lengths.v)</p></td>
+        <td><p><strong>native</strong>: dist_sq_eq_dist_sq_add_dist_sq_iff…</p></td>
+        <td><p><em>partial</em>: Cannot state a^2+b^2=c^2! (only AB^2=BH*BC)</p></td>
+        <td><p><strong>native</strong>: Yuclid squared-length AR + R85</p></td>
+        <td><p><strong>native</strong>: Definitional P_ACB = 0 + 4_PYTH/</p></td>
+        <td><p><strong>native</strong>: (lc|lc) == (la|la) + (lb|lb)</p></td>
+        <td><p>derived: Euclidean metric norm</p></td>
+        <td><p><strong>native</strong>: Triangle.is_right / distance**2</p></td>
+        <td><p><strong>native</strong>: Byrne Book I, Prop. 47 (iconic 4-colour squares!)</p></td>
+        <td><p><strong>native</strong>: Pythagoras Q_c = Q_a + Q_b + assert_area_equal</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Stewart’s Theorem &amp; Apollonius’s Median Law</strong> (<code class="docutils literal notranslate"><span class="pre">stewart_apollonius_median</span></code>)</p></td>
+        <td><p>—: Requires Book II / quadratic algebra</p></td>
+        <td><p>derived: Derivable in Ch15 segment field</p></td>
+        <td><p><strong>native</strong>: dist_sq_mul_dist_add… (Stewart / BritishFlag)</p></td>
+        <td><p>—: Unexpressible in multiplicative AR</p></td>
+        <td><p><em>partial</em>: R89_LENGTH_OF_MEDIAN (in C++ Yuclid)</p></td>
+        <td><p><strong>native</strong>: Linear LRATIO elimination on P_AYB</p></td>
+        <td><p>derived: Null inner-product expansion (2D CGA)</p></td>
+        <td><p>derived: Polynomial identity in Prover.js</p></td>
+        <td><p>derived: Manual symbolic simplify()</p></td>
+        <td><p><em>partial</em>: Book II Props. 9-10, 12-13 (cosine precursors)</p></td>
+        <td><p><strong>native</strong>: Triple-Quad / Stewart polynomial identity</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="domain-3-parallelism-similarity-proportion">
+        <h2>Domain 3 — Parallelism, Similarity &amp; Proportion<a class="headerlink" href="#domain-3-parallelism-similarity-proportion" title="Link to this heading">¶</a></h2>
+        <p>Parallel postulate variants, parallelograms, cut-and-paste area, Thales intercept, AA/SAS/SSS similarity, Ceva, and Menelaus.</p>
+        <table class="docutils align-default">
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Canonical Topic (<code class="docutils literal notranslate"><span class="pre">snake_case</span></code>)</p></th>
+        <th class="head"><p>LeanEuc</p></th>
+        <th class="head"><p>GeoCoq</p></th>
+        <th class="head"><p>Mathlib</p></th>
+        <th class="head"><p>AlphaG</p></th>
+        <th class="head"><p>Newclid</p></th>
+        <th class="head"><p>JGEX</p></th>
+        <th class="head"><p>PGA/CGA</p></th>
+        <th class="head"><p>CindyJS</p></th>
+        <th class="head"><p>SymPy</p></th>
+        <th class="head"><p>Byrne</p></th>
+        <th class="head"><p>GEOMETOR</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Parallel Line Through a Point (Euclid I.27-I.31)</strong> (<code class="docutils literal notranslate"><span class="pre">parallel_line_construction</span></code>)</p></td>
+        <td><p><strong>native</strong>: Prop27-Prop31</p></td>
+        <td><p><strong>native</strong>: parallel_existence (Ch12_parallel.v)</p></td>
+        <td><p><strong>native</strong>: AffineSubspace.mk’ p s.direction</p></td>
+        <td><p><strong>native</strong>: on_pline / r00 / r02</p></td>
+        <td><p><strong>native</strong>: on_pline / R00 / R02</p></td>
+        <td><p><strong>native</strong>: ON_PLINE / S_CABD = 0</p></td>
+        <td><p><strong>native</strong>: P &amp; (L ^ e0) or (L | P) | P (PGA)</p></td>
+        <td><p><strong>native</strong>: cross(cross(linf, L), P)</p></td>
+        <td><p><strong>native</strong>: Line.parallel_line(P)</p></td>
+        <td><p><strong>native</strong>: Byrne Book I, Prop. 31</p></td>
+        <td><p><strong>native</strong>: Compass rhombus + assert_parallel</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Axiomatic Equivalents of Euclid’s Parallel Postulate</strong> (<code class="docutils literal notranslate"><span class="pre">parallel_postulate_equivalents</span></code>)</p></td>
+        <td><p><em>partial</em>: Assumes System E parallel postulate</p></td>
+        <td><p><strong>native</strong>: 34 equivalents in parallel_postulates.v!</p></td>
+        <td><p>—: Baked into vector space axioms</p></td>
+        <td><p>—: Baked into AngleTable mod pi</p></td>
+        <td><p>—: Baked into AnglesTable</p></td>
+        <td><p>—: Assumes Euclidean plane</p></td>
+        <td><p><em>partial</em>: Switch signature Cl(2,0,1) vs Cl(2,1,0)/Cl(3,0)</p></td>
+        <td><p><strong>native</strong>: Cayley-Klein switch (Euclidean/Hyperbolic/Elliptic)</p></td>
+        <td><p>—: Euclidean Cartesian only</p></td>
+        <td><p><em>partial</em>: Byrne Axiom XII (two-wedge sum &lt; 2[∟])</p></td>
+        <td><p><em>partial</em>: Documented across euclid / hilbert / proclus</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Triangle Interior Angle Sum = Two Right Angles (Euclid I.32)</strong> (<code class="docutils literal notranslate"><span class="pre">triangle_angle_sum</span></code>)</p></td>
+        <td><p><strong>native</strong>: Prop32.proposition_32</p></td>
+        <td><p><strong>native</strong>: trisuma__bet (Ch12 / parallel_postulates.v)</p></td>
+        <td><p><strong>native</strong>: oangle_add_oangle_add_oangle_eq_pi</p></td>
+        <td><p><em>partial</em>: Line directions mod pi (r09), no interior sum</p></td>
+        <td><p><em>partial</em>: R09 full-angle cancellation mod pi</p></td>
+        <td><p><strong>native</strong>: Full-Angle method</p></td>
+        <td><p>derived: Rotor product around vertices</p></td>
+        <td><p>derived: Laguerre cross-ratio product = 1</p></td>
+        <td><p>derived: sum(Triangle.angles.values()) == pi</p></td>
+        <td><p><strong>native</strong>: Byrne Book I, Prop. 32 (red+yellow+blue = 2[∟])</p></td>
+        <td><p><strong>native</strong>: Wildberger Triple Spread Law</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Parallelogram &amp; Cut-and-Paste Area Theory (Euclid I.33-I.45)</strong> (<code class="docutils literal notranslate"><span class="pre">parallelogram_area_equivalence</span></code>)</p></td>
+        <td><p><strong>native</strong>: Prop33-Prop45 (complete!)</p></td>
+        <td><p><strong>native</strong>: euclidean_area_axioms.v (+ inconsistency bug proof!)</p></td>
+        <td><p><em>partial</em>: MeasureTheory volume, no cut-and-paste</p></td>
+        <td><p><em>partial</em>: parallelogram r25/r26; NO area predicate!</p></td>
+        <td><p><em>partial</em>: R25/R26/R90; NO area predicate!</p></td>
+        <td><p><strong>native</strong>: Signed area S_ABC / S_ABCD primitive!</p></td>
+        <td><p><strong>native</strong>: Pseudoscalar moment (A &amp; B &amp; C).e012</p></td>
+        <td><p>derived: Determinant area formula</p></td>
+        <td><p><strong>native</strong>: Polygon.area (signed shoelace)</p></td>
+        <td><p><strong>native</strong>: Byrne Book I, Props. 33-45 (chromatic regions!)</p></td>
+        <td><p><strong>native</strong>: signed_area2 &amp; Model.assert_area_equal</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Geometric Algebra of Rectangles &amp; Gnomons (Euclid Book II.1-II.14)</strong> (<code class="docutils literal notranslate"><span class="pre">geometric_algebra_books_ii</span></code>)</p></td>
+        <td><p>—: Stops at Book I.48</p></td>
+        <td><p><em>partial</em>: Algebraicized in Ch14-Ch15</p></td>
+        <td><p>derived: CommRing ring tactic</p></td>
+        <td><p>—: No area/gnomon predicates</p></td>
+        <td><p><em>partial</em>: lequation polynomial identities</p></td>
+        <td><p><strong>native</strong>: Area + Pythagoras polynomial identities</p></td>
+        <td><p>derived: Scalar Clifford expansion</p></td>
+        <td><p>derived: Algebraic polynomial check</p></td>
+        <td><p>derived: sp.expand()</p></td>
+        <td><p><strong>native</strong>: Byrne Book II, Props. 1-14 (gnomons &amp; squares!)</p></td>
+        <td><p><strong>native</strong>: euclid Book II SVGs + assert_area_equal</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Thales Parallel-Intercept Proportion (Euclid VI.2)</strong> (<code class="docutils literal notranslate"><span class="pre">thales_intercept_theorem</span></code>)</p></td>
+        <td><p>—: Book VI omitted</p></td>
+        <td><p><strong>native</strong>: thm_thales (Ch13 / Ch14)</p></td>
+        <td><p><strong>native</strong>: Affine/Similarity ratio lemmas</p></td>
+        <td><p><strong>native</strong>: r07 / r27 / r41 / r42 (eqratio3)</p></td>
+        <td><p><strong>native</strong>: R07 / R27 / R41 / R42</p></td>
+        <td><p><strong>native</strong>: Co-side &amp; parallel ratio lemma</p></td>
+        <td><p><strong>native</strong>: PGA join/meet weight ratios</p></td>
+        <td><p><strong>native</strong>: Projective perspectivity</p></td>
+        <td><p>derived: Triangle.is_similar</p></td>
+        <td><p><strong>native</strong>: Byrne Book VI, Prop. 2 (:: proportion)</p></td>
+        <td><p><strong>native</strong>: Exact quadrance ratio Q1/Q2</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Triangle Similarity Criteria (AA, SAS, SSS / Euclid VI.4-VI.7)</strong> (<code class="docutils literal notranslate"><span class="pre">similar_triangles</span></code>)</p></td>
+        <td><p>—: Book VI omitted</p></td>
+        <td><p>derived: Ch15 length-ratio similarity</p></td>
+        <td><p><strong>native</strong>: Geometry/Euclidean/Similarity.lean</p></td>
+        <td><p><strong>native</strong>: r34-r35 (AA), r38 (SSS), r39 (SAS)</p></td>
+        <td><p><strong>native</strong>: R34-R35, R60-R63 (explicit sameclock)</p></td>
+        <td><p><strong>native</strong>: GDD SimTri rules</p></td>
+        <td><p>derived: Rotor-dilator (similarity versor)</p></td>
+        <td><p>derived: Complex similarity z -&gt; a*z + b</p></td>
+        <td><p><strong>native</strong>: are_similar / Triangle.is_similar</p></td>
+        <td><p><strong>native</strong>: Byrne Book VI, Props. 4-7</p></td>
+        <td><p><strong>native</strong>: Equal spreads &lt;=&gt; proportional quadrances</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Internal &amp; External Angle Bisector Ratio Theorem (Euclid VI.3)</strong> (<code class="docutils literal notranslate"><span class="pre">angle_bisector_ratio_theorem</span></code>)</p></td>
+        <td><p>—: Book VI omitted</p></td>
+        <td><p>derived: Highschool/incenter + Ch15</p></td>
+        <td><p><strong>native</strong>: Angle bisector ratio in Incenter/Basic.lean</p></td>
+        <td><p><em>partial</em>: r11 / r12 (r11 converse unsound on ext bisector!)</p></td>
+        <td><p><em>partial</em>: R11 / R12 (full-angle mod pi)</p></td>
+        <td><p><strong>native</strong>: GDD r11 / r12</p></td>
+        <td><p>derived: Normalized line-sum weight ratio</p></td>
+        <td><p>derived: Harmonic bisector cross-ratio</p></td>
+        <td><p>derived: Symbolic bisector intersection</p></td>
+        <td><p><strong>native</strong>: Byrne Book VI, Prop. 3</p></td>
+        <td><p><strong>native</strong>: Equal spread + quadrance ratio Q(BD)/Q(DC)=Q(AB)/Q(AC)</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Ceva’s Concurrency &amp; Menelaus’s Collinearity Theorems</strong> (<code class="docutils literal notranslate"><span class="pre">ceva_and_menelaus</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Not in Highschool/</p></td>
+        <td><p><em>partial</em>: Ceva.lean present; Menelaus ABSENT!</p></td>
+        <td><p>—: Missing in r00-r42 (blocks Pappus/Desargues!)</p></td>
+        <td><p><em>partial</em>: Partial ratio helpers; no general signed Menelaus</p></td>
+        <td><p><strong>native</strong>: exs-book/ch2 A_310 (Menelaus) &amp; back/ceva!</p></td>
+        <td><p><strong>native</strong>: Grassmann-Cayley bivector ratio cancellation</p></td>
+        <td><p><strong>native</strong>: Homogeneous determinant cancellation</p></td>
+        <td><p>—: Not implemented</p></td>
+        <td><p>—: Post-Euclidean (omitted)</p></td>
+        <td><p><strong>native</strong>: pappus &amp; signed_area2 co-side cancellation</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="domain-4-circle-geometry-tangency-power-inversion">
+        <h2>Domain 4 — Circle Geometry, Tangency, Power &amp; Inversion<a class="headerlink" href="#domain-4-circle-geometry-tangency-power-inversion" title="Link to this heading">¶</a></h2>
+        <p>Circumcircles, inscribed/tangent-chord angles, Ptolemy, common tangents, Steiner power, radical axis, circle inversion, and circle pole-polar.</p>
+        <table class="docutils align-default">
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Canonical Topic (<code class="docutils literal notranslate"><span class="pre">snake_case</span></code>)</p></th>
+        <th class="head"><p>LeanEuc</p></th>
+        <th class="head"><p>GeoCoq</p></th>
+        <th class="head"><p>Mathlib</p></th>
+        <th class="head"><p>AlphaG</p></th>
+        <th class="head"><p>Newclid</p></th>
+        <th class="head"><p>JGEX</p></th>
+        <th class="head"><p>PGA/CGA</p></th>
+        <th class="head"><p>CindyJS</p></th>
+        <th class="head"><p>SymPy</p></th>
+        <th class="head"><p>Byrne</p></th>
+        <th class="head"><p>GEOMETOR</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Inscribed &amp; Central Angle Theorem (Euclid III.20-III.22)</strong> (<code class="docutils literal notranslate"><span class="pre">inscribed_angle_theorem</span></code>)</p></td>
+        <td><p>—: Book III omitted</p></td>
+        <td><p><em>partial</em>: Basic chord/circle defs in Annexes/circles.v</p></td>
+        <td><p><strong>native</strong>: Sphere/Basic.lean ((2:ℤ)•∡ mod 2pi!)</p></td>
+        <td><p><strong>native</strong>: r03 / r04 / r17 / r18 (eqangle mod pi!)</p></td>
+        <td><p><strong>native</strong>: R03 / R04 / R17 / R18</p></td>
+        <td><p><strong>native</strong>: Full-Angle crown jewel (RF_*)</p></td>
+        <td><p>derived: Conformal rotor angle invariance</p></td>
+        <td><p><strong>native</strong>: Cross-ratio on conic = const (Chasles)</p></td>
+        <td><p>—: No inscribed-angle theorem</p></td>
+        <td><p><strong>native</strong>: Byrne Book III, Props. 20-22</p></td>
+        <td><p><strong>native</strong>: Equal chord spread on circle</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Thales’s Semicircle Right-Angle Theorem (Euclid III.31)</strong> (<code class="docutils literal notranslate"><span class="pre">thales_semicircle_theorem</span></code>)</p></td>
+        <td><p>—: Book III omitted</p></td>
+        <td><p><strong>native</strong>: Annexes/circles.v / midpoint circumcenter</p></td>
+        <td><p><strong>native</strong>: thales_theorem (Angle/Oriented &amp; Unoriented)</p></td>
+        <td><p><strong>native</strong>: r19 / r20</p></td>
+        <td><p><strong>native</strong>: R19 / R20</p></td>
+        <td><p><strong>native</strong>: GDD r20 + Area P_ABC = 0</p></td>
+        <td><p><strong>native</strong>: CGA inner product on antipodal pair</p></td>
+        <td><p><strong>native</strong>: Harmonic diameter orthogonality</p></td>
+        <td><p>derived: Circle / Line.is_perpendicular</p></td>
+        <td><p><strong>native</strong>: Byrne Book III, Prop. 31</p></td>
+        <td><p><strong>native</strong>: figures.py:289 (Thales tangent construction)</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Circle Tangent Lines from Point On or Outside Circle (Euclid III.16-III.17)</strong> (<code class="docutils literal notranslate"><span class="pre">circle_tangents_external</span></code>)</p></td>
+        <td><p>—: Book III omitted</p></td>
+        <td><p><em>partial</em>: Tangent predicate in Annexes/circles.v</p></td>
+        <td><p><strong>native</strong>: Sphere tangent / PolePolar</p></td>
+        <td><p><strong>native</strong>: lc_tangent (L157) &amp; tangent (L397), r15-r16</p></td>
+        <td><p><strong>native</strong>: lc_tangent &amp; tangent, R15-R16</p></td>
+        <td><p><strong>native</strong>: TANGENT</p></td>
+        <td><p><strong>native</strong>: Polar meet circle: (kappa ^ lam_pol).dual()</p></td>
+        <td><p><strong>native</strong>: TangentFromPoint (polar meet conic)</p></td>
+        <td><p><strong>native</strong>: Circle.tangent_lines(P) (via solve())</p></td>
+        <td><p><strong>native</strong>: Byrne Book III, Props. 16-17</p></td>
+        <td><p><strong>native</strong>: Thales semicircle intersection (zero solve()!)</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>External &amp; Internal Common Tangents to Two Circles</strong> (<code class="docutils literal notranslate"><span class="pre">common_tangents_two_circles</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Not in Geometry/Euclidean/Sphere/</p></td>
+        <td><p><em>partial</em>: cc_tangent / cc_tangent0 (external only!)</p></td>
+        <td><p><strong>native</strong>: cc_tangent + cc_itangent (external &amp; internal!)</p></td>
+        <td><p><strong>native</strong>: CC_TANGENT</p></td>
+        <td><p>derived: Dual conic /homothetic center blade</p></td>
+        <td><p><strong>native</strong>: Dual conic intersection adj(C1) ∩ adj(C2)!</p></td>
+        <td><p>—: Not implemented</p></td>
+        <td><p>—: Omitted in Euclid Book III</p></td>
+        <td><p><em>partial</em>: Planned via homothetic centers in model/elements</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Ptolemy’s Cyclic Quadrilateral Theorem</strong> (<code class="docutils literal notranslate"><span class="pre">ptolemy_theorem</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><strong>native</strong>: Sphere/Ptolemy.lean (mul_dist_add_mul_dist…)</p></td>
+        <td><p>derived: Provable with 1 aux similarity point</p></td>
+        <td><p>derived: Provable with 1 aux similarity point</p></td>
+        <td><p><strong>native</strong>: Wu / Gröbner / Inversion proof</p></td>
+        <td><p><strong>native</strong>: 2D CGA inversion of cyclic 4-tuple to collinear!</p></td>
+        <td><p>derived: Complex cross-ratio identity</p></td>
+        <td><p>—: Not implemented</p></td>
+        <td><p>—: Almagest (post-Euclidean, omitted)</p></td>
+        <td><p>derived: Inversion / rational cyclic identity</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Intersecting Chords &amp; Steiner Power of a Point (Euclid III.35-III.36)</strong> (<code class="docutils literal notranslate"><span class="pre">steiner_power_of_a_point</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><strong>native</strong>: Sphere.power (Sphere/Power.lean)</p></td>
+        <td><p><em>partial</em>: Multiplicative chord eqratio only</p></td>
+        <td><p><em>partial</em>: Chord eqratio + R85</p></td>
+        <td><p><strong>native</strong>: P_POP - P_OAO / chord ratios</p></td>
+        <td><p><strong>native</strong>: -2 * (kappa | P).e (2D CGA inner product!)</p></td>
+        <td><p><strong>native</strong>: p * C * p (monic circle matrix)</p></td>
+        <td><p>—: MISSING on sympy Circle!</p></td>
+        <td><p><strong>native</strong>: Byrne Book III, Props. 35-36 (rectangle = square!)</p></td>
+        <td><p>derived: quadrance(P, O) - r_quad (Rec 4 -&gt; model)</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Radical Axis, Radical Center &amp; Coaxial Circle Pencils</strong> (<code class="docutils literal notranslate"><span class="pre">radical_axis_coaxial_circles</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: SURPRISINGLY ABSENT in Sphere/Power.lean!</p></td>
+        <td><p>—: Cannot state disjoint PO1^2 - PO2^2 = c!</p></td>
+        <td><p><em>partial</em>: Expressible via R85 lequation</p></td>
+        <td><p><strong>native</strong>: C_RADICAL</p></td>
+        <td><p><strong>native</strong>: kappa1 - kappa2 (1 subtraction in 2D CGA!)</p></td>
+        <td><p><strong>native</strong>: Monic circle matrix subtraction (GeoOps.js:2044)</p></td>
+        <td><p>—: MISSING in sympy.geometry!</p></td>
+        <td><p>—: 19th-century Steiner/Gaultier (omitted)</p></td>
+        <td><p><strong>native</strong>: Used internally in exact_intersect_circle_circle</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Möbius Circle Inversion (Points, Lines &amp; Circles)</strong> (<code class="docutils literal notranslate"><span class="pre">circle_inversion</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><strong>native</strong>: EuclideanGeometry.inversion (Inversion/Basic.lean)</p></td>
+        <td><p><em>partial</em>: External tangent+foot idiom only</p></td>
+        <td><p><em>partial</em>: External tangent+foot idiom</p></td>
+        <td><p><strong>native</strong>: INVERSION (exs-book/ch3:53)</p></td>
+        <td><p><strong>native</strong>: C &gt;&gt; P = -C * P * C.inv() (2D CGA sandwich!)</p></td>
+        <td><p><strong>native</strong>: TrReflectionC / cross(cross(O,p), C*p)</p></td>
+        <td><p>—: MISSING in sympy.geometry!</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>derived: figures.py:294 + Rec 4 geometor.model.inversion</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Circle Pole-Polar &amp; La Hire’s Reciprocity Theorem</strong> (<code class="docutils literal notranslate"><span class="pre">circle_pole_polar_lahire</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><strong>native</strong>: Sphere.polar / mem_polar_iff (PolePolar.lean)</p></td>
+        <td><p>derived: Provable via tangent+foot SAS similarity</p></td>
+        <td><p>derived: Provable via tangent+foot SAS similarity</p></td>
+        <td><p><strong>native</strong>: 2-line Area-Method INVERSION proof</p></td>
+        <td><p><strong>native</strong>: kappa + (P ^ ni) | kappa (2D CGA)</p></td>
+        <td><p><strong>native</strong>: l = C * p, p = adj(C) * l</p></td>
+        <td><p>—: MISSING in sympy.geometry!</p></td>
+        <td><p>—: Apollonius/La Hire (omitted)</p></td>
+        <td><p><strong>native</strong>: figures.py:293 + pappus conic polarity</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="domain-5-triangle-centers-classical-configurations">
+        <h2>Domain 5 — Triangle Centers &amp; Classical Configurations<a class="headerlink" href="#domain-5-triangle-centers-classical-configurations" title="Link to this heading">¶</a></h2>
+        <p>Incenter X(1), Excenters, Centroid X(2), Circumcenter X(3), Orthocenter X(4), Nine-Point Circle X(5), Euler line, Simson, Miquel, and ETC.</p>
+        <table class="docutils align-default">
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Canonical Topic (<code class="docutils literal notranslate"><span class="pre">snake_case</span></code>)</p></th>
+        <th class="head"><p>LeanEuc</p></th>
+        <th class="head"><p>GeoCoq</p></th>
+        <th class="head"><p>Mathlib</p></th>
+        <th class="head"><p>AlphaG</p></th>
+        <th class="head"><p>Newclid</p></th>
+        <th class="head"><p>JGEX</p></th>
+        <th class="head"><p>PGA/CGA</p></th>
+        <th class="head"><p>CindyJS</p></th>
+        <th class="head"><p>SymPy</p></th>
+        <th class="head"><p>Byrne</p></th>
+        <th class="head"><p>GEOMETOR</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Incenter X(1) &amp; Incircle (Euclid IV.4)</strong> (<code class="docutils literal notranslate"><span class="pre">incenter_and_incircle_x1</span></code>)</p></td>
+        <td><p>—: Book IV omitted</p></td>
+        <td><p><strong>native</strong>: Highschool/incenter.v</p></td>
+        <td><p><strong>native</strong>: Simplex.incenter / inradius (Incenter/Basic.lean)</p></td>
+        <td><p><em>partial</em>: incenter / incenter2 (conflated w/ excenter mod pi)</p></td>
+        <td><p><strong>native</strong>: incenter + R46_INCENTER_THEOREM</p></td>
+        <td><p><strong>native</strong>: INCENTER</p></td>
+        <td><p>derived: Meet of normalized side-blade bisectors</p></td>
+        <td><p><strong>native</strong>: a*A + b*B + c*C in CP^2</p></td>
+        <td><p><strong>native</strong>: Triangle.incenter / incircle</p></td>
+        <td><p><strong>native</strong>: Byrne Book IV, Prop. 4</p></td>
+        <td><p><strong>native</strong>: figures.py:410 + etc X(1)</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Three Excenters &amp; Excircles (J_A, J_B, J_C)</strong> (<code class="docutils literal notranslate"><span class="pre">excenters_and_excircles</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Not in Highschool/</p></td>
+        <td><p><em>partial</em>: SouthPole.lean (bisector-circumcircle poles)</p></td>
+        <td><p><em>partial</em>: excenter / excenter2 (identical predicates to incenter!)</p></td>
+        <td><p><em>partial</em>: excenter / excenter2</p></td>
+        <td><p><strong>native</strong>: EXCENTER</p></td>
+        <td><p>derived: Signed side-blade bisector meets</p></td>
+        <td><p><strong>native</strong>: -a*A + b*B + c*C in CP^2</p></td>
+        <td><p><strong>BROKEN</strong>: LIVE DOUBLE BUG in Triangle.excenters (polygon.py:2714)!</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><strong>native</strong>: Exact external bisectors + etc excenters</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Centroid X(2) &amp; 2:1 Median Concurrency</strong> (<code class="docutils literal notranslate"><span class="pre">centroid_x2</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><strong>native</strong>: Highschool/centroid.v</p></td>
+        <td><p><strong>native</strong>: Finset.centroid (LinearAlgebra/AffineSpace/Centroid.lean)</p></td>
+        <td><p><em>partial</em>: centroid macro; 3-median proof needs 1 aux mirror!</p></td>
+        <td><p><strong>native</strong>: centroid + R48_CENTROID_THEOREM</p></td>
+        <td><p><strong>native</strong>: CENTROID + 1-line co-side Area proof</p></td>
+        <td><p><strong>native</strong>: A + B + C (2D PGA homogeneous sum!)</p></td>
+        <td><p><strong>native</strong>: A + B + C in CP^2</p></td>
+        <td><p><strong>native</strong>: Triangle.centroid / Polygon.centroid</p></td>
+        <td><p>—: Archimedes (omitted in Euclid I-VI)</p></td>
+        <td><p><strong>native</strong>: figures.py:257 &amp; 376 + etc X(2)</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Circumcenter X(3) &amp; Circumcircle (Euclid IV.5)</strong> (<code class="docutils literal notranslate"><span class="pre">circumcenter_x3</span></code>)</p></td>
+        <td><p>—: Book IV omitted</p></td>
+        <td><p><strong>native</strong>: Highschool/circumcenter.v</p></td>
+        <td><p><strong>native</strong>: Simplex.circumcenter / circumsphere (n-dim!)</p></td>
+        <td><p><strong>native</strong>: circle / circumcenter (defs.txt:13, 19)</p></td>
+        <td><p><strong>native</strong>: circle + R47_CIRCUMCENTER_THEOREM</p></td>
+        <td><p><strong>native</strong>: CIRCUMCENTER</p></td>
+        <td><p><strong>native</strong>: C_circ * ni * ~C_circ (2D CGA!)</p></td>
+        <td><p><strong>native</strong>: CircleBy3 + adjoint3(C)*linf</p></td>
+        <td><p><strong>native</strong>: Triangle.circumcenter / circumcircle</p></td>
+        <td><p><strong>native</strong>: Byrne Book IV, Prop. 5</p></td>
+        <td><p><strong>native</strong>: figures.py:377 + etc X(3)</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Orthocenter X(4) &amp; Altitude Concurrency</strong> (<code class="docutils literal notranslate"><span class="pre">orthocenter_x4</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><strong>native</strong>: Highschool/orthocenter.v</p></td>
+        <td><p><strong>native</strong>: Simplex.mongePoint / orthocenter (MongePoint.lean)</p></td>
+        <td><p><strong>native</strong>: orthocenter (examples.txt:2; needs feet/aux)</p></td>
+        <td><p><strong>native</strong>: orthocenter + R43_ORTHOCENTER_THEOREM</p></td>
+        <td><p><strong>native</strong>: exs-book/ch3:3 ORTH (0-step Jacobi proof!)</p></td>
+        <td><p><strong>native</strong>: ((B&amp;C)|A) ^ ((C&amp;A)|B) (rational 2D PGA!)</p></td>
+        <td><p><strong>native</strong>: meet(perp(BC,A), perp(CA,B))</p></td>
+        <td><p><strong>native</strong>: Triangle.orthocenter</p></td>
+        <td><p>—: Omitted in Euclid I-VI</p></td>
+        <td><p><strong>native</strong>: figures.py:390 + etc X(4)</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Nine-Point Center X(5) &amp; Feuerbach’s Nine-Point Circle</strong> (<code class="docutils literal notranslate"><span class="pre">nine_point_circle_x5</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: OMITTED in GeoCoq Highschool/!</p></td>
+        <td><p><strong>native</strong>: NinePointCircle.lean (3(n+1)-point sphere!)</p></td>
+        <td><p><strong>native</strong>: ninepoints (defs.txt:103) + DDAR concyclicity</p></td>
+        <td><p><strong>native</strong>: ninepoints</p></td>
+        <td><p><strong>native</strong>: ex-gao/back/nine-point-circle</p></td>
+        <td><p><strong>native</strong>: Ma ^ Mb ^ Mc in 2D CGA</p></td>
+        <td><p><strong>native</strong>: CircleBy3(Ma, Mb, Mc)</p></td>
+        <td><p><strong>native</strong>: Triangle.nine_point_circle</p></td>
+        <td><p>—: Feuerbach 1822 (omitted)</p></td>
+        <td><p><strong>native</strong>: figures.py:394 + etc X(5)</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Euler Line Collinearity &amp; 2:1 Ratio (O, G, N, H)</strong> (<code class="docutils literal notranslate"><span class="pre">euler_line</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><em>partial</em>: Highschool/euler_line.v (Col only, no 2:1 ratio)</p></td>
+        <td><p><strong>native</strong>: mongePoint_vsub_circumcenter = 3 • (G -ᵥ O)</p></td>
+        <td><p><strong>native</strong>: examples.txt:8</p></td>
+        <td><p><strong>native</strong>: Supported</p></td>
+        <td><p><strong>native</strong>: exs-book/ch3:117 A_201</p></td>
+        <td><p><strong>native</strong>: Linear bivector identity</p></td>
+        <td><p><strong>native</strong>: Prover.js collinearity</p></td>
+        <td><p><strong>native</strong>: Triangle.eulerline</p></td>
+        <td><p>—: Euler 1765 (omitted)</p></td>
+        <td><p><strong>native</strong>: figures.py:420-436 (Q(X3,X4) = 9*Q(X3,X2))</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Simson-Wallace Line &amp; Miquel Pivot Theorems</strong> (<code class="docutils literal notranslate"><span class="pre">simson_wallace_miquel</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>derived: Derivable via (2:ℤ)•∡ cyclic lemmas</p></td>
+        <td><p><strong>native</strong>: Signature strength of eqangle DD+AR!</p></td>
+        <td><p><strong>native</strong>: R45_SIMSONS_LINE_THEOREM + DDAR</p></td>
+        <td><p><strong>native</strong>: 3_JAR/simson &amp; miq_th1.gex (Full-Angle!)</p></td>
+        <td><p>derived: 2D CGA / complex Clifford identity</p></td>
+        <td><p><strong>native</strong>: Prover.js</p></td>
+        <td><p>—: Not implemented</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>derived: Constructible &amp; verifiable via signed_area2</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Encyclopedia of Triangle Centers (X(6)-X(53144))</strong> (<code class="docutils literal notranslate"><span class="pre">kimberling_etc_catalog</span></code>)</p></td>
+        <td><p>—: 0 centers</p></td>
+        <td><p>—: Stops at X(1)-X(4)</p></td>
+        <td><p>—: Stops at ~6 centers (+ Brocard)</p></td>
+        <td><p>—: Stops at X(1)-X(5) + excenter</p></td>
+        <td><p>—: Stops at X(1)-X(5) + excenter</p></td>
+        <td><p>—: Classical centers only</p></td>
+        <td><p>—: Manual barycentric lift required</p></td>
+        <td><p>—: Manual CindyScript formulas</p></td>
+        <td><p>—: Stops at X(1)-X(5) (+ broken excenters)</p></td>
+        <td><p>—: Stops at IV.4 incircle &amp; IV.5 circumcircle</p></td>
+        <td><p><strong>native</strong>: geometor.etc CenterSymbolicRegistry (X(1)-X(53144))!</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="domain-6-projective-geometry-conic-sections">
+        <h2>Domain 6 — Projective Geometry &amp; Conic Sections<a class="headerlink" href="#domain-6-projective-geometry-conic-sections" title="Link to this heading">¶</a></h2>
+        <p>Homogeneous points at infinity, cross-ratio, harmonic conjugates, Pappus, Desargues, general conics, 5-point conic, Pascal/Brianchon, and conic pole-polar.</p>
+        <table class="docutils align-default">
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Canonical Topic (<code class="docutils literal notranslate"><span class="pre">snake_case</span></code>)</p></th>
+        <th class="head"><p>LeanEuc</p></th>
+        <th class="head"><p>GeoCoq</p></th>
+        <th class="head"><p>Mathlib</p></th>
+        <th class="head"><p>AlphaG</p></th>
+        <th class="head"><p>Newclid</p></th>
+        <th class="head"><p>JGEX</p></th>
+        <th class="head"><p>PGA/CGA</p></th>
+        <th class="head"><p>CindyJS</p></th>
+        <th class="head"><p>SymPy</p></th>
+        <th class="head"><p>Byrne</p></th>
+        <th class="head"><p>GEOMETOR</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Homogeneous Coordinates &amp; Ideal Points at Infinity</strong> (<code class="docutils literal notranslate"><span class="pre">homogeneous_ideal_points</span></code>)</p></td>
+        <td><p>—: Affine Euclidean only</p></td>
+        <td><p><em>partial</em>: Annexes/projective.v (synthetic incidence)</p></td>
+        <td><p><strong>native</strong>: Projectivization K V (LinearAlgebra/Projective/)</p></td>
+        <td><p>—: Parallel lines do not meet in point</p></td>
+        <td><p>—: Affine Euclidean only</p></td>
+        <td><p>—: Parallel ratio r instead of ideal points</p></td>
+        <td><p><strong>native</strong>: Direction bivectors e12=0 in 2D PGA!</p></td>
+        <td><p><strong>native</strong>: [x, y, 0] on linf=[0,0,1] in CP^2!</p></td>
+        <td><p>—: Parallel Line.intersection returns []</p></td>
+        <td><p>—: Affine Euclidean only</p></td>
+        <td><p><strong>native</strong>: geometor.pappus homogeneous RP^2 points/lines</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Projective Cross-Ratio CR(A, B; C, D) &amp; Perspectivity Invariance</strong> (<code class="docutils literal notranslate"><span class="pre">cross_ratio_invariance</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: SURPRISINGLY ABSENT in Mathlib Geometry!</p></td>
+        <td><p><em>partial</em>: Only harmonic -1 case fits 8-pt eqratio</p></td>
+        <td><p><em>partial</em>: R70 harmonic case only</p></td>
+        <td><p><strong>native</strong>: exs-book/ch3:38 A_353 (Area ratio cancellation!)</p></td>
+        <td><p><strong>native</strong>: ((A&amp;C)|(B&amp;D)) / ((A&amp;D)|(B&amp;C)) in 2D PGA</p></td>
+        <td><p><strong>native</strong>: crossratio(A, B, C, D) + Laguerre formula</p></td>
+        <td><p>—: MISSING in sympy.geometry!</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><strong>native</strong>: geometor.model.cross_ratio + geometor.pappus</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Harmonic Range &amp; Complete Quadrangle Fourth-Harmonic Construction</strong> (<code class="docutils literal notranslate"><span class="pre">harmonic_conjugate_quadrangle</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>derived: Expressible via quadrangle; unprovable by bare DD+AR</p></td>
+        <td><p><strong>native</strong>: R70_PROJECTIVE_HARMONIC_CONJUGATE (added as axiom!)</p></td>
+        <td><p><strong>native</strong>: HARMONIC (exs-book/ch3:47)</p></td>
+        <td><p><strong>native</strong>: Division-free PGA quadrangle meet/join</p></td>
+        <td><p><strong>native</strong>: crossratio == -1</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><strong>native</strong>: is_harmonic + pappus harmonic conjugate</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Pappus’s Hexagon Theorem (Synagoge VII.139)</strong> (<code class="docutils literal notranslate"><span class="pre">pappus_hexagon_theorem</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><em>partial</em>: Ch13_5_Pappus_Pascal.v (affine parallel case!)</p></td>
+        <td><p>—: ABSENT in Mathlib!</p></td>
+        <td><p><em>partial</em>: 1-line statement; UNPROVABLE without aux parallels!</p></td>
+        <td><p><strong>native</strong>: R44_PAPPUS_THEOREM (hardcoded rule!)</p></td>
+        <td><p><strong>native</strong>: exs-book/ch2:40 PAPPUS (0-aux Area proof!)</p></td>
+        <td><p><strong>native</strong>: (X &amp; Y &amp; Z).e == 0 identically in 2D PGA!</p></td>
+        <td><p><strong>native</strong>: det(X, Y, Z) == 0 in CP^2</p></td>
+        <td><p><strong>BROKEN</strong>: Crashes if opposite sides parallel + affine_rank bug!</p></td>
+        <td><p>—: Point-free glyph palette ill-suited to 9-pt Pappus</p></td>
+        <td><p><strong>native</strong>: figures.py:444 + geometor.pappus flagship</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Desargues’s Perspective Triangles Theorem</strong> (<code class="docutils literal notranslate"><span class="pre">desargues_perspective_triangles</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><em>partial</em>: Ch13_6_Desargues_Hessenberg.v (affine parallel)</p></td>
+        <td><p>—: ABSENT in Mathlib!</p></td>
+        <td><p><em>partial</em>: Unprovable by bare DD+AR without aux parallels</p></td>
+        <td><p><em>partial</em>: Requires aux parallels</p></td>
+        <td><p><strong>native</strong>: 0-aux Area-Method / Wu / GB proof</p></td>
+        <td><p><strong>native</strong>: Grassmann-Cayley identity in 2D/3D PGA</p></td>
+        <td><p><strong>native</strong>: det(P, Q, R) == 0 in CP^2</p></td>
+        <td><p><em>partial</em>: Manual Line.intersection (fails at infinity)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><strong>native</strong>: geometor.pappus Desargues configurations</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>General Conics: Ellipse, Parabola &amp; Hyperbola (Apollonius)</strong> (<code class="docutils literal notranslate"><span class="pre">general_conic_sections</span></code>)</p></td>
+        <td><p>—: Circles only</p></td>
+        <td><p>—: Circles only</p></td>
+        <td><p>—: Spheres only in Geometry/Euclidean/</p></td>
+        <td><p>—: Circles only</p></td>
+        <td><p>—: Circles only</p></td>
+        <td><p><em>partial</em>: Algebraic equations in Wu/GB only</p></td>
+        <td><p><em>partial</em>: Requires 6D Conic GA Cl(5,3)</p></td>
+        <td><p><strong>native</strong>: 3x3 symmetric matrix C in CP^2 (all conics!)</p></td>
+        <td><p><em>partial</em>: Axis-aligned Ellipse + Parabola; NO Hyperbola!</p></td>
+        <td><p>—: Circles only</p></td>
+        <td><p><em>partial</em>: apollonius codex + Rec 5 ProjectiveConic</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Braikenridge-Maclaurin / Plücker Conic Through 5 Points</strong> (<code class="docutils literal notranslate"><span class="pre">conic_through_five_points</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><em>partial</em>: Wedge of 5 points in 6D Cl(5,3)</p></td>
+        <td><p><strong>native</strong>: ConicBy5 Plücker pencil (GeoOps.js:1032)!</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>derived: Pascal line locus in pappus + Rec 5 ConicBy5</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Pascal’s Hexagrammum Mysticum &amp; Brianchon’s Dual Theorem</strong> (<code class="docutils literal notranslate"><span class="pre">pascal_and_brianchon</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted (only circle/line Pappus)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><em>partial</em>: Circle-only Pascal via cyclic eqangle</p></td>
+        <td><p><em>partial</em>: Circle-only Pascal</p></td>
+        <td><p><strong>native</strong>: exs-book/ch3:134 PASCAL &amp; Wu/GB</p></td>
+        <td><p>derived: 6D Conic GA / projective invariant</p></td>
+        <td><p><strong>native</strong>: Primal C &amp; dual adj(C) in CP^2</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><strong>native</strong>: geometor.pappus Hexagrammum Mysticum</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>General Conic Pole-Polar &amp; Adjugate Dual Conic</strong> (<code class="docutils literal notranslate"><span class="pre">conic_pole_polar_duality</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><em>partial</em>: Spheres only (Sphere/PolePolar.lean)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Circles only</p></td>
+        <td><p>—: Circles only in 2D CGA</p></td>
+        <td><p><strong>native</strong>: l = C * p, p = adjoint3(C) * l!</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><em>partial</em>: geometor.pappus + Rec 5 ProjectiveConic</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="domain-7-transformations-coordinatization-complexity">
+        <h2>Domain 7 — Transformations, Coordinatization &amp; Complexity<a class="headerlink" href="#domain-7-transformations-coordinatization-complexity" title="Link to this heading">¶</a></h2>
+        <p>Reflections, rotations, translations, spiral similarities, geometric field arithmetic, Area-Method invariants, and Géométrographie complexity.</p>
+        <table class="docutils align-default">
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Canonical Topic (<code class="docutils literal notranslate"><span class="pre">snake_case</span></code>)</p></th>
+        <th class="head"><p>LeanEuc</p></th>
+        <th class="head"><p>GeoCoq</p></th>
+        <th class="head"><p>Mathlib</p></th>
+        <th class="head"><p>AlphaG</p></th>
+        <th class="head"><p>Newclid</p></th>
+        <th class="head"><p>JGEX</p></th>
+        <th class="head"><p>PGA/CGA</p></th>
+        <th class="head"><p>CindyJS</p></th>
+        <th class="head"><p>SymPy</p></th>
+        <th class="head"><p>Byrne</p></th>
+        <th class="head"><p>GEOMETOR</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Point Reflection (Central Symmetry) &amp; Line Reflection</strong> (<code class="docutils literal notranslate"><span class="pre">line_and_point_reflection</span></code>)</p></td>
+        <td><p>derived: Via Prop10 / Prop12</p></td>
+        <td><p><strong>native</strong>: Ch07_midpoint (l7_*) &amp; Ch10_line_reflexivity.v!</p></td>
+        <td><p><strong>native</strong>: LinearIsometryEquiv.reflection / pointReflection</p></td>
+        <td><p><strong>native</strong>: mirror (L169) &amp; reflect (L271)</p></td>
+        <td><p><strong>native</strong>: mirror &amp; reflect</p></td>
+        <td><p><strong>native</strong>: MIRROR / REFLECT</p></td>
+        <td><p><strong>native</strong>: l &gt;&gt; X (line) &amp; P &gt;&gt; X (point) in 2D PGA!</p></td>
+        <td><p><strong>native</strong>: TrReflectionL / TrReflectionP</p></td>
+        <td><p><em>partial</em>: Entity.reflect (uses atan(slope) &amp; fails on Ellipse!)</p></td>
+        <td><p>—: Static coloured diagrams</p></td>
+        <td><p>derived: Compass mirror/vesica + Rec 7 elements transforms</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Euclidean Rotations, Translations &amp; Rigid Motors</strong> (<code class="docutils literal notranslate"><span class="pre">rotation_and_translation</span></code>)</p></td>
+        <td><p>—: Superposition hidden in SAS axiom</p></td>
+        <td><p>derived: Composition of 2 line reflections (Ch10)</p></td>
+        <td><p><strong>native</strong>: Orientation.rotation / vadd (+ᵥ)</p></td>
+        <td><p><em>partial</em>: shift (L295), psquare/nsquare (±90°), s_angle</p></td>
+        <td><p><em>partial</em>: shift, psquare, nsquare</p></td>
+        <td><p><strong>native</strong>: PRATIO (translation) &amp; TRATIO (90° rotation)</p></td>
+        <td><p><strong>native</strong>: Rotors exp(-theta/2 * P) &amp; Translators 1 - D/2!</p></td>
+        <td><p><strong>native</strong>: TrSimilarity / Euclidean projective matrices</p></td>
+        <td><p><em>partial</em>: Entity.rotate / translate (Ellipse.rotate broken!)</p></td>
+        <td><p><em>partial</em>: Superposition in Byrne I.4 / I.8</p></td>
+        <td><p>derived: Exact algebraic transforms + PGA motor lens</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Homothety (Dilation) &amp; Spiral Similarity</strong> (<code class="docutils literal notranslate"><span class="pre">homothety_and_spiral_similarity</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>derived: Ch14/Ch15 scaling</p></td>
+        <td><p><strong>native</strong>: AffineMap.homothety (LinearAlgebra/AffineSpace/)</p></td>
+        <td><p>derived: simtri + eqratio</p></td>
+        <td><p>derived: simtri + eqratio</p></td>
+        <td><p><strong>native</strong>: LRATIO / PRATIO / TRATIO</p></td>
+        <td><p><strong>native</strong>: 2D CGA dilator exp(alpha * (P ^ ni)) * rotor!</p></td>
+        <td><p><strong>native</strong>: TrSimilarity (complex multiplication)</p></td>
+        <td><p><strong>native</strong>: Entity.scale</p></td>
+        <td><p><em>partial</em>: Book VI similar-polygon construction (VI.18)</p></td>
+        <td><p>derived: Exact rational homothety + divine scaling</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Hilbert-Tarski Geometric Segment Arithmetic &amp; Coordinatization</strong> (<code class="docutils literal notranslate"><span class="pre">synthetic_field_coordinatization</span></code>)</p></td>
+        <td><p>—: Maps directly to host R</p></td>
+        <td><p><strong>native</strong>: Ch14_sum, Ch14_prod, Ch15_lengths, Ch16_coordinates!</p></td>
+        <td><p>—: Starts from host R vector space</p></td>
+        <td><p>—: Uses Python float / Fraction</p></td>
+        <td><p>—: Uses float / SymEngine</p></td>
+        <td><p>—: Uses rational polynomials</p></td>
+        <td><p>—: Uses host scalar ring</p></td>
+        <td><p>—: Uses complex floats</p></td>
+        <td><p>—: Uses SymPy Expr</p></td>
+        <td><p><em>partial</em>: Book V ribbon magnitude ratios (V.1-V.25)</p></td>
+        <td><p><em>partial</em>: hilbert codex + algebraic_field Q(alpha)</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Chou-Gao-Zhang Coordinate-Free Area &amp; Pythagoras Elimination</strong> (<code class="docutils literal notranslate"><span class="pre">coordinate_free_area_elimination</span></code>)</p></td>
+        <td><p>—: SMT translation instead</p></td>
+        <td><p>—: ColR/CongR only</p></td>
+        <td><p>—: Inner-product tactics</p></td>
+        <td><p>—: Forward DD + linear AR</p></td>
+        <td><p>—: Forward DD + linear AR</p></td>
+        <td><p><em>partial</em>: Elim.java kernel present; Area.java GUI disabled!</p></td>
+        <td><p>derived: Analogous to Grassmann-Cayley bracket elimination</p></td>
+        <td><p>—: Randomized float Prover.js</p></td>
+        <td><p>—: Generic CAS solve()</p></td>
+        <td><p><em>partial</em>: Visual precursor: cut-and-paste region equations!</p></td>
+        <td><p>derived: signed_area2 + Rec 6 complete Area-Method prover</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Wu’s Characteristic Set &amp; Gröbner Basis Theorem Proving</strong> (<code class="docutils literal notranslate"><span class="pre">wu_grobner_polynomial_proving</span></code>)</p></td>
+        <td><p><em>partial</em>: Z3/CVC5 nonlinear real arithmetic</p></td>
+        <td><p><em>partial</em>: External GeoCoq algebraic tactics (nsatz)</p></td>
+        <td><p><em>partial</em>: polyrith / grobner tactics</p></td>
+        <td><p>—: Deliberately avoids coordinate polynomials</p></td>
+        <td><p>—: Avoids coordinate polynomials</p></td>
+        <td><p><strong>native</strong>: CharSet.java (PanelWu) &amp; PanelGB.java (Rabinowitsch)!</p></td>
+        <td><p>derived: Symbolic blade expansion</p></td>
+        <td><p><em>partial</em>: Schwartz-Zippel complex identity test (Prover.js)</p></td>
+        <td><p><em>partial</em>: sympy.polys.groebner (manual)</p></td>
+        <td><p>—: Human visual verification</p></td>
+        <td><p><strong>native</strong>: ANP minimal-polynomial canonicalization (algebra.py)</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>PSLQ Integer-Relation &amp; Minimal-Polynomial Discovery</strong> (<code class="docutils literal notranslate"><span class="pre">pslq_algebraic_relation_recovery</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><strong>native</strong>: PSLQ.js + CindyScript guess(x) (degree &lt;= 2)!</p></td>
+        <td><p><em>partial</em>: nsimplify (via mpmath.pslq)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>derived: divine proportion scanner + Rec 9 mpmath PSLQ scout</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Lemoine’s Géométrographie Operational Complexity (R1, R2, C1, C2, C3)</strong> (<code class="docutils literal notranslate"><span class="pre">lemoine_geometrographie_complexity</span></code>)</p></td>
+        <td><p>—: Counts proof lines, not ruler/compass ops</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Non-constructive</p></td>
+        <td><p><em>partial</em>: Clause count only</p></td>
+        <td><p><em>partial</em>: Clause count only</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Pre-Lemoine (1847 vs 1902)</p></td>
+        <td><p><strong>native</strong>: lemoine codex + Model.steps (Rec 3 R1..C3 telemetry)</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="domain-8-golden-section-constructible-polygons-3d-solids">
+        <h2>Domain 8 — Golden Section, Constructible Polygons &amp; 3D Solids<a class="headerlink" href="#domain-8-golden-section-constructible-polygons-3d-solids" title="Link to this heading">¶</a></h2>
+        <p>Extreme and mean ratio (phi), golden vesica chain, regular pentagon/decagon, 3D lines/planes/spheres, and the five Platonic solids.</p>
+        <table class="docutils align-default">
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Canonical Topic (<code class="docutils literal notranslate"><span class="pre">snake_case</span></code>)</p></th>
+        <th class="head"><p>LeanEuc</p></th>
+        <th class="head"><p>GeoCoq</p></th>
+        <th class="head"><p>Mathlib</p></th>
+        <th class="head"><p>AlphaG</p></th>
+        <th class="head"><p>Newclid</p></th>
+        <th class="head"><p>JGEX</p></th>
+        <th class="head"><p>PGA/CGA</p></th>
+        <th class="head"><p>CindyJS</p></th>
+        <th class="head"><p>SymPy</p></th>
+        <th class="head"><p>Byrne</p></th>
+        <th class="head"><p>GEOMETOR</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Golden Ratio (phi) — Division in Extreme &amp; Mean Ratio (Euclid II.11, VI.30)</strong> (<code class="docutils literal notranslate"><span class="pre">golden_ratio_extreme_mean_cut</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: OMITTED across all 481 GeoCoq files!</p></td>
+        <td><p>—: Real.goldenRatio in NumberTheory only, 0 in Geometry!</p></td>
+        <td><p>—: OMITTED in defs.txt &amp; rules.txt!</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Not built-in</p></td>
+        <td><p><em>partial</em>: guess() recovers (1+sqrt(5))/2 numerically</p></td>
+        <td><p>—: sp.GoldenRatio in core only, 0 in sympy.geometry</p></td>
+        <td><p><strong>native</strong>: Byrne Book II.11 &amp; Book VI.30 (in 4 colours!)</p></td>
+        <td><p><strong>native</strong>: Core DNA: Q(phi) ANP, fundamentals, divine, pacioli!</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>5-Step Vesica Golden Chain (/ I E F J / Harmonics)</strong> (<code class="docutils literal notranslate"><span class="pre">vesica_golden_poles_chain</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Uses classical II.11 square-gnomon cut</p></td>
+        <td><p><strong>native</strong>: figures.py:313 + fundamentals + divine</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Constructible Regular Pentagon &amp; Decagon (Euclid IV.10-IV.14, XIII.1-XIII.10)</strong> (<code class="docutils literal notranslate"><span class="pre">regular_pentagon_and_decagon</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><em>partial</em>: Angle/Cosine values of pi/5; no compass construction</p></td>
+        <td><p><em>partial</em>: pentagon (L235) is 5 unconstrained free points!</p></td>
+        <td><p><em>partial</em>: pentagon = 5 free points</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>derived: 2*pi/5 rotor over Q(phi, sqrt(5))</p></td>
+        <td><p>derived: Complex 5th roots of unity</p></td>
+        <td><p><strong>native</strong>: RegularPolygon(O, r, 5) (exact cos(pi/5) radicals)</p></td>
+        <td><p><strong>native</strong>: Byrne Book IV, Props. 10-14 (golden isosceles!)</p></td>
+        <td><p><strong>native</strong>: euclid IV.11 / XIII + kepler + elements</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Constructible n-gons (3, 4, 5, 6, 15, 17 / Gauss-Wantzel)</strong> (<code class="docutils literal notranslate"><span class="pre">constructible_polygons_gauss_wantzel</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><em>partial</em>: Annexes/quadrilaterals.v &amp; regular_polygons (partial)</p></td>
+        <td><p><em>partial</em>: Field theory degree-2 tower lemmas; not linked to geom</p></td>
+        <td><p><em>partial</em>: isquare, eq_triangle; trisect (L349) cheats w/ trig!</p></td>
+        <td><p><em>partial</em>: isquare, eq_triangle, trisect</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>derived: Pin(2) rotor towers</p></td>
+        <td><p>derived: Regular polygon macro</p></td>
+        <td><p><strong>native</strong>: RegularPolygon(O, r, n)</p></td>
+        <td><p><strong>native</strong>: Byrne Book IV (3, 4, 5, 6, 15-gon in IV.16!)</p></td>
+        <td><p><strong>native</strong>: kepler Harmonices Mundi Book I + Q(alpha) towers</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>3D Lines, Planes, Orthogonality &amp; Spheres (Euclid Books XI-XII)</strong> (<code class="docutils literal notranslate"><span class="pre">euclidean_3d_lines_planes_spheres</span></code>)</p></td>
+        <td><p>—: Strictly 2D planar</p></td>
+        <td><p><strong>native</strong>: Tarski_3D / dimension-free Ch02-Ch12!</p></td>
+        <td><p><strong>native</strong>: n-dimensional throughout Geometry/Euclidean/!</p></td>
+        <td><p>—: Strictly 2D planar</p></td>
+        <td><p>—: Strictly 2D planar</p></td>
+        <td><p>—: Strictly 2D planar</p></td>
+        <td><p><strong>native</strong>: 3D PGA Cl(3,0,1) &amp; 3D CGA Cl(4,1) in kingdon!</p></td>
+        <td><p><em>partial</em>: Cindy3D WebGL plugin</p></td>
+        <td><p><strong>native</strong>: Point3D, Line3D, Plane (no Sphere!)</p></td>
+        <td><p>—: Stops at Book VI (Books XI-XII omitted)</p></td>
+        <td><p><em>partial</em>: euclid XI-XII + archimedes + walter-russell 3D</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Five Platonic Solids &amp; Golden Polyhedral Coordinates (Euclid XIII, Pacioli, Kepler)</strong> (<code class="docutils literal notranslate"><span class="pre">platonic_and_archimedean_solids</span></code>)</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: OMITTED in Mathlib/Geometry/!</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p>—: Omitted</p></td>
+        <td><p><em>partial</em>: 3D PGA motor symmetry groups</p></td>
+        <td><p><em>partial</em>: Cindy3D polyhedra demos</p></td>
+        <td><p><em>partial</em>: combinatorics.Polyhedron (permutations only, NO 3D coords!)</p></td>
+        <td><p>—: Stops at Book VI (Book XIII omitted)</p></td>
+        <td><p><strong>native</strong>: euclid XIII + pacioli + kepler + walter-russell</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../rosetta/07-projective-harmonic.html" title="Benchmark 7: Projective Collinearity, Cross-Ratio &amp; Pappus Hexagon">&larr; <span class="nav-label">Benchmark 7: Projective Collinearity, Cross-Ratio & Pappus Hexagon</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../glossary.html" title="Glossary"><span class="nav-label">Glossary</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="../tags/byrne.html">byrne</a></li>
+        <li><a href="../tags/formal-systems.html">formal-systems</a></li>
+        <li><a href="../tags/geometor-model.html">geometor-model</a></li>
+        <li><a href="../tags/opus.html">opus</a></li>
+        <li><a href="../tags/rosetta.html">rosetta</a></li>
+        <li><a href="../tags/sympy.html">sympy</a></li>
+        <li><a href="../tags/syntax.html">syntax</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=01f34227"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

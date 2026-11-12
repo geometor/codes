@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../../../../../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>geometor.codes.figures &mdash; GEOMETOR • codes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/css/styles.css?v=66998e95" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../../../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../../../../../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../../../../../index.html">
+        <h1>GEOMETOR • codes</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">codes</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../../../../../hierarchy/index.html"  >Hierarchy</a>
+        </li>
+        <li>
+          <a href="../../../../../syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a>
+        </li>
+        <li>
+          <a href="../../../../../systems/index.html"  >Systems</a>
+        </li>
+        <li>
+          <a href="../../../../../rosetta/index.html"  >Rosetta Stone Benchmarks</a>
+        </li>
+        <li>
+          <a href="../../../../../opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a>
+        </li>
+        <li>
+          <a href="../../../../../glossary.html"  >Glossary</a>
+        </li>
+        <li>
+          <a href="../../../../../persons.html"  >Persons</a>
+        </li>
+        <li>
+          <a href="../../../../../bibliography.html"  >Bibliography</a>
+        </li>
+        <li>
+          <a href="../../../../../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../../../../index.html" class="is-active" aria-selected="true" >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../../../../../index.html" title="Return to Project Portal">&larr; codes</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../../../../../index.html">GEOMETOR • codes</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="module-geometor.codes.figures">
+        <span id="geometor-codes-figures"></span><h1>geometor.codes.figures<a class="headerlink" href="#module-geometor.codes.figures" title="Link to this heading">¶</a></h1>
+        <p>Exact <cite>geometor.model</cite> SVG figure generators for GEOMETOR Codes.</p>
+        <p>Every model is constructed strictly with <cite>Model(…, auto_intersect=False)</cite> and
+        100% exact SymPy coordinates (zero <cite>sp.Float</cite>), verified symbolically via
+        Rational Trigonometry (<cite>quadrance</cite>, <cite>line_spread</cite>, <cite>vertex_spread</cite>, <cite>cross_ratio</cite>),
+        and rendered as an interactive <cite>.euclid-graphic</cite> SVG in <cite>docsrc/_static/figures/</cite>.</p>
+        <section class="level-2" id="attributes">
+        <h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.figures.FIGURE_SPECS" title="geometor.codes.figures.FIGURE_SPECS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FIGURE_SPECS</span></code></a></p></td>
+        <td><p></p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="classes">
+        <h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.figures.FigureSpec" title="geometor.codes.figures.FigureSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FigureSpec</span></code></a></p></td>
+        <td><p>Metadata and builder callable for a comparative <code class="docutils literal notranslate"><span class="pre">.euclid-graphic</span></code> figure.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="functions">
+        <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.figures.build_01_seven_ontologies" title="geometor.codes.figures.build_01_seven_ontologies"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_01_seven_ontologies</span></code></a>() → tuple[geometor.model.Model, list[dict[str, object]]]</p></td>
+        <td><p>Build Figure 1: The 7 Ontologies of a Line &amp; Circle (<cite>I.1</cite> Vesica Locus).</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.figures.build_02_topological_selectors" title="geometor.codes.figures.build_02_topological_selectors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_02_topological_selectors</span></code></a>() → tuple[geometor.model.Model, list[dict[str, object]]]</p></td>
+        <td><p>Build Figure 2: Diagrammatic Selectors (<cite>LeanEuclid</cite> System E == <cite>geometor.model</cite>).</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.figures.build_03_tarski_five_segment" title="geometor.codes.figures.build_03_tarski_five_segment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_03_tarski_five_segment</span></code></a>() → tuple[geometor.model.Model, list[dict[str, object]]]</p></td>
+        <td><p>Build Figure 3: Tarski's Point-Only <cite>FSC</cite> &amp; Right-Angle <cite>Per</cite> via Midpoint.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.figures.build_04_torsor_oangle_spread" title="geometor.codes.figures.build_04_torsor_oangle_spread"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_04_torsor_oangle_spread</span></code></a>() → tuple[geometor.model.Model, list[dict[str, object]]]</p></td>
+        <td><p>Build Figure 4: Affine Torsor <cite>C -ᵥ A</cite>, Directed <cite>oangle</cite> &amp; Rational <cite>spread</cite>.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.figures.build_05_area_method_elimination" title="geometor.codes.figures.build_05_area_method_elimination"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_05_area_method_elimination</span></code></a>() → tuple[geometor.model.Model, list[dict[str, object]]]</p></td>
+        <td><p>Build Figure 5: Chou-Gao-Zhang Area-Method Elimination (<cite>S_ABC</cite> &amp; <cite>P_ABC</cite>).</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.figures.build_06_pga_cga_inversion" title="geometor.codes.figures.build_06_pga_cga_inversion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_06_pga_cga_inversion</span></code></a>() → tuple[geometor.model.Model, list[dict[str, object]]]</p></td>
+        <td><p>Build Figure 6: 2D PGA/CGA Circle Inversion <cite>C &gt;&gt; P</cite> &amp; <cite>CP^2</cite> Pole-Polar.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.figures.build_07_vesica_golden_poles" title="geometor.codes.figures.build_07_vesica_golden_poles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_07_vesica_golden_poles</span></code></a>() → tuple[geometor.model.Model, list[dict[str, object]]]</p></td>
+        <td><p>Build Figure 7: Just-In-Time Emergence from <cite>fundamental(A, B)</cite> to Golden Chain.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.figures.build_08_rosetta_centers_euler" title="geometor.codes.figures.build_08_rosetta_centers_euler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_08_rosetta_centers_euler</span></code></a>() → tuple[geometor.model.Model, list[dict[str, object]]]</p></td>
+        <td><p>Build Figure 8: Rosetta Benchmark 5 — 13-14-15 Triangle Centers <cite>X(1)..X(5)</cite>.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.figures.build_09_rosetta_pappus_harmonic" title="geometor.codes.figures.build_09_rosetta_pappus_harmonic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_09_rosetta_pappus_harmonic</span></code></a>() → tuple[geometor.model.Model, list[dict[str, object]]]</p></td>
+        <td><p>Build Figure 9: Rosetta Benchmark 7 — Projective Pappus Hexagon &amp; Harmonic Range.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.figures.default_figures_dir" title="geometor.codes.figures.default_figures_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default_figures_dir</span></code></a>() → pathlib.Path</p></td>
+        <td><p>Return the canonical <cite>docsrc/_static/figures</cite> directory inside <cite>geometor/codes</cite>.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.figures.build_all_figures" title="geometor.codes.figures.build_all_figures"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_all_figures</span></code></a>([output_dir]) → list[pathlib.Path]</p></td>
+        <td><p>Construct, symbolically verify, and render all 9 <cite>.euclid-graphic</cite> SVG figures.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="module-contents">
+        <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.codes.figures.FigureSpec">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.codes.figures.</span></span><span class="sig-name descname"><span class="pre">FigureSpec</span></span><a class="headerlink" href="#geometor.codes.figures.FigureSpec" title="Link to this definition">¶</a></dt>
+        <dd><p>Metadata and builder callable for a comparative <code class="docutils literal notranslate"><span class="pre">.euclid-graphic</span></code> figure.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.figures.FigureSpec.slug">
+        <span class="sig-name descname"><span class="pre">slug</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.figures.FigureSpec.slug" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.figures.FigureSpec.title">
+        <span class="sig-name descname"><span class="pre">title</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.figures.FigureSpec.title" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.figures.FigureSpec.builder">
+        <span class="sig-name descname"><span class="pre">builder</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.codes.figures.FigureSpec.builder" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.figures.build_01_seven_ontologies">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.figures.</span></span><span class="sig-name descname"><span class="pre">build_01_seven_ontologies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.codes.figures.build_01_seven_ontologies" title="Link to this definition">¶</a></dt>
+        <dd><p>Build Figure 1: The 7 Ontologies of a Line &amp; Circle (<cite>I.1</cite> Vesica Locus).</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Tuple of exact <cite>Model</cite> and SVG callout annotations.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.figures.build_02_topological_selectors">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.figures.</span></span><span class="sig-name descname"><span class="pre">build_02_topological_selectors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.codes.figures.build_02_topological_selectors" title="Link to this definition">¶</a></dt>
+        <dd><p>Build Figure 2: Diagrammatic Selectors (<cite>LeanEuclid</cite> System E == <cite>geometor.model</cite>).</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Tuple of exact <cite>Model</cite> and SVG callout annotations.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.figures.build_03_tarski_five_segment">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.figures.</span></span><span class="sig-name descname"><span class="pre">build_03_tarski_five_segment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.codes.figures.build_03_tarski_five_segment" title="Link to this definition">¶</a></dt>
+        <dd><p>Build Figure 3: Tarski’s Point-Only <cite>FSC</cite> &amp; Right-Angle <cite>Per</cite> via Midpoint.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Tuple of exact <cite>Model</cite> and SVG callout annotations.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.figures.build_04_torsor_oangle_spread">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.figures.</span></span><span class="sig-name descname"><span class="pre">build_04_torsor_oangle_spread</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.codes.figures.build_04_torsor_oangle_spread" title="Link to this definition">¶</a></dt>
+        <dd><p>Build Figure 4: Affine Torsor <cite>C -ᵥ A</cite>, Directed <cite>oangle</cite> &amp; Rational <cite>spread</cite>.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Tuple of exact <cite>Model</cite> and SVG callout annotations.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.figures.build_05_area_method_elimination">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.figures.</span></span><span class="sig-name descname"><span class="pre">build_05_area_method_elimination</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.codes.figures.build_05_area_method_elimination" title="Link to this definition">¶</a></dt>
+        <dd><p>Build Figure 5: Chou-Gao-Zhang Area-Method Elimination (<cite>S_ABC</cite> &amp; <cite>P_ABC</cite>).</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Tuple of exact <cite>Model</cite> and SVG callout annotations.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.figures.build_06_pga_cga_inversion">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.figures.</span></span><span class="sig-name descname"><span class="pre">build_06_pga_cga_inversion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.codes.figures.build_06_pga_cga_inversion" title="Link to this definition">¶</a></dt>
+        <dd><p>Build Figure 6: 2D PGA/CGA Circle Inversion <cite>C &gt;&gt; P</cite> &amp; <cite>CP^2</cite> Pole-Polar.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Tuple of exact <cite>Model</cite> and SVG callout annotations.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.figures.build_07_vesica_golden_poles">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.figures.</span></span><span class="sig-name descname"><span class="pre">build_07_vesica_golden_poles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.codes.figures.build_07_vesica_golden_poles" title="Link to this definition">¶</a></dt>
+        <dd><p>Build Figure 7: Just-In-Time Emergence from <cite>fundamental(A, B)</cite> to Golden Chain.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Tuple of exact <cite>Model</cite> and SVG callout annotations.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.figures.build_08_rosetta_centers_euler">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.figures.</span></span><span class="sig-name descname"><span class="pre">build_08_rosetta_centers_euler</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.codes.figures.build_08_rosetta_centers_euler" title="Link to this definition">¶</a></dt>
+        <dd><p>Build Figure 8: Rosetta Benchmark 5 — 13-14-15 Triangle Centers <cite>X(1)..X(5)</cite>.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Tuple of exact <cite>Model</cite> and SVG callout annotations.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.figures.build_09_rosetta_pappus_harmonic">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.figures.</span></span><span class="sig-name descname"><span class="pre">build_09_rosetta_pappus_harmonic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.codes.figures.build_09_rosetta_pappus_harmonic" title="Link to this definition">¶</a></dt>
+        <dd><p>Build Figure 9: Rosetta Benchmark 7 — Projective Pappus Hexagon &amp; Harmonic Range.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Tuple of exact <cite>Model</cite> and SVG callout annotations.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py data">
+        <dt class="sig sig-object py" id="geometor.codes.figures.FIGURE_SPECS">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.figures.</span></span><span class="sig-name descname"><span class="pre">FIGURE_SPECS</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#geometor.codes.figures.FigureSpec" title="geometor.codes.figures.FigureSpec"><span class="pre">FigureSpec</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.codes.figures.FIGURE_SPECS" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.figures.default_figures_dir">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.figures.</span></span><span class="sig-name descname"><span class="pre">default_figures_dir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pathlib.Path</span></span></span><a class="headerlink" href="#geometor.codes.figures.default_figures_dir" title="Link to this definition">¶</a></dt>
+        <dd><p>Return the canonical <cite>docsrc/_static/figures</cite> directory inside <cite>geometor/codes</cite>.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Absolute <cite>Path</cite> to <cite>docsrc/_static/figures</cite>.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.figures.build_all_figures">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.figures.</span></span><span class="sig-name descname"><span class="pre">build_all_figures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.codes.figures.build_all_figures" title="Link to this definition">¶</a></dt>
+        <dd><p>Construct, symbolically verify, and render all 9 <cite>.euclid-graphic</cite> SVG figures.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>output_dir</strong> – Optional target directory; defaults to <cite>docsrc/_static/figures</cite>.</p>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>List of written <cite>.svg</cite> file paths.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../../../../../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-nav-next">
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../../../../../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../../../../../log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="../../../../../tags/byrne.html">byrne</a></li>
+        <li><a href="../../../../../tags/formal-systems.html">formal-systems</a></li>
+        <li><a href="../../../../../tags/geometor-model.html">geometor-model</a></li>
+        <li><a href="../../../../../tags/opus.html">opus</a></li>
+        <li><a href="../../../../../tags/rosetta.html">rosetta</a></li>
+        <li><a href="../../../../../tags/sympy.html">sympy</a></li>
+        <li><a href="../../../../../tags/syntax.html">syntax</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../../../../../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../../../../../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../../../../../_static/documentation_options.js?v=01f34227"></script>
+  <script src="../../../../../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../../../../../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script src="../../../../../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GeoCoq: Tarski, Hilbert, Euclid &amp; 34 Parallel Postulates &mdash; GEOMETOR • codes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=66998e95" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <h1>GEOMETOR • codes</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">codes</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../hierarchy/index.html"  >Hierarchy</a>
+        </li>
+        <li>
+          <a href="../syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a>
+        </li>
+        <li>
+          <a href="index.html" class="is-active" aria-selected="true" >Systems</a>
+        </li>
+        <li>
+          <a href="../rosetta/index.html"  >Rosetta Stone Benchmarks</a>
+        </li>
+        <li>
+          <a href="../opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a>
+        </li>
+        <li>
+          <a href="../glossary.html"  >Glossary</a>
+        </li>
+        <li>
+          <a href="../persons.html"  >Persons</a>
+        </li>
+        <li>
+          <a href="../bibliography.html"  >Bibliography</a>
+        </li>
+        <li>
+          <a href="../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../modules/index.html"  >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; codes</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Breadcrumbs">
+            <a class="book-crumb-link" href="index.html">Systems</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="leaneuclid.html" title="LeanEuclid &amp; Formal System E">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="mathlib4.html" title="Lean 4 Mathlib: Dimension-Polymorphic Affine Torsors"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="geocoq-tarski-hilbert-euclid-34-parallel-postulates">
+        <span id="system-geocoq"></span><h1>GeoCoq: Tarski, Hilbert, Euclid &amp; 34 Parallel Postulates<a class="headerlink" href="#geocoq-tarski-hilbert-euclid-34-parallel-postulates" title="Link to this heading">¶</a></h1>
+        <ul class="simple">
+        <li><p><strong>Repository</strong>: <code class="docutils literal notranslate"><span class="pre">_refs/GeoCoq</span></code> (<cite>https://github.com/GeoCoq/GeoCoq</cite>, LGPL-3.0-only, <a class="citation-ref" id="occ-cite-boutry2019-1" href="../bibliography.html#cite-boutry2019" data-cite="boutry2019" title="Citation: boutry2019">Boutry2019</a>)</p></li>
+        <li><p><strong>Scale Audited</strong>: <cite>481</cite> <code class="docutils literal notranslate"><span class="pre">.v</span></code> files, <cite>4,671</cite> <code class="docutils literal notranslate"><span class="pre">Lemma</span></code>/<code class="docutils literal notranslate"><span class="pre">Theorem</span></code> proofs, <cite>42</cite> axiomatic <code class="docutils literal notranslate"><span class="pre">Class</span></code> strata</p></li>
+        <li><p><strong>Mathematical Foundation</strong>: <a class="person-ref" id="occ-person-tarski-1" href="../persons.html#person-tarski" data-person="tarski" title="Person: tarski">Alfred Tarski</a>’s first-order geometry (<a class="citation-ref" id="occ-cite-schwabhauser1983-1" href="../bibliography.html#cite-schwabhauser1983" data-cite="schwabhauser1983" title="Citation: schwabhauser1983">Schwabhauser1983</a>) bridged bidirectionally to <a class="person-ref" id="occ-person-hilbert-1" href="../persons.html#person-hilbert" data-person="hilbert" title="Person: hilbert">David Hilbert</a> (<a class="citation-ref" id="occ-cite-hilbert1899-1" href="../bibliography.html#cite-hilbert1899" data-cite="hilbert1899" title="Citation: hilbert1899">Hilbert1899</a>) and <a class="person-ref" id="occ-person-euclid-1" href="../persons.html#person-euclid" data-person="euclid" title="Person: euclid">Euclid</a></p></li>
+        </ul>
+        <section class="level-2" id="tarski-s-radical-point-only-ontology">
+        <h2>1. Tarski’s Radical Point-Only Ontology<a class="headerlink" href="#tarski-s-radical-point-only-ontology" title="Link to this heading">¶</a></h2>
+        <p><code class="docutils literal notranslate"><span class="pre">GeoCoq</span></code> is the monument of foundational rigor in synthetic geometry. Its core (<cite>theories/Axioms/tarski_axioms.v</cite>) strips Euclidean ontology down to <strong>one single type</strong> (<code class="docutils literal notranslate"><span class="pre">Tpoint</span> <span class="pre">:</span> <span class="pre">Type</span></code>) and <strong>two predicates</strong>:</p>
+        <div class="highlight-coq notranslate"><div class="highlight"><pre><span></span><span class="c">(* theories/Axioms/tarski_axioms.v *)</span>
+        <span class="kn">Class</span> <span class="n">Tarski_neutral_dimensionless</span> <span class="o">:=</span> <span class="o">{</span>
+          <span class="n">Tpoint</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">;</span>
+          <span class="n">Bet</span> <span class="o">:</span> <span class="n">Tpoint</span> <span class="o">-&gt;</span> <span class="n">Tpoint</span> <span class="o">-&gt;</span> <span class="n">Tpoint</span> <span class="o">-&gt;</span> <span class="kt">Prop</span><span class="o">;</span>
+          <span class="n">Cong</span> <span class="o">:</span> <span class="n">Tpoint</span> <span class="o">-&gt;</span> <span class="n">Tpoint</span> <span class="o">-&gt;</span> <span class="n">Tpoint</span> <span class="o">-&gt;</span> <span class="n">Tpoint</span> <span class="o">-&gt;</span> <span class="kt">Prop</span><span class="o">;</span>
+          <span class="n">cong_pseudo_reflexivity</span> <span class="o">:</span> <span class="k">forall</span> <span class="n">A</span> <span class="n">B</span><span class="o">,</span> <span class="n">Cong</span> <span class="n">A</span> <span class="n">B</span> <span class="n">B</span> <span class="n">A</span><span class="o">;</span>
+          <span class="n">cong_inner_transitivity</span> <span class="o">:</span> <span class="k">forall</span> <span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="n">D</span> <span class="n">E</span> <span class="n">F</span><span class="o">,</span> <span class="n">Cong</span> <span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="n">D</span> <span class="o">-&gt;</span> <span class="n">Cong</span> <span class="n">A</span> <span class="n">B</span> <span class="n">E</span> <span class="n">F</span> <span class="o">-&gt;</span> <span class="n">Cong</span> <span class="n">C</span> <span class="n">D</span> <span class="n">E</span> <span class="n">F</span><span class="o">;</span>
+          <span class="n">cong_identity</span> <span class="o">:</span> <span class="k">forall</span> <span class="n">A</span> <span class="n">B</span> <span class="n">C</span><span class="o">,</span> <span class="n">Cong</span> <span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="n">C</span> <span class="o">-&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">B</span><span class="o">;</span>
+          <span class="n">segment_construction</span> <span class="o">:</span> <span class="k">forall</span> <span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="n">D</span><span class="o">,</span> <span class="k">exists</span> <span class="n">E</span><span class="o">,</span> <span class="n">Bet</span> <span class="n">A</span> <span class="n">B</span> <span class="n">E</span> <span class="o">/\</span> <span class="n">Cong</span> <span class="n">B</span> <span class="n">E</span> <span class="n">C</span> <span class="n">D</span><span class="o">;</span>
+          <span class="n">five_segment</span> <span class="o">:</span> <span class="k">forall</span> <span class="n">A</span> <span class="n">A'</span> <span class="n">B</span> <span class="n">B'</span> <span class="n">C</span> <span class="n">C'</span> <span class="n">D</span> <span class="n">D'</span><span class="o">,</span> <span class="o">...</span> <span class="o">-&gt;</span> <span class="n">Cong</span> <span class="n">C</span> <span class="n">D</span> <span class="n">C'</span> <span class="n">D'</span><span class="o">;</span>
+          <span class="n">between_identity</span> <span class="o">:</span> <span class="k">forall</span> <span class="n">A</span> <span class="n">B</span><span class="o">,</span> <span class="n">Bet</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="o">-&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">B</span><span class="o">;</span>
+          <span class="n">inner_pasch</span> <span class="o">:</span> <span class="k">forall</span> <span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="n">P</span> <span class="n">Q</span><span class="o">,</span> <span class="n">Bet</span> <span class="n">A</span> <span class="n">P</span> <span class="n">C</span> <span class="o">-&gt;</span> <span class="n">Bet</span> <span class="n">B</span> <span class="n">Q</span> <span class="n">C</span> <span class="o">-&gt;</span> <span class="k">exists</span> <span class="n">X</span><span class="o">,</span> <span class="n">Bet</span> <span class="n">P</span> <span class="n">X</span> <span class="n">B</span> <span class="o">/\</span> <span class="n">Bet</span> <span class="n">Q</span> <span class="n">X</span> <span class="n">A</span><span class="o">;</span>
+          <span class="o">...</span>
+        <span class="o">}.</span>
+        </pre></div>
+        </div>
+        <p>Everything else is a defined macro over points:</p>
+        <ul class="simple">
+        <li><p><strong>Collinearity</strong>: <code class="docutils literal notranslate"><span class="pre">Col</span> <span class="pre">A</span> <span class="pre">B</span> <span class="pre">C</span> <span class="pre">:=</span> <span class="pre">Bet</span> <span class="pre">A</span> <span class="pre">B</span> <span class="pre">C</span> <span class="pre">\/</span> <span class="pre">Bet</span> <span class="pre">B</span> <span class="pre">C</span> <span class="pre">A</span> <span class="pre">\/</span> <span class="pre">Bet</span> <span class="pre">C</span> <span class="pre">A</span> <span class="pre">B</span></code> (non-strict: <code class="docutils literal notranslate"><span class="pre">Bet</span> <span class="pre">A</span> <span class="pre">A</span> <span class="pre">B</span></code> holds!).</p></li>
+        <li><p><strong>Right Angle without Angles</strong>: <code class="docutils literal notranslate"><span class="pre">Per</span> <span class="pre">A</span> <span class="pre">B</span> <span class="pre">C</span> <span class="pre">:=</span> <span class="pre">exists</span> <span class="pre">C',</span> <span class="pre">Midpoint</span> <span class="pre">B</span> <span class="pre">C</span> <span class="pre">C'</span> <span class="pre">/\</span> <span class="pre">Cong</span> <span class="pre">A</span> <span class="pre">C</span> <span class="pre">A</span> <span class="pre">C'</span></code>.</p></li>
+        <li><p><strong>SAS Congruence without Angles</strong>: Replaced by Tarski’s <a class="term-ref glossary-term" id="occ-term-five-segment-configuration-1" href="../glossary.html#term-five-segment-configuration" data-term="five-segment-configuration" title="Term: five-segment-configuration">Five-Segment Configuration</a> (<code class="docutils literal notranslate"><span class="pre">five_segment</span></code> / <code class="docutils literal notranslate"><span class="pre">FSC</span></code>).</p></li>
+        <li><p><strong>Certified Reflection Tactics</strong>: Unlike <code class="docutils literal notranslate"><span class="pre">LeanEuclid</span></code>’s external SMT oracle, <code class="docutils literal notranslate"><span class="pre">GeoCoq</span></code>’s <code class="docutils literal notranslate"><span class="pre">ColR</span></code>, <code class="docutils literal notranslate"><span class="pre">CongR</span></code>, and <code class="docutils literal notranslate"><span class="pre">CoincR</span></code> tactics construct <strong>100% Coq-kernel-checked proof terms</strong> via certified boolean reflection.</p></li>
+        </ul>
+        </section>
+        <section class="level-2" id="unrivaled-metatheoretic-opus">
+        <h2>2. Unrivaled Metatheoretic Opus<a class="headerlink" href="#unrivaled-metatheoretic-opus" title="Link to this heading">¶</a></h2>
+        <p>No other software system in the world comes close to <code class="docutils literal notranslate"><span class="pre">GeoCoq</span></code>’s metatheoretic breadth (<cite>theories/Main/Meta_theory/</cite>):</p>
+        <ul class="simple">
+        <li><p><strong>Axiomatic Bi-Interpretability</strong>: Proves two-way deductive equivalence across Tarski’s axioms, Hilbert’s five axiom groups (<cite>hilbert_axioms.v</cite>), and System-E-style Euclidean postulates (<cite>Elements/OriginalProofs/</cite>, covering all 48 Book I propositions).</p></li>
+        <li><p><strong>34 Equivalent Parallel Postulates (`parallel_postulates.v`)</strong>: Proves mutual equivalence over neutral geometry of 34 historical formulations—Playfair, Proclus, Posidonius equidistant lines, triangle angle sum, Wallis similarity, Saccheri/Lambert right rectangles, circumcircle existence for every non-collinear triple, and Bachmann’s Lotensatz.</p></li>
+        <li><p><strong>Neutral Midpoint Existence Without Circles (`Ch08_orthogonality.v`)</strong>: Using Gupta’s construction, <code class="docutils literal notranslate"><span class="pre">midpoint_existence</span></code> constructs the midpoint of <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">B</span></code> in pure neutral geometry <em>without</em> circle–circle continuity (working over Pythagorean fields smaller than Euclidean fields!).</p></li>
+        <li><p><strong>Cut-and-Paste Area Inconsistency Catch (`euclidean_area_axioms.v`)</strong>: Explicitly proves <code class="docutils literal notranslate"><span class="pre">area_inconsistent</span> <span class="pre">:</span> <span class="pre">False</span></code> when the non-collinearity guard is omitted from cut-and-paste area decomposition!</p></li>
+        <li><p><strong>Synthetic Field Arithmetic (`Ch13`–`Ch16`)</strong>: Proves affine parallel Pappus (<cite>Ch13_5_Pappus_Pascal.v</cite>) and Desargues (<cite>Ch13_6_Desargues_Hessenberg.v</cite>) to establish commutativity and associativity of geometric segment multiplication on a line, culminating in full coordinatization over an ordered Euclidean field.</p></li>
+        </ul>
+        </section>
+        <section class="level-2" id="classical-constructive-blind-spots">
+        <h2>3. Classical &amp; Constructive Blind Spots<a class="headerlink" href="#classical-constructive-blind-spots" title="Link to this heading">¶</a></h2>
+        <p>Because every line and circle must be unpacked into point quantifiers, <code class="docutils literal notranslate"><span class="pre">GeoCoq</span></code> slows dramatically once geometry moves past Book I and affine coordinatization:</p>
+        <ul class="simple">
+        <li><p><code class="docutils literal notranslate"><span class="pre">Main/Highschool/</span></code> covers <code class="docutils literal notranslate"><span class="pre">incenter.v</span></code>, <code class="docutils literal notranslate"><span class="pre">centroid.v</span></code>, <code class="docutils literal notranslate"><span class="pre">circumcenter.v</span></code>, <code class="docutils literal notranslate"><span class="pre">orthocenter.v</span></code>, and <code class="docutils literal notranslate"><span class="pre">euler_line.v</span></code> (collinearity only, omitting the <span class="math notranslate nohighlight">\(2:1\)</span> ratio), <strong>stopping short of Feuerbach’s Nine-Point Circle (`X(5)`)</strong>.</p></li>
+        <li><p><strong>Zero coverage</strong> across all <cite>481</cite> files of Steiner circle power, radical axes, circle inversion, pole–polar reciprocity, general conics, projective cross-ratios, the <strong>Golden Ratio (:math:`phi`)</strong>, regular pentagons, or Platonic solids.</p></li>
+        </ul>
+        </section>
+        <section class="level-2" id="takeaway-for-geometor">
+        <h2>4. Takeaway for GEOMETOR<a class="headerlink" href="#takeaway-for-geometor" title="Link to this heading">¶</a></h2>
+        <p><code class="docutils literal notranslate"><span class="pre">GeoCoq</span></code> teaches GEOMETOR to record the <strong>minimal axiomatic stratum</strong> of each theorem (<cite>neutral</cite>, <cite>parallel</cite>, <cite>circle-continuity</cite>) while confirming why a practical discovery and publishing engine must keep lines, circles, conics, and algebraic coordinates as first-class citizens.</p>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="leaneuclid.html" title="LeanEuclid &amp; Formal System E">&larr; <span class="nav-label">LeanEuclid & Formal System E</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="mathlib4.html" title="Lean 4 Mathlib: Dimension-Polymorphic Affine Torsors"><span class="nav-label">Lean 4 Mathlib: Dimension-Polymorphic Affine Torsors</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="../tags/byrne.html">byrne</a></li>
+        <li><a href="../tags/formal-systems.html">formal-systems</a></li>
+        <li><a href="../tags/geometor-model.html">geometor-model</a></li>
+        <li><a href="../tags/opus.html">opus</a></li>
+        <li><a href="../tags/rosetta.html">rosetta</a></li>
+        <li><a href="../tags/sympy.html">sympy</a></li>
+        <li><a href="../tags/syntax.html">syntax</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=01f34227"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

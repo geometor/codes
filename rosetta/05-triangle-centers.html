@@ -1,0 +1,792 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benchmark 5: Classical Triangle Centers X(1)-X(5) &amp; Euler Line &mdash; GEOMETOR • codes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=66998e95" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <h1>GEOMETOR • codes</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">codes</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../hierarchy/index.html"  >Hierarchy</a>
+        </li>
+        <li>
+          <a href="../syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a>
+        </li>
+        <li>
+          <a href="../systems/index.html"  >Systems</a>
+        </li>
+        <li>
+          <a href="index.html" class="is-active" aria-selected="true" >Rosetta Stone Benchmarks</a>
+        </li>
+        <li>
+          <a href="../opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a>
+        </li>
+        <li>
+          <a href="../glossary.html"  >Glossary</a>
+        </li>
+        <li>
+          <a href="../persons.html"  >Persons</a>
+        </li>
+        <li>
+          <a href="../bibliography.html"  >Bibliography</a>
+        </li>
+        <li>
+          <a href="../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../modules/index.html"  >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; codes</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Breadcrumbs">
+            <a class="book-crumb-link" href="index.html">Rosetta Stone Benchmarks</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="04-pythagoras.html" title="Benchmark 4: Pythagorean Theorem &amp; Right-Triangle Orthogonality">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="06-circle-power-inversion-polar.html" title="Benchmark 6: Circle Power, Radical Axis, Inversion &amp; Pole-Polar"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="benchmark-5-classical-triangle-centers-x-1-x-5-euler-line">
+        <span id="rosetta-05-triangle-centers"></span><h1>Benchmark 5: Classical Triangle Centers X(1)-X(5) &amp; Euler Line<a class="headerlink" href="#benchmark-5-classical-triangle-centers-x-1-x-5-euler-line" title="Link to this heading">¶</a></h1>
+        <ul class="simple">
+        <li><p><strong>Canonical GEOMETOR Signature</strong>: <code class="docutils literal notranslate"><span class="pre">triangle_centers(A,</span> <span class="pre">B,</span> <span class="pre">C)</span> <span class="pre">-&gt;</span> <span class="pre">(X1,</span> <span class="pre">X2,</span> <span class="pre">X3,</span> <span class="pre">X4,</span> <span class="pre">X5,</span> <span class="pre">euler_line)</span></code></p></li>
+        <li><p><strong>Classical Citation</strong>: <em>Euclid Book IV.4-5 + Euler (1765) + Feuerbach (1822) + Kimberling ETC</em></p></li>
+        <li><p><strong>Core Phenomenon</strong>: Construct Incenter X(1), Centroid X(2), Circumcenter X(3), Orthocenter X(4), and Nine-Point Center X(5), verifying concurrency of bisectors/medians/altitudes, the 9-point circle, and the Euler line relation X(4) - X(3) = 3(X(2) - X(3)).</p></li>
+        </ul>
+        <figure class="align-center" id="id1">
+        <a class="reference internal image-reference" href="../_images/08-rosetta-centers-euler.svg"><svg xmlns="http://www.w3.org/2000/svg" class="euclid-graphic codes-diagram" viewBox="-4.3750 -15.5000 22.7500 22.7500">
+          <style>
+        svg.codes-diagram {
+            background-color: #111318;
+            border: 1px solid #2e3440;
+            border-radius: 6px;
+            width: 100%;
+            height: auto;
+            max-height: 560px;
+            display: block;
+            margin: 0.75rem auto;
+            user-select: none;
+            overflow: hidden;
+            cursor: grab;
+        }
+        svg.codes-diagram:active {
+            cursor: grabbing;
+        }
+        @media (prefers-color-scheme: light) {
+            svg.codes-diagram {
+                background-color: #fbfbfd;
+                border-color: #d8dee9;
+            }
+            svg.codes-diagram .Point {
+                stroke: #fbfbfd !important;
+            }
+            svg.codes-diagram .Point.given {
+                fill: #1a1d24 !important;
+            }
+            svg.codes-diagram .label-halo {
+                stroke: #fbfbfd !important;
+            }
+            svg.codes-diagram .label-fill {
+                fill: #1a1d24 !important;
+            }
+            svg.codes-diagram .Line,
+            svg.codes-diagram .Segment {
+                stroke: #4c566a;
+            }
+            svg.codes-diagram .callout-box {
+                fill: rgba(255, 255, 255, 0.92);
+            }
+            svg.codes-diagram .callout-text {
+                fill: #1a1d24;
+            }
+        }
+        .Line, .Segment {
+            stroke: #9aa5b4;
+            stroke-linecap: round;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.35px;
+            fill: none;
+            opacity: 0.84;
+            transition: stroke-width 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
+        }
+        .Circle {
+            stroke: #c678dd;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.45px;
+            fill: none;
+            opacity: 0.86;
+            transition: stroke-width 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
+        }
+        .Polygon {
+            fill: rgba(97, 175, 239, 0.09);
+            stroke: #61afef;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.85px;
+            stroke-linejoin: round;
+            transition: stroke-width 0.15s ease, fill-opacity 0.15s ease;
+        }
+        .Polygon.golden {
+            fill: rgba(229, 192, 123, 0.14);
+            stroke: #e5c07b;
+        }
+        .Point {
+            fill: #e5c07b;
+            stroke: #111318;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.4px;
+            transition: r 0.15s ease, filter 0.15s ease;
+        }
+        .Point.given {
+            fill: #ffffff;
+        }
+        .Point.result, .Point.center, .Point.target {
+            fill: #00e5ff;
+        }
+        .Point.golden {
+            fill: #f0c674;
+        }
+        .Point.midpoint, .Point.foot {
+            fill: #98c379;
+        }
+        .Line.guide, .Circle.guide, .Segment.guide, .Point.guide {
+            stroke-dasharray: 4 4;
+            opacity: 0.42;
+            stroke-width: 0.95px;
+        }
+        .Line.axis, .Segment.axis, .Line.euler, .Segment.euler {
+            stroke: #e06c75;
+            stroke-width: 1.9px;
+            opacity: 0.94;
+        }
+        .Line.bisector, .Segment.bisector, .Line.altitude, .Segment.altitude, .Line.median, .Segment.median {
+            stroke: #98c379;
+            stroke-width: 1.5px;
+            opacity: 0.88;
+        }
+        .Line.golden, .Segment.golden, .Circle.golden {
+            stroke: #e5c07b;
+            stroke-width: 1.85px;
+        }
+        .Circle.circumcircle {
+            stroke: #e06c75;
+            stroke-width: 1.55px;
+        }
+        .Circle.ninepoint {
+            stroke: #61afef;
+            stroke-width: 1.65px;
+        }
+        .Circle.incircle {
+            stroke: #e5c07b;
+            stroke-width: 1.55px;
+        }
+        .callout-box {
+            fill: rgba(24, 28, 36, 0.88);
+            stroke: #61afef;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1px;
+            rx: 3px;
+        }
+        .callout-box.spread-box {
+            stroke: #e5c07b;
+        }
+        .callout-box.paradigm-box {
+            stroke: #c678dd;
+        }
+        .callout-text {
+            fill: #eceff4;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-weight: 600;
+            text-anchor: middle;
+            dominant-baseline: central;
+            pointer-events: none;
+        }
+        .element-group {
+            cursor: pointer;
+        }
+        .element-group.svg-hovered .Line,
+        .element-group.svg-hovered .Segment,
+        .element-group.svg-hovered .Circle,
+        .element-group.svg-hovered .Polygon {
+            stroke: #00e5ff !important;
+            stroke-width: 2.8px !important;
+            opacity: 1.0 !important;
+            filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.75));
+        }
+        .element-group.svg-hovered .Point {
+            fill: #00e5ff !important;
+            filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.9));
+        }
+        .svg-control-btn {
+            cursor: pointer;
+        }
+        .svg-control-btn rect {
+            fill: rgba(30, 34, 42, 0.85);
+            stroke: #5c6370;
+            stroke-width: 1px;
+            vector-effect: non-scaling-stroke;
+            rx: 3px;
+        }
+        .svg-control-btn:hover rect {
+            fill: rgba(55, 62, 76, 0.95);
+            stroke: #00e5ff;
+        }
+        .svg-control-btn text {
+            fill: #e5e9f0;
+            font-family: sans-serif;
+            font-weight: 600;
+            text-anchor: middle;
+            dominant-baseline: central;
+            pointer-events: none;
+        }
+        svg.hide-labels .labels-layer,
+        svg.hide-labels .callouts-layer {
+            display: none;
+        }
+        svg.hide-guides .guide {
+            display: none;
+        }
+        </style>
+          <g class="svg-viewport">
+            <g class="polygons-layer">
+            <g class="element-group" data-ref="&lt; A B C &gt;"><polygon class="Polygon " points="0.0000,-0.0000 14.0000,-0.0000 5.0000,-12.0000"><title>&lt; A B C &gt;</title></polygon></g>
+            </g>
+            <g class="circles-layer">
+            <g class="element-group" data-ref="( B C )"><circle class="Circle guide" cx="14.0000" cy="-0.0000" r="15.0000" data-quadrance="225"><title>( B C ) (Q = 225)</title></circle></g>
+            <g class="element-group" data-ref="( C B )"><circle class="Circle guide" cx="5.0000" cy="-12.0000" r="15.0000" data-quadrance="225"><title>( C B ) (Q = 225)</title></circle></g>
+            <g class="element-group" data-ref="( A C )"><circle class="Circle guide" cx="0.0000" cy="-0.0000" r="13.0000" data-quadrance="169"><title>( A C ) (Q = 169)</title></circle></g>
+            <g class="element-group" data-ref="( C A )"><circle class="Circle guide" cx="5.0000" cy="-12.0000" r="13.0000" data-quadrance="169"><title>( C A ) (Q = 169)</title></circle></g>
+            <g class="element-group" data-ref="( A B )"><circle class="Circle guide" cx="0.0000" cy="-0.0000" r="14.0000" data-quadrance="196"><title>( A B ) (Q = 196)</title></circle></g>
+            <g class="element-group" data-ref="( B A )"><circle class="Circle guide" cx="14.0000" cy="-0.0000" r="14.0000" data-quadrance="196"><title>( B A ) (Q = 196)</title></circle></g>
+            <g class="element-group" data-ref="( X3 A )"><circle class="Circle circumcircle" cx="7.0000" cy="-4.1250" r="8.1250" data-quadrance="4225/64"><title>( X3 A ) (Q = 4225/64)</title></circle></g>
+            <g class="element-group" data-ref="( A J )"><circle class="Circle guide" cx="0.0000" cy="-0.0000" r="10.0000" data-quadrance="100"><title>( A J ) (Q = 100)</title></circle></g>
+            <g class="element-group" data-ref="( J A )"><circle class="Circle guide" cx="10.0000" cy="-0.0000" r="10.0000" data-quadrance="100"><title>( J A ) (Q = 100)</title></circle></g>
+            <g class="element-group" data-ref="( B M )"><circle class="Circle guide" cx="14.0000" cy="-0.0000" r="16.8000" data-quadrance="7056/25"><title>( B M ) (Q = 7056/25)</title></circle></g>
+            <g class="element-group" data-ref="( M B )"><circle class="Circle guide" cx="3.9200" cy="-13.4400" r="16.8000" data-quadrance="7056/25"><title>( M B ) (Q = 7056/25)</title></circle></g>
+            <g class="element-group" data-ref="( X3 X4 )"><circle class="Circle guide" cx="7.0000" cy="-4.1250" r="2.0349" data-quadrance="265/64"><title>( X3 X4 ) (Q = 265/64)</title></circle></g>
+            <g class="element-group" data-ref="( X4 X3 )"><circle class="Circle guide" cx="5.0000" cy="-3.7500" r="2.0349" data-quadrance="265/64"><title>( X4 X3 ) (Q = 265/64)</title></circle></g>
+            <g class="element-group" data-ref="( X5 Mc )"><circle class="Circle ninepoint" cx="6.0000" cy="-3.9375" r="4.0625" data-quadrance="4225/256"><title>( X5 Mc ) (Q = 4225/256)</title></circle></g>
+            <g class="element-group" data-ref="( C R )"><circle class="Circle guide" cx="5.0000" cy="-12.0000" r="14.4222" data-quadrance="208"><title>( C R ) (Q = 208)</title></circle></g>
+            <g class="element-group" data-ref="( R C )"><circle class="Circle guide" cx="13.0000" cy="-0.0000" r="14.4222" data-quadrance="208"><title>( R C ) (Q = 208)</title></circle></g>
+            <g class="element-group" data-ref="( A U )"><circle class="Circle guide" cx="0.0000" cy="-0.0000" r="12.5220" data-quadrance="784/5"><title>( A U ) (Q = 784/5)</title></circle></g>
+            <g class="element-group" data-ref="( U A )"><circle class="Circle guide" cx="5.6000" cy="-11.2000" r="12.5220" data-quadrance="784/5"><title>( U A ) (Q = 784/5)</title></circle></g>
+            <g class="element-group" data-ref="( X1 Hc )"><circle class="Circle guide" cx="6.0000" cy="-4.0000" r="4.1231" data-quadrance="17"><title>( X1 Hc ) (Q = 17)</title></circle></g>
+            <g class="element-group" data-ref="( Hc Mc )"><circle class="Circle guide" cx="5.0000" cy="-0.0000" r="2.0000" data-quadrance="4"><title>( Hc Mc ) (Q = 4)</title></circle></g>
+            <g class="element-group" data-ref="( Mc Hc )"><circle class="Circle guide" cx="7.0000" cy="-0.0000" r="2.0000" data-quadrance="4"><title>( Mc Hc ) (Q = 4)</title></circle></g>
+            <g class="element-group" data-ref="( X1 Tc )"><circle class="Circle incircle" cx="6.0000" cy="-4.0000" r="4.0000" data-quadrance="16"><title>( X1 Tc ) (Q = 16)</title></circle></g>
+            </g>
+            <g class="lines-layer">
+            <g class="element-group" data-ref="[ B C ]"><line class="Line guide" x1="38.3750" y1="32.5000" x2="-10.3750" y2="-32.5000"><title>[ B C ]</title></line></g>
+            <g class="element-group" data-ref="[ D E ]"><line class="Line bisector guide" x1="-33.3923" y1="26.1692" x2="31.6077" y2="-22.5808"><title>[ D E ]</title></line></g>
+            <g class="element-group" data-ref="[ A C ]"><line class="Line guide" x1="-15.6250" y1="37.5000" x2="15.6250" y2="-37.5000"><title>[ A C ]</title></line></g>
+            <g class="element-group" data-ref="[ F G ]"><line class="Line guide" x1="-45.3923" y1="-25.9551" x2="29.6077" y2="5.2949"><title>[ F G ]</title></line></g>
+            <g class="element-group" data-ref="[ A B ]"><line class="Line guide" x1="-40.6250" y1="-0.0000" x2="40.6250" y2="-0.0000"><title>[ A B ]</title></line></g>
+            <g class="element-group" data-ref="[ H I ]"><line class="Line bisector guide" x1="7.0000" y1="-52.7494" x2="7.0000" y2="28.5006"><title>[ H I ]</title></line></g>
+            <g class="element-group" data-ref="[ A Ma ]"><line class="Line guide" x1="-34.3480" y1="21.6935" x2="34.3480" y2="-21.6935"><title>[ A Ma ]</title></line></g>
+            <g class="element-group" data-ref="[ B Mb ]"><line class="Line guide" x1="50.0175" y1="18.7917" x2="-22.0175" y2="-18.7917"><title>[ B Mb ]</title></line></g>
+            <g class="element-group" data-ref="[ K L ]"><line class="Line bisector guide" x1="5.0000" y1="-49.2853" x2="5.0000" y2="31.9647"><title>[ K L ]</title></line></g>
+            <g class="element-group" data-ref="[ N O ]"><line class="Line bisector guide" x1="-35.1794" y1="26.3845" x2="29.8206" y2="-22.3655"><title>[ N O ]</title></line></g>
+            <g class="element-group" data-ref="[ X3 X4 ]"><line class="Line guide euler" x1="46.9292" y1="-11.6117" x2="-32.9292" y2="3.3617"><title>[ X3 X4 ]</title></line></g>
+            <g class="element-group" data-ref="[ P Q ]"><line class="Line guide" x1="13.8115" y1="37.7237" x2="-1.1620" y2="-42.1346"><title>[ P Q ]</title></line></g>
+            <g class="element-group" data-ref="[ C R ]"><line class="Line guide" x1="-17.5347" y1="-45.8020" x2="27.5347" y2="21.8020"><title>[ C R ]</title></line></g>
+            <g class="element-group" data-ref="[ S T ]"><line class="Line guide" x1="53.1943" y1="-35.4629" x2="-14.4097" y2="9.6065"><title>[ S T ]</title></line></g>
+            <g class="element-group" data-ref="[ A U ]"><line class="Line guide" x1="-18.1681" y1="36.3361" x2="18.1681" y2="-36.3361"><title>[ A U ]</title></line></g>
+            <g class="element-group" data-ref="[ V W ]"><line class="Line guide" x1="-43.2356" y1="-28.6178" x2="29.4366" y2="7.7183"><title>[ V W ]</title></line></g>
+            <g class="element-group" data-ref="[ X Y ]"><line class="Line guide" x1="6.0000" y1="-42.3571" x2="6.0000" y2="38.8929"><title>[ X Y ]</title></line></g>
+            </g>
+            <g class="points-layer">
+            <g class="element-group" data-ref="A"><circle class="Point given" cx="0.0000" cy="-0.0000" r="0.3270" data-latex-xy="(0, 0)" data-exact-xy="[0, 0]"><title>A = [0, 0]</title></circle></g>
+            <g class="element-group" data-ref="B"><circle class="Point given" cx="14.0000" cy="-0.0000" r="0.3270" data-latex-xy="(14, 0)" data-exact-xy="[14, 0]"><title>B = [14, 0]</title></circle></g>
+            <g class="element-group" data-ref="C"><circle class="Point given" cx="5.0000" cy="-12.0000" r="0.3270" data-latex-xy="(5, 12)" data-exact-xy="[5, 12]"><title>C = [5, 12]</title></circle></g>
+            <g class="element-group" data-ref="Ma"><circle class="Point midpoint" cx="9.5000" cy="-6.0000" r="0.2616" data-latex-xy="(\frac{19}{2}, 6)" data-exact-xy="[19/2, 6]"><title>Ma = [19/2, 6]</title></circle></g>
+            <g class="element-group" data-ref="Mb"><circle class="Point midpoint" cx="2.5000" cy="-6.0000" r="0.2616" data-latex-xy="(\frac{5}{2}, 6)" data-exact-xy="[5/2, 6]"><title>Mb = [5/2, 6]</title></circle></g>
+            <g class="element-group" data-ref="Mc"><circle class="Point midpoint" cx="7.0000" cy="-0.0000" r="0.2616" data-latex-xy="(7, 0)" data-exact-xy="[7, 0]"><title>Mc = [7, 0]</title></circle></g>
+            <g class="element-group" data-ref="X2"><circle class="Point result" cx="6.3333" cy="-4.0000" r="0.3270" data-latex-xy="(\frac{19}{3}, 4)" data-exact-xy="[19/3, 4]"><title>X2 = [19/3, 4]</title></circle></g>
+            <g class="element-group" data-ref="X3"><circle class="Point result" cx="7.0000" cy="-4.1250" r="0.3270" data-latex-xy="(7, \frac{33}{8})" data-exact-xy="[7, 33/8]"><title>X3 = [7, 33/8]</title></circle></g>
+            <g class="element-group" data-ref="Hc"><circle class="Point midpoint" cx="5.0000" cy="-0.0000" r="0.2616" data-latex-xy="(5, 0)" data-exact-xy="[5, 0]"><title>Hc = [5, 0]</title></circle></g>
+            <g class="element-group" data-ref="X4"><circle class="Point result" cx="5.0000" cy="-3.7500" r="0.3270" data-latex-xy="(5, \frac{15}{4})" data-exact-xy="[5, 15/4]"><title>X4 = [5, 15/4]</title></circle></g>
+            <g class="element-group" data-ref="X5"><circle class="Point midpoint" cx="6.0000" cy="-3.9375" r="0.2616" data-latex-xy="(6, \frac{63}{16})" data-exact-xy="[6, 63/16]"><title>X5 = [6, 63/16]</title></circle></g>
+            <g class="element-group" data-ref="X1"><circle class="Point golden" cx="6.0000" cy="-4.0000" r="0.2616" data-latex-xy="(6, 4)" data-exact-xy="[6, 4]"><title>X1 = [6, 4]</title></circle></g>
+            </g>
+            <g class="callouts-layer">
+            <g class="element-group" data-ref="&lt; A B C &gt;"><rect class="callout-box" x="1.8882" y="1.8882" width="10.2236" height="0.7236" /><text class="callout-text" x="7.0000" y="2.2500" font-size="0.4668">Heronian 13-14-15: X1..X5 all in Q!</text></g>
+            <g class="element-group" data-ref="[ X3 X4 ]"><rect class="callout-box spread-box" x="6.8084" y="-9.8618" width="9.3833" height="0.7236" /><text class="callout-text" x="11.5000" y="-9.5000" font-size="0.4668">Euler Line: X4 - X3 = 3(X2 - X3)</text></g>
+            </g>
+            <g class="labels-layer">
+            <g class="element-group" data-ref="A"><text class="label-halo" x="0.4317" y="-0.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">A</text><text class="label-fill" x="0.4317" y="-0.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">A</text></g>
+            <g class="element-group" data-ref="B"><text class="label-halo" x="14.4317" y="-0.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">B</text><text class="label-fill" x="14.4317" y="-0.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">B</text></g>
+            <g class="element-group" data-ref="C"><text class="label-halo" x="5.4317" y="-12.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">C</text><text class="label-fill" x="5.4317" y="-12.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">C</text></g>
+            <g class="element-group" data-ref="Ma"><text class="label-halo" x="9.9317" y="-6.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">Ma</text><text class="label-fill" x="9.9317" y="-6.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">Ma</text></g>
+            <g class="element-group" data-ref="Mb"><text class="label-halo" x="2.9317" y="-6.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">Mb</text><text class="label-fill" x="2.9317" y="-6.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">Mb</text></g>
+            <g class="element-group" data-ref="Mc"><text class="label-halo" x="7.4317" y="-0.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">Mc</text><text class="label-fill" x="7.4317" y="-0.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">Mc</text></g>
+            <g class="element-group" data-ref="X2"><text class="label-halo" x="6.7650" y="-4.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">X2</text><text class="label-fill" x="6.7650" y="-4.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">X2</text></g>
+            <g class="element-group" data-ref="X3"><text class="label-halo" x="7.4317" y="-4.5044" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">X3</text><text class="label-fill" x="7.4317" y="-4.5044" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">X3</text></g>
+            <g class="element-group" data-ref="Hc"><text class="label-halo" x="5.4317" y="-0.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">Hc</text><text class="label-fill" x="5.4317" y="-0.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">Hc</text></g>
+            <g class="element-group" data-ref="X4"><text class="label-halo" x="5.4317" y="-4.1294" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">X4</text><text class="label-fill" x="5.4317" y="-4.1294" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">X4</text></g>
+            <g class="element-group" data-ref="X5"><text class="label-halo" x="6.4317" y="-4.3169" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">X5</text><text class="label-fill" x="6.4317" y="-4.3169" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">X5</text></g>
+            <g class="element-group" data-ref="X1"><text class="label-halo" x="6.4317" y="-4.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">X1</text><text class="label-fill" x="6.4317" y="-4.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">X1</text></g>
+            </g>
+          </g>
+          <g class="svg-controls">
+            <g class="svg-control-btn" data-action="zoom-in"><rect x="10.0239" y="-15.2420" width="1.4810" height="0.9555" /><text x="10.7644" y="-14.7643" style="font-size:0.4300px">+</text></g>
+            <g class="svg-control-btn" data-action="zoom-out"><rect x="11.6769" y="-15.2420" width="1.4810" height="0.9555" /><text x="12.4175" y="-14.7643" style="font-size:0.4300px">−</text></g>
+            <g class="svg-control-btn" data-action="reset"><rect x="13.3300" y="-15.2420" width="1.4810" height="0.9555" /><text x="14.0705" y="-14.7643" style="font-size:0.4300px">⟲</text></g>
+            <g class="svg-control-btn" data-action="labels"><rect x="14.9830" y="-15.2420" width="1.4810" height="0.9555" /><text x="15.7235" y="-14.7643" style="font-size:0.4300px">Lbl</text></g>
+            <g class="svg-control-btn" data-action="guides"><rect x="16.6360" y="-15.2420" width="1.4810" height="0.9555" /><text x="17.3765" y="-14.7643" style="font-size:0.4300px">Gde</text></g>
+          </g>
+          <script>
+        (function() {
+          if (window.__codesSvgInit) return;
+          window.__codesSvgInit = true;
+
+          function initDiagram(svg) {
+            if (svg.dataset.initialized) return;
+            svg.dataset.initialized = "true";
+            const vp = svg.querySelector(".svg-viewport");
+            if (!vp) return;
+
+            let scale = 1, tx = 0, ty = 0;
+            let dragging = false, startX = 0, startY = 0;
+
+            function applyTransform() {
+              vp.setAttribute("transform", `translate(${tx},${ty}) scale(${scale})`);
+            }
+
+            svg.addEventListener("wheel", function(e) {
+              e.preventDefault();
+              const rect = svg.getBoundingClientRect();
+              const vb = svg.viewBox.baseVal;
+              const mx = vb.x + ((e.clientX - rect.left) / rect.width) * vb.width;
+              const my = vb.y + ((e.clientY - rect.top) / rect.height) * vb.height;
+              const factor = e.deltaY > 0 ? 1 / 1.15 : 1.15;
+              const newScale = Math.min(Math.max(scale * factor, 0.25), 12);
+              tx = mx - (mx - tx) * (newScale / scale);
+              ty = my - (my - ty) * (newScale / scale);
+              scale = newScale;
+              applyTransform();
+            }, { passive: false });
+
+            svg.addEventListener("mousedown", function(e) {
+              if (e.target.closest(".svg-controls")) return;
+              dragging = true;
+              startX = e.clientX;
+              startY = e.clientY;
+            });
+
+            window.addEventListener("mousemove", function(e) {
+              if (!dragging) return;
+              const rect = svg.getBoundingClientRect();
+              const vb = svg.viewBox.baseVal;
+              const dx = ((e.clientX - startX) / rect.width) * vb.width;
+              const dy = ((e.clientY - startY) / rect.height) * vb.height;
+              startX = e.clientX;
+              startY = e.clientY;
+              tx += dx;
+              ty += dy;
+              applyTransform();
+            });
+
+            window.addEventListener("mouseup", function() {
+              dragging = false;
+            });
+
+            svg.querySelectorAll(".svg-control-btn").forEach(function(btn) {
+              btn.addEventListener("click", function(e) {
+                e.stopPropagation();
+                const action = btn.dataset.action;
+                if (action === "zoom-in") { scale = Math.min(scale * 1.25, 12); applyTransform(); }
+                else if (action === "zoom-out") { scale = Math.max(scale / 1.25, 0.25); applyTransform(); }
+                else if (action === "reset") { scale = 1; tx = 0; ty = 0; applyTransform(); }
+                else if (action === "labels") { svg.classList.toggle("hide-labels"); }
+                else if (action === "guides") { svg.classList.toggle("hide-guides"); }
+              });
+            });
+          }
+
+          function setupHoverSync() {
+            document.querySelectorAll("svg.codes-diagram").forEach(initDiagram);
+
+            document.addEventListener("mouseover", function(e) {
+              const refEl = e.target.closest("[data-ref]");
+              if (!refEl) return;
+              const ref = refEl.dataset.ref;
+              if (!ref) return;
+              document.querySelectorAll(`.element-group[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.add("svg-hovered"));
+              document.querySelectorAll(`.geom-ref[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.add("ref-hovered"));
+            });
+
+            document.addEventListener("mouseout", function(e) {
+              const refEl = e.target.closest("[data-ref]");
+              if (!refEl) return;
+              const ref = refEl.dataset.ref;
+              if (!ref) return;
+              document.querySelectorAll(`.element-group[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.remove("svg-hovered"));
+              document.querySelectorAll(`.geom-ref[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.remove("ref-hovered"));
+            });
+          }
+
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", setupHoverSync);
+          } else {
+            setupHoverSync();
+          }
+        })();
+        </script>
+        </svg>
+
+        </a>
+        <figcaption>
+        <p><span class="caption-text">Exact float-free <code class="docutils literal notranslate"><span class="pre">geometor.model</span></code> construction illustrating <strong>Classical Triangle Centers X(1)-X(5) &amp; Euler Line</strong> (<code class="docutils literal notranslate"><span class="pre">triangle_centers(A,</span> <span class="pre">B,</span> <span class="pre">C)</span> <span class="pre">-&gt;</span> <span class="pre">(X1,</span> <span class="pre">X2,</span> <span class="pre">X3,</span> <span class="pre">X4,</span> <span class="pre">X5,</span> <span class="pre">euler_line)</span></code>).</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        <section class="level-2" id="cross-system-revelation-matrix">
+        <h2>Cross-System Revelation Matrix<a class="headerlink" href="#cross-system-revelation-matrix" title="Link to this heading">¶</a></h2>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 20.0%" />
+        <col style="width: 40.0%" />
+        <col style="width: 40.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>System</p></th>
+        <th class="head"><p>What This Encoding Reveals</p></th>
+        <th class="head"><p>What This Encoding Hides</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>LeanEuclid &amp; Formal System E</strong></p></td>
+        <td><p>Exposes the sharp scope boundary of Book-I-only formalizations.</p></td>
+        <td><p>All classical triangle geometry beyond congruence and parallelograms.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>GeoCoq (Tarski / Hilbert / Euclid)</strong></p></td>
+        <td><p>Proves X(1)-X(4) concurrencies and Euler collinearity in pure synthetic Tarski geometry.</p></td>
+        <td><p>Omits the Nine-Point Circle X(5), omits the 2:1 Euler ratio in euler_line.v, and stops at 4 centers.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Lean 4 Mathlib (Euclidean &amp; Affine)</strong></p></td>
+        <td><p>Breathtaking n-dimensional unification: proves the Monge point, Euler vector ratio 3:1, and 3(n+1)-point sphere simultaneously for triangles, tetrahedra, and n-simplices!</p></td>
+        <td><p>Noncomputable (uses Classical.choose on circumsphere); stops after ~6 centers (plus SouthPole/Brocard).</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>AlphaGeometry (DD + AR)</strong></p></td>
+        <td><p>Proves Euler line and 9-point concyclicity automatically once feet/midpoints are present; also reveals two subtle ceilings: 3-median concurrency needs 1 aux mirror point, and incenter = excenter mod π!</p></td>
+        <td><p>Lacks Hypotenuse-Leg congruence rule in r00-r42 for bare 2-bisector incenter proof.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Newclid &amp; Yuclid</strong></p></td>
+        <td><p>Closes AlphaGeometry’s center-concurrency and Hypotenuse-Leg rule gaps cleanly.</p></td>
+        <td><p>Limited to classical Olympiad centers.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Java Geometry Expert (JGEX / Area Method)</strong></p></td>
+        <td><p>Gives the shortest algebraic proof of orthocenter concurrency in all of mathematics: the 3-term Jacobi identity on P_ABCD!</p></td>
+        <td><p>Incenter requires square-root side lengths, outside rational Area-Method polynomials.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Projective &amp; Conformal Geometric Algebra (kingdon / galgebra)</strong></p></td>
+        <td><p>In 2D CGA, the circumcenter of A, B, C is literally the reflection of the point at infinity ni in the circle blade A ^ B ^ C!</p></td>
+        <td><p>Barycentric centers beyond X(1)-X(5) must be lifted back onto the null cone via S - 0.5*(S|S)*ni.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>CindyJS (Complex Projective CP^2 &amp; Cayley-Klein)</strong></p></td>
+        <td><p>In CP^2, the center of ANY circle or conic C is simply adj(C) * linf—the pole of the line at infinity!</p></td>
+        <td><p>Numerical float coordinates.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>SymPy Geometry (sympy.geometry 1.14.0)</strong></p></td>
+        <td><p>Built-in X(1)-X(5) and eulerline—AND exposes a critical live double bug in Triangle.excenters (missing parentheses + wrong vertex index)!</p></td>
+        <td><p>Eager simplify() slows symbolic triangles; stops at classical textbook centers.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Oliver Byrne’s Coloured Euclid (1847 / Rougeux)</strong></p></td>
+        <td><p>Elegantly visualizes IV.4 incircle and IV.5 circumcircle radii congruence.</p></td>
+        <td><p>Exposes Byrne’s combinatorial palette wall: overlaid classical centers (X(1)..X(5) + 9-point circle + 3 medians + 3 altitudes) exceed 4-colour perceptual disambiguation.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>GEOMETOR (geometor.model + Ecosystem)</strong></p></td>
+        <td><p>Unites pure compass-and-straightedge construction of X(1)-X(5) (verified over Q on the 13-14-15 Heronian triangle!) with geometor.etc’s encyclopedic symbolic registry of tens of thousands of centers.</p></td>
+        <td><p>None—GEOMETOR leads every surveyed system in symbolic triangle-center breadth.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="side-by-side-formal-visual-implementations-11-systems">
+        <h2>Side-by-Side Formal &amp; Visual Implementations (11 Systems)<a class="headerlink" href="#side-by-side-formal-visual-implementations-11-systems" title="Link to this heading">¶</a></h2>
+        <section class="level-3" id="leaneuclid-formal-system-e-leaneuclid">
+        <h3>LeanEuclid &amp; Formal System E (<code class="docutils literal notranslate"><span class="pre">leaneuclid</span></code>)<a class="headerlink" href="#leaneuclid-formal-system-e-leaneuclid" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">ABSENT</span> <span class="pre">across</span> <span class="pre">all</span> <span class="pre">235</span> <span class="pre">files</span> <span class="pre">in</span> <span class="pre">LeanEuclid!</span></code></p>
+        <div class="highlight-lean4 notranslate"><div class="highlight"><pre><span></span><span class="c1">-- OMITTED: LeanEuclid stops at Euclid Book I Prop 48.</span>
+        <span class="c1">-- Book IV (incenter IV.4, circumcenter IV.5) and Highschool centers</span>
+        <span class="c1">-- (centroid, orthocenter, nine-point circle, Euler line) do not exist in LeanEuclid.</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Exposes the sharp scope boundary of Book-I-only formalizations.</p></li>
+        <li><p><strong>Hides</strong>: All classical triangle geometry beyond congruence and parallelograms.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="geocoq-tarski-hilbert-euclid-geocoq">
+        <h3>GeoCoq (Tarski / Hilbert / Euclid) (<code class="docutils literal notranslate"><span class="pre">geocoq</span></code>)<a class="headerlink" href="#geocoq-tarski-hilbert-euclid-geocoq" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">GeoCoq/Main/Highschool/{incenter,centroid,circumcenter,orthocenter,euler_line}.v</span></code></p>
+        <div class="highlight-coq notranslate"><div class="highlight"><pre><span></span><span class="kn">Theorem</span> <span class="n">euler_line</span> <span class="o">:</span> <span class="k">forall</span> <span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="n">G</span> <span class="n">O</span> <span class="n">H</span><span class="o">,</span>
+          <span class="o">~</span> <span class="n">Col</span> <span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="o">-&gt;</span> <span class="n">is_gravity_center</span> <span class="n">G</span> <span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="o">-&gt;</span>
+          <span class="n">is_circumcenter</span> <span class="n">O</span> <span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="o">-&gt;</span> <span class="n">is_orthocenter</span> <span class="n">H</span> <span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="o">-&gt;</span> <span class="n">Col</span> <span class="n">O</span> <span class="n">G</span> <span class="n">H</span><span class="o">.</span>
+        <span class="c">(* X(1)..X(4) &amp; Euler collinearity proven; X(5) Nine-Point Circle is ABSENT! *)</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Proves X(1)-X(4) concurrencies and Euler collinearity in pure synthetic Tarski geometry.</p></li>
+        <li><p><strong>Hides</strong>: Omits the Nine-Point Circle X(5), omits the 2:1 Euler ratio in euler_line.v, and stops at 4 centers.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="lean-4-mathlib-euclidean-affine-mathlib4">
+        <h3>Lean 4 Mathlib (Euclidean &amp; Affine) (<code class="docutils literal notranslate"><span class="pre">mathlib4</span></code>)<a class="headerlink" href="#lean-4-mathlib-euclidean-affine-mathlib4" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">Mathlib/Geometry/Euclidean/{Circumcenter,Incenter/Basic,MongePoint,NinePointCircle}.lean</span></code></p>
+        <div class="highlight-lean4 notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Generalizes orthocenter (mongePoint) and 3(n+1)-point sphere to n-simplices!</span>
+        <span class="kn">theorem</span><span class="w"> </span><span class="n">ninePointCenter_eq_midpoint</span><span class="w"> </span><span class="o">(</span><span class="n">t</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Simplex</span><span class="w"> </span><span class="n">ℝ</span><span class="w"> </span><span class="n">P</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="bp">...</span><span class="w"> </span><span class="o">:</span>
+        <span class="w">    </span><span class="n">t</span><span class="bp">.</span><span class="n">ninePointCenter</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">midpoint</span><span class="w"> </span><span class="n">ℝ</span><span class="w"> </span><span class="n">t</span><span class="bp">.</span><span class="n">circumcenter</span><span class="w"> </span><span class="n">t</span><span class="bp">.</span><span class="n">mongePoint</span>
+        <span class="kn">theorem</span><span class="w"> </span><span class="n">mongePoint_vsub_circumcenter</span><span class="w"> </span><span class="o">(</span><span class="n">t</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Triangle</span><span class="w"> </span><span class="n">ℝ</span><span class="w"> </span><span class="n">P</span><span class="o">)</span><span class="w"> </span><span class="o">:</span>
+        <span class="w">    </span><span class="n">t</span><span class="bp">.</span><span class="n">mongePoint</span><span class="w"> </span><span class="bp">-ᵥ</span><span class="w"> </span><span class="n">t</span><span class="bp">.</span><span class="n">circumcenter</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="o">(</span><span class="mi">3</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℝ</span><span class="o">)</span><span class="w"> </span><span class="bp">•</span><span class="w"> </span><span class="o">(</span><span class="n">centroid</span><span class="w"> </span><span class="n">ℝ</span><span class="w"> </span><span class="bp">_</span><span class="w"> </span><span class="n">t</span><span class="bp">.</span><span class="n">points</span><span class="w"> </span><span class="bp">-ᵥ</span><span class="w"> </span><span class="n">t</span><span class="bp">.</span><span class="n">circumcenter</span><span class="o">)</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Breathtaking n-dimensional unification: proves the Monge point, Euler vector ratio 3:1, and 3(n+1)-point sphere simultaneously for triangles, tetrahedra, and n-simplices!</p></li>
+        <li><p><strong>Hides</strong>: Noncomputable (uses Classical.choose on circumsphere); stops after ~6 centers (plus SouthPole/Brocard).</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="alphageometry-dd-ar-alphageometry">
+        <h3>AlphaGeometry (DD + AR) (<code class="docutils literal notranslate"><span class="pre">alphageometry</span></code>)<a class="headerlink" href="#alphageometry-dd-ar-alphageometry" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">alphageometry/examples.txt:8</span> <span class="pre">&amp;</span> <span class="pre">defs.txt:73-108</span></code></p>
+        <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>a b c = triangle a b c; h = orthocenter a b c; h1 = foot a b c; h2 = foot b c a; h3 = foot c a b; g1 g2 g3 g = centroid g1 g2 g3 g a b c; o = circle a b c ? coll h g o
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Proves Euler line and 9-point concyclicity automatically once feet/midpoints are present; also reveals two subtle ceilings: 3-median concurrency needs 1 aux mirror point, and incenter = excenter mod π!</p></li>
+        <li><p><strong>Hides</strong>: Lacks Hypotenuse-Leg congruence rule in r00-r42 for bare 2-bisector incenter proof.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="newclid-yuclid-newclid">
+        <h3>Newclid &amp; Yuclid (<code class="docutils literal notranslate"><span class="pre">newclid</span></code>)<a class="headerlink" href="#newclid-yuclid-newclid" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">Newclid/newclid/src/newclid/all_rules.py:553-623</span> <span class="pre">(R43,</span> <span class="pre">R46,</span> <span class="pre">R47,</span> <span class="pre">R48)</span></code></p>
+        <div class="highlight-text notranslate"><div class="highlight"><pre><span></span># Explicitly adds R43 (orthocenter), R46 (incenter), R47 (circumcenter), R48 (centroid)
+        # plus R52/R53 Hypotenuse-Leg right congruence!
+        a b c = triangle a b c; x = angle_bisector x b a c, angle_bisector x a b c ? eqangle c b c x c x c a
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Closes AlphaGeometry’s center-concurrency and Hypotenuse-Leg rule gaps cleanly.</p></li>
+        <li><p><strong>Hides</strong>: Limited to classical Olympiad centers.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="java-geometry-expert-jgex-area-method-jgex">
+        <h3>Java Geometry Expert (JGEX / Area Method) (<code class="docutils literal notranslate"><span class="pre">jgex</span></code>)<a class="headerlink" href="#java-geometry-expert-jgex-area-method-jgex" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">Java-Geometry-Expert/.../exs-book/ch3:3-10</span> <span class="pre">(ORTH)</span> <span class="pre">&amp;</span> <span class="pre">ch3:117-124</span> <span class="pre">(A_201)</span></code></p>
+        <div class="highlight-text notranslate"><div class="highlight"><pre><span></span># Orthocenter via Jacobi Pythagoras identity (ZERO elimination steps!):
+        # P_ACHB + P_BAHC + P_CBAH == 0; given AH ⊥ BC (P_BAHC=0) &amp; BH ⊥ AC (P_CBAH=0) =&gt; P_ACHB = 0!
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Gives the shortest algebraic proof of orthocenter concurrency in all of mathematics: the 3-term Jacobi identity on P_ABCD!</p></li>
+        <li><p><strong>Hides</strong>: Incenter requires square-root side lengths, outside rational Area-Method polynomials.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="projective-conformal-geometric-algebra-kingdon-galgebra-pga-cga">
+        <h3>Projective &amp; Conformal Geometric Algebra (kingdon / galgebra) (<code class="docutils literal notranslate"><span class="pre">pga_cga</span></code>)<a class="headerlink" href="#projective-conformal-geometric-algebra-kingdon-galgebra-pga-cga" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">2D</span> <span class="pre">PGA</span> <span class="pre">Cl(2,0,1)</span> <span class="pre">&amp;</span> <span class="pre">2D</span> <span class="pre">CGA</span> <span class="pre">Cl(3,1)</span> <span class="pre">in</span> <span class="pre">kingdon</span></code></p>
+        <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2D PGA division-free X3 &amp; X4:</span>
+        <span class="n">la</span><span class="p">,</span> <span class="n">lb</span> <span class="o">=</span> <span class="n">B</span> <span class="o">&amp;</span> <span class="n">C</span><span class="p">,</span> <span class="n">C</span> <span class="o">&amp;</span> <span class="n">A</span>
+        <span class="n">X3</span> <span class="o">=</span> <span class="p">(</span><span class="n">la</span> <span class="o">|</span> <span class="p">(</span><span class="n">B</span> <span class="o">+</span> <span class="n">C</span><span class="p">))</span> <span class="o">^</span> <span class="p">(</span><span class="n">lb</span> <span class="o">|</span> <span class="p">(</span><span class="n">C</span> <span class="o">+</span> <span class="n">A</span><span class="p">))</span>
+        <span class="n">X4</span> <span class="o">=</span> <span class="p">(</span><span class="n">la</span> <span class="o">|</span> <span class="n">A</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="n">lb</span> <span class="o">|</span> <span class="n">B</span><span class="p">)</span>
+        <span class="c1"># 2D CGA Circumcenter = conformal reflection of infinity ni in circumcircle A ^ B ^ C!</span>
+        <span class="n">C_circ</span> <span class="o">=</span> <span class="n">A</span> <span class="o">^</span> <span class="n">B</span> <span class="o">^</span> <span class="n">C</span><span class="p">;</span>  <span class="n">X3_cga</span> <span class="o">=</span> <span class="n">norm_pt</span><span class="p">(</span><span class="n">C_circ</span> <span class="o">*</span> <span class="n">ni</span> <span class="o">*</span> <span class="o">~</span><span class="n">C_circ</span><span class="p">)</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: In 2D CGA, the circumcenter of A, B, C is literally the reflection of the point at infinity ni in the circle blade A ^ B ^ C!</p></li>
+        <li><p><strong>Hides</strong>: Barycentric centers beyond X(1)-X(5) must be lifted back onto the null cone via S - 0.5*(S|S)*ni.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="cindyjs-complex-projective-cp-2-cayley-klein-cindyjs">
+        <h3>CindyJS (Complex Projective CP^2 &amp; Cayley-Klein) (<code class="docutils literal notranslate"><span class="pre">cindyjs</span></code>)<a class="headerlink" href="#cindyjs-complex-projective-cp-2-cayley-klein-cindyjs" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">CindyJS</span> <span class="pre">CP^2</span> <span class="pre">Homogeneous</span> <span class="pre">Algebra</span></code></p>
+        <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">X1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dist</span><span class="p">(</span><span class="nx">B</span><span class="p">,</span><span class="nx">C</span><span class="p">)</span><span class="o">*</span><span class="nx">A</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">dist</span><span class="p">(</span><span class="nx">C</span><span class="p">,</span><span class="nx">A</span><span class="p">)</span><span class="o">*</span><span class="nx">B</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">dist</span><span class="p">(</span><span class="nx">A</span><span class="p">,</span><span class="nx">B</span><span class="p">)</span><span class="o">*</span><span class="nx">C</span><span class="p">;</span>
+        <span class="nx">X2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">A</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">B</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">C</span><span class="p">;</span>
+        <span class="nx">X3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">adjoint3</span><span class="p">(</span><span class="nx">CircleBy3</span><span class="p">(</span><span class="nx">A</span><span class="p">,</span><span class="w"> </span><span class="nx">B</span><span class="p">,</span><span class="w"> </span><span class="nx">C</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">linf</span><span class="p">;</span><span class="w">  </span><span class="c1">// pole of line at infinity!</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: In CP^2, the center of ANY circle or conic C is simply adj(C) * linf—the pole of the line at infinity!</p></li>
+        <li><p><strong>Hides</strong>: Numerical float coordinates.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="sympy-geometry-sympy-geometry-1-14-0-sympy-geometry">
+        <h3>SymPy Geometry (sympy.geometry 1.14.0) (<code class="docutils literal notranslate"><span class="pre">sympy_geometry</span></code>)<a class="headerlink" href="#sympy-geometry-sympy-geometry-1-14-0-sympy-geometry" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">sympy/geometry/polygon.py:2460-2765</span> <span class="pre">(WARNING:</span> <span class="pre">excenters</span> <span class="pre">BUG</span> <span class="pre">at</span> <span class="pre">L2714!)</span></code></p>
+        <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tri</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+        <span class="n">X1</span><span class="p">,</span> <span class="n">X2</span><span class="p">,</span> <span class="n">X3</span><span class="p">,</span> <span class="n">X4</span> <span class="o">=</span> <span class="n">tri</span><span class="o">.</span><span class="n">incenter</span><span class="p">,</span> <span class="n">tri</span><span class="o">.</span><span class="n">centroid</span><span class="p">,</span> <span class="n">tri</span><span class="o">.</span><span class="n">circumcenter</span><span class="p">,</span> <span class="n">tri</span><span class="o">.</span><span class="n">orthocenter</span>
+        <span class="n">X5</span> <span class="o">=</span> <span class="n">tri</span><span class="o">.</span><span class="n">nine_point_circle</span><span class="o">.</span><span class="n">center</span>
+        <span class="c1"># BUG in sympy 1.14.0 polygon.py:2714: tri.excenters omits parentheses:</span>
+        <span class="c1"># simplify(-a*x[0] + b*x[1] + c*x[2]/(-a+b+c)) + wrong side-vertex index!</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Built-in X(1)-X(5) and eulerline—AND exposes a critical live double bug in Triangle.excenters (missing parentheses + wrong vertex index)!</p></li>
+        <li><p><strong>Hides</strong>: Eager simplify() slows symbolic triangles; stops at classical textbook centers.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="oliver-byrne-s-coloured-euclid-1847-rougeux-byrne-1847">
+        <h3>Oliver Byrne’s Coloured Euclid (1847 / Rougeux) (<code class="docutils literal notranslate"><span class="pre">byrne_1847</span></code>)<a class="headerlink" href="#oliver-byrne-s-coloured-euclid-1847-rougeux-byrne-1847" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">Byrne</span> <span class="pre">(1847)</span> <span class="pre">Book</span> <span class="pre">IV,</span> <span class="pre">Props.</span> <span class="pre">4</span> <span class="pre">&amp;</span> <span class="pre">5</span> <span class="pre">(Incircle</span> <span class="pre">&amp;</span> <span class="pre">Circumcircle</span> <span class="pre">only)</span></code></p>
+        <div class="highlight-text notranslate"><div class="highlight"><pre><span></span># Book IV.4 (Incircle) &amp; Book IV.5 (Circumcircle) rendered in 4 colours:
+        # Bisect two wedges -&gt; drop 3 dashed perpendicular radii [red ╌╌╌] = [blue ╌╌╌] = [yellow ╌╌╌]
+        # OMITTED: Centroid X(2), Orthocenter X(4), Nine-Point Circle X(5), Euler Line!
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Elegantly visualizes IV.4 incircle and IV.5 circumcircle radii congruence.</p></li>
+        <li><p><strong>Hides</strong>: Exposes Byrne’s combinatorial palette wall: overlaid classical centers (X(1)..X(5) + 9-point circle + 3 medians + 3 altitudes) exceed 4-colour perceptual disambiguation.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="geometor-geometor-model-ecosystem-geometor-model">
+        <h3>GEOMETOR (geometor.model + Ecosystem) (<code class="docutils literal notranslate"><span class="pre">geometor_model</span></code>)<a class="headerlink" href="#geometor-geometor-model-ecosystem-geometor-model" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">geometor/codes/figures.py:356-441</span> <span class="pre">&amp;</span> <span class="pre">geometor.etc</span> <span class="pre">(X(1)-X(53144))</span></code></p>
+        <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Heronian 13-14-15 triangle A(0,0), B(14,0), C(5,12) -&gt; ALL X(1)..X(5) exact Rationals:</span>
+        <span class="c1"># X1=(6, 4), X2=(19/3, 4), X3=(7, 33/8), X4=(5, 15/4), X5=(6, 63/16)</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">assert_equal</span><span class="p">((</span><span class="n">x3</span><span class="p">,</span> <span class="n">a</span><span class="p">),</span> <span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="n">by</span><span class="o">=</span><span class="s2">"IV.5"</span><span class="p">)</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">assert_equal</span><span class="p">((</span><span class="n">x5</span><span class="p">,</span> <span class="n">ma</span><span class="p">),</span> <span class="p">(</span><span class="n">x5</span><span class="p">,</span> <span class="n">mb</span><span class="p">),</span> <span class="p">(</span><span class="n">x5</span><span class="p">,</span> <span class="n">mc</span><span class="p">),</span> <span class="p">(</span><span class="n">x5</span><span class="p">,</span> <span class="n">hc</span><span class="p">),</span> <span class="n">by</span><span class="o">=</span><span class="s2">"NinePoint"</span><span class="p">)</span>
+        <span class="c1"># Paired with geometor.etc CenterSymbolicRegistry spanning Kimberling X(1)..X(53144)!</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Unites pure compass-and-straightedge construction of X(1)-X(5) (verified over Q on the 13-14-15 Heronian triangle!) with geometor.etc’s encyclopedic symbolic registry of tens of thousands of centers.</p></li>
+        <li><p><strong>Hides</strong>: None—GEOMETOR leads every surveyed system in symbolic triangle-center breadth.</p></li>
+        </ul>
+        </section>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="04-pythagoras.html" title="Benchmark 4: Pythagorean Theorem &amp; Right-Triangle Orthogonality">&larr; <span class="nav-label">Benchmark 4: Pythagorean Theorem & Right-Triangle Orthogonality</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="06-circle-power-inversion-polar.html" title="Benchmark 6: Circle Power, Radical Axis, Inversion &amp; Pole-Polar"><span class="nav-label">Benchmark 6: Circle Power, Radical Axis, Inversion & Pole-Polar</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="../tags/byrne.html">byrne</a></li>
+        <li><a href="../tags/formal-systems.html">formal-systems</a></li>
+        <li><a href="../tags/geometor-model.html">geometor-model</a></li>
+        <li><a href="../tags/opus.html">opus</a></li>
+        <li><a href="../tags/rosetta.html">rosetta</a></li>
+        <li><a href="../tags/sympy.html">sympy</a></li>
+        <li><a href="../tags/syntax.html">syntax</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=01f34227"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lean 4 Mathlib: Dimension-Polymorphic Affine Torsors &mdash; GEOMETOR • codes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=66998e95" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <h1>GEOMETOR • codes</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">codes</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../hierarchy/index.html"  >Hierarchy</a>
+        </li>
+        <li>
+          <a href="../syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a>
+        </li>
+        <li>
+          <a href="index.html" class="is-active" aria-selected="true" >Systems</a>
+        </li>
+        <li>
+          <a href="../rosetta/index.html"  >Rosetta Stone Benchmarks</a>
+        </li>
+        <li>
+          <a href="../opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a>
+        </li>
+        <li>
+          <a href="../glossary.html"  >Glossary</a>
+        </li>
+        <li>
+          <a href="../persons.html"  >Persons</a>
+        </li>
+        <li>
+          <a href="../bibliography.html"  >Bibliography</a>
+        </li>
+        <li>
+          <a href="../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../modules/index.html"  >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; codes</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Breadcrumbs">
+            <a class="book-crumb-link" href="index.html">Systems</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="geocoq.html" title="GeoCoq: Tarski, Hilbert, Euclid &amp; 34 Parallel Postulates">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="alphageometry-newclid.html" title="AlphaGeometry, Newclid &amp; Yuclid: Neuro-Symbolic Clause DD + AR"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="lean-4-mathlib-dimension-polymorphic-affine-torsors">
+        <span id="system-mathlib4"></span><h1>Lean 4 Mathlib: Dimension-Polymorphic Affine Torsors<a class="headerlink" href="#lean-4-mathlib-dimension-polymorphic-affine-torsors" title="Link to this heading">¶</a></h1>
+        <ul class="simple">
+        <li><p><strong>Repository</strong>: <code class="docutils literal notranslate"><span class="pre">_refs/mathlib4</span></code> (<cite>https://github.com/leanprover-community/mathlib4</cite>, Apache-2.0, <a class="citation-ref" id="occ-cite-mathlib2020-1" href="../bibliography.html#cite-mathlib2020" data-cite="mathlib2020" title="Citation: mathlib2020">Mathlib2020</a>)</p></li>
+        <li><p><strong>Scale Audited</strong>: <cite>46</cite> files (<cite>16,844</cite> LOC) in <code class="docutils literal notranslate"><span class="pre">Mathlib/Geometry/Euclidean/</span></code> + <cite>24</cite> files (<cite>11,708</cite> LOC) in <code class="docutils literal notranslate"><span class="pre">Mathlib/LinearAlgebra/AffineSpace/</span></code></p></li>
+        <li><p><strong>Mathematical Foundation</strong>: Dependent type-theoretic <a class="term-ref glossary-term" id="occ-term-affine-torsor-1" href="../glossary.html#term-affine-torsor" data-term="affine-torsor" title="Term: affine-torsor">affine torsor</a> <code class="docutils literal notranslate"><span class="pre">NormedAddTorsor</span> <span class="pre">V</span> <span class="pre">P</span></code> over a real <code class="docutils literal notranslate"><span class="pre">InnerProductSpace</span> <span class="pre">ℝ</span> <span class="pre">V</span></code></p></li>
+        </ul>
+        <section class="level-2" id="why-points-and-vectors-are-separate-types">
+        <h2>1. Why Points and Vectors Are Separate Types<a class="headerlink" href="#why-points-and-vectors-are-separate-types" title="Link to this heading">¶</a></h2>
+        <p>In Cartesian software (<cite>sympy.geometry</cite>), a point <span class="math notranslate nohighlight">\((x, y)\)</span> and a displacement vector <span class="math notranslate nohighlight">\(\langle dx, dy \rangle\)</span> share coordinates relative to a privileged origin <span class="math notranslate nohighlight">\((0, 0)\)</span>. <code class="docutils literal notranslate"><span class="pre">mathlib4</span></code> enforces coordinate-free discipline through the typeclass stack:</p>
+        <div class="highlight-lean4 notranslate"><div class="highlight"><pre><span></span><span class="kn">variable</span><span class="w"> </span><span class="o">{</span><span class="n">V</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Type</span><span class="bp">*</span><span class="o">}</span><span class="w"> </span><span class="o">{</span><span class="n">P</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Type</span><span class="bp">*</span><span class="o">}</span>
+        <span class="w">  </span><span class="o">[</span><span class="n">NormedAddCommGroup</span><span class="w"> </span><span class="n">V</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="n">InnerProductSpace</span><span class="w"> </span><span class="n">ℝ</span><span class="w"> </span><span class="n">V</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="n">MetricSpace</span><span class="w"> </span><span class="n">P</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="n">NormedAddTorsor</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="n">P</span><span class="o">]</span>
+        </pre></div>
+        </div>
+        <p>Here <code class="docutils literal notranslate"><span class="pre">p₁</span> <span class="pre">+</span> <span class="pre">p₂</span></code> is a <strong>compile-time type error</strong>! You may only subtract two points to obtain a vector (<code class="docutils literal notranslate"><span class="pre">p₁</span> <span class="pre">-ᵥ</span> <span class="pre">p₂</span> <span class="pre">:</span> <span class="pre">V</span></code>), translate a point by a vector (<code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">+ᵥ</span> <span class="pre">p</span> <span class="pre">:</span> <span class="pre">P</span></code>), or form weighted affine combinations (<cite>Finset.centroid</cite>, <cite>midpoint</cite>, <cite>AffineMap.lineMap</cite>) whose weights sum to <cite>1</cite>.</p>
+        </section>
+        <section class="level-2" id="where-affine-torsors-shine-arbitrary-dimension-n">
+        <h2>2. Where Affine Torsors Shine: Arbitrary Dimension <span class="math notranslate nohighlight">\(n\)</span><a class="headerlink" href="#where-affine-torsors-shine-arbitrary-dimension-n" title="Link to this heading">¶</a></h2>
+        <p>Because <code class="docutils literal notranslate"><span class="pre">V</span></code> need not have dimension <cite>2</cite>, <code class="docutils literal notranslate"><span class="pre">Mathlib/Geometry/Euclidean/</span></code> achieves breathtaking generality across dimensions:</p>
+        <ul class="simple">
+        <li><p><strong>Monge Point &amp; :math:`3(n+1)`-Point Sphere (`MongePoint.lean`, `NinePointCircle.lean`)</strong>: Instead of proving altitude concurrency only for planar triangles, <code class="docutils literal notranslate"><span class="pre">Simplex.mongePoint</span></code> generalizes the orthocenter to an arbitrary <span class="math notranslate nohighlight">\(n\)</span>-simplex in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, and <code class="docutils literal notranslate"><span class="pre">NinePointCircle.lean</span></code> proves Feuerbach’s nine-point circle as the <span class="math notranslate nohighlight">\(n\)</span>-dimensional <strong>:math:`3(n+1)`-point sphere</strong>!</p></li>
+        <li><p><strong>Directed Twice-Angles Modulo :math:`2pi` (`Angle/Oriented/Basic.lean`)</strong>: When <cite>[Module.Oriented ℝ V (Fin 2)]</cite> and <cite>[Fact (Module.finrank ℝ V = 2)]</cite> are added for 2D plane geometry, <code class="docutils literal notranslate"><span class="pre">oangle</span> <span class="pre">x</span> <span class="pre">y</span> <span class="pre">z</span></code> (<cite>∡ x y z : Real.Angle</cite>) lives in <span class="math notranslate nohighlight">\(\mathbb{R} / 2\pi\mathbb{Z}\)</span>. Multiplying by <cite>(2 : ℤ) • ∡ p₁ p₂ p₃</cite> kills ray-reversal (<cite>π</cite> becomes <cite>2π = 0</cite>), encoding <strong>directed line angles</strong> cleanly and proving inscribed-angle concyclicity (<cite>Sphere/Basic.lean</cite>) without case splits!</p></li>
+        <li><p><strong>1-Line La Hire Pole–Polar Reciprocity (`Sphere/PolePolar.lean`)</strong>: Defines <code class="docutils literal notranslate"><span class="pre">Sphere.power</span> <span class="pre">s</span> <span class="pre">p</span> <span class="pre">:=</span> <span class="pre">dist</span> <span class="pre">p</span> <span class="pre">s.center</span> <span class="pre">^</span> <span class="pre">2</span> <span class="pre">-</span> <span class="pre">s.radius</span> <span class="pre">^</span> <span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">Sphere.polar</span> <span class="pre">s</span> <span class="pre">p</span> <span class="pre">:=</span> <span class="pre">mk'</span> <span class="pre">(inversion</span> <span class="pre">s.center</span> <span class="pre">s.radius</span> <span class="pre">p)</span> <span class="pre">(ℝ</span> <span class="pre">∙</span> <span class="pre">(p</span> <span class="pre">-ᵥ</span> <span class="pre">s.center))ᗮ</span></code>, proving <a class="person-ref" id="occ-person-lahire-1" href="../persons.html#person-lahire" data-person="lahire" title="Person: lahire">Philippe de La Hire</a>’s reciprocity <code class="docutils literal notranslate"><span class="pre">q</span> <span class="pre">∈</span> <span class="pre">s.polar</span> <span class="pre">p</span> <span class="pre">↔</span> <span class="pre">p</span> <span class="pre">∈</span> <span class="pre">s.polar</span> <span class="pre">q</span></code> in a handful of inner-product rewrite steps across all dimensions!</p></li>
+        <li><p><strong>Compositional Naming Grammar</strong>: Theorems read like self-documenting sentences (<cite>conclusion_of_hypothesis</cite>, e.g., <code class="docutils literal notranslate"><span class="pre">mul_dist_add_mul_dist_eq_mul_dist_of_cospherical</span></code> in <code class="docutils literal notranslate"><span class="pre">Sphere/Ptolemy.lean</span></code>).</p></li>
+        </ul>
+        </section>
+        <section class="level-2" id="forensic-blind-spots-noncomputability-cyclic-order-projective-gaps">
+        <h2>3. Forensic Blind Spots: Noncomputability, Cyclic Order &amp; Projective Gaps<a class="headerlink" href="#forensic-blind-spots-noncomputability-cyclic-order-projective-gaps" title="Link to this heading">¶</a></h2>
+        <ol class="arabic simple">
+        <li><p><strong>Pervasive ``noncomputable`` Definitions</strong>: <code class="docutils literal notranslate"><span class="pre">Simplex.circumsphere</span></code> uses <code class="docutils literal notranslate"><span class="pre">Classical.choose</span></code> on an existence proof, and <code class="docutils literal notranslate"><span class="pre">EuclideanGeometry.angle</span></code> invokes noncomputable <code class="docutils literal notranslate"><span class="pre">Real.arccos</span></code>. You <strong>cannot execute</strong> a <code class="docutils literal notranslate"><span class="pre">mathlib4</span></code> Euclidean construction to inspect exact symbolic coordinates!</p></li>
+        <li><p><strong>No Constructive ``Euclid I.1`` &amp; Awkward Cyclic Order</strong>: Because two spheres in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> meet in a circle rather than two points, <code class="docutils literal notranslate"><span class="pre">mathlib4</span></code> has no planar compass-and-straightedge <code class="docutils literal notranslate"><span class="pre">Euclid</span> <span class="pre">I.1</span></code> theorem. Moreover, <code class="docutils literal notranslate"><span class="pre">Sphere/Ptolemy.lean:22-41</span></code> contains a candid <strong>20-line ``TODO`` block</strong> lamenting the lack of a clean cyclic-order predicate on circles in vector-torsor geometry.</p></li>
+        <li><p><strong>Wide-Open Projective &amp; Coaxial Omissions</strong>: Despite defining <code class="docutils literal notranslate"><span class="pre">Projectivization</span> <span class="pre">K</span> <span class="pre">V</span></code> in <code class="docutils literal notranslate"><span class="pre">LinearAlgebra/Projective/Basic.lean</span></code>, <code class="docutils literal notranslate"><span class="pre">mathlib4</span></code> currently has <strong>zero</strong> <code class="docutils literal notranslate"><span class="pre">radicalAxis</span></code>, <strong>zero</strong> <code class="docutils literal notranslate"><span class="pre">crossRatio</span></code>, <strong>zero</strong> <code class="docutils literal notranslate"><span class="pre">Menelaus</span></code> (despite having <code class="docutils literal notranslate"><span class="pre">Ceva.lean</span></code>!), <strong>zero</strong> <code class="docutils literal notranslate"><span class="pre">Pappus</span></code>, <strong>zero</strong> <code class="docutils literal notranslate"><span class="pre">Desargues</span></code>, <strong>zero</strong> general conics in <code class="docutils literal notranslate"><span class="pre">Geometry/Euclidean/</span></code>, and <strong>zero</strong> geometric theorems on <code class="docutils literal notranslate"><span class="pre">Real.goldenRatio</span></code> or Platonic solids.</p></li>
+        </ol>
+        </section>
+        <section class="level-2" id="takeaway-for-geometor">
+        <h2>4. Takeaway for GEOMETOR<a class="headerlink" href="#takeaway-for-geometor" title="Link to this heading">¶</a></h2>
+        <p>Adopt <code class="docutils literal notranslate"><span class="pre">mathlib4</span></code>’s <code class="docutils literal notranslate"><span class="pre">conclusion_of_hypothesis</span></code> naming discipline and its crystal-clear <code class="docutils literal notranslate"><span class="pre">power</span></code> / <code class="docutils literal notranslate"><span class="pre">inversion</span></code> / <code class="docutils literal notranslate"><span class="pre">polar</span></code> conceptual factoring in <code class="docutils literal notranslate"><span class="pre">geometor.elements</span></code> 2.0 and <code class="docutils literal notranslate"><span class="pre">geometor.model.inversion</span></code>, while retaining 100% computable <code class="docutils literal notranslate"><span class="pre">ANP</span></code> coordinates and full projective/golden coverage.</p>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="geocoq.html" title="GeoCoq: Tarski, Hilbert, Euclid &amp; 34 Parallel Postulates">&larr; <span class="nav-label">GeoCoq: Tarski, Hilbert, Euclid & 34 Parallel Postulates</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="alphageometry-newclid.html" title="AlphaGeometry, Newclid &amp; Yuclid: Neuro-Symbolic Clause DD + AR"><span class="nav-label">AlphaGeometry, Newclid & Yuclid: Neuro-Symbolic Clause DD + AR</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="../tags/byrne.html">byrne</a></li>
+        <li><a href="../tags/formal-systems.html">formal-systems</a></li>
+        <li><a href="../tags/geometor-model.html">geometor-model</a></li>
+        <li><a href="../tags/opus.html">opus</a></li>
+        <li><a href="../tags/rosetta.html">rosetta</a></li>
+        <li><a href="../tags/sympy.html">sympy</a></li>
+        <li><a href="../tags/syntax.html">syntax</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=01f34227"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

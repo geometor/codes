@@ -1,0 +1,720 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../../../../../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>geometor.codes.registry &mdash; GEOMETOR • codes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/css/styles.css?v=66998e95" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../../../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../../../../../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../../../../../index.html">
+        <h1>GEOMETOR • codes</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">codes</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../../../../../hierarchy/index.html"  >Hierarchy</a>
+        </li>
+        <li>
+          <a href="../../../../../syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a>
+        </li>
+        <li>
+          <a href="../../../../../systems/index.html"  >Systems</a>
+        </li>
+        <li>
+          <a href="../../../../../rosetta/index.html"  >Rosetta Stone Benchmarks</a>
+        </li>
+        <li>
+          <a href="../../../../../opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a>
+        </li>
+        <li>
+          <a href="../../../../../glossary.html"  >Glossary</a>
+        </li>
+        <li>
+          <a href="../../../../../persons.html"  >Persons</a>
+        </li>
+        <li>
+          <a href="../../../../../bibliography.html"  >Bibliography</a>
+        </li>
+        <li>
+          <a href="../../../../../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../../../../index.html" class="is-active" aria-selected="true" >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../../../../../index.html" title="Return to Project Portal">&larr; codes</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../../../../../index.html">GEOMETOR • codes</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="module-geometor.codes.registry">
+        <span id="geometor-codes-registry"></span><h1>geometor.codes.registry<a class="headerlink" href="#module-geometor.codes.registry" title="Link to this heading">¶</a></h1>
+        <p>Typed registries, cross-system query helpers, and optional <cite>_refs/</cite> inspector.</p>
+        <p>Loads the five canonical comparative datasets from <cite>resources/</cite> (<cite>systems.json</cite>,
+        <cite>syntax_lexicon.json</cite>, <cite>opus_matrix.json</cite>, <cite>rosetta_benchmarks.json</cite>, and
+        <cite>geometor_hierarchy.json</cite>) into immutable Python 3.13 dataclasses. Gracefully
+        operates 100% standalone on CI when external <cite>_refs/</cite> clones are absent.</p>
+        <section class="level-2" id="classes">
+        <h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.registry.SystemProfile" title="geometor.codes.registry.SystemProfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SystemProfile</span></code></a></p></td>
+        <td><p>Structured architectural profile of a formal or symbolic geometry system.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.registry.SyntaxEntry" title="geometor.codes.registry.SyntaxEntry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SyntaxEntry</span></code></a></p></td>
+        <td><p>Cross-system symbol, operator, binder, predicate, or tactic decoder entry.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.registry.OpusDomain" title="geometor.codes.registry.OpusDomain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OpusDomain</span></code></a></p></td>
+        <td><p>One of the 8 canonical domains of the geometric opus coverage matrix.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.registry.OpusCoverageCell" title="geometor.codes.registry.OpusCoverageCell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OpusCoverageCell</span></code></a></p></td>
+        <td><p>Coverage status and canonical identifier of one topic in one system.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.registry.OpusTopic" title="geometor.codes.registry.OpusTopic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OpusTopic</span></code></a></p></td>
+        <td><p>Single canonical geometric concept, construction, or theorem in the opus matrix.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.registry.RosettaImplementation" title="geometor.codes.registry.RosettaImplementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RosettaImplementation</span></code></a></p></td>
+        <td><p>Encoding of a Rosetta Stone benchmark inside a single system.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.registry.RosettaBenchmark" title="geometor.codes.registry.RosettaBenchmark"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RosettaBenchmark</span></code></a></p></td>
+        <td><p>Side-by-side Rosetta Stone benchmark comparing a canonical figure across systems.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.registry.HierarchyRepo" title="geometor.codes.registry.HierarchyRepo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HierarchyRepo</span></code></a></p></td>
+        <td><p>Single repository entry in the 7-layer GEOMETOR ecosystem architecture.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.registry.HierarchyLayer" title="geometor.codes.registry.HierarchyLayer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HierarchyLayer</span></code></a></p></td>
+        <td><p>Architectural layer in the GEOMETOR ecosystem hierarchy.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.registry.ArchitecturalRecommendation" title="geometor.codes.registry.ArchitecturalRecommendation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ArchitecturalRecommendation</span></code></a></p></td>
+        <td><p>Actionable design recommendation flowing from <code class="docutils literal notranslate"><span class="pre">codes</span></code> into GEOMETOR.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.registry.CodesRegistry" title="geometor.codes.registry.CodesRegistry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CodesRegistry</span></code></a></p></td>
+        <td><p>Central query interface over all <cite>geometor-codes</cite> comparative datasets.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="functions">
+        <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.registry.default_resources_dir" title="geometor.codes.registry.default_resources_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default_resources_dir</span></code></a>() → pathlib.Path</p></td>
+        <td><p>Return the canonical <cite>resources/</cite> directory of the <cite>geometor-codes</cite> repo.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.registry.default_workspace_root" title="geometor.codes.registry.default_workspace_root"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default_workspace_root</span></code></a>() → pathlib.Path</p></td>
+        <td><p>Return the parent GEOMETOR workspace root (<cite>/home/phi/PROJECTS/geometor</cite>).</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="module-contents">
+        <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.registry.default_resources_dir">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.registry.</span></span><span class="sig-name descname"><span class="pre">default_resources_dir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pathlib.Path</span></span></span><a class="headerlink" href="#geometor.codes.registry.default_resources_dir" title="Link to this definition">¶</a></dt>
+        <dd><p>Return the canonical <cite>resources/</cite> directory of the <cite>geometor-codes</cite> repo.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Absolute <cite>Path</cite> to <cite>resources/</cite>.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.registry.default_workspace_root">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.registry.</span></span><span class="sig-name descname"><span class="pre">default_workspace_root</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pathlib.Path</span></span></span><a class="headerlink" href="#geometor.codes.registry.default_workspace_root" title="Link to this definition">¶</a></dt>
+        <dd><p>Return the parent GEOMETOR workspace root (<cite>/home/phi/PROJECTS/geometor</cite>).</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Absolute <cite>Path</cite> to workspace root.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.codes.registry.</span></span><span class="sig-name descname"><span class="pre">SystemProfile</span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile" title="Link to this definition">¶</a></dt>
+        <dd><p>Structured architectural profile of a formal or symbolic geometry system.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile.id">
+        <span class="sig-name descname"><span class="pre">id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile.id" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile.name">
+        <span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile.name" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile.paradigm">
+        <span class="sig-name descname"><span class="pre">paradigm</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile.paradigm" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile.host_language">
+        <span class="sig-name descname"><span class="pre">host_language</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile.host_language" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile.license">
+        <span class="sig-name descname"><span class="pre">license</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile.license" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile.local_ref_relpath">
+        <span class="sig-name descname"><span class="pre">local_ref_relpath</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile.local_ref_relpath" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile.upstream_url">
+        <span class="sig-name descname"><span class="pre">upstream_url</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile.upstream_url" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile.primitives">
+        <span class="sig-name descname"><span class="pre">primitives</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile.primitives" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile.underlying_algebra_or_logic">
+        <span class="sig-name descname"><span class="pre">underlying_algebra_or_logic</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile.underlying_algebra_or_logic" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile.metric_treatment">
+        <span class="sig-name descname"><span class="pre">metric_treatment</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile.metric_treatment" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile.diorismos_and_degeneracy">
+        <span class="sig-name descname"><span class="pre">diorismos_and_degeneracy</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile.diorismos_and_degeneracy" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile.verification_engine">
+        <span class="sig-name descname"><span class="pre">verification_engine</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile.verification_engine" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile.signature_opus_scale">
+        <span class="sig-name descname"><span class="pre">signature_opus_scale</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile.signature_opus_scale" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile.strengths">
+        <span class="sig-name descname"><span class="pre">strengths</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile.strengths" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile.blind_spots">
+        <span class="sig-name descname"><span class="pre">blind_spots</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile.blind_spots" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile.geometor_takeaway">
+        <span class="sig-name descname"><span class="pre">geometor_takeaway</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile.geometor_takeaway" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SystemProfile.check_local_path">
+        <span class="sig-name descname"><span class="pre">check_local_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pathlib.Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#geometor.codes.registry.SystemProfile.check_local_path" title="Link to this definition">¶</a></dt>
+        <dd><p>Return resolved local reference path if present on disk, else <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>workspace_root</strong> – Optional workspace directory override.</p>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Existing <code class="docutils literal notranslate"><span class="pre">Path</span></code> when <code class="docutils literal notranslate"><span class="pre">_refs/</span></code> is available locally, otherwise <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SyntaxEntry">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.codes.registry.</span></span><span class="sig-name descname"><span class="pre">SyntaxEntry</span></span><a class="headerlink" href="#geometor.codes.registry.SyntaxEntry" title="Link to this definition">¶</a></dt>
+        <dd><p>Cross-system symbol, operator, binder, predicate, or tactic decoder entry.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SyntaxEntry.symbol">
+        <span class="sig-name descname"><span class="pre">symbol</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SyntaxEntry.symbol" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SyntaxEntry.aliases">
+        <span class="sig-name descname"><span class="pre">aliases</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.codes.registry.SyntaxEntry.aliases" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SyntaxEntry.system_ids">
+        <span class="sig-name descname"><span class="pre">system_ids</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.codes.registry.SyntaxEntry.system_ids" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SyntaxEntry.category">
+        <span class="sig-name descname"><span class="pre">category</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SyntaxEntry.category" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SyntaxEntry.pronunciation">
+        <span class="sig-name descname"><span class="pre">pronunciation</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SyntaxEntry.pronunciation" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SyntaxEntry.plain_meaning">
+        <span class="sig-name descname"><span class="pre">plain_meaning</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SyntaxEntry.plain_meaning" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SyntaxEntry.formal_semantics">
+        <span class="sig-name descname"><span class="pre">formal_semantics</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SyntaxEntry.formal_semantics" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SyntaxEntry.example_snippet">
+        <span class="sig-name descname"><span class="pre">example_snippet</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SyntaxEntry.example_snippet" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.SyntaxEntry.geometor_equivalent">
+        <span class="sig-name descname"><span class="pre">geometor_equivalent</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.SyntaxEntry.geometor_equivalent" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.codes.registry.OpusDomain">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.codes.registry.</span></span><span class="sig-name descname"><span class="pre">OpusDomain</span></span><a class="headerlink" href="#geometor.codes.registry.OpusDomain" title="Link to this definition">¶</a></dt>
+        <dd><p>One of the 8 canonical domains of the geometric opus coverage matrix.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.OpusDomain.id">
+        <span class="sig-name descname"><span class="pre">id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.OpusDomain.id" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.OpusDomain.number">
+        <span class="sig-name descname"><span class="pre">number</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></span><a class="headerlink" href="#geometor.codes.registry.OpusDomain.number" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.OpusDomain.title">
+        <span class="sig-name descname"><span class="pre">title</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.OpusDomain.title" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.OpusDomain.summary">
+        <span class="sig-name descname"><span class="pre">summary</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.OpusDomain.summary" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.codes.registry.OpusCoverageCell">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.codes.registry.</span></span><span class="sig-name descname"><span class="pre">OpusCoverageCell</span></span><a class="headerlink" href="#geometor.codes.registry.OpusCoverageCell" title="Link to this definition">¶</a></dt>
+        <dd><p>Coverage status and canonical identifier of one topic in one system.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.OpusCoverageCell.status">
+        <span class="sig-name descname"><span class="pre">status</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.OpusCoverageCell.status" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.OpusCoverageCell.ref">
+        <span class="sig-name descname"><span class="pre">ref</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.OpusCoverageCell.ref" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.codes.registry.OpusTopic">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.codes.registry.</span></span><span class="sig-name descname"><span class="pre">OpusTopic</span></span><a class="headerlink" href="#geometor.codes.registry.OpusTopic" title="Link to this definition">¶</a></dt>
+        <dd><p>Single canonical geometric concept, construction, or theorem in the opus matrix.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.OpusTopic.id">
+        <span class="sig-name descname"><span class="pre">id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.OpusTopic.id" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.OpusTopic.domain_id">
+        <span class="sig-name descname"><span class="pre">domain_id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.OpusTopic.domain_id" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.OpusTopic.title">
+        <span class="sig-name descname"><span class="pre">title</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.OpusTopic.title" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.OpusTopic.role">
+        <span class="sig-name descname"><span class="pre">role</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.OpusTopic.role" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.OpusTopic.coverage">
+        <span class="sig-name descname"><span class="pre">coverage</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#geometor.codes.registry.OpusCoverageCell" title="geometor.codes.registry.OpusCoverageCell"><span class="pre">OpusCoverageCell</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.codes.registry.OpusTopic.coverage" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.OpusTopic.notes">
+        <span class="sig-name descname"><span class="pre">notes</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.OpusTopic.notes" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.codes.registry.RosettaImplementation">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.codes.registry.</span></span><span class="sig-name descname"><span class="pre">RosettaImplementation</span></span><a class="headerlink" href="#geometor.codes.registry.RosettaImplementation" title="Link to this definition">¶</a></dt>
+        <dd><p>Encoding of a Rosetta Stone benchmark inside a single system.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.RosettaImplementation.language">
+        <span class="sig-name descname"><span class="pre">language</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.RosettaImplementation.language" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.RosettaImplementation.source_ref">
+        <span class="sig-name descname"><span class="pre">source_ref</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.RosettaImplementation.source_ref" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.RosettaImplementation.code">
+        <span class="sig-name descname"><span class="pre">code</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.RosettaImplementation.code" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.RosettaImplementation.reveals">
+        <span class="sig-name descname"><span class="pre">reveals</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.RosettaImplementation.reveals" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.RosettaImplementation.hides">
+        <span class="sig-name descname"><span class="pre">hides</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.RosettaImplementation.hides" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.codes.registry.RosettaBenchmark">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.codes.registry.</span></span><span class="sig-name descname"><span class="pre">RosettaBenchmark</span></span><a class="headerlink" href="#geometor.codes.registry.RosettaBenchmark" title="Link to this definition">¶</a></dt>
+        <dd><p>Side-by-side Rosetta Stone benchmark comparing a canonical figure across systems.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.RosettaBenchmark.id">
+        <span class="sig-name descname"><span class="pre">id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.RosettaBenchmark.id" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.RosettaBenchmark.number">
+        <span class="sig-name descname"><span class="pre">number</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></span><a class="headerlink" href="#geometor.codes.registry.RosettaBenchmark.number" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.RosettaBenchmark.title">
+        <span class="sig-name descname"><span class="pre">title</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.RosettaBenchmark.title" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.RosettaBenchmark.geometor_signature">
+        <span class="sig-name descname"><span class="pre">geometor_signature</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.RosettaBenchmark.geometor_signature" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.RosettaBenchmark.euclid_ref">
+        <span class="sig-name descname"><span class="pre">euclid_ref</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.RosettaBenchmark.euclid_ref" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.RosettaBenchmark.geometric_essence">
+        <span class="sig-name descname"><span class="pre">geometric_essence</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.RosettaBenchmark.geometric_essence" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.RosettaBenchmark.figure_svg">
+        <span class="sig-name descname"><span class="pre">figure_svg</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.RosettaBenchmark.figure_svg" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.RosettaBenchmark.implementations">
+        <span class="sig-name descname"><span class="pre">implementations</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#geometor.codes.registry.RosettaImplementation" title="geometor.codes.registry.RosettaImplementation"><span class="pre">RosettaImplementation</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.codes.registry.RosettaBenchmark.implementations" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.codes.registry.HierarchyRepo">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.codes.registry.</span></span><span class="sig-name descname"><span class="pre">HierarchyRepo</span></span><a class="headerlink" href="#geometor.codes.registry.HierarchyRepo" title="Link to this definition">¶</a></dt>
+        <dd><p>Single repository entry in the 7-layer GEOMETOR ecosystem architecture.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.HierarchyRepo.name">
+        <span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.HierarchyRepo.name" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.HierarchyRepo.pillar">
+        <span class="sig-name descname"><span class="pre">pillar</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.HierarchyRepo.pillar" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.HierarchyRepo.status">
+        <span class="sig-name descname"><span class="pre">status</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.HierarchyRepo.status" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.HierarchyRepo.summary">
+        <span class="sig-name descname"><span class="pre">summary</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.HierarchyRepo.summary" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.HierarchyRepo.informed_by_codes">
+        <span class="sig-name descname"><span class="pre">informed_by_codes</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.HierarchyRepo.informed_by_codes" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.codes.registry.HierarchyLayer">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.codes.registry.</span></span><span class="sig-name descname"><span class="pre">HierarchyLayer</span></span><a class="headerlink" href="#geometor.codes.registry.HierarchyLayer" title="Link to this definition">¶</a></dt>
+        <dd><p>Architectural layer in the GEOMETOR ecosystem hierarchy.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.HierarchyLayer.layer_index">
+        <span class="sig-name descname"><span class="pre">layer_index</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></span><a class="headerlink" href="#geometor.codes.registry.HierarchyLayer.layer_index" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.HierarchyLayer.id">
+        <span class="sig-name descname"><span class="pre">id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.HierarchyLayer.id" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.HierarchyLayer.title">
+        <span class="sig-name descname"><span class="pre">title</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.HierarchyLayer.title" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.HierarchyLayer.epistemic_role">
+        <span class="sig-name descname"><span class="pre">epistemic_role</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.HierarchyLayer.epistemic_role" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.HierarchyLayer.repos">
+        <span class="sig-name descname"><span class="pre">repos</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#geometor.codes.registry.HierarchyRepo" title="geometor.codes.registry.HierarchyRepo"><span class="pre">HierarchyRepo</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.codes.registry.HierarchyLayer.repos" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.codes.registry.ArchitecturalRecommendation">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.codes.registry.</span></span><span class="sig-name descname"><span class="pre">ArchitecturalRecommendation</span></span><a class="headerlink" href="#geometor.codes.registry.ArchitecturalRecommendation" title="Link to this definition">¶</a></dt>
+        <dd><p>Actionable design recommendation flowing from <code class="docutils literal notranslate"><span class="pre">codes</span></code> into GEOMETOR.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.ArchitecturalRecommendation.id">
+        <span class="sig-name descname"><span class="pre">id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.ArchitecturalRecommendation.id" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.ArchitecturalRecommendation.priority">
+        <span class="sig-name descname"><span class="pre">priority</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></span><a class="headerlink" href="#geometor.codes.registry.ArchitecturalRecommendation.priority" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.ArchitecturalRecommendation.target_repo">
+        <span class="sig-name descname"><span class="pre">target_repo</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.ArchitecturalRecommendation.target_repo" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.ArchitecturalRecommendation.title">
+        <span class="sig-name descname"><span class="pre">title</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.ArchitecturalRecommendation.title" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.ArchitecturalRecommendation.inspired_by">
+        <span class="sig-name descname"><span class="pre">inspired_by</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.codes.registry.ArchitecturalRecommendation.inspired_by" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.ArchitecturalRecommendation.summary">
+        <span class="sig-name descname"><span class="pre">summary</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.ArchitecturalRecommendation.summary" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.ArchitecturalRecommendation.api_sketch">
+        <span class="sig-name descname"><span class="pre">api_sketch</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.registry.ArchitecturalRecommendation.api_sketch" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.codes.registry.CodesRegistry">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.codes.registry.</span></span><span class="sig-name descname"><span class="pre">CodesRegistry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resources_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#geometor.codes.registry.CodesRegistry" title="Link to this definition">¶</a></dt>
+        <dd><p>Central query interface over all <cite>geometor-codes</cite> comparative datasets.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.CodesRegistry.resources_dir">
+        <span class="sig-name descname"><span class="pre">resources_dir</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pathlib.Path</span></span><a class="headerlink" href="#geometor.codes.registry.CodesRegistry.resources_dir" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.CodesRegistry.systems">
+        <span class="sig-name descname"><span class="pre">systems</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#geometor.codes.registry.SystemProfile" title="geometor.codes.registry.SystemProfile"><span class="pre">SystemProfile</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></span><a class="headerlink" href="#geometor.codes.registry.CodesRegistry.systems" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.CodesRegistry.systems_by_id">
+        <span class="sig-name descname"><span class="pre">systems_by_id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#geometor.codes.registry.SystemProfile" title="geometor.codes.registry.SystemProfile"><span class="pre">SystemProfile</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.codes.registry.CodesRegistry.systems_by_id" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.CodesRegistry.lexicon">
+        <span class="sig-name descname"><span class="pre">lexicon</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#geometor.codes.registry.SyntaxEntry" title="geometor.codes.registry.SyntaxEntry"><span class="pre">SyntaxEntry</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></span><a class="headerlink" href="#geometor.codes.registry.CodesRegistry.lexicon" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.registry.CodesRegistry.benchmarks">
+        <span class="sig-name descname"><span class="pre">benchmarks</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#geometor.codes.registry.RosettaBenchmark" title="geometor.codes.registry.RosettaBenchmark"><span class="pre">RosettaBenchmark</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></span><a class="headerlink" href="#geometor.codes.registry.CodesRegistry.benchmarks" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.codes.registry.CodesRegistry.decode">
+        <span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#geometor.codes.registry.SyntaxEntry" title="geometor.codes.registry.SyntaxEntry"><span class="pre">SyntaxEntry</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.codes.registry.CodesRegistry.decode" title="Link to this definition">¶</a></dt>
+        <dd><p>Search the strange-symbol lexicon by exact token, alias, or substring.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>query</strong> – Symbol, operator, tactic, or keyword to look up.</p>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Matching <cite>SyntaxEntry</cite> items ranked with exact/alias matches first.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.codes.registry.CodesRegistry.opus_coverage_counts">
+        <span class="sig-name descname"><span class="pre">opus_coverage_counts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.codes.registry.CodesRegistry.opus_coverage_counts" title="Link to this definition">¶</a></dt>
+        <dd><p>Compute per-system status tallies across all opus topics.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Nested mapping from <code class="docutils literal notranslate"><span class="pre">system_id</span></code> to status counts.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        </dd></dl>
+
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../../../../../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-nav-next">
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../../../../../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../../../../../log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="../../../../../tags/byrne.html">byrne</a></li>
+        <li><a href="../../../../../tags/formal-systems.html">formal-systems</a></li>
+        <li><a href="../../../../../tags/geometor-model.html">geometor-model</a></li>
+        <li><a href="../../../../../tags/opus.html">opus</a></li>
+        <li><a href="../../../../../tags/rosetta.html">rosetta</a></li>
+        <li><a href="../../../../../tags/sympy.html">sympy</a></li>
+        <li><a href="../../../../../tags/syntax.html">syntax</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../../../../../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../../../../../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../../../../../_static/documentation_options.js?v=01f34227"></script>
+  <script src="../../../../../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../../../../../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script src="../../../../../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

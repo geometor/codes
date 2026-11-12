@@ -1,0 +1,27 @@
+geometor.codes.__main__
+=======================
+
+.. py:module:: geometor.codes.__main__
+
+.. autoapi-nested-parse::
+
+   Executable module entry point (`python -m geometor.codes`).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.__main__.main
+
+
+Module Contents
+---------------
+
+.. py:function:: main() -> None
+
+   Invoke the `codes` CLI entry point.
+
+

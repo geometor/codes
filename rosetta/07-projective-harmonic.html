@@ -1,0 +1,755 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benchmark 7: Projective Collinearity, Cross-Ratio &amp; Pappus Hexagon &mdash; GEOMETOR • codes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=66998e95" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <h1>GEOMETOR • codes</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">codes</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../hierarchy/index.html"  >Hierarchy</a>
+        </li>
+        <li>
+          <a href="../syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a>
+        </li>
+        <li>
+          <a href="../systems/index.html"  >Systems</a>
+        </li>
+        <li>
+          <a href="index.html" class="is-active" aria-selected="true" >Rosetta Stone Benchmarks</a>
+        </li>
+        <li>
+          <a href="../opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a>
+        </li>
+        <li>
+          <a href="../glossary.html"  >Glossary</a>
+        </li>
+        <li>
+          <a href="../persons.html"  >Persons</a>
+        </li>
+        <li>
+          <a href="../bibliography.html"  >Bibliography</a>
+        </li>
+        <li>
+          <a href="../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../modules/index.html"  >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; codes</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Breadcrumbs">
+            <a class="book-crumb-link" href="index.html">Rosetta Stone Benchmarks</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="06-circle-power-inversion-polar.html" title="Benchmark 6: Circle Power, Radical Axis, Inversion &amp; Pole-Polar">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../opus/index.html" title="Opus Coverage Matrix (69 Topics x 11 Systems)"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="benchmark-7-projective-collinearity-cross-ratio-pappus-hexagon">
+        <span id="rosetta-07-projective-harmonic"></span><h1>Benchmark 7: Projective Collinearity, Cross-Ratio &amp; Pappus Hexagon<a class="headerlink" href="#benchmark-7-projective-collinearity-cross-ratio-pappus-hexagon" title="Link to this heading">¶</a></h1>
+        <ul class="simple">
+        <li><p><strong>Canonical GEOMETOR Signature</strong>: <code class="docutils literal notranslate"><span class="pre">pappus_hexagon(A1,</span> <span class="pre">B1,</span> <span class="pre">C1,</span> <span class="pre">A2,</span> <span class="pre">B2,</span> <span class="pre">C2)</span> <span class="pre">-&gt;</span> <span class="pre">collinear(X,</span> <span class="pre">Y,</span> <span class="pre">Z)</span></code></p></li>
+        <li><p><strong>Classical Citation</strong>: <em>Pappus Synagoge VII.139 + Desargues (1639) + Projective Harmonic Ranges</em></p></li>
+        <li><p><strong>Core Phenomenon</strong>: Given collinear triples (A1, B1, C1) and (A2, B2, C2), opposite-side intersections X = A1B2 ∩ A2B1, Y = A1C2 ∩ A2C1, Z = B1C2 ∩ B2C1 lie on the Pappus axis, and central projection preserves the 4-point cross-ratio CR(A, B; C, D). Separates projective-native engines from metric-bound ones!</p></li>
+        </ul>
+        <figure class="align-center" id="id1">
+        <a class="reference internal image-reference" href="../_images/09-rosetta-pappus-harmonic.svg"><svg xmlns="http://www.w3.org/2000/svg" class="euclid-graphic codes-diagram" viewBox="-1.2000 -5.2000 8.4000 7.2000">
+          <style>
+        svg.codes-diagram {
+            background-color: #111318;
+            border: 1px solid #2e3440;
+            border-radius: 6px;
+            width: 100%;
+            height: auto;
+            max-height: 560px;
+            display: block;
+            margin: 0.75rem auto;
+            user-select: none;
+            overflow: hidden;
+            cursor: grab;
+        }
+        svg.codes-diagram:active {
+            cursor: grabbing;
+        }
+        @media (prefers-color-scheme: light) {
+            svg.codes-diagram {
+                background-color: #fbfbfd;
+                border-color: #d8dee9;
+            }
+            svg.codes-diagram .Point {
+                stroke: #fbfbfd !important;
+            }
+            svg.codes-diagram .Point.given {
+                fill: #1a1d24 !important;
+            }
+            svg.codes-diagram .label-halo {
+                stroke: #fbfbfd !important;
+            }
+            svg.codes-diagram .label-fill {
+                fill: #1a1d24 !important;
+            }
+            svg.codes-diagram .Line,
+            svg.codes-diagram .Segment {
+                stroke: #4c566a;
+            }
+            svg.codes-diagram .callout-box {
+                fill: rgba(255, 255, 255, 0.92);
+            }
+            svg.codes-diagram .callout-text {
+                fill: #1a1d24;
+            }
+        }
+        .Line, .Segment {
+            stroke: #9aa5b4;
+            stroke-linecap: round;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.35px;
+            fill: none;
+            opacity: 0.84;
+            transition: stroke-width 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
+        }
+        .Circle {
+            stroke: #c678dd;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.45px;
+            fill: none;
+            opacity: 0.86;
+            transition: stroke-width 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
+        }
+        .Polygon {
+            fill: rgba(97, 175, 239, 0.09);
+            stroke: #61afef;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.85px;
+            stroke-linejoin: round;
+            transition: stroke-width 0.15s ease, fill-opacity 0.15s ease;
+        }
+        .Polygon.golden {
+            fill: rgba(229, 192, 123, 0.14);
+            stroke: #e5c07b;
+        }
+        .Point {
+            fill: #e5c07b;
+            stroke: #111318;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.4px;
+            transition: r 0.15s ease, filter 0.15s ease;
+        }
+        .Point.given {
+            fill: #ffffff;
+        }
+        .Point.result, .Point.center, .Point.target {
+            fill: #00e5ff;
+        }
+        .Point.golden {
+            fill: #f0c674;
+        }
+        .Point.midpoint, .Point.foot {
+            fill: #98c379;
+        }
+        .Line.guide, .Circle.guide, .Segment.guide, .Point.guide {
+            stroke-dasharray: 4 4;
+            opacity: 0.42;
+            stroke-width: 0.95px;
+        }
+        .Line.axis, .Segment.axis, .Line.euler, .Segment.euler {
+            stroke: #e06c75;
+            stroke-width: 1.9px;
+            opacity: 0.94;
+        }
+        .Line.bisector, .Segment.bisector, .Line.altitude, .Segment.altitude, .Line.median, .Segment.median {
+            stroke: #98c379;
+            stroke-width: 1.5px;
+            opacity: 0.88;
+        }
+        .Line.golden, .Segment.golden, .Circle.golden {
+            stroke: #e5c07b;
+            stroke-width: 1.85px;
+        }
+        .Circle.circumcircle {
+            stroke: #e06c75;
+            stroke-width: 1.55px;
+        }
+        .Circle.ninepoint {
+            stroke: #61afef;
+            stroke-width: 1.65px;
+        }
+        .Circle.incircle {
+            stroke: #e5c07b;
+            stroke-width: 1.55px;
+        }
+        .callout-box {
+            fill: rgba(24, 28, 36, 0.88);
+            stroke: #61afef;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1px;
+            rx: 3px;
+        }
+        .callout-box.spread-box {
+            stroke: #e5c07b;
+        }
+        .callout-box.paradigm-box {
+            stroke: #c678dd;
+        }
+        .callout-text {
+            fill: #eceff4;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-weight: 600;
+            text-anchor: middle;
+            dominant-baseline: central;
+            pointer-events: none;
+        }
+        .element-group {
+            cursor: pointer;
+        }
+        .element-group.svg-hovered .Line,
+        .element-group.svg-hovered .Segment,
+        .element-group.svg-hovered .Circle,
+        .element-group.svg-hovered .Polygon {
+            stroke: #00e5ff !important;
+            stroke-width: 2.8px !important;
+            opacity: 1.0 !important;
+            filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.75));
+        }
+        .element-group.svg-hovered .Point {
+            fill: #00e5ff !important;
+            filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.9));
+        }
+        .svg-control-btn {
+            cursor: pointer;
+        }
+        .svg-control-btn rect {
+            fill: rgba(30, 34, 42, 0.85);
+            stroke: #5c6370;
+            stroke-width: 1px;
+            vector-effect: non-scaling-stroke;
+            rx: 3px;
+        }
+        .svg-control-btn:hover rect {
+            fill: rgba(55, 62, 76, 0.95);
+            stroke: #00e5ff;
+        }
+        .svg-control-btn text {
+            fill: #e5e9f0;
+            font-family: sans-serif;
+            font-weight: 600;
+            text-anchor: middle;
+            dominant-baseline: central;
+            pointer-events: none;
+        }
+        svg.hide-labels .labels-layer,
+        svg.hide-labels .callouts-layer {
+            display: none;
+        }
+        svg.hide-guides .guide {
+            display: none;
+        }
+        </style>
+          <g class="svg-viewport">
+            <g class="polygons-layer">
+            </g>
+            <g class="circles-layer">
+            </g>
+            <g class="lines-layer">
+            <g class="element-group" data-ref="[ O C1 ]"><line class="Line " x1="-15.0000" y1="-0.0000" x2="15.0000" y2="-0.0000"><title>[ O C1 ]</title></line></g>
+            <g class="element-group" data-ref="[ O C2 ]"><line class="Line " x1="-10.6066" y1="10.6066" x2="10.6066" y2="-10.6066"><title>[ O C2 ]</title></line></g>
+            <g class="element-group" data-ref="[ A1 B2 ]"><line class="Line guide" x1="-0.9417" y1="14.7087" x2="4.9417" y2="-14.7087"><title>[ A1 B2 ]</title></line></g>
+            <g class="element-group" data-ref="[ A2 B1 ]"><line class="Line guide" x1="-12.4164" y1="-7.7082" x2="14.4164" y2="5.7082"><title>[ A2 B1 ]</title></line></g>
+            <g class="element-group" data-ref="[ A1 C2 ]"><line class="Line guide" x1="-4.7082" y1="13.4164" x2="8.7082" y2="-13.4164"><title>[ A1 C2 ]</title></line></g>
+            <g class="element-group" data-ref="[ A2 C1 ]"><line class="Line guide" x1="-13.7087" y1="-3.9417" x2="15.7087" y2="1.9417"><title>[ A2 C1 ]</title></line></g>
+            <g class="element-group" data-ref="[ B1 C2 ]"><line class="Line guide" x1="-0.6380" y1="14.5521" x2="6.6380" y2="-14.5521"><title>[ B1 C2 ]</title></line></g>
+            <g class="element-group" data-ref="[ B2 C1 ]"><line class="Line guide" x1="-9.7060" y1="-11.2186" x2="14.7060" y2="6.2186"><title>[ B2 C1 ]</title></line></g>
+            <g class="element-group" data-ref="[ X Z ]"><line class="Line axis" x1="-8.5157" y1="10.1521" x2="12.6975" y2="-11.0611"><title>[ X Z ]</title></line></g>
+            </g>
+            <g class="points-layer">
+            <g class="element-group" data-ref="O"><circle class="Point given" cx="0.0000" cy="-0.0000" r="0.1208" data-latex-xy="(0, 0)" data-exact-xy="[0, 0]"><title>O = [0, 0]</title></circle></g>
+            <g class="element-group" data-ref="A1"><circle class="Point given" cx="2.0000" cy="-0.0000" r="0.1208" data-latex-xy="(2, 0)" data-exact-xy="[2, 0]"><title>A1 = [2, 0]</title></circle></g>
+            <g class="element-group" data-ref="B1"><circle class="Point given" cx="3.0000" cy="-0.0000" r="0.1208" data-latex-xy="(3, 0)" data-exact-xy="[3, 0]"><title>B1 = [3, 0]</title></circle></g>
+            <g class="element-group" data-ref="C1"><circle class="Point given" cx="6.0000" cy="-0.0000" r="0.1208" data-latex-xy="(6, 0)" data-exact-xy="[6, 0]"><title>C1 = [6, 0]</title></circle></g>
+            <g class="element-group" data-ref="A2"><circle class="Point given" cx="1.0000" cy="-1.0000" r="0.1208" data-latex-xy="(1, 1)" data-exact-xy="[1, 1]"><title>A2 = [1, 1]</title></circle></g>
+            <g class="element-group" data-ref="B2"><circle class="Point given" cx="2.5000" cy="-2.5000" r="0.1208" data-latex-xy="(\frac{5}{2}, \frac{5}{2})" data-exact-xy="[5/2, 5/2]"><title>B2 = [5/2, 5/2]</title></circle></g>
+            <g class="element-group" data-ref="C2"><circle class="Point given" cx="4.0000" cy="-4.0000" r="0.1208" data-latex-xy="(4, 4)" data-exact-xy="[4, 4]"><title>C2 = [4, 4]</title></circle></g>
+            <g class="element-group" data-ref="X"><circle class="Point result" cx="2.0909" cy="-0.4545" r="0.1208" data-latex-xy="(\frac{23}{11}, \frac{5}{11})" data-exact-xy="[23/11, 5/11]"><title>X = [23/11, 5/11]</title></circle></g>
+            <g class="element-group" data-ref="Y"><circle class="Point result" cx="2.3636" cy="-0.7273" r="0.1208" data-latex-xy="(\frac{26}{11}, \frac{8}{11})" data-exact-xy="[26/11, 8/11]"><title>Y = [26/11, 8/11]</title></circle></g>
+            <g class="element-group" data-ref="Z"><circle class="Point result" cx="3.4545" cy="-1.8182" r="0.1208" data-latex-xy="(\frac{38}{11}, \frac{20}{11})" data-exact-xy="[38/11, 20/11]"><title>Z = [38/11, 20/11]</title></circle></g>
+            </g>
+            <g class="callouts-layer">
+            <g class="element-group" data-ref="[ X Z ]"><rect class="callout-box paradigm-box" x="2.9228" y="-2.3336" width="3.1543" height="0.2672" /><text class="callout-text" x="4.5000" y="-2.2000" font-size="0.1724">Pappus Axis: det[X, Y, Z] = 0</text></g>
+            <g class="element-group" data-ref="[ O C1 ]"><rect class="callout-box spread-box" x="0.9574" y="0.6664" width="4.0851" height="0.2672" /><text class="callout-text" x="3.0000" y="0.8000" font-size="0.1724">Harmonic Range: CR(O, B1; A1, C1) = -1</text></g>
+            </g>
+            <g class="labels-layer">
+            <g class="element-group" data-ref="O"><text class="label-halo" x="0.1594" y="-0.1401" font-family="sans-serif" font-size="0.2394" font-weight="600" stroke="#111318" stroke-width="0.0599" stroke-linejoin="round" fill="none">O</text><text class="label-fill" x="0.1594" y="-0.1401" font-family="sans-serif" font-size="0.2394" font-weight="600" fill="#f0f4f8">O</text></g>
+            <g class="element-group" data-ref="A1"><text class="label-halo" x="2.1594" y="-0.1401" font-family="sans-serif" font-size="0.2394" font-weight="600" stroke="#111318" stroke-width="0.0599" stroke-linejoin="round" fill="none">A1</text><text class="label-fill" x="2.1594" y="-0.1401" font-family="sans-serif" font-size="0.2394" font-weight="600" fill="#f0f4f8">A1</text></g>
+            <g class="element-group" data-ref="B1"><text class="label-halo" x="3.1594" y="-0.1401" font-family="sans-serif" font-size="0.2394" font-weight="600" stroke="#111318" stroke-width="0.0599" stroke-linejoin="round" fill="none">B1</text><text class="label-fill" x="3.1594" y="-0.1401" font-family="sans-serif" font-size="0.2394" font-weight="600" fill="#f0f4f8">B1</text></g>
+            <g class="element-group" data-ref="C1"><text class="label-halo" x="6.1594" y="-0.1401" font-family="sans-serif" font-size="0.2394" font-weight="600" stroke="#111318" stroke-width="0.0599" stroke-linejoin="round" fill="none">C1</text><text class="label-fill" x="6.1594" y="-0.1401" font-family="sans-serif" font-size="0.2394" font-weight="600" fill="#f0f4f8">C1</text></g>
+            <g class="element-group" data-ref="A2"><text class="label-halo" x="1.1594" y="-1.1401" font-family="sans-serif" font-size="0.2394" font-weight="600" stroke="#111318" stroke-width="0.0599" stroke-linejoin="round" fill="none">A2</text><text class="label-fill" x="1.1594" y="-1.1401" font-family="sans-serif" font-size="0.2394" font-weight="600" fill="#f0f4f8">A2</text></g>
+            <g class="element-group" data-ref="B2"><text class="label-halo" x="2.6594" y="-2.6401" font-family="sans-serif" font-size="0.2394" font-weight="600" stroke="#111318" stroke-width="0.0599" stroke-linejoin="round" fill="none">B2</text><text class="label-fill" x="2.6594" y="-2.6401" font-family="sans-serif" font-size="0.2394" font-weight="600" fill="#f0f4f8">B2</text></g>
+            <g class="element-group" data-ref="C2"><text class="label-halo" x="4.1594" y="-4.1401" font-family="sans-serif" font-size="0.2394" font-weight="600" stroke="#111318" stroke-width="0.0599" stroke-linejoin="round" fill="none">C2</text><text class="label-fill" x="4.1594" y="-4.1401" font-family="sans-serif" font-size="0.2394" font-weight="600" fill="#f0f4f8">C2</text></g>
+            <g class="element-group" data-ref="X"><text class="label-halo" x="2.2503" y="-0.5946" font-family="sans-serif" font-size="0.2394" font-weight="600" stroke="#111318" stroke-width="0.0599" stroke-linejoin="round" fill="none">X</text><text class="label-fill" x="2.2503" y="-0.5946" font-family="sans-serif" font-size="0.2394" font-weight="600" fill="#f0f4f8">X</text></g>
+            <g class="element-group" data-ref="Y"><text class="label-halo" x="2.5230" y="-0.8673" font-family="sans-serif" font-size="0.2394" font-weight="600" stroke="#111318" stroke-width="0.0599" stroke-linejoin="round" fill="none">Y</text><text class="label-fill" x="2.5230" y="-0.8673" font-family="sans-serif" font-size="0.2394" font-weight="600" fill="#f0f4f8">Y</text></g>
+            <g class="element-group" data-ref="Z"><text class="label-halo" x="3.6139" y="-1.9583" font-family="sans-serif" font-size="0.2394" font-weight="600" stroke="#111318" stroke-width="0.0599" stroke-linejoin="round" fill="none">Z</text><text class="label-fill" x="3.6139" y="-1.9583" font-family="sans-serif" font-size="0.2394" font-weight="600" fill="#f0f4f8">Z</text></g>
+            </g>
+          </g>
+          <g class="svg-controls">
+            <g class="svg-control-btn" data-action="zoom-in"><rect x="4.1165" y="-5.1047" width="0.5468" height="0.3528" /><text x="4.3899" y="-4.9283" style="font-size:0.1588px">+</text></g>
+            <g class="svg-control-btn" data-action="zoom-out"><rect x="4.7269" y="-5.1047" width="0.5468" height="0.3528" /><text x="5.0003" y="-4.9283" style="font-size:0.1588px">−</text></g>
+            <g class="svg-control-btn" data-action="reset"><rect x="5.3372" y="-5.1047" width="0.5468" height="0.3528" /><text x="5.6106" y="-4.9283" style="font-size:0.1588px">⟲</text></g>
+            <g class="svg-control-btn" data-action="labels"><rect x="5.9476" y="-5.1047" width="0.5468" height="0.3528" /><text x="6.2210" y="-4.9283" style="font-size:0.1588px">Lbl</text></g>
+            <g class="svg-control-btn" data-action="guides"><rect x="6.5579" y="-5.1047" width="0.5468" height="0.3528" /><text x="6.8313" y="-4.9283" style="font-size:0.1588px">Gde</text></g>
+          </g>
+          <script>
+        (function() {
+          if (window.__codesSvgInit) return;
+          window.__codesSvgInit = true;
+
+          function initDiagram(svg) {
+            if (svg.dataset.initialized) return;
+            svg.dataset.initialized = "true";
+            const vp = svg.querySelector(".svg-viewport");
+            if (!vp) return;
+
+            let scale = 1, tx = 0, ty = 0;
+            let dragging = false, startX = 0, startY = 0;
+
+            function applyTransform() {
+              vp.setAttribute("transform", `translate(${tx},${ty}) scale(${scale})`);
+            }
+
+            svg.addEventListener("wheel", function(e) {
+              e.preventDefault();
+              const rect = svg.getBoundingClientRect();
+              const vb = svg.viewBox.baseVal;
+              const mx = vb.x + ((e.clientX - rect.left) / rect.width) * vb.width;
+              const my = vb.y + ((e.clientY - rect.top) / rect.height) * vb.height;
+              const factor = e.deltaY > 0 ? 1 / 1.15 : 1.15;
+              const newScale = Math.min(Math.max(scale * factor, 0.25), 12);
+              tx = mx - (mx - tx) * (newScale / scale);
+              ty = my - (my - ty) * (newScale / scale);
+              scale = newScale;
+              applyTransform();
+            }, { passive: false });
+
+            svg.addEventListener("mousedown", function(e) {
+              if (e.target.closest(".svg-controls")) return;
+              dragging = true;
+              startX = e.clientX;
+              startY = e.clientY;
+            });
+
+            window.addEventListener("mousemove", function(e) {
+              if (!dragging) return;
+              const rect = svg.getBoundingClientRect();
+              const vb = svg.viewBox.baseVal;
+              const dx = ((e.clientX - startX) / rect.width) * vb.width;
+              const dy = ((e.clientY - startY) / rect.height) * vb.height;
+              startX = e.clientX;
+              startY = e.clientY;
+              tx += dx;
+              ty += dy;
+              applyTransform();
+            });
+
+            window.addEventListener("mouseup", function() {
+              dragging = false;
+            });
+
+            svg.querySelectorAll(".svg-control-btn").forEach(function(btn) {
+              btn.addEventListener("click", function(e) {
+                e.stopPropagation();
+                const action = btn.dataset.action;
+                if (action === "zoom-in") { scale = Math.min(scale * 1.25, 12); applyTransform(); }
+                else if (action === "zoom-out") { scale = Math.max(scale / 1.25, 0.25); applyTransform(); }
+                else if (action === "reset") { scale = 1; tx = 0; ty = 0; applyTransform(); }
+                else if (action === "labels") { svg.classList.toggle("hide-labels"); }
+                else if (action === "guides") { svg.classList.toggle("hide-guides"); }
+              });
+            });
+          }
+
+          function setupHoverSync() {
+            document.querySelectorAll("svg.codes-diagram").forEach(initDiagram);
+
+            document.addEventListener("mouseover", function(e) {
+              const refEl = e.target.closest("[data-ref]");
+              if (!refEl) return;
+              const ref = refEl.dataset.ref;
+              if (!ref) return;
+              document.querySelectorAll(`.element-group[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.add("svg-hovered"));
+              document.querySelectorAll(`.geom-ref[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.add("ref-hovered"));
+            });
+
+            document.addEventListener("mouseout", function(e) {
+              const refEl = e.target.closest("[data-ref]");
+              if (!refEl) return;
+              const ref = refEl.dataset.ref;
+              if (!ref) return;
+              document.querySelectorAll(`.element-group[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.remove("svg-hovered"));
+              document.querySelectorAll(`.geom-ref[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.remove("ref-hovered"));
+            });
+          }
+
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", setupHoverSync);
+          } else {
+            setupHoverSync();
+          }
+        })();
+        </script>
+        </svg>
+
+        </a>
+        <figcaption>
+        <p><span class="caption-text">Exact float-free <code class="docutils literal notranslate"><span class="pre">geometor.model</span></code> construction illustrating <strong>Projective Collinearity, Cross-Ratio &amp; Pappus Hexagon</strong> (<code class="docutils literal notranslate"><span class="pre">pappus_hexagon(A1,</span> <span class="pre">B1,</span> <span class="pre">C1,</span> <span class="pre">A2,</span> <span class="pre">B2,</span> <span class="pre">C2)</span> <span class="pre">-&gt;</span> <span class="pre">collinear(X,</span> <span class="pre">Y,</span> <span class="pre">Z)</span></code>).</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        <section class="level-2" id="cross-system-revelation-matrix">
+        <h2>Cross-System Revelation Matrix<a class="headerlink" href="#cross-system-revelation-matrix" title="Link to this heading">¶</a></h2>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 20.0%" />
+        <col style="width: 40.0%" />
+        <col style="width: 40.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>System</p></th>
+        <th class="head"><p>What This Encoding Reveals</p></th>
+        <th class="head"><p>What This Encoding Hides</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>LeanEuclid &amp; Formal System E</strong></p></td>
+        <td><p>Pure Book-I diagrammatic axioms lack Menelaus/projective invariants.</p></td>
+        <td><p>All projective geometry.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>GeoCoq (Tarski / Hilbert / Euclid)</strong></p></td>
+        <td><p>Deep foundational role of Pappus (gives field commutativity ab = ba!) and Desargues (gives associativity!) in Hilbert-Tarski coordinatization.</p></td>
+        <td><p>Formalizes the affine parallel versions for segment multiplication rather than full RP^2 general-intersection Pappus or cross-ratio.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Lean 4 Mathlib (Euclidean &amp; Affine)</strong></p></td>
+        <td><p>Major Opus discovery: despite world-class Euclidean sphere coverage, mathlib4 currently has a wide-open classical projective geometry gap!</p></td>
+        <td><p>Pappus, Desargues, Pascal, harmonic conjugates, and projective cross-ratio.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>AlphaGeometry (DD + AR)</strong></p></td>
+        <td><p>Profound insight into DD+AR: Pappus and Desargues are 1-line statements, yet bare DD+AR cannot prove them without LM-invented auxiliary parallel lines because r00-r42 lack Menelaus!</p></td>
+        <td><p>General 4-factor cross-ratio also cannot be stated as a single 8-point eqratio unless specialized to harmonic range (-1).</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Newclid &amp; Yuclid</strong></p></td>
+        <td><p>Confirms the DD+AR projective ceiling: Newclid had to hardcode Pappus (R44) and Quadrangle Harmonic Conjugate (R70) directly into all_rules.py as primitive Horn rules!</p></td>
+        <td><p>Adding projective theorems one-by-one as axioms does not provide general Grassmann-Plücker elimination.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Java Geometry Expert (JGEX / Area Method)</strong></p></td>
+        <td><p>Whereas DD+AR stalls on Pappus and cross-ratio, Chou-Gao-Zhang’s Area Method eliminates intersection points linearly via S_ABC ratios and proves both with ZERO auxiliary points!</p></td>
+        <td><p>Requires explicit NDG checks when opposite sides are parallel.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Projective &amp; Conformal Geometric Algebra (kingdon / galgebra)</strong></p></td>
+        <td><p>Zero divisions, zero case splits: even if A1B2 || A2B1, X is a valid ideal Direction bivector and (X &amp; Y &amp; Z).e == 0 still holds identically!</p></td>
+        <td><p>Pure polynomial algebra hides the synthetic Menelaus ratio chain.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>CindyJS (Complex Projective CP^2 &amp; Cayley-Klein)</strong></p></td>
+        <td><p>Identical 3D cross-product polynomial identity over CP^2, certified over C^3 by Prover.js.</p></td>
+        <td><p>Probabilistic float prover rather than symbolic polynomial expansion.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>SymPy Geometry (sympy.geometry 1.14.0)</strong></p></td>
+        <td><p>Exposes both affine fragility (parallel lines crash Pappus) and the live 2-digit float zero-test bug in Point.affine_rank!</p></td>
+        <td><p>Entire projective plane RP^2 / CP^2.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Oliver Byrne’s Coloured Euclid (1847 / Rougeux)</strong></p></td>
+        <td><p>Sharp formal-language boundary: pure 0D point-incidence configurations (Pappus, Desargues) require symbolic point identifiers or homogeneous blades, not coloured regions.</p></td>
+        <td><p>All projective incidence and cross-ratio geometry.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>GEOMETOR (geometor.model + Ecosystem)</strong></p></td>
+        <td><p>Combines exact affine DAG construction + cross_ratio / is_harmonic in geometor.model with full homogeneous RP^2 meet/join (handling ideal points at infinity) and Q(phi) projectivity in geometor.pappus!</p></td>
+        <td><p>Minor convention note: standardize cross_ratio argument ordering across geometor.model.invariants and geometor.pappus.projective.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="side-by-side-formal-visual-implementations-11-systems">
+        <h2>Side-by-Side Formal &amp; Visual Implementations (11 Systems)<a class="headerlink" href="#side-by-side-formal-visual-implementations-11-systems" title="Link to this heading">¶</a></h2>
+        <section class="level-3" id="leaneuclid-formal-system-e-leaneuclid">
+        <h3>LeanEuclid &amp; Formal System E (<code class="docutils literal notranslate"><span class="pre">leaneuclid</span></code>)<a class="headerlink" href="#leaneuclid-formal-system-e-leaneuclid" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">ABSENT</span> <span class="pre">across</span> <span class="pre">LeanEuclid</span></code></p>
+        <div class="highlight-lean4 notranslate"><div class="highlight"><pre><span></span><span class="c1">-- OMITTED: Projective incidence theorems (Pappus, Desargues) and cross-ratios</span>
+        <span class="c1">-- do not exist in LeanEuclid.</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Pure Book-I diagrammatic axioms lack Menelaus/projective invariants.</p></li>
+        <li><p><strong>Hides</strong>: All projective geometry.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="geocoq-tarski-hilbert-euclid-geocoq">
+        <h3>GeoCoq (Tarski / Hilbert / Euclid) (<code class="docutils literal notranslate"><span class="pre">geocoq</span></code>)<a class="headerlink" href="#geocoq-tarski-hilbert-euclid-geocoq" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">GeoCoq/Main/Tarski_dev/Ch13_5_Pappus_Pascal.v</span> <span class="pre">&amp;</span> <span class="pre">Ch13_6_Desargues_Hessenberg.v</span></code></p>
+        <div class="highlight-coq notranslate"><div class="highlight"><pre><span></span><span class="c">(* Proves AFFINE parallel-case Pappus &amp; Desargues (where opposite sides are</span>
+        <span class="c">   parallel Par A B' B A' /\ Par B C' C B' -&gt; Par A C' C A') to bootstrap</span>
+        <span class="c">   commutativity and associativity of Tarski's geometric field multiplication! *)</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Deep foundational role of Pappus (gives field commutativity ab = ba!) and Desargues (gives associativity!) in Hilbert-Tarski coordinatization.</p></li>
+        <li><p><strong>Hides</strong>: Formalizes the affine parallel versions for segment multiplication rather than full RP^2 general-intersection Pappus or cross-ratio.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="lean-4-mathlib-euclidean-affine-mathlib4">
+        <h3>Lean 4 Mathlib (Euclidean &amp; Affine) (<code class="docutils literal notranslate"><span class="pre">mathlib4</span></code>)<a class="headerlink" href="#lean-4-mathlib-euclidean-affine-mathlib4" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">SURPRISINGLY</span> <span class="pre">ABSENT</span> <span class="pre">in</span> <span class="pre">Mathlib/Geometry/</span> <span class="pre">&amp;</span> <span class="pre">LinearAlgebra/Projective/!</span></code></p>
+        <div class="highlight-lean4 notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Mathlib defines Projectivization K V (LinearAlgebra/Projective/Basic.lean),</span>
+        <span class="c1">-- yet has ZERO Pappus, ZERO Desargues, ZERO Menelaus, and ZERO crossRatio!</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Major Opus discovery: despite world-class Euclidean sphere coverage, mathlib4 currently has a wide-open classical projective geometry gap!</p></li>
+        <li><p><strong>Hides</strong>: Pappus, Desargues, Pascal, harmonic conjugates, and projective cross-ratio.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="alphageometry-dd-ar-alphageometry">
+        <h3>AlphaGeometry (DD + AR) (<code class="docutils literal notranslate"><span class="pre">alphageometry</span></code>)<a class="headerlink" href="#alphageometry-dd-ar-alphageometry" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">Deductive</span> <span class="pre">Ceiling!</span> <span class="pre">Expressible</span> <span class="pre">in</span> <span class="pre">1</span> <span class="pre">line,</span> <span class="pre">UNPROVABLE</span> <span class="pre">by</span> <span class="pre">bare</span> <span class="pre">DD+AR!</span></code></p>
+        <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>a b a1 b1 = quadrangle a b a1 b1; c = on_line c a b; c1 = on_line c1 a1 b1; p = intersection_ll p a b1 a1 b; q = intersection_ll q a c1 a1 c; s = intersection_ll s b c1 b1 c ? coll p q s
+        # Bare DD+AR (r00-r42) FAILS to saturate: lacks Menelaus &amp; signed-area ratios!
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Profound insight into DD+AR: Pappus and Desargues are 1-line statements, yet bare DD+AR cannot prove them without LM-invented auxiliary parallel lines because r00-r42 lack Menelaus!</p></li>
+        <li><p><strong>Hides</strong>: General 4-factor cross-ratio also cannot be stated as a single 8-point eqratio unless specialized to harmonic range (-1).</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="newclid-yuclid-newclid">
+        <h3>Newclid &amp; Yuclid (<code class="docutils literal notranslate"><span class="pre">newclid</span></code>)<a class="headerlink" href="#newclid-yuclid-newclid" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">Newclid/newclid/tests/test_individual_rules.py:141</span> <span class="pre">&amp;</span> <span class="pre">167</span> <span class="pre">(R44</span> <span class="pre">&amp;</span> <span class="pre">R70!)</span></code></p>
+        <div class="highlight-text notranslate"><div class="highlight"><pre><span></span># Added explicitly as primitive axioms R44_PAPPUS_THEOREM &amp; R70_PROJECTIVE_HARMONIC_CONJUGATE!
+        a b = segment a b; c = on_line c a b; p q = segment p q; r = on_line r p q; x = on_line x a q, on_line x p b; y = on_line y a r, on_line y p c; z = on_line z b r, on_line z c q ? coll x y z
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Confirms the DD+AR projective ceiling: Newclid had to hardcode Pappus (R44) and Quadrangle Harmonic Conjugate (R70) directly into all_rules.py as primitive Horn rules!</p></li>
+        <li><p><strong>Hides</strong>: Adding projective theorems one-by-one as axioms does not provide general Grassmann-Plücker elimination.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="java-geometry-expert-jgex-area-method-jgex">
+        <h3>Java Geometry Expert (JGEX / Area Method) (<code class="docutils literal notranslate"><span class="pre">jgex</span></code>)<a class="headerlink" href="#java-geometry-expert-jgex-area-method-jgex" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">Java-Geometry-Expert/.../exs-book/ch2:40-50</span> <span class="pre">(PAPPUS)</span> <span class="pre">&amp;</span> <span class="pre">ch3:38-48</span> <span class="pre">(A_353)</span></code></p>
+        <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>EXAMPLE A_353  # Projective Invariance of Harmonic Cross-Ratio:
+          POINT O A B X Y; MRATIO C A B r; MRATIO D A B (-1 r);
+          INTERSECTION_LL P O A X Y; INTERSECTION_LL Q O B X Y;
+          INTERSECTION_LL R O C X Y; INTERSECTION_LL S O D X Y;
+        SHOW: HARMONIC P Q S R.  # Automatic 0-aux-point Area-Method elimination!
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Whereas DD+AR stalls on Pappus and cross-ratio, Chou-Gao-Zhang’s Area Method eliminates intersection points linearly via S_ABC ratios and proves both with ZERO auxiliary points!</p></li>
+        <li><p><strong>Hides</strong>: Requires explicit NDG checks when opposite sides are parallel.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="projective-conformal-geometric-algebra-kingdon-galgebra-pga-cga">
+        <h3>Projective &amp; Conformal Geometric Algebra (kingdon / galgebra) (<code class="docutils literal notranslate"><span class="pre">pga_cga</span></code>)<a class="headerlink" href="#projective-conformal-geometric-algebra-kingdon-galgebra-pga-cga" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">2D</span> <span class="pre">PGA</span> <span class="pre">Cl(2,0,1)</span> <span class="pre">in</span> <span class="pre">kingdon</span> <span class="pre">—</span> <span class="pre">Division-Free</span> <span class="pre">Grassmann-Cayley!</span></code></p>
+        <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">(</span><span class="n">A1</span> <span class="o">&amp;</span> <span class="n">B2</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="n">A2</span> <span class="o">&amp;</span> <span class="n">B1</span><span class="p">)</span>
+        <span class="n">Y</span> <span class="o">=</span> <span class="p">(</span><span class="n">A1</span> <span class="o">&amp;</span> <span class="n">C2</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="n">A2</span> <span class="o">&amp;</span> <span class="n">C1</span><span class="p">)</span>
+        <span class="n">Z</span> <span class="o">=</span> <span class="p">(</span><span class="n">B1</span> <span class="o">&amp;</span> <span class="n">C2</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="n">B2</span> <span class="o">&amp;</span> <span class="n">C1</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">((</span><span class="n">X</span> <span class="o">&amp;</span> <span class="n">Y</span> <span class="o">&amp;</span> <span class="n">Z</span><span class="p">)</span><span class="o">.</span><span class="n">e</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>   <span class="c1"># holds even when opposite sides are parallel!</span>
+        <span class="n">cr</span> <span class="o">=</span> <span class="p">((</span><span class="n">A</span> <span class="o">&amp;</span> <span class="n">C</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">B</span> <span class="o">&amp;</span> <span class="n">D</span><span class="p">))</span><span class="o">.</span><span class="n">e</span> <span class="o">/</span> <span class="p">((</span><span class="n">A</span> <span class="o">&amp;</span> <span class="n">D</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">B</span> <span class="o">&amp;</span> <span class="n">C</span><span class="p">))</span><span class="o">.</span><span class="n">e</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Zero divisions, zero case splits: even if A1B2 || A2B1, X is a valid ideal Direction bivector and (X &amp; Y &amp; Z).e == 0 still holds identically!</p></li>
+        <li><p><strong>Hides</strong>: Pure polynomial algebra hides the synthetic Menelaus ratio chain.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="cindyjs-complex-projective-cp-2-cayley-klein-cindyjs">
+        <h3>CindyJS (Complex Projective CP^2 &amp; Cayley-Klein) (<code class="docutils literal notranslate"><span class="pre">cindyjs</span></code>)<a class="headerlink" href="#cindyjs-complex-projective-cp-2-cayley-klein-cindyjs" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">CindyJS/src/js/libcs/Operators.js:2474-2497</span> <span class="pre">&amp;</span> <span class="pre">Prover.js</span></code></p>
+        <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cross</span><span class="p">(</span><span class="nx">cross</span><span class="p">(</span><span class="nx">A1</span><span class="p">,</span><span class="w"> </span><span class="nx">B2</span><span class="p">),</span><span class="w"> </span><span class="nx">cross</span><span class="p">(</span><span class="nx">A2</span><span class="p">,</span><span class="w"> </span><span class="nx">B1</span><span class="p">));</span>
+        <span class="nx">Y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cross</span><span class="p">(</span><span class="nx">cross</span><span class="p">(</span><span class="nx">A1</span><span class="p">,</span><span class="w"> </span><span class="nx">C2</span><span class="p">),</span><span class="w"> </span><span class="nx">cross</span><span class="p">(</span><span class="nx">A2</span><span class="p">,</span><span class="w"> </span><span class="nx">C1</span><span class="p">));</span>
+        <span class="nx">Z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cross</span><span class="p">(</span><span class="nx">cross</span><span class="p">(</span><span class="nx">B1</span><span class="p">,</span><span class="w"> </span><span class="nx">C2</span><span class="p">),</span><span class="w"> </span><span class="nx">cross</span><span class="p">(</span><span class="nx">B2</span><span class="p">,</span><span class="w"> </span><span class="nx">C1</span><span class="p">));</span>
+        <span class="nx">det</span><span class="p">(</span><span class="nx">X</span><span class="p">,</span><span class="w"> </span><span class="nx">Y</span><span class="p">,</span><span class="w"> </span><span class="nx">Z</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w">                     </span><span class="c1">// + native crossratio(A, B, C, D)</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Identical 3D cross-product polynomial identity over CP^2, certified over C^3 by Prover.js.</p></li>
+        <li><p><strong>Hides</strong>: Probabilistic float prover rather than symbolic polynomial expansion.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="sympy-geometry-sympy-geometry-1-14-0-sympy-geometry">
+        <h3>SymPy Geometry (sympy.geometry 1.14.0) (<code class="docutils literal notranslate"><span class="pre">sympy_geometry</span></code>)<a class="headerlink" href="#sympy-geometry-sympy-geometry-1-14-0-sympy-geometry" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">sympy/geometry/point.py:331-335</span> <span class="pre">(Point.affine_rank</span> <span class="pre">BUG!)</span></code></p>
+        <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. NO cross_ratio in sympy.geometry!</span>
+        <span class="c1"># 2. Crashes with IndexError if A1B2 || A2B1 (Line.intersection returns []!)</span>
+        <span class="c1"># 3. Point.is_collinear calls affine_rank with abs(x.n(2)) &lt; 1e-12,</span>
+        <span class="c1">#    falsely reporting Point(0,0), Point(1,0), Point(1, Rational(1, 10**13)) collinear!</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Exposes both affine fragility (parallel lines crash Pappus) and the live 2-digit float zero-test bug in Point.affine_rank!</p></li>
+        <li><p><strong>Hides</strong>: Entire projective plane RP^2 / CP^2.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="oliver-byrne-s-coloured-euclid-1847-rougeux-byrne-1847">
+        <h3>Oliver Byrne’s Coloured Euclid (1847 / Rougeux) (<code class="docutils literal notranslate"><span class="pre">byrne_1847</span></code>)<a class="headerlink" href="#oliver-byrne-s-coloured-euclid-1847-rougeux-byrne-1847" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">ABSENT</span> <span class="pre">(Byrne</span> <span class="pre">stops</span> <span class="pre">at</span> <span class="pre">Book</span> <span class="pre">VI;</span> <span class="pre">Books</span> <span class="pre">V-VI</span> <span class="pre">use</span> <span class="pre">::</span> <span class="pre">ribbon</span> <span class="pre">proportions)</span></code></p>
+        <div class="highlight-text notranslate"><div class="highlight"><pre><span></span># OMITTED: Projective Pappus, Desargues, and cross-ratios do not appear in Books I-VI.
+        # Structural Language Insight: Pappus (9 points, 9 lines, 0 regions/angles) is the
+        # worst-case adversarial figure for a point-free chromatic region/segment DSL!
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Sharp formal-language boundary: pure 0D point-incidence configurations (Pappus, Desargues) require symbolic point identifiers or homogeneous blades, not coloured regions.</p></li>
+        <li><p><strong>Hides</strong>: All projective incidence and cross-ratio geometry.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="geometor-geometor-model-ecosystem-geometor-model">
+        <h3>GEOMETOR (geometor.model + Ecosystem) (<code class="docutils literal notranslate"><span class="pre">geometor_model</span></code>)<a class="headerlink" href="#geometor-geometor-model-ecosystem-geometor-model" title="Link to this heading">¶</a></h3>
+        <p><em>Source / Reference</em>: <code class="docutils literal notranslate"><span class="pre">geometor/codes/figures.py:444-488</span> <span class="pre">&amp;</span> <span class="pre">geometor.pappus</span></code></p>
+        <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">construct_line</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">b2</span><span class="p">),</span> <span class="n">m</span><span class="o">.</span><span class="n">construct_line</span><span class="p">(</span><span class="n">a2</span><span class="p">,</span> <span class="n">b1</span><span class="p">),</span> <span class="n">ID</span><span class="o">=</span><span class="s2">"X"</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">construct_line</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">c2</span><span class="p">),</span> <span class="n">m</span><span class="o">.</span><span class="n">construct_line</span><span class="p">(</span><span class="n">a2</span><span class="p">,</span> <span class="n">c1</span><span class="p">),</span> <span class="n">ID</span><span class="o">=</span><span class="s2">"Y"</span><span class="p">)</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">construct_line</span><span class="p">(</span><span class="n">b1</span><span class="p">,</span> <span class="n">c2</span><span class="p">),</span> <span class="n">m</span><span class="o">.</span><span class="n">construct_line</span><span class="p">(</span><span class="n">b2</span><span class="p">,</span> <span class="n">c1</span><span class="p">),</span> <span class="n">ID</span><span class="o">=</span><span class="s2">"Z"</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">zero_test</span><span class="p">(</span><span class="n">signed_area2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span>              <span class="c1"># Pappus collinearity</span>
+        <span class="k">assert</span> <span class="n">is_harmonic</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">c1</span><span class="p">)</span>                    <span class="c1"># CR == -1</span>
+        <span class="c1"># Plus homogeneous RP^2 meet/join &amp; Pascal's Mystic Hexagram in geometor.pappus!</span>
+        </pre></div>
+        </div>
+        <ul class="simple">
+        <li><p><strong>Reveals</strong>: Combines exact affine DAG construction + cross_ratio / is_harmonic in geometor.model with full homogeneous RP^2 meet/join (handling ideal points at infinity) and Q(phi) projectivity in geometor.pappus!</p></li>
+        <li><p><strong>Hides</strong>: Minor convention note: standardize cross_ratio argument ordering across geometor.model.invariants and geometor.pappus.projective.</p></li>
+        </ul>
+        </section>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="06-circle-power-inversion-polar.html" title="Benchmark 6: Circle Power, Radical Axis, Inversion &amp; Pole-Polar">&larr; <span class="nav-label">Benchmark 6: Circle Power, Radical Axis, Inversion & Pole-Polar</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../opus/index.html" title="Opus Coverage Matrix (69 Topics x 11 Systems)"><span class="nav-label">Opus Coverage Matrix (69 Topics x 11 Systems)</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="../tags/byrne.html">byrne</a></li>
+        <li><a href="../tags/formal-systems.html">formal-systems</a></li>
+        <li><a href="../tags/geometor-model.html">geometor-model</a></li>
+        <li><a href="../tags/opus.html">opus</a></li>
+        <li><a href="../tags/rosetta.html">rosetta</a></li>
+        <li><a href="../tags/sympy.html">sympy</a></li>
+        <li><a href="../tags/syntax.html">syntax</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=01f34227"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

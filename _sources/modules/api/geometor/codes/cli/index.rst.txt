@@ -1,0 +1,39 @@
+geometor.codes.cli
+==================
+
+.. py:module:: geometor.codes.cli
+
+.. autoapi-nested-parse::
+
+   Command-line interface (`codes`) for GEOMETOR Codes.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.cli.build_parser
+   geometor.codes.cli.run_cli
+
+
+Module Contents
+---------------
+
+.. py:function:: build_parser() -> argparse.ArgumentParser
+
+   Build the `codes` CLI argument parser.
+
+   :returns: Configured `argparse.ArgumentParser`.
+
+
+.. py:function:: run_cli(argv: Sequence[str] | None = None) -> int
+
+   Execute the `codes` CLI and return an exit status code.
+
+   :param argv: Optional sequence of command-line arguments.
+
+   :returns: Process exit code (`0` on success).
+
+

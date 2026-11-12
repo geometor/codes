@@ -1,0 +1,228 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CindyJS: Complex Projective \(\mathbb{CP}^2\), Cayley–Klein &amp; PSLQ &mdash; GEOMETOR • codes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=66998e95" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <h1>GEOMETOR • codes</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">codes</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../hierarchy/index.html"  >Hierarchy</a>
+        </li>
+        <li>
+          <a href="../syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a>
+        </li>
+        <li>
+          <a href="index.html" class="is-active" aria-selected="true" >Systems</a>
+        </li>
+        <li>
+          <a href="../rosetta/index.html"  >Rosetta Stone Benchmarks</a>
+        </li>
+        <li>
+          <a href="../opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a>
+        </li>
+        <li>
+          <a href="../glossary.html"  >Glossary</a>
+        </li>
+        <li>
+          <a href="../persons.html"  >Persons</a>
+        </li>
+        <li>
+          <a href="../bibliography.html"  >Bibliography</a>
+        </li>
+        <li>
+          <a href="../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../modules/index.html"  >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; codes</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Breadcrumbs">
+            <a class="book-crumb-link" href="index.html">Systems</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="pga-cga.html" title="Projective &amp; Conformal Geometric Algebra (kingdon vs galgebra)">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="sympy-geometry.html" title="SymPy Geometry (1.14.0): Symbolic CAS Architecture &amp; Live Bug Audit"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="cindyjs-complex-projective-mathbb-cp-2-cayleyklein-pslq">
+        <span id="system-cindyjs"></span><h1>CindyJS: Complex Projective <span class="math notranslate nohighlight">\(\mathbb{CP}^2\)</span>, Cayley–Klein &amp; PSLQ<a class="headerlink" href="#cindyjs-complex-projective-mathbb-cp-2-cayleyklein-pslq" title="Link to this heading">¶</a></h1>
+        <ul class="simple">
+        <li><p><strong>Repository</strong>: <code class="docutils literal notranslate"><span class="pre">_refs/CindyJS</span></code> (<cite>https://github.com/CindyJS/CindyJS</cite>, Apache-2.0, <a class="citation-ref" id="occ-cite-richtergebert2011-1" href="../bibliography.html#cite-richtergebert2011" data-cite="richtergebert2011" title="Citation: richtergebert2011">RichterGebert2011</a>)</p></li>
+        <li><p><strong>Scale Audited</strong>: <code class="docutils literal notranslate"><span class="pre">src/js/libgeo/</span></code> (<cite>GeoOps.js</cite>, <cite>Conics.js</cite>, <cite>Tracing.js</cite>, <cite>Prover.js</cite>) + <code class="docutils literal notranslate"><span class="pre">src/js/libcs/</span></code> (<cite>List.js</cite>, <cite>PSLQ.js</cite>)</p></li>
+        <li><p><strong>Mathematical Foundation</strong>: <a class="person-ref" id="occ-person-cayley-1" href="../persons.html#person-cayley" data-person="cayley" title="Person: cayley">Arthur Cayley</a>, <a class="person-ref" id="occ-person-klein-1" href="../persons.html#person-klein" data-person="klein" title="Person: klein">Felix Klein</a>, and <a class="person-ref" id="occ-person-richtergebert-1" href="../persons.html#person-richtergebert" data-person="richtergebert" title="Person: richtergebert">Jürgen Richter-Gebert</a>’s complex projective geometry over <span class="math notranslate nohighlight">\(\mathbb{CP}^2\)</span> with Riemann-surface homotopy continuation</p></li>
+        </ul>
+        <section class="level-2" id="total-duality-in-mathbb-cp-2-circular-points-i-j">
+        <h2>1. Total Duality in <span class="math notranslate nohighlight">\(\mathbb{CP}^2\)</span> &amp; Circular Points <span class="math notranslate nohighlight">\(I, J\)</span><a class="headerlink" href="#total-duality-in-mathbb-cp-2-circular-points-i-j" title="Link to this heading">¶</a></h2>
+        <p><code class="docutils literal notranslate"><span class="pre">CindyJS</span></code> embeds every planar point <span class="math notranslate nohighlight">\(p = [x, y, z]\)</span> and every line <span class="math notranslate nohighlight">\(\ell = [a, b, c]\)</span> in the <strong>complex projective plane</strong> <span class="math notranslate nohighlight">\(\mathbb{CP}^2\)</span> (<cite>List.js</cite>):</p>
+        <ul class="simple">
+        <li><p><strong>Unified Join &amp; Meet</strong>: Joining two points and intersecting two lines are the <strong>exact same 3D vector cross product</strong> <code class="docutils literal notranslate"><span class="pre">List.cross(u,</span> <span class="pre">v)</span></code> (<cite>GeoOps.js:156-202</cite>), handling parallel lines (<cite>z = 0</cite>) seamlessly with zero conditionals.</p></li>
+        <li><p><strong>First-Class General Conics (`Conics.js`, `GeoOps.js:1032`)</strong>: Unlike every ITP and <code class="docutils literal notranslate"><span class="pre">sympy.geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">CindyJS</span></code> represents <em>all</em> conics (circles, rotated ellipses, parabolas, hyperbolas, and degenerate line pairs) uniformly as <span class="math notranslate nohighlight">\(3 \times 3\)</span> complex symmetric matrices <span class="math notranslate nohighlight">\(C\)</span>:</p>
+        <ul>
+        <li><p><strong>Polar of point</strong> <span class="math notranslate nohighlight">\(p\)</span>: matrix-vector product <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">=</span> <span class="pre">C</span> <span class="pre">*</span> <span class="pre">p</span></code>;</p></li>
+        <li><p><strong>Dual envelope conic</strong>: cofactor adjugate <code class="docutils literal notranslate"><span class="pre">C_dual</span> <span class="pre">=</span> <span class="pre">List.adjoint3(C)</span></code> (division-free even on rank-2 degenerate conics!);</p></li>
+        <li><p><strong>Pole of line</strong> <span class="math notranslate nohighlight">\(\ell\)</span>: <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">adjoint3(C)</span> <span class="pre">*</span> <span class="pre">l</span></code>;</p></li>
+        <li><p><strong>5-Point Conic (`ConicBy5`)</strong>: Plücker linear combination <span class="math notranslate nohighlight">\(C = \mu D_1 - \lambda D_2\)</span> of two rank-2 line-pair matrices in pure multiplication/subtraction!</p></li>
+        </ul>
+        </li>
+        <li><p><strong>Cayley–Klein Metric via Circular Points at Infinity (`List.js:111-126`)</strong>: Defining <a class="term-ref glossary-term" id="occ-term-circular-points-at-infinity-1" href="../glossary.html#term-circular-points-at-infinity" data-term="circular-points-at-infinity" title="Term: circular-points-at-infinity">circular points at infinity</a> <code class="docutils literal notranslate"><span class="pre">List.ii</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">i,</span> <span class="pre">0]</span></code> and <code class="docutils literal notranslate"><span class="pre">List.jj</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">-i,</span> <span class="pre">0]</span></code>, <strong>every Euclidean circle is simply a conic passing through</strong> <span class="math notranslate nohighlight">\(I\)</span> <strong>and</strong> <span class="math notranslate nohighlight">\(J\)</span> (<cite>CircleMP</cite> calls <cite>ConicBy5</cite> with <cite>ii</cite> and <cite>jj</cite>!), perpendicularity is harmonic conjugacy <code class="docutils literal notranslate"><span class="pre">l1</span> <span class="pre">*</span> <span class="pre">diag(1,1,0)</span> <span class="pre">*</span> <span class="pre">l2</span> <span class="pre">==</span> <span class="pre">0</span></code>, and Euclidean angle is <strong>Laguerre’s cross-ratio formula</strong> <span class="math notranslate nohighlight">\(\theta = \frac{i}{2}\ln\operatorname{CR}(A_\infty, B_\infty; I, J)\)</span>!</p></li>
+        </ul>
+        </section>
+        <section class="level-2" id="three-algorithmic-gems-in-tracing-js-prover-js-pslq-js">
+        <h2>2. Three Algorithmic Gems in <code class="docutils literal notranslate"><span class="pre">Tracing.js</span></code>, <code class="docutils literal notranslate"><span class="pre">Prover.js</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">PSLQ.js</span></code><a class="headerlink" href="#three-algorithmic-gems-in-tracing-js-prover-js-pslq-js" title="Link to this heading">¶</a></h2>
+        <ol class="arabic">
+        <li><p><strong>Riemann-Surface Semicircle Homotopy (`Tracing.js:198-200`)</strong>: In ordinary dynamic geometry, dragging two intersecting circles apart until they become disjoint and bringing them back causes quadratic <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> branches to swap unpredictably (<em>the jumping-elements bug</em>). <code class="docutils literal notranslate"><span class="pre">CindyJS</span></code> keeps complex-conjugate intersections alive over <span class="math notranslate nohighlight">\(\mathbb{C}^3\)</span> and detours each parameter step <span class="math notranslate nohighlight">\(t \in [0, 1]\)</span> along an <strong>upper-half-plane complex semicircle</strong>:</p>
+        <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// src/js/libgeo/Tracing.js:198-200 (complex semicircle detour around branch points!)</span>
+        <span class="kd">var</span><span class="w"> </span><span class="nx">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">;</span>
+        <span class="kd">var</span><span class="w"> </span><span class="nx">tc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">CSNumber</span><span class="p">.</span><span class="nx">complex</span><span class="p">(</span><span class="mf">0.5</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span><span class="nx">alpha</span><span class="p">),</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span><span class="nx">alpha</span><span class="p">));</span>
+        </pre></div>
+        </div>
+        <p>Passing <em>around</em> real branch-point singularities on the Riemann surface makes element identity globally continuous!</p>
+        </li>
+        <li><p><strong>Randomized Complex Theorem Proving (`Prover.js`)</strong>: Evaluates construction DAGs at 3 random complex perturbations (<cite>Schwartz–Zippel lemma</cite>) to auto-discover concurrencies and incidences at interactive frame rates.</p></li>
+        <li><p><strong>Live Integer-Relation Surd Recovery (`PSLQ.js:1-215`)</strong>: Implements Ferguson–Bailey PSLQ (<cite>guess(x)</cite>), recovering rationals and quadratic surds like <code class="docutils literal notranslate"><span class="pre">3/2</span> <span class="pre">+</span> <span class="pre">1/2*sqrt(5)</span></code> from floating-point coordinates—capped at vector dimension <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">3</span></code> (degree <span class="math notranslate nohighlight">\(\le 2\)</span>).</p></li>
+        </ol>
+        </section>
+        <section class="level-2" id="takeaway-for-geometor">
+        <h2>3. Takeaway for GEOMETOR<a class="headerlink" href="#takeaway-for-geometor" title="Link to this heading">¶</a></h2>
+        <p>Port <code class="docutils literal notranslate"><span class="pre">CindyJS</span></code>’s <span class="math notranslate nohighlight">\(3 \times 3\)</span> symmetric conic matrix, <code class="docutils literal notranslate"><span class="pre">adjoint3</span></code> dual, and <code class="docutils literal notranslate"><span class="pre">ConicBy5</span></code> Plücker pencil directly into <strong>exact SymPy arithmetic</strong> in <code class="docutils literal notranslate"><span class="pre">geometor.pappus</span></code> (<cite>Blueprint 5</cite>), and generalize <code class="docutils literal notranslate"><span class="pre">PSLQ.js</span></code>’s <cite>n=3</cite> <code class="docutils literal notranslate"><span class="pre">guess(x)</span></code> to arbitrary algebraic degree <span class="math notranslate nohighlight">\(d\)</span> via 100-digit <code class="docutils literal notranslate"><span class="pre">mpmath.pslq</span></code> in <code class="docutils literal notranslate"><span class="pre">geometor.divine</span></code> (<cite>Blueprint 9</cite>).</p>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="pga-cga.html" title="Projective &amp; Conformal Geometric Algebra (kingdon vs galgebra)">&larr; <span class="nav-label">Projective & Conformal Geometric Algebra (kingdon vs galgebra)</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="sympy-geometry.html" title="SymPy Geometry (1.14.0): Symbolic CAS Architecture &amp; Live Bug Audit"><span class="nav-label">SymPy Geometry (1.14.0): Symbolic CAS Architecture & Live Bug Audit</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="../tags/byrne.html">byrne</a></li>
+        <li><a href="../tags/formal-systems.html">formal-systems</a></li>
+        <li><a href="../tags/geometor-model.html">geometor-model</a></li>
+        <li><a href="../tags/opus.html">opus</a></li>
+        <li><a href="../tags/rosetta.html">rosetta</a></li>
+        <li><a href="../tags/sympy.html">sympy</a></li>
+        <li><a href="../tags/syntax.html">syntax</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=01f34227"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

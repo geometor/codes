@@ -1,0 +1,437 @@
+geometor.codes.registry
+=======================
+
+.. py:module:: geometor.codes.registry
+
+.. autoapi-nested-parse::
+
+   Typed registries, cross-system query helpers, and optional `_refs/` inspector.
+
+   Loads the five canonical comparative datasets from `resources/` (`systems.json`,
+   `syntax_lexicon.json`, `opus_matrix.json`, `rosetta_benchmarks.json`, and
+   `geometor_hierarchy.json`) into immutable Python 3.13 dataclasses. Gracefully
+   operates 100% standalone on CI when external `_refs/` clones are absent.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.codes.registry.SystemProfile
+   geometor.codes.registry.SyntaxEntry
+   geometor.codes.registry.OpusDomain
+   geometor.codes.registry.OpusCoverageCell
+   geometor.codes.registry.OpusTopic
+   geometor.codes.registry.RosettaImplementation
+   geometor.codes.registry.RosettaBenchmark
+   geometor.codes.registry.HierarchyRepo
+   geometor.codes.registry.HierarchyLayer
+   geometor.codes.registry.ArchitecturalRecommendation
+   geometor.codes.registry.CodesRegistry
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.registry.default_resources_dir
+   geometor.codes.registry.default_workspace_root
+
+
+Module Contents
+---------------
+
+.. py:function:: default_resources_dir() -> pathlib.Path
+
+   Return the canonical `resources/` directory of the `geometor-codes` repo.
+
+   :returns: Absolute `Path` to `resources/`.
+
+
+.. py:function:: default_workspace_root() -> pathlib.Path
+
+   Return the parent GEOMETOR workspace root (`/home/phi/PROJECTS/geometor`).
+
+   :returns: Absolute `Path` to workspace root.
+
+
+.. py:class:: SystemProfile
+
+   Structured architectural profile of a formal or symbolic geometry system.
+
+
+   .. py:attribute:: id
+      :type:  str
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: paradigm
+      :type:  str
+
+
+   .. py:attribute:: host_language
+      :type:  str
+
+
+   .. py:attribute:: license
+      :type:  str
+
+
+   .. py:attribute:: local_ref_relpath
+      :type:  str
+
+
+   .. py:attribute:: upstream_url
+      :type:  str
+
+
+   .. py:attribute:: primitives
+      :type:  tuple[str, ...]
+
+
+   .. py:attribute:: underlying_algebra_or_logic
+      :type:  str
+
+
+   .. py:attribute:: metric_treatment
+      :type:  str
+
+
+   .. py:attribute:: diorismos_and_degeneracy
+      :type:  str
+
+
+   .. py:attribute:: verification_engine
+      :type:  str
+
+
+   .. py:attribute:: signature_opus_scale
+      :type:  str
+
+
+   .. py:attribute:: strengths
+      :type:  tuple[str, ...]
+
+
+   .. py:attribute:: blind_spots
+      :type:  tuple[str, ...]
+
+
+   .. py:attribute:: geometor_takeaway
+      :type:  str
+
+
+   .. py:method:: check_local_path(workspace_root: pathlib.Path | None = None) -> pathlib.Path | None
+
+      Return resolved local reference path if present on disk, else ``None``.
+
+      :param workspace_root: Optional workspace directory override.
+
+      :returns: Existing ``Path`` when ``_refs/`` is available locally, otherwise ``None``.
+
+
+
+.. py:class:: SyntaxEntry
+
+   Cross-system symbol, operator, binder, predicate, or tactic decoder entry.
+
+
+   .. py:attribute:: symbol
+      :type:  str
+
+
+   .. py:attribute:: aliases
+      :type:  tuple[str, ...]
+
+
+   .. py:attribute:: system_ids
+      :type:  tuple[str, ...]
+
+
+   .. py:attribute:: category
+      :type:  str
+
+
+   .. py:attribute:: pronunciation
+      :type:  str
+
+
+   .. py:attribute:: plain_meaning
+      :type:  str
+
+
+   .. py:attribute:: formal_semantics
+      :type:  str
+
+
+   .. py:attribute:: example_snippet
+      :type:  str
+
+
+   .. py:attribute:: geometor_equivalent
+      :type:  str
+
+
+.. py:class:: OpusDomain
+
+   One of the 8 canonical domains of the geometric opus coverage matrix.
+
+
+   .. py:attribute:: id
+      :type:  str
+
+
+   .. py:attribute:: number
+      :type:  int
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: summary
+      :type:  str
+
+
+.. py:class:: OpusCoverageCell
+
+   Coverage status and canonical identifier of one topic in one system.
+
+
+   .. py:attribute:: status
+      :type:  str
+
+
+   .. py:attribute:: ref
+      :type:  str
+
+
+.. py:class:: OpusTopic
+
+   Single canonical geometric concept, construction, or theorem in the opus matrix.
+
+
+   .. py:attribute:: id
+      :type:  str
+
+
+   .. py:attribute:: domain_id
+      :type:  str
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: role
+      :type:  str
+
+
+   .. py:attribute:: coverage
+      :type:  dict[str, OpusCoverageCell]
+
+
+   .. py:attribute:: notes
+      :type:  str
+
+
+.. py:class:: RosettaImplementation
+
+   Encoding of a Rosetta Stone benchmark inside a single system.
+
+
+   .. py:attribute:: language
+      :type:  str
+
+
+   .. py:attribute:: source_ref
+      :type:  str
+
+
+   .. py:attribute:: code
+      :type:  str
+
+
+   .. py:attribute:: reveals
+      :type:  str
+
+
+   .. py:attribute:: hides
+      :type:  str
+
+
+.. py:class:: RosettaBenchmark
+
+   Side-by-side Rosetta Stone benchmark comparing a canonical figure across systems.
+
+
+   .. py:attribute:: id
+      :type:  str
+
+
+   .. py:attribute:: number
+      :type:  int
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: geometor_signature
+      :type:  str
+
+
+   .. py:attribute:: euclid_ref
+      :type:  str
+
+
+   .. py:attribute:: geometric_essence
+      :type:  str
+
+
+   .. py:attribute:: figure_svg
+      :type:  str
+
+
+   .. py:attribute:: implementations
+      :type:  dict[str, RosettaImplementation]
+
+
+.. py:class:: HierarchyRepo
+
+   Single repository entry in the 7-layer GEOMETOR ecosystem architecture.
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: pillar
+      :type:  str
+
+
+   .. py:attribute:: status
+      :type:  str
+
+
+   .. py:attribute:: summary
+      :type:  str
+
+
+   .. py:attribute:: informed_by_codes
+      :type:  str
+
+
+.. py:class:: HierarchyLayer
+
+   Architectural layer in the GEOMETOR ecosystem hierarchy.
+
+
+   .. py:attribute:: layer_index
+      :type:  int
+
+
+   .. py:attribute:: id
+      :type:  str
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: epistemic_role
+      :type:  str
+
+
+   .. py:attribute:: repos
+      :type:  tuple[HierarchyRepo, ...]
+
+
+.. py:class:: ArchitecturalRecommendation
+
+   Actionable design recommendation flowing from ``codes`` into GEOMETOR.
+
+
+   .. py:attribute:: id
+      :type:  str
+
+
+   .. py:attribute:: priority
+      :type:  int
+
+
+   .. py:attribute:: target_repo
+      :type:  str
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: inspired_by
+      :type:  tuple[str, ...]
+
+
+   .. py:attribute:: summary
+      :type:  str
+
+
+   .. py:attribute:: api_sketch
+      :type:  str
+
+
+.. py:class:: CodesRegistry(resources_dir: pathlib.Path | None = None)
+
+   Central query interface over all `geometor-codes` comparative datasets.
+
+
+   .. py:attribute:: resources_dir
+      :type:  pathlib.Path
+
+
+   .. py:attribute:: systems
+      :type:  tuple[SystemProfile, ...]
+      :value: ()
+
+
+
+   .. py:attribute:: systems_by_id
+      :type:  dict[str, SystemProfile]
+
+
+   .. py:attribute:: lexicon
+      :type:  tuple[SyntaxEntry, ...]
+      :value: ()
+
+
+
+   .. py:attribute:: benchmarks
+      :type:  tuple[RosettaBenchmark, ...]
+      :value: ()
+
+
+
+   .. py:method:: decode(query: str) -> list[SyntaxEntry]
+
+      Search the strange-symbol lexicon by exact token, alias, or substring.
+
+      :param query: Symbol, operator, tactic, or keyword to look up.
+
+      :returns: Matching `SyntaxEntry` items ranked with exact/alias matches first.
+
+
+
+   .. py:method:: opus_coverage_counts() -> dict[str, dict[str, int]]
+
+      Compute per-system status tallies across all opus topics.
+
+      :returns: Nested mapping from ``system_id`` to status counts.
+
+
+

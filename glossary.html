@@ -1,0 +1,224 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="./">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glossary &mdash; GEOMETOR • codes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="_static/css/styles.css?v=66998e95" />
+  <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <h1>GEOMETOR • codes</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">codes</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="hierarchy/index.html"  >Hierarchy</a>
+        </li>
+        <li>
+          <a href="syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a>
+        </li>
+        <li>
+          <a href="systems/index.html"  >Systems</a>
+        </li>
+        <li>
+          <a href="rosetta/index.html"  >Rosetta Stone Benchmarks</a>
+        </li>
+        <li>
+          <a href="opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a>
+        </li>
+        <li>
+          <a href="#" class="is-active" aria-selected="true" aria-current="page">Glossary</a>
+        </li>
+        <li>
+          <a href="persons.html"  >Persons</a>
+        </li>
+        <li>
+          <a href="bibliography.html"  >Bibliography</a>
+        </li>
+        <li>
+          <a href="log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="modules/index.html"  >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="index.html" title="Return to Project Portal">&larr; codes</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="index.html">GEOMETOR • codes</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="opus/index.html" title="Opus Coverage Matrix (69 Topics x 11 Systems)">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="persons.html" title="Persons"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="glossary">
+        <span id="id1"></span><h1>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">¶</a></h1>
+        <p>Foundational terms, logical paradigms, and algebraic invariants referenced across <strong>GEOMETOR Codes</strong>.</p>
+        <dl class="simple glossary">
+        <dt id="term-affine-torsor">affine torsor<a class="headerlink" href="#term-affine-torsor" title="Link to this term">¶</a></dt><dd><p>A point space <span class="math notranslate nohighlight">\(P\)</span> acted upon freely and transitively by a vector space <span class="math notranslate nohighlight">\(V\)</span> (<code class="docutils literal notranslate"><span class="pre">NormedAddTorsor</span> <span class="pre">V</span> <span class="pre">P</span></code> in <code class="docutils literal notranslate"><span class="pre">mathlib4</span></code>), allowing vector subtraction <span class="math notranslate nohighlight">\(p_1 -_v p_2 \in V\)</span> and vector translation <span class="math notranslate nohighlight">\(v +_v p \in P\)</span> without privileging an arbitrary coordinate origin <span class="math notranslate nohighlight">\((0, 0)\)</span>.</p>
+        </dd>
+        <dt id="term-Algebraic-Number-Polynomial">Algebraic Number Polynomial<a class="headerlink" href="#term-Algebraic-Number-Polynomial" title="Link to this term">¶</a></dt><dd><p>SymPy’s exact minimal-polynomial field element representation (<cite>ANP</cite> inside <code class="docutils literal notranslate"><span class="pre">QQ.algebraic_field(ext)</span></code>) used by <code class="docutils literal notranslate"><span class="pre">geometor.model.algebra</span></code> to canonicalize coordinates over <span class="math notranslate nohighlight">\(\mathbb{Q}(\phi)\)</span>, <span class="math notranslate nohighlight">\(\mathbb{Q}(\sqrt{d})\)</span>, and radical towers without floating-point approximation.</p>
+        </dd>
+        <dt id="term-Algebraic-Reasoning">Algebraic Reasoning<a class="headerlink" href="#term-Algebraic-Reasoning" title="Link to this term">¶</a></dt><dd><p>Sparse rational Gaussian elimination (<code class="docutils literal notranslate"><span class="pre">ar.py</span></code> in <code class="docutils literal notranslate"><span class="pre">AlphaGeometry</span></code>, <code class="docutils literal notranslate"><span class="pre">SympyAR</span></code> / <code class="docutils literal notranslate"><span class="pre">Yuclid</span></code> in <code class="docutils literal notranslate"><span class="pre">Newclid</span></code>) maintaining linear equivalence tables over directed angles modulo <span class="math notranslate nohighlight">\(\pi\)</span>, logarithmic segment ratios, collinear distances, and (in <code class="docutils literal notranslate"><span class="pre">Yuclid</span></code>) squared lengths.</p>
+        </dd>
+        <dt id="term-Area-Method">Area Method<a class="headerlink" href="#term-Area-Method" title="Link to this term">¶</a></dt><dd><p>The coordinate-free decision and readable-proof procedure of Chou, Gao, and Zhang (1994) that eliminates constructed points in reverse order from rational expressions in three geometric invariants: parallel signed ratios <span class="math notranslate nohighlight">\(r\)</span>, signed areas <span class="math notranslate nohighlight">\(S_{ABC}\)</span>, and Pythagoras differences <span class="math notranslate nohighlight">\(P_{ABC}\)</span>.</p>
+        </dd>
+        <dt id="term-chromatic-value-token">chromatic value-token<a class="headerlink" href="#term-chromatic-value-token" title="Link to this term">¶</a></dt><dd><p>An inline colored geometric glyph (segment, angle wedge, polygon, or circle in primary red, blue, yellow, or black) used directly inside algebraic-logical proof equations in Oliver Byrne’s 1847 <em>Coloured Euclid</em>, eliminating indirect vertex-letter pointer dereferencing.</p>
+        </dd>
+        <dt id="term-circular-points-at-infinity">circular points at infinity<a class="headerlink" href="#term-circular-points-at-infinity" title="Link to this term">¶</a></dt><dd><p>The conjugate complex projective pair <span class="math notranslate nohighlight">\(I = (1, i, 0)\)</span> and <span class="math notranslate nohighlight">\(J = (1, -i, 0)\)</span> on the ideal line <span class="math notranslate nohighlight">\(\ell_\infty = [0, 0, 1]\)</span> in <span class="math notranslate nohighlight">\(\mathbb{CP}^2\)</span> (<code class="docutils literal notranslate"><span class="pre">CindyJS</span></code>), through which every Euclidean circle passes and relative to which Laguerre’s cross-ratio recovers Euclidean angle.</p>
+        </dd>
+        <dt id="term-Conformal-Geometric-Algebra">Conformal Geometric Algebra<a class="headerlink" href="#term-Conformal-Geometric-Algebra" title="Link to this term">¶</a></dt><dd><p>The Minkowski Clifford algebra <span class="math notranslate nohighlight">\(\mathbb{R}_{3,1}\)</span> (<cite>Algebra(3, 1)</cite> in <code class="docutils literal notranslate"><span class="pre">kingdon</span></code>) embedding each planar point <span class="math notranslate nohighlight">\((x, y)\)</span> onto the 4D null cone <span class="math notranslate nohighlight">\(P = x e_1 + y e_2 + \tfrac{1}{2}(x^2 + y^2)n_\infty + n_o\)</span>, unifying lines and circles so Steiner power is an inner product <code class="docutils literal notranslate"><span class="pre">-2*(kappa</span> <span class="pre">|</span> <span class="pre">P)</span></code>, radical axis is <code class="docutils literal notranslate"><span class="pre">kappa1</span> <span class="pre">-</span> <span class="pre">kappa2</span></code>, and circle inversion is a sandwich product <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">&gt;&gt;</span> <span class="pre">X</span></code>.</p>
+        </dd>
+        <dt id="term-Deductive-Database">Deductive Database<a class="headerlink" href="#term-Deductive-Database" title="Link to this term">¶</a></dt><dd><p>Forward-chaining Horn-clause saturation (<code class="docutils literal notranslate"><span class="pre">GDD</span></code> in <code class="docutils literal notranslate"><span class="pre">JGEX</span></code>, <code class="docutils literal notranslate"><span class="pre">dd.py</span></code> in <code class="docutils literal notranslate"><span class="pre">AlphaGeometry</span></code>) computing the finite relational fixed point of synthetic congruence, parallelism, perpendicularity, similarity, and concyclicity rules without branching search.</p>
+        </dd>
+        <dt id="term-directed-full-angle">directed full-angle<a class="headerlink" href="#term-directed-full-angle" title="Link to this term">¶</a></dt><dd><p>An angle modulo <span class="math notranslate nohighlight">\(\pi\)</span> between ordered pairs of <em>lines</em> rather than rays—written <code class="docutils literal notranslate"><span class="pre">eqangle</span></code> in <code class="docutils literal notranslate"><span class="pre">JGEX</span></code>/<code class="docutils literal notranslate"><span class="pre">AlphaGeometry</span></code>/<code class="docutils literal notranslate"><span class="pre">Newclid</span></code> and <span class="math notranslate nohighlight">\((2 : \mathbb{Z}) \bullet \measuredangle x y z\)</span> in <code class="docutils literal notranslate"><span class="pre">mathlib4</span></code>—which eliminates acute/obtuse and supplementary case splits in cyclic quadrilateral proofs.</p>
+        </dd>
+        <dt id="term-Five-Segment-Configuration">Five-Segment Configuration<a class="headerlink" href="#term-Five-Segment-Configuration" title="Link to this term">¶</a></dt><dd><p>Tarski’s angle-free replacement (<code class="docutils literal notranslate"><span class="pre">FSC</span></code> / <code class="docutils literal notranslate"><span class="pre">outer_five_segment</span></code>) for Euclid’s Side-Angle-Side congruence criterion (<cite>I.4</cite>), asserting that two collinear 4-tuples with matching base congruences transmit congruence to the fifth segment joining an apex.</p>
+        </dd>
+        <dt id="term-Formal-System-E">Formal System E<a class="headerlink" href="#term-Formal-System-E" title="Link to this term">¶</a></dt><dd><p>The six-sorted constructive and diagrammatic formal system (<cite>Point</cite>, <cite>Line</cite>, <cite>Circle</cite>, <cite>Segment</cite>, <cite>Angle</cite>, <cite>Triangle</cite>) formulated by Jeremy Avigad, Edward Dean, and John Mumma (2009) and mechanized in <code class="docutils literal notranslate"><span class="pre">LeanEuclid</span></code>, separating explicit ruler-and-compass construction rules from diagrammatic plane-topology inferences and linear real metric transfer axioms.</p>
+        </dd>
+        <dt id="term-Geometrographie">Géométrographie<a class="headerlink" href="#term-Geometrographie" title="Link to this term">¶</a></dt><dd><p>Émile Lemoine’s 1902 operational complexity calculus counting the five physical straightedge and compass primitives (<span class="math notranslate nohighlight">\(R_1, R_2, C_1, C_2, C_3\)</span>) of any geometric construction via its <strong>Simplicity</strong> <span class="math notranslate nohighlight">\(S = \sum\)</span> and <strong>Exactitude</strong> <span class="math notranslate nohighlight">\(E = R_1 + C_1 + C_2\)</span>.</p>
+        </dd>
+        <dt id="term-point-only-ontology">point-only ontology<a class="headerlink" href="#term-point-only-ontology" title="Link to this term">¶</a></dt><dd><p>Alfred Tarski’s minimalist first-order geometric signature (formalized in <code class="docutils literal notranslate"><span class="pre">GeoCoq</span></code>) in which the universe contains a single sort <code class="docutils literal notranslate"><span class="pre">Tpoint</span></code> and two primitive relations—ternary non-strict betweenness <code class="docutils literal notranslate"><span class="pre">Bet</span> <span class="pre">A</span> <span class="pre">B</span> <span class="pre">C</span></code> and quaternary segment equidistance <code class="docutils literal notranslate"><span class="pre">Cong</span> <span class="pre">A</span> <span class="pre">B</span> <span class="pre">C</span> <span class="pre">D</span></code>—eliminating lines, circles, and angles as primitive types.</p>
+        </dd>
+        <dt id="term-Projective-Geometric-Algebra">Projective Geometric Algebra<a class="headerlink" href="#term-Projective-Geometric-Algebra" title="Link to this term">¶</a></dt><dd><p>The degenerate Clifford algebra <span class="math notranslate nohighlight">\(\mathbb{R}_{2,0,1}^*\)</span> (<cite>Algebra(2, 0, 1)</cite> in <code class="docutils literal notranslate"><span class="pre">kingdon</span></code>) whose basis vector <span class="math notranslate nohighlight">\(e_0\)</span> squares to <span class="math notranslate nohighlight">\(0\)</span>, representing planar lines as grade-1 vectors, finite and ideal points uniformly as grade-2 bivectors, meets via <code class="docutils literal notranslate"><span class="pre">^</span></code>, joins via <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, and Euclidean isometries via versor sandwich products.</p>
+        </dd>
+        <dt id="term-Pythagoras-difference">Pythagoras difference<a class="headerlink" href="#term-Pythagoras-difference" title="Link to this term">¶</a></dt><dd><p>The coordinate-free quadratic invariant <span class="math notranslate nohighlight">\(P_{ABC} = |AB|^2 + |BC|^2 - |AC|^2\)</span> (generalized to four points as <span class="math notranslate nohighlight">\(P_{ABCD} = |AB|^2 + |CD|^2 - |BC|^2 - |DA|^2 = 2\overrightarrow{AC}\cdot\overrightarrow{BD}\)</span>), which vanishes if and only if <span class="math notranslate nohighlight">\(AB \perp BC\)</span> (respectively <span class="math notranslate nohighlight">\(AC \perp BD\)</span>).</p>
+        </dd>
+        <dt id="term-quadrance">quadrance<a class="headerlink" href="#term-quadrance" title="Link to this term">¶</a></dt><dd><p>Norman Wildberger’s polynomial squared separation <span class="math notranslate nohighlight">\(Q(A, B) = (x_2 - x_1)^2 + (y_2 - y_1)^2\)</span> in <code class="docutils literal notranslate"><span class="pre">geometor.model</span></code> and <code class="docutils literal notranslate"><span class="pre">geometor.wildberger</span></code>, avoiding irrational square roots so metric laws remain inside the base number field.</p>
+        </dd>
+        <dt id="term-spread">spread<a class="headerlink" href="#term-spread" title="Link to this term">¶</a></dt><dd><p>Wildberger’s rational squared-sine invariant <span class="math notranslate nohighlight">\(s(\ell_1, \ell_2) \in [0, 1]\)</span> between two lines (<span class="math notranslate nohighlight">\(0\)</span> when parallel, <span class="math notranslate nohighlight">\(3/4\)</span> at <span class="math notranslate nohighlight">\(60^\circ\)</span>, <span class="math notranslate nohighlight">\(1\)</span> when perpendicular), replacing transcendental <code class="docutils literal notranslate"><span class="pre">arccos</span></code>/<code class="docutils literal notranslate"><span class="pre">atan2</span></code> angles with exact rational algebra.</p>
+        </dd>
+        <dt id="term-versor-sandwich-product">versor sandwich product<a class="headerlink" href="#term-versor-sandwich-product" title="Link to this term">¶</a></dt><dd><p>The universal Clifford transformation law <span class="math notranslate nohighlight">\(V \gg X = \pm V X \widetilde{V}\)</span> applying reflections, rotations, translations, dilations, and conformal circle inversions uniformly across blades of every grade.</p>
+        </dd>
+        </dl>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="opus/index.html" title="Opus Coverage Matrix (69 Topics x 11 Systems)">&larr; <span class="nav-label">Opus Coverage Matrix (69 Topics x 11 Systems)</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="persons.html" title="Persons"><span class="nav-label">Persons</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="tags/byrne.html">byrne</a></li>
+        <li><a href="tags/formal-systems.html">formal-systems</a></li>
+        <li><a href="tags/geometor-model.html">geometor-model</a></li>
+        <li><a href="tags/opus.html">opus</a></li>
+        <li><a href="tags/rosetta.html">rosetta</a></li>
+        <li><a href="tags/sympy.html">sympy</a></li>
+        <li><a href="tags/syntax.html">syntax</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="_static/jquery.js?v=5d32c60e"></script>
+  <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="_static/documentation_options.js?v=01f34227"></script>
+  <script src="_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="_static/js/search_highlight.js"></script>
+
+</body>
+</html>

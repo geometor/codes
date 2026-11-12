@@ -1,0 +1,232 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projective &amp; Conformal Geometric Algebra (kingdon vs galgebra) &mdash; GEOMETOR • codes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=66998e95" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <h1>GEOMETOR • codes</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">codes</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../hierarchy/index.html"  >Hierarchy</a>
+        </li>
+        <li>
+          <a href="../syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a>
+        </li>
+        <li>
+          <a href="index.html" class="is-active" aria-selected="true" >Systems</a>
+        </li>
+        <li>
+          <a href="../rosetta/index.html"  >Rosetta Stone Benchmarks</a>
+        </li>
+        <li>
+          <a href="../opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a>
+        </li>
+        <li>
+          <a href="../glossary.html"  >Glossary</a>
+        </li>
+        <li>
+          <a href="../persons.html"  >Persons</a>
+        </li>
+        <li>
+          <a href="../bibliography.html"  >Bibliography</a>
+        </li>
+        <li>
+          <a href="../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../modules/index.html"  >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; codes</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Breadcrumbs">
+            <a class="book-crumb-link" href="index.html">Systems</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="jgex-area-method.html" title="Java Geometry Expert (JGEX) &amp; Chou–Gao–Zhang’s Area Method">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="cindyjs.html" title="CindyJS: Complex Projective \(\mathbb{CP}^2\), Cayley–Klein &amp; PSLQ"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="projective-conformal-geometric-algebra-kingdon-vs-galgebra">
+        <span id="system-pga-cga"></span><h1>Projective &amp; Conformal Geometric Algebra (<code class="docutils literal notranslate"><span class="pre">kingdon</span></code> vs <code class="docutils literal notranslate"><span class="pre">galgebra</span></code>)<a class="headerlink" href="#projective-conformal-geometric-algebra-kingdon-vs-galgebra" title="Link to this heading">¶</a></h1>
+        <ul class="simple">
+        <li><p><strong>Repositories</strong>: <code class="docutils literal notranslate"><span class="pre">_refs/kingdon</span></code> (<cite>https://github.com/tBuLi/kingdon</cite>, MIT, <a class="citation-ref" id="occ-cite-gunn2020-1" href="../bibliography.html#cite-gunn2020" data-cite="gunn2020" title="Citation: gunn2020">Gunn2020</a>) &amp; <code class="docutils literal notranslate"><span class="pre">_refs/galgebra</span></code> (<cite>https://github.com/pygae/galgebra</cite>, BSD-3-Clause)</p></li>
+        <li><p><strong>Mathematical Foundation</strong>: <a class="person-ref" id="occ-person-grassmann-1" href="../persons.html#person-grassmann" data-person="grassmann" title="Person: grassmann">Hermann Günther Grassmann</a> &amp; <a class="person-ref" id="occ-person-clifford-1" href="../persons.html#person-clifford" data-person="clifford" title="Person: clifford">William Kingdon Clifford</a> multivector calculi—Plane-Based 2D <a class="term-ref glossary-term" id="occ-term-projective-geometric-algebra-1" href="../glossary.html#term-projective-geometric-algebra" data-term="projective-geometric-algebra" title="Term: projective-geometric-algebra">Projective Geometric Algebra</a> <span class="math notranslate nohighlight">\(\mathbb{R}_{2,0,1}^*\)</span> and Point-Based 2D <a class="term-ref glossary-term" id="occ-term-conformal-geometric-algebra-1" href="../glossary.html#term-conformal-geometric-algebra" data-term="conformal-geometric-algebra" title="Term: conformal-geometric-algebra">Conformal Geometric Algebra</a> <span class="math notranslate nohighlight">\(\mathbb{R}_{3,1}\)</span> (<a class="citation-ref" id="occ-cite-dorstfontijnemann2007-1" href="../bibliography.html#cite-dorstfontijnemann2007" data-cite="dorstfontijnemann2007" title="Citation: dorstfontijnemann2007">DorstFontijneMann2007</a>)</p></li>
+        </ul>
+        <section class="level-2" id="two-covariant-calculi-2d-pga-vs-2d-cga">
+        <h2>1. Two Covariant Calculi: 2D PGA vs. 2D CGA<a class="headerlink" href="#two-covariant-calculi-2d-pga-vs-2d-cga" title="Link to this heading">¶</a></h2>
+        <p>Clifford algebra replaces ad-hoc vector cross/dot formulas with a single associative <strong>geometric product</strong> <code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">*</span> <span class="pre">v</span> <span class="pre">=</span> <span class="pre">(u</span> <span class="pre">|</span> <span class="pre">v)</span> <span class="pre">+</span> <span class="pre">(u</span> <span class="pre">^</span> <span class="pre">v)</span></code> over graded blades:</p>
+        <ul>
+        <li><p><strong>Plane-Based 2D PGA (`Algebra(2, 0, 1)`)</strong>: Basis <span class="math notranslate nohighlight">\(e_1^2 = e_2^2 = 1, \; e_0^2 = 0\)</span> (<cite>e0</cite> is the ideal line at infinity).</p>
+        <ul class="simple">
+        <li><p><strong>Grade-1 vectors are Lines</strong>: <span class="math notranslate nohighlight">\(\ell = a e_1 + b e_2 + c e_0\)</span>.</p></li>
+        <li><p><strong>Grade-2 bivectors are Points &amp; Ideal Directions</strong>: <span class="math notranslate nohighlight">\(P = e_{12} + x e_{20} + y e_{01}\)</span> (finite point) vs. <span class="math notranslate nohighlight">\(D = dx\,e_{20} + dy\,e_{01}\)</span> (ideal point at infinity, weight <span class="math notranslate nohighlight">\(e_{12} = 0\)</span>!).</p></li>
+        <li><p><strong>Division-Free Incidence &amp; Metric</strong>: <code class="docutils literal notranslate"><span class="pre">l1</span> <span class="pre">^</span> <span class="pre">l2</span></code> is the <strong>meet</strong> of two lines (valid even when parallel!); <code class="docutils literal notranslate"><span class="pre">P1</span> <span class="pre">&amp;</span> <span class="pre">P2</span></code> is the <strong>join</strong> of two points; <code class="docutils literal notranslate"><span class="pre">(l</span> <span class="pre">|</span> <span class="pre">P)</span></code> is the line through <code class="docutils literal notranslate"><span class="pre">P</span></code> perpendicular to <code class="docutils literal notranslate"><span class="pre">l</span></code>; and <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">&gt;&gt;</span> <span class="pre">X</span></code> reflects <em>any</em> point or line across <code class="docutils literal notranslate"><span class="pre">l</span></code>!</p></li>
+        </ul>
+        </li>
+        <li><p><strong>Point-Based 2D CGA (`Algebra(3, 1)`)</strong>: Lifts 2D Euclidean point <span class="math notranslate nohighlight">\((x, y)\)</span> onto the 4D Minkowski null cone (<span class="math notranslate nohighlight">\(n_o^2 = n_\infty^2 = 0, \; n_o \cdot n_\infty = -1\)</span>):</p>
+        <div class="math notranslate nohighlight">
+        \[P = x e_1 + y e_2 + \tfrac{1}{2}(x^2 + y^2)n_\infty + n_o, \qquad -2(P_1 \mid P_2) = (x_1 - x_2)^2 + (y_1 - y_2)^2 = Q(P_1, P_2)\]</div>
+        <p>In 2D CGA (<cite>kingdon</cite> with SymPy symbolic scalars), <strong>circle geometry collapses to 1-line linear/versor expressions</strong>:</p>
+        <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">C_circ</span>    <span class="o">=</span> <span class="n">P1</span> <span class="o">^</span> <span class="n">P2</span> <span class="o">^</span> <span class="n">P3</span>                 <span class="c1"># OPNS grade-3 circle through 3 points!</span>
+        <span class="n">X3</span>        <span class="o">=</span> <span class="n">norm_pt</span><span class="p">(</span><span class="n">C_circ</span> <span class="o">*</span> <span class="n">ni</span> <span class="o">*</span> <span class="o">~</span><span class="n">C_circ</span><span class="p">)</span>  <span class="c1"># Circumcenter = reflection of infinity ni!</span>
+        <span class="n">kappa1</span>    <span class="o">=</span> <span class="n">C1</span><span class="o">.</span><span class="n">dual</span><span class="p">()</span>                    <span class="c1"># IPNS grade-1 dual circle O - (1/2)r^2 ni</span>
+        <span class="n">power_P</span>   <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">kappa1</span> <span class="o">|</span> <span class="n">P</span><span class="p">)</span><span class="o">.</span><span class="n">e</span>          <span class="c1"># Steiner power of P wrt C1!</span>
+        <span class="n">lam_rad</span>   <span class="o">=</span> <span class="n">kappa1</span> <span class="o">-</span> <span class="n">kappa2</span>              <span class="c1"># Radical axis of ANY two circles (even disjoint)!</span>
+        <span class="n">P_inv</span>     <span class="o">=</span> <span class="n">norm_pt</span><span class="p">(</span><span class="n">C1</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span> <span class="o">&gt;&gt;</span> <span class="n">P</span><span class="p">)</span> <span class="c1"># Möbius circle inversion = sandwich product!</span>
+        </pre></div>
+        </div>
+        </li>
+        </ul>
+        </section>
+        <section class="level-2" id="forensic-audit-three-critical-traps-in-galgebra">
+        <h2>2. Forensic Audit: Three Critical Traps in <code class="docutils literal notranslate"><span class="pre">galgebra</span></code><a class="headerlink" href="#forensic-audit-three-critical-traps-in-galgebra" title="Link to this heading">¶</a></h2>
+        <p>Comparing <code class="docutils literal notranslate"><span class="pre">kingdon</span></code> and <code class="docutils literal notranslate"><span class="pre">galgebra</span></code> source code side-by-side exposed three severe pitfalls in <code class="docutils literal notranslate"><span class="pre">galgebra</span></code> (<cite>mv.py</cite>) for projective geometry:</p>
+        <ol class="arabic simple">
+        <li><p><strong>Crash on Degenerate PGA Duality (`galgebra/mv.py:1104`)</strong>: Calling <code class="docutils literal notranslate"><span class="pre">A.dual()</span></code> computes <code class="docutils literal notranslate"><span class="pre">self</span> <span class="pre">*</span> <span class="pre">self.ga.I_inv()</span></code>, which raises <code class="docutils literal notranslate"><span class="pre">AttributeError:</span> <span class="pre">'Ga'</span> <span class="pre">object</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">attribute</span> <span class="pre">'i_inv'</span></code> whenever <span class="math notranslate nohighlight">\(I^2 = 0\)</span>—breaking Poincaré duality across <strong>all</strong> degenerate Projective Geometric Algebras (<cite>Cl(2,0,1)</cite> and <cite>Cl(3,0,1)</cite>)! <code class="docutils literal notranslate"><span class="pre">kingdon</span></code> (<cite>operators.py:390-440</cite>) dispatches cleanly to the metric-free right Hodge complement whenever <span class="math notranslate nohighlight">\(r \ge 1\)</span>.</p></li>
+        <li><p><strong>Missing Regressive Join ``&amp;``</strong>: <code class="docutils literal notranslate"><span class="pre">galgebra</span></code> implements <code class="docutils literal notranslate"><span class="pre">^</span></code> (outer) and <code class="docutils literal notranslate"><span class="pre">|</span></code> (inner), but has <strong>no regressive vee join ``&amp;``</strong>, preventing standard plane-based PGA point-joining <code class="docutils literal notranslate"><span class="pre">P1</span> <span class="pre">&amp;</span> <span class="pre">P2</span></code>.</p></li>
+        <li><p><strong>Silent Operator Trap on ``&gt;&gt;``</strong>: In <code class="docutils literal notranslate"><span class="pre">kingdon</span></code>, <code class="docutils literal notranslate"><span class="pre">V</span> <span class="pre">&gt;&gt;</span> <span class="pre">X</span></code> is the <strong>versor sandwich product</strong> <span class="math notranslate nohighlight">\(\pm V X \widetilde{V}\)</span>. In <code class="docutils literal notranslate"><span class="pre">galgebra</span></code> (<cite>mv.py:809</cite>), <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&gt;&gt;</span> <span class="pre">B</span></code> is the <strong>commutator product</strong> <span class="math notranslate nohighlight">\(\tfrac{1}{2}(AB - BA)\)</span>! Writing <code class="docutils literal notranslate"><span class="pre">L</span> <span class="pre">&gt;&gt;</span> <span class="pre">P</span></code> in <code class="docutils literal notranslate"><span class="pre">galgebra</span></code> silently computes a Lie-bracket commutator instead of a reflection!</p></li>
+        </ol>
+        <p>Furthermore, <code class="docutils literal notranslate"><span class="pre">kingdon</span></code> (<cite>polynomial.py</cite>, <cite>codegen.py</cite>) compiles symbolic blades through <code class="docutils literal notranslate"><span class="pre">RationalPolynomial</span></code> + <code class="docutils literal notranslate"><span class="pre">poly_cse</span></code> over exact <code class="docutils literal notranslate"><span class="pre">sympy.Expr</span></code> leaves—needing only <code class="docutils literal notranslate"><span class="pre">simp_func=sp.cancel</span></code> when dividing rational functions.</p>
+        </section>
+        <section class="level-2" id="takeaway-for-geometor">
+        <h2>3. Takeaway for GEOMETOR<a class="headerlink" href="#takeaway-for-geometor" title="Link to this heading">¶</a></h2>
+        <p>Use <code class="docutils literal notranslate"><span class="pre">kingdon</span></code>’s blade conventions (never <code class="docutils literal notranslate"><span class="pre">galgebra</span></code>’s <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>) to expose lightweight 2D PGA and 2D CGA multivector projections over <code class="docutils literal notranslate"><span class="pre">geometor.model</span></code> elements—giving GEOMETOR division-free projective chains and 1-line conformal circle algebra while preserving <code class="docutils literal notranslate"><span class="pre">Model</span></code>’s explicit step lineage.</p>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="jgex-area-method.html" title="Java Geometry Expert (JGEX) &amp; Chou–Gao–Zhang’s Area Method">&larr; <span class="nav-label">Java Geometry Expert (JGEX) & Chou–Gao–Zhang’s Area Method</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="cindyjs.html" title="CindyJS: Complex Projective \(\mathbb{CP}^2\), Cayley–Klein &amp; PSLQ"><span class="nav-label">CindyJS: Complex Projective \(\mathbb{CP}^2\), Cayley–Klein & PSLQ</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="../tags/byrne.html">byrne</a></li>
+        <li><a href="../tags/formal-systems.html">formal-systems</a></li>
+        <li><a href="../tags/geometor-model.html">geometor-model</a></li>
+        <li><a href="../tags/opus.html">opus</a></li>
+        <li><a href="../tags/rosetta.html">rosetta</a></li>
+        <li><a href="../tags/sympy.html">sympy</a></li>
+        <li><a href="../tags/syntax.html">syntax</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=01f34227"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

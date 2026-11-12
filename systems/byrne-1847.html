@@ -1,0 +1,238 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oliver Byrne (1847) &amp; Rougeux (2018): Pointer-Free Visual Pseudocode &mdash; GEOMETOR • codes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=66998e95" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <h1>GEOMETOR • codes</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">codes</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../hierarchy/index.html"  >Hierarchy</a>
+        </li>
+        <li>
+          <a href="../syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a>
+        </li>
+        <li>
+          <a href="index.html" class="is-active" aria-selected="true" >Systems</a>
+        </li>
+        <li>
+          <a href="../rosetta/index.html"  >Rosetta Stone Benchmarks</a>
+        </li>
+        <li>
+          <a href="../opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a>
+        </li>
+        <li>
+          <a href="../glossary.html"  >Glossary</a>
+        </li>
+        <li>
+          <a href="../persons.html"  >Persons</a>
+        </li>
+        <li>
+          <a href="../bibliography.html"  >Bibliography</a>
+        </li>
+        <li>
+          <a href="../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../modules/index.html"  >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; codes</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Breadcrumbs">
+            <a class="book-crumb-link" href="index.html">Systems</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="sympy-geometry.html" title="SymPy Geometry (1.14.0): Symbolic CAS Architecture &amp; Live Bug Audit">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="geometor-model.html" title="GEOMETOR (geometor.model + Ecosystem): Exact Constructive Synthesis"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="oliver-byrne-1847-rougeux-2018-pointer-free-visual-pseudocode">
+        <span id="system-byrne-1847"></span><h1>Oliver Byrne (1847) &amp; Rougeux (2018): Pointer-Free Visual Pseudocode<a class="headerlink" href="#oliver-byrne-1847-rougeux-2018-pointer-free-visual-pseudocode" title="Link to this heading">¶</a></h1>
+        <ul class="simple">
+        <li><p><strong>Primary Editions</strong>: <a class="person-ref" id="occ-person-byrne-1" href="../persons.html#person-byrne" data-person="byrne" title="Person: byrne">Oliver Byrne</a>, <em>The First Six Books of the Elements of Euclid in which Coloured Diagrams and Symbols are Used Instead of Letters for the Greater Ease of Learners</em> (Pickering / Chiswick Press, 1847, <a class="citation-ref" id="occ-cite-byrne1847-1" href="../bibliography.html#cite-byrne1847" data-cite="byrne1847" title="Citation: byrne1847">Byrne1847</a>); interactive SVG/CSS reconstruction by <a class="person-ref" id="occ-person-rougeux-1" href="../persons.html#person-rougeux" data-person="rougeux" title="Person: rougeux">Nicholas Rougeux</a> (<cite>https://www.c82.net/euclid/</cite>, 2018, <a class="citation-ref" id="occ-cite-rougeux2018-1" href="../bibliography.html#cite-rougeux2018" data-cite="rougeux2018" title="Citation: rougeux2018">Rougeux2018</a>)</p></li>
+        <li><p><strong>Sibling GEOMETOR Codex</strong>: <code class="docutils literal notranslate"><span class="pre">geometor/byrne</span></code> (<em>Layer 1 Digital Scriptorium</em>)</p></li>
+        <li><p><strong>Paradigm</strong>: <strong>Pointer-Free Chromatic Visual Pseudocode &amp; Inline Value-Token Calculus</strong></p></li>
+        </ul>
+        <section class="level-2" id="why-byrne-1847-is-a-formal-language-breakthrough">
+        <h2>1. Why Byrne (1847) Is a Formal Language Breakthrough<a class="headerlink" href="#why-byrne-1847-is-a-formal-language-breakthrough" title="Link to this heading">¶</a></h2>
+        <p>Art historians celebrate Byrne’s 1847 <em>Euclid</em> as a Victorian typographic marvel anticipating Bauhaus and Mondrian. Viewed through programming-language theory, however, Byrne achieved something far more radical: <strong>he invented the first pointer-free (tacit) visual pseudocode for deductive geometry</strong>.</p>
+        <p>In classical <a class="person-ref" id="occ-person-euclid-1" href="../persons.html#person-euclid" data-person="euclid" title="Person: euclid">Euclid</a> (and in <code class="docutils literal notranslate"><span class="pre">LeanEuclid</span></code>, <code class="docutils literal notranslate"><span class="pre">GeoCoq</span></code>, <code class="docutils literal notranslate"><span class="pre">mathlib4</span></code>, and <code class="docutils literal notranslate"><span class="pre">AlphaGeometry</span></code>), geometric objects have no direct inline representation in text; instead, 0D points are bound to symbolic variable names (<code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code>), and segments, angles, and polygons are dereferenced via multi-letter pointer tuples (<code class="docutils literal notranslate"><span class="pre">AB</span></code>, <code class="docutils literal notranslate"><span class="pre">∠ABC</span></code>, <code class="docutils literal notranslate"><span class="pre">△ABC</span></code>). Every equation forces the human reader to execute a mental <em>pointer lookup</em>: scan <code class="docutils literal notranslate"><span class="pre">&quot;∠BDF</span> <span class="pre">=</span> <span class="pre">∠FEC&quot;</span></code> in text <span class="math notranslate nohighlight">\(\to\)</span> hunt for <code class="docutils literal notranslate"><span class="pre">B</span></code>, <code class="docutils literal notranslate"><span class="pre">D</span></code>, <code class="docutils literal notranslate"><span class="pre">F</span></code> on the figure <span class="math notranslate nohighlight">\(\to\)</span> trace the angle <span class="math notranslate nohighlight">\(\to\)</span> hunt for <code class="docutils literal notranslate"><span class="pre">F</span></code>, <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code> <span class="math notranslate nohighlight">\(\to\)</span> jump back to the text without losing the line!</p>
+        <p>Byrne replaced indirect pointer dereferencing with <strong>direct inline chromatic value-tokens</strong>:</p>
+        <ol class="arabic simple">
+        <li><p><strong>Four-Color + Three-Stroke Token Alphabet</strong>: Miniature woodblock shapes in primary <strong>red</strong>, <strong>blue</strong>, <strong>yellow</strong>, and <strong>black</strong> combined with <strong>solid</strong> (<code class="docutils literal notranslate"><span class="pre">━━</span></code>, <cite>Given</cite> loci), <strong>dashed</strong> (<code class="docutils literal notranslate"><span class="pre">╌╌╌</span></code>, primary <cite>Construction</cite> loci), and <strong>dotted</strong> (<code class="docutils literal notranslate"><span class="pre">┈┈┈</span></code>, secondary auxiliary loci) strokes sit directly inside the mathematical line as typed visual values (<cite>Segment</cite>, <cite>Angle Wedge</cite>, <cite>Triangle</cite>, <cite>Square/Rectangle</cite>, <cite>Circle/Arc</cite>).</p></li>
+        <li><p><strong>Structured Pseudocode Block Grammar</strong>: Every proposition is refactored out of Euclid’s continuous Greek prose paragraph into four explicit blocks anticipating <code class="docutils literal notranslate"><span class="pre">&#64;proposition</span></code> (<cite>Given</cite> <span class="math notranslate nohighlight">\(\to\)</span> <cite>Construct</cite> <span class="math notranslate nohighlight">\(\to\)</span> <cite>Demonstrate</cite>) by 175 years:</p>
+        <ul class="simple">
+        <li><p>Enunciation + Main Diagram,</p></li>
+        <li><p>Visual Specification (<cite>Given</cite> / <cite>To Prove</cite> or <cite>To Construct</cite>),</p></li>
+        <li><p>Imperative <cite>Construction</cite> block (introducing dashed/dotted colored loci),</p></li>
+        <li><p>Vertical <cite>Proof</cite> block of aligned algebraic-logical equations using Oughtred’s <code class="docutils literal notranslate"><span class="pre">=</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, four-term proportion <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">:</span> <span class="pre">B</span> <span class="pre">::</span> <span class="pre">C</span> <span class="pre">:</span> <span class="pre">D</span></code>, and Rahn’s <code class="docutils literal notranslate"><span class="pre">∴</span></code> (<em>therefore</em>) with marginal citations <code class="docutils literal notranslate"><span class="pre">(I.4)</span></code>, <code class="docutils literal notranslate"><span class="pre">(Ax.</span> <span class="pre">1)</span></code>.</p></li>
+        </ul>
+        </li>
+        </ol>
+        </section>
+        <section class="level-2" id="byrne-s-surprising-opus-victory-book-ii-gnomons-the-golden-ratio">
+        <h2>2. Byrne’s Surprising Opus Victory: Book II Gnomons &amp; The Golden Ratio!<a class="headerlink" href="#byrne-s-surprising-opus-victory-book-ii-gnomons-the-golden-ratio" title="Link to this heading">¶</a></h2>
+        <p>Comparing Byrne (<cite>1847</cite>) against modern theorem provers in our <a class="reference internal" href="../opus/index.html#opus-index"><span class="std std-ref">Opus Matrix</span></a> yields an astonishing result. Whereas <code class="docutils literal notranslate"><span class="pre">LeanEuclid</span></code>, <code class="docutils literal notranslate"><span class="pre">GeoCoq</span></code>, <code class="docutils literal notranslate"><span class="pre">mathlib4</span></code> Geometry, <code class="docutils literal notranslate"><span class="pre">AlphaGeometry</span></code>, and <code class="docutils literal notranslate"><span class="pre">Newclid</span></code> <strong>all omit the Golden Ratio (:math:`phi`) and Book II gnomonic algebra</strong>, Byrne’s 268-page opus covers <strong>all of Books I–VI</strong>, including:</p>
+        <ul class="simple">
+        <li><p><strong>Book I (`Props. 1–48`)</strong>: culminating in the iconic four-color Bride’s Chair (<cite>I.47</cite>), where <code class="docutils literal notranslate"><span class="pre">[red</span> <span class="pre">□]</span> <span class="pre">+</span> <span class="pre">[blue</span> <span class="pre">□]</span> <span class="pre">=</span> <span class="pre">[yellow</span> <span class="pre">▭]</span> <span class="pre">+</span> <span class="pre">[black</span> <span class="pre">▭]</span></code> becomes visually transparent;</p></li>
+        <li><p><strong>Book II (`Props. 1–14`)</strong>: geometric algebra of colored rectangles and gnomons, including <strong>Book II, Prop. 11</strong> (<em>cutting a line so the rectangle of whole and lesser equals the square on the greater</em>);</p></li>
+        <li><p><strong>Book III (`Props. 1–37`)</strong>: circle chords, inscribed wedges (<cite>III.20–22</cite>), external tangents (<cite>III.17</cite>), and <strong>intersecting-chord / tangent-secant circle power (`III.35–36`)</strong>;</p></li>
+        <li><p><strong>Book IV (`Props. 1–16`)</strong>: incircle (<cite>IV.4</cite>), circumcircle (<cite>IV.5</cite>), <strong>regular pentagon (`IV.10–11`)</strong>, and regular 15-gon (<cite>IV.16</cite>);</p></li>
+        <li><p><strong>Book V (`Props. 1–25`) &amp; Book VI (`Props. 1–33`)</strong>: Eudoxian four-term <code class="docutils literal notranslate"><span class="pre">::</span></code> ribbon proportions, Thales intercept (<cite>VI.2</cite>), similar polygons, and <strong>Book VI, Prop. 30</strong> (<em>dividing a segment in Extreme and Mean Ratio</em> <span class="math notranslate nohighlight">\(\phi\)</span>!).</p></li>
+        </ul>
+        </section>
+        <section class="level-2" id="structural-ceilings-of-pure-chromatic-tokens">
+        <h2>3. Structural Ceilings of Pure Chromatic Tokens<a class="headerlink" href="#structural-ceilings-of-pure-chromatic-tokens" title="Link to this heading">¶</a></h2>
+        <p>Why did Byrne stop at Book VI, and where does pure pointer-free color notation hit a formal ceiling?</p>
+        <ol class="arabic simple">
+        <li><p><strong>Combinatorial Palette Exhaustion (~12 Tokens)</strong>: Four colors <span class="math notranslate nohighlight">\(\times\)</span> three stroke styles distinguish roughly a dozen concurrent elements cleanly. Dense configurations like the Nine-Point Circle (<cite>X(1)</cite>–<cite>X(5)</cite> + 3 medians + 3 altitudes + 9 concyclic feet/midpoints) overwhelm chromatic discrimination.</p></li>
+        <li><p><strong>0D Point Erasure</strong>: Points have almost no visual area! Whenever Euclid must speak of an isolated point (<cite>I.31</cite> external point, or the 9 collinearity points of <a class="person-ref" id="occ-person-pappus-1" href="../persons.html#person-pappus" data-person="pappus" title="Person: pappus">Pappus</a>’s Hexagon), Byrne must either print an ad-hoc black dot/star or write circumlocutions (<em>“the point where [red] meets [blue]”</em>). Pure point-incidence geometry (<cite>Pappus</cite>, <cite>Desargues</cite>, Tarski <cite>Bet</cite>) cannot live without point identifiers.</p></li>
+        <li><p><strong>Plain-Text Greppability &amp; Machine Checking</strong>: Pure woodblock icons cannot be typed in ASCII or checked by a compiler <em>unless</em> backed by a symbolic DOM layer—which is precisely what <a class="person-ref" id="occ-person-rougeux-2" href="../persons.html#person-rougeux" data-person="rougeux" title="Person: rougeux">Nicholas Rougeux</a> engineered in <cite>2018</cite> (<cite>c82.net/euclid</cite>) by encoding every inline Byrne glyph as an <code class="docutils literal notranslate"><span class="pre">&lt;svg&gt;</span></code> element linked via JavaScript/CSS hover classes to the main diagram!</p></li>
+        </ol>
+        </section>
+        <section class="level-2" id="how-byrne-rougeux-directly-inform-geometor">
+        <h2>4. How Byrne &amp; Rougeux Directly Inform GEOMETOR<a class="headerlink" href="#how-byrne-rougeux-directly-inform-geometor" title="Link to this heading">¶</a></h2>
+        <p>GEOMETOR resolves the 2,300-year tension between <strong>Euclid’s symbolic pointers</strong> and <strong>Byrne’s chromatic immediacy</strong>:</p>
+        <ul class="simple">
+        <li><p>In <code class="docutils literal notranslate"><span class="pre">photon-platform/publish</span></code> and <code class="docutils literal notranslate"><span class="pre">geometor/codes</span></code>, every <code class="docutils literal notranslate"><span class="pre">:g:</span></code> token (such as <span class="geom-ref" data-ref="[ A B ]" title="[ A B ]">AB</span>, <span class="geom-ref" data-ref="( A B )" title="( A B )">AB</span>, <span class="geom-ref" data-ref="F" title="F">F</span>) preserves <strong>100% unambiguous symbolic pointer identity</strong> (<cite>data-ref=”[ A B ]”</cite> matched to <code class="docutils literal notranslate"><span class="pre">geometor.model</span></code>’s exact algebraic <cite>Model</cite>) <em>while</em> providing <strong>Rougeux-style bidirectional hover illumination</strong> on the inline <cite>.euclid-graphic</cite> SVG!</p></li>
+        <li><p>Even further (<cite>Blueprint 11</cite>), <code class="docutils literal notranslate"><span class="pre">publish</span></code> can optionally emit <strong>inline 14px Byrne micro-glyph SVG badges</strong> right beside <code class="docutils literal notranslate"><span class="pre">:g:</span></code> tokens inside <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">step::</span></code> blocks—giving readers both machine-verified symbolic precision and zero-dereference visual scanning.</p></li>
+        </ul>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="sympy-geometry.html" title="SymPy Geometry (1.14.0): Symbolic CAS Architecture &amp; Live Bug Audit">&larr; <span class="nav-label">SymPy Geometry (1.14.0): Symbolic CAS Architecture & Live Bug Audit</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="geometor-model.html" title="GEOMETOR (geometor.model + Ecosystem): Exact Constructive Synthesis"><span class="nav-label">GEOMETOR (geometor.model + Ecosystem): Exact Constructive Synthesis</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="../tags/byrne.html">byrne</a></li>
+        <li><a href="../tags/formal-systems.html">formal-systems</a></li>
+        <li><a href="../tags/geometor-model.html">geometor-model</a></li>
+        <li><a href="../tags/opus.html">opus</a></li>
+        <li><a href="../tags/rosetta.html">rosetta</a></li>
+        <li><a href="../tags/sympy.html">sympy</a></li>
+        <li><a href="../tags/syntax.html">syntax</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=01f34227"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

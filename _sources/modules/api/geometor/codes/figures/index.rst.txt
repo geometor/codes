@@ -1,0 +1,152 @@
+geometor.codes.figures
+======================
+
+.. py:module:: geometor.codes.figures
+
+.. autoapi-nested-parse::
+
+   Exact `geometor.model` SVG figure generators for GEOMETOR Codes.
+
+   Every model is constructed strictly with `Model(..., auto_intersect=False)` and
+   100% exact SymPy coordinates (zero `sp.Float`), verified symbolically via
+   Rational Trigonometry (`quadrance`, `line_spread`, `vertex_spread`, `cross_ratio`),
+   and rendered as an interactive `.euclid-graphic` SVG in `docsrc/_static/figures/`.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   geometor.codes.figures.FIGURE_SPECS
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.codes.figures.FigureSpec
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.figures.build_01_seven_ontologies
+   geometor.codes.figures.build_02_topological_selectors
+   geometor.codes.figures.build_03_tarski_five_segment
+   geometor.codes.figures.build_04_torsor_oangle_spread
+   geometor.codes.figures.build_05_area_method_elimination
+   geometor.codes.figures.build_06_pga_cga_inversion
+   geometor.codes.figures.build_07_vesica_golden_poles
+   geometor.codes.figures.build_08_rosetta_centers_euler
+   geometor.codes.figures.build_09_rosetta_pappus_harmonic
+   geometor.codes.figures.default_figures_dir
+   geometor.codes.figures.build_all_figures
+
+
+Module Contents
+---------------
+
+.. py:class:: FigureSpec
+
+   Metadata and builder callable for a comparative ``.euclid-graphic`` figure.
+
+
+   .. py:attribute:: slug
+      :type:  str
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: builder
+      :type:  Callable[[], tuple[geometor.model.Model, list[dict[str, object]]]]
+
+
+.. py:function:: build_01_seven_ontologies() -> tuple[geometor.model.Model, list[dict[str, object]]]
+
+   Build Figure 1: The 7 Ontologies of a Line & Circle (`I.1` Vesica Locus).
+
+   :returns: Tuple of exact `Model` and SVG callout annotations.
+
+
+.. py:function:: build_02_topological_selectors() -> tuple[geometor.model.Model, list[dict[str, object]]]
+
+   Build Figure 2: Diagrammatic Selectors (`LeanEuclid` System E == `geometor.model`).
+
+   :returns: Tuple of exact `Model` and SVG callout annotations.
+
+
+.. py:function:: build_03_tarski_five_segment() -> tuple[geometor.model.Model, list[dict[str, object]]]
+
+   Build Figure 3: Tarski's Point-Only `FSC` & Right-Angle `Per` via Midpoint.
+
+   :returns: Tuple of exact `Model` and SVG callout annotations.
+
+
+.. py:function:: build_04_torsor_oangle_spread() -> tuple[geometor.model.Model, list[dict[str, object]]]
+
+   Build Figure 4: Affine Torsor `C -ᵥ A`, Directed `oangle` & Rational `spread`.
+
+   :returns: Tuple of exact `Model` and SVG callout annotations.
+
+
+.. py:function:: build_05_area_method_elimination() -> tuple[geometor.model.Model, list[dict[str, object]]]
+
+   Build Figure 5: Chou-Gao-Zhang Area-Method Elimination (`S_ABC` & `P_ABC`).
+
+   :returns: Tuple of exact `Model` and SVG callout annotations.
+
+
+.. py:function:: build_06_pga_cga_inversion() -> tuple[geometor.model.Model, list[dict[str, object]]]
+
+   Build Figure 6: 2D PGA/CGA Circle Inversion `C >> P` & `CP^2` Pole-Polar.
+
+   :returns: Tuple of exact `Model` and SVG callout annotations.
+
+
+.. py:function:: build_07_vesica_golden_poles() -> tuple[geometor.model.Model, list[dict[str, object]]]
+
+   Build Figure 7: Just-In-Time Emergence from `fundamental(A, B)` to Golden Chain.
+
+   :returns: Tuple of exact `Model` and SVG callout annotations.
+
+
+.. py:function:: build_08_rosetta_centers_euler() -> tuple[geometor.model.Model, list[dict[str, object]]]
+
+   Build Figure 8: Rosetta Benchmark 5 — 13-14-15 Triangle Centers `X(1)..X(5)`.
+
+   :returns: Tuple of exact `Model` and SVG callout annotations.
+
+
+.. py:function:: build_09_rosetta_pappus_harmonic() -> tuple[geometor.model.Model, list[dict[str, object]]]
+
+   Build Figure 9: Rosetta Benchmark 7 — Projective Pappus Hexagon & Harmonic Range.
+
+   :returns: Tuple of exact `Model` and SVG callout annotations.
+
+
+.. py:data:: FIGURE_SPECS
+   :type:  tuple[FigureSpec, ...]
+
+.. py:function:: default_figures_dir() -> pathlib.Path
+
+   Return the canonical `docsrc/_static/figures` directory inside `geometor/codes`.
+
+   :returns: Absolute `Path` to `docsrc/_static/figures`.
+
+
+.. py:function:: build_all_figures(output_dir: pathlib.Path | None = None) -> list[pathlib.Path]
+
+   Construct, symbolically verify, and render all 9 `.euclid-graphic` SVG figures.
+
+   :param output_dir: Optional target directory; defaults to `docsrc/_static/figures`.
+
+   :returns: List of written `.svg` file paths.
+
+

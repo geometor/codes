@@ -1,0 +1,564 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../../../../../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>geometor.codes.render &mdash; GEOMETOR • codes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/css/styles.css?v=66998e95" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../../../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../../../../../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../../../../../index.html">
+        <h1>GEOMETOR • codes</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">codes</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../../../../../hierarchy/index.html"  >Hierarchy</a>
+        </li>
+        <li>
+          <a href="../../../../../syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a>
+        </li>
+        <li>
+          <a href="../../../../../systems/index.html"  >Systems</a>
+        </li>
+        <li>
+          <a href="../../../../../rosetta/index.html"  >Rosetta Stone Benchmarks</a>
+        </li>
+        <li>
+          <a href="../../../../../opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a>
+        </li>
+        <li>
+          <a href="../../../../../glossary.html"  >Glossary</a>
+        </li>
+        <li>
+          <a href="../../../../../persons.html"  >Persons</a>
+        </li>
+        <li>
+          <a href="../../../../../bibliography.html"  >Bibliography</a>
+        </li>
+        <li>
+          <a href="../../../../../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../../../../index.html" class="is-active" aria-selected="true" >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../../../../../index.html" title="Return to Project Portal">&larr; codes</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../../../../../index.html">GEOMETOR • codes</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="module-geometor.codes.render">
+        <span id="geometor-codes-render"></span><h1>geometor.codes.render<a class="headerlink" href="#module-geometor.codes.render" title="Link to this heading">¶</a></h1>
+        <p>Interactive <cite>.euclid-graphic</cite> SVG renderer for GEOMETOR Codes.</p>
+        <p>Renders exact <cite>geometor.model.Model</cite> constructions with two-way <cite>data-ref</cite> &lt;-&gt; <cite>:g:</cite>
+        hover highlighting, exact symbolic <cite>data-latex-xy</cite> / <cite>data-quadrance</cite> telemetry,
+        callout badges, and interactive pan/zoom/guide controls.</p>
+        <section class="level-2" id="attributes">
+        <h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.render.Point" title="geometor.codes.render.Point"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Point</span></code></a></p></td>
+        <td><p></p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.render.Line" title="geometor.codes.render.Line"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Line</span></code></a></p></td>
+        <td><p></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.render.Circle" title="geometor.codes.render.Circle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circle</span></code></a></p></td>
+        <td><p></p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.render.Polygon" title="geometor.codes.render.Polygon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Polygon</span></code></a></p></td>
+        <td><p></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.render.Segment" title="geometor.codes.render.Segment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Segment</span></code></a></p></td>
+        <td><p></p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.render.CODES_SVG_CSS" title="geometor.codes.render.CODES_SVG_CSS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CODES_SVG_CSS</span></code></a></p></td>
+        <td><p></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.render.INTERACTIVE_CODES_JS" title="geometor.codes.render.INTERACTIVE_CODES_JS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">INTERACTIVE_CODES_JS</span></code></a></p></td>
+        <td><p></p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="functions">
+        <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.render.render_svg" title="geometor.codes.render.render_svg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_svg</span></code></a>(model, output_path[, annotations, ...]) → pathlib.Path</p></td>
+        <td><p>Render an exact <cite>geometor.model.Model</cite> into an interactive <cite>.euclid-graphic</cite> SVG.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="module-contents">
+        <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+        <dl class="py data">
+        <dt class="sig sig-object py" id="geometor.codes.render.Point">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.render.</span></span><span class="sig-name descname"><span class="pre">Point</span></span><a class="headerlink" href="#geometor.codes.render.Point" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py data">
+        <dt class="sig sig-object py" id="geometor.codes.render.Line">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.render.</span></span><span class="sig-name descname"><span class="pre">Line</span></span><a class="headerlink" href="#geometor.codes.render.Line" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py data">
+        <dt class="sig sig-object py" id="geometor.codes.render.Circle">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.render.</span></span><span class="sig-name descname"><span class="pre">Circle</span></span><a class="headerlink" href="#geometor.codes.render.Circle" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py data">
+        <dt class="sig sig-object py" id="geometor.codes.render.Polygon">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.render.</span></span><span class="sig-name descname"><span class="pre">Polygon</span></span><a class="headerlink" href="#geometor.codes.render.Polygon" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py data">
+        <dt class="sig sig-object py" id="geometor.codes.render.Segment">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.render.</span></span><span class="sig-name descname"><span class="pre">Segment</span></span><a class="headerlink" href="#geometor.codes.render.Segment" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py data">
+        <dt class="sig sig-object py" id="geometor.codes.render.CODES_SVG_CSS">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.render.</span></span><span class="sig-name descname"><span class="pre">CODES_SVG_CSS</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Multiline-String</span></span><a class="headerlink" href="#geometor.codes.render.CODES_SVG_CSS" title="Link to this definition">¶</a></dt>
+        <dd><details><summary>Show Value</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">"""</span>
+        <span class="sd">svg.codes-diagram {</span>
+        <span class="sd">    background-color: #111318;</span>
+        <span class="sd">    border: 1px solid #2e3440;</span>
+        <span class="sd">    border-radius: 6px;</span>
+        <span class="sd">    width: 100%;</span>
+        <span class="sd">    height: auto;</span>
+        <span class="sd">    max-height: 560px;</span>
+        <span class="sd">    display: block;</span>
+        <span class="sd">    margin: 0.75rem auto;</span>
+        <span class="sd">    user-select: none;</span>
+        <span class="sd">    overflow: hidden;</span>
+        <span class="sd">    cursor: grab;</span>
+        <span class="sd">}</span>
+        <span class="sd">svg.codes-diagram:active {</span>
+        <span class="sd">    cursor: grabbing;</span>
+        <span class="sd">}</span>
+        <span class="sd">@media (prefers-color-scheme: light) {</span>
+        <span class="sd">    svg.codes-diagram {</span>
+        <span class="sd">        background-color: #fbfbfd;</span>
+        <span class="sd">        border-color: #d8dee9;</span>
+        <span class="sd">    }</span>
+        <span class="sd">    svg.codes-diagram .Point {</span>
+        <span class="sd">        stroke: #fbfbfd !important;</span>
+        <span class="sd">    }</span>
+        <span class="sd">    svg.codes-diagram .Point.given {</span>
+        <span class="sd">        fill: #1a1d24 !important;</span>
+        <span class="sd">    }</span>
+        <span class="sd">    svg.codes-diagram .label-halo {</span>
+        <span class="sd">        stroke: #fbfbfd !important;</span>
+        <span class="sd">    }</span>
+        <span class="sd">    svg.codes-diagram .label-fill {</span>
+        <span class="sd">        fill: #1a1d24 !important;</span>
+        <span class="sd">    }</span>
+        <span class="sd">    svg.codes-diagram .Line,</span>
+        <span class="sd">    svg.codes-diagram .Segment {</span>
+        <span class="sd">        stroke: #4c566a;</span>
+        <span class="sd">    }</span>
+        <span class="sd">    svg.codes-diagram .callout-box {</span>
+        <span class="sd">        fill: rgba(255, 255, 255, 0.92);</span>
+        <span class="sd">    }</span>
+        <span class="sd">    svg.codes-diagram .callout-text {</span>
+        <span class="sd">        fill: #1a1d24;</span>
+        <span class="sd">    }</span>
+        <span class="sd">}</span>
+        <span class="sd">.Line, .Segment {</span>
+        <span class="sd">    stroke: #9aa5b4;</span>
+        <span class="sd">    stroke-linecap: round;</span>
+        <span class="sd">    vector-effect: non-scaling-stroke;</span>
+        <span class="sd">    stroke-width: 1.35px;</span>
+        <span class="sd">    fill: none;</span>
+        <span class="sd">    opacity: 0.84;</span>
+        <span class="sd">    transition: stroke-width 0.15s ease, opacity 0.15s ease, filter 0.15s ease;</span>
+        <span class="sd">}</span>
+        <span class="sd">.Circle {</span>
+        <span class="sd">    stroke: #c678dd;</span>
+        <span class="sd">    vector-effect: non-scaling-stroke;</span>
+        <span class="sd">    stroke-width: 1.45px;</span>
+        <span class="sd">    fill: none;</span>
+        <span class="sd">    opacity: 0.86;</span>
+        <span class="sd">    transition: stroke-width 0.15s ease, opacity 0.15s ease, filter 0.15s ease;</span>
+        <span class="sd">}</span>
+        <span class="sd">.Polygon {</span>
+        <span class="sd">    fill: rgba(97, 175, 239, 0.09);</span>
+        <span class="sd">    stroke: #61afef;</span>
+        <span class="sd">    vector-effect: non-scaling-stroke;</span>
+        <span class="sd">    stroke-width: 1.85px;</span>
+        <span class="sd">    stroke-linejoin: round;</span>
+        <span class="sd">    transition: stroke-width 0.15s ease, fill-opacity 0.15s ease;</span>
+        <span class="sd">}</span>
+        <span class="sd">.Polygon.golden {</span>
+        <span class="sd">    fill: rgba(229, 192, 123, 0.14);</span>
+        <span class="sd">    stroke: #e5c07b;</span>
+        <span class="sd">}</span>
+        <span class="sd">.Point {</span>
+        <span class="sd">    fill: #e5c07b;</span>
+        <span class="sd">    stroke: #111318;</span>
+        <span class="sd">    vector-effect: non-scaling-stroke;</span>
+        <span class="sd">    stroke-width: 1.4px;</span>
+        <span class="sd">    transition: r 0.15s ease, filter 0.15s ease;</span>
+        <span class="sd">}</span>
+        <span class="sd">.Point.given {</span>
+        <span class="sd">    fill: #ffffff;</span>
+        <span class="sd">}</span>
+        <span class="sd">.Point.result, .Point.center, .Point.target {</span>
+        <span class="sd">    fill: #00e5ff;</span>
+        <span class="sd">}</span>
+        <span class="sd">.Point.golden {</span>
+        <span class="sd">    fill: #f0c674;</span>
+        <span class="sd">}</span>
+        <span class="sd">.Point.midpoint, .Point.foot {</span>
+        <span class="sd">    fill: #98c379;</span>
+        <span class="sd">}</span>
+        <span class="sd">.Line.guide, .Circle.guide, .Segment.guide, .Point.guide {</span>
+        <span class="sd">    stroke-dasharray: 4 4;</span>
+        <span class="sd">    opacity: 0.42;</span>
+        <span class="sd">    stroke-width: 0.95px;</span>
+        <span class="sd">}</span>
+        <span class="sd">.Line.axis, .Segment.axis, .Line.euler, .Segment.euler {</span>
+        <span class="sd">    stroke: #e06c75;</span>
+        <span class="sd">    stroke-width: 1.9px;</span>
+        <span class="sd">    opacity: 0.94;</span>
+        <span class="sd">}</span>
+        <span class="sd">.Line.bisector, .Segment.bisector, .Line.altitude, .Segment.altitude, .Line.median, .Segment.median {</span>
+        <span class="sd">    stroke: #98c379;</span>
+        <span class="sd">    stroke-width: 1.5px;</span>
+        <span class="sd">    opacity: 0.88;</span>
+        <span class="sd">}</span>
+        <span class="sd">.Line.golden, .Segment.golden, .Circle.golden {</span>
+        <span class="sd">    stroke: #e5c07b;</span>
+        <span class="sd">    stroke-width: 1.85px;</span>
+        <span class="sd">}</span>
+        <span class="sd">.Circle.circumcircle {</span>
+        <span class="sd">    stroke: #e06c75;</span>
+        <span class="sd">    stroke-width: 1.55px;</span>
+        <span class="sd">}</span>
+        <span class="sd">.Circle.ninepoint {</span>
+        <span class="sd">    stroke: #61afef;</span>
+        <span class="sd">    stroke-width: 1.65px;</span>
+        <span class="sd">}</span>
+        <span class="sd">.Circle.incircle {</span>
+        <span class="sd">    stroke: #e5c07b;</span>
+        <span class="sd">    stroke-width: 1.55px;</span>
+        <span class="sd">}</span>
+        <span class="sd">.callout-box {</span>
+        <span class="sd">    fill: rgba(24, 28, 36, 0.88);</span>
+        <span class="sd">    stroke: #61afef;</span>
+        <span class="sd">    vector-effect: non-scaling-stroke;</span>
+        <span class="sd">    stroke-width: 1px;</span>
+        <span class="sd">    rx: 3px;</span>
+        <span class="sd">}</span>
+        <span class="sd">.callout-box.spread-box {</span>
+        <span class="sd">    stroke: #e5c07b;</span>
+        <span class="sd">}</span>
+        <span class="sd">.callout-box.paradigm-box {</span>
+        <span class="sd">    stroke: #c678dd;</span>
+        <span class="sd">}</span>
+        <span class="sd">.callout-text {</span>
+        <span class="sd">    fill: #eceff4;</span>
+        <span class="sd">    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;</span>
+        <span class="sd">    font-weight: 600;</span>
+        <span class="sd">    text-anchor: middle;</span>
+        <span class="sd">    dominant-baseline: central;</span>
+        <span class="sd">    pointer-events: none;</span>
+        <span class="sd">}</span>
+        <span class="sd">.element-group {</span>
+        <span class="sd">    cursor: pointer;</span>
+        <span class="sd">}</span>
+        <span class="sd">.element-group.svg-hovered .Line,</span>
+        <span class="sd">.element-group.svg-hovered .Segment,</span>
+        <span class="sd">.element-group.svg-hovered .Circle,</span>
+        <span class="sd">.element-group.svg-hovered .Polygon {</span>
+        <span class="sd">    stroke: #00e5ff !important;</span>
+        <span class="sd">    stroke-width: 2.8px !important;</span>
+        <span class="sd">    opacity: 1.0 !important;</span>
+        <span class="sd">    filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.75));</span>
+        <span class="sd">}</span>
+        <span class="sd">.element-group.svg-hovered .Point {</span>
+        <span class="sd">    fill: #00e5ff !important;</span>
+        <span class="sd">    filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.9));</span>
+        <span class="sd">}</span>
+        <span class="sd">.svg-control-btn {</span>
+        <span class="sd">    cursor: pointer;</span>
+        <span class="sd">}</span>
+        <span class="sd">.svg-control-btn rect {</span>
+        <span class="sd">    fill: rgba(30, 34, 42, 0.85);</span>
+        <span class="sd">    stroke: #5c6370;</span>
+        <span class="sd">    stroke-width: 1px;</span>
+        <span class="sd">    vector-effect: non-scaling-stroke;</span>
+        <span class="sd">    rx: 3px;</span>
+        <span class="sd">}</span>
+        <span class="sd">.svg-control-btn:hover rect {</span>
+        <span class="sd">    fill: rgba(55, 62, 76, 0.95);</span>
+        <span class="sd">    stroke: #00e5ff;</span>
+        <span class="sd">}</span>
+        <span class="sd">.svg-control-btn text {</span>
+        <span class="sd">    fill: #e5e9f0;</span>
+        <span class="sd">    font-family: sans-serif;</span>
+        <span class="sd">    font-weight: 600;</span>
+        <span class="sd">    text-anchor: middle;</span>
+        <span class="sd">    dominant-baseline: central;</span>
+        <span class="sd">    pointer-events: none;</span>
+        <span class="sd">}</span>
+        <span class="sd">svg.hide-labels .labels-layer,</span>
+        <span class="sd">svg.hide-labels .callouts-layer {</span>
+        <span class="sd">    display: none;</span>
+        <span class="sd">}</span>
+        <span class="sd">svg.hide-guides .guide {</span>
+        <span class="sd">    display: none;</span>
+        <span class="sd">}</span>
+        <span class="sd">"""</span>
+        </pre></div>
+        </div>
+        </details></dd></dl>
+
+        <dl class="py data">
+        <dt class="sig sig-object py" id="geometor.codes.render.INTERACTIVE_CODES_JS">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.render.</span></span><span class="sig-name descname"><span class="pre">INTERACTIVE_CODES_JS</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Multiline-String</span></span><a class="headerlink" href="#geometor.codes.render.INTERACTIVE_CODES_JS" title="Link to this definition">¶</a></dt>
+        <dd><details><summary>Show Value</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">"""</span>
+        <span class="sd">(function() {</span>
+        <span class="sd">  if (window.__codesSvgInit) return;</span>
+        <span class="sd">  window.__codesSvgInit = true;</span>
+
+        <span class="sd">  function initDiagram(svg) {</span>
+        <span class="sd">    if (svg.dataset.initialized) return;</span>
+        <span class="sd">    svg.dataset.initialized = "true";</span>
+        <span class="sd">    const vp = svg.querySelector(".svg-viewport");</span>
+        <span class="sd">    if (!vp) return;</span>
+
+        <span class="sd">    let scale = 1, tx = 0, ty = 0;</span>
+        <span class="sd">    let dragging = false, startX = 0, startY = 0;</span>
+
+        <span class="sd">    function applyTransform() {</span>
+        <span class="sd">      vp.setAttribute("transform", `translate(${tx},${ty}) scale(${scale})`);</span>
+        <span class="sd">    }</span>
+
+        <span class="sd">    svg.addEventListener("wheel", function(e) {</span>
+        <span class="sd">      e.preventDefault();</span>
+        <span class="sd">      const rect = svg.getBoundingClientRect();</span>
+        <span class="sd">      const vb = svg.viewBox.baseVal;</span>
+        <span class="sd">      const mx = vb.x + ((e.clientX - rect.left) / rect.width) * vb.width;</span>
+        <span class="sd">      const my = vb.y + ((e.clientY - rect.top) / rect.height) * vb.height;</span>
+        <span class="sd">      const factor = e.deltaY &gt; 0 ? 1 / 1.15 : 1.15;</span>
+        <span class="sd">      const newScale = Math.min(Math.max(scale * factor, 0.25), 12);</span>
+        <span class="sd">      tx = mx - (mx - tx) * (newScale / scale);</span>
+        <span class="sd">      ty = my - (my - ty) * (newScale / scale);</span>
+        <span class="sd">      scale = newScale;</span>
+        <span class="sd">      applyTransform();</span>
+        <span class="sd">    }, { passive: false });</span>
+
+        <span class="sd">    svg.addEventListener("mousedown", function(e) {</span>
+        <span class="sd">      if (e.target.closest(".svg-controls")) return;</span>
+        <span class="sd">      dragging = true;</span>
+        <span class="sd">      startX = e.clientX;</span>
+        <span class="sd">      startY = e.clientY;</span>
+        <span class="sd">    });</span>
+
+        <span class="sd">    window.addEventListener("mousemove", function(e) {</span>
+        <span class="sd">      if (!dragging) return;</span>
+        <span class="sd">      const rect = svg.getBoundingClientRect();</span>
+        <span class="sd">      const vb = svg.viewBox.baseVal;</span>
+        <span class="sd">      const dx = ((e.clientX - startX) / rect.width) * vb.width;</span>
+        <span class="sd">      const dy = ((e.clientY - startY) / rect.height) * vb.height;</span>
+        <span class="sd">      startX = e.clientX;</span>
+        <span class="sd">      startY = e.clientY;</span>
+        <span class="sd">      tx += dx;</span>
+        <span class="sd">      ty += dy;</span>
+        <span class="sd">      applyTransform();</span>
+        <span class="sd">    });</span>
+
+        <span class="sd">    window.addEventListener("mouseup", function() {</span>
+        <span class="sd">      dragging = false;</span>
+        <span class="sd">    });</span>
+
+        <span class="sd">    svg.querySelectorAll(".svg-control-btn").forEach(function(btn) {</span>
+        <span class="sd">      btn.addEventListener("click", function(e) {</span>
+        <span class="sd">        e.stopPropagation();</span>
+        <span class="sd">        const action = btn.dataset.action;</span>
+        <span class="sd">        if (action === "zoom-in") { scale = Math.min(scale * 1.25, 12); applyTransform(); }</span>
+        <span class="sd">        else if (action === "zoom-out") { scale = Math.max(scale / 1.25, 0.25); applyTransform(); }</span>
+        <span class="sd">        else if (action === "reset") { scale = 1; tx = 0; ty = 0; applyTransform(); }</span>
+        <span class="sd">        else if (action === "labels") { svg.classList.toggle("hide-labels"); }</span>
+        <span class="sd">        else if (action === "guides") { svg.classList.toggle("hide-guides"); }</span>
+        <span class="sd">      });</span>
+        <span class="sd">    });</span>
+        <span class="sd">  }</span>
+
+        <span class="sd">  function setupHoverSync() {</span>
+        <span class="sd">    document.querySelectorAll("svg.codes-diagram").forEach(initDiagram);</span>
+
+        <span class="sd">    document.addEventListener("mouseover", function(e) {</span>
+        <span class="sd">      const refEl = e.target.closest("[data-ref]");</span>
+        <span class="sd">      if (!refEl) return;</span>
+        <span class="sd">      const ref = refEl.dataset.ref;</span>
+        <span class="sd">      if (!ref) return;</span>
+        <span class="sd">      document.querySelectorAll(`.element-group[data-ref="${CSS.escape(ref)}"]`).forEach(el =&gt; el.classList.add("svg-hovered"));</span>
+        <span class="sd">      document.querySelectorAll(`.geom-ref[data-ref="${CSS.escape(ref)}"]`).forEach(el =&gt; el.classList.add("ref-hovered"));</span>
+        <span class="sd">    });</span>
+
+        <span class="sd">    document.addEventListener("mouseout", function(e) {</span>
+        <span class="sd">      const refEl = e.target.closest("[data-ref]");</span>
+        <span class="sd">      if (!refEl) return;</span>
+        <span class="sd">      const ref = refEl.dataset.ref;</span>
+        <span class="sd">      if (!ref) return;</span>
+        <span class="sd">      document.querySelectorAll(`.element-group[data-ref="${CSS.escape(ref)}"]`).forEach(el =&gt; el.classList.remove("svg-hovered"));</span>
+        <span class="sd">      document.querySelectorAll(`.geom-ref[data-ref="${CSS.escape(ref)}"]`).forEach(el =&gt; el.classList.remove("ref-hovered"));</span>
+        <span class="sd">    });</span>
+        <span class="sd">  }</span>
+
+        <span class="sd">  if (document.readyState === "loading") {</span>
+        <span class="sd">    document.addEventListener("DOMContentLoaded", setupHoverSync);</span>
+        <span class="sd">  } else {</span>
+        <span class="sd">    setupHoverSync();</span>
+        <span class="sd">  }</span>
+        <span class="sd">})();</span>
+        <span class="sd">"""</span>
+        </pre></div>
+        </div>
+        </details></dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.render.render_svg">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.render.</span></span><span class="sig-name descname"><span class="pre">render_svg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">geometor.model.Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annotations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pathlib.Path</span></span></span><a class="headerlink" href="#geometor.codes.render.render_svg" title="Link to this definition">¶</a></dt>
+        <dd><p>Render an exact <cite>geometor.model.Model</cite> into an interactive <cite>.euclid-graphic</cite> SVG.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>model</strong> – Populated exact <cite>geometor.model.Model</cite> (zero <cite>sp.Float</cite> coordinates).</p></li>
+        <li><p><strong>output_path</strong> – Target <cite>.svg</cite> file path.</p></li>
+        <li><p><strong>annotations</strong> – Optional callout dictionaries with <cite>x</cite>, <cite>y</cite>, <cite>text</cite>, <cite>kind</cite>, <cite>ref</cite>.</p></li>
+        <li><p><strong>padding_ratio</strong> – Fractional viewport padding around bounding points and circles.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Written <cite>output_path</cite>.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../../../../../index.html">GEOMETOR • codes</a>
+          </div>
+          <div class="book-nav-next">
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../../../../../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../../../../../log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="../../../../../tags/byrne.html">byrne</a></li>
+        <li><a href="../../../../../tags/formal-systems.html">formal-systems</a></li>
+        <li><a href="../../../../../tags/geometor-model.html">geometor-model</a></li>
+        <li><a href="../../../../../tags/opus.html">opus</a></li>
+        <li><a href="../../../../../tags/rosetta.html">rosetta</a></li>
+        <li><a href="../../../../../tags/sympy.html">sympy</a></li>
+        <li><a href="../../../../../tags/syntax.html">syntax</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../../../../../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../../../../../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../../../../../_static/documentation_options.js?v=01f34227"></script>
+  <script src="../../../../../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../../../../../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script src="../../../../../_static/js/search_highlight.js"></script>
+
+</body>
+</html>
