@@ -1,0 +1,426 @@
+{
+  "layers": [
+    {
+      "layer_index": 0,
+      "id": "layer-0-noetics",
+      "title": "Layer 0 — Noetic & Epistemological Grounding",
+      "epistemic_role": "Establishes what a geometric object is, how universal necessity is intuited in the concrete constructed diagram (abstractio formalis intuitiva), and how axiom groups factor independently.",
+      "repos": [
+        {
+          "name": "aristotle",
+          "pillar": "IV. Noetic & Philosophical Foundations",
+          "status": "active",
+          "summary": "Synchronized Bekker Greek and Oxford English Book Codex of Aristotle's Loci Geometrici et Noetici (Posterior Analytics, Physics, Metaphysics, De Anima).",
+          "informed_by_codes": "Contrasts Aristotelian demonstrative syllogism and actualization of diagrams (Metaphysics Theta 9, 1051a21) against AlphaGeometry's LM auxiliary-point synthesis."
+        },
+        {
+          "name": "proclus",
+          "pillar": "IV. Noetic & Philosophical Foundations",
+          "status": "active",
+          "summary": "Multi-track Book Codex and Friedlein concordance of Proclus's Commentary on Book I of Euclid's Elements (6-part anatomy of a proposition).",
+          "informed_by_codes": "Maps Proclus's 6 proposition parts (protasis, ekthesis, diorismos, kataskeue, apodeixis, symperasma) directly onto System E, GeoCoq, JGEX 5-line stanzas, and @proposition."
+        },
+        {
+          "name": "aquinas",
+          "pillar": "IV. Noetic & Philosophical Foundations",
+          "status": "active",
+          "summary": "Bilingual Latin/English Book Codex of St. Thomas Aquinas on materia intelligibilis, mathematical abstraction, and resolutio ad phantasmata.",
+          "informed_by_codes": "Illuminates why purely formal symbol manipulation without diagrammatic imagination (materia intelligibilis) loses constructive meaning."
+        },
+        {
+          "name": "hoenen",
+          "pillar": "IV. Noetic & Philosophical Foundations",
+          "status": "active",
+          "summary": "Latin/English Book Codex of P. H. J. Hoenen S.J.'s De Noetica Geometriae (1954) on intuitive formal abstraction from geometric Nexus.",
+          "informed_by_codes": "Provides the philosophical thesis explaining LeanEuclid's diagrammatic axioms and geometor.model's exact topological selectors."
+        },
+        {
+          "name": "hilbert",
+          "pillar": "III. Classical & Modern Geometric Treatises",
+          "status": "active",
+          "summary": "Bilingual German/English Book Codex and axiomatic independence concordance of David Hilbert's Grundlagen der Geometrie (1899).",
+          "informed_by_codes": "Links Hilbert's 5 axiom groups and segment calculus directly to GeoCoq's hilbert_axioms.v <-> tarski_axioms.v bi-interpretability proofs."
+        },
+        {
+          "name": "bertrand-russell",
+          "pillar": "IV. Noetic & Philosophical Foundations",
+          "status": "active",
+          "summary": "Scholarly Book Codex of Bertrand Russell's Foundations of Geometry (1897) and Principles of Mathematics Part VI (1903).",
+          "informed_by_codes": "Connects Russell's relational theory of projective and metric space to mathlib4's affine torsors and CindyJS's Cayley-Klein polarity."
+        }
+      ]
+    },
+    {
+      "layer_index": 1,
+      "id": "layer-1-scriptorium",
+      "title": "Layer 1 — Primary Classical & Constructive Scriptorium",
+      "epistemic_role": "Folio-verified multi-track Book Codices (:layout: book) preserving the primary mathematical canon with calibrated .euclid-graphic SVGs and zero embedded Python scripts.",
+      "repos": [
+        {
+          "name": "euclid",
+          "pillar": "III. Classical & Modern Geometric Treatises",
+          "status": "active",
+          "summary": "Folio-verified 3-volume Heath Edition of Euclid's Elements (Books I-XIII) with 831 calibrated interactive .euclid-graphic SVGs.",
+          "informed_by_codes": "Cross-indexes Book I-XIII propositions against LeanEuclid (Prop01-48 + 6 missed lemmas) and GeoCoq's Elements/OriginalProofs."
+        },
+        {
+          "name": "byrne",
+          "pillar": "III. Classical & Modern Geometric Treatises",
+          "status": "wave2_codex",
+          "summary": "Visual-symbolic Book Codex of Oliver Byrne's Coloured Euclid (Books I-VI, 1847), pairing four-color pointer-free glyph pseudocode with Rougeux-inspired interactive SVG highlighting.",
+          "informed_by_codes": "Analyzed in codes as the first pointer-free chromatic DSL for geometry, directly inspiring inline micro-glyph rendering alongside :g: roles."
+        },
+        {
+          "name": "archimedes",
+          "pillar": "III. Classical & Modern Geometric Treatises",
+          "status": "wave2_codex",
+          "summary": "Scholarly Book Codex of T. L. Heath's Works of Archimedes (1897) including On the Sphere and Cylinder, Measurement of a Circle, Spirals, and The Method.",
+          "informed_by_codes": "Identifies neusis, exhaustion, and mechanical quadrature idioms beyond pure compass-and-straightedge System E."
+        },
+        {
+          "name": "apollonius",
+          "pillar": "III. Classical & Modern Geometric Treatises",
+          "status": "wave2_codex",
+          "summary": "Scholarly Book Codex of T. L. Heath's Apollonius of Perga: Treatise on Conic Sections (1896), including symptomata, diameters, conjugates, and pole-polar.",
+          "informed_by_codes": "Directly motivates representing general conics in geometor.model via CindyJS's 3x3 symmetric matrices and Plücker 5-point pencils rather than SymPy's axis-aligned Ellipse."
+        },
+        {
+          "name": "pacioli",
+          "pillar": "III. Classical & Modern Geometric Treatises",
+          "status": "active",
+          "summary": "Multi-track Italian/English/German facsimile codex of Luca Pacioli's De Divina Proportione (1509) with Leonardo da Vinci's polyhedral plates.",
+          "informed_by_codes": "Highlights the total absence of golden-section and polyhedral canon across LeanEuclid, GeoCoq, mathlib4, and AlphaGeometry."
+        },
+        {
+          "name": "kepler",
+          "pillar": "III. Classical & Modern Geometric Treatises",
+          "status": "wave2_codex",
+          "summary": "Scholarly Book Codex of Johannes Kepler's Harmonices Mundi (Books I-II & V) on constructible polygons, Archimedean/star tilings, and cosmic proportion.",
+          "informed_by_codes": "Demonstrates why exact algebraic number fields Q(phi) and cyclotomic tower arithmetic in geometor.model are indispensable."
+        },
+        {
+          "name": "lemoine",
+          "pillar": "III. Classical & Modern Geometric Treatises",
+          "status": "wave2_codex",
+          "summary": "French/English Book Codex of Émile Lemoine's La Géométrographie ou l'art des constructions géométriques (1902).",
+          "informed_by_codes": "Supplies the operational 5-primitive complexity metric (R1, R2, C1, C2, C3; S = sum, E = R1 + C1 + C2) to benchmark constructions across systems."
+        },
+        {
+          "name": "altshiller-court",
+          "pillar": "III. Classical & Modern Geometric Treatises",
+          "status": "active",
+          "summary": "Two-track Book Codex of Nathan Altshiller-Court's College Geometry (1952) covering similitude, coaxial circles, inversion, poles/polars, and triangle geometry.",
+          "informed_by_codes": "Serves as the synthetic textbook spine for Domain 4 (Circle Power, Coaxial Pencils, Inversion) where GeoCoq and sympy.geometry have blind spots."
+        }
+      ]
+    },
+    {
+      "layer_index": 2,
+      "id": "layer-2-codes",
+      "title": "Layer 2 — Comparative Formal Languages & Symbolic Meta-Study",
+      "epistemic_role": "Translates between the philosophical/historical canon (Layers 0-1) and GEOMETOR's software stack (Layers 3-5) by auditing 11 formal, visual, and symbolic geometry systems side-by-side.",
+      "repos": [
+        {
+          "name": "codes",
+          "pillar": "II. Constructive & Projective Geometry Canon",
+          "status": "active",
+          "summary": "Comparative study, strange-symbol & visual-token syntax decoder, 69-topic Opus coverage matrix, and 7 Rosetta Stone benchmarks across 11 formal/visual/symbolic geometry architectures.",
+          "informed_by_codes": "Acts as the architectural compass for geometor.model, geometor.elements 2.0, geometor.pappus, geometor.etc, geometor.divine, and geometor.seer."
+        }
+      ]
+    },
+    {
+      "layer_index": 3,
+      "id": "layer-3-kernel",
+      "title": "Layer 3 — Exact Symbolic Kernel & Visual Workbench",
+      "epistemic_role": "Provides the 100% exact SymPy geometric engine, ancestral DAG, algebraic invariants, and interactive SVG visualization used by every constructive package.",
+      "repos": [
+        {
+          "name": "model",
+          "pillar": "I. Symbolic Engine, Visualization & Proportion",
+          "status": "active",
+          "summary": "Core symbolic geometry kernel: Model(..., auto_intersect=False), closed-form intersections, ANP algebraic fields, topological selectors, Rational Trigonometry invariants, and @proposition proofs.",
+          "informed_by_codes": "Receives direct blueprints for BFMSS root-separation zero_test, persisted selector ASTs, Géométrographie step telemetry, circle inversion/pole-polar, and 3x3 projective conics."
+        },
+        {
+          "name": "explorer",
+          "pillar": "I. Symbolic Engine, Visualization & Proportion",
+          "status": "active",
+          "summary": "Interactive web-based SVG visualization workbench, CLI renderer, and theme-adaptive .euclid-graphic exporter.",
+          "informed_by_codes": "Adapts CindyJS's continuous branch-tracking insights and GeoGebra/JGEX locus highlighting for step-by-step proof inspection."
+        },
+        {
+          "name": "trees",
+          "pillar": "V. Natural Systems, Cosmogony & Machine Reasoning",
+          "status": "active",
+          "summary": "Hierarchical graph structures and constructive dependency DAG visualization.",
+          "informed_by_codes": "Visualizes multi-system proof DAGs, Géométrographie operation trees, and minimal premise hypergraphs (cf. AlphaGeometry AR traceback)."
+        }
+      ]
+    },
+    {
+      "layer_index": 4,
+      "id": "layer-4-libraries",
+      "title": "Layer 4 — Canonical Constructive & Algebraic Standard Libraries",
+      "epistemic_role": "Domain-specific executable Python libraries and pedagogical codices built atop geometor.model.",
+      "repos": [
+        {
+          "name": "elements",
+          "pillar": "II. Constructive & Projective Geometry Canon",
+          "status": "active",
+          "summary": "Executable dependency DAG, formal .. signature:: / .. step:: pseudocode, and exact symbolic constructions unfolding Principles of Geometry.",
+          "informed_by_codes": "Transitions from opaque G.1-G.601 serial IDs to Function-First snake_case signatures, mathlib4 theorem naming, AlphaGeometry defs.txt completeness, and LeanEuclid proof export."
+        },
+        {
+          "name": "fundamentals",
+          "pillar": "I. Symbolic Engine, Visualization & Proportion",
+          "status": "active",
+          "summary": "Foundational axiomatic primers and elementary compass-and-straightedge unfolding from the two-point seed (A, B).",
+          "informed_by_codes": "Demonstrates how golden ratio chains (/ I E F J /) emerge in 5 steps from the vesica seed where academic ITPs defer golden sections indefinitely."
+        },
+        {
+          "name": "wildberger",
+          "pillar": "II. Constructive & Projective Geometry Canon",
+          "status": "active",
+          "summary": "Rational Trigonometry (Divine Proportions) formalized via exact quadrance Q, spread s, and the 5 polynomial laws (Pythagoras, Triple Quad, Cross, Spread, Triple Spread).",
+          "informed_by_codes": "Bridges polynomial quadrance/spread directly to Chou-Gao-Zhang's Area-Method invariants (S_ABC, P_ABC) and 2D PGA/CGA inner products."
+        },
+        {
+          "name": "etc",
+          "pillar": "II. Constructive & Projective Geometry Canon",
+          "status": "active",
+          "summary": "Semantic index, exact barycentric/trilinear CenterSymbolicRegistry, and Book Codex of Clark Kimberling's Encyclopedia of Triangle Centers (X(1)-X(53144)).",
+          "informed_by_codes": "Surpasses LeanEuclid (0 centers), GeoCoq (4 centers), mathlib4 (5 centers), and AlphaGeometry (6 centers) by providing exact symbolic evaluation across thousands of centers."
+        },
+        {
+          "name": "pappus",
+          "pillar": "II. Constructive & Projective Geometry Canon",
+          "status": "active",
+          "summary": "Exact projective geometry library: Pappus Book VII, Desargues, Steiner, harmonic conjugates, cross-ratios, Q(phi) projectivity, and Pascal's Hexagrammum Mysticum.",
+          "informed_by_codes": "Fills mathlib4's and sympy.geometry's projective blind spots, integrating 2D PGA Grassmann-Cayley meets/joins and CindyJS 3x3 homogeneous conic duality."
+        },
+        {
+          "name": "divine",
+          "pillar": "I. Symbolic Engine, Visualization & Proportion",
+          "status": "active",
+          "summary": "Automated discovery engine scanning symbolic models for golden sections (phi), harmonic ranges, and proportional chains.",
+          "informed_by_codes": "Upgrades proportion scanning with arbitrary-precision PSLQ minimal-polynomial conjecture scouting (inspired by CindyJS PSLQ.js) plus exact ANP verification."
+        }
+      ]
+    },
+    {
+      "layer_index": 5,
+      "id": "layer-5-morphology-reasoning",
+      "title": "Layer 5 — Natural Morphology, Cosmogony & Machine Reasoning",
+      "epistemic_role": "Applies exact constructive and proportional geometry to living form, wave-field cosmogony, and multi-agent program synthesis.",
+      "repos": [
+        {
+          "name": "phyllotaxis",
+          "pillar": "V. Natural Systems, Cosmogony & Machine Reasoning",
+          "status": "active",
+          "summary": "Botanical growth modeling, golden-angle divergence, parastichy lattices, and Fibonacci planar packing.",
+          "informed_by_codes": "Grounds spiral lattice transformations in exact PGA/CGA rotor-dilator (similarity versor) operators."
+        },
+        {
+          "name": "thompson",
+          "pillar": "V. Natural Systems, Cosmogony & Machine Reasoning",
+          "status": "wave2_codex",
+          "summary": "Scholarly Book Codex of D'Arcy Wentworth Thompson's On Growth and Form (1917): gnomonic spirals, minimal soap-film surfaces, and Cartesian grid deformations.",
+          "informed_by_codes": "Models Thompson's coordinate transformations via projective homographies (CP^2), Möbius inversions (2D CGA), and conformal mappings."
+        },
+        {
+          "name": "walter-russell",
+          "pillar": "V. Natural Systems, Cosmogony & Machine Reasoning",
+          "status": "active",
+          "summary": "Book Codex of Walter and Lao Russell's Home Study Course paired with parametric 2D SVG chalkboard plates and interactive 3D wave-field models.",
+          "informed_by_codes": "Uses 3D PGA/CGA rotors and cubic-sphere projections to formalize dual wave-axis symmetries."
+        },
+        {
+          "name": "seer",
+          "pillar": "V. Natural Systems, Cosmogony & Machine Reasoning",
+          "status": "active",
+          "summary": "Multi-agent Python program-synthesis engine for abstract visual reasoning challenges (ARC-AGI).",
+          "informed_by_codes": "Adopts AlphaGeometry/Newclid's neuro-symbolic split: pairing fast deterministic invariant saturation with LLM auxiliary synthesis."
+        },
+        {
+          "name": "seer_navigator",
+          "pillar": "V. Natural Systems, Cosmogony & Machine Reasoning",
+          "status": "active",
+          "summary": "Textual TUI browser for inspecting seer reasoning trajectories, sessions, and solver metrics.",
+          "informed_by_codes": "Displays deductive step provenance and complexity telemetry alongside program synthesis traces."
+        },
+        {
+          "name": "seer_sessions",
+          "pillar": "V. Natural Systems, Cosmogony & Machine Reasoning",
+          "status": "active",
+          "summary": "Empirical archive, session-mining toolkit, and diagnostic benchmarks across 8,500+ reasoning trials.",
+          "informed_by_codes": "Provides benchmark curation patterns analogous to imo_ag_30 and jgex_ag_231."
+        }
+      ]
+    },
+    {
+      "layer_index": 6,
+      "id": "layer-6-platform",
+      "title": "Layer 6 — Portal & Platform Infrastructure",
+      "epistemic_role": "Workspace standards, agent skills, CI/CD pipelines, and the unified public gateway.",
+      "repos": [
+        {
+          "name": "geometor.com",
+          "pillar": "VI. Platform & Workspace Infrastructure",
+          "status": "active",
+          "summary": "Central landing portal and cross-corpus gateway for the 32-repository GEOMETOR ecosystem.",
+          "informed_by_codes": "Publishes the 7-layer ecosystem map and cross-system concordance."
+        },
+        {
+          "name": ".config",
+          "pillar": "VI. Platform & Workspace Infrastructure",
+          "status": "active",
+          "summary": "Org-level engineering standards (STANDARDS.md), geometor-construct skill, and geometer agent.",
+          "informed_by_codes": "Codifies Function-First naming, zero-float enforcement, and multi-system concordance rules across all agents."
+        },
+        {
+          "name": ".github",
+          "pillar": "VI. Platform & Workspace Infrastructure",
+          "status": "active",
+          "summary": "Organization profile, community health templates, and shared Python 3.13 Sphinx CI workflows.",
+          "informed_by_codes": "Standardizes reproducible offline-capable test and documentation gates."
+        }
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "rec-01-bfmss-zero-test",
+      "priority": 1,
+      "target_repo": "model",
+      "title": "Constructive BFMSS Root-Separation Bounds in algebra.zero_test",
+      "inspired_by": [
+        "geocoq",
+        "mathlib4",
+        "cindyjs"
+      ],
+      "summary": "Replace the heuristic 80-digit float fallback in geometor.model.algebra.zero_test (lines 247-251) when count_ops > 25 with Burnikel-Fleischer-Mehlhorn-Schirra (BFMSS) constructive algebraic separation bounds over nested radical DAGs, guaranteeing 100% mathematically sound zero-testing.",
+      "api_sketch": "def bfmss_precision_bits(expr: sp.Expr) -> int: ...\ndef zero_test(expr: sp.Expr, *, certify: bool = True) -> bool: ..."
+    },
+    {
+      "id": "rec-02-selector-ast-leaneuclid",
+      "priority": 2,
+      "target_repo": "model",
+      "title": "Persist Selector ASTs on Step & Emit LeanEuclid System E Proofs",
+      "inspired_by": [
+        "leaneuclid"
+      ],
+      "summary": "Record structured selector arguments (side_of, between, beyond, on_ray, other_than) in Step.primitive during Model.intersect so every constructive GEOMETOR Model can export a 1-to-1 Lean 4 System E proof skeleton.",
+      "api_sketch": "def to_leaneuclid(model: Model, theorem_name: str) -> str:\n    # Emits euclid_apply (Intersections.intersect_same_side ...) as F"
+    },
+    {
+      "id": "rec-03-geometrographie-telemetry",
+      "priority": 3,
+      "target_repo": "model",
+      "title": "Lemoine Géométrographie Complexity Telemetry (R1, R2, C1, C2, C3)",
+      "inspired_by": [
+        "geometor_model",
+        "alphageometry"
+      ],
+      "summary": "Instrument Model.construct_line, Model.construct_circle, and subconstruction scopes with Émile Lemoine's operational counts (Simplicity S = R1+R2+C1+C2+C3, Exactitude E = R1+C1+C2), enabling quantitative comparison between Euclidean and Mascheroni/Steiner constructions.",
+      "api_sketch": "@dataclass(frozen=True)\nclass GeometrographieCost:\n    r1: int; r2: int; c1: int; c2: int; c3: int\n    @property\n    def simplicity(self) -> int: return self.r1 + self.r2 + self.c1 + self.c2 + self.c3"
+    },
+    {
+      "id": "rec-04-inversion-pole-polar",
+      "priority": 4,
+      "target_repo": "model",
+      "title": "First-Class Circle Power, Radical Axis, Inversion & Pole-Polar Module",
+      "inspired_by": [
+        "mathlib4",
+        "pga_cga",
+        "cindyjs",
+        "jgex"
+      ],
+      "summary": "Fill SymPy's and GeoCoq's sharpest classical blind spot by adding geometor.model.inversion with exact symbolic circle_power, radical_axis, radical_center, invert_point, invert_line_or_circle, polar_line, and pole_point.",
+      "api_sketch": "def circle_power(circle: spg.Circle, pt: spg.Point2D) -> sp.Expr: ...\ndef radical_axis(c1: spg.Circle, c2: spg.Circle) -> spg.Line2D: ...\ndef invert_point(circle: spg.Circle, pt: spg.Point2D) -> spg.Point2D: ..."
+    },
+    {
+      "id": "rec-05-projective-conic-matrix",
+      "priority": 5,
+      "target_repo": "pappus",
+      "title": "Exact 3x3 Symmetric Conic Matrices, Dual Adjugates & 5-Point Pencils",
+      "inspired_by": [
+        "cindyjs",
+        "pga_cga"
+      ],
+      "summary": "Break out of SymPy's axis-aligned Ellipse prison by modeling general conics over exact SymPy rings as 3x3 symmetric matrices C with division-free adjugate duals C^Delta = adj(C), Plücker 5-point construction, pole-polar l = C*p, and Richter-Gebert rank-1 intersection splitting.",
+      "api_sketch": "class ProjectiveConic:\n    matrix: sp.Matrix  # 3x3 exact symmetric\n    @classmethod\n    def from_five_points(cls, p1, p2, p3, p4, p5) -> ProjectiveConic: ...\n    def polar(self, pt: sp.Matrix) -> sp.Matrix: return self.matrix * pt"
+    },
+    {
+      "id": "rec-06-area-method-eliminator",
+      "priority": 6,
+      "target_repo": "wildberger",
+      "title": "Complete Coordinate-Free Area-Method Eliminator (S_ABC & P_ABC)",
+      "inspired_by": [
+        "jgex"
+      ],
+      "summary": "Complete the coordinate-free Chou-Gao-Zhang Area Method prover that JGEX left disabled in Area.java: implement backward point elimination over signed_area2 and pythagoras_diff with automatic non-degeneracy (NDG) condition reporting.",
+      "api_sketch": "def pythagoras_diff(a: spg.Point2D, b: spg.Point2D, c: spg.Point2D) -> sp.Expr: ...\ndef eliminate_construction(model: Model, goal_expr: sp.Expr) -> EliminationProof: ..."
+    },
+    {
+      "id": "rec-07-elements-function-first",
+      "priority": 7,
+      "target_repo": "elements",
+      "title": "Function-First Principles of Geometry & Cross-System @construction Concordance",
+      "inspired_by": [
+        "mathlib4",
+        "alphageometry",
+        "leaneuclid",
+        "geocoq"
+      ],
+      "summary": "Retire opaque G.1-G.601 serial numbers in favor of canonical snake_case construction signatures (equidistant_poles, perpendicular_bisector, parallel_line), mathlib4 conclusion_of_hypothesis theorem names, @earns concept tags, and cross-system concordance metadata.",
+      "api_sketch": "@construction(\n    earns=('equilateral_triangle',),\n    concordance={'euclid': 'I.1', 'leaneuclid': 'proposition_1', 'alphageometry': 'eq_triangle'},\n)\ndef equidistant_poles(model: Model, a: Point, b: Point): ..."
+    },
+    {
+      "id": "rec-08-exact-ddar-deductor",
+      "priority": 8,
+      "target_repo": "seer",
+      "title": "100% Exact Symbolic DD + Quadrance/Spread AR Deductive Closure Engine",
+      "inspired_by": [
+        "alphageometry",
+        "newclid"
+      ],
+      "summary": "Build a sound Python deductive database + sparse symbolic Gaussian AR engine directly over exact geometor.model coordinates—eliminating AlphaGeometry's rconst log-ratio bug and float64 guard fragility—to power auxiliary construction search in seer and divine.",
+      "api_sketch": "class ExactDDARSolver:\n    def saturate(self, model: Model) -> DeductiveClosure: ...\n    def explain(self, goal: Predicate) -> list[Step]: ..."
+    },
+    {
+      "id": "rec-09-pslq-conjecture-scout",
+      "priority": 9,
+      "target_repo": "divine",
+      "title": "Arbitrary-Precision mpmath.pslq Minimal-Polynomial Conjecture Scout",
+      "inspired_by": [
+        "cindyjs"
+      ],
+      "summary": "Generalize CindyJS's n=3 float PSLQ guess(x) to arbitrary degree d using 100-digit mpmath.pslq over model quadrances and spreads, immediately certifying discovered golden/cyclotomic relations via exact ANP reduction.",
+      "api_sketch": "def scout_minimal_poly(expr: sp.Expr, max_degree: int = 6, dps: int = 100) -> sp.Poly | None: ..."
+    },
+    {
+      "id": "rec-10-upstream-sympy-fixes",
+      "priority": 10,
+      "target_repo": "model",
+      "title": "Upstream SymPy Bug-Fix Suite (Triangle.excenters & Point.affine_rank)",
+      "inspired_by": [
+        "sympy_geometry"
+      ],
+      "summary": "Contribute targeted upstream pull requests to sympy.geometry fixing the double bug in Triangle.excenters (polygon.py:2714-2726) and replacing the broken 2-digit float zero check in Point.affine_rank (point.py:331-335) with exact domain rank.",
+      "api_sketch": "# Fix in sympy/geometry/polygon.py:\n# ((-a*x[2] + b*x[0] + c*x[1]) / (-a + b + c), ...) aligned with opposite vertices"
+    },
+    {
+      "id": "rec-11-byrne-inline-glyphs",
+      "priority": 11,
+      "target_repo": "elements",
+      "title": "Dual Symbolic-Chromatic :g: Micro-Glyph Mode (Byrne / Rougeux Synthesis)",
+      "inspired_by": [
+        "byrne_1847",
+        "geometor_model"
+      ],
+      "summary": "Extend photon-platform/publish's :g: role and geometor.elements .. step:: blocks with an optional Byrne/Rougeux chromatic micro-glyph badge renderer—auto-generating 14px inline SVG icons matching each element's semantic stroke/fill in the diagram while retaining exact symbolic data-ref IDs.",
+      "api_sketch": "# In Sphinx RST / publish:\n# :g:`[ A B ]` -> renders inline mini-SVG stroke + symbolic label with shared data-ref='[ A B ]'"
+    }
+  ]
+}

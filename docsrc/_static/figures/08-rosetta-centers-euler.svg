@@ -1,0 +1,378 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="euclid-graphic codes-diagram" viewBox="-4.3750 -15.5000 22.7500 22.7500">
+  <style>
+svg.codes-diagram {
+    background-color: #111318;
+    border: 1px solid #2e3440;
+    border-radius: 6px;
+    width: 100%;
+    height: auto;
+    max-height: 560px;
+    display: block;
+    margin: 0.75rem auto;
+    user-select: none;
+    overflow: hidden;
+    cursor: grab;
+}
+svg.codes-diagram:active {
+    cursor: grabbing;
+}
+@media (prefers-color-scheme: light) {
+    svg.codes-diagram {
+        background-color: #fbfbfd;
+        border-color: #d8dee9;
+    }
+    svg.codes-diagram .Point {
+        stroke: #fbfbfd !important;
+    }
+    svg.codes-diagram .Point.given {
+        fill: #1a1d24 !important;
+    }
+    svg.codes-diagram .label-halo {
+        stroke: #fbfbfd !important;
+    }
+    svg.codes-diagram .label-fill {
+        fill: #1a1d24 !important;
+    }
+    svg.codes-diagram .Line,
+    svg.codes-diagram .Segment {
+        stroke: #4c566a;
+    }
+    svg.codes-diagram .callout-box {
+        fill: rgba(255, 255, 255, 0.92);
+    }
+    svg.codes-diagram .callout-text {
+        fill: #1a1d24;
+    }
+}
+.Line, .Segment {
+    stroke: #9aa5b4;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+    stroke-width: 1.35px;
+    fill: none;
+    opacity: 0.84;
+    transition: stroke-width 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
+}
+.Circle {
+    stroke: #c678dd;
+    vector-effect: non-scaling-stroke;
+    stroke-width: 1.45px;
+    fill: none;
+    opacity: 0.86;
+    transition: stroke-width 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
+}
+.Polygon {
+    fill: rgba(97, 175, 239, 0.09);
+    stroke: #61afef;
+    vector-effect: non-scaling-stroke;
+    stroke-width: 1.85px;
+    stroke-linejoin: round;
+    transition: stroke-width 0.15s ease, fill-opacity 0.15s ease;
+}
+.Polygon.golden {
+    fill: rgba(229, 192, 123, 0.14);
+    stroke: #e5c07b;
+}
+.Point {
+    fill: #e5c07b;
+    stroke: #111318;
+    vector-effect: non-scaling-stroke;
+    stroke-width: 1.4px;
+    transition: r 0.15s ease, filter 0.15s ease;
+}
+.Point.given {
+    fill: #ffffff;
+}
+.Point.result, .Point.center, .Point.target {
+    fill: #00e5ff;
+}
+.Point.golden {
+    fill: #f0c674;
+}
+.Point.midpoint, .Point.foot {
+    fill: #98c379;
+}
+.Line.guide, .Circle.guide, .Segment.guide, .Point.guide {
+    stroke-dasharray: 4 4;
+    opacity: 0.42;
+    stroke-width: 0.95px;
+}
+.Line.axis, .Segment.axis, .Line.euler, .Segment.euler {
+    stroke: #e06c75;
+    stroke-width: 1.9px;
+    opacity: 0.94;
+}
+.Line.bisector, .Segment.bisector, .Line.altitude, .Segment.altitude, .Line.median, .Segment.median {
+    stroke: #98c379;
+    stroke-width: 1.5px;
+    opacity: 0.88;
+}
+.Line.golden, .Segment.golden, .Circle.golden {
+    stroke: #e5c07b;
+    stroke-width: 1.85px;
+}
+.Circle.circumcircle {
+    stroke: #e06c75;
+    stroke-width: 1.55px;
+}
+.Circle.ninepoint {
+    stroke: #61afef;
+    stroke-width: 1.65px;
+}
+.Circle.incircle {
+    stroke: #e5c07b;
+    stroke-width: 1.55px;
+}
+.callout-box {
+    fill: rgba(24, 28, 36, 0.88);
+    stroke: #61afef;
+    vector-effect: non-scaling-stroke;
+    stroke-width: 1px;
+    rx: 3px;
+}
+.callout-box.spread-box {
+    stroke: #e5c07b;
+}
+.callout-box.paradigm-box {
+    stroke: #c678dd;
+}
+.callout-text {
+    fill: #eceff4;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-weight: 600;
+    text-anchor: middle;
+    dominant-baseline: central;
+    pointer-events: none;
+}
+.element-group {
+    cursor: pointer;
+}
+.element-group.svg-hovered .Line,
+.element-group.svg-hovered .Segment,
+.element-group.svg-hovered .Circle,
+.element-group.svg-hovered .Polygon {
+    stroke: #00e5ff !important;
+    stroke-width: 2.8px !important;
+    opacity: 1.0 !important;
+    filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.75));
+}
+.element-group.svg-hovered .Point {
+    fill: #00e5ff !important;
+    filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.9));
+}
+.svg-control-btn {
+    cursor: pointer;
+}
+.svg-control-btn rect {
+    fill: rgba(30, 34, 42, 0.85);
+    stroke: #5c6370;
+    stroke-width: 1px;
+    vector-effect: non-scaling-stroke;
+    rx: 3px;
+}
+.svg-control-btn:hover rect {
+    fill: rgba(55, 62, 76, 0.95);
+    stroke: #00e5ff;
+}
+.svg-control-btn text {
+    fill: #e5e9f0;
+    font-family: sans-serif;
+    font-weight: 600;
+    text-anchor: middle;
+    dominant-baseline: central;
+    pointer-events: none;
+}
+svg.hide-labels .labels-layer,
+svg.hide-labels .callouts-layer {
+    display: none;
+}
+svg.hide-guides .guide {
+    display: none;
+}
+</style>
+  <g class="svg-viewport">
+    <g class="polygons-layer">
+    <g class="element-group" data-ref="&lt; A B C &gt;"><polygon class="Polygon " points="0.0000,-0.0000 14.0000,-0.0000 5.0000,-12.0000"><title>&lt; A B C &gt;</title></polygon></g>
+    </g>
+    <g class="circles-layer">
+    <g class="element-group" data-ref="( B C )"><circle class="Circle guide" cx="14.0000" cy="-0.0000" r="15.0000" data-quadrance="225"><title>( B C ) (Q = 225)</title></circle></g>
+    <g class="element-group" data-ref="( C B )"><circle class="Circle guide" cx="5.0000" cy="-12.0000" r="15.0000" data-quadrance="225"><title>( C B ) (Q = 225)</title></circle></g>
+    <g class="element-group" data-ref="( A C )"><circle class="Circle guide" cx="0.0000" cy="-0.0000" r="13.0000" data-quadrance="169"><title>( A C ) (Q = 169)</title></circle></g>
+    <g class="element-group" data-ref="( C A )"><circle class="Circle guide" cx="5.0000" cy="-12.0000" r="13.0000" data-quadrance="169"><title>( C A ) (Q = 169)</title></circle></g>
+    <g class="element-group" data-ref="( A B )"><circle class="Circle guide" cx="0.0000" cy="-0.0000" r="14.0000" data-quadrance="196"><title>( A B ) (Q = 196)</title></circle></g>
+    <g class="element-group" data-ref="( B A )"><circle class="Circle guide" cx="14.0000" cy="-0.0000" r="14.0000" data-quadrance="196"><title>( B A ) (Q = 196)</title></circle></g>
+    <g class="element-group" data-ref="( X3 A )"><circle class="Circle circumcircle" cx="7.0000" cy="-4.1250" r="8.1250" data-quadrance="4225/64"><title>( X3 A ) (Q = 4225/64)</title></circle></g>
+    <g class="element-group" data-ref="( A J )"><circle class="Circle guide" cx="0.0000" cy="-0.0000" r="10.0000" data-quadrance="100"><title>( A J ) (Q = 100)</title></circle></g>
+    <g class="element-group" data-ref="( J A )"><circle class="Circle guide" cx="10.0000" cy="-0.0000" r="10.0000" data-quadrance="100"><title>( J A ) (Q = 100)</title></circle></g>
+    <g class="element-group" data-ref="( B M )"><circle class="Circle guide" cx="14.0000" cy="-0.0000" r="16.8000" data-quadrance="7056/25"><title>( B M ) (Q = 7056/25)</title></circle></g>
+    <g class="element-group" data-ref="( M B )"><circle class="Circle guide" cx="3.9200" cy="-13.4400" r="16.8000" data-quadrance="7056/25"><title>( M B ) (Q = 7056/25)</title></circle></g>
+    <g class="element-group" data-ref="( X3 X4 )"><circle class="Circle guide" cx="7.0000" cy="-4.1250" r="2.0349" data-quadrance="265/64"><title>( X3 X4 ) (Q = 265/64)</title></circle></g>
+    <g class="element-group" data-ref="( X4 X3 )"><circle class="Circle guide" cx="5.0000" cy="-3.7500" r="2.0349" data-quadrance="265/64"><title>( X4 X3 ) (Q = 265/64)</title></circle></g>
+    <g class="element-group" data-ref="( X5 Mc )"><circle class="Circle ninepoint" cx="6.0000" cy="-3.9375" r="4.0625" data-quadrance="4225/256"><title>( X5 Mc ) (Q = 4225/256)</title></circle></g>
+    <g class="element-group" data-ref="( C R )"><circle class="Circle guide" cx="5.0000" cy="-12.0000" r="14.4222" data-quadrance="208"><title>( C R ) (Q = 208)</title></circle></g>
+    <g class="element-group" data-ref="( R C )"><circle class="Circle guide" cx="13.0000" cy="-0.0000" r="14.4222" data-quadrance="208"><title>( R C ) (Q = 208)</title></circle></g>
+    <g class="element-group" data-ref="( A U )"><circle class="Circle guide" cx="0.0000" cy="-0.0000" r="12.5220" data-quadrance="784/5"><title>( A U ) (Q = 784/5)</title></circle></g>
+    <g class="element-group" data-ref="( U A )"><circle class="Circle guide" cx="5.6000" cy="-11.2000" r="12.5220" data-quadrance="784/5"><title>( U A ) (Q = 784/5)</title></circle></g>
+    <g class="element-group" data-ref="( X1 Hc )"><circle class="Circle guide" cx="6.0000" cy="-4.0000" r="4.1231" data-quadrance="17"><title>( X1 Hc ) (Q = 17)</title></circle></g>
+    <g class="element-group" data-ref="( Hc Mc )"><circle class="Circle guide" cx="5.0000" cy="-0.0000" r="2.0000" data-quadrance="4"><title>( Hc Mc ) (Q = 4)</title></circle></g>
+    <g class="element-group" data-ref="( Mc Hc )"><circle class="Circle guide" cx="7.0000" cy="-0.0000" r="2.0000" data-quadrance="4"><title>( Mc Hc ) (Q = 4)</title></circle></g>
+    <g class="element-group" data-ref="( X1 Tc )"><circle class="Circle incircle" cx="6.0000" cy="-4.0000" r="4.0000" data-quadrance="16"><title>( X1 Tc ) (Q = 16)</title></circle></g>
+    </g>
+    <g class="lines-layer">
+    <g class="element-group" data-ref="[ B C ]"><line class="Line guide" x1="38.3750" y1="32.5000" x2="-10.3750" y2="-32.5000"><title>[ B C ]</title></line></g>
+    <g class="element-group" data-ref="[ D E ]"><line class="Line bisector guide" x1="-33.3923" y1="26.1692" x2="31.6077" y2="-22.5808"><title>[ D E ]</title></line></g>
+    <g class="element-group" data-ref="[ A C ]"><line class="Line guide" x1="-15.6250" y1="37.5000" x2="15.6250" y2="-37.5000"><title>[ A C ]</title></line></g>
+    <g class="element-group" data-ref="[ F G ]"><line class="Line guide" x1="-45.3923" y1="-25.9551" x2="29.6077" y2="5.2949"><title>[ F G ]</title></line></g>
+    <g class="element-group" data-ref="[ A B ]"><line class="Line guide" x1="-40.6250" y1="-0.0000" x2="40.6250" y2="-0.0000"><title>[ A B ]</title></line></g>
+    <g class="element-group" data-ref="[ H I ]"><line class="Line bisector guide" x1="7.0000" y1="-52.7494" x2="7.0000" y2="28.5006"><title>[ H I ]</title></line></g>
+    <g class="element-group" data-ref="[ A Ma ]"><line class="Line guide" x1="-34.3480" y1="21.6935" x2="34.3480" y2="-21.6935"><title>[ A Ma ]</title></line></g>
+    <g class="element-group" data-ref="[ B Mb ]"><line class="Line guide" x1="50.0175" y1="18.7917" x2="-22.0175" y2="-18.7917"><title>[ B Mb ]</title></line></g>
+    <g class="element-group" data-ref="[ K L ]"><line class="Line bisector guide" x1="5.0000" y1="-49.2853" x2="5.0000" y2="31.9647"><title>[ K L ]</title></line></g>
+    <g class="element-group" data-ref="[ N O ]"><line class="Line bisector guide" x1="-35.1794" y1="26.3845" x2="29.8206" y2="-22.3655"><title>[ N O ]</title></line></g>
+    <g class="element-group" data-ref="[ X3 X4 ]"><line class="Line guide euler" x1="46.9292" y1="-11.6117" x2="-32.9292" y2="3.3617"><title>[ X3 X4 ]</title></line></g>
+    <g class="element-group" data-ref="[ P Q ]"><line class="Line guide" x1="13.8115" y1="37.7237" x2="-1.1620" y2="-42.1346"><title>[ P Q ]</title></line></g>
+    <g class="element-group" data-ref="[ C R ]"><line class="Line guide" x1="-17.5347" y1="-45.8020" x2="27.5347" y2="21.8020"><title>[ C R ]</title></line></g>
+    <g class="element-group" data-ref="[ S T ]"><line class="Line guide" x1="53.1943" y1="-35.4629" x2="-14.4097" y2="9.6065"><title>[ S T ]</title></line></g>
+    <g class="element-group" data-ref="[ A U ]"><line class="Line guide" x1="-18.1681" y1="36.3361" x2="18.1681" y2="-36.3361"><title>[ A U ]</title></line></g>
+    <g class="element-group" data-ref="[ V W ]"><line class="Line guide" x1="-43.2356" y1="-28.6178" x2="29.4366" y2="7.7183"><title>[ V W ]</title></line></g>
+    <g class="element-group" data-ref="[ X Y ]"><line class="Line guide" x1="6.0000" y1="-42.3571" x2="6.0000" y2="38.8929"><title>[ X Y ]</title></line></g>
+    </g>
+    <g class="points-layer">
+    <g class="element-group" data-ref="A"><circle class="Point given" cx="0.0000" cy="-0.0000" r="0.3270" data-latex-xy="(0, 0)" data-exact-xy="[0, 0]"><title>A = [0, 0]</title></circle></g>
+    <g class="element-group" data-ref="B"><circle class="Point given" cx="14.0000" cy="-0.0000" r="0.3270" data-latex-xy="(14, 0)" data-exact-xy="[14, 0]"><title>B = [14, 0]</title></circle></g>
+    <g class="element-group" data-ref="C"><circle class="Point given" cx="5.0000" cy="-12.0000" r="0.3270" data-latex-xy="(5, 12)" data-exact-xy="[5, 12]"><title>C = [5, 12]</title></circle></g>
+    <g class="element-group" data-ref="Ma"><circle class="Point midpoint" cx="9.5000" cy="-6.0000" r="0.2616" data-latex-xy="(\frac{19}{2}, 6)" data-exact-xy="[19/2, 6]"><title>Ma = [19/2, 6]</title></circle></g>
+    <g class="element-group" data-ref="Mb"><circle class="Point midpoint" cx="2.5000" cy="-6.0000" r="0.2616" data-latex-xy="(\frac{5}{2}, 6)" data-exact-xy="[5/2, 6]"><title>Mb = [5/2, 6]</title></circle></g>
+    <g class="element-group" data-ref="Mc"><circle class="Point midpoint" cx="7.0000" cy="-0.0000" r="0.2616" data-latex-xy="(7, 0)" data-exact-xy="[7, 0]"><title>Mc = [7, 0]</title></circle></g>
+    <g class="element-group" data-ref="X2"><circle class="Point result" cx="6.3333" cy="-4.0000" r="0.3270" data-latex-xy="(\frac{19}{3}, 4)" data-exact-xy="[19/3, 4]"><title>X2 = [19/3, 4]</title></circle></g>
+    <g class="element-group" data-ref="X3"><circle class="Point result" cx="7.0000" cy="-4.1250" r="0.3270" data-latex-xy="(7, \frac{33}{8})" data-exact-xy="[7, 33/8]"><title>X3 = [7, 33/8]</title></circle></g>
+    <g class="element-group" data-ref="Hc"><circle class="Point midpoint" cx="5.0000" cy="-0.0000" r="0.2616" data-latex-xy="(5, 0)" data-exact-xy="[5, 0]"><title>Hc = [5, 0]</title></circle></g>
+    <g class="element-group" data-ref="X4"><circle class="Point result" cx="5.0000" cy="-3.7500" r="0.3270" data-latex-xy="(5, \frac{15}{4})" data-exact-xy="[5, 15/4]"><title>X4 = [5, 15/4]</title></circle></g>
+    <g class="element-group" data-ref="X5"><circle class="Point midpoint" cx="6.0000" cy="-3.9375" r="0.2616" data-latex-xy="(6, \frac{63}{16})" data-exact-xy="[6, 63/16]"><title>X5 = [6, 63/16]</title></circle></g>
+    <g class="element-group" data-ref="X1"><circle class="Point golden" cx="6.0000" cy="-4.0000" r="0.2616" data-latex-xy="(6, 4)" data-exact-xy="[6, 4]"><title>X1 = [6, 4]</title></circle></g>
+    </g>
+    <g class="callouts-layer">
+    <g class="element-group" data-ref="&lt; A B C &gt;"><rect class="callout-box" x="1.8882" y="1.8882" width="10.2236" height="0.7236" /><text class="callout-text" x="7.0000" y="2.2500" font-size="0.4668">Heronian 13-14-15: X1..X5 all in Q!</text></g>
+    <g class="element-group" data-ref="[ X3 X4 ]"><rect class="callout-box spread-box" x="6.8084" y="-9.8618" width="9.3833" height="0.7236" /><text class="callout-text" x="11.5000" y="-9.5000" font-size="0.4668">Euler Line: X4 - X3 = 3(X2 - X3)</text></g>
+    </g>
+    <g class="labels-layer">
+    <g class="element-group" data-ref="A"><text class="label-halo" x="0.4317" y="-0.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">A</text><text class="label-fill" x="0.4317" y="-0.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">A</text></g>
+    <g class="element-group" data-ref="B"><text class="label-halo" x="14.4317" y="-0.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">B</text><text class="label-fill" x="14.4317" y="-0.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">B</text></g>
+    <g class="element-group" data-ref="C"><text class="label-halo" x="5.4317" y="-12.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">C</text><text class="label-fill" x="5.4317" y="-12.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">C</text></g>
+    <g class="element-group" data-ref="Ma"><text class="label-halo" x="9.9317" y="-6.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">Ma</text><text class="label-fill" x="9.9317" y="-6.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">Ma</text></g>
+    <g class="element-group" data-ref="Mb"><text class="label-halo" x="2.9317" y="-6.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">Mb</text><text class="label-fill" x="2.9317" y="-6.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">Mb</text></g>
+    <g class="element-group" data-ref="Mc"><text class="label-halo" x="7.4317" y="-0.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">Mc</text><text class="label-fill" x="7.4317" y="-0.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">Mc</text></g>
+    <g class="element-group" data-ref="X2"><text class="label-halo" x="6.7650" y="-4.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">X2</text><text class="label-fill" x="6.7650" y="-4.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">X2</text></g>
+    <g class="element-group" data-ref="X3"><text class="label-halo" x="7.4317" y="-4.5044" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">X3</text><text class="label-fill" x="7.4317" y="-4.5044" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">X3</text></g>
+    <g class="element-group" data-ref="Hc"><text class="label-halo" x="5.4317" y="-0.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">Hc</text><text class="label-fill" x="5.4317" y="-0.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">Hc</text></g>
+    <g class="element-group" data-ref="X4"><text class="label-halo" x="5.4317" y="-4.1294" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">X4</text><text class="label-fill" x="5.4317" y="-4.1294" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">X4</text></g>
+    <g class="element-group" data-ref="X5"><text class="label-halo" x="6.4317" y="-4.3169" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">X5</text><text class="label-fill" x="6.4317" y="-4.3169" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">X5</text></g>
+    <g class="element-group" data-ref="X1"><text class="label-halo" x="6.4317" y="-4.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" stroke="#111318" stroke-width="0.1621" stroke-linejoin="round" fill="none">X1</text><text class="label-fill" x="6.4317" y="-4.3794" font-family="sans-serif" font-size="0.6484" font-weight="600" fill="#f0f4f8">X1</text></g>
+    </g>
+  </g>
+  <g class="svg-controls">
+    <g class="svg-control-btn" data-action="zoom-in"><rect x="10.0239" y="-15.2420" width="1.4810" height="0.9555" /><text x="10.7644" y="-14.7643" style="font-size:0.4300px">+</text></g>
+    <g class="svg-control-btn" data-action="zoom-out"><rect x="11.6769" y="-15.2420" width="1.4810" height="0.9555" /><text x="12.4175" y="-14.7643" style="font-size:0.4300px">−</text></g>
+    <g class="svg-control-btn" data-action="reset"><rect x="13.3300" y="-15.2420" width="1.4810" height="0.9555" /><text x="14.0705" y="-14.7643" style="font-size:0.4300px">⟲</text></g>
+    <g class="svg-control-btn" data-action="labels"><rect x="14.9830" y="-15.2420" width="1.4810" height="0.9555" /><text x="15.7235" y="-14.7643" style="font-size:0.4300px">Lbl</text></g>
+    <g class="svg-control-btn" data-action="guides"><rect x="16.6360" y="-15.2420" width="1.4810" height="0.9555" /><text x="17.3765" y="-14.7643" style="font-size:0.4300px">Gde</text></g>
+  </g>
+  <script>
+(function() {
+  if (window.__codesSvgInit) return;
+  window.__codesSvgInit = true;
+
+  function initDiagram(svg) {
+    if (svg.dataset.initialized) return;
+    svg.dataset.initialized = "true";
+    const vp = svg.querySelector(".svg-viewport");
+    if (!vp) return;
+
+    let scale = 1, tx = 0, ty = 0;
+    let dragging = false, startX = 0, startY = 0;
+
+    function applyTransform() {
+      vp.setAttribute("transform", `translate(${tx},${ty}) scale(${scale})`);
+    }
+
+    svg.addEventListener("wheel", function(e) {
+      e.preventDefault();
+      const rect = svg.getBoundingClientRect();
+      const vb = svg.viewBox.baseVal;
+      const mx = vb.x + ((e.clientX - rect.left) / rect.width) * vb.width;
+      const my = vb.y + ((e.clientY - rect.top) / rect.height) * vb.height;
+      const factor = e.deltaY > 0 ? 1 / 1.15 : 1.15;
+      const newScale = Math.min(Math.max(scale * factor, 0.25), 12);
+      tx = mx - (mx - tx) * (newScale / scale);
+      ty = my - (my - ty) * (newScale / scale);
+      scale = newScale;
+      applyTransform();
+    }, { passive: false });
+
+    svg.addEventListener("mousedown", function(e) {
+      if (e.target.closest(".svg-controls")) return;
+      dragging = true;
+      startX = e.clientX;
+      startY = e.clientY;
+    });
+
+    window.addEventListener("mousemove", function(e) {
+      if (!dragging) return;
+      const rect = svg.getBoundingClientRect();
+      const vb = svg.viewBox.baseVal;
+      const dx = ((e.clientX - startX) / rect.width) * vb.width;
+      const dy = ((e.clientY - startY) / rect.height) * vb.height;
+      startX = e.clientX;
+      startY = e.clientY;
+      tx += dx;
+      ty += dy;
+      applyTransform();
+    });
+
+    window.addEventListener("mouseup", function() {
+      dragging = false;
+    });
+
+    svg.querySelectorAll(".svg-control-btn").forEach(function(btn) {
+      btn.addEventListener("click", function(e) {
+        e.stopPropagation();
+        const action = btn.dataset.action;
+        if (action === "zoom-in") { scale = Math.min(scale * 1.25, 12); applyTransform(); }
+        else if (action === "zoom-out") { scale = Math.max(scale / 1.25, 0.25); applyTransform(); }
+        else if (action === "reset") { scale = 1; tx = 0; ty = 0; applyTransform(); }
+        else if (action === "labels") { svg.classList.toggle("hide-labels"); }
+        else if (action === "guides") { svg.classList.toggle("hide-guides"); }
+      });
+    });
+  }
+
+  function setupHoverSync() {
+    document.querySelectorAll("svg.codes-diagram").forEach(initDiagram);
+
+    document.addEventListener("mouseover", function(e) {
+      const refEl = e.target.closest("[data-ref]");
+      if (!refEl) return;
+      const ref = refEl.dataset.ref;
+      if (!ref) return;
+      document.querySelectorAll(`.element-group[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.add("svg-hovered"));
+      document.querySelectorAll(`.geom-ref[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.add("ref-hovered"));
+    });
+
+    document.addEventListener("mouseout", function(e) {
+      const refEl = e.target.closest("[data-ref]");
+      if (!refEl) return;
+      const ref = refEl.dataset.ref;
+      if (!ref) return;
+      document.querySelectorAll(`.element-group[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.remove("svg-hovered"));
+      document.querySelectorAll(`.geom-ref[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.remove("ref-hovered"));
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupHoverSync);
+  } else {
+    setupHoverSync();
+  }
+})();
+</script>
+</svg>

@@ -1,0 +1,16 @@
+:date: 2026-11-12
+:type: log
+:tags: formal-systems, syntax, opus, rosetta, byrne, sympy, geometor-model
+
+===============================================================================
+Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems
+===============================================================================
+
+Launched ``geometor.codes`` v0.1.0 at **Layer 2** of the GEOMETOR ecosystem, conducting a forensic source-level comparison across 11 formal, visual, and symbolic geometry architectures: ``LeanEuclid`` (:cite:`Murphy2024`), ``GeoCoq`` (:cite:`Boutry2019`), ``mathlib4`` (:cite:`Mathlib2020`), ``AlphaGeometry`` (:cite:`Trinh2024`), ``Newclid``/``Yuclid`` (:cite:`Sicca2024`), ``Java-Geometry-Expert`` (:cite:`YeChouGao2011`), ``kingdon``/``galgebra`` PGA & CGA (:cite:`Gunn2020`), ``CindyJS`` (:cite:`RichterGebert2011`), ``sympy.geometry`` (`1.14.0`), :person:`Oliver Byrne <byrne>`'s 1847 *Coloured Euclid* / :person:`Nicholas Rougeux <rougeux>` (:cite:`Byrne1847`, :cite:`Rougeux2018`), and ``geometor.model``.
+
+Highlights
+----------
+
+- **Canonical Datasets & Typed Query Engine** (:mod:`geometor.codes.registry`): Authored `systems.json` (`11` profiles), `syntax_lexicon.json` (`60` symbol decoders), `opus_matrix.json` (`69` topics across `8` domains :math:`= 759` cells), `rosetta_benchmarks.json` (`7` benchmarks :math:`\times 11` systems :math:`= 77` encodings), and `geometor_hierarchy.json` (`7` layers, `33` repositories, `11` prioritized engineering recommendations).
+- **Exact Float-Free Demonstrations** (:mod:`geometor.codes.figures`): Built 9 exact ``Model(..., auto_intersect=False)`` interactive ``.euclid-graphic`` SVG figures verified symbolically via Rational Trigonometry (`quadrance`, `spread`, `cross_ratio`) with zero `sp.Float` atoms.
+- **Forensic Audit Catch**: Documented `SMT_VERIF` and 6 missed Euclid lemmas in `LeanEuclid`, `rconst` log-ratio hallucination and `;` clause drops in `AlphaGeometry`, disabled `Area.java` in `JGEX`, `.dual()` / `>>` traps in `galgebra`, live double bugs in `sympy.geometry`'s `Triangle.excenters` and `Point.affine_rank`, Byrne's pointer-free visual pseudocode architecture, and the universal omission of the Golden Ratio (:math:`\phi`) and Platonic solids across modern ITPs/ATPs.

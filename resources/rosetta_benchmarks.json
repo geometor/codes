@@ -1,0 +1,620 @@
+{
+  "benchmarks": [
+    {
+      "id": "01-equidistant-poles",
+      "number": 1,
+      "title": "Equidistant Poles & Equilateral Triangle",
+      "geometor_signature": "equidistant_poles(A, B) -> (F, E)",
+      "euclid_ref": "Euclid Book I, Proposition 1",
+      "geometric_essence": "From two distinct seed points A and B, construct the two congruent circles (A, B) and (B, A) and select their intersection poles F and E to form equilateral triangle ABF. Tests whether a system can actually prove circle-circle intersection existence and select one of the two quadratic roots.",
+      "figure_svg": "01-seven-ontologies.svg",
+      "implementations": {
+        "leaneuclid": {
+          "language": "lean4",
+          "source_ref": "LeanEuclid/Book/Prop01.lean:9-24",
+          "code": "theorem proposition_1 : ∀ (a b : Point) (AB : Line),\n    distinctPointsOnLine a b AB →\n    ∃ c : Point, |(a─c)| = |(a─b)| ∧ |(b─c)| = |(b─a)| ∧ ¬(c.onLine AB) := by\n  euclid_intros\n  euclid_apply (Circles.from_points a b) as α\n  euclid_apply (Circles.from_points b a) as β\n  euclid_apply (Intersections.intersect_circles α β) as c\n  use c\n  euclid_finish",
+          "reveals": "Explicitly justifies why circles α and β must intersect via System E's diagrammatic circle-intersection axiom (filling Euclid's famous Book I.1 gap). Prop01.lean also proves proposition_1' selecting the pole on a chosen side via intersect_circles_same_side!",
+          "hides": "Delegates all interior/exterior circle-containment verification to external Z3/CVC5 via SMT_VERIF, and yields no coordinates for c."
+        },
+        "geocoq": {
+          "language": "coq",
+          "source_ref": "GeoCoq/Elements/OriginalProofs/proposition_01.v:7-32",
+          "code": "Theorem proposition_01 :\n  forall A B, neq A B -> exists X, equilateral A B X /\\ Triangle A B X.\nProof.\n  intros.\n  pose proof (postulate_Euclid3 A B H) as [J HJ].\n  pose proof (postulate_Euclid3 B A (neq_sym _ _ H)) as [K HK].\n  ... (* applies postulate_circle_circle to obtain witness C *)",
+          "reveals": "Isolates the exact continuity axiom (circle_circle, equivalent over Tarski neutral geometry to nested-circle continuity) required for I.1 to hold over Euclidean fields rather than Q^2.",
+          "hides": "In pure Tarski point-only files, circles do not exist as objects—circle_circle is stated as a 6-point existential sentence on Bet and Cong."
+        },
+        "mathlib4": {
+          "language": "lean4",
+          "source_ref": "Absent constructively (cf. Geometry/Euclidean/Angle/Unoriented/Affine.lean)",
+          "code": "-- NO constructive Euclid I.1 existence theorem in Mathlib/Geometry/Euclidean/!\n-- Equilateral triangles appear only hypothetically as dist-equality assumptions:\nvariable {V P : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V]\n  [MetricSpace P] [NormedAddTorsor V P]\n-- Hypothesis form: dist a b = r ∧ dist b c = r ∧ dist c a = r",
+          "reveals": "Shows sharply that mathlib4 is an analytic deductive library over arbitrary dimension n (where two spheres in R^3 meet in a circle, not 2 points!), not a planar constructive system.",
+          "hides": "Cannot construct the two planar apexes without choosing an explicit 2D Orientation and invoking Orientation.rotation (π / 3)."
+        },
+        "alphageometry": {
+          "language": "text",
+          "source_ref": "alphageometry/defs.txt:37-41 & rules.txt:14 (r13)",
+          "code": "# Primitive two-circle locus intersection + Pons Asinorum (r13):\na b = segment a b; c = on_circle c a b, on_circle c b a ? eqangle a b a c b c b a\n\n# Or macro stanza in defs.txt:37-41:\neq_triangle x a b\nx : a b\na b = diff a b\nx : cong x a a b, cong x b a b; eqangle a b a x b x b a",
+          "reveals": "Compact 1-line locus intersection syntax; also exposes the silent ';' drop quirk in defs.txt:40 where the post-semicolon eqangle is ignored by Graph.add_clause and re-proved by r13.",
+          "hides": "Cannot prove absolute angle π/3 (aconst a b a c 1 3) from circle intersections alone because AngleTable works modulo π without triangle interior-sum orientation!"
+        },
+        "newclid": {
+          "language": "text",
+          "source_ref": "Newclid/newclid/src/newclid/jgex/constructions/",
+          "code": "a b = segment a b; c = on_circle c a b, on_circle c b a ? cong c a c b; eqangle a b a c b c b a",
+          "reveals": "Multi-goal ';' syntax after '?' verifies both side congruence and base-angle equality in a single run.",
+          "hides": "Which of the two poles c lands on depends on random float64 sampling inside the numerical sketcher."
+        },
+        "jgex": {
+          "language": "text",
+          "source_ref": "Java-Geometry-Expert Area Method / GDD",
+          "code": "EXAMPLE EUCLID_I_1\nHYPOTHESES:\n  POINT A B;\n  INTERSECTION_CC C A B B A;\nSHOW: EQANGLE C A B A B C.\n# Area/Pythagoras encoding: P_CAC = P_BAB, P_CBC = P_BAB => P_CAB = AB^2 = (1/2) P_ABA",
+          "reveals": "Expresses the 60-degree cosine relation purely rationally via Pythagoras difference P_CAB / P_ABA = 1/2.",
+          "hides": "Root branch selection between upper and lower equilateral apexes."
+        },
+        "pga_cga": {
+          "language": "python",
+          "source_ref": "2D CGA Cl(3,1) in kingdon (Algebra(3, 1))",
+          "code": "q_AB = -2 * (A | B)                        # exact quadrance |A - B|^2\nkA = A - sp.Rational(1, 2) * q_AB * ni     # dual circle centered at A through B\nkB = B - sp.Rational(1, 2) * q_AB * ni     # dual circle centered at B through A\nT = (kA ^ kB).dual()                       # OPNS grade-2 point pair F ^ E\ns = sp.sqrt((T * T).e)                     # invariant scalar separation\nF = norm_pt((T + s) * (T | ni))            # upper pole via projector split\nE = norm_pt((T - s) * (T | ni))            # lower pole via projector split",
+          "reveals": "The circle-circle intersection is a single algebraic object—the grade-2 bivector point pair T = F ^ E—before splitting its two roots via idempotent projectors (T ± s)!",
+          "hides": "Requires lifting 2D plane into 4D Minkowski space R^{3,1} (since 2D PGA lacks circle blades)."
+        },
+        "cindyjs": {
+          "language": "javascript",
+          "source_ref": "CindyJS/src/js/libgeo/GeoOps.js:2038-2068 & Tracing.js",
+          "code": "create([\"c1\", \"CircleMP\", [\"A\", \"B\"]]);\ncreate([\"c2\", \"CircleMP\", [\"B\", \"A\"]]);\ncreate([\"F\", \"E\"], \"IntersectCirCir\", [\"c1\", \"c2\"]);\n// Subtracts monic 3x3 circle matrices to get radical axis, then splits rank-1 skew matrix;\n// Tracing.js tracks F and E continuously over C^3 when A or B is dragged!",
+          "reveals": "Maintains continuous identity of poles F and E under arbitrary dragging via Riemann-surface homotopy continuation.",
+          "hides": "Coordinates are complex floats (F = [1, 1.7320508..., 1]); requires PSLQ guess() to recover sqrt(3)."
+        },
+        "sympy_geometry": {
+          "language": "python",
+          "source_ref": "sympy/geometry/ellipse.py:676-691",
+          "code": "r = A.distance(B)\nE, F = Circle(A, r).intersection(Circle(B, r))  # invokes generic CAS solve()!",
+          "reveals": "Concise object-oriented syntax returning two exact symbolic Point2D instances over Q(sqrt(3)).",
+          "hides": "Calls generic Buchberger/CAS solve() under the hood (stalling on nested steps) and returns roots sorted arbitrarily without a half-plane selector."
+        },
+        "byrne_1847": {
+          "language": "text",
+          "source_ref": "Byrne (1847) Book I, Prop. 1 / Rougeux c82.net/euclid/book1#prop1",
+          "code": "Given:        [black ━━]                       (seed segment)\nTo Construct: △([black ━━], [red ━━], [yellow ━━]) equilateral\nConstruction: Describe [red ○] about left end with radius [black ━━]   (Post. 3)\n              Describe [blue ○] about right end with radius [black ━━] (Post. 3)\n              From intersection draw [red ━━] and [yellow ━━]          (Post. 1)\nProof:        [red ━━]    = [black ━━]   (radii of [red ○], Def. 15)\n              [yellow ━━] = [black ━━]   (radii of [blue ○], Def. 15)\n            ∴ [red ━━] = [yellow ━━] = [black ━━]                      (Ax. 1)",
+          "reveals": "Zero vertex letters! Every segment and circle is a direct coloured value-token whose equality follows visually from shared circle-radius membership.",
+          "hides": "Like classical Euclid, assumes visually that [red ○] and [blue ○] intersect without an explicit continuity axiom, and addresses the apex only as 'their intersection'."
+        },
+        "geometor_model": {
+          "language": "python",
+          "source_ref": "geometor/codes/figures.py:100-115 (geometor.model)",
+          "code": "m = Model(\"equidistant_poles\", auto_intersect=False)\na = m.set_point(0, 0, ID=\"A\"); b = m.set_point(2, 0, ID=\"B\")\nc_a = m.construct_circle(a, b, ID=\"( A B )\")\nc_b = m.construct_circle(b, a, ID=\"( B A )\")\nf = m.intersect(c_a, c_b, side_of=(a, b, +1), ID=\"F\")  # exact (1, sqrt(3))\ne = m.intersect(c_a, c_b, side_of=(a, b, -1), ID=\"E\")  # exact (1, -sqrt(3))\nm.assert_equal((a, b), (a, f), (b, f), by=\"I.1\")       # Q = 4, spread = 3/4",
+          "reveals": "Combines closed-form radical-axis algebra (zero solve()), System E half-plane root selection side_of=(a, b, ±1), exact Q(sqrt(3)) coordinates, and rational spread verification s = 3/4.",
+          "hides": "Currently 2D planar; selector AST should be persisted on Step for direct LeanEuclid export."
+        }
+      }
+    },
+    {
+      "id": "02-perpendicular-bisector-midpoint",
+      "number": 2,
+      "title": "Perpendicular Bisector & Midpoint",
+      "geometor_signature": "perpendicular_bisector(A, B) -> (bisector, midpoint)",
+      "euclid_ref": "Euclid Book I, Propositions 10 & 11",
+      "geometric_essence": "Join the two equidistant vesica poles F and E of (A, B) and (B, A) to obtain the perpendicular bisector [E F] and intersect with [A B] to obtain the midpoint M. Contrasts synthetic kite/congruence proofs against 1-subtraction conformal duals.",
+      "figure_svg": "02-topological-selectors.svg",
+      "implementations": {
+        "leaneuclid": {
+          "language": "lean4",
+          "source_ref": "LeanEuclid/Book/Prop10.lean:9-33",
+          "code": "theorem proposition_10 : ∀ (a b : Point) (AB : Line),\n    distinctPointsOnLine a b AB → ∃ d : Point, between a d b ∧ |(a─d)| = |(d─b)| := by\n  euclid_intros\n  euclid_apply (proposition_1' a b AB) as c\n  euclid_apply (Prop09.proposition_9' b a c ...) as CD\n  euclid_apply (Intersections.intersect_lines AB CD) as d\n  euclid_apply (Prop04.proposition_4 c a d c b d)  -- SAS congruence\n  euclid_finish",
+          "reveals": "Follows Euclid's exact deductive chain (equilateral apex -> angle bisector I.9 -> Pasch line intersection -> SAS I.4) and proves d lies strictly between a and b!",
+          "hides": "Uses Euclid's 2-triangle angle-bisector construction rather than Lemoine's more economical 2-pole vesica chord [E F]."
+        },
+        "geocoq": {
+          "language": "coq",
+          "source_ref": "GeoCoq/Main/Tarski_dev/Ch08_orthogonality.v (l8_22 / midpoint_existence)",
+          "code": "Lemma midpoint_existence : forall A B, exists X, Midpoint X A B.\n(* Proven in neutral geometry WITHOUT circle-circle continuity via Gupta's\n   clever perpendicular-projection construction! *)",
+          "reveals": "Astonishing metatheoretic insight: unlike Euclid I.10 (which uses I.1 and thus circle-circle continuity), midpoint existence holds in pure Hilbert/Tarski neutral geometry over smaller Pythagorean fields!",
+          "hides": "Requires ~150 lines of intricate Tarski point-only lemmas in Ch08."
+        },
+        "mathlib4": {
+          "language": "lean4",
+          "source_ref": "Mathlib/Geometry/Euclidean/PerpBisector.lean:38-66",
+          "code": "def perpBisector (p₁ p₂ : P) : AffineSubspace ℝ P :=\n  mk' (midpoint ℝ p₁ p₂) (ℝ ∙ (p₁ -ᵥ p₂))ᗮ\n\ntheorem mem_perpBisector_iff_dist_eq (p p₁ p₂ : P) :\n    p ∈ perpBisector p₁ p₂ ↔ dist p p₁ = dist p p₂",
+          "reveals": "Defines the perpendicular bisector hyperplane in arbitrary dimension n as the orthogonal complement (p₁ -ᵥ p₂)ᗮ through midpoint ℝ p₁ p₂, and proves the equidistance locus iff in 8 lines.",
+          "hides": "Assumes 1/2 scalar division in ℝ up front (midpoint := lineMap p₁ p₂ (1/2)) rather than constructing it with a compass."
+        },
+        "alphageometry": {
+          "language": "text",
+          "source_ref": "alphageometry/rules.txt:24 (r23) & numericals.py:1317 (HoleCircle)",
+          "code": "a b = segment a b; c = on_circle c a b, on_circle c b a; d = on_circle d a b, on_circle d b a; m = on_line m a b, on_line m c d ? midp m a b",
+          "reveals": "Demonstrates AlphaGeometry's clever HoleCircle mechanism: once c is sampled at one lens pole, repeating the exact same clause for d automatically punctures c and selects the opposite pole d != c!",
+          "hides": "Relies on kite rule r23 + reflected congruence r37 rather than explicit half-plane opposition."
+        },
+        "newclid": {
+          "language": "text",
+          "source_ref": "Newclid/newclid/src/newclid/all_rules.py (R22, R23, R54)",
+          "code": "a b = segment a b; m = on_line m a b, on_bline m a b ? midp m a b; rconst m a a b 1/2",
+          "reveals": "Explicitly links perpendicular-bisector intersection (on_bline) to midpoint (R54) and sound constant ratio 1/2 (R51).",
+          "hides": "Treats on_bline as a primitive 1-step locus rather than unfolding the two congruent circles."
+        },
+        "jgex": {
+          "language": "text",
+          "source_ref": "Java-Geometry-Expert Area Method",
+          "code": "POINT A B; INTERSECTION_CC C A B B A; INTERSECTION_CC D B A A B; INTERSECTION_LL M A B C D;\nSHOW: MIDPOINT M A B.\n# Area elimination: AM / MB = S_ACD / S_CBD = 1; Perp: P_ACBD = (AC^2 - BC^2) + (BD^2 - AD^2) = 0",
+          "reveals": "4-point Pythagoras difference P_ACBD proves kite diagonal orthogonality in 1 subtraction without square roots!",
+          "hides": "Symmetric opposite-side orientation S_CBD = S_ACD must be supplied for the two circle roots."
+        },
+        "pga_cga": {
+          "language": "python",
+          "source_ref": "2D PGA Cl(2,0,1) & 2D CGA Cl(3,1) in kingdon",
+          "code": "# 2D PGA (division-free & radical-free!):\nl_bis_pga = (A & B) | (A + B)\nM_pga = sp.Rational(1, 2) * (A + B)\n\n# 2D CGA (perpendicular bisector is literally A - B!):\nl_bis_dual = A - B   # -2*((A - B) | X) = |X - A|^2 - |X - B|^2 == 0!\nM_cga = sp.Rational(1, 2) * (A + B) + sp.Rational(1, 4) * (A | B) * ni",
+          "reveals": "In 2D CGA, subtracting two unit null points A - B IS the dual perpendicular bisector hyperplane because their quadratic terms cancel to the equidistance locus!",
+          "hides": "Bypasses the vesica circle construction entirely."
+        },
+        "cindyjs": {
+          "language": "javascript",
+          "source_ref": "CindyJS/src/js/libcs/Operators.js:2521-2540",
+          "code": "M = B_3 * A + A_3 * B;               // homogeneous midpoint [xA+xB, yA+yB, 2]\nl_AB = cross(A, B);                  // join(A, B)\nl_bis = cross(fundDual * l_AB, M);   // CindyScript: perp(join(A, B), midpoint(A, B))",
+          "reveals": "Shows Cayley-Klein orthogonality in action: multiplying line l_AB by fundDual = diag(1,1,0) produces its orthogonal ideal point [a, b, 0], which is crossed with M.",
+          "hides": "Division-free affine shortcut rather than compass construction."
+        },
+        "sympy_geometry": {
+          "language": "python",
+          "source_ref": "sympy/geometry/line.py:1654-1680",
+          "code": "seg = Segment(A, B)\nM = seg.midpoint\nl_bis = seg.perpendicular_bisector()",
+          "reveals": "Clean 2-line high-level API returning exact rational Point2D and Line2D whenever A, B are rational.",
+          "hides": "Triggers eager simplify() calls inside midpoint and Line coefficients."
+        },
+        "byrne_1847": {
+          "language": "text",
+          "source_ref": "Byrne (1847) Book I, Props. 10 & 11 / Rougeux c82.net/euclid/book1#prop10",
+          "code": "Given:        [black ━━] = [yellow ━━] + [blue ━━]\nConstruction: Construct equilateral △([red ━━], [red ━━], [black ━━])  (I.1)\n              Bisect apex wedge into [yellow ◣] = [red ◣] by [black ╌╌╌] (I.9)\nProof:        [red ━━] = [red ━━],  [black ╌╌╌] common,  [yellow ◣] = [red ◣]\n            ∴ [yellow ━━] = [blue ━━]                                  (I.4)",
+          "reveals": "Stroke grammar in action: solid strokes mark Given/target halves while dashed [black ╌╌╌] marks the auxiliary angle-bisector cut.",
+          "hides": "Follows Euclid's I.1 -> I.9 -> I.4 triangle chain rather than the direct 2-pole vesica chord [E F]."
+        },
+        "geometor_model": {
+          "language": "python",
+          "source_ref": "geometor/codes/figures.py:45-91 (_midpoint_via_vesica)",
+          "code": "with m.subconstruction(\"bisect_AB\") as scope:\n    c1 = m.construct_circle(a, b, guide=True); c2 = m.construct_circle(b, a, guide=True)\n    f = m.intersect(c1, c2, side_of=(a, b, +1), guide=True)\n    e = m.intersect(c1, c2, side_of=(a, b, -1), guide=True)\n    bis = m.construct_line(e, f, ID=\"[ E F ]\")\n    mid = m.intersect(l_ab, bis, between=(a, b), ID=\"M\")\n    scope.keep(mid, bis)",
+          "reveals": "Unfolds the genuine compass-and-straightedge vesica construction, cancels √3 identically when [E F] meets [A B] so M stays purely in Q(A, B), and folds auxiliary circles neatly via subconstruction!",
+          "hides": "Re-running 2 circles per midpoint adds construction steps unless cached as a reusable macro."
+        }
+      }
+    },
+    {
+      "id": "03-parallel-line",
+      "number": 3,
+      "title": "Parallel Line Through an External Point",
+      "geometor_signature": "parallel_line(line_AB, P) -> line_parallel",
+      "euclid_ref": "Euclid Book I, Proposition 31",
+      "geometric_essence": "Construct the unique Euclidean line through external point P parallel to line AB. Exposes how each system treats the Parallel Postulate, points at infinity, alternate interior angles, or rhombus symmetry.",
+      "figure_svg": "02-topological-selectors.svg",
+      "implementations": {
+        "leaneuclid": {
+          "language": "lean4",
+          "source_ref": "LeanEuclid/Book/Prop31.lean:9-36",
+          "code": "theorem proposition_31 : ∀ (a b c : Point) (BC : Line),\n    distinctPointsOnLine b c BC ∧ ¬(a.onLine BC) →\n    ∃ EF : Line, a.onLine EF ∧ ¬(EF.intersectsLine BC) := by\n  euclid_intros\n  -- Picks d on BC, copies angle ∠(a:d:c) to vertex a via Prop23, applies Prop27:\n  euclid_apply (Prop23.proposition_23_opposing ...) as e\n  euclid_apply (Lines.from_points e a) as EF\n  euclid_apply (Prop27.proposition_27 e a b c ...)\n  euclid_finish",
+          "reveals": "Proves existence of a non-intersecting line in pure neutral geometry (Prop 27 alternate interior angles—Playfair uniqueness is not needed until Prop 29/30!).",
+          "hides": "Euclid's angle-copying construction (via I.23 -> I.22) has much higher Lemoine complexity than rhombus or double-perpendicular constructions."
+        },
+        "geocoq": {
+          "language": "coq",
+          "source_ref": "GeoCoq/Main/Tarski_dev/Ch12_parallel.v (parallel_existence1) & parallel_postulates.v",
+          "code": "Lemma parallel_existence : forall A B P, A <> B ->\n  exists C, exists D, C <> D /\\ Par A B C D /\\ Col P C D.\n(* Existence proven in neutral geometry via double midpoint reflection;\n   uniqueness proved equivalent to 34 distinct parallel postulates! *)",
+          "reveals": "Cleanly separates neutral parallel existence (central reflection across a midpoint!) from the 34 equivalent parallel-uniqueness postulates cataloged in parallel_postulates.v.",
+          "hides": "Representing the output line requires two existential witness points C, D with C <> D and Col P C D."
+        },
+        "mathlib4": {
+          "language": "lean4",
+          "source_ref": "Mathlib/LinearAlgebra/AffineSpace/AffineSubspace.lean (Parallel)",
+          "code": "-- Parallelism s₁ ∥ s₂ means s₁.direction = s₂.direction (up to translation):\ndef parallelThrough (s : AffineSubspace ℝ P) (p : P) : AffineSubspace ℝ P :=\n  AffineSubspace.mk' p s.direction",
+          "reveals": "In an affine torsor, a parallel subspace through p is tautologically mk' p s.direction—Playfair's postulate is baked directly into linear-algebraic coset structure!",
+          "hides": "Cannot study non-Euclidean neutral geometry without abandoning AffineSpace."
+        },
+        "alphageometry": {
+          "language": "text",
+          "source_ref": "alphageometry/defs.txt:211 (on_pline) & rules.txt:1 (r00)",
+          "code": "# Synthetic double-perpendicular construction (1 deduction step via r00):\na b c = triangle a b c; f = foot f c a b; d = on_tline d c c f ? para c d a b",
+          "reveals": "Rule r00 (AB ⊥ CF ∧ CD ⊥ CF => AB || CD) gives an immediate 1-step synthetic proof.",
+          "hides": "Conflates parallel existence and Playfair uniqueness (r28: para A B A C => coll A B C)."
+        },
+        "newclid": {
+          "language": "text",
+          "source_ref": "Newclid/newclid/tests/test_individual_rules.py:102 (R00)",
+          "code": "a = free a; b = free b; c = free c; d = on_tline d c a b; f = on_tline f c c d ? para a b c f",
+          "reveals": "Direct 1-rule verification via R00_PERPENDICULARS_GIVE_PARALLEL.",
+          "hides": "Assumes Euclidean metric direction group ℝ/πℤ."
+        },
+        "jgex": {
+          "language": "text",
+          "source_ref": "Java-Geometry-Expert Area Method",
+          "code": "POINT A B C; FOOT F C A B; ON_TLINE D C C F; SHOW: PARALLEL C D A B.\n# Area goal: S_CABD = S_CAB - S_DAB = -(r/4) P_AFBC = 0 (since CF ⊥ AB => P_AFBC = 0)",
+          "reveals": "Dualizes 90-degree rotation (TRATIO) directly between signed area S_CABD and Pythagoras difference P_AFBC!",
+          "hides": "Requires choosing auxiliary ratio parameter r != 0 along the perpendicular."
+        },
+        "pga_cga": {
+          "language": "python",
+          "source_ref": "2D PGA Cl(2,0,1) in kingdon",
+          "code": "# Projective form: join P with the ideal point (L ^ e0) where L meets infinity!\nL_para = P & (L ^ e0)\n# Equivalent metric double-contraction (no explicit e0 needed):\nL_para_metric = (L | P) | P",
+          "reveals": "Reveals the projective essence of parallelism: a parallel line through P is simply the join (&) of P with L's ideal point at infinity (L ^ e0)!",
+          "hides": "Requires degenerate generator e0^2 = 0."
+        },
+        "cindyjs": {
+          "language": "javascript",
+          "source_ref": "CindyJS/src/js/libcs/Operators.js:2515",
+          "code": "L_para = cross(cross(linf, L), P);   // CindyScript: para(L, P)",
+          "reveals": "Identical projective elegance in CP^2: cross(linf, L) is the ideal point of L on z=0, and crossing with P joins it to P in 6 multiplications.",
+          "hides": "Euclidean vs hyperbolic parallelism depends on the chosen fundamental conic."
+        },
+        "sympy_geometry": {
+          "language": "python",
+          "source_ref": "sympy/geometry/line.py:1372-1395",
+          "code": "L_para = L.parallel_line(P)          # Line(P, P + L.direction)",
+          "reveals": "One-method vector translation P + L.direction.",
+          "hides": "Parallel lines have L.intersection(L_para) == [], losing the ideal point at infinity."
+        },
+        "byrne_1847": {
+          "language": "text",
+          "source_ref": "Byrne (1847) Book I, Prop. 31 / Rougeux c82.net/euclid/book1#prop31",
+          "code": "Given:        Point • and line [black ━━]\nConstruction: Draw transversal [yellow ╌╌╌] from • to [black ━━]       (Post. 1)\n              Copy alternate wedge [red ◣] = [blue ◣] via [red ━━]     (I.23)\nProof:        Alternate wedges [red ◣] = [blue ◣]\n            ∴ [red ━━] ∥ [black ━━]                                    (I.27)",
+          "reveals": "Replaces Euclid's six vertex pointers (A, B, C, D, E, F) with two coloured angle wedges [red ◣] = [blue ◣], making the alternate-interior-angle mechanism instantaneous.",
+          "hides": "Notice Byrne MUST print a tiny black dot/star for the given external point because pure 0D points have no coloured line/region glyph!"
+        },
+        "geometor_model": {
+          "language": "python",
+          "source_ref": "geometor.model + Compass Rhombus Construction",
+          "code": "# Pure 3-circle compass rhombus (Lemoine-optimal) or double perpendicular:\nq = m.intersect(l_ab, m.construct_circle(a, p, guide=True), on_ray=(a, b), guide=True)\nd = m.intersect(m.construct_circle(p, a, guide=True), m.construct_circle(q, a, guide=True),\n                side_of=(a, p, -1), ID=\"D\")\nl_para = m.construct_line(p, d, ID=\"[ P D ]\")\nm.assert_parallel(l_ab, l_para, by=\"I.31\")  # exact line_spread == 0",
+          "reveals": "Achieves parallel construction in just 3 congruent-radius circles (rhombus APDQ) and certifies exact parallelism via rational line_spread == 0.",
+          "hides": "Could also expose a 1-line projective bridge cross(cross(linf, l_ab), p) in geometor.pappus."
+        }
+      }
+    },
+    {
+      "id": "04-pythagoras",
+      "number": 4,
+      "title": "Pythagorean Theorem & Right-Triangle Orthogonality",
+      "geometor_signature": "pythagoras(A, B, C) -> Q(A, B) == Q(A, C) + Q(B, C)",
+      "euclid_ref": "Euclid Book I, Proposition 47",
+      "geometric_essence": "For right-angled triangle ABC (orthogonality at C), the quadrance on the hypotenuse equals the sum of the quadrances on the legs—and geometrically, the area of the hypotenuse square equals the sum of the two leg squares (Euclid's Bride's Chair). Exposes a stunning expressiveness cliff in AlphaGeometry!",
+      "figure_svg": "04-torsor-oangle-spread.svg",
+      "implementations": {
+        "leaneuclid": {
+          "language": "lean4",
+          "source_ref": "LeanEuclid/Book/Prop47.lean:160-290 (+ lines 25-60 missed lemmas!)",
+          "code": "theorem proposition_47 : ∀ (a b c d e f g h k : Point) (AB BC AC ... : Line),\n    formTriangle a b c AB BC CA ∧ ∠(b:a:c) = ∟ ∧\n    Square b c e d ... ∧ Square a b f g ... ∧ Square a c k h ... →\n    (△(b:c:d) + △(c:e:d)) = (△(a:b:f) + △(b:g:f)) + (△(a:c:k) + △(c:h:k))",
+          "reveals": "Formalizes Euclid's authentic cut-and-paste area proof (Bride's Chair) AND explicitly isolates 6 '-- Missed by Euclid' topological lemmas (Prop47.lean:25-60) proving the outward squares don't fold across the triangle!",
+          "hides": "Verbose 9-point, 10-line theorem signature because Square is an unbundled 12-argument relational macro."
+        },
+        "geocoq": {
+          "language": "coq",
+          "source_ref": "GeoCoq/Main/Tarski_dev/Ch15_lengths.v:260-310 (pythagoras)",
+          "code": "Lemma pythagoras :\n  forall O E E' A B C AC BC AB AC2 BC2 AB2,\n  ~ Col O E E' -> Per A C B ->\n  Length O E E' A C AC -> Length O E E' B C BC -> Length O E E' A B AB ->\n  Prod O E E' AC AC AC2 -> Prod O E E' BC BC BC2 ->\n  Sum O E E' AC2 BC2 AB2 -> Prod O E E' AB AB AB2.",
+          "reveals": "Proves a^2 + b^2 = c^2 purely synthetically inside Tarski's internal geometric segment field (Sum and Prod constructed on line OE with unit E via Pappus/Thales) with zero real numbers!",
+          "hides": "Requires carrying coordinate-line frame witnesses (O, E, E') through every arithmetic relation."
+        },
+        "mathlib4": {
+          "language": "lean4",
+          "source_ref": "Mathlib/Geometry/Euclidean/Angle/Unoriented/Affine.lean:245-268",
+          "code": "theorem dist_sq_eq_dist_sq_add_dist_sq_iff_angle_eq_pi_div_two (p₁ p₂ p₃ : P) :\n    dist p₁ p₃ * dist p₁ p₃ = dist p₁ p₂ * dist p₁ p₂ + dist p₃ p₂ * dist p₃ p₂ ↔\n      ∠ p₁ p₂ p₃ = π / 2 ∨ p₁ = p₂ ∨ p₃ = p₂",
+          "reveals": "Immediate consequence of ‖u - v‖^2 = ‖u‖^2 + ‖v‖^2 - 2⟪u, v⟫ in any Hilbert/inner-product space of arbitrary dimension n, including degenerate endpoint disjuncts!",
+          "hides": "Reduces Euclid's deep geometric theorem to a 3-line inner-product expansion, hiding the constructive equivalence of geometric squares."
+        },
+        "alphageometry": {
+          "language": "text",
+          "source_ref": "Expressiveness Ceiling! (ar.py lacks squared lengths; uses eqratio / contri)",
+          "code": "# CANNOT state AB^2 + AC^2 = BC^2! Must reformulate multiplicatively as AB^2 = BH * BC:\na b c = r_triangle a b c; h = foot h a b c ? eqratio b a b c b h b a\n# Or prove Bride's Chair triangle congruence ΔABD ≅ ΔFBC:\na b c = r_triangle a b c; f g = square b a f g; d e = square b c d e ? contri a b d f b c",
+          "reveals": "Major architectural revelation: AlphaGeometry's RatioTable (log-lengths) and DistanceTable (collinear 1st-power lengths) CANNOT express a^2 + b^2 = c^2!",
+          "hides": "Any theorem requiring additive quadratic relations (Stewart, Apollonius median, disjoint radical axis) hits a hard wall in pure AlphaGeometry."
+        },
+        "newclid": {
+          "language": "text",
+          "source_ref": "Newclid/yuclid/README.md:78-84 & all_rules.py:1005 (R85)",
+          "code": "# C++ Yuclid additive squared-length AR table + Newclid lequation rule R85:\na b = segment a b; c = free c; d = on_tline d c a b ? lequation 1/1 a c * a c 1/1 b d * b d -1/1 a d * a d -1/1 b c * b c 0",
+          "reveals": "Shows exactly how Newclid/Yuclid broke past AlphaGeometry's ceiling by adding a dedicated additive squared-length Gaussian elimination table!",
+          "hides": "In Newclid's Python engine, lequation is not yet wired into SympyARDeductor (only active in C++ Yuclid)."
+        },
+        "jgex": {
+          "language": "text",
+          "source_ref": "Java-Geometry-Expert/src/main/java/gprover/Elim.java:134 & examples/4_PYTH/",
+          "code": "# In the Area Method, Pythagoras is a 0-step DEFINITIONAL identity:\n# P_ACB := AC^2 + CB^2 - AB^2, and PERPENDICULAR(C,A, C,B) <=> P_ACB = 0!\nSHOW: (AREA A B F G) + (AREA A C K H) = (AREA B C E D).  # 4-line TRATIO proof!",
+          "reveals": "By choosing P_ACB = AC^2 + CB^2 - AB^2 as a primitive coordinate-free invariant, Chou-Gao-Zhang make Pythagoras literally 0 = 0, AND ship 20 visual dissection proofs in 4_PYTH/!",
+          "hides": "Area.java GUI tab is disabled in the Java port."
+        },
+        "pga_cga": {
+          "language": "python",
+          "source_ref": "2D PGA Cl(2,0,1) & 2D CGA Cl(3,1) in kingdon",
+          "code": "# 2D PGA: squared norm of join line (A & B) IS Euclidean quadrance!\nla, lb, lc = B & C, C & A, A & B\nassert (la | lb).e == 0                                  # orthogonality\nassert sp.expand((lc | lc).e - (la | la).e - (lb | lb).e) == 0\n\n# 2D CGA: null inner product -2*(A | B) IS quadrance!\nassert ((C ^ A ^ ni) | (C ^ B ^ ni)).e == 0",
+          "reveals": "Both PGA line norms (l | l) and CGA null-point contractions -2*(A | B) natively compute Wildberger quadrances without a single square root.",
+          "hides": "Algebraic expansion rather than geometric square dissection."
+        },
+        "cindyjs": {
+          "language": "javascript",
+          "source_ref": "CindyJS/src/js/libcs/List.js:125 (fundDual)",
+          "code": "l_CA = cross(C, A); l_CB = cross(C, B);\nis_ortho = (l_CA * fundDual * l_CB == 0);  // harmonic conjugacy wrt I=(1,i,0), J=(1,-i,0)",
+          "reveals": "Interprets perpendicularity projectively as conjugate polarity with respect to the circular points I, J at infinity.",
+          "hides": "Numeric complex float evaluation."
+        },
+        "sympy_geometry": {
+          "language": "python",
+          "source_ref": "sympy/geometry/polygon.py:2195 (Triangle.is_right)",
+          "code": "assert Triangle(A, B, C).is_right()\nassert sp.simplify(A.distance(B)**2 - (A.distance(C)**2 + B.distance(C)**2)) == 0",
+          "reveals": "Direct readable verification, though A.distance(B)**2 first takes sqrt(...) and then squares it back!",
+          "hides": "Unnecessary sqrt-then-square roundtrip unless one manually computes dot products."
+        },
+        "byrne_1847": {
+          "language": "text",
+          "source_ref": "Byrne (1847) Book I, Prop. 47 / Rougeux c82.net/euclid/book1#prop47",
+          "code": "Given:        Right wedge [black ◣] = [∟]\nTo Prove:     [red □] + [blue □] = [yellow+black □]\nConstruction: Drop [yellow ╌╌╌] ∥ square side, splitting hypotenuse square\n              into [yellow ▭] + [black ▭]; draw shear diagonals [╌╌╌]\nProof:        2 △_left = [red □]  and  2 △_shear = [yellow ▭]          (I.41)\n              △_left   = △_shear                                       (I.4)\n            ∴ [red □]  = [yellow ▭],  likewise [blue □] = [black ▭]\n            ∴ [red □] + [blue □] = [yellow ▭] + [black ▭]              (Ax. 2)",
+          "reveals": "Byrne's most celebrated plate: turns Euclid's 40-letter Bride's Chair labyrinth into a self-evident chromatic conservation law [red □] + [blue □] = [yellow ▭] + [black ▭]!",
+          "hides": "Relies on visual outward-square orientation (the exact 6 topological lemmas LeanEuclid had to prove explicitly in Prop47.lean:25-60)."
+        },
+        "geometor_model": {
+          "language": "python",
+          "source_ref": "geometor.model.invariants & geometor.wildberger",
+          "code": "m.assert_perpendicular((c, a), (c, b), at=c, by=\"I.47\")  # line_spread == 1\nassert zero_test(quadrance(a, b) - (quadrance(a, c) + quadrance(b, c)))\n# Plus cut-and-paste Bride's Chair area verification:\nm.assert_area_equal(hyp_square, leg_poly_union, by=\"I.47\")",
+          "reveals": "Supports BOTH Wildberger's polynomial Pythagoras Law (s(CA, CB) = 1 <=> Q_c = Q_a + Q_b) AND Euclid's exact polygon-area Bride's Chair proof (assert_area_equal)!",
+          "hides": "None—this dual algebraic + dissection capability is a signature strength of GEOMETOR."
+        }
+      }
+    },
+    {
+      "id": "05-triangle-centers",
+      "number": 5,
+      "title": "Classical Triangle Centers X(1)-X(5) & Euler Line",
+      "geometor_signature": "triangle_centers(A, B, C) -> (X1, X2, X3, X4, X5, euler_line)",
+      "euclid_ref": "Euclid Book IV.4-5 + Euler (1765) + Feuerbach (1822) + Kimberling ETC",
+      "geometric_essence": "Construct Incenter X(1), Centroid X(2), Circumcenter X(3), Orthocenter X(4), and Nine-Point Center X(5), verifying concurrency of bisectors/medians/altitudes, the 9-point circle, and the Euler line relation X(4) - X(3) = 3(X(2) - X(3)).",
+      "figure_svg": "08-rosetta-centers-euler.svg",
+      "implementations": {
+        "leaneuclid": {
+          "language": "lean4",
+          "source_ref": "ABSENT across all 235 files in LeanEuclid!",
+          "code": "-- OMITTED: LeanEuclid stops at Euclid Book I Prop 48.\n-- Book IV (incenter IV.4, circumcenter IV.5) and Highschool centers\n-- (centroid, orthocenter, nine-point circle, Euler line) do not exist in LeanEuclid.",
+          "reveals": "Exposes the sharp scope boundary of Book-I-only formalizations.",
+          "hides": "All classical triangle geometry beyond congruence and parallelograms."
+        },
+        "geocoq": {
+          "language": "coq",
+          "source_ref": "GeoCoq/Main/Highschool/{incenter,centroid,circumcenter,orthocenter,euler_line}.v",
+          "code": "Theorem euler_line : forall A B C G O H,\n  ~ Col A B C -> is_gravity_center G A B C ->\n  is_circumcenter O A B C -> is_orthocenter H A B C -> Col O G H.\n(* X(1)..X(4) & Euler collinearity proven; X(5) Nine-Point Circle is ABSENT! *)",
+          "reveals": "Proves X(1)-X(4) concurrencies and Euler collinearity in pure synthetic Tarski geometry.",
+          "hides": "Omits the Nine-Point Circle X(5), omits the 2:1 Euler ratio in euler_line.v, and stops at 4 centers."
+        },
+        "mathlib4": {
+          "language": "lean4",
+          "source_ref": "Mathlib/Geometry/Euclidean/{Circumcenter,Incenter/Basic,MongePoint,NinePointCircle}.lean",
+          "code": "-- Generalizes orthocenter (mongePoint) and 3(n+1)-point sphere to n-simplices!\ntheorem ninePointCenter_eq_midpoint (t : Simplex ℝ P n) ... :\n    t.ninePointCenter = midpoint ℝ t.circumcenter t.mongePoint\ntheorem mongePoint_vsub_circumcenter (t : Triangle ℝ P) :\n    t.mongePoint -ᵥ t.circumcenter = (3 : ℝ) • (centroid ℝ _ t.points -ᵥ t.circumcenter)",
+          "reveals": "Breathtaking n-dimensional unification: proves the Monge point, Euler vector ratio 3:1, and 3(n+1)-point sphere simultaneously for triangles, tetrahedra, and n-simplices!",
+          "hides": "Noncomputable (uses Classical.choose on circumsphere); stops after ~6 centers (plus SouthPole/Brocard)."
+        },
+        "alphageometry": {
+          "language": "text",
+          "source_ref": "alphageometry/examples.txt:8 & defs.txt:73-108",
+          "code": "a b c = triangle a b c; h = orthocenter a b c; h1 = foot a b c; h2 = foot b c a; h3 = foot c a b; g1 g2 g3 g = centroid g1 g2 g3 g a b c; o = circle a b c ? coll h g o",
+          "reveals": "Proves Euler line and 9-point concyclicity automatically once feet/midpoints are present; also reveals two subtle ceilings: 3-median concurrency needs 1 aux mirror point, and incenter = excenter mod π!",
+          "hides": "Lacks Hypotenuse-Leg congruence rule in r00-r42 for bare 2-bisector incenter proof."
+        },
+        "newclid": {
+          "language": "text",
+          "source_ref": "Newclid/newclid/src/newclid/all_rules.py:553-623 (R43, R46, R47, R48)",
+          "code": "# Explicitly adds R43 (orthocenter), R46 (incenter), R47 (circumcenter), R48 (centroid)\n# plus R52/R53 Hypotenuse-Leg right congruence!\na b c = triangle a b c; x = angle_bisector x b a c, angle_bisector x a b c ? eqangle c b c x c x c a",
+          "reveals": "Closes AlphaGeometry's center-concurrency and Hypotenuse-Leg rule gaps cleanly.",
+          "hides": "Limited to classical Olympiad centers."
+        },
+        "jgex": {
+          "language": "text",
+          "source_ref": "Java-Geometry-Expert/.../exs-book/ch3:3-10 (ORTH) & ch3:117-124 (A_201)",
+          "code": "# Orthocenter via Jacobi Pythagoras identity (ZERO elimination steps!):\n# P_ACHB + P_BAHC + P_CBAH == 0; given AH ⊥ BC (P_BAHC=0) & BH ⊥ AC (P_CBAH=0) => P_ACHB = 0!",
+          "reveals": "Gives the shortest algebraic proof of orthocenter concurrency in all of mathematics: the 3-term Jacobi identity on P_ABCD!",
+          "hides": "Incenter requires square-root side lengths, outside rational Area-Method polynomials."
+        },
+        "pga_cga": {
+          "language": "python",
+          "source_ref": "2D PGA Cl(2,0,1) & 2D CGA Cl(3,1) in kingdon",
+          "code": "# 2D PGA division-free X3 & X4:\nla, lb = B & C, C & A\nX3 = (la | (B + C)) ^ (lb | (C + A))\nX4 = (la | A) ^ (lb | B)\n# 2D CGA Circumcenter = conformal reflection of infinity ni in circumcircle A ^ B ^ C!\nC_circ = A ^ B ^ C;  X3_cga = norm_pt(C_circ * ni * ~C_circ)",
+          "reveals": "In 2D CGA, the circumcenter of A, B, C is literally the reflection of the point at infinity ni in the circle blade A ^ B ^ C!",
+          "hides": "Barycentric centers beyond X(1)-X(5) must be lifted back onto the null cone via S - 0.5*(S|S)*ni."
+        },
+        "cindyjs": {
+          "language": "javascript",
+          "source_ref": "CindyJS CP^2 Homogeneous Algebra",
+          "code": "X1 = dist(B,C)*A + dist(C,A)*B + dist(A,B)*C;\nX2 = A + B + C;\nX3 = adjoint3(CircleBy3(A, B, C)) * linf;  // pole of line at infinity!",
+          "reveals": "In CP^2, the center of ANY circle or conic C is simply adj(C) * linf—the pole of the line at infinity!",
+          "hides": "Numerical float coordinates."
+        },
+        "sympy_geometry": {
+          "language": "python",
+          "source_ref": "sympy/geometry/polygon.py:2460-2765 (WARNING: excenters BUG at L2714!)",
+          "code": "tri = Triangle(A, B, C)\nX1, X2, X3, X4 = tri.incenter, tri.centroid, tri.circumcenter, tri.orthocenter\nX5 = tri.nine_point_circle.center\n# BUG in sympy 1.14.0 polygon.py:2714: tri.excenters omits parentheses:\n# simplify(-a*x[0] + b*x[1] + c*x[2]/(-a+b+c)) + wrong side-vertex index!",
+          "reveals": "Built-in X(1)-X(5) and eulerline—AND exposes a critical live double bug in Triangle.excenters (missing parentheses + wrong vertex index)!",
+          "hides": "Eager simplify() slows symbolic triangles; stops at classical textbook centers."
+        },
+        "byrne_1847": {
+          "language": "text",
+          "source_ref": "Byrne (1847) Book IV, Props. 4 & 5 (Incircle & Circumcircle only)",
+          "code": "# Book IV.4 (Incircle) & Book IV.5 (Circumcircle) rendered in 4 colours:\n# Bisect two wedges -> drop 3 dashed perpendicular radii [red ╌╌╌] = [blue ╌╌╌] = [yellow ╌╌╌]\n# OMITTED: Centroid X(2), Orthocenter X(4), Nine-Point Circle X(5), Euler Line!",
+          "reveals": "Elegantly visualizes IV.4 incircle and IV.5 circumcircle radii congruence.",
+          "hides": "Exposes Byrne's combinatorial palette wall: overlaid classical centers (X(1)..X(5) + 9-point circle + 3 medians + 3 altitudes) exceed 4-colour perceptual disambiguation."
+        },
+        "geometor_model": {
+          "language": "python",
+          "source_ref": "geometor/codes/figures.py:356-441 & geometor.etc (X(1)-X(53144))",
+          "code": "# Heronian 13-14-15 triangle A(0,0), B(14,0), C(5,12) -> ALL X(1)..X(5) exact Rationals:\n# X1=(6, 4), X2=(19/3, 4), X3=(7, 33/8), X4=(5, 15/4), X5=(6, 63/16)\nm.assert_equal((x3, a), (x3, b), (x3, c), by=\"IV.5\")\nm.assert_equal((x5, ma), (x5, mb), (x5, mc), (x5, hc), by=\"NinePoint\")\n# Paired with geometor.etc CenterSymbolicRegistry spanning Kimberling X(1)..X(53144)!",
+          "reveals": "Unites pure compass-and-straightedge construction of X(1)-X(5) (verified over Q on the 13-14-15 Heronian triangle!) with geometor.etc's encyclopedic symbolic registry of tens of thousands of centers.",
+          "hides": "None—GEOMETOR leads every surveyed system in symbolic triangle-center breadth."
+        }
+      }
+    },
+    {
+      "id": "06-circle-power-inversion-polar",
+      "number": 6,
+      "title": "Circle Power, Radical Axis, Inversion & Pole-Polar",
+      "geometor_signature": "circle_inversion_polar(omega, P) -> (power, P_inv, polar_line)",
+      "euclid_ref": "Euclid III.35-36 + Steiner (1826) + Poncelet / La Hire Pole-Polar Reciprocity",
+      "geometric_essence": "For circle Ω(O, R) and point P: Steiner power |OP|^2 - R^2, radical axis of two circles, inverse point P' on ray OP with |OP|·|OP'| = R^2, and polar line through P' perpendicular to OP satisfying La Hire's reciprocity (Q on polar(P) <=> P on polar(Q)) and harmonic range (R-, R+; P', P) = -1.",
+      "figure_svg": "06-pga-cga-inversion.svg",
+      "implementations": {
+        "leaneuclid": {
+          "language": "lean4",
+          "source_ref": "ABSENT across LeanEuclid",
+          "code": "-- OMITTED: Book III (chords/tangents III.35-36) and modern circle inversion /\n-- pole-polar geometry are outside LeanEuclid's Book-I scope.",
+          "reveals": "System E would require nonlinear metric product axioms |PA| * |PB| = |PC| * |PD| to reach Book III.35.",
+          "hides": "All quadratic circle invariants."
+        },
+        "geocoq": {
+          "language": "coq",
+          "source_ref": "ABSENT in GeoCoq (Annexes/circles.v has basic tangency only)",
+          "code": "(* OMITTED: GeoCoq contains basic chord/tangent definitions in Annexes/circles.v,\n   but lacks Steiner circle power, radical axis, circle inversion, and pole-polar! *)",
+          "reveals": "Reveals that even the largest synthetic Coq geometry library (4,671 lemmas) never formalized 19th-century inversive/coaxial geometry.",
+          "hides": "Entire inversive and pole-polar canon."
+        },
+        "mathlib4": {
+          "language": "lean4",
+          "source_ref": "Mathlib/Geometry/Euclidean/Sphere/{Power,PolePolar}.lean & Inversion/Basic.lean",
+          "code": "def power (s : Sphere P) (p : P) : ℝ := dist p s.center ^ 2 - s.radius ^ 2\ndef polar (s : Sphere P) (p : P) : AffineSubspace ℝ P :=\n  mk' (inversion s.center s.radius p) (ℝ ∙ (p -ᵥ s.center))ᗮ\ntheorem mem_polar_iff (s : Sphere P) {p q : P} ... : q ∈ s.polar p ↔ p ∈ s.polar q",
+          "reveals": "Masterclass in n-dimensional clarity: defines polar via sphere inversion and proves La Hire's symmetric reciprocity q ∈ s.polar p ↔ p ∈ s.polar q in lines using inner products! (Yet omits radicalAxis!)",
+          "hides": "Omits radicalAxis / coaxial pencils and specializes pole/polar to spheres rather than general conics."
+        },
+        "alphageometry": {
+          "language": "text",
+          "source_ref": "Tangent-foot construction (defs.txt:397, 61); disjoint radical axis unexpressible!",
+          "code": "# Tangent-foot construction of inverse p1 & La Hire pole-polar reciprocity:\no a p = triangle o a p; t s = tangent t s p o a; p1 = foot p1 t o p; q = on_tline q p1 o p; u v = tangent u v q o a; q1 = foot q1 u o q ? perp p q1 o q",
+          "reveals": "Clever synthetic encoding of external inversion via tangent touchpoint t + perpendicular foot p1 (so OP * OP1 = OT^2 = R^2 via SAS similarity r39!).",
+          "hides": "Fails for internal points P inside Ω unless rewritten via anti-parallels, and CANNOT state disjoint-circle radical axis PO1^2 - PO2^2 = R1^2 - R2^2!"
+        },
+        "newclid": {
+          "language": "text",
+          "source_ref": "Newclid R85 (Generalized Pythagoras) + Yuclid squared-length AR",
+          "code": "# Disjoint radical axis orthogonality PO1^2 - PO2^2 = HO1^2 - HO2^2 via R85:\no1 o2 = segment o1 o2; p = free p; h = on_tline h p o1 o2 ? lequation 1/1 p o1 * p o1 -1/1 h o1 * h o1 -1/1 p o2 * p o2 1/1 h o2 * h o2 0",
+          "reveals": "Generalized Pythagoras R85 provides the exact algebraic engine needed for radical axes of non-intersecting circles.",
+          "hides": "No first-class inversion or polar constructor."
+        },
+        "jgex": {
+          "language": "text",
+          "source_ref": "Java-Geometry-Expert/.../exs-book/ch3:49-58 (native INVERSION!)",
+          "code": "POINT O A P; INVERSION P1 P O A; ON_TLINE Q P1 O P; INVERSION Q1 Q O A;\nSHOW: PERPENDICULAR P Q1 O Q.\n# Eliminates P1 via OP1 = (P_OAO / P_OPO) OP -> 2-line coordinate-free La Hire proof!",
+          "reveals": "JGEX has first-class C_INVERSION and C_RADICAL constructors, and the Area Method eliminates inverse points rationally in 2 lines!",
+          "hides": "Limited to circles rather than general conics."
+        },
+        "pga_cga": {
+          "language": "python",
+          "source_ref": "2D CGA Cl(3,1) in kingdon — CGA's Crown Jewel!",
+          "code": "power_P = -2 * (kappa1 | P).e              # 1. Steiner power = inner product!\nlam_rad = kappa1 - kappa2                  # 2. Radical axis = vector subtraction!\nP_inv   = norm_pt(-kappa1 * P * kappa1)    # 3. Circle inversion = rational sandwich!\nlam_pol = kappa1 + (P ^ ni) | kappa1       # 4. Polar line = contraction!",
+          "reveals": "CGA's supreme triumph: Steiner power is an inner product, radical axis is subtraction kappa1 - kappa2 (even for disjoint circles!), and circle inversion is a sandwich product!",
+          "hides": "Requires 4D Cl(3,1) null-cone embedding."
+        },
+        "cindyjs": {
+          "language": "javascript",
+          "source_ref": "CindyJS/src/js/libgeo/GeoOps.js:1910-1931 & 2044-2049",
+          "code": "l_polar = C1 * p;                          // Polar of p wrt ANY conic C1!\np_pole  = adjoint3(C1) * l;                // Pole of l wrt ANY conic C1!\nO1      = adjoint3(C1) * linf;             // Center of circle C1\np_inv   = cross(cross(O1, p), C1 * p);     // Inverse = meet(diameter, polar)!",
+          "reveals": "Generalizes pole-polar to EVERY conic via 1 matrix-vector product l = C*p, and computes circle inversion rationally as meet(join(O1, p), C1*p)!",
+          "hides": "Complex float representation."
+        },
+        "sympy_geometry": {
+          "language": "python",
+          "source_ref": "ALL FOUR MISSING in sympy.geometry 1.14.0!",
+          "code": "# MISSING: Circle has NO .power(), .radical_axis(), .invert(), .polar(), or .pole()!\n# Must hand-roll via Cir1.equation(x, y) subtraction and manual vector scaling.",
+          "reveals": "Exposes SymPy's single biggest classical geometry gap—making geometor.model.inversion a high-impact contribution.",
+          "hides": "Zero native inversive or coaxial support."
+        },
+        "byrne_1847": {
+          "language": "text",
+          "source_ref": "Byrne (1847) Book III, Props. 35 & 36 (Chord/Tangent-Secant Power only)",
+          "code": "# Byrne Book III, Prop. 36 (Tangent-Secant Power of a Point):\nTo Prove:     ▭([whole secant ━━], [external ━━]) = □([red tangent ━━])\nProof:        Via Book II.6 gnomon-square identity + Byrne I.47 right radii!\n# OMITTED: Radical axis of disjoint circles, Möbius inversion, and Pole-Polar.",
+          "reveals": "Captures Euclid's area-theoretic ancestor of Steiner circle power (rectangle of secant segments equals square of tangent) using Book II visual algebra!",
+          "hides": "Stops before 19th-century signed circle power |OP|^2 - R^2, radical axes, circle inversion, and La Hire pole-polar reciprocity."
+        },
+        "geometor_model": {
+          "language": "python",
+          "source_ref": "geometor/codes/figures.py:274-310 (Thales tangent polar + harmonic check)",
+          "code": "thales = m.construct_circle(r0, o, guide=True)\nt1 = m.intersect(omega, thales, side_of=(o, p, +1), ID=\"T1\")\nt2 = m.intersect(omega, thales, side_of=(o, p, -1), ID=\"T2\")\npolar = m.construct_line(t1, t2, ID=\"[ T1 T2 ]\")\np_inv = m.intersect(l_op, polar, between=(o, r0), ID=\"P1\")\nassert zero_test(cross_ratio(r_neg, r0, p_inv, p) + 1)  # exact harmonic -1!",
+          "reveals": "Constructs exact tangent touchpoints T1, T2, polar [T1 T2], and inverse P1 by pure compass & straightedge while verifying |OP|·|OP1| = R^2 AND harmonic conjugacy (R-, R+; P1, P) = -1!",
+          "hides": "Should be promoted to first-class geometor.model.inversion helpers that also work for internal points P inside Ω."
+        }
+      }
+    },
+    {
+      "id": "07-projective-harmonic",
+      "number": 7,
+      "title": "Projective Collinearity, Cross-Ratio & Pappus Hexagon",
+      "geometor_signature": "pappus_hexagon(A1, B1, C1, A2, B2, C2) -> collinear(X, Y, Z)",
+      "euclid_ref": "Pappus Synagoge VII.139 + Desargues (1639) + Projective Harmonic Ranges",
+      "geometric_essence": "Given collinear triples (A1, B1, C1) and (A2, B2, C2), opposite-side intersections X = A1B2 ∩ A2B1, Y = A1C2 ∩ A2C1, Z = B1C2 ∩ B2C1 lie on the Pappus axis, and central projection preserves the 4-point cross-ratio CR(A, B; C, D). Separates projective-native engines from metric-bound ones!",
+      "figure_svg": "09-rosetta-pappus-harmonic.svg",
+      "implementations": {
+        "leaneuclid": {
+          "language": "lean4",
+          "source_ref": "ABSENT across LeanEuclid",
+          "code": "-- OMITTED: Projective incidence theorems (Pappus, Desargues) and cross-ratios\n-- do not exist in LeanEuclid.",
+          "reveals": "Pure Book-I diagrammatic axioms lack Menelaus/projective invariants.",
+          "hides": "All projective geometry."
+        },
+        "geocoq": {
+          "language": "coq",
+          "source_ref": "GeoCoq/Main/Tarski_dev/Ch13_5_Pappus_Pascal.v & Ch13_6_Desargues_Hessenberg.v",
+          "code": "(* Proves AFFINE parallel-case Pappus & Desargues (where opposite sides are\n   parallel Par A B' B A' /\\ Par B C' C B' -> Par A C' C A') to bootstrap\n   commutativity and associativity of Tarski's geometric field multiplication! *)",
+          "reveals": "Deep foundational role of Pappus (gives field commutativity ab = ba!) and Desargues (gives associativity!) in Hilbert-Tarski coordinatization.",
+          "hides": "Formalizes the affine parallel versions for segment multiplication rather than full RP^2 general-intersection Pappus or cross-ratio."
+        },
+        "mathlib4": {
+          "language": "lean4",
+          "source_ref": "SURPRISINGLY ABSENT in Mathlib/Geometry/ & LinearAlgebra/Projective/!",
+          "code": "-- Mathlib defines Projectivization K V (LinearAlgebra/Projective/Basic.lean),\n-- yet has ZERO Pappus, ZERO Desargues, ZERO Menelaus, and ZERO crossRatio!",
+          "reveals": "Major Opus discovery: despite world-class Euclidean sphere coverage, mathlib4 currently has a wide-open classical projective geometry gap!",
+          "hides": "Pappus, Desargues, Pascal, harmonic conjugates, and projective cross-ratio."
+        },
+        "alphageometry": {
+          "language": "text",
+          "source_ref": "Deductive Ceiling! Expressible in 1 line, UNPROVABLE by bare DD+AR!",
+          "code": "a b a1 b1 = quadrangle a b a1 b1; c = on_line c a b; c1 = on_line c1 a1 b1; p = intersection_ll p a b1 a1 b; q = intersection_ll q a c1 a1 c; s = intersection_ll s b c1 b1 c ? coll p q s\n# Bare DD+AR (r00-r42) FAILS to saturate: lacks Menelaus & signed-area ratios!",
+          "reveals": "Profound insight into DD+AR: Pappus and Desargues are 1-line statements, yet bare DD+AR cannot prove them without LM-invented auxiliary parallel lines because r00-r42 lack Menelaus!",
+          "hides": "General 4-factor cross-ratio also cannot be stated as a single 8-point eqratio unless specialized to harmonic range (-1)."
+        },
+        "newclid": {
+          "language": "text",
+          "source_ref": "Newclid/newclid/tests/test_individual_rules.py:141 & 167 (R44 & R70!)",
+          "code": "# Added explicitly as primitive axioms R44_PAPPUS_THEOREM & R70_PROJECTIVE_HARMONIC_CONJUGATE!\na b = segment a b; c = on_line c a b; p q = segment p q; r = on_line r p q; x = on_line x a q, on_line x p b; y = on_line y a r, on_line y p c; z = on_line z b r, on_line z c q ? coll x y z",
+          "reveals": "Confirms the DD+AR projective ceiling: Newclid had to hardcode Pappus (R44) and Quadrangle Harmonic Conjugate (R70) directly into all_rules.py as primitive Horn rules!",
+          "hides": "Adding projective theorems one-by-one as axioms does not provide general Grassmann-Plücker elimination."
+        },
+        "jgex": {
+          "language": "text",
+          "source_ref": "Java-Geometry-Expert/.../exs-book/ch2:40-50 (PAPPUS) & ch3:38-48 (A_353)",
+          "code": "EXAMPLE A_353  # Projective Invariance of Harmonic Cross-Ratio:\n  POINT O A B X Y; MRATIO C A B r; MRATIO D A B (-1 r);\n  INTERSECTION_LL P O A X Y; INTERSECTION_LL Q O B X Y;\n  INTERSECTION_LL R O C X Y; INTERSECTION_LL S O D X Y;\nSHOW: HARMONIC P Q S R.  # Automatic 0-aux-point Area-Method elimination!",
+          "reveals": "Whereas DD+AR stalls on Pappus and cross-ratio, Chou-Gao-Zhang's Area Method eliminates intersection points linearly via S_ABC ratios and proves both with ZERO auxiliary points!",
+          "hides": "Requires explicit NDG checks when opposite sides are parallel."
+        },
+        "pga_cga": {
+          "language": "python",
+          "source_ref": "2D PGA Cl(2,0,1) in kingdon — Division-Free Grassmann-Cayley!",
+          "code": "X = (A1 & B2) ^ (A2 & B1)\nY = (A1 & C2) ^ (A2 & C1)\nZ = (B1 & C2) ^ (B2 & C1)\nassert sp.expand((X & Y & Z).e) == 0   # holds even when opposite sides are parallel!\ncr = ((A & C) | (B & D)).e / ((A & D) | (B & C)).e",
+          "reveals": "Zero divisions, zero case splits: even if A1B2 || A2B1, X is a valid ideal Direction bivector and (X & Y & Z).e == 0 still holds identically!",
+          "hides": "Pure polynomial algebra hides the synthetic Menelaus ratio chain."
+        },
+        "cindyjs": {
+          "language": "javascript",
+          "source_ref": "CindyJS/src/js/libcs/Operators.js:2474-2497 & Prover.js",
+          "code": "X = cross(cross(A1, B2), cross(A2, B1));\nY = cross(cross(A1, C2), cross(A2, C1));\nZ = cross(cross(B1, C2), cross(B2, C1));\ndet(X, Y, Z) == 0;                     // + native crossratio(A, B, C, D)",
+          "reveals": "Identical 3D cross-product polynomial identity over CP^2, certified over C^3 by Prover.js.",
+          "hides": "Probabilistic float prover rather than symbolic polynomial expansion."
+        },
+        "sympy_geometry": {
+          "language": "python",
+          "source_ref": "sympy/geometry/point.py:331-335 (Point.affine_rank BUG!)",
+          "code": "# 1. NO cross_ratio in sympy.geometry!\n# 2. Crashes with IndexError if A1B2 || A2B1 (Line.intersection returns []!)\n# 3. Point.is_collinear calls affine_rank with abs(x.n(2)) < 1e-12,\n#    falsely reporting Point(0,0), Point(1,0), Point(1, Rational(1, 10**13)) collinear!",
+          "reveals": "Exposes both affine fragility (parallel lines crash Pappus) and the live 2-digit float zero-test bug in Point.affine_rank!",
+          "hides": "Entire projective plane RP^2 / CP^2."
+        },
+        "byrne_1847": {
+          "language": "text",
+          "source_ref": "ABSENT (Byrne stops at Book VI; Books V-VI use :: ribbon proportions)",
+          "code": "# OMITTED: Projective Pappus, Desargues, and cross-ratios do not appear in Books I-VI.\n# Structural Language Insight: Pappus (9 points, 9 lines, 0 regions/angles) is the\n# worst-case adversarial figure for a point-free chromatic region/segment DSL!",
+          "reveals": "Sharp formal-language boundary: pure 0D point-incidence configurations (Pappus, Desargues) require symbolic point identifiers or homogeneous blades, not coloured regions.",
+          "hides": "All projective incidence and cross-ratio geometry."
+        },
+        "geometor_model": {
+          "language": "python",
+          "source_ref": "geometor/codes/figures.py:444-488 & geometor.pappus",
+          "code": "x = m.intersect(m.construct_line(a1, b2), m.construct_line(a2, b1), ID=\"X\")\ny = m.intersect(m.construct_line(a1, c2), m.construct_line(a2, c1), ID=\"Y\")\nz = m.intersect(m.construct_line(b1, c2), m.construct_line(b2, c1), ID=\"Z\")\nassert zero_test(signed_area2(x, y, z))              # Pappus collinearity\nassert is_harmonic(o, b1, a1, c1)                    # CR == -1\n# Plus homogeneous RP^2 meet/join & Pascal's Mystic Hexagram in geometor.pappus!",
+          "reveals": "Combines exact affine DAG construction + cross_ratio / is_harmonic in geometor.model with full homogeneous RP^2 meet/join (handling ideal points at infinity) and Q(phi) projectivity in geometor.pappus!",
+          "hides": "Minor convention note: standardize cross_ratio argument ordering across geometor.model.invariants and geometor.pappus.projective."
+        }
+      }
+    }
+  ]
+}

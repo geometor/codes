@@ -1,0 +1,340 @@
+{
+  "systems": [
+    {
+      "id": "leaneuclid",
+      "name": "LeanEuclid & Formal System E",
+      "paradigm": "Diagrammatic Formal System (System E + SMT)",
+      "host_language": "Lean 4 + Z3 / CVC5 SMT Solvers",
+      "license": "MIT",
+      "local_ref_relpath": "_refs/LeanEuclid",
+      "upstream_url": "https://github.com/loganrjmurphy/LeanEuclid",
+      "primitives": [
+        "Point",
+        "Line",
+        "Circle",
+        "Segment",
+        "Angle",
+        "Triangle"
+      ],
+      "underlying_algebra_or_logic": "Avigad-Dean-Mumma Formal System E embedded in Lean 4: 6-sorted constructive signature separating 30 construction axioms, 36 diagrammatic/topological axioms, and 35 linear real metric/transfer axioms.",
+      "metric_treatment": "Real-valued linear magnitudes mapped to ℝ: segment length |(a─b)|, angle measure ∠(a:b:c), triangle area △(a:b:c), and constant RightAngle (∟); avoids non-linear trigonometry.",
+      "diorismos_and_degeneracy": "Explicit topological preconditions on every construction rule (Point.sameSide, Point.opposingSides, between, insideCircle, outsideCircle) discharged automatically by external SMT solvers.",
+      "verification_engine": "Hybrid Lean 4 proof script + external Z3/CVC5 translation; note forensic finding in SystemE/Meta/Smt/Solver.lean:44-55 where SMT_VERIF (P : Prop) : P acts as an unverified trust-oracle axiom.",
+      "signature_opus_scale": "235 .lean files, 206 theorems, 108 axioms: complete Euclid Book I (Prop01-Prop48 + 24 primed variants + 6 missed-by-Euclid lemmas in Prop47) plus 100 circle-free UniGeo theorems.",
+      "strengths": [
+        "Faithfully formalizes diagrammatic topological reasoning (Pasch, circle-circle and line-circle intersection existence) that Euclid used implicitly.",
+        "Separates explicit construction steps (euclid_apply) from tedious topological case splits (euclid_finish).",
+        "Its 7 Intersections.lean rules correspond 1-to-1 with geometor.model.intersect selectors (side_of, between, beyond)."
+      ],
+      "blind_spots": [
+        "Closes proof obligations via axiom SMT_VERIF (P : Prop) : P without reconstructing proof terms inside the Lean 4 kernel.",
+        "Stops after Euclid Book I (omits Books II-XIII, proportion algebra, circle power/inversion, all triangle centers X(1)-X(5), and projective geometry).",
+        "All 100 UniGeo benchmarks contain zero Circle occurrences."
+      ],
+      "geometor_takeaway": "Persist selector ASTs on geometor.model.Step so exact compass-and-straightedge DAGs can emit 1-to-1 System E construction transcripts while verifying algebraic invariants inside SymPy without an SMT trust oracle."
+    },
+    {
+      "id": "geocoq",
+      "name": "GeoCoq (Tarski / Hilbert / Euclid)",
+      "paradigm": "First-Order Synthetic Axiomatics",
+      "host_language": "Coq / Rocq Prover (Gallina + Ltac)",
+      "license": "LGPL-3.0-only",
+      "local_ref_relpath": "_refs/GeoCoq",
+      "upstream_url": "https://github.com/GeoCoq/GeoCoq",
+      "primitives": [
+        "Tpoint (single point sort)",
+        "Bet A B C (non-strict betweenness)",
+        "Cong A B C D (4-point segment equidistance)"
+      ],
+      "underlying_algebra_or_logic": "Schwabhäuser-Szmielew-Tarski first-order axiomatic hierarchy parameterized via 42 Coq Typeclasses (neutral -> Pasch -> continuity -> 34 parallel postulates -> 2D/3D/nD).",
+      "metric_treatment": "Synthetic congruence equivalence classes plus Hilbert-Tarski geometric segment arithmetic (Sum, Prod, Opp, Inv on a fixed line with unit E in Ch14-Ch16) building an internal ordered Euclidean field.",
+      "diorismos_and_degeneracy": "Non-strict predicates (Bet A A B holds trivially) paired with explicit A <> B and ~ Col A B C hypotheses in every theorem statement.",
+      "verification_engine": "100% kernel-checked Coq proof terms with certified boolean reflection tactics (ColR, CongR, CoincR) requiring zero external solvers.",
+      "signature_opus_scale": "481 .v files, 4,671 Lemmas, 42 Classes: Book I (48 props), Ch02-Ch16 Tarski development, bidirectional Tarski <-> Hilbert <-> Euclid equivalences, 34 parallel postulates, Highschool X(1)-X(4) + Euler line, and affine Pappus/Desargues.",
+      "strengths": [
+        "Gold-standard foundational rigor: proves exact metatheoretic bi-interpretability across Tarski, Hilbert, and Euclid axiom systems.",
+        "Tracks minimal axiomatic footprint of every theorem (neutral vs. Euclidean vs. continuity, 2D vs. arbitrary dimension).",
+        "Kernel-verified reflective tactics (ColR, CongR) automate incidence and congruence transitivity soundly."
+      ],
+      "blind_spots": [
+        "Point-only ontology requires existential witnesses for every line or circle construction and makes circle geometry verbose.",
+        "Omits Nine-Point Circle X(5), Steiner circle power, radical axis, circle inversion, pole-polar reciprocity, conics, and projective cross-ratio.",
+        "Interactive Ltac scripts require hundreds of lines of manual degeneracy management."
+      ],
+      "geometor_takeaway": "Adopt GeoCoq's dependency discipline—tagging whether a theorem requires neutrality, parallel postulate, or circle continuity—while keeping lines, circles, and conics as first-class algebraic citizens."
+    },
+    {
+      "id": "mathlib4",
+      "name": "Lean 4 Mathlib (Euclidean & Affine)",
+      "paradigm": "Dependent Type-Theoretic Affine Torsors",
+      "host_language": "Lean 4 (Calculus of Inductive Constructions)",
+      "license": "Apache-2.0",
+      "local_ref_relpath": "_refs/mathlib4",
+      "upstream_url": "https://github.com/leanprover-community/mathlib4",
+      "primitives": [
+        "P : Type* (Point space)",
+        "V : Type* (Real inner-product vector space)",
+        "NormedAddTorsor V P (-ᵥ, +ᵥ)"
+      ],
+      "underlying_algebra_or_logic": "Origin-free affine torsor P over a real InnerProductSpace ℝ V, bridged to metric spaces via dist p₁ p₂ = ‖p₁ -ᵥ p₂‖ and oriented 2D plane angles via Module.Oriented ℝ V (Fin 2).",
+      "metric_treatment": "Noncomputable classical ℝ with dist, inner product ⟪x, y⟫, unoriented Real.arccos angle ∠ in [0, π], and directed angle ∡ in Real.Angle = ℝ/(2πℤ) where (2 : ℤ) • ∡ encodes line angles mod π.",
+      "diorismos_and_degeneracy": "Mix of bundled Affine.Simplex ℝ P n (carrying AffineIndependent proof) and totalized junk values on degenerate inputs (inversion c R c = c, ∠ p p q = π/2).",
+      "verification_engine": "100% Lean 4 kernel-verified dependent type checking powered by simp, ring, linarith, positivity, and linear_combination.",
+      "signature_opus_scale": "46 files (16,844 LOC) in Mathlib/Geometry/Euclidean/ + 24 files (11,708 LOC) in LinearAlgebra/AffineSpace/: n-dimensional Monge point, 3(n+1)-point sphere, Ceva, Stewart, Ptolemy, Sphere.power, inversion, and pole-polar.",
+      "strengths": [
+        "Unmatched dimension-polymorphic generality: circumsphere, Monge point (orthocenter), nine-point sphere, power of a point, inversion, and pole-polar work in arbitrary dimension n.",
+        "Directed twice-angle calculus (2 : ℤ) • ∡ x y z cleanly proves cyclic quadrilateral criteria without case splits.",
+        "Compositional snake_case naming grammar (conclusion_of_hypothesis) scales cleanly to tens of thousands of lemmas."
+      ],
+      "blind_spots": [
+        "Pervasively noncomputable (Classical.choose for circumsphere, Real.arccos for ∠); cannot execute constructions or extract exact radical coordinates.",
+        "No constructive Euclid I.1 existence theorem and awkward cyclic/diagrammatic order (20-line TODO in Sphere/Ptolemy.lean:22-41).",
+        "Surprisingly omits radicalAxis, projective crossRatio, Menelaus, Pappus, Desargues, and Pascal."
+      ],
+      "geometor_takeaway": "Adopt mathlib4's conclusion_of_hypothesis theorem-naming grammar and Sphere.power/pole/polar API clarity while preserving 100% computable algebraic number fields and explicit construction lineage."
+    },
+    {
+      "id": "alphageometry",
+      "name": "AlphaGeometry (DD + AR)",
+      "paradigm": "Neuro-Symbolic Clause Deduction (DD + AR)",
+      "host_language": "Python 3 + SciPy HiGHS LP + Transformer LM",
+      "license": "Apache-2.0",
+      "local_ref_relpath": "_refs/alphageometry",
+      "upstream_url": "https://github.com/google-deepmind/alphageometry",
+      "primitives": [
+        "Point (clauses in defs.txt)",
+        "Relational hypergraph nodes (Line, Circle, Direction, Length, Angle, Ratio)"
+      ],
+      "underlying_algebra_or_logic": "Forward-chaining Geometry Deductive Database (43 Horn rules in rules.txt) coupled to sparse Fraction Gaussian elimination (AR) over angles mod π, log-lengths, and 1D collinear abscissae.",
+      "metric_treatment": "Linear angle differences modulo π (AngleTable), multiplicative length ratios via log-differences (RatioTable), and 1D collinear segment sums (DistanceTable); zero squared-length support.",
+      "diorismos_and_degeneracy": "68 5-line construction stanzas in defs.txt with non-degeneracy guards (ncoll, npara, sameside, sameclock, obtuse_angle) checked purely on a random float64 sketch.",
+      "verification_engine": "Symbolic DD+AR saturation graph with minimal premise extraction via scipy.optimize.linprog L1 minimization, guided by a language model proposing auxiliary points.",
+      "signature_opus_scale": "Solves 25/30 IMO geometry problems (imo_ag_30.txt) and 228/231 JGEX benchmarks (jgex_ag_231.txt) using 68 construction definitions and 43 Horn deduction rules.",
+      "strengths": [
+        "Compact, compositional 68-clause construction vocabulary capable of expressing virtually all Olympiad Euclidean configurations.",
+        "Directed full-angle predicate eqangle mod π eliminates acute/obtuse case splits across cyclic quadrilaterals.",
+        "Clean separation between deterministic symbolic closure (DD+AR) and heuristic auxiliary-point synthesis (LM)."
+      ],
+      "blind_spots": [
+        "Critical log-ratio bug in ar.py:425-431, 570-574: RatioTable.add_const_ratio adds m*l1 - n*l2 = 0 on log-lengths (asserting |s1|^m = |s2|^n instead of |s1|/|s2| = m/n).",
+        "Cannot state or prove additive squared-length laws (a^2 + b^2 = c^2 or disjoint radical axis), nor prove Pappus/Desargues without auxiliary parallel points.",
+        "Relies on float64 sketches for non-degeneracy and orientation guards, and silently drops unprefixed post-';' clauses in 12 defs.txt stanzas."
+      ],
+      "geometor_takeaway": "Use defs.txt's 68 clauses as a functional completeness checklist for geometor.elements 2.0, and pair GEOMETOR's exact algebraic kernel with a sound symbolic DD+AR deductive closure engine for seer and divine."
+    },
+    {
+      "id": "newclid",
+      "name": "Newclid & Yuclid",
+      "paradigm": "Modular Neuro-Symbolic DD + SymPy/C++ AR",
+      "host_language": "Python 3 (SymEngine/SymPy) + C++20 (Yuclid)",
+      "license": "Apache-2.0",
+      "local_ref_relpath": "_refs/Newclid",
+      "upstream_url": "https://github.com/LMCRC/Newclid",
+      "primitives": [
+        "Point",
+        "30 typed PredicateType classes",
+        "88 JGEXConstructionName clauses + GeoGebra .ggb commands"
+      ],
+      "underlying_algebra_or_logic": "Plugin deductor architecture combining 90+ Horn rules (r00-r91) with symbolic log-prime Ratio/Angle AR in Python and additive length + squared-length AR tables in C++ Yuclid.",
+      "metric_treatment": "Exact sp.log(m) - sp.log(n) constant ratios (fixing AlphaGeometry's rconst bug), plus lconst, l2const, r2const, lequation, and Yuclid's additive |AB|^2 + |BC|^2 = |AC|^2 AR table.",
+      "diorismos_and_degeneracy": "Explicit orientation-split similarity/congruence rules (simtri/simtrir, contri/contrir via sameclock), while retaining float close_enough candidate pre-filtering (ATOM = 1e-7).",
+      "verification_engine": "Deductor saturation with SymEngine/Boost.Rational linear reduction, C++ Yuclid (<0.5s saturation on IMO-30), and agentic heuristic/LLM auxiliary-clause injection (' | ').",
+      "signature_opus_scale": "88 JGEX constructions, 92 rules (adding R43-R48 center concurrencies, R44 Pappus, R45 Simson, R52-R53 Hypotenuse-Leg, R70 Harmonic Conjugate, R85-R90 metric laws), and native .ggb ingestion.",
+      "strengths": [
+        "Fixes AlphaGeometry's rconst log-ratio hallucination bug with regression test test_ar_ratio_hallucination.",
+        "Extends rulebase with explicit center theorems, Pappus, harmonic conjugates, Hypotenuse-Leg congruence, and C++ Yuclid squared-length AR.",
+        "Ingests interactive GeoGebra (.ggb) archives directly into formal deductive states."
+      ],
+      "blind_spots": [
+        "Python SympyARDeductor does not yet route lequation squared-length rules (R85-R90), and R57_PYTHAGORAS_THEOREM is commented out in DEFAULT_RULES.",
+        "Still relies on floating-point close_enough pre-filtering, float numerical guards, and float MILP traceback.",
+        "No conic sections, 3D solids, or exact radical coordinate synthesis."
+      ],
+      "geometor_takeaway": "Newclid's ' | ' auxiliary separator, explicit orientation-split rules, and Yuclid's squared-length AR validate building an exact SymPy quadrance/spread/area AR deductor directly over geometor.model."
+    },
+    {
+      "id": "jgex",
+      "name": "Java Geometry Expert (JGEX / Area Method)",
+      "paradigm": "Coordinate-Free Invariant Elimination & Multi-Engine ATP",
+      "host_language": "Java (GDD + Full-Angle + Area + Wu + Gröbner)",
+      "license": "GPL-3.0-only",
+      "local_ref_relpath": "_refs/Java-Geometry-Expert",
+      "upstream_url": "https://github.com/yezheng1981/Java-Geometry-Expert",
+      "primitives": [
+        "Constructive Point sequence P_1..P_m",
+        "r(A,B,C,D) directed parallel ratio",
+        "S_ABC signed area",
+        "P_ABC = AB^2 + BC^2 - AC^2 Pythagoras difference"
+      ],
+      "underlying_algebra_or_logic": "Five-engine synthesis: Geometry Deductive Database (GDD), Full-Angle backward elimination, Chou-Gao-Zhang Coordinate-Free Area Method, Wu's Characteristic Set triangulation, and Buchberger Gröbner Bases.",
+      "metric_treatment": "Coordinate-free polynomials in signed parallel ratios r, signed triangle/quadrilateral areas S_ABC / S_ABCD, and Pythagoras differences P_ABC / P_ABCD (= 2 AC · BD).",
+      "diorismos_and_degeneracy": "Automatic extraction of algebraic non-degeneracy denominators (NDGs: S_UPVQ != 0, P_UVU != 0) during pseudo-remainder elimination or Rabinowitsch saturation u_k * g_k - 1 = 0.",
+      "verification_engine": "Visual forward saturation (GDD), full-angle elimination (Full.java), backward point elimination (Elim.java), and Ritt-Wu / Gröbner polynomial reduction over Q.",
+      "signature_opus_scale": "Historical origin of the 43 GDD rules and clause DSL; ships hundreds of classic theorems across exs-book/ch2-ch3, 4_PYTH (20 Pythagorean proofs), Menelaus, Ceva, Pappus, Pascal, Simson, Miquel, and Inversion.",
+      "strengths": [
+        "The Area Method eliminates constructed points in reverse order via short, human-readable coordinate-free identities in {r, S_ABC, P_ABC} with zero auxiliary constructions.",
+        "Proves Pythagoras (P_BAC = 0 by definition!), Orthocenter (0 steps via Jacobi identity), Ceva, Menelaus, Pappus, and La Hire inversion effortlessly.",
+        "Automatically discovers exact algebraic non-degeneracy conditions (NDGs) required for theorem validity."
+      ],
+      "blind_spots": [
+        "Forensic audit reveals Area.java (213 lines) is an unfinished C-to-Java port with the GUI 'A' tab disabled in PanelProve.java:112-116 ('TODO: Implement the area method').",
+        "Wu and Gröbner engines sacrifice geometric intuition for opaque coordinate polynomials with hundreds of monomials.",
+        "Monolithic Java Swing architecture tightly couples theorem proving to legacy mutable arrays."
+      ],
+      "geometor_takeaway": "Implement Chou-Gao-Zhang's complete coordinate-free Area Method (signed_area2 + pythagoras_diff point elimination) in clean Python/SymPy inside geometor, finishing what JGEX left disabled."
+    },
+    {
+      "id": "pga_cga",
+      "name": "Projective & Conformal Geometric Algebra (kingdon / galgebra)",
+      "paradigm": "Covariant Clifford Multivector Calculi (2D PGA & 2D CGA)",
+      "host_language": "Python 3 + SymPy Symbolic Codegen",
+      "license": "MIT / BSD-3-Clause",
+      "local_ref_relpath": "_refs/kingdon",
+      "upstream_url": "https://github.com/tBuLi/kingdon",
+      "primitives": [
+        "2D PGA Cl(2,0,1): grade-1 Line, grade-2 Point/Direction, grade-3 Pseudoscalar",
+        "2D CGA Cl(3,1): grade-1 Null Point / Dual Circle, grade-2 Point Pair, grade-3 Circle / Flat Line"
+      ],
+      "underlying_algebra_or_logic": "Graded Clifford algebras over quadratic spaces where geometric entities are blades (outer/regressive products) and all isometries/inversions are sandwich products V >> X = ±V X ~V.",
+      "metric_treatment": "In PGA, line norm^2 (l | l) is quadrance and inner product (l1 | l2) encodes cosine/orthogonality; in CGA, null inner product -2(P1 | P2) is exact Euclidean quadrance and -2(kappa | P) is Steiner circle power!",
+      "diorismos_and_degeneracy": "Projectively total: parallel lines meet in valid ideal Direction bivectors (e12=0) in PGA, and circles/lines unify seamlessly in CGA (lines are circles through infinity ni); point-pair square T^2 > 0, = 0, < 0 classifies real/tangent/imaginary intersections.",
+      "verification_engine": "Exact symbolic blade expansion via kingdon's RationalPolynomial + poly_cse compiler over SymPy expressions.",
+      "signature_opus_scale": "Dimension-agnostic algebraic DSL covering incidence, orthogonal projections, reflections, rotors, motors, circle through 3 points (P1^P2^P3), radical axis (kappa1 - kappa2), and circle inversion (C >> P).",
+      "strengths": [
+        "Eliminates case splits between finite and ideal points (PGA) and between lines and circles (CGA).",
+        "In 2D CGA, circle power is -2(kappa|P), radical axis is kappa1 - kappa2, circumcenter is C * ni * ~C, and circle inversion is the sandwich product C >> P!",
+        "kingdon compiles multivector products with CSE and executes seamlessly on exact sympy.Expr scalars."
+      ],
+      "blind_spots": [
+        "galgebra crashes with AttributeError on A.dual() whenever I^2 = 0 (all degenerate PGAs!), lacks regressive '&', and overloads '>>' as commutator instead of sandwich product.",
+        "General non-circular conics (ellipses, hyperbolas, parabolas) require 6D Conic GA Cl(5,3) rather than 2D PGA or 2D CGA.",
+        "Pure blade algebra has no native notion of Euclidean construction step history or compass-and-straightedge lineage."
+      ],
+      "geometor_takeaway": "Expose lightweight 2D PGA and 2D CGA multivector lenses over geometor.model elements (with custom simp_func=sp.cancel) for division-free projective chains and 1-line conformal circle algebra."
+    },
+    {
+      "id": "cindyjs",
+      "name": "CindyJS (Complex Projective CP^2 & Cayley-Klein)",
+      "paradigm": "Complex Projective Homogeneous & Riemann-Surface Tracing",
+      "host_language": "JavaScript / CindyScript (WebGL + Complex Linear Algebra)",
+      "license": "Apache-2.0",
+      "local_ref_relpath": "_refs/CindyJS",
+      "upstream_url": "https://github.com/CindyJS/CindyJS",
+      "primitives": [
+        "Homogeneous Point [x, y, z] in CP^2",
+        "Homogeneous Line [a, b, c] in CP^2",
+        "3x3 Complex Symmetric Conic Matrix C",
+        "Circular Points at Infinity I=(1,i,0), J=(1,-i,0)"
+      ],
+      "underlying_algebra_or_logic": "Complex projective plane CP^2 equipped with Cayley-Klein metric polarity relative to the degenerate fundamental conic pair (linf = [0,0,1], I, J).",
+      "metric_treatment": "Euclidean circles are conics through I and J; orthogonality is polarity l1^T diag(1,1,0) l2 = 0; Euclidean angle is Laguerre's cross-ratio (i/2) log CR(A_inf, B_inf; I, J).",
+      "diorismos_and_degeneracy": "Zero missing intersections over C: real-disjoint circles intersect at complex-conjugate points, and Tracing.js detours along a complex upper-half-plane semicircle to prevent discontinuous branch jumping!",
+      "verification_engine": "Randomized complex Schwartz-Zippel polynomial identity testing across 3 complex perturbations (Prover.js) + Ferguson-Bailey PSLQ minimal-polynomial recovery (PSLQ.js / guess(x)).",
+      "signature_opus_scale": "Complete dynamic projective + Euclidean + hyperbolic + elliptic + conic geometry engine (5-point Plücker conics, dual adjugate conics, pole-polar, rank-1 skew conic splitting, anti-Möbius inversion).",
+      "strengths": [
+        "Join of two points and meet of two lines are the exact same 3D cross product List.cross(u, v); polar of p is C*p and pole of l is adj(C)*l.",
+        "Plücker 5-point conic pencil (ConicBy5) and Richter-Gebert skew-matrix conic intersection work uniformly for circles, ellipses, parabolas, and hyperbolas.",
+        "Riemann-surface homotopy continuation solves dynamic geometry's 'jumping elements' problem, and PSLQ recovers quadratic surds from floats."
+      ],
+      "blind_spots": [
+        "Coordinates are IEEE-754 complex floats ({real, imag}), not exact symbolic algebraic expressions.",
+        "Randomized Prover.js gives probabilistic (Schwartz-Zippel) certainty rather than deductive proof certificates.",
+        "PSLQ guess(x) in PSLQ.js is capped at dimension n=3 (rationals, rational multiples of pi, and degree-2 quadratic surds)."
+      ],
+      "geometor_takeaway": "Adopt CindyJS's 3x3 symmetric conic matrix + adjugate dual conic representation in exact SymPy inside geometor.model, and use arbitrary-precision mpmath PSLQ in geometor.divine to scout degree-d algebraic invariants."
+    },
+    {
+      "id": "sympy_geometry",
+      "name": "SymPy Geometry (sympy.geometry 1.14.0)",
+      "paradigm": "Object-Oriented Cartesian Symbolic CAS",
+      "host_language": "Python 3 (SymPy Core CAS)",
+      "license": "BSD-3-Clause",
+      "local_ref_relpath": ".venv/lib/python3.13/site-packages/sympy/geometry",
+      "upstream_url": "https://github.com/sympy/sympy",
+      "primitives": [
+        "Point2D / Point3D",
+        "Line / Ray / Segment (2D & 3D)",
+        "Circle / Ellipse / Parabola",
+        "Polygon / RegularPolygon / Triangle",
+        "Plane / Curve"
+      ],
+      "underlying_algebra_or_logic": "Direct affine Cartesian equations over SymPy Basic expressions, delegating non-linear intersections to generic CAS polynomial solvers.",
+      "metric_treatment": "Symbolic Euclidean distance sqrt(dx^2 + dy^2), acos dot-product angles, signed/unsigned polygon area, and explicit Triangle center properties.",
+      "diorismos_and_degeneracy": "Auto-collapses degenerate entities in __new__ (Segment(p, p) -> Point(p); Circle of 3 collinear points -> Line); returns empty list [] when parallel lines or disjoint circles miss over R.",
+      "verification_engine": "Symbolic simplification via pervasive eager simplify() (37 call sites) and generic sympy.solvers.solve().",
+      "signature_opus_scale": "11 geometry modules (~12,071 LOC) + combinatorics/polyhedron.py (1,020 LOC): 2D/3D points/lines/planes, axis-aligned ellipses, parabolas, polygons, and classical triangle centers.",
+      "strengths": [
+        "Clean, familiar Pythonic entity hierarchy integrated directly with SymPy's symbolic expression tree.",
+        "Built-in exact properties for Triangle (incenter, centroid, circumcenter, orthocenter, nine_point_circle, eulerline, medial) and Polygon moments.",
+        "Serves as the lightweight entity substrate extended by geometor.model."
+      ],
+      "blind_spots": [
+        "Live double bug in Triangle.excenters (polygon.py:2714-2726): missing numerator parentheses (-a*x0 + b*x1 + c*x2/(-a+b+c)) plus wrong side-vertex pairing!",
+        "Live precision bug in Point.affine_rank (point.py:331-335): abs(x.n(2)) < 1e-12 causes exact Rational non-collinear points to falsely report collinear!",
+        "Calls generic solve() inside Circle/Ellipse.intersection (stalling on radical towers), raises NotImplementedError on rotated Ellipse, and lacks Hyperbola, general Conic, circle power/radical_axis/inversion/pole/polar, and projective cross_ratio."
+      ],
+      "geometor_takeaway": "Confirms why geometor.model must bypass Circle.intersection/solve() with closed-form radical-axis + ANP field arithmetic, while giving GEOMETOR concrete upstream SymPy bug-fix PRs to contribute."
+    },
+    {
+      "id": "byrne_1847",
+      "name": "Oliver Byrne's Coloured Euclid (1847 / Rougeux)",
+      "paradigm": "Pointer-Free Visual Pseudocode & Chromatic Value-Tokens",
+      "host_language": "Typographic Chromatic DSL (1847 Woodblock / 2018 Interactive SVG+CSS)",
+      "license": "Public Domain / CC-BY-NC-SA-4.0 (Rougeux)",
+      "local_ref_relpath": "byrne",
+      "upstream_url": "https://www.c82.net/euclid/",
+      "primitives": [
+        "Inline Coloured Segment Glyph (red / blue / yellow / black; solid / dashed / dotted)",
+        "Inline Coloured Angle Wedge Glyph",
+        "Inline Coloured Polygon / Square / Circle Region Glyph",
+        "Oughtred Algebraic-Logical Operators (=, +, -, ::, ∴)"
+      ],
+      "underlying_algebra_or_logic": "Euclid Books I-VI rewritten as a pointer-free visual pseudocode: eliminates indirect vertex-letter dereferencing (AB, ∠ABC, △ABC) in favor of direct inline chromatic value-tokens inside structured Given / To Prove / Construction / Proof equation blocks.",
+      "metric_treatment": "Direct visual-algebraic magnitude equations (=, +, -, >, <) over inline segment icons, angle-wedge icons, polygonal area icons (Book II geometric algebra), and four-term Eudoxian proportion ribbons (A : B :: C : D in Books V-VI).",
+      "diorismos_and_degeneracy": "Encoded typographically via stroke grammar (solid strokes for Given hypotheses, dashed/dotted strokes for auxiliary Construction loci) and parenthetical marginal Axiom/Proposition citations.",
+      "verification_engine": "Human visual pattern-matching with zero vertex-pointer chasing (1847 Chiswick Press 4-color Caslon woodblocks; re-engineered in Nicholas Rougeux's 2018 interactive SVG/CSS linked-hover web edition c82.net/euclid).",
+      "signature_opus_scale": "Books I-VI of Euclid's Elements (268 pages, 1847): ~173 planar constructions/theorems across Books I-IV & VI plus Book V visual magnitude proportions—including Golden Ratio (II.11, VI.30) and Regular Pentagon (IV.10-11)!",
+      "strengths": [
+        "Pioneers pointer-free (tacit) geometric notation: eliminates cognitive context-switching between prose vertex strings ('∠ABC') and diagram labels.",
+        "Partitions every proposition into scannable vertical pseudocode blocks (Given -> To Prove -> Construction -> Proof with '∴'), anticipating @proposition and modern tactic scripts by 175 years.",
+        "Covers Book II gnomons, Book III circle power (III.35-36), Book IV pentagon (IV.10-11), and Book VI golden ratio (VI.30)—domains omitted by modern ITPs!"
+      ],
+      "blind_spots": [
+        "Combinatorial palette ceiling: 4 colors × 3 stroke styles (~12 distinct tokens) saturate on dense projective configurations or 9-point diagrams.",
+        "0D points lack first-class visual value-tokens ('the point where [red] meets [blue]'), making pure point-collinearity (Pappus), Tarski betweenness, or 53,000 triangle centers awkward to express.",
+        "Stops after Book VI (omitting Books VII-X number theory/incommensurables and Books XI-XIII Platonic solids) and requires a symbolic backing layer to be greppable or machine-checked."
+      ],
+      "geometor_takeaway": "GEOMETOR's bidirectional :g: role <-> .euclid-graphic data-ref hover highlighting synthesizes classical symbolic pointer precision with Byrne/Rougeux zero-dereference visual perception—and motivates an inline Byrne micro-glyph mode in photon-platform/publish."
+    },
+    {
+      "id": "geometor_model",
+      "name": "GEOMETOR (geometor.model + Ecosystem)",
+      "paradigm": "Exact Constructive Symbolic DAG + Multi-Lens Algebra",
+      "host_language": "Python 3.13 + SymPy Algebraic Number Polynomials (ANP)",
+      "license": "MIT",
+      "local_ref_relpath": "model/src/geometor/model",
+      "upstream_url": "https://github.com/geometor/model",
+      "primitives": [
+        "Point (exact Q / ANP / radical coordinates)",
+        "Line, Segment, Circle, Wedge, Polygon, Section",
+        "Ancestral Construction DAG + @proposition Step trace"
+      ],
+      "underlying_algebra_or_logic": "Targeted constructive ancestral DAG (auto_intersect=False) backed by closed-form radical-axis intersections, QQ.algebraic_field(ext) canonicalization, and Rational Trigonometry polynomial invariants.",
+      "metric_treatment": "Dual exact symbolic lens: polynomial Rational Trigonometry invariants (quadrance Q, spread s, signed_area2, cross_ratio) paired with exact closed-form radical coordinates over Q(phi), Q(sqrt(d)), and nested towers.",
+      "diorismos_and_degeneracy": "Strict Model.__setitem__ validation banning float/sp.Float atoms, paired with System E-equivalent topological root selectors (side_of, between, beyond, on_ray, other_than) and scoped subconstruction folding.",
+      "verification_engine": "Exact algebraic zero_test (expand -> primitive_element ANP reduction -> cancel -> high-precision guard) + structured @proposition assertions (assert_equal, assert_spread_equal, assert_perpendicular, assert_parallel, assert_congruent, assert_area_equal).",
+      "signature_opus_scale": "33-repository ecosystem across 7 architectural layers uniting 831 Heath Euclid SVGs, Byrne visual pseudocode, Proclus/Aristotle/Aquinas/Hoenen/Hilbert noetics, Elements, Wildberger, Pappus, ETC (53,144 centers), Divine, and Seer.",
+      "strengths": [
+        "100% exact symbolic coordinate synthesis (zero float contamination) capable of building deep nested compass-and-straightedge towers where generic CAS solve() hangs.",
+        "Unites Euclidean constructive lineage (Given -> Construct -> Demonstrate), topological root selection, Rational Trigonometry invariants, and Byrne/Rougeux-grade interactive :g: <-> .euclid-graphic SVGs.",
+        "Bridges primary historical treatises (Digital Scriptorium) directly to executable symbolic code and automated discovery (divine, seer)."
+      ],
+      "blind_spots": [
+        "algebra.zero_test (lines 247-251) falls back to heuristic abs(evalf(80)) < 1e-65 when count_ops > 25 instead of constructive BFMSS algebraic root-separation bounds.",
+        "Step telemetry currently omits Lemoine Géométrographie complexity counts (R1, R2, C1, C2, C3) and omits persisted selector ASTs needed for 1-to-1 LeanEuclid export.",
+        "Core model still lacks first-class Circle power/radical_axis/inversion/pole/polar and 3x3 projective Conic matrices (currently split partially into pappus)."
+      ],
+      "geometor_takeaway": "Synthesize the strongest ideas of all 10 peer systems: BFMSS-certified zero_test, persisted selector ASTs + Lemoine complexity on Step, Byrne/Rougeux micro-glyph :g: tokens, native inversion/conic/area-method modules, and Function-First Elements 2.0."
+    }
+  ]
+}

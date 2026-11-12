@@ -1,0 +1,50 @@
+[project]
+name = "geometor-codes"
+dynamic = ["version"]
+authors = [
+  { name = "geometor", email = "github@geometor.com" },
+]
+description = "Comparative Study of Formal Languages, Symbolic Architectures, Syntax, and Opus Across Geometric Logic."
+readme = "README.rst"
+requires-python = ">=3.13"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "sympy",
+    "geometor-model",
+    "rich",
+]
+
+[project.scripts]
+codes = "geometor.codes.__main__:main"
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["geometor"]
+namespaces = true
+
+[tool.setuptools.dynamic]
+version = { attr = "geometor.codes.__version__" }
+
+[project.urls]
+"Website" = "https://geometor.github.io/codes"
+"Repository" = "https://github.com/geometor/codes"
+"Issues" = "https://github.com/geometor/codes/issues"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+lint.select = ["ANN", "D"]
+lint.ignore = []
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

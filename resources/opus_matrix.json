@@ -1,0 +1,3711 @@
+{
+  "domains": [
+    {
+      "id": "01_foundations",
+      "number": 1,
+      "title": "Domain 1 — Axiomatic & Topological Foundations",
+      "summary": "Points, lines, circles, betweenness, plane separation (Pasch), continuity intersections, and root selection."
+    },
+    {
+      "id": "02_congruence_metric",
+      "number": 2,
+      "title": "Domain 2 — Congruence, Orthogonality & Metric Laws",
+      "summary": "Segment congruence, triangle congruence (SAS/SSS/ASA/HL), bisectors, perpendiculars, quadrance/spread, Pythagoras, and Stewart."
+    },
+    {
+      "id": "03_parallelism_proportion",
+      "number": 3,
+      "title": "Domain 3 — Parallelism, Similarity & Proportion",
+      "summary": "Parallel postulate variants, parallelograms, cut-and-paste area, Thales intercept, AA/SAS/SSS similarity, Ceva, and Menelaus."
+    },
+    {
+      "id": "04_circles_tangency_power",
+      "number": 4,
+      "title": "Domain 4 — Circle Geometry, Tangency, Power & Inversion",
+      "summary": "Circumcircles, inscribed/tangent-chord angles, Ptolemy, common tangents, Steiner power, radical axis, circle inversion, and circle pole-polar."
+    },
+    {
+      "id": "05_triangle_centers",
+      "number": 5,
+      "title": "Domain 5 — Triangle Centers & Classical Configurations",
+      "summary": "Incenter X(1), Excenters, Centroid X(2), Circumcenter X(3), Orthocenter X(4), Nine-Point Circle X(5), Euler line, Simson, Miquel, and ETC."
+    },
+    {
+      "id": "06_projective_conics",
+      "number": 6,
+      "title": "Domain 6 — Projective Geometry & Conic Sections",
+      "summary": "Homogeneous points at infinity, cross-ratio, harmonic conjugates, Pappus, Desargues, general conics, 5-point conic, Pascal/Brianchon, and conic pole-polar."
+    },
+    {
+      "id": "07_transformations_invariants",
+      "number": 7,
+      "title": "Domain 7 — Transformations, Coordinatization & Complexity",
+      "summary": "Reflections, rotations, translations, spiral similarities, geometric field arithmetic, Area-Method invariants, and Géométrographie complexity."
+    },
+    {
+      "id": "08_golden_polyhedra_3d",
+      "number": 8,
+      "title": "Domain 8 — Golden Section, Constructible Polygons & 3D Solids",
+      "summary": "Extreme and mean ratio (phi), golden vesica chain, regular pentagon/decagon, 3D lines/planes/spheres, and the five Platonic solids."
+    }
+  ],
+  "topics": [
+    {
+      "id": "point_primitive",
+      "domain_id": "01_foundations",
+      "title": "Point Primitive & Constructibility",
+      "role": "primitive",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "Point : Type"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "Tpoint : Type"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "P : Type* [NormedAddTorsor V P]"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "gm.Point / free"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "Point / free"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "POINT"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "bivector (PGA) / null vector (CGA)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "homog [x, y, z] in CP^2"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Point2D / Point3D"
+        },
+        "byrne_1847": {
+          "status": "partial",
+          "ref": "Implicit vertex intersections (no point glyph!)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Model.set_point (exact Q/ANP)"
+        }
+      },
+      "notes": "Every system has points, but Tarski has ONLY points, PGA represents 2D points as grade-2 bivectors, and GEOMETOR enforces 100% float-free algebraic coordinates."
+    },
+    {
+      "id": "line_join",
+      "domain_id": "01_foundations",
+      "title": "Line Joining Two Distinct Points (Postulate 1)",
+      "role": "primitive",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "Lines.from_points"
+        },
+        "geocoq": {
+          "status": "derived",
+          "ref": "Col A B X (point-only)"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "line[ℝ, p₁, p₂]"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "on_line / gm.Line"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "on_line"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "LINE / ON_LINE"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "P1 & P2 (PGA) / P1^P2^ni (CGA)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "List.cross(A, B)"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Line(p1, p2)"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Postulate 1 ([coloured ━━] glyph)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Model.construct_line"
+        }
+      },
+      "notes": "In GeoCoq's Tarski core, lines are eliminated in favor of ternary Col; in CindyJS and 2D PGA, joining points is division-free bilinear algebra."
+    },
+    {
+      "id": "circle_center_point",
+      "domain_id": "01_foundations",
+      "title": "Circle from Center and Radius Point (Postulate 3)",
+      "role": "primitive",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "Circles.from_points"
+        },
+        "geocoq": {
+          "status": "derived",
+          "ref": "Cong O X O A / OnCirc"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Sphere.mk center radius"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "on_circle"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "on_circle"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "CIRCLE / ON_CIRCLE"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "A - 0.5*q*ni (2D CGA)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "CircleMP(A, B)"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Circle(A, A.distance(B))"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Postulate 3 (coloured circle/ring)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Model.construct_circle"
+        }
+      },
+      "notes": "2D PGA lacks circles (requiring 2D CGA Cl(3,1)); mathlib4 generalizes circles immediately to n-dimensional Sphere P."
+    },
+    {
+      "id": "collinear_betweenness",
+      "domain_id": "01_foundations",
+      "title": "Collinear Betweenness Order",
+      "role": "primitive",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "between a b c (strict)"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "Bet A B C (non-strict)"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Wbtw ℝ a b c / Sbtw ℝ a b c"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "sameside (float guard)"
+        },
+        "newclid": {
+          "status": "derived",
+          "ref": "between / sameside (float)"
+        },
+        "jgex": {
+          "status": "derived",
+          "ref": "LRATIO / signed r"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "oriented weight ratio"
+        },
+        "cindyjs": {
+          "status": "partial",
+          "ref": "real-part param check"
+        },
+        "sympy_geometry": {
+          "status": "derived",
+          "ref": "Segment(a, c).contains(b)"
+        },
+        "byrne_1847": {
+          "status": "partial",
+          "ref": "Visual diagram inspection only"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "between=(a, c) exact selector"
+        }
+      },
+      "notes": "LeanEuclid uses strict betweenness; Tarski uses non-strict Bet (Bet A A B holds); mathlib4 provides both Wbtw (weak) and Sbtw (strict)."
+    },
+    {
+      "id": "plane_separation_pasch",
+      "domain_id": "01_foundations",
+      "title": "Plane Separation & Pasch's Axiom",
+      "role": "primitive",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "Point.sameSide / opposingSides"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "outer_pasch / OS / TS"
+        },
+        "mathlib4": {
+          "status": "derived",
+          "ref": "AffineSubspace.SameSide / WeakSameSide"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "sameclock (float guard)"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "sameclock / nsameside (float)"
+        },
+        "jgex": {
+          "status": "derived",
+          "ref": "sign(S_ABP * S_ABQ)"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "sign((l ^ P) * ~(l ^ Q))"
+        },
+        "cindyjs": {
+          "status": "partial",
+          "ref": "orientation det sign"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "No half-plane / Pasch API"
+        },
+        "byrne_1847": {
+          "status": "partial",
+          "ref": "Implicit chromatic region topology"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "side_of=(a, b, ±1) via signed_area2"
+        }
+      },
+      "notes": "GeoCoq proves full equivalence of inner and outer Pasch; LeanEuclid delegates Pasch propagation to external SMT."
+    },
+    {
+      "id": "line_circle_continuity",
+      "domain_id": "01_foundations",
+      "title": "Line-Circle Intersection Existence",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "Intersections.intersect_line_circle"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "segment_circle (continuity_axioms.v)"
+        },
+        "mathlib4": {
+          "status": "partial",
+          "ref": "Sphere.secondInter (analytic)"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "intersection_lc (float sketch)"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "intersection_lc"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "INTERSECTION_LC"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "(L.dual() ^ kappa).dual() (CGA)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "IntersectLC (always 2 in CP^2)"
+        },
+        "sympy_geometry": {
+          "status": "derived",
+          "ref": "Circle.intersection(Line) via solve()"
+        },
+        "byrne_1847": {
+          "status": "partial",
+          "ref": "Visual diagram intersection"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "exact_intersect_line_circle"
+        }
+      },
+      "notes": "CindyJS always finds 2 intersections over C; geometor.model solves the exact radical-axis quadratic without calling SymPy solve()."
+    },
+    {
+      "id": "circle_circle_continuity",
+      "domain_id": "01_foundations",
+      "title": "Circle-Circle Intersection Existence (Euclid I.1 Gap)",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "Intersections.intersect_circles"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "circle_circle <-> segment_circle"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "No 2D 2-point construction"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "intersection_cc / HoleCircle"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "intersection_cc"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "INTERSECTION_CC"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "(kA ^ kB).dual() point-pair (CGA)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "IntersectCirCir (via radical axis)"
+        },
+        "sympy_geometry": {
+          "status": "derived",
+          "ref": "Circle.intersection(Circle) via solve()"
+        },
+        "byrne_1847": {
+          "status": "partial",
+          "ref": "Byrne I.1 visual circle overlap"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "exact_intersect_circle_circle"
+        }
+      },
+      "notes": "GeoCoq proves segment_circle <-> circle_circle over neutral geometry; mathlib4 omits planar 2-point circle intersection."
+    },
+    {
+      "id": "topological_root_selection",
+      "domain_id": "01_foundations",
+      "title": "Deterministic Quadratic Root Disambiguation",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "intersect_circles_same_side / opposing"
+        },
+        "geocoq": {
+          "status": "derived",
+          "ref": "TS / OS witness selection"
+        },
+        "mathlib4": {
+          "status": "partial",
+          "ref": "Sphere.secondInter (other_than only)"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "HoleCircle puncturing + @x_y pin"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "HoleCircle puncturing"
+        },
+        "jgex": {
+          "status": "partial",
+          "ref": "ordered root index"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "projector (T ± sqrt(T^2))*(T|ni)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "Tracing.js Riemann homotopy"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "Arbitrary solve() list order"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Unique colour/stroke token disambiguation"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "side_of, between, beyond, on_ray, other_than"
+        }
+      },
+      "notes": "LeanEuclid's 7 Intersections.lean rules and geometor.model's 5 selector keywords solve the exact same quadratic root-selection problem."
+    },
+    {
+      "id": "equilateral_triangle",
+      "domain_id": "02_congruence_metric",
+      "title": "Equilateral Triangle Construction (Euclid I.1)",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "Prop01.proposition_1 / proposition_1'"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "proposition_01 / l10_15"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "No constructive existence lemma"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "eq_triangle / ieq_triangle"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "eq_triangle / ieq_triangle"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "INTERSECTION_CC + r13"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "CGA circle split / PGA pi/3 rotor"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "IntersectCirCir"
+        },
+        "sympy_geometry": {
+          "status": "derived",
+          "ref": "RegularPolygon / Circle.intersection"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book I, Prop. 1 (red/blue/black)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "equidistant_poles (figures.py)"
+        }
+      },
+      "notes": "Benchmark 1: cleanly separates constructive systems from purely analytic n-dimensional torsor libraries."
+    },
+    {
+      "id": "segment_transfer",
+      "domain_id": "02_congruence_metric",
+      "title": "Non-Collapsing Compass Segment Transfer (Euclid I.2-I.3)",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "Prop02 / Prop03"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "segment_construction (primitive axiom!)"
+        },
+        "mathlib4": {
+          "status": "derived",
+          "ref": "norm-scaled vadd"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "eqdistance"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "eqdistance / lconst"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "LRATIO / EQDISTANCE"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "translator / motor sandwich"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "Compass / CircleMP"
+        },
+        "sympy_geometry": {
+          "status": "derived",
+          "ref": "Circle(C, A.distance(B))"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book I, Props. 2-3"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "construct_circle_by_length / I.2"
+        }
+      },
+      "notes": "Tarski bakes segment transfer along any ray directly into primitive axiom segment_construction, bypassing Euclid I.2's collapsible-compass dance."
+    },
+    {
+      "id": "triangle_congruence_sas_sss_asa",
+      "domain_id": "02_congruence_metric",
+      "title": "Triangle Congruence (SAS, SSS, ASA / Euclid I.4, I.8, I.26)",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "Prop04, Prop08, Prop26"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "l11_49 (SAS), l11_51 (SSS), l11_50 (ASA)"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Congruence.lean (dist/angle eq)"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "r32 (SSS), r33 (SAS), r36/r37 (ASA)"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "R64-R67 + R36-R37 (orientation split)"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "GDD contri rules"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "isometry versor existence"
+        },
+        "cindyjs": {
+          "status": "derived",
+          "ref": "Prover.js metric identity"
+        },
+        "sympy_geometry": {
+          "status": "derived",
+          "ref": "Polygon congruence manual check"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book I, Props. 4, 8, 26"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Model.assert_congruent (Q + signed s)"
+        }
+      },
+      "notes": "Tarski derives SAS from the angle-free Five-Segment Axiom (FSC); AlphaGeometry/Newclid split direct (contri) vs reflected (contri2/contrir) congruence."
+    },
+    {
+      "id": "isosceles_pons_asinorum",
+      "domain_id": "02_congruence_metric",
+      "title": "Isosceles Base Angles — Pons Asinorum (Euclid I.5-I.6)",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "Prop05 / Prop06"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "l11_44_1 / l11_44_2"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "angle_eq_angle_of_dist_eq (Isosceles)"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "r13 / r14"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "R13 / R14"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "GDD r13 / Full-Angle"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "reflection symmetry in bisector blade"
+        },
+        "cindyjs": {
+          "status": "derived",
+          "ref": "Laguerre angle symmetry"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Triangle.is_isosceles"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book I, Props. 5-6 (wedge sum)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Equal quadrance <=> equal spread"
+        }
+      },
+      "notes": "In Rational Trigonometry (wildberger / geometor.model), I.5-I.6 is an immediate specialization of the Cross/Sine Law Q1/s1 = Q2/s2."
+    },
+    {
+      "id": "hypotenuse_leg_congruence",
+      "domain_id": "02_congruence_metric",
+      "title": "Right-Triangle Hypotenuse-Leg Congruence (HL)",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "derived",
+          "ref": "Via Prop47 + Prop08"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "Ch08 / Ch11 right congruence"
+        },
+        "mathlib4": {
+          "status": "derived",
+          "ref": "Via Pythagoras + SSS"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Missing in r00-r42 (blocks bare incenter!)"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "R52 / R53 (explicitly added!)"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "Pythagoras difference P_ABC"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "Orthogonal quadrance subtraction"
+        },
+        "cindyjs": {
+          "status": "derived",
+          "ref": "Algebraic consequence"
+        },
+        "sympy_geometry": {
+          "status": "derived",
+          "ref": "Via distance/Pythagoras"
+        },
+        "byrne_1847": {
+          "status": "derived",
+          "ref": "Via Byrne I.47 + I.8"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Pythagoras Q_b = Q_c - Q_a + assert_congruent"
+        }
+      },
+      "notes": "Forensic catch: AlphaGeometry's r00-r42 omits HL congruence, preventing bare 2-bisector incenter proof unless reflect is used; Newclid fixes this."
+    },
+    {
+      "id": "angle_bisector_construction",
+      "domain_id": "02_congruence_metric",
+      "title": "Rectilinear Angle Bisector (Euclid I.9)",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "Prop09.proposition_9 / proposition_9'"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "angle_bisector (Ch11_angles.v)"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Incenter/Basic.lean (oangle bisector)"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "angle_bisector (conflates ext bisector mod pi!)"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "angle_bisector (mod pi)"
+        },
+        "jgex": {
+          "status": "partial",
+          "ref": "BISECT (full-angle mod pi)"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "l1.normalized() ± l2.normalized() (PGA)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "AngularBisector (2 orthogonal lines)"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Line.bisectors() / Triangle.bisectors()"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book I, Prop. 9"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Compass equilateral/midpoint bisector"
+        }
+      },
+      "notes": "Full-angle systems (AG/Newclid/JGEX) work modulo pi, so eqangle(BA,BX, BX,BC) has TWO orthogonal solutions (internal and external bisectors)."
+    },
+    {
+      "id": "midpoint_perpendicular_bisector",
+      "domain_id": "02_congruence_metric",
+      "title": "Midpoint & Perpendicular Bisector (Euclid I.10-I.11)",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "Prop10 / Prop11"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "midpoint_existence (neutral, no circles!)"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "midpoint / perpBisector"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "midpoint / on_bline / r22-r23"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "midpoint / on_bline / R54"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "MIDPOINT / BLINE"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "(A&B)|(A+B) (PGA) / A - B (CGA)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "Midpoint / Perp"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Segment.midpoint / perpendicular_bisector"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book I, Props. 10-11"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "_midpoint_via_vesica"
+        }
+      },
+      "notes": "Benchmark 2: in 2D CGA, the perpendicular bisector of null points A and B is literally the difference vector A - B!"
+    },
+    {
+      "id": "dropped_perpendicular_foot",
+      "domain_id": "02_congruence_metric",
+      "title": "Perpendicular Foot onto a Line (Euclid I.12)",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "Prop12.proposition_12"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "l8_18_existence (Ch08_orthogonality.v)"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "orthogonalProjection s p"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "foot (defs.txt:61)"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "foot"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "FOOT (linear P_PUV/P_UVU elim!)"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "(l | P) ^ l (2D PGA)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "meet(L, perp(L, P))"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Line.projection(P)"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book I, Prop. 12"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Mirror-chord + vesica foot"
+        }
+      },
+      "notes": "In mathlib4, orthogonalProjection works on any complete affine subspace; in 2D PGA, (l | P) ^ l is 100% division-free in homogeneous coordinates."
+    },
+    {
+      "id": "quadrance_and_spread",
+      "domain_id": "02_congruence_metric",
+      "title": "Rational Quadrance & Spread Calculus (Wildberger)",
+      "role": "measure",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Uses real length |(a─b)| & ∠(a:b:c)"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Synthetic Cong & Angle CongA"
+        },
+        "mathlib4": {
+          "status": "derived",
+          "ref": "dist^2 & sin^2(angle) over R"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Log-ratios & angles mod pi"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "l2const / r2const (squared lengths only)"
+        },
+        "jgex": {
+          "status": "derived",
+          "ref": "P_ABA = 2*Q(A,B) & S_ABC^2"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "(l|l) & (l1^l2)^2 / ((l1|l1)*(l2|l2))"
+        },
+        "cindyjs": {
+          "status": "derived",
+          "ref": "Rational Cayley-Klein cross-ratio"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "Uses sqrt distance & acos angle"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Visual segment/wedge icons, not polynomial Q/s"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "quadrance, line_spread, vertex_spread + wildberger"
+        }
+      },
+      "notes": "GEOMETOR is the only surveyed ecosystem treating polynomial quadrance Q and spread s as primary first-class invariants across proofs and discovery."
+    },
+    {
+      "id": "pythagorean_theorem",
+      "domain_id": "02_congruence_metric",
+      "title": "Pythagorean Theorem (Euclid I.47-I.48)",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "Prop47 / Prop48 (+ 6 missed lemmas)"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "pythagoras (Ch15_lengths.v)"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "dist_sq_eq_dist_sq_add_dist_sq_iff..."
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "Cannot state a^2+b^2=c^2! (only AB^2=BH*BC)"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "Yuclid squared-length AR + R85"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "Definitional P_ACB = 0 + 4_PYTH/"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "(lc|lc) == (la|la) + (lb|lb)"
+        },
+        "cindyjs": {
+          "status": "derived",
+          "ref": "Euclidean metric norm"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Triangle.is_right / distance**2"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book I, Prop. 47 (iconic 4-colour squares!)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Pythagoras Q_c = Q_a + Q_b + assert_area_equal"
+        }
+      },
+      "notes": "Benchmark 4: AlphaGeometry's pure multiplicative/1D-linear AR cannot state a^2 + b^2 = c^2, motivating Yuclid's squared-length AR and GEOMETOR's quadrance."
+    },
+    {
+      "id": "stewart_apollonius_median",
+      "domain_id": "02_congruence_metric",
+      "title": "Stewart's Theorem & Apollonius's Median Law",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Requires Book II / quadratic algebra"
+        },
+        "geocoq": {
+          "status": "derived",
+          "ref": "Derivable in Ch15 segment field"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "dist_sq_mul_dist_add... (Stewart / BritishFlag)"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Unexpressible in multiplicative AR"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "R89_LENGTH_OF_MEDIAN (in C++ Yuclid)"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "Linear LRATIO elimination on P_AYB"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "Null inner-product expansion (2D CGA)"
+        },
+        "cindyjs": {
+          "status": "derived",
+          "ref": "Polynomial identity in Prover.js"
+        },
+        "sympy_geometry": {
+          "status": "derived",
+          "ref": "Manual symbolic simplify()"
+        },
+        "byrne_1847": {
+          "status": "partial",
+          "ref": "Book II Props. 9-10, 12-13 (cosine precursors)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Triple-Quad / Stewart polynomial identity"
+        }
+      },
+      "notes": "mathlib4 includes Stewart's theorem and the British Flag theorem in arbitrary dimension n; JGEX's Area Method eliminates collinear point Y in 1 line."
+    },
+    {
+      "id": "parallel_line_construction",
+      "domain_id": "03_parallelism_proportion",
+      "title": "Parallel Line Through a Point (Euclid I.27-I.31)",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "Prop27-Prop31"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "parallel_existence (Ch12_parallel.v)"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "AffineSubspace.mk' p s.direction"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "on_pline / r00 / r02"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "on_pline / R00 / R02"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "ON_PLINE / S_CABD = 0"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "P & (L ^ e0) or (L | P) | P (PGA)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "cross(cross(linf, L), P)"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Line.parallel_line(P)"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book I, Prop. 31"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Compass rhombus + assert_parallel"
+        }
+      },
+      "notes": "Benchmark 3: every system supports parallel construction, revealing its deep ontology (alternate angles vs midpoint reflection vs join with infinity)."
+    },
+    {
+      "id": "parallel_postulate_equivalents",
+      "domain_id": "03_parallelism_proportion",
+      "title": "Axiomatic Equivalents of Euclid's Parallel Postulate",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "partial",
+          "ref": "Assumes System E parallel postulate"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "34 equivalents in parallel_postulates.v!"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "Baked into vector space axioms"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Baked into AngleTable mod pi"
+        },
+        "newclid": {
+          "status": "absent",
+          "ref": "Baked into AnglesTable"
+        },
+        "jgex": {
+          "status": "absent",
+          "ref": "Assumes Euclidean plane"
+        },
+        "pga_cga": {
+          "status": "partial",
+          "ref": "Switch signature Cl(2,0,1) vs Cl(2,1,0)/Cl(3,0)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "Cayley-Klein switch (Euclidean/Hyperbolic/Elliptic)"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "Euclidean Cartesian only"
+        },
+        "byrne_1847": {
+          "status": "partial",
+          "ref": "Byrne Axiom XII (two-wedge sum < 2[∟])"
+        },
+        "geometor_model": {
+          "status": "partial",
+          "ref": "Documented across euclid / hilbert / proclus"
+        }
+      },
+      "notes": "GeoCoq stands alone in formalizing 34 mutually equivalent parallel postulates (Playfair, Proclus, Posidonius, Saccheri, Wallis, Legendre, etc.)."
+    },
+    {
+      "id": "triangle_angle_sum",
+      "domain_id": "03_parallelism_proportion",
+      "title": "Triangle Interior Angle Sum = Two Right Angles (Euclid I.32)",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "Prop32.proposition_32"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "trisuma__bet (Ch12 / parallel_postulates.v)"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "oangle_add_oangle_add_oangle_eq_pi"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "Line directions mod pi (r09), no interior sum"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "R09 full-angle cancellation mod pi"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "Full-Angle method"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "Rotor product around vertices"
+        },
+        "cindyjs": {
+          "status": "derived",
+          "ref": "Laguerre cross-ratio product = 1"
+        },
+        "sympy_geometry": {
+          "status": "derived",
+          "ref": "sum(Triangle.angles.values()) == pi"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book I, Prop. 32 (red+yellow+blue = 2[∟])"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Wildberger Triple Spread Law"
+        }
+      },
+      "notes": "In Rational Trigonometry (wildberger), x + y + z = pi becomes the purely polynomial Triple Spread Law (s1 + s2 + s3)^2 = 2(s1^2 + s2^2 + s3^2) + 4 s1 s2 s3!"
+    },
+    {
+      "id": "parallelogram_area_equivalence",
+      "domain_id": "03_parallelism_proportion",
+      "title": "Parallelogram & Cut-and-Paste Area Theory (Euclid I.33-I.45)",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "native",
+          "ref": "Prop33-Prop45 (complete!)"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "euclidean_area_axioms.v (+ inconsistency bug proof!)"
+        },
+        "mathlib4": {
+          "status": "partial",
+          "ref": "MeasureTheory volume, no cut-and-paste"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "parallelogram r25/r26; NO area predicate!"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "R25/R26/R90; NO area predicate!"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "Signed area S_ABC / S_ABCD primitive!"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "Pseudoscalar moment (A & B & C).e012"
+        },
+        "cindyjs": {
+          "status": "derived",
+          "ref": "Determinant area formula"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Polygon.area (signed shoelace)"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book I, Props. 33-45 (chromatic regions!)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "signed_area2 & Model.assert_area_equal"
+        }
+      },
+      "notes": "GeoCoq proved that dropping non-collinearity from area_axioms makes cut-and-paste area inconsistent; AlphaGeometry/Newclid have zero area predicates!"
+    },
+    {
+      "id": "geometric_algebra_books_ii",
+      "domain_id": "03_parallelism_proportion",
+      "title": "Geometric Algebra of Rectangles & Gnomons (Euclid Book II.1-II.14)",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Stops at Book I.48"
+        },
+        "geocoq": {
+          "status": "partial",
+          "ref": "Algebraicized in Ch14-Ch15"
+        },
+        "mathlib4": {
+          "status": "derived",
+          "ref": "CommRing ring tactic"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "No area/gnomon predicates"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "lequation polynomial identities"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "Area + Pythagoras polynomial identities"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "Scalar Clifford expansion"
+        },
+        "cindyjs": {
+          "status": "derived",
+          "ref": "Algebraic polynomial check"
+        },
+        "sympy_geometry": {
+          "status": "derived",
+          "ref": "sp.expand()"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book II, Props. 1-14 (gnomons & squares!)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "euclid Book II SVGs + assert_area_equal"
+        }
+      },
+      "notes": "Euclid Book II's gnomonic rectangle identities (including II.11 extreme and mean ratio!) are omitted as geometric theorems by nearly all modern ITPs."
+    },
+    {
+      "id": "thales_intercept_theorem",
+      "domain_id": "03_parallelism_proportion",
+      "title": "Thales Parallel-Intercept Proportion (Euclid VI.2)",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Book VI omitted"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "thm_thales (Ch13 / Ch14)"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Affine/Similarity ratio lemmas"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "r07 / r27 / r41 / r42 (eqratio3)"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "R07 / R27 / R41 / R42"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "Co-side & parallel ratio lemma"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "PGA join/meet weight ratios"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "Projective perspectivity"
+        },
+        "sympy_geometry": {
+          "status": "derived",
+          "ref": "Triangle.is_similar"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book VI, Prop. 2 (:: proportion)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Exact quadrance ratio Q1/Q2"
+        }
+      },
+      "notes": "In JGEX's Area Method, Thales's theorem is the foundational Coplanarity Lemma relating parallel length ratios r(A,B,C,D) to triangle areas S_PAB/S_PCD."
+    },
+    {
+      "id": "similar_triangles",
+      "domain_id": "03_parallelism_proportion",
+      "title": "Triangle Similarity Criteria (AA, SAS, SSS / Euclid VI.4-VI.7)",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Book VI omitted"
+        },
+        "geocoq": {
+          "status": "derived",
+          "ref": "Ch15 length-ratio similarity"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Geometry/Euclidean/Similarity.lean"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "r34-r35 (AA), r38 (SSS), r39 (SAS)"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "R34-R35, R60-R63 (explicit sameclock)"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "GDD SimTri rules"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "Rotor-dilator (similarity versor)"
+        },
+        "cindyjs": {
+          "status": "derived",
+          "ref": "Complex similarity z -> a*z + b"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "are_similar / Triangle.is_similar"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book VI, Props. 4-7"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Equal spreads <=> proportional quadrances"
+        }
+      },
+      "notes": "AlphaGeometry inspects float orientation at runtime (simtri*) to emit direct simtri vs reflected simtri2; Newclid makes sameclock explicit in R60-R63."
+    },
+    {
+      "id": "angle_bisector_ratio_theorem",
+      "domain_id": "03_parallelism_proportion",
+      "title": "Internal & External Angle Bisector Ratio Theorem (Euclid VI.3)",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Book VI omitted"
+        },
+        "geocoq": {
+          "status": "derived",
+          "ref": "Highschool/incenter + Ch15"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Angle bisector ratio in Incenter/Basic.lean"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "r11 / r12 (r11 converse unsound on ext bisector!)"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "R11 / R12 (full-angle mod pi)"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "GDD r11 / r12"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "Normalized line-sum weight ratio"
+        },
+        "cindyjs": {
+          "status": "derived",
+          "ref": "Harmonic bisector cross-ratio"
+        },
+        "sympy_geometry": {
+          "status": "derived",
+          "ref": "Symbolic bisector intersection"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book VI, Prop. 3"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Equal spread + quadrance ratio Q(BD)/Q(DC)=Q(AB)/Q(AC)"
+        }
+      },
+      "notes": "Forensic catch in AlphaGeometry rules.txt:12: forward r12 holds for both internal and external bisectors, whereas converse r11 conflates them mod pi!"
+    },
+    {
+      "id": "ceva_and_menelaus",
+      "domain_id": "03_parallelism_proportion",
+      "title": "Ceva's Concurrency & Menelaus's Collinearity Theorems",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Not in Highschool/"
+        },
+        "mathlib4": {
+          "status": "partial",
+          "ref": "Ceva.lean present; Menelaus ABSENT!"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Missing in r00-r42 (blocks Pappus/Desargues!)"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "Partial ratio helpers; no general signed Menelaus"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "exs-book/ch2 A_310 (Menelaus) & back/ceva!"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "Grassmann-Cayley bivector ratio cancellation"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "Homogeneous determinant cancellation"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "Not implemented"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Post-Euclidean (omitted)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "pappus & signed_area2 co-side cancellation"
+        }
+      },
+      "notes": "Striking asymmetry: mathlib4 has Ceva.lean (barycentric weights) yet lacks Menelaus; AlphaGeometry lacks Menelaus, making Pappus unprovable without aux parallels!"
+    },
+    {
+      "id": "inscribed_angle_theorem",
+      "domain_id": "04_circles_tangency_power",
+      "title": "Inscribed & Central Angle Theorem (Euclid III.20-III.22)",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Book III omitted"
+        },
+        "geocoq": {
+          "status": "partial",
+          "ref": "Basic chord/circle defs in Annexes/circles.v"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Sphere/Basic.lean ((2:ℤ)•∡ mod 2pi!)"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "r03 / r04 / r17 / r18 (eqangle mod pi!)"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "R03 / R04 / R17 / R18"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "Full-Angle crown jewel (RF_*)"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "Conformal rotor angle invariance"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "Cross-ratio on conic = const (Chasles)"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "No inscribed-angle theorem"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book III, Props. 20-22"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Equal chord spread on circle"
+        }
+      },
+      "notes": "Directed line angles mod pi (eqangle in JGEX/AG and (2:ℤ)•∡ in mathlib4) unify III.21 (same arc) and III.22 (opposite supplementary arc) into ONE equation!"
+    },
+    {
+      "id": "thales_semicircle_theorem",
+      "domain_id": "04_circles_tangency_power",
+      "title": "Thales's Semicircle Right-Angle Theorem (Euclid III.31)",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Book III omitted"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "Annexes/circles.v / midpoint circumcenter"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "thales_theorem (Angle/Oriented & Unoriented)"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "r19 / r20"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "R19 / R20"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "GDD r20 + Area P_ABC = 0"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "CGA inner product on antipodal pair"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "Harmonic diameter orthogonality"
+        },
+        "sympy_geometry": {
+          "status": "derived",
+          "ref": "Circle / Line.is_perpendicular"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book III, Prop. 31"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "figures.py:289 (Thales tangent construction)"
+        }
+      },
+      "notes": "Used constructively across GEOMETOR and AlphaGeometry to construct circle tangents from an external point (Euclid III.17)."
+    },
+    {
+      "id": "circle_tangents_external",
+      "domain_id": "04_circles_tangency_power",
+      "title": "Circle Tangent Lines from Point On or Outside Circle (Euclid III.16-III.17)",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Book III omitted"
+        },
+        "geocoq": {
+          "status": "partial",
+          "ref": "Tangent predicate in Annexes/circles.v"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Sphere tangent / PolePolar"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "lc_tangent (L157) & tangent (L397), r15-r16"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "lc_tangent & tangent, R15-R16"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "TANGENT"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "Polar meet circle: (kappa ^ lam_pol).dual()"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "TangentFromPoint (polar meet conic)"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Circle.tangent_lines(P) (via solve())"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book III, Props. 16-17"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Thales semicircle intersection (zero solve()!)"
+        }
+      },
+      "notes": "Constructing tangents via Thales's circle on OP avoids generic CAS solve() and generalizes immediately to pole-polar reciprocity."
+    },
+    {
+      "id": "common_tangents_two_circles",
+      "domain_id": "04_circles_tangency_power",
+      "title": "External & Internal Common Tangents to Two Circles",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "Not in Geometry/Euclidean/Sphere/"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "cc_tangent / cc_tangent0 (external only!)"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "cc_tangent + cc_itangent (external & internal!)"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "CC_TANGENT"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "Dual conic /homothetic center blade"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "Dual conic intersection adj(C1) ∩ adj(C2)!"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "Not implemented"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Omitted in Euclid Book III"
+        },
+        "geometor_model": {
+          "status": "partial",
+          "ref": "Planned via homothetic centers in model/elements"
+        }
+      },
+      "notes": "In CindyJS's CP^2, the 4 common tangents to ANY two circles or conics are simply the 4 intersection points of their dual conics adj(C1) and adj(C2)!"
+    },
+    {
+      "id": "ptolemy_theorem",
+      "domain_id": "04_circles_tangency_power",
+      "title": "Ptolemy's Cyclic Quadrilateral Theorem",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Sphere/Ptolemy.lean (mul_dist_add_mul_dist...)"
+        },
+        "alphageometry": {
+          "status": "derived",
+          "ref": "Provable with 1 aux similarity point"
+        },
+        "newclid": {
+          "status": "derived",
+          "ref": "Provable with 1 aux similarity point"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "Wu / Gröbner / Inversion proof"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "2D CGA inversion of cyclic 4-tuple to collinear!"
+        },
+        "cindyjs": {
+          "status": "derived",
+          "ref": "Complex cross-ratio identity"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "Not implemented"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Almagest (post-Euclidean, omitted)"
+        },
+        "geometor_model": {
+          "status": "derived",
+          "ref": "Inversion / rational cyclic identity"
+        }
+      },
+      "notes": "mathlib4 proves Ptolemy in n dimensions, with a candid 20-line TODO in Sphere/Ptolemy.lean:22-41 noting how awkward cyclic order is in vector spaces."
+    },
+    {
+      "id": "steiner_power_of_a_point",
+      "domain_id": "04_circles_tangency_power",
+      "title": "Intersecting Chords & Steiner Power of a Point (Euclid III.35-III.36)",
+      "role": "measure",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Sphere.power (Sphere/Power.lean)"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "Multiplicative chord eqratio only"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "Chord eqratio + R85"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "P_POP - P_OAO / chord ratios"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "-2 * (kappa | P).e (2D CGA inner product!)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "p * C * p (monic circle matrix)"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "MISSING on sympy Circle!"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book III, Props. 35-36 (rectangle = square!)"
+        },
+        "geometor_model": {
+          "status": "derived",
+          "ref": "quadrance(P, O) - r_quad (Rec 4 -> model)"
+        }
+      },
+      "notes": "Benchmark 6: in 2D CGA, the Steiner power of null point P wrt dual circle kappa is literally -2 * (kappa | P)!"
+    },
+    {
+      "id": "radical_axis_coaxial_circles",
+      "domain_id": "04_circles_tangency_power",
+      "title": "Radical Axis, Radical Center & Coaxial Circle Pencils",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "SURPRISINGLY ABSENT in Sphere/Power.lean!"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Cannot state disjoint PO1^2 - PO2^2 = c!"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "Expressible via R85 lequation"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "C_RADICAL"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "kappa1 - kappa2 (1 subtraction in 2D CGA!)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "Monic circle matrix subtraction (GeoOps.js:2044)"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "MISSING in sympy.geometry!"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "19th-century Steiner/Gaultier (omitted)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Used internally in exact_intersect_circle_circle"
+        }
+      },
+      "notes": "Remarkably, mathlib4, GeoCoq, AlphaGeometry, and sympy.geometry all lack a first-class radical_axis constructor—whereas in 2D CGA it is kappa1 - kappa2!"
+    },
+    {
+      "id": "circle_inversion",
+      "domain_id": "04_circles_tangency_power",
+      "title": "Möbius Circle Inversion (Points, Lines & Circles)",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "EuclideanGeometry.inversion (Inversion/Basic.lean)"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "External tangent+foot idiom only"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "External tangent+foot idiom"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "INVERSION (exs-book/ch3:53)"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "C >> P = -C * P * C.inv() (2D CGA sandwich!)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "TrReflectionC / cross(cross(O,p), C*p)"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "MISSING in sympy.geometry!"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geometor_model": {
+          "status": "derived",
+          "ref": "figures.py:294 + Rec 4 geometor.model.inversion"
+        }
+      },
+      "notes": "In 2D CGA, inverting a point, line, OR circle in circle C is the exact same sandwich product C >> X!"
+    },
+    {
+      "id": "circle_pole_polar_lahire",
+      "domain_id": "04_circles_tangency_power",
+      "title": "Circle Pole-Polar & La Hire's Reciprocity Theorem",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Sphere.polar / mem_polar_iff (PolePolar.lean)"
+        },
+        "alphageometry": {
+          "status": "derived",
+          "ref": "Provable via tangent+foot SAS similarity"
+        },
+        "newclid": {
+          "status": "derived",
+          "ref": "Provable via tangent+foot SAS similarity"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "2-line Area-Method INVERSION proof"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "kappa + (P ^ ni) | kappa (2D CGA)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "l = C * p, p = adj(C) * l"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "MISSING in sympy.geometry!"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Apollonius/La Hire (omitted)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "figures.py:293 + pappus conic polarity"
+        }
+      },
+      "notes": "mathlib4's Sphere/PolePolar.lean proves La Hire's reciprocity in n dimensions in 1 line via inner-product symmetry."
+    },
+    {
+      "id": "incenter_and_incircle_x1",
+      "domain_id": "05_triangle_centers",
+      "title": "Incenter X(1) & Incircle (Euclid IV.4)",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Book IV omitted"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "Highschool/incenter.v"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Simplex.incenter / inradius (Incenter/Basic.lean)"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "incenter / incenter2 (conflated w/ excenter mod pi)"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "incenter + R46_INCENTER_THEOREM"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "INCENTER"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "Meet of normalized side-blade bisectors"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "a*A + b*B + c*C in CP^2"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Triangle.incenter / incircle"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book IV, Prop. 4"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "figures.py:410 + etc X(1)"
+        }
+      },
+      "notes": "On the 13-14-15 Heronian triangle (figures.py), pure compass-and-straightedge construction yields exact rational X(1) = (6, 4)."
+    },
+    {
+      "id": "excenters_and_excircles",
+      "domain_id": "05_triangle_centers",
+      "title": "Three Excenters & Excircles (J_A, J_B, J_C)",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Not in Highschool/"
+        },
+        "mathlib4": {
+          "status": "partial",
+          "ref": "SouthPole.lean (bisector-circumcircle poles)"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "excenter / excenter2 (identical predicates to incenter!)"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "excenter / excenter2"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "EXCENTER"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "Signed side-blade bisector meets"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "-a*A + b*B + c*C in CP^2"
+        },
+        "sympy_geometry": {
+          "status": "broken",
+          "ref": "LIVE DOUBLE BUG in Triangle.excenters (polygon.py:2714)!"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Exact external bisectors + etc excenters"
+        }
+      },
+      "notes": "CRITICAL BUG FOUND: sympy 1.14.0 Triangle.excenters omits parentheses around (-a*x0 + b*x1 + c*x2)/(-a+b+c) AND misindexes opposite vertices!"
+    },
+    {
+      "id": "centroid_x2",
+      "domain_id": "05_triangle_centers",
+      "title": "Centroid X(2) & 2:1 Median Concurrency",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "Highschool/centroid.v"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Finset.centroid (LinearAlgebra/AffineSpace/Centroid.lean)"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "centroid macro; 3-median proof needs 1 aux mirror!"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "centroid + R48_CENTROID_THEOREM"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "CENTROID + 1-line co-side Area proof"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "A + B + C (2D PGA homogeneous sum!)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "A + B + C in CP^2"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Triangle.centroid / Polygon.centroid"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Archimedes (omitted in Euclid I-VI)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "figures.py:257 & 376 + etc X(2)"
+        }
+      },
+      "notes": "Pure DD+AR cannot prove 3 medians concur without either Ceva/Area ratios or 1 auxiliary parallelogram reflection point."
+    },
+    {
+      "id": "circumcenter_x3",
+      "domain_id": "05_triangle_centers",
+      "title": "Circumcenter X(3) & Circumcircle (Euclid IV.5)",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Book IV omitted"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "Highschool/circumcenter.v"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Simplex.circumcenter / circumsphere (n-dim!)"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "circle / circumcenter (defs.txt:13, 19)"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "circle + R47_CIRCUMCENTER_THEOREM"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "CIRCUMCENTER"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "C_circ * ni * ~C_circ (2D CGA!)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "CircleBy3 + adjoint3(C)*linf"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Triangle.circumcenter / circumcircle"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book IV, Prop. 5"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "figures.py:377 + etc X(3)"
+        }
+      },
+      "notes": "In 2D CGA, C = A ^ B ^ C is the circumcircle and reflecting infinity ni across C gives the circumcenter C * ni * ~C!"
+    },
+    {
+      "id": "orthocenter_x4",
+      "domain_id": "05_triangle_centers",
+      "title": "Orthocenter X(4) & Altitude Concurrency",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "Highschool/orthocenter.v"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Simplex.mongePoint / orthocenter (MongePoint.lean)"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "orthocenter (examples.txt:2; needs feet/aux)"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "orthocenter + R43_ORTHOCENTER_THEOREM"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "exs-book/ch3:3 ORTH (0-step Jacobi proof!)"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "((B&C)|A) ^ ((C&A)|B) (rational 2D PGA!)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "meet(perp(BC,A), perp(CA,B))"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Triangle.orthocenter"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Omitted in Euclid I-VI"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "figures.py:390 + etc X(4)"
+        }
+      },
+      "notes": "mathlib4 generalizes X(4) to the Monge point of an n-simplex; JGEX's Area Method proves altitude concurrency in 0 elimination steps via P_ACHB + P_BAHC + P_CBAH = 0."
+    },
+    {
+      "id": "nine_point_circle_x5",
+      "domain_id": "05_triangle_centers",
+      "title": "Nine-Point Center X(5) & Feuerbach's Nine-Point Circle",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "OMITTED in GeoCoq Highschool/!"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "NinePointCircle.lean (3(n+1)-point sphere!)"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "ninepoints (defs.txt:103) + DDAR concyclicity"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "ninepoints"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "ex-gao/back/nine-point-circle"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "Ma ^ Mb ^ Mc in 2D CGA"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "CircleBy3(Ma, Mb, Mc)"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Triangle.nine_point_circle"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Feuerbach 1822 (omitted)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "figures.py:394 + etc X(5)"
+        }
+      },
+      "notes": "GeoCoq stops short of the Nine-Point Circle, whereas mathlib4 proves the general n-dimensional 3(n+1)-point sphere!"
+    },
+    {
+      "id": "euler_line",
+      "domain_id": "05_triangle_centers",
+      "title": "Euler Line Collinearity & 2:1 Ratio (O, G, N, H)",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "partial",
+          "ref": "Highschool/euler_line.v (Col only, no 2:1 ratio)"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "mongePoint_vsub_circumcenter = 3 • (G -ᵥ O)"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "examples.txt:8"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "Supported"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "exs-book/ch3:117 A_201"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "Linear bivector identity"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "Prover.js collinearity"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Triangle.eulerline"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Euler 1765 (omitted)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "figures.py:420-436 (Q(X3,X4) = 9*Q(X3,X2))"
+        }
+      },
+      "notes": "Benchmark 5 centerpiece: verified with exact rationals on the 13-14-15 triangle in figures.py."
+    },
+    {
+      "id": "simson_wallace_miquel",
+      "domain_id": "05_triangle_centers",
+      "title": "Simson-Wallace Line & Miquel Pivot Theorems",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "mathlib4": {
+          "status": "derived",
+          "ref": "Derivable via (2:ℤ)•∡ cyclic lemmas"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "Signature strength of eqangle DD+AR!"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "R45_SIMSONS_LINE_THEOREM + DDAR"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "3_JAR/simson & miq_th1.gex (Full-Angle!)"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "2D CGA / complex Clifford identity"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "Prover.js"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "Not implemented"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geometor_model": {
+          "status": "derived",
+          "ref": "Constructible & verifiable via signed_area2"
+        }
+      },
+      "notes": "Simson's line and Miquel's five-circle theorem were the historical showcase problems for Chou-Gao-Zhang's Full-Angle method in JGEX."
+    },
+    {
+      "id": "kimberling_etc_catalog",
+      "domain_id": "05_triangle_centers",
+      "title": "Encyclopedia of Triangle Centers (X(6)-X(53144))",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "0 centers"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Stops at X(1)-X(4)"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "Stops at ~6 centers (+ Brocard)"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Stops at X(1)-X(5) + excenter"
+        },
+        "newclid": {
+          "status": "absent",
+          "ref": "Stops at X(1)-X(5) + excenter"
+        },
+        "jgex": {
+          "status": "absent",
+          "ref": "Classical centers only"
+        },
+        "pga_cga": {
+          "status": "absent",
+          "ref": "Manual barycentric lift required"
+        },
+        "cindyjs": {
+          "status": "absent",
+          "ref": "Manual CindyScript formulas"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "Stops at X(1)-X(5) (+ broken excenters)"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Stops at IV.4 incircle & IV.5 circumcircle"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "geometor.etc CenterSymbolicRegistry (X(1)-X(53144))!"
+        }
+      },
+      "notes": "Unrivaled GEOMETOR differentiator: geometor.etc bridges synthetic geometry to Kimberling's entire symbolic barycentric/trilinear encyclopedia."
+    },
+    {
+      "id": "homogeneous_ideal_points",
+      "domain_id": "06_projective_conics",
+      "title": "Homogeneous Coordinates & Ideal Points at Infinity",
+      "role": "primitive",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Affine Euclidean only"
+        },
+        "geocoq": {
+          "status": "partial",
+          "ref": "Annexes/projective.v (synthetic incidence)"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Projectivization K V (LinearAlgebra/Projective/)"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Parallel lines do not meet in point"
+        },
+        "newclid": {
+          "status": "absent",
+          "ref": "Affine Euclidean only"
+        },
+        "jgex": {
+          "status": "absent",
+          "ref": "Parallel ratio r instead of ideal points"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "Direction bivectors e12=0 in 2D PGA!"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "[x, y, 0] on linf=[0,0,1] in CP^2!"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "Parallel Line.intersection returns []"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Affine Euclidean only"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "geometor.pappus homogeneous RP^2 points/lines"
+        }
+      },
+      "notes": "In 2D PGA and CindyJS CP^2, parallel lines intersect seamlessly at an ideal point without any conditional branching."
+    },
+    {
+      "id": "cross_ratio_invariance",
+      "domain_id": "06_projective_conics",
+      "title": "Projective Cross-Ratio CR(A, B; C, D) & Perspectivity Invariance",
+      "role": "measure",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "SURPRISINGLY ABSENT in Mathlib Geometry!"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "Only harmonic -1 case fits 8-pt eqratio"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "R70 harmonic case only"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "exs-book/ch3:38 A_353 (Area ratio cancellation!)"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "((A&C)|(B&D)) / ((A&D)|(B&C)) in 2D PGA"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "crossratio(A, B, C, D) + Laguerre formula"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "MISSING in sympy.geometry!"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "geometor.model.cross_ratio + geometor.pappus"
+        }
+      },
+      "notes": "Benchmark 7: mathlib4 and sympy.geometry both lack cross_ratio, while CindyJS derives Euclidean angles from cross-ratio with I and J!"
+    },
+    {
+      "id": "harmonic_conjugate_quadrangle",
+      "domain_id": "06_projective_conics",
+      "title": "Harmonic Range & Complete Quadrangle Fourth-Harmonic Construction",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "alphageometry": {
+          "status": "derived",
+          "ref": "Expressible via quadrangle; unprovable by bare DD+AR"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "R70_PROJECTIVE_HARMONIC_CONJUGATE (added as axiom!)"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "HARMONIC (exs-book/ch3:47)"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "Division-free PGA quadrangle meet/join"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "crossratio == -1"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "is_harmonic + pappus harmonic conjugate"
+        }
+      },
+      "notes": "Newclid had to add R70_PROJECTIVE_HARMONIC_CONJUGATE as a primitive rule because bare Euclidean DD+AR cannot prove complete-quadrangle harmonicity."
+    },
+    {
+      "id": "pappus_hexagon_theorem",
+      "domain_id": "06_projective_conics",
+      "title": "Pappus's Hexagon Theorem (Synagoge VII.139)",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "partial",
+          "ref": "Ch13_5_Pappus_Pascal.v (affine parallel case!)"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "ABSENT in Mathlib!"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "1-line statement; UNPROVABLE without aux parallels!"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "R44_PAPPUS_THEOREM (hardcoded rule!)"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "exs-book/ch2:40 PAPPUS (0-aux Area proof!)"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "(X & Y & Z).e == 0 identically in 2D PGA!"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "det(X, Y, Z) == 0 in CP^2"
+        },
+        "sympy_geometry": {
+          "status": "broken",
+          "ref": "Crashes if opposite sides parallel + affine_rank bug!"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Point-free glyph palette ill-suited to 9-pt Pappus"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "figures.py:444 + geometor.pappus flagship"
+        }
+      },
+      "notes": "Benchmark 7 crown jewel: contrasts GeoCoq's field-commutativity Pappus, AlphaGeometry's DD+AR wall, PGA's 1-line identity, and geometor.pappus."
+    },
+    {
+      "id": "desargues_perspective_triangles",
+      "domain_id": "06_projective_conics",
+      "title": "Desargues's Perspective Triangles Theorem",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "partial",
+          "ref": "Ch13_6_Desargues_Hessenberg.v (affine parallel)"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "ABSENT in Mathlib!"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "Unprovable by bare DD+AR without aux parallels"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "Requires aux parallels"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "0-aux Area-Method / Wu / GB proof"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "Grassmann-Cayley identity in 2D/3D PGA"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "det(P, Q, R) == 0 in CP^2"
+        },
+        "sympy_geometry": {
+          "status": "partial",
+          "ref": "Manual Line.intersection (fails at infinity)"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "geometor.pappus Desargues configurations"
+        }
+      },
+      "notes": "In Hilbert and GeoCoq (Ch13_6), Hessenberg's theorem derives Desargues from Pappus to establish associativity of segment multiplication."
+    },
+    {
+      "id": "general_conic_sections",
+      "domain_id": "06_projective_conics",
+      "title": "General Conics: Ellipse, Parabola & Hyperbola (Apollonius)",
+      "role": "primitive",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Circles only"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Circles only"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "Spheres only in Geometry/Euclidean/"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Circles only"
+        },
+        "newclid": {
+          "status": "absent",
+          "ref": "Circles only"
+        },
+        "jgex": {
+          "status": "partial",
+          "ref": "Algebraic equations in Wu/GB only"
+        },
+        "pga_cga": {
+          "status": "partial",
+          "ref": "Requires 6D Conic GA Cl(5,3)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "3x3 symmetric matrix C in CP^2 (all conics!)"
+        },
+        "sympy_geometry": {
+          "status": "partial",
+          "ref": "Axis-aligned Ellipse + Parabola; NO Hyperbola!"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Circles only"
+        },
+        "geometor_model": {
+          "status": "partial",
+          "ref": "apollonius codex + Rec 5 ProjectiveConic"
+        }
+      },
+      "notes": "Major ecosystem finding: among all 10 systems, ONLY CindyJS treats general rotated ellipses, parabolas, and hyperbolas as unified first-class objects!"
+    },
+    {
+      "id": "conic_through_five_points",
+      "domain_id": "06_projective_conics",
+      "title": "Braikenridge-Maclaurin / Plücker Conic Through 5 Points",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "newclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "jgex": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "pga_cga": {
+          "status": "partial",
+          "ref": "Wedge of 5 points in 6D Cl(5,3)"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "ConicBy5 Plücker pencil (GeoOps.js:1032)!"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geometor_model": {
+          "status": "derived",
+          "ref": "Pascal line locus in pappus + Rec 5 ConicBy5"
+        }
+      },
+      "notes": "CindyJS's ConicBy5 builds C = mu*D1 - lambda*D2 from two degenerate line-pair conics with zero divisions—ready to port directly to exact SymPy."
+    },
+    {
+      "id": "pascal_and_brianchon",
+      "domain_id": "06_projective_conics",
+      "title": "Pascal's Hexagrammum Mysticum & Brianchon's Dual Theorem",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Omitted (only circle/line Pappus)"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "Circle-only Pascal via cyclic eqangle"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "Circle-only Pascal"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "exs-book/ch3:134 PASCAL & Wu/GB"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "6D Conic GA / projective invariant"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "Primal C & dual adj(C) in CP^2"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "geometor.pappus Hexagrammum Mysticum"
+        }
+      },
+      "notes": "Dualizing Pascal's conic theorem via C -> adj(C) immediately yields Brianchon's theorem on circumscribed hexagons."
+    },
+    {
+      "id": "conic_pole_polar_duality",
+      "domain_id": "06_projective_conics",
+      "title": "General Conic Pole-Polar & Adjugate Dual Conic",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "mathlib4": {
+          "status": "partial",
+          "ref": "Spheres only (Sphere/PolePolar.lean)"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "newclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "jgex": {
+          "status": "absent",
+          "ref": "Circles only"
+        },
+        "pga_cga": {
+          "status": "absent",
+          "ref": "Circles only in 2D CGA"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "l = C * p, p = adjoint3(C) * l!"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geometor_model": {
+          "status": "partial",
+          "ref": "geometor.pappus + Rec 5 ProjectiveConic"
+        }
+      },
+      "notes": "CindyJS proves how effortless general conic duality becomes once conics are 3x3 symmetric matrices."
+    },
+    {
+      "id": "line_and_point_reflection",
+      "domain_id": "07_transformations_invariants",
+      "title": "Point Reflection (Central Symmetry) & Line Reflection",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "derived",
+          "ref": "Via Prop10 / Prop12"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "Ch07_midpoint (l7_*) & Ch10_line_reflexivity.v!"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "LinearIsometryEquiv.reflection / pointReflection"
+        },
+        "alphageometry": {
+          "status": "native",
+          "ref": "mirror (L169) & reflect (L271)"
+        },
+        "newclid": {
+          "status": "native",
+          "ref": "mirror & reflect"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "MIRROR / REFLECT"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "l >> X (line) & P >> X (point) in 2D PGA!"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "TrReflectionL / TrReflectionP"
+        },
+        "sympy_geometry": {
+          "status": "partial",
+          "ref": "Entity.reflect (uses atan(slope) & fails on Ellipse!)"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Static coloured diagrams"
+        },
+        "geometor_model": {
+          "status": "derived",
+          "ref": "Compass mirror/vesica + Rec 7 elements transforms"
+        }
+      },
+      "notes": "In 2D PGA (Cartan-Dieudonné), grade-1 lines ARE reflections (l >> X) and grade-2 points ARE half-turns (P >> X)!"
+    },
+    {
+      "id": "rotation_and_translation",
+      "domain_id": "07_transformations_invariants",
+      "title": "Euclidean Rotations, Translations & Rigid Motors",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Superposition hidden in SAS axiom"
+        },
+        "geocoq": {
+          "status": "derived",
+          "ref": "Composition of 2 line reflections (Ch10)"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "Orientation.rotation / vadd (+ᵥ)"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "shift (L295), psquare/nsquare (±90°), s_angle"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "shift, psquare, nsquare"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "PRATIO (translation) & TRATIO (90° rotation)"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "Rotors exp(-theta/2 * P) & Translators 1 - D/2!"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "TrSimilarity / Euclidean projective matrices"
+        },
+        "sympy_geometry": {
+          "status": "partial",
+          "ref": "Entity.rotate / translate (Ellipse.rotate broken!)"
+        },
+        "byrne_1847": {
+          "status": "partial",
+          "ref": "Superposition in Byrne I.4 / I.8"
+        },
+        "geometor_model": {
+          "status": "derived",
+          "ref": "Exact algebraic transforms + PGA motor lens"
+        }
+      },
+      "notes": "sympy.geometry's Ellipse.rotate raises NotImplementedError for any angle other than multiples of pi/2."
+    },
+    {
+      "id": "homothety_and_spiral_similarity",
+      "domain_id": "07_transformations_invariants",
+      "title": "Homothety (Dilation) & Spiral Similarity",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "derived",
+          "ref": "Ch14/Ch15 scaling"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "AffineMap.homothety (LinearAlgebra/AffineSpace/)"
+        },
+        "alphageometry": {
+          "status": "derived",
+          "ref": "simtri + eqratio"
+        },
+        "newclid": {
+          "status": "derived",
+          "ref": "simtri + eqratio"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "LRATIO / PRATIO / TRATIO"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "2D CGA dilator exp(alpha * (P ^ ni)) * rotor!"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "TrSimilarity (complex multiplication)"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Entity.scale"
+        },
+        "byrne_1847": {
+          "status": "partial",
+          "ref": "Book VI similar-polygon construction (VI.18)"
+        },
+        "geometor_model": {
+          "status": "derived",
+          "ref": "Exact rational homothety + divine scaling"
+        }
+      },
+      "notes": "2D CGA represents dilations (homotheties) around any point P as versor sandwich products alongside rotations and inversions."
+    },
+    {
+      "id": "synthetic_field_coordinatization",
+      "domain_id": "07_transformations_invariants",
+      "title": "Hilbert-Tarski Geometric Segment Arithmetic & Coordinatization",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Maps directly to host R"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "Ch14_sum, Ch14_prod, Ch15_lengths, Ch16_coordinates!"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "Starts from host R vector space"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Uses Python float / Fraction"
+        },
+        "newclid": {
+          "status": "absent",
+          "ref": "Uses float / SymEngine"
+        },
+        "jgex": {
+          "status": "absent",
+          "ref": "Uses rational polynomials"
+        },
+        "pga_cga": {
+          "status": "absent",
+          "ref": "Uses host scalar ring"
+        },
+        "cindyjs": {
+          "status": "absent",
+          "ref": "Uses complex floats"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "Uses SymPy Expr"
+        },
+        "byrne_1847": {
+          "status": "partial",
+          "ref": "Book V ribbon magnitude ratios (V.1-V.25)"
+        },
+        "geometor_model": {
+          "status": "partial",
+          "ref": "hilbert codex + algebraic_field Q(alpha)"
+        }
+      },
+      "notes": "GeoCoq's crowning metatheoretic achievement (Ch14-Ch16): constructing +, -, *, / purely from points, Bet, and Cong to prove Tarski <-> R^2."
+    },
+    {
+      "id": "coordinate_free_area_elimination",
+      "domain_id": "07_transformations_invariants",
+      "title": "Chou-Gao-Zhang Coordinate-Free Area & Pythagoras Elimination",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "SMT translation instead"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "ColR/CongR only"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "Inner-product tactics"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Forward DD + linear AR"
+        },
+        "newclid": {
+          "status": "absent",
+          "ref": "Forward DD + linear AR"
+        },
+        "jgex": {
+          "status": "partial",
+          "ref": "Elim.java kernel present; Area.java GUI disabled!"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "Analogous to Grassmann-Cayley bracket elimination"
+        },
+        "cindyjs": {
+          "status": "absent",
+          "ref": "Randomized float Prover.js"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "Generic CAS solve()"
+        },
+        "byrne_1847": {
+          "status": "partial",
+          "ref": "Visual precursor: cut-and-paste region equations!"
+        },
+        "geometor_model": {
+          "status": "derived",
+          "ref": "signed_area2 + Rec 6 complete Area-Method prover"
+        }
+      },
+      "notes": "Audit surprise: JGEX's Java port disabled the Area Method tab ('TODO: Implement the area method'), creating a golden opportunity for GEOMETOR."
+    },
+    {
+      "id": "wu_grobner_polynomial_proving",
+      "domain_id": "07_transformations_invariants",
+      "title": "Wu's Characteristic Set & Gröbner Basis Theorem Proving",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "partial",
+          "ref": "Z3/CVC5 nonlinear real arithmetic"
+        },
+        "geocoq": {
+          "status": "partial",
+          "ref": "External GeoCoq algebraic tactics (nsatz)"
+        },
+        "mathlib4": {
+          "status": "partial",
+          "ref": "polyrith / grobner tactics"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Deliberately avoids coordinate polynomials"
+        },
+        "newclid": {
+          "status": "absent",
+          "ref": "Avoids coordinate polynomials"
+        },
+        "jgex": {
+          "status": "native",
+          "ref": "CharSet.java (PanelWu) & PanelGB.java (Rabinowitsch)!"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "Symbolic blade expansion"
+        },
+        "cindyjs": {
+          "status": "partial",
+          "ref": "Schwartz-Zippel complex identity test (Prover.js)"
+        },
+        "sympy_geometry": {
+          "status": "partial",
+          "ref": "sympy.polys.groebner (manual)"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Human visual verification"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "ANP minimal-polynomial canonicalization (algebra.py)"
+        }
+      },
+      "notes": "JGEX includes complete active implementations of both Ritt-Wu triangulation and Buchberger Gröbner bases with automatic Rabinowitsch NDGs."
+    },
+    {
+      "id": "pslq_algebraic_relation_recovery",
+      "domain_id": "07_transformations_invariants",
+      "title": "PSLQ Integer-Relation & Minimal-Polynomial Discovery",
+      "role": "measure",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "newclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "jgex": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "pga_cga": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "cindyjs": {
+          "status": "native",
+          "ref": "PSLQ.js + CindyScript guess(x) (degree <= 2)!"
+        },
+        "sympy_geometry": {
+          "status": "partial",
+          "ref": "nsimplify (via mpmath.pslq)"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geometor_model": {
+          "status": "derived",
+          "ref": "divine proportion scanner + Rec 9 mpmath PSLQ scout"
+        }
+      },
+      "notes": "CindyJS's PSLQ.js recovers quadratic surds like 3/2 + 1/2*sqrt(2) live during dragging; GEOMETOR can extend this to degree-d invariants in divine."
+    },
+    {
+      "id": "lemoine_geometrographie_complexity",
+      "domain_id": "07_transformations_invariants",
+      "title": "Lemoine's Géométrographie Operational Complexity (R1, R2, C1, C2, C3)",
+      "role": "measure",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Counts proof lines, not ruler/compass ops"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "Non-constructive"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "Clause count only"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "Clause count only"
+        },
+        "jgex": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "pga_cga": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "cindyjs": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Pre-Lemoine (1847 vs 1902)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "lemoine codex + Model.steps (Rec 3 R1..C3 telemetry)"
+        }
+      },
+      "notes": "ZERO external systems measure Lemoine's Simplicity S and Exactitude E—making Géométrographie telemetry a unique GEOMETOR contribution."
+    },
+    {
+      "id": "golden_ratio_extreme_mean_cut",
+      "domain_id": "08_golden_polyhedra_3d",
+      "title": "Golden Ratio (phi) — Division in Extreme & Mean Ratio (Euclid II.11, VI.30)",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "OMITTED across all 481 GeoCoq files!"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "Real.goldenRatio in NumberTheory only, 0 in Geometry!"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "OMITTED in defs.txt & rules.txt!"
+        },
+        "newclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "jgex": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "pga_cga": {
+          "status": "absent",
+          "ref": "Not built-in"
+        },
+        "cindyjs": {
+          "status": "partial",
+          "ref": "guess() recovers (1+sqrt(5))/2 numerically"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "sp.GoldenRatio in core only, 0 in sympy.geometry"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book II.11 & Book VI.30 (in 4 colours!)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "Core DNA: Q(phi) ANP, fundamentals, divine, pacioli!"
+        }
+      },
+      "notes": "STARKEST OPUS FINDING: across LeanEuclid, GeoCoq, mathlib4 Geometry, AlphaGeometry, and Newclid, the Golden Section is 100% ABSENT!"
+    },
+    {
+      "id": "vesica_golden_poles_chain",
+      "domain_id": "08_golden_polyhedra_3d",
+      "title": "5-Step Vesica Golden Chain (/ I E F J / Harmonics)",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "newclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "jgex": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "pga_cga": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "cindyjs": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "sympy_geometry": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Uses classical II.11 square-gnomon cut"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "figures.py:313 + fundamentals + divine"
+        }
+      },
+      "notes": "Constructs golden sections J and I directly on the perpendicular bisector [E F] in 5 elementary steps from the seed (A, B)."
+    },
+    {
+      "id": "regular_pentagon_and_decagon",
+      "domain_id": "08_golden_polyhedra_3d",
+      "title": "Constructible Regular Pentagon & Decagon (Euclid IV.10-IV.14, XIII.1-XIII.10)",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "mathlib4": {
+          "status": "partial",
+          "ref": "Angle/Cosine values of pi/5; no compass construction"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "pentagon (L235) is 5 unconstrained free points!"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "pentagon = 5 free points"
+        },
+        "jgex": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "2*pi/5 rotor over Q(phi, sqrt(5))"
+        },
+        "cindyjs": {
+          "status": "derived",
+          "ref": "Complex 5th roots of unity"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "RegularPolygon(O, r, 5) (exact cos(pi/5) radicals)"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book IV, Props. 10-14 (golden isosceles!)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "euclid IV.11 / XIII + kepler + elements"
+        }
+      },
+      "notes": "Amusing forensic detail: in AlphaGeometry defs.txt:235, 'pentagon a b c d e' has empty postconditions—it just spawns 5 arbitrary free points!"
+    },
+    {
+      "id": "constructible_polygons_gauss_wantzel",
+      "domain_id": "08_golden_polyhedra_3d",
+      "title": "Constructible n-gons (3, 4, 5, 6, 15, 17 / Gauss-Wantzel)",
+      "role": "theorem",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "partial",
+          "ref": "Annexes/quadrilaterals.v & regular_polygons (partial)"
+        },
+        "mathlib4": {
+          "status": "partial",
+          "ref": "Field theory degree-2 tower lemmas; not linked to geom"
+        },
+        "alphageometry": {
+          "status": "partial",
+          "ref": "isquare, eq_triangle; trisect (L349) cheats w/ trig!"
+        },
+        "newclid": {
+          "status": "partial",
+          "ref": "isquare, eq_triangle, trisect"
+        },
+        "jgex": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "pga_cga": {
+          "status": "derived",
+          "ref": "Pin(2) rotor towers"
+        },
+        "cindyjs": {
+          "status": "derived",
+          "ref": "Regular polygon macro"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "RegularPolygon(O, r, n)"
+        },
+        "byrne_1847": {
+          "status": "native",
+          "ref": "Byrne Book IV (3, 4, 5, 6, 15-gon in IV.16!)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "kepler Harmonices Mundi Book I + Q(alpha) towers"
+        }
+      },
+      "notes": "Kepler's Harmonices Mundi Book I centers on the exact boundary between elementary constructible polygons (pentagon, 15-gon) and non-constructible heptagon."
+    },
+    {
+      "id": "euclidean_3d_lines_planes_spheres",
+      "domain_id": "08_golden_polyhedra_3d",
+      "title": "3D Lines, Planes, Orthogonality & Spheres (Euclid Books XI-XII)",
+      "role": "primitive",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Strictly 2D planar"
+        },
+        "geocoq": {
+          "status": "native",
+          "ref": "Tarski_3D / dimension-free Ch02-Ch12!"
+        },
+        "mathlib4": {
+          "status": "native",
+          "ref": "n-dimensional throughout Geometry/Euclidean/!"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Strictly 2D planar"
+        },
+        "newclid": {
+          "status": "absent",
+          "ref": "Strictly 2D planar"
+        },
+        "jgex": {
+          "status": "absent",
+          "ref": "Strictly 2D planar"
+        },
+        "pga_cga": {
+          "status": "native",
+          "ref": "3D PGA Cl(3,0,1) & 3D CGA Cl(4,1) in kingdon!"
+        },
+        "cindyjs": {
+          "status": "partial",
+          "ref": "Cindy3D WebGL plugin"
+        },
+        "sympy_geometry": {
+          "status": "native",
+          "ref": "Point3D, Line3D, Plane (no Sphere!)"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Stops at Book VI (Books XI-XII omitted)"
+        },
+        "geometor_model": {
+          "status": "partial",
+          "ref": "euclid XI-XII + archimedes + walter-russell 3D"
+        }
+      },
+      "notes": "GeoCoq (dimension-free Tarski), mathlib4 (arbitrary Hilbert space V), and kingdon (3D PGA/CGA) excel in 3D/nD, while sympy.geometry lacks Sphere."
+    },
+    {
+      "id": "platonic_and_archimedean_solids",
+      "domain_id": "08_golden_polyhedra_3d",
+      "title": "Five Platonic Solids & Golden Polyhedral Coordinates (Euclid XIII, Pacioli, Kepler)",
+      "role": "construction",
+      "coverage": {
+        "leaneuclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "geocoq": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "mathlib4": {
+          "status": "absent",
+          "ref": "OMITTED in Mathlib/Geometry/!"
+        },
+        "alphageometry": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "newclid": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "jgex": {
+          "status": "absent",
+          "ref": "Omitted"
+        },
+        "pga_cga": {
+          "status": "partial",
+          "ref": "3D PGA motor symmetry groups"
+        },
+        "cindyjs": {
+          "status": "partial",
+          "ref": "Cindy3D polyhedra demos"
+        },
+        "sympy_geometry": {
+          "status": "partial",
+          "ref": "combinatorics.Polyhedron (permutations only, NO 3D coords!)"
+        },
+        "byrne_1847": {
+          "status": "absent",
+          "ref": "Stops at Book VI (Book XIII omitted)"
+        },
+        "geometor_model": {
+          "status": "native",
+          "ref": "euclid XIII + pacioli + kepler + walter-russell"
+        }
+      },
+      "notes": "Euclid's entire 13-book climax—inscribing the five Platonic solids in a sphere via Q(phi) (XIII.13-XIII.18)—is unformalized across all external ITPs/ATPs!"
+    }
+  ]
+}
