@@ -59,7 +59,6 @@ for _sister in (
 
 html_theme = "foundation"
 html_static_path: list[str] = ["_static"]
-html_logo = None
 autoapi_add_toctree_entry = False
 if "intro.rst" not in exclude_patterns:  # noqa: F405
     exclude_patterns.append("intro.rst")  # noqa: F405
@@ -68,7 +67,6 @@ suppress_warnings = ["autoapi.python_import_resolution", "toc.not_included"]
 _IMG_SVG_RE = re.compile(
     r'<img\b[^>]*?\bsrc="(?P<src>[^"]*?\.svg)"[^>]*?>'
 )
-
 
 def _inline_codes_svgs(
     app: Any,  # noqa: ANN401
@@ -120,7 +118,6 @@ def _inline_codes_svgs(
         return match.group(0)
 
     context["body"] = _IMG_SVG_RE.sub(_repl, body)
-
 
 def setup(app: Any) -> None:  # noqa: ANN401
     """Register Sphinx build event hooks for GEOMETOR Codes.
