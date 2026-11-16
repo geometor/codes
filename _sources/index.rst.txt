@@ -1,3 +1,5 @@
+:site_title: Geometric Codes & Proportions
+
 .. include:: intro.rst
 
 .. toctree::
