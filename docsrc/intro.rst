@@ -1,12 +1,12 @@
+.. container:: author-overline
+
+   semantic digital archive • mathematical catalog
+
 =============================
 Geometric Codes & Proportions
 =============================
 
-*A Comparative Study of Formal Languages, Visual Pseudocodes, Symbolic Architectures, Syntax, and Canon ("Opus") Across Geometric Logic — and How They Inform GEOMETOR.*
-
-Every formalization of geometry makes a foundational wager about **what a geometric entity is**, **how existence and degeneracy are certified**, and **how human intuition meets symbolic proof**. Across two millennia—from :person:`Euclid of Alexandria <euclid>`'s lettered diagrams and :person:`Oliver Byrne <byrne>`'s 1847 four-color visual pseudocode to modern interactive theorem provers, neuro-symbolic Olympiad engines, Clifford multivector calculi, and complex projective Riemann-surface tracers—each language illuminates certain truths effortlessly while rendering other truths verbose, unexpressible, or silently broken.
-
-``geometor-codes`` sits at **Layer 2** of the 33-repository **GEOMETOR** ecosystem. It conducts a source-level forensic audit of **11 formal, visual, and symbolic geometric architectures**, decodes **60 unfamiliar syntactic symbols and combinators**, compares **7 canonical Rosetta Stone constructions** side-by-side, maps **69 canonical topics across 8 domains** (`759` audited coverage cells), and distills **11 concrete engineering blueprints** for ``geometor.model``, ``geometor.elements`` 2.0 (*Principles of Geometry*), ``geometor.wildberger``, ``geometor.pappus``, ``geometor.etc``, ``geometor.divine``, and ``geometor.seer``.
+The mathematical catalog provides a forensic comparative study across eleven formal, visual, and symbolic geometric languages—from Byrne's colored diagrams and Tarski's point-only axiomatics to LeanEuclid, AlphaGeometry, and Conformal Geometric Algebra. Within the interconnected `GEOMETOR <https://geometor.com/books/>`_ semantic digital archive, these systems are analyzed across 69 canonical topics and 7 Rosetta Stone benchmarks, distilling an exact computational blueprint that informs symbolic engines and theorem-proving formalisms across the GEOMETOR corpus.
 
 .. figure:: /_static/figures/01-seven-ontologies.svg
    :align: center
