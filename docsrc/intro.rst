@@ -1,6 +1,6 @@
-==============
-GEOMETOR Codes
-==============
+=============================
+Geometric Codes & Proportions
+=============================
 
 *A Comparative Study of Formal Languages, Visual Pseudocodes, Symbolic Architectures, Syntax, and Canon ("Opus") Across Geometric Logic — and How They Inform GEOMETOR.*
 

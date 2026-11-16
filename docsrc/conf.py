@@ -31,6 +31,9 @@ repo = "codes"
 repo_name = "codes"
 
 setup_globals(org, org_name, repo, repo_name)  # noqa: F405
+site_title = "Geometric Codes & Proportions"
+project = site_title
+html_title = f"{site_title} • {org_name}"
 
 # Configure offline-safe local intersphinx inventories across the GEOMETOR workspace
 for _remote_key in list(intersphinx_mapping.keys()):  # noqa: F405
