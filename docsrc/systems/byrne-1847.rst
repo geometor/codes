@@ -13,7 +13,7 @@ Oliver Byrne (1847) & Rougeux (2018): Pointer-Free Visual Pseudocode
 
 Art historians celebrate Byrne's 1847 *Euclid* as a Victorian typographic marvel anticipating Bauhaus and Mondrian. Viewed through programming-language theory, however, Byrne achieved something far more radical: **he invented the first pointer-free (tacit) visual pseudocode for deductive geometry**.
 
-In classical :person:`Euclid <euclid>` (and in ``LeanEuclid``, ``GeoCoq``, ``mathlib4``, and ``AlphaGeometry``), geometric objects have no direct inline representation in text; instead, 0D points are bound to symbolic variable names (``A``, ``B``, ``C``), and segments, angles, and polygons are dereferenced via multi-letter pointer tuples (``AB``, ``∠ABC``, ``△ABC``). Every equation forces the human reader to execute a mental *pointer lookup*: scan ``"∠BDF = ∠FEC"`` in text :math:`\to` hunt for ``B``, ``D``, ``F`` on the figure :math:`\to` trace the angle :math:`\to` hunt for ``F``, ``E``, ``C`` :math:`\to` jump back to the text without losing the line!
+In classical Euclid (and in ``LeanEuclid``, ``GeoCoq``, ``mathlib4``, and ``AlphaGeometry``), geometric objects have no direct inline representation in text; instead, 0D points are bound to symbolic variable names (``A``, ``B``, ``C``), and segments, angles, and polygons are dereferenced via multi-letter pointer tuples (``AB``, ``∠ABC``, ``△ABC``). Every equation forces the human reader to execute a mental *pointer lookup*: scan ``"∠BDF = ∠FEC"`` in text :math:`\to` hunt for ``B``, ``D``, ``F`` on the figure :math:`\to` trace the angle :math:`\to` hunt for ``F``, ``E``, ``C`` :math:`\to` jump back to the text without losing the line!
 
 Byrne replaced indirect pointer dereferencing with **direct inline chromatic value-tokens**:
 
@@ -42,7 +42,7 @@ Comparing Byrne (`1847`) against modern theorem provers in our :ref:`Opus Matrix
 Why did Byrne stop at Book VI, and where does pure pointer-free color notation hit a formal ceiling?
 
 1. **Combinatorial Palette Exhaustion (~12 Tokens)**: Four colors :math:`\times` three stroke styles distinguish roughly a dozen concurrent elements cleanly. Dense configurations like the Nine-Point Circle (`X(1)`–`X(5)` + 3 medians + 3 altitudes + 9 concyclic feet/midpoints) overwhelm chromatic discrimination.
-2. **0D Point Erasure**: Points have almost no visual area! Whenever Euclid must speak of an isolated point (`I.31` external point, or the 9 collinearity points of :person:`Pappus <pappus>`'s Hexagon), Byrne must either print an ad-hoc black dot/star or write circumlocutions (*"the point where [red] meets [blue]"*). Pure point-incidence geometry (`Pappus`, `Desargues`, Tarski `Bet`) cannot live without point identifiers.
+2. **0D Point Erasure**: Points have almost no visual area! Whenever Euclid must speak of an isolated point (`I.31` external point, or the 9 collinearity points of Pappus's Hexagon), Byrne must either print an ad-hoc black dot/star or write circumlocutions (*"the point where [red] meets [blue]"*). Pure point-incidence geometry (`Pappus`, `Desargues`, Tarski `Bet`) cannot live without point identifiers.
 3. **Plain-Text Greppability & Machine Checking**: Pure woodblock icons cannot be typed in ASCII or checked by a compiler *unless* backed by a symbolic DOM layer—which is precisely what :person:`Nicholas Rougeux <rougeux>` engineered in `2018` (`c82.net/euclid`) by encoding every inline Byrne glyph as an ``<svg>`` element linked via JavaScript/CSS hover classes to the main diagram!
 
 4. How Byrne & Rougeux Directly Inform GEOMETOR

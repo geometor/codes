@@ -6,7 +6,7 @@ CindyJS: Complex Projective :math:`\mathbb{CP}^2`, Cayley–Klein & PSLQ
 
 * **Repository**: ``_refs/CindyJS`` (`https://github.com/CindyJS/CindyJS`, Apache-2.0, :cite:`RichterGebert2011`)
 * **Scale Audited**: ``src/js/libgeo/`` (`GeoOps.js`, `Conics.js`, `Tracing.js`, `Prover.js`) + ``src/js/libcs/`` (`List.js`, `PSLQ.js`)
-* **Mathematical Foundation**: :person:`Arthur Cayley <cayley>`, :person:`Felix Klein <klein>`, and :person:`Jürgen Richter-Gebert <richtergebert>`'s complex projective geometry over :math:`\mathbb{CP}^2` with Riemann-surface homotopy continuation
+* **Mathematical Foundation**: :person:`Arthur Cayley <cayley>`, Felix Klein, and :person:`Jürgen Richter-Gebert <richtergebert>`'s complex projective geometry over :math:`\mathbb{CP}^2` with Riemann-surface homotopy continuation
 
 1. Total Duality in :math:`\mathbb{CP}^2` & Circular Points :math:`I, J`
 ------------------------------------------------------------------------

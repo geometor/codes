@@ -12,7 +12,7 @@ The mathematical catalog provides a forensic comparative study across eleven for
    :align: center
    :width: 100%
 
-   **One Figure, Eleven Languages** — :person:`Euclid <euclid>`'s opening *vesica piscis* (:g:`A`, :g:`B`, circles :g:`( A B )` and :g:`( B A )`, equidistant poles :g:`F` and :g:`E` on line :g:`[ A B ]`) viewed simultaneously through diagrammatic :term:`Formal System E`, Tarski's :term:`point-only ontology`, ``mathlib4`` :term:`affine torsor` spaces, ``DD+AR`` clauses, 2D :term:`Conformal Geometric Algebra` null-cone blades, :math:`\mathbb{CP}^2` homogeneous matrices, :person:`Oliver Byrne <byrne>`'s :term:`chromatic value-token` glyphs, and ``geometor.model``'s exact :math:`\mathbb{Q}(\sqrt{3})` DAG. Hover any `:g:` badge or diagram locus to illuminate its corresponding element.
+   **One Figure, Eleven Languages** — Euclid's opening *vesica piscis* (:g:`A`, :g:`B`, circles :g:`( A B )` and :g:`( B A )`, equidistant poles :g:`F` and :g:`E` on line :g:`[ A B ]`) viewed simultaneously through diagrammatic :term:`Formal System E`, Tarski's :term:`point-only ontology`, ``mathlib4`` :term:`affine torsor` spaces, ``DD+AR`` clauses, 2D :term:`Conformal Geometric Algebra` null-cone blades, :math:`\mathbb{CP}^2` homogeneous matrices, :person:`Oliver Byrne <byrne>`'s :term:`chromatic value-token` glyphs, and ``geometor.model``'s exact :math:`\mathbb{Q}(\sqrt{3})` DAG. Hover any `:g:` badge or diagram locus to illuminate its corresponding element.
 
 Headline Forensic Discoveries
 -----------------------------

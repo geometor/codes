@@ -4,7 +4,7 @@
 The 7-Layer GEOMETOR Architecture & 11 Blueprints from ``codes``
 ====================================================================
 
-How do 33 repositories—ranging from polytonic Greek treatises of :person:`Aristotle <aristotle>` and :person:`Proclus <proclus>` to four-color plates of :person:`Oliver Byrne <byrne>`, 53,000 triangle centers of :person:`Clark Kimberling <kimberling>`, Rational Trigonometry of :person:`Norman J. Wildberger <wildberger>`, botanical phyllotaxis, and multi-agent program synthesis (`seer`)—cohere into a single architecture?
+How do 33 repositories—ranging from polytonic Greek treatises of Aristotle and Proclus to four-color plates of :person:`Oliver Byrne <byrne>`, 53,000 triangle centers of :person:`Clark Kimberling <kimberling>`, Rational Trigonometry of :person:`Norman J. Wildberger <wildberger>`, botanical phyllotaxis, and multi-agent program synthesis (`seer`)—cohere into a single architecture?
 
 Our audit organizes the entire **GEOMETOR** workspace into **seven epistemic and computational layers**, placing ``geometor/codes`` at **Layer 2** as the translational bridge between the primary historical canon (**Layers 0–1**) and the executable symbolic software stack (**Layers 3–6**).
 
@@ -88,7 +88,7 @@ Every external system audited in ``codes`` contributes a specific, high-leverage
 2. **Persist Selector ASTs on ``Step`` & Emit ``LeanEuclid`` System E Proofs** (*Priority 2 — inspired by LeanEuclid*):
    Because ``geometor.model.intersect``'s five selectors (`side_of`, `between`, `beyond`, `on_ray`, `other_than`) map 1-to-1 onto ``LeanEuclid/SystemE/Theory/Constructions/Intersections.lean``, storing the structured selector tuple on ``Step.primitive`` enables a direct ``to_leaneuclid(model)`` transpiler.
 3. **Lemoine Géométrographie Complexity Telemetry (:math:`R_1, R_2, C_1, C_2, C_3`)** (*Priority 3 — inspired by Lemoine & AlphaGeometry*):
-   Zero surveyed external systems track :person:`Émile Lemoine <lemoine>`'s operational ruler-and-compass cost. Instrumenting ``Model.construct_line`` (:math:`2 R_1 + R_2`) and ``Model.construct_circle`` (:math:`C_1 + C_2 + C_3` or :math:`2 C_1 + C_3`) computes **Simplicity** :math:`S` and **Exactitude** :math:`E` automatically on every ``Model``.
+   Zero surveyed external systems track Émile Lemoine's operational ruler-and-compass cost. Instrumenting ``Model.construct_line`` (:math:`2 R_1 + R_2`) and ``Model.construct_circle`` (:math:`C_1 + C_2 + C_3` or :math:`2 C_1 + C_3`) computes **Simplicity** :math:`S` and **Exactitude** :math:`E` automatically on every ``Model``.
 4. **First-Class Circle Power, Radical Axis, Inversion & Pole–Polar Module** (*Priority 4 — inspired by Mathlib4, 2D CGA, CindyJS, JGEX*):
    Fills ``sympy.geometry``'s and ``GeoCoq``'s largest classical gap via ``geometor.model.inversion``: exact polynomial ``circle_power``, ``radical_axis`` (working seamlessly on disjoint circles!), ``invert_point``, ``invert_line_or_circle``, and ``polar_line``.
 5. **Exact :math:`3 \times 3` Symmetric Conic Matrices & Plücker 5-Point Pencils in ``geometor.pappus``** (*Priority 5 — inspired by CindyJS & Apollonius*):

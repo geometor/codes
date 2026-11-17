@@ -97,7 +97,7 @@ Six Structural Blind Spots Exposed by the Opus Matrix
 3. **The Coaxial & Inversive Gap (Domain 4)**: ``GeoCoq`` (``4,671`` lemmas) and ``sympy.geometry`` have **zero** circle power, radical axis, inversion, or pole–polar support, and even ``mathlib4`` (which shines on ``Sphere.power`` and ``PolePolar``) omits ``radicalAxis``! Meanwhile, 2D CGA (``kingdon``) expresses radical axis as ``kappa1 - kappa2`` and circle inversion as ``C >> P``.
 4. **The Projective Cross-Ratio & Pappus Wall (Domain 6)**: ``mathlib4`` and ``sympy.geometry`` both lack ``cross_ratio``, ``Pappus``, ``Desargues``, and ``Menelaus``, while bare ``AlphaGeometry`` ``DD+AR`` cannot prove Pappus without auxiliary parallel lines.
 5. **Triangle Centers Beyond Textbook Classics (Domain 5)**: External systems top out between ``0`` centers (``LeanEuclid``), ``2`` (``Byrne``), ``4`` (``GeoCoq``), and ``6`` (``mathlib4``, ``AlphaGeometry``), and ``sympy.geometry`` ``1.14.0`` has a **live double bug in ``Triangle.excenters``**—leaving ``geometor.etc`` (``X(1)``–``X(53144)``) unmatched.
-6. **Operational Construction Complexity (Domain 7)**: Zero external systems measure :person:`Émile Lemoine <lemoine>`'s *Géométrographie* (``R1, R2, C1, C2, C3``), positioning ``geometor.model`` + ``geometor/lemoine`` to own constructive complexity analysis.
+6. **Operational Construction Complexity (Domain 7)**: Zero external systems measure Émile Lemoine's *Géométrographie* (``R1, R2, C1, C2, C3``), positioning ``geometor.model`` + ``geometor/lemoine`` to own constructive complexity analysis.
 
 
 Domain 1 — Axiomatic & Topological Foundations
