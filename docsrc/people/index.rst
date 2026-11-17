@@ -1,5 +1,5 @@
 :navigation: header
-:order: 70
+:order: 10
 :nav_title: People
 :breadcrumb_title: People
 
