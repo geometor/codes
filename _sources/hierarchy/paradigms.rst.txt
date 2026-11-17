@@ -15,7 +15,7 @@ Why do eleven major formalizations of Euclidean and projective geometry look as 
    :align: center
    :width: 100%
 
-   **Figure 1 — The Vesica Piscis Across Paradigms** (:g:`A`, :g:`B`, :g:`[ A B ]`, :g:`( A B )`, :g:`( B A )`, :g:`F`, :g:`E`). Every paradigm encodes this single opening figure of :person:`Euclid <euclid>`'s *Elements* (`I.1`) through a fundamentally different mathematical substrate.
+   **Figure 1 — The Vesica Piscis Across Paradigms** (:g:`A`, :g:`B`, :g:`[ A B ]`, :g:`( A B )`, :g:`( B A )`, :g:`F`, :g:`E`). Every paradigm encodes this single opening figure of Euclid's *Elements* (`I.1`) through a fundamentally different mathematical substrate.
 
 Comparative Taxonomy of the Eight Paradigms
 -------------------------------------------
@@ -73,7 +73,7 @@ Comparative Taxonomy of the Eight Paradigms
 The Noetic Tension: Symbolic Rigor vs. Intuitive Nexus
 ------------------------------------------------------
 
-In *De Noetica Geometriae* (:cite:`Hoenen1954`), :person:`Peter H. J. Hoenen <hoenen>` observed that geometric knowledge neither floats in pure imageless logic nor reduces to empirical measurement of ink on paper. Rather, human reason grasps universal necessity *inside* the concrete spatial *Nexus* of the constructed figure (*abstractio formalis intuitiva*).
+In *De Noetica Geometriae* (:cite:`Hoenen1954`), Peter H. J. Hoenen observed that geometric knowledge neither floats in pure imageless logic nor reduces to empirical measurement of ink on paper. Rather, human reason grasps universal necessity *inside* the concrete spatial *Nexus* of the constructed figure (*abstractio formalis intuitiva*).
 
 Viewed through Hoenen's lens, the history of formal geometry over the last century splits into two halves that rarely speak to one another:
 

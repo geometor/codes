@@ -11,7 +11,7 @@ LeanEuclid & Formal System E
 1. Ontological & Deductive Architecture
 ---------------------------------------
 
-For two centuries after Pasch and :person:`David Hilbert <hilbert>`, logicians treated :person:`Euclid <euclid>`'s reliance on diagrams—such as assuming in `Book I, Proposition 1` that two congruent circles intersect—as a logical flaw. Avigad, Dean, and Mumma (`2009`) overturned that verdict: Euclid's diagrammatic inferences are governed by a **decidable, purely topological algebra of plane separation** that can be separated cleanly from explicit ruler-and-compass constructions and linear magnitude equations.
+For two centuries after Pasch and :person:`David Hilbert <hilbert>`, logicians treated Euclid's reliance on diagrams—such as assuming in `Book I, Proposition 1` that two congruent circles intersect—as a logical flaw. Avigad, Dean, and Mumma (`2009`) overturned that verdict: Euclid's diagrammatic inferences are governed by a **decidable, purely topological algebra of plane separation** that can be separated cleanly from explicit ruler-and-compass constructions and linear magnitude equations.
 
 ``LeanEuclid`` embeds Formal System E into Lean 4 across three distinct axiom strata (`SystemE/Theory/`):
 

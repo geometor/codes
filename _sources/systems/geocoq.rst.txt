@@ -6,7 +6,7 @@ GeoCoq: Tarski, Hilbert, Euclid & 34 Parallel Postulates
 
 * **Repository**: ``_refs/GeoCoq`` (`https://github.com/GeoCoq/GeoCoq`, LGPL-3.0-only, :cite:`Boutry2019`)
 * **Scale Audited**: `481` ``.v`` files, `4,671` ``Lemma``/``Theorem`` proofs, `42` axiomatic ``Class`` strata
-* **Mathematical Foundation**: :person:`Alfred Tarski <tarski>`'s first-order geometry (:cite:`Schwabhauser1983`) bridged bidirectionally to :person:`David Hilbert <hilbert>` (:cite:`Hilbert1899`) and :person:`Euclid <euclid>`
+* **Mathematical Foundation**: :person:`Alfred Tarski <tarski>`'s first-order geometry (:cite:`Schwabhauser1983`) bridged bidirectionally to :person:`David Hilbert <hilbert>` (:cite:`Hilbert1899`) and Euclid
 
 1. Tarski's Radical Point-Only Ontology
 ---------------------------------------
