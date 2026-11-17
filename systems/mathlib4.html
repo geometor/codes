@@ -75,7 +75,7 @@
           <a href="../glossary.html"  >Glossary</a>
         </li>
         <li>
-          <a href="../persons.html"  >Persons</a>
+          <a href="../people/index.html"  >People</a>
         </li>
         <li>
           <a href="../bibliography.html"  >Bibliography</a>
@@ -134,7 +134,7 @@
         <ul class="simple">
         <li><p><strong>Monge Point &amp; :math:`3(n+1)`-Point Sphere (`MongePoint.lean`, `NinePointCircle.lean`)</strong>: Instead of proving altitude concurrency only for planar triangles, <code class="docutils literal notranslate"><span class="pre">Simplex.mongePoint</span></code> generalizes the orthocenter to an arbitrary <span class="math notranslate nohighlight">\(n\)</span>-simplex in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, and <code class="docutils literal notranslate"><span class="pre">NinePointCircle.lean</span></code> proves Feuerbach’s nine-point circle as the <span class="math notranslate nohighlight">\(n\)</span>-dimensional <strong>:math:`3(n+1)`-point sphere</strong>!</p></li>
         <li><p><strong>Directed Twice-Angles Modulo :math:`2pi` (`Angle/Oriented/Basic.lean`)</strong>: When <cite>[Module.Oriented ℝ V (Fin 2)]</cite> and <cite>[Fact (Module.finrank ℝ V = 2)]</cite> are added for 2D plane geometry, <code class="docutils literal notranslate"><span class="pre">oangle</span> <span class="pre">x</span> <span class="pre">y</span> <span class="pre">z</span></code> (<cite>∡ x y z : Real.Angle</cite>) lives in <span class="math notranslate nohighlight">\(\mathbb{R} / 2\pi\mathbb{Z}\)</span>. Multiplying by <cite>(2 : ℤ) • ∡ p₁ p₂ p₃</cite> kills ray-reversal (<cite>π</cite> becomes <cite>2π = 0</cite>), encoding <strong>directed line angles</strong> cleanly and proving inscribed-angle concyclicity (<cite>Sphere/Basic.lean</cite>) without case splits!</p></li>
-        <li><p><strong>1-Line La Hire Pole–Polar Reciprocity (`Sphere/PolePolar.lean`)</strong>: Defines <code class="docutils literal notranslate"><span class="pre">Sphere.power</span> <span class="pre">s</span> <span class="pre">p</span> <span class="pre">:=</span> <span class="pre">dist</span> <span class="pre">p</span> <span class="pre">s.center</span> <span class="pre">^</span> <span class="pre">2</span> <span class="pre">-</span> <span class="pre">s.radius</span> <span class="pre">^</span> <span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">Sphere.polar</span> <span class="pre">s</span> <span class="pre">p</span> <span class="pre">:=</span> <span class="pre">mk'</span> <span class="pre">(inversion</span> <span class="pre">s.center</span> <span class="pre">s.radius</span> <span class="pre">p)</span> <span class="pre">(ℝ</span> <span class="pre">∙</span> <span class="pre">(p</span> <span class="pre">-ᵥ</span> <span class="pre">s.center))ᗮ</span></code>, proving <a class="person-ref" id="occ-person-lahire-1" href="../persons.html#person-lahire" data-person="lahire" title="Person: lahire">Philippe de La Hire</a>’s reciprocity <code class="docutils literal notranslate"><span class="pre">q</span> <span class="pre">∈</span> <span class="pre">s.polar</span> <span class="pre">p</span> <span class="pre">↔</span> <span class="pre">p</span> <span class="pre">∈</span> <span class="pre">s.polar</span> <span class="pre">q</span></code> in a handful of inner-product rewrite steps across all dimensions!</p></li>
+        <li><p><strong>1-Line La Hire Pole–Polar Reciprocity (`Sphere/PolePolar.lean`)</strong>: Defines <code class="docutils literal notranslate"><span class="pre">Sphere.power</span> <span class="pre">s</span> <span class="pre">p</span> <span class="pre">:=</span> <span class="pre">dist</span> <span class="pre">p</span> <span class="pre">s.center</span> <span class="pre">^</span> <span class="pre">2</span> <span class="pre">-</span> <span class="pre">s.radius</span> <span class="pre">^</span> <span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">Sphere.polar</span> <span class="pre">s</span> <span class="pre">p</span> <span class="pre">:=</span> <span class="pre">mk'</span> <span class="pre">(inversion</span> <span class="pre">s.center</span> <span class="pre">s.radius</span> <span class="pre">p)</span> <span class="pre">(ℝ</span> <span class="pre">∙</span> <span class="pre">(p</span> <span class="pre">-ᵥ</span> <span class="pre">s.center))ᗮ</span></code>, proving <a class="person-ref" id="occ-person-lahire-1" href="../people/lahire.html#person-lahire" data-person="lahire" title="Person: lahire">Philippe de La Hire</a>’s reciprocity <code class="docutils literal notranslate"><span class="pre">q</span> <span class="pre">∈</span> <span class="pre">s.polar</span> <span class="pre">p</span> <span class="pre">↔</span> <span class="pre">p</span> <span class="pre">∈</span> <span class="pre">s.polar</span> <span class="pre">q</span></code> in a handful of inner-product rewrite steps across all dimensions!</p></li>
         <li><p><strong>Compositional Naming Grammar</strong>: Theorems read like self-documenting sentences (<cite>conclusion_of_hypothesis</cite>, e.g., <code class="docutils literal notranslate"><span class="pre">mul_dist_add_mul_dist_eq_mul_dist_of_cospherical</span></code> in <code class="docutils literal notranslate"><span class="pre">Sphere/Ptolemy.lean</span></code>).</p></li>
         </ul>
         </section>
@@ -210,6 +210,7 @@
       <h3>Types</h3>
       <ul>
         <li><a href="../types/log.html">log</a></li>
+        <li><a href="../types/person.html">person</a></li>
       </ul>
     </aside>
   </div>
@@ -233,6 +234,7 @@
   <script src="../_static/doctools.js?v=fd6eb6e6"></script>
   <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
   <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/collection_directory.js?v=f242906c"></script>
   <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
   <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
   <script src="../_static/js/search_highlight.js"></script>

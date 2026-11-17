@@ -75,7 +75,7 @@
           <a href="../glossary.html"  >Glossary</a>
         </li>
         <li>
-          <a href="../persons.html"  >Persons</a>
+          <a href="../people/index.html"  >People</a>
         </li>
         <li>
           <a href="../bibliography.html"  >Bibliography</a>
@@ -121,11 +121,11 @@
         </ul>
         <section class="level-2" id="historical-mother-ship-of-automated-geometry">
         <h2>1. Historical Mother-Ship of Automated Geometry<a class="headerlink" href="#historical-mother-ship-of-automated-geometry" title="Link to this heading">¶</a></h2>
-        <p><code class="docutils literal notranslate"><span class="pre">Java-Geometry-Expert</span></code> (<cite>JGEX</cite>), created by Zheng Ye, <a class="person-ref" id="occ-person-chou-1" href="../persons.html#person-chou" data-person="chou" title="Person: chou">Shang-Ching Chou</a>, and <a class="person-ref" id="occ-person-gao-1" href="../persons.html#person-gao" data-person="gao" title="Person: gao">Xiao-Shan Gao</a>, is the direct ancestor from which <code class="docutils literal notranslate"><span class="pre">AlphaGeometry</span></code> and <code class="docutils literal notranslate"><span class="pre">Newclid</span></code> inherited both their clause DSL and their 43 <code class="docutils literal notranslate"><span class="pre">GDD</span></code> Horn rules. Crucially, however, <code class="docutils literal notranslate"><span class="pre">JGEX</span></code> was designed around <strong>five complementary reasoning engines</strong> so that when forward Horn saturation (<cite>GDD</cite>) stalls, coordinate-free invariant elimination (<cite>Area</cite> / <cite>Full-Angle</cite>) or algebraic triangulation (<cite>Wu</cite> / <cite>Gröbner</cite>) takes over.</p>
+        <p><code class="docutils literal notranslate"><span class="pre">Java-Geometry-Expert</span></code> (<cite>JGEX</cite>), created by Zheng Ye, <a class="person-ref" id="occ-person-chou-1" href="../people/chou.html#person-chou" data-person="chou" title="Person: chou">Shang-Ching Chou</a>, and <a class="person-ref" id="occ-person-gao-1" href="../people/gao.html#person-gao" data-person="gao" title="Person: gao">Xiao-Shan Gao</a>, is the direct ancestor from which <code class="docutils literal notranslate"><span class="pre">AlphaGeometry</span></code> and <code class="docutils literal notranslate"><span class="pre">Newclid</span></code> inherited both their clause DSL and their 43 <code class="docutils literal notranslate"><span class="pre">GDD</span></code> Horn rules. Crucially, however, <code class="docutils literal notranslate"><span class="pre">JGEX</span></code> was designed around <strong>five complementary reasoning engines</strong> so that when forward Horn saturation (<cite>GDD</cite>) stalls, coordinate-free invariant elimination (<cite>Area</cite> / <cite>Full-Angle</cite>) or algebraic triangulation (<cite>Wu</cite> / <cite>Gröbner</cite>) takes over.</p>
         </section>
         <section class="level-2" id="mathematical-jewel-the-coordinate-free-area-method">
         <h2>2. Mathematical Jewel: The Coordinate-Free Area Method<a class="headerlink" href="#mathematical-jewel-the-coordinate-free-area-method" title="Link to this heading">¶</a></h2>
-        <p>Formulated by Chou, Gao, and <a class="person-ref" id="occ-person-zhang-1" href="../persons.html#person-zhang" data-person="zhang" title="Person: zhang">Jing-Zhong Zhang</a> (<a class="citation-ref" id="occ-cite-chougaozhang1994-2" href="../bibliography.html#cite-chougaozhang1994" data-cite="chougaozhang1994" title="Citation: chougaozhang1994">ChouGaoZhang1994</a>), the <a class="term-ref glossary-term" id="occ-term-area-method-1" href="../glossary.html#term-area-method" data-term="area-method" title="Term: area-method">Area Method</a> proves theorems <strong>without introducing Cartesian coordinates</strong> and <strong>without guessing auxiliary points</strong>, using three coordinate-free geometric quantities:</p>
+        <p>Formulated by Chou, Gao, and <a class="person-ref" id="occ-person-zhang-1" href="../people/zhang.html#person-zhang" data-person="zhang" title="Person: zhang">Jing-Zhong Zhang</a> (<a class="citation-ref" id="occ-cite-chougaozhang1994-2" href="../bibliography.html#cite-chougaozhang1994" data-cite="chougaozhang1994" title="Citation: chougaozhang1994">ChouGaoZhang1994</a>), the <a class="term-ref glossary-term" id="occ-term-area-method-1" href="../glossary.html#term-area-method" data-term="area-method" title="Term: area-method">Area Method</a> proves theorems <strong>without introducing Cartesian coordinates</strong> and <strong>without guessing auxiliary points</strong>, using three coordinate-free geometric quantities:</p>
         <ol class="arabic">
         <li><p><strong>Signed Parallel Ratio</strong> <span class="math notranslate nohighlight">\(r = \overline{AB} / \overline{CD}\)</span> for parallel directed segments <span class="math notranslate nohighlight">\(AB \parallel CD\)</span>.</p></li>
         <li><p><strong>Signed Polygon Area</strong> <span class="math notranslate nohighlight">\(S_{ABC}\)</span> (and quadrilateral <span class="math notranslate nohighlight">\(S_{ABCD} = S_{ABC} + S_{ACD}\)</span>), vanishing iff <span class="math notranslate nohighlight">\(A, B, C\)</span> are collinear and satisfying the <strong>Co-Side Theorem</strong>: if <span class="math notranslate nohighlight">\(M = AB \cap PQ\)</span>, then <span class="math notranslate nohighlight">\(\overline{PM}/\overline{QM} = S_{PAB}/S_{QAB}\)</span>.</p></li>
@@ -215,6 +215,7 @@
       <h3>Types</h3>
       <ul>
         <li><a href="../types/log.html">log</a></li>
+        <li><a href="../types/person.html">person</a></li>
       </ul>
     </aside>
   </div>
@@ -238,6 +239,7 @@
   <script src="../_static/doctools.js?v=fd6eb6e6"></script>
   <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
   <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/collection_directory.js?v=f242906c"></script>
   <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
   <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
   <script src="../_static/js/search_highlight.js"></script>

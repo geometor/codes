@@ -75,7 +75,7 @@
           <a href="../glossary.html"  >Glossary</a>
         </li>
         <li>
-          <a href="../persons.html"  >Persons</a>
+          <a href="../people/index.html"  >People</a>
         </li>
         <li>
           <a href="../bibliography.html"  >Bibliography</a>
@@ -120,7 +120,7 @@
         </ul>
         <section class="level-2" id="architecture-of-dd-ar">
         <h2>1. Architecture of <code class="docutils literal notranslate"><span class="pre">DD</span> <span class="pre">+</span> <span class="pre">AR</span></code><a class="headerlink" href="#architecture-of-dd-ar" title="Link to this heading">¶</a></h2>
-        <p><a class="person-ref" id="occ-person-trinh-1" href="../persons.html#person-trinh" data-person="trinh" title="Person: trinh">Trieu H. Trinh</a> et al.’s <code class="docutils literal notranslate"><span class="pre">AlphaGeometry</span></code> splits Olympiad theorem proving into two halves:</p>
+        <p><a class="person-ref" id="occ-person-trinh-1" href="../people/trinh.html#person-trinh" data-person="trinh" title="Person: trinh">Trieu H. Trinh</a> et al.’s <code class="docutils literal notranslate"><span class="pre">AlphaGeometry</span></code> splits Olympiad theorem proving into two halves:</p>
         <ol class="arabic simple">
         <li><p><strong>Deterministic Symbolic Closure (`DD + AR`)</strong>: Forward-chaining <a class="term-ref glossary-term" id="occ-term-deductive-database-1" href="../glossary.html#term-deductive-database" data-term="deductive-database" title="Term: deductive-database">Deductive Database</a> saturation over <cite>43</cite> Horn rules (<cite>dd.py</cite>) interleaved with sparse <cite>Fraction</cite> Gaussian elimination (<cite>ar.py</cite>) across three linear tables:</p>
         <ul class="simple">
@@ -155,7 +155,7 @@
         <ul class="simple">
         <li><p><strong>No Additive Squared Lengths in ``AlphaGeometry``</strong>: Because <code class="docutils literal notranslate"><span class="pre">RatioTable</span></code> is multiplicative (<cite>log|s|</cite>) and <code class="docutils literal notranslate"><span class="pre">DistanceTable</span></code> is 1D collinear, pure <code class="docutils literal notranslate"><span class="pre">AlphaGeometry</span></code> <strong>cannot state or prove</strong> <span class="math notranslate nohighlight">\(a^2 + b^2 = c^2\)</span> (<cite>Pythagoras</cite>), Stewart’s theorem, or disjoint-circle radical axes <span class="math notranslate nohighlight">\(|PO_1|^2 - |PO_2|^2 = R_1^2 - R_2^2\)</span>! <code class="docutils literal notranslate"><span class="pre">Newclid</span></code>’s C++20 engine <code class="docutils literal notranslate"><span class="pre">Yuclid</span></code> solves this by adding a fourth Gaussian table over <strong>squared segment lengths</strong> (<cite>R85_GENERALIZED_PYTHAGORAS</cite>).</p></li>
         <li><p><strong>Missing Hypotenuse–Leg Congruence &amp; ``incenter == excenter`` Mod :math:`pi`</strong>: <code class="docutils literal notranslate"><span class="pre">rules.txt</span></code> (<cite>r00</cite>–<cite>r42</cite>) omits right-triangle HL congruence (added as <cite>R52</cite>/<cite>R53</cite> in <code class="docutils literal notranslate"><span class="pre">Newclid</span></code>), and because <code class="docutils literal notranslate"><span class="pre">eqangle</span></code> operates modulo <span class="math notranslate nohighlight">\(\pi\)</span>, <code class="docutils literal notranslate"><span class="pre">incenter</span></code> (<cite>defs.txt:85</cite>) and <code class="docutils literal notranslate"><span class="pre">excenter</span></code> (<cite>defs.txt:121</cite>) have <strong>100% identical synthetic predicates</strong>!</p></li>
-        <li><p><strong>The Projective Wall (`Pappus`, `Desargues`, `Harmonic Conjugate`)</strong>: Even though <a class="person-ref" id="occ-person-pappus-1" href="../persons.html#person-pappus" data-person="pappus" title="Person: pappus">Pappus</a>’s Hexagon Theorem is a 1-line <code class="docutils literal notranslate"><span class="pre">coll</span></code> statement, bare <code class="docutils literal notranslate"><span class="pre">DD</span> <span class="pre">+</span> <span class="pre">AR</span></code> <strong>cannot prove it without auxiliary parallel lines</strong> because <cite>r00</cite>–<cite>r42</cite> lack signed Menelaus/area cancellation—forcing <code class="docutils literal notranslate"><span class="pre">Newclid</span></code> to hardcode <code class="docutils literal notranslate"><span class="pre">R44_PAPPUS_THEOREM</span></code> and <code class="docutils literal notranslate"><span class="pre">R70_PROJECTIVE_HARMONIC_CONJUGATE</span></code> directly into <code class="docutils literal notranslate"><span class="pre">all_rules.py</span></code> as primitive axioms!</p></li>
+        <li><p><strong>The Projective Wall (`Pappus`, `Desargues`, `Harmonic Conjugate`)</strong>: Even though <a class="person-ref" id="occ-person-pappus-1" href="../people/pappus.html#person-pappus" data-person="pappus" title="Person: pappus">Pappus</a>’s Hexagon Theorem is a 1-line <code class="docutils literal notranslate"><span class="pre">coll</span></code> statement, bare <code class="docutils literal notranslate"><span class="pre">DD</span> <span class="pre">+</span> <span class="pre">AR</span></code> <strong>cannot prove it without auxiliary parallel lines</strong> because <cite>r00</cite>–<cite>r42</cite> lack signed Menelaus/area cancellation—forcing <code class="docutils literal notranslate"><span class="pre">Newclid</span></code> to hardcode <code class="docutils literal notranslate"><span class="pre">R44_PAPPUS_THEOREM</span></code> and <code class="docutils literal notranslate"><span class="pre">R70_PROJECTIVE_HARMONIC_CONJUGATE</span></code> directly into <code class="docutils literal notranslate"><span class="pre">all_rules.py</span></code> as primitive axioms!</p></li>
         <li><p><strong>Float64 Numerical Sketch Fragility</strong>: Both <code class="docutils literal notranslate"><span class="pre">AlphaGeometry</span></code> (<cite>numericals.py</cite>) and <code class="docutils literal notranslate"><span class="pre">Newclid</span></code> (<cite>ATOM = 1e-7</cite> <cite>close_enough</cite> pre-filtering) rely on random floating-point sketches to guard non-degeneracy (<cite>ncoll</cite>, <cite>sameclock</cite>, <cite>sameside</cite>).</p></li>
         </ul>
         </section>
@@ -223,6 +223,7 @@
       <h3>Types</h3>
       <ul>
         <li><a href="../types/log.html">log</a></li>
+        <li><a href="../types/person.html">person</a></li>
       </ul>
     </aside>
   </div>
@@ -246,6 +247,7 @@
   <script src="../_static/doctools.js?v=fd6eb6e6"></script>
   <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
   <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/collection_directory.js?v=f242906c"></script>
   <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
   <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
   <script src="../_static/js/search_highlight.js"></script>

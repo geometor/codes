@@ -75,7 +75,7 @@
           <a href="../glossary.html"  >Glossary</a>
         </li>
         <li>
-          <a href="../persons.html"  >Persons</a>
+          <a href="../people/index.html"  >People</a>
         </li>
         <li>
           <a href="../bibliography.html"  >Bibliography</a>
@@ -117,11 +117,11 @@
         <ul class="simple">
         <li><p><strong>Repository</strong>: <code class="docutils literal notranslate"><span class="pre">_refs/LeanEuclid</span></code> (<cite>https://github.com/loganrjmurphy/LeanEuclid</cite>, MIT, <a class="citation-ref" id="occ-cite-murphy2024-1" href="../bibliography.html#cite-murphy2024" data-cite="murphy2024" title="Citation: murphy2024">Murphy2024</a>)</p></li>
         <li><p><strong>Scale Audited</strong>: <cite>235</cite> <code class="docutils literal notranslate"><span class="pre">.lean</span></code> files, <cite>206</cite> theorems, <cite>108</cite> axioms (<cite>SystemE/</cite>, <cite>Book/Prop01.lean</cite>–<cite>Prop48.lean</cite>, <cite>UniGeo/</cite>)</p></li>
-        <li><p><strong>Mathematical Foundation</strong>: <a class="person-ref" id="occ-person-avigad-1" href="../persons.html#person-avigad" data-person="avigad" title="Person: avigad">Jeremy Avigad</a>, Edward Dean, and John Mumma’s <a class="term-ref glossary-term" id="occ-term-formal-system-e-1" href="../glossary.html#term-formal-system-e" data-term="formal-system-e" title="Term: formal-system-e">Formal System E</a> (<a class="citation-ref" id="occ-cite-avigaddeanmumma2009-1" href="../bibliography.html#cite-avigaddeanmumma2009" data-cite="avigaddeanmumma2009" title="Citation: avigaddeanmumma2009">AvigadDeanMumma2009</a>)</p></li>
+        <li><p><strong>Mathematical Foundation</strong>: <a class="person-ref" id="occ-person-avigad-1" href="../people/avigad.html#person-avigad" data-person="avigad" title="Person: avigad">Jeremy Avigad</a>, Edward Dean, and John Mumma’s <a class="term-ref glossary-term" id="occ-term-formal-system-e-1" href="../glossary.html#term-formal-system-e" data-term="formal-system-e" title="Term: formal-system-e">Formal System E</a> (<a class="citation-ref" id="occ-cite-avigaddeanmumma2009-1" href="../bibliography.html#cite-avigaddeanmumma2009" data-cite="avigaddeanmumma2009" title="Citation: avigaddeanmumma2009">AvigadDeanMumma2009</a>)</p></li>
         </ul>
         <section class="level-2" id="ontological-deductive-architecture">
         <h2>1. Ontological &amp; Deductive Architecture<a class="headerlink" href="#ontological-deductive-architecture" title="Link to this heading">¶</a></h2>
-        <p>For two centuries after Pasch and <a class="person-ref" id="occ-person-hilbert-1" href="../persons.html#person-hilbert" data-person="hilbert" title="Person: hilbert">David Hilbert</a>, logicians treated <a class="person-ref" id="occ-person-euclid-1" href="../persons.html#person-euclid" data-person="euclid" title="Person: euclid">Euclid</a>’s reliance on diagrams—such as assuming in <cite>Book I, Proposition 1</cite> that two congruent circles intersect—as a logical flaw. Avigad, Dean, and Mumma (<cite>2009</cite>) overturned that verdict: Euclid’s diagrammatic inferences are governed by a <strong>decidable, purely topological algebra of plane separation</strong> that can be separated cleanly from explicit ruler-and-compass constructions and linear magnitude equations.</p>
+        <p>For two centuries after Pasch and <a class="person-ref" id="occ-person-hilbert-1" href="../people/hilbert.html#person-hilbert" data-person="hilbert" title="Person: hilbert">David Hilbert</a>, logicians treated <a class="person-ref" id="occ-person-euclid-1" href="../people/euclid.html#person-euclid" data-person="euclid" title="Person: euclid">Euclid</a>’s reliance on diagrams—such as assuming in <cite>Book I, Proposition 1</cite> that two congruent circles intersect—as a logical flaw. Avigad, Dean, and Mumma (<cite>2009</cite>) overturned that verdict: Euclid’s diagrammatic inferences are governed by a <strong>decidable, purely topological algebra of plane separation</strong> that can be separated cleanly from explicit ruler-and-compass constructions and linear magnitude equations.</p>
         <p><code class="docutils literal notranslate"><span class="pre">LeanEuclid</span></code> embeds Formal System E into Lean 4 across three distinct axiom strata (<cite>SystemE/Theory/</cite>):</p>
         <ol class="arabic simple">
         <li><p><strong>Six Primitive Sorts</strong> (<cite>Point</cite>, <cite>Line</cite>, <cite>Circle</cite>, <cite>Segment</cite>, <cite>Angle</cite>, <cite>Triangle</cite>) + <strong>30 Construction Rules</strong> (<cite>Constructions/Points.lean</cite>, <cite>Lines.lean</cite>, <cite>Circles.lean</cite>, <cite>Intersections.lean</cite>) invoked explicitly by the user via <code class="docutils literal notranslate"><span class="pre">euclid_apply</span> <span class="pre">(...)</span> <span class="pre">as</span> <span class="pre">x</span></code>.</p></li>
@@ -220,6 +220,7 @@
       <h3>Types</h3>
       <ul>
         <li><a href="../types/log.html">log</a></li>
+        <li><a href="../types/person.html">person</a></li>
       </ul>
     </aside>
   </div>
@@ -243,6 +244,7 @@
   <script src="../_static/doctools.js?v=fd6eb6e6"></script>
   <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
   <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/collection_directory.js?v=f242906c"></script>
   <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
   <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
   <script src="../_static/js/search_highlight.js"></script>

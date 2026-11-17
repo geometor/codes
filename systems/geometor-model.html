@@ -75,7 +75,7 @@
           <a href="../glossary.html"  >Glossary</a>
         </li>
         <li>
-          <a href="../persons.html"  >Persons</a>
+          <a href="../people/index.html"  >People</a>
         </li>
         <li>
           <a href="../bibliography.html"  >Bibliography</a>
@@ -116,7 +116,7 @@
         <span id="system-geometor"></span><h1>GEOMETOR (<code class="docutils literal notranslate"><span class="pre">geometor.model</span></code> + Ecosystem): Exact Constructive Synthesis<a class="headerlink" href="#geometor-geometor-model-ecosystem-exact-constructive-synthesis" title="Link to this heading">¶</a></h1>
         <ul class="simple">
         <li><p><strong>Core Kernel</strong>: <code class="docutils literal notranslate"><span class="pre">model/src/geometor/model/</span></code> (<cite>v0.6.0</cite>, MIT) + 32 sister repositories across 7 layers</p></li>
-        <li><p><strong>Mathematical Foundation</strong>: Targeted constructive ancestral DAGs (<code class="docutils literal notranslate"><span class="pre">Model(...,</span> <span class="pre">auto_intersect=False)</span></code>) over exact SymPy <a class="term-ref glossary-term" id="occ-term-algebraic-number-polynomial-1" href="../glossary.html#term-algebraic-number-polynomial" data-term="algebraic-number-polynomial" title="Term: algebraic-number-polynomial">Algebraic Number Polynomial</a> (<cite>ANP</cite>) fields, System-E-equivalent topological selectors, <a class="person-ref" id="occ-person-wildberger-1" href="../persons.html#person-wildberger" data-person="wildberger" title="Person: wildberger">Norman J. Wildberger</a>’s Rational Trigonometry invariants, and Byrne/Rougeux-inspired <code class="docutils literal notranslate"><span class="pre">:g:</span></code> <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">.euclid-graphic</span></code> SVGs</p></li>
+        <li><p><strong>Mathematical Foundation</strong>: Targeted constructive ancestral DAGs (<code class="docutils literal notranslate"><span class="pre">Model(...,</span> <span class="pre">auto_intersect=False)</span></code>) over exact SymPy <a class="term-ref glossary-term" id="occ-term-algebraic-number-polynomial-1" href="../glossary.html#term-algebraic-number-polynomial" data-term="algebraic-number-polynomial" title="Term: algebraic-number-polynomial">Algebraic Number Polynomial</a> (<cite>ANP</cite>) fields, System-E-equivalent topological selectors, <a class="person-ref" id="occ-person-wildberger-1" href="../people/wildberger.html#person-wildberger" data-person="wildberger" title="Person: wildberger">Norman J. Wildberger</a>’s Rational Trigonometry invariants, and Byrne/Rougeux-inspired <code class="docutils literal notranslate"><span class="pre">:g:</span></code> <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">.euclid-graphic</span></code> SVGs</p></li>
         </ul>
         <section class="level-2" id="core-kernel-architecture-geometor-model">
         <h2>1. Core Kernel Architecture (<code class="docutils literal notranslate"><span class="pre">geometor.model</span></code>)<a class="headerlink" href="#core-kernel-architecture-geometor-model" title="Link to this heading">¶</a></h2>
@@ -868,7 +868,7 @@
         <p>Comparing <code class="docutils literal notranslate"><span class="pre">geometor.model</span></code> (<cite>v0.6.0</cite>) against our 10 peer systems highlights three honest internal limitations—each directly addressed by our <a class="reference internal" href="../hierarchy/geometor-architecture.html#hierarchy-geometor"><span class="std std-ref">11 Architectural Blueprints</span></a>:</p>
         <ol class="arabic simple">
         <li><p><strong>High-Complexity Fallback in ``algebra.zero_test`` (`lines 247-251`)</strong>: When <code class="docutils literal notranslate"><span class="pre">count_ops(expr)</span> <span class="pre">&gt;</span> <span class="pre">25</span></code>, <code class="docutils literal notranslate"><span class="pre">zero_test</span></code> skips <code class="docutils literal notranslate"><span class="pre">primitive_element</span></code> and falls back to <code class="docutils literal notranslate"><span class="pre">abs(expr.evalf(80))</span> <span class="pre">&lt;</span> <span class="pre">1e-65</span></code>. Upgrading this to constructive <strong>BFMSS root-separation bounds</strong> (<cite>Blueprint 1</cite>) achieves 100% mathematical soundness at arbitrary tower depth.</p></li>
-        <li><p><strong>Step AST &amp; Géométrographie Telemetry</strong>: Recording structured selector ASTs (<cite>Blueprint 2</cite>) and <a class="person-ref" id="occ-person-lemoine-1" href="../persons.html#person-lemoine" data-person="lemoine" title="Person: lemoine">Émile Lemoine</a>’s <span class="math notranslate nohighlight">\((R_1, R_2, C_1, C_2, C_3)\)</span> operational counts (<cite>Blueprint 3</cite>) on <code class="docutils literal notranslate"><span class="pre">Step</span></code> turns every <code class="docutils literal notranslate"><span class="pre">Model</span></code> into both a <code class="docutils literal notranslate"><span class="pre">LeanEuclid</span></code> proof generator and a quantitative complexity benchmark.</p></li>
+        <li><p><strong>Step AST &amp; Géométrographie Telemetry</strong>: Recording structured selector ASTs (<cite>Blueprint 2</cite>) and <a class="person-ref" id="occ-person-lemoine-1" href="../people/lemoine.html#person-lemoine" data-person="lemoine" title="Person: lemoine">Émile Lemoine</a>’s <span class="math notranslate nohighlight">\((R_1, R_2, C_1, C_2, C_3)\)</span> operational counts (<cite>Blueprint 3</cite>) on <code class="docutils literal notranslate"><span class="pre">Step</span></code> turns every <code class="docutils literal notranslate"><span class="pre">Model</span></code> into both a <code class="docutils literal notranslate"><span class="pre">LeanEuclid</span></code> proof generator and a quantitative complexity benchmark.</p></li>
         <li><p><strong>First-Class Inversion, :math:`3 times 3` Conics &amp; Area Elimination</strong>: Promoting <code class="docutils literal notranslate"><span class="pre">geometor.model.inversion</span></code> (<cite>Blueprint 4</cite>), <code class="docutils literal notranslate"><span class="pre">ProjectiveConic</span></code> <span class="math notranslate nohighlight">\(3 \times 3\)</span> symmetric matrices in <code class="docutils literal notranslate"><span class="pre">geometor.pappus</span></code> (<cite>Blueprint 5</cite>), and Chou–Gao–Zhang backward elimination in <code class="docutils literal notranslate"><span class="pre">geometor.wildberger</span></code> (<cite>Blueprint 6</cite>) completes a unified multi-lens engine unmatched by any single external system.</p></li>
         </ol>
         </section>
@@ -932,6 +932,7 @@
       <h3>Types</h3>
       <ul>
         <li><a href="../types/log.html">log</a></li>
+        <li><a href="../types/person.html">person</a></li>
       </ul>
     </aside>
   </div>
@@ -955,6 +956,7 @@
   <script src="../_static/doctools.js?v=fd6eb6e6"></script>
   <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
   <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/collection_directory.js?v=f242906c"></script>
   <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
   <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
   <script src="../_static/js/search_highlight.js"></script>
