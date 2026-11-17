@@ -1,5 +1,6 @@
 :navigation: header
-:order: 80
+:order: 12
+:nav_title: Bibliography
 
 .. _bibliography:
 
