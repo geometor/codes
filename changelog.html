@@ -11,11 +11,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="canonical" href="https://geometor.github.io/codes/changelog.html" />
-  <meta name="description" content="Ensure canonical GEOMETOR logo.png and favicon.ico brand assets are provisioned in docsrc/_static/ and rendered in site headers and browser tabs." />
+  <meta name="description" content="added Canonical Lexicon (resources/lexicon/lexicon.toml, conventions.md, geometor.codes.lexicon) with 127 concepts, 271 cross-system aliases seeded from geometor.etc ops.py, and codes lexicon…" />
   <meta property="og:site_name" content="GEOMETOR" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Changelog — Geometric Codes &amp; Proportions • GEOMETOR" />
-  <meta property="og:description" content="Ensure canonical GEOMETOR logo.png and favicon.ico brand assets are provisioned in docsrc/_static/ and rendered in site headers and browser tabs." />
+  <meta property="og:description" content="added Canonical Lexicon (resources/lexicon/lexicon.toml, conventions.md, geometor.codes.lexicon) with 127 concepts, 271 cross-system aliases seeded from geometor.etc ops.py, and codes lexicon…" />
   <meta property="og:url" content="https://geometor.github.io/codes/changelog.html" />
   <meta property="og:image" content="https://geometor.github.io/codes/_static/social/banner.png" />
   <meta property="og:image:type" content="image/png" />
@@ -24,7 +24,7 @@
   <meta property="og:image:alt" content="Geometric Codes &amp; Proportions — GEOMETOR" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Changelog — Geometric Codes &amp; Proportions • GEOMETOR" />
-  <meta name="twitter:description" content="Ensure canonical GEOMETOR logo.png and favicon.ico brand assets are provisioned in docsrc/_static/ and rendered in site headers and browser tabs." />
+  <meta name="twitter:description" content="added Canonical Lexicon (resources/lexicon/lexicon.toml, conventions.md, geometor.codes.lexicon) with 127 concepts, 271 cross-system aliases seeded from geometor.etc ops.py, and codes lexicon…" />
   <meta name="twitter:image" content="https://geometor.github.io/codes/_static/social/banner.png" />
   <meta name="twitter:image:alt" content="Geometric Codes &amp; Proportions — GEOMETOR" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -109,13 +109,35 @@
         <section class="level-1" id="changelog">
         <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
         <section class="level-2" id="id1">
-        <h2>0.1.1 (2026-11-15)<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+        <h2>0.2.0 (2026-11-17)<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+        <ul class="simple">
+        <li><p><strong>added</strong> Canonical Lexicon (<cite>resources/lexicon/lexicon.toml</cite>, <cite>conventions.md</cite>,
+        <cite>geometor.codes.lexicon</cite>) with 127 concepts, 271 cross-system aliases seeded
+        from <cite>geometor.etc</cite> <cite>ops.py</cite>, and <cite>codes lexicon audit</cite>.</p></li>
+        <li><p><strong>added</strong> Base-context miners (<cite>geometor.codes.mine</cite>) for Euclid (628),
+        LeanEuclid (309), AlphaGeometry (115), Newclid (87), SymPy (218), and
+        <cite>geometor.model</cite> (68) with deterministic JSONL snapshots in <cite>resources/mined/</cite>.</p></li>
+        <li><p><strong>added</strong> Discovery pipeline (<cite>geometor.codes.discover</cite>) normalizing predicates
+        and clustering all 1,425 base items into 667 candidate principles (107
+        multi-system, 0 unassigned) with relabeling-invariant fingerprints.</p></li>
+        <li><p><strong>added</strong> Linked-library indexers and matchers (<cite>geometor.codes.link</cite>) across
+        GeoCoq (5,435), mathlib4 (1,567), JGEX (791), kingdon (94), galgebra (107),
+        and CindyJS (937).</p></li>
+        <li><p><strong>added</strong> Exact <cite>geometor.model</cite> verification (<cite>geometor.codes.verify</cite>) for 20
+        pilot principles (plus 3 explicit order/betweenness gaps) and ETC-style
+        Codex presentation under <cite>docsrc/principles/</cite> with <cite>.euclid-graphic</cite> SVGs.</p></li>
+        <li><p><strong>added</strong> CLI commands: <cite>lexicon</cite>, <cite>mine</cite>, <cite>discover</cite>, <cite>principle</cite>, <cite>search</cite>,
+        <cite>coverage</cite>, <cite>verify</cite>, and <cite>build-principles</cite>.</p></li>
+        </ul>
+        </section>
+        <section class="level-2" id="id2">
+        <h2>0.1.1 (2026-11-15)<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
         <ul class="simple">
         <li><p>Ensure canonical GEOMETOR <code class="docutils literal notranslate"><span class="pre">logo.png</span></code> and <code class="docutils literal notranslate"><span class="pre">favicon.ico</span></code> brand assets are provisioned in <code class="docutils literal notranslate"><span class="pre">docsrc/_static/</span></code> and rendered in site headers and browser tabs.</p></li>
         </ul>
         </section>
-        <section class="level-2" id="id2">
-        <h2>0.1.0 (2026-11-12)<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+        <section class="level-2" id="id3">
+        <h2>0.1.0 (2026-11-12)<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
         <ul class="simple">
         <li><p>Initial comparative study and executable registry of <strong>10 formal geometric
         languages, theorem provers, deduction engines, and algebraic calculi</strong>
@@ -174,6 +196,7 @@
     <aside class="aside-recent-logs">
       <h3>Recent Logs</h3>
       <ul>
+        <li><a href="log/26.321-principles-catalog.html">26.321 — Principles Catalog & Cross-System Linker</a></li>
         <li><a href="log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
       </ul>
     </aside>
@@ -215,7 +238,7 @@
 
   <script src="_static/jquery.js?v=5d32c60e"></script>
   <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-  <script src="_static/documentation_options.js?v=a58bc63e"></script>
+  <script src="_static/documentation_options.js?v=938c9ccc"></script>
   <script src="_static/doctools.js?v=fd6eb6e6"></script>
   <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
   <script src="_static/js/collection_controls.js?v=b6b5297a"></script>

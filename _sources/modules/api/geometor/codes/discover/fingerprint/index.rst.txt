@@ -1,0 +1,38 @@
+geometor.codes.discover.fingerprint
+===================================
+
+.. py:module:: geometor.codes.discover.fingerprint
+
+.. autoapi-nested-parse::
+
+   Relabeling-invariant structural fingerprints for canonical forms.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.discover.fingerprint.fingerprint_form
+   geometor.codes.discover.fingerprint.fingerprint_canonical
+
+
+Module Contents
+---------------
+
+.. py:function:: fingerprint_form(premises: tuple[geometor.codes.discover.normalize.Atom, ...], conclusions: tuple[geometor.codes.discover.normalize.Atom, ...]) -> str
+
+   Compute a structural fingerprint invariant under point relabeling.
+
+   :param premises: Premise `Atom`s.
+   :param conclusions: Conclusion `Atom`s.
+
+   :returns: A canonical string fingerprint, or ``""`` when both sides are empty.
+
+
+.. py:function:: fingerprint_canonical(form: geometor.codes.discover.normalize.CanonicalForm) -> str
+
+   Return the structural fingerprint of a `CanonicalForm`.
+
+

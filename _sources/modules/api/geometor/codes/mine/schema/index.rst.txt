@@ -1,0 +1,271 @@
+geometor.codes.mine.schema
+==========================
+
+.. py:module:: geometor.codes.mine.schema
+
+.. autoapi-nested-parse::
+
+   Shared record types and deterministic snapshot I/O for miners.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.codes.mine.schema.Decl
+   geometor.codes.mine.schema.MinedSystem
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.mine.schema.git_head
+   geometor.codes.mine.schema.write_snapshot
+   geometor.codes.mine.schema.load_snapshot
+   geometor.codes.mine.schema.load_manifest
+
+
+Module Contents
+---------------
+
+.. py:class:: Decl
+
+   One declaration mined from a system.
+
+   .. attribute:: system
+
+      System key from ``context.toml`` (e.g. ``"leaneuclid"``).
+
+   .. attribute:: id
+
+      Identifier unique within the system (e.g. ``"Elements.Book1.proposition_5"``).
+
+   .. attribute:: name
+
+      Short display name.
+
+   .. attribute:: kind
+
+      Declaration kind (``axiom``, ``theorem``, ``rule``, ``construction``,
+      ``definition``, ``postulate``, ``common_notion``, ``relation``, ``sort``,
+      ``predicate``, ``measure``, ``method``, ``foundation``).
+
+   .. attribute:: module
+
+      Hierarchical location inside the system (path-like).
+
+   .. attribute:: family
+
+      Grouping used by the system itself (file, book, category).
+
+   .. attribute:: statement
+
+      Formal statement as written in the system.
+
+   .. attribute:: text
+
+      Natural-language text (docstring, description, enunciation).
+
+   .. attribute:: premises
+
+      Premise atoms (rule-like systems), raw syntax.
+
+   .. attribute:: conclusions
+
+      Conclusion atoms, raw syntax.
+
+   .. attribute:: uses
+
+      Other declarations cited by this one (proof trace / dependencies).
+
+   .. attribute:: source
+
+      Source file relative to the workspace root.
+
+   .. attribute:: line
+
+      1-based line number in ``source``.
+
+   .. attribute:: extra
+
+      System-specific fields.
+
+
+   .. py:attribute:: system
+      :type:  str
+
+
+   .. py:attribute:: id
+      :type:  str
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: kind
+      :type:  str
+
+
+   .. py:attribute:: module
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: family
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: statement
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: text
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: premises
+      :type:  list[str]
+      :value: []
+
+
+
+   .. py:attribute:: conclusions
+      :type:  list[str]
+      :value: []
+
+
+
+   .. py:attribute:: uses
+      :type:  list[str]
+      :value: []
+
+
+
+   .. py:attribute:: source
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: line
+      :type:  int
+      :value: 0
+
+
+
+   .. py:attribute:: extra
+      :type:  dict[str, Any]
+
+
+   .. py:property:: key
+      :type: str
+
+
+      Return the globally unique key ``system:id``.
+
+
+   .. py:method:: to_dict() -> dict[str, Any]
+
+      Return a JSON-serializable dict with empty fields dropped.
+
+
+
+   .. py:method:: from_dict(data: dict[str, Any]) -> Decl
+      :classmethod:
+
+
+      Build a `Decl` from `to_dict` output.
+
+      :param data: Serialized declaration.
+
+      :returns: The reconstructed `Decl`.
+
+
+
+.. py:class:: MinedSystem
+
+   A system's mined declarations plus provenance.
+
+
+   .. py:attribute:: system
+      :type:  str
+
+
+   .. py:attribute:: decls
+      :type:  list[Decl]
+
+
+   .. py:attribute:: source
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: commit
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: version
+      :type:  str
+      :value: ''
+
+
+
+   .. py:method:: counts() -> dict[str, int]
+
+      Return declaration counts by kind (sorted).
+
+
+
+.. py:function:: git_head(path: pathlib.Path) -> str
+
+   Return the git HEAD commit of ``path`` or ``""`` when unavailable.
+
+   :param path: A directory inside a git checkout.
+
+   :returns: The full commit SHA, or an empty string.
+
+
+.. py:function:: write_snapshot(mined: MinedSystem, out_dir: pathlib.Path) -> pathlib.Path
+
+   Write ``<system>.jsonl`` and update ``manifest.json`` deterministically.
+
+   :param mined: The mined system.
+   :param out_dir: Snapshot directory (``resources/mined``).
+
+   :returns: Path of the written JSONL file.
+
+
+.. py:function:: load_snapshot(system: str, snap_dir: pathlib.Path) -> list[Decl]
+
+   Load a system's declarations from its JSONL snapshot.
+
+   :param system: System key.
+   :param snap_dir: Snapshot directory.
+
+   :returns: Declarations in snapshot order (empty if the snapshot is missing).
+
+
+.. py:function:: load_manifest(snap_dir: pathlib.Path) -> dict[str, Any]
+
+   Load the snapshot manifest.
+
+   :param snap_dir: Snapshot directory.
+
+   :returns: The manifest mapping (empty when missing).
+
+

@@ -1,0 +1,124 @@
+geometor.codes.link.indexers
+============================
+
+.. py:module:: geometor.codes.link.indexers
+
+.. autoapi-nested-parse::
+
+   Lightweight pure-Python indexers for the linked libraries.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.codes.link.indexers.LinkedEntry
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.link.indexers.index_geocoq
+   geometor.codes.link.indexers.index_mathlib4
+   geometor.codes.link.indexers.index_jgex
+   geometor.codes.link.indexers.index_cindyjs
+   geometor.codes.link.indexers.index_all_linked
+   geometor.codes.link.indexers.load_linked_snapshot
+
+
+Module Contents
+---------------
+
+.. py:class:: LinkedEntry
+
+   One indexed declaration from a linked library.
+
+
+   .. py:attribute:: system
+      :type:  str
+
+
+   .. py:attribute:: id
+      :type:  str
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: kind
+      :type:  str
+
+
+   .. py:attribute:: statement
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: doc
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: source
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: line
+      :type:  int
+      :value: 0
+
+
+
+   .. py:attribute:: url
+      :type:  str
+      :value: ''
+
+
+
+   .. py:method:: to_dict() -> dict[str, Any]
+
+      Serialize to JSON-ready dict.
+
+
+
+.. py:function:: index_geocoq(spec: geometor.codes.context.ContextSystem, ws: pathlib.Path) -> tuple[list[LinkedEntry], str]
+
+   Index GeoCoq Coq declarations.
+
+
+.. py:function:: index_mathlib4(spec: geometor.codes.context.ContextSystem, ws: pathlib.Path) -> tuple[list[LinkedEntry], str]
+
+   Index Mathlib4 Euclidean geometry declarations.
+
+
+.. py:function:: index_jgex(spec: geometor.codes.context.ContextSystem, ws: pathlib.Path) -> tuple[list[LinkedEntry], str]
+
+   Index Java Geometry Expert classes and prover rules.
+
+
+.. py:function:: index_cindyjs(spec: geometor.codes.context.ContextSystem, ws: pathlib.Path) -> tuple[list[LinkedEntry], str]
+
+   Index CindyJS functions and CindyScript operators.
+
+
+.. py:function:: index_all_linked(workspace_root: pathlib.Path | None = None, out_dir: pathlib.Path | None = None, manifest: geometor.codes.context.ContextManifest | None = None) -> dict[str, int]
+
+   Index every ``role = "linked"`` system and write deterministic snapshots.
+
+   :returns: Mapping ``system_id -> entry_count``.
+
+
+.. py:function:: load_linked_snapshot(system: str, snap_dir: pathlib.Path | None = None) -> list[LinkedEntry]
+
+   Load a linked library snapshot from ``resources/linked/<system>.jsonl``.
+
+

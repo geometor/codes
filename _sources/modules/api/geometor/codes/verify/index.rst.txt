@@ -1,0 +1,94 @@
+geometor.codes.verify
+=====================
+
+.. py:module:: geometor.codes.verify
+
+.. autoapi-nested-parse::
+
+   Phase 4: Exact symbolic verification of principles in geometor.model.
+
+   Every witness configuration uses exact rational or quadratic SymPy coordinates
+   (never ``float`` or ``sp.Float``) and checks conclusions with ``Model.assert_*``
+   and ``Model.conclude()``. Principles that cannot yet be expressed natively
+   in ``geometor.model`` are recorded with an explicit ``gap`` explanation.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   geometor.codes.verify.PILOT_BUILDERS
+   geometor.codes.verify.KNOWN_GAPS
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.codes.verify.VerificationResult
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.verify.build_pilot_model
+   geometor.codes.verify.verify_principle
+   geometor.codes.verify.verify_pilot
+
+
+Module Contents
+---------------
+
+.. py:class:: VerificationResult
+
+   Outcome of verifying one principle in ``geometor.model``.
+
+
+   .. py:attribute:: principle_id
+      :type:  str
+
+
+   .. py:attribute:: status
+      :type:  str
+
+
+   .. py:attribute:: summary
+      :type:  str
+
+
+   .. py:attribute:: gap_reason
+      :type:  str
+      :value: ''
+
+
+
+.. py:data:: PILOT_BUILDERS
+   :type:  dict[str, Callable[[], geometor.model.Model]]
+
+.. py:data:: KNOWN_GAPS
+   :type:  dict[str, str]
+
+.. py:function:: build_pilot_model(principle_id: str) -> geometor.model.Model | None
+
+   Build and assert the exact ``geometor.model`` witness for ``principle_id``.
+
+
+.. py:function:: verify_principle(principle_id: str) -> VerificationResult
+
+   Verify a principle exactly in ``geometor.model`` or report its gap.
+
+   :param principle_id: Canonical principle identifier.
+
+   :returns: A `VerificationResult`.
+
+
+.. py:function:: verify_pilot() -> list[VerificationResult]
+
+   Run exact verification on all pilot principles (verified + known gaps).
+
+

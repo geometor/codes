@@ -1,0 +1,229 @@
+geometor.codes.discover
+=======================
+
+.. py:module:: geometor.codes.discover
+
+.. autoapi-nested-parse::
+
+   Discovery pipeline: normalize base declarations, fingerprint, and cluster into principles.
+
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /modules/api/geometor/codes/discover/cluster/index
+   /modules/api/geometor/codes/discover/fingerprint/index
+   /modules/api/geometor/codes/discover/normalize/index
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.codes.discover.Catalog
+   geometor.codes.discover.Principle
+   geometor.codes.discover.Atom
+   geometor.codes.discover.CanonicalForm
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.discover.discover_principles
+   geometor.codes.discover.load_catalog
+   geometor.codes.discover.save_catalog
+   geometor.codes.discover.fingerprint_form
+   geometor.codes.discover.normalize_decl
+
+
+Package Contents
+----------------
+
+.. py:class:: Catalog
+
+   Complete discovery catalog covering 100% of base items.
+
+
+   .. py:attribute:: principles
+      :type:  list[Principle]
+
+
+   .. py:attribute:: out_of_scope
+      :type:  list[OutOfScopeItem]
+
+
+   .. py:attribute:: stats
+      :type:  dict[str, int]
+
+
+   .. py:method:: by_id(pid: str) -> Principle | None
+
+      Return principle by ID.
+
+
+
+.. py:class:: Principle
+
+   A proposed or accepted geometric principle.
+
+
+   .. py:attribute:: id
+      :type:  str
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: kind
+      :type:  str
+
+
+   .. py:attribute:: family
+      :type:  str
+
+
+   .. py:attribute:: statement
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: canonical_form
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: fingerprint
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: status
+      :type:  str
+      :value: 'proposed'
+
+
+
+   .. py:attribute:: euclid_refs
+      :type:  list[str]
+      :value: []
+
+
+
+   .. py:attribute:: members
+      :type:  list[PrincipleMember]
+      :value: []
+
+
+
+   .. py:attribute:: relations
+      :type:  list[PrincipleRelation]
+      :value: []
+
+
+
+   .. py:attribute:: linked
+      :type:  list[dict[str, Any]]
+      :value: []
+
+
+
+.. py:function:: discover_principles(snap_dir: pathlib.Path | None = None, lexicon: geometor.codes.lexicon.Lexicon | None = None, manifest: geometor.codes.context.ContextManifest | None = None) -> Catalog
+
+   Run Phase 2 discovery across all mined base snapshots.
+
+   Every base declaration is either assigned to a `Principle` cluster or
+   recorded in `out_of_scope`.
+
+   :param snap_dir: Snapshot directory (defaults to ``resources/mined``).
+   :param lexicon: Optional `Lexicon`.
+   :param manifest: Optional `ContextManifest`.
+
+   :returns: A `Catalog`.
+
+
+.. py:function:: load_catalog(path: pathlib.Path | None = None) -> Catalog
+
+   Load a saved discovery catalog from JSON.
+
+
+.. py:function:: save_catalog(catalog: Catalog, path: pathlib.Path | None = None) -> pathlib.Path
+
+   Write the discovered catalog deterministically to JSON.
+
+
+.. py:function:: fingerprint_form(premises: tuple[geometor.codes.discover.normalize.Atom, ...], conclusions: tuple[geometor.codes.discover.normalize.Atom, ...]) -> str
+
+   Compute a structural fingerprint invariant under point relabeling.
+
+   :param premises: Premise `Atom`s.
+   :param conclusions: Conclusion `Atom`s.
+
+   :returns: A canonical string fingerprint, or ``""`` when both sides are empty.
+
+
+.. py:class:: Atom
+
+   One canonical predicate atom ``pred(arg1, arg2, ...)``.
+
+
+   .. py:attribute:: pred
+      :type:  str
+
+
+   .. py:attribute:: args
+      :type:  tuple[str, ...]
+
+
+   .. py:method:: format() -> str
+
+      Return ``pred(a, b, ...)`` string.
+
+
+
+.. py:class:: CanonicalForm
+
+   Normalized ``premises => conclusions`` representation of a declaration.
+
+
+   .. py:attribute:: premises
+      :type:  tuple[Atom, ...]
+
+
+   .. py:attribute:: conclusions
+      :type:  tuple[Atom, ...]
+
+
+   .. py:attribute:: lexicon_concept
+      :type:  str
+      :value: ''
+
+
+
+   .. py:method:: format() -> str
+
+      Return a readable canonical formula.
+
+
+
+.. py:function:: normalize_decl(decl: geometor.codes.mine.schema.Decl, lexicon: geometor.codes.lexicon.Lexicon | None = None) -> CanonicalForm
+
+   Normalize a mined `Decl` into a `CanonicalForm`.
+
+   :param decl: Mined declaration.
+   :param lexicon: Optional loaded `Lexicon` for concept resolution.
+
+   :returns: A `CanonicalForm` (possibly empty if the declaration is purely
+             natural-language or non-equational).
+
+

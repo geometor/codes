@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../../../../../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>geometor.codes.context — Geometric Codes &amp; Proportions • GEOMETOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="canonical" href="https://geometor.github.io/codes/modules/api/geometor/codes/context/" />
+  <meta name="description" content="Context manifest loader and base-context mining orchestrator." />
+  <meta property="og:site_name" content="GEOMETOR" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="geometor.codes.context — Geometric Codes &amp; Proportions • GEOMETOR" />
+  <meta property="og:description" content="Context manifest loader and base-context mining orchestrator." />
+  <meta property="og:url" content="https://geometor.github.io/codes/modules/api/geometor/codes/context/" />
+  <meta property="og:image" content="https://geometor.github.io/codes/_static/social/banner.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="640" />
+  <meta property="og:image:alt" content="Geometric Codes &amp; Proportions — GEOMETOR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="geometor.codes.context — Geometric Codes &amp; Proportions • GEOMETOR" />
+  <meta name="twitter:description" content="Context manifest loader and base-context mining orchestrator." />
+  <meta name="twitter:image" content="https://geometor.github.io/codes/_static/social/banner.png" />
+  <meta name="twitter:image:alt" content="Geometric Codes &amp; Proportions — GEOMETOR" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/css/styles.css?v=f1075037" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../../../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../../../../../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../../../../../index.html" title="Home">
+        <img src="../../../../../_static/logo.png" class="logo" alt="GEOMETOR codes"/>
+        <div class="org-repo">
+          <span class="org">GEOMETOR</span>
+          <span class="sep" aria-hidden="true">&bull;</span>
+          <span class="repo">codes</span>
+        </div>
+      </a>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../../../../../hierarchy/index.html"  >Hierarchy</a>
+        </li>
+        <li>
+          <a href="../../../../../people/index.html"  >People</a>
+        </li>
+        <li>
+          <a href="../../../../../bibliography.html"  >Bibliography</a>
+        </li>
+        <li>
+          <a href="../../../../../glossary.html"  >Glossary</a>
+        </li>
+        <li>
+          <a href="../../../../../syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a>
+        </li>
+        <li>
+          <a href="../../../../../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../../../../../systems/index.html"  >Systems</a>
+        </li>
+        <li>
+          <a href="../../../../../rosetta/index.html"  >Rosetta Stone Benchmarks</a>
+        </li>
+        <li>
+          <a href="../../../../../opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <nav class="book-breadcrumbs" aria-label="Breadcrumb">
+            <a class="book-section-home-link" href="../../../../index.html">Modules</a>
+            <span class="book-crumb-sep" aria-hidden="true">/</span>
+            <span class="book-crumb-current" aria-current="page">geometor.codes.context</span>
+          </nav>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="module-geometor.codes.context">
+        <span id="geometor-codes-context"></span><h1>geometor.codes.context<a class="headerlink" href="#module-geometor.codes.context" title="Link to this heading">¶</a></h1>
+        <p>Context manifest loader and base-context mining orchestrator.</p>
+        <section class="level-2" id="classes">
+        <h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.context.ContextSystem" title="geometor.codes.context.ContextSystem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ContextSystem</span></code></a></p></td>
+        <td><p>One entry in <code class="docutils literal notranslate"><span class="pre">resources/context.toml</span></code>.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.context.ContextManifest" title="geometor.codes.context.ContextManifest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ContextManifest</span></code></a></p></td>
+        <td><p>Loaded <code class="docutils literal notranslate"><span class="pre">context.toml</span></code> manifest separating base and linked systems.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="functions">
+        <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.context.mine_system" title="geometor.codes.context.mine_system"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mine_system</span></code></a>(spec, workspace_root) → geometor.codes.mine.schema.MinedSystem</p></td>
+        <td><p>Run the appropriate miner for one <cite>ContextSystem</cite>.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.context.mine_all_base" title="geometor.codes.context.mine_all_base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mine_all_base</span></code></a>([workspace_root, out_dir, manifest]) → list[geometor.codes.mine.schema.MinedSystem]</p></td>
+        <td><p>Mine every <code class="docutils literal notranslate"><span class="pre">role</span> <span class="pre">=</span> <span class="pre">&quot;base&quot;</span></code> system and write deterministic snapshots.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="module-contents">
+        <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.codes.context.ContextSystem">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.codes.context.</span></span><span class="sig-name descname"><span class="pre">ContextSystem</span></span><a class="headerlink" href="#geometor.codes.context.ContextSystem" title="Link to this definition">¶</a></dt>
+        <dd><p>One entry in <code class="docutils literal notranslate"><span class="pre">resources/context.toml</span></code>.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.context.ContextSystem.id">
+        <span class="sig-name descname"><span class="pre">id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.context.ContextSystem.id" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.context.ContextSystem.role">
+        <span class="sig-name descname"><span class="pre">role</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.context.ContextSystem.role" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.context.ContextSystem.name">
+        <span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.context.ContextSystem.name" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.context.ContextSystem.source">
+        <span class="sig-name descname"><span class="pre">source</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.codes.context.ContextSystem.source" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.context.ContextSystem.miner">
+        <span class="sig-name descname"><span class="pre">miner</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></span><a class="headerlink" href="#geometor.codes.context.ContextSystem.miner" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.context.ContextSystem.upstream">
+        <span class="sig-name descname"><span class="pre">upstream</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></span><a class="headerlink" href="#geometor.codes.context.ContextSystem.upstream" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.context.ContextSystem.not_yet_in_canon">
+        <span class="sig-name descname"><span class="pre">not_yet_in_canon</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></span><a class="headerlink" href="#geometor.codes.context.ContextSystem.not_yet_in_canon" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.codes.context.ContextManifest">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.codes.context.</span></span><span class="sig-name descname"><span class="pre">ContextManifest</span></span><a class="headerlink" href="#geometor.codes.context.ContextManifest" title="Link to this definition">¶</a></dt>
+        <dd><p>Loaded <code class="docutils literal notranslate"><span class="pre">context.toml</span></code> manifest separating base and linked systems.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.codes.context.ContextManifest.systems">
+        <span class="sig-name descname"><span class="pre">systems</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#geometor.codes.context.ContextSystem" title="geometor.codes.context.ContextSystem"><span class="pre">ContextSystem</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.codes.context.ContextManifest.systems" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.codes.context.ContextManifest.load">
+        <span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.codes.context.ContextManifest" title="geometor.codes.context.ContextManifest"><span class="pre">ContextManifest</span></a></span></span><a class="headerlink" href="#geometor.codes.context.ContextManifest.load" title="Link to this definition">¶</a></dt>
+        <dd><p>Load the context manifest from TOML.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>path</strong> – Optional path to <code class="docutils literal notranslate"><span class="pre">context.toml</span></code>.</p>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>A populated <cite>ContextManifest</cite>.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.codes.context.ContextManifest.by_role">
+        <span class="sig-name descname"><span class="pre">by_role</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">role</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#geometor.codes.context.ContextSystem" title="geometor.codes.context.ContextSystem"><span class="pre">ContextSystem</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.codes.context.ContextManifest.by_role" title="Link to this definition">¶</a></dt>
+        <dd><p>Return systems matching <code class="docutils literal notranslate"><span class="pre">role</span></code> (<code class="docutils literal notranslate"><span class="pre">&quot;base&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;linked&quot;</span></code>).</p>
+        </dd></dl>
+
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.context.mine_system">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.context.</span></span><span class="sig-name descname"><span class="pre">mine_system</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.codes.context.ContextSystem" title="geometor.codes.context.ContextSystem"><span class="pre">ContextSystem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">workspace_root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../mine/schema/index.html#geometor.codes.mine.schema.MinedSystem" title="geometor.codes.mine.schema.MinedSystem"><span class="pre">geometor.codes.mine.schema.MinedSystem</span></a></span></span><a class="headerlink" href="#geometor.codes.context.mine_system" title="Link to this definition">¶</a></dt>
+        <dd><p>Run the appropriate miner for one <cite>ContextSystem</cite>.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>spec</strong> – System specification from <cite>context.toml</cite>.</p></li>
+        <li><p><strong>workspace_root</strong> – Workspace root.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>The <cite>MinedSystem</cite> result.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.context.mine_all_base">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.context.</span></span><span class="sig-name descname"><span class="pre">mine_all_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">manifest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.codes.context.ContextManifest" title="geometor.codes.context.ContextManifest"><span class="pre">ContextManifest</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../mine/schema/index.html#geometor.codes.mine.schema.MinedSystem" title="geometor.codes.mine.schema.MinedSystem"><span class="pre">geometor.codes.mine.schema.MinedSystem</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.codes.context.mine_all_base" title="Link to this definition">¶</a></dt>
+        <dd><p>Mine every <code class="docutils literal notranslate"><span class="pre">role</span> <span class="pre">=</span> <span class="pre">&quot;base&quot;</span></code> system and write deterministic snapshots.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>workspace_root</strong> – Workspace root (defaults to parent of <code class="docutils literal notranslate"><span class="pre">codes</span></code>).</p></li>
+        <li><p><strong>out_dir</strong> – Output directory (defaults to <code class="docutils literal notranslate"><span class="pre">resources/mined</span></code>).</p></li>
+        <li><p><strong>manifest</strong> – Optional preloaded <cite>ContextManifest</cite>.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>List of <cite>MinedSystem</cite> results in manifest order.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../../../../index.html">Modules</a>
+          </div>
+          <div class="book-nav-next">
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../../../../../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../../../../../log/26.321-principles-catalog.html">26.321 — Principles Catalog & Cross-System Linker</a></li>
+        <li><a href="../../../../../log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="../../../../../tags/byrne.html">byrne</a></li>
+        <li><a href="../../../../../tags/formal-systems.html">formal-systems</a></li>
+        <li><a href="../../../../../tags/geometor-model.html">geometor-model</a></li>
+        <li><a href="../../../../../tags/opus.html">opus</a></li>
+        <li><a href="../../../../../tags/rosetta.html">rosetta</a></li>
+        <li><a href="../../../../../tags/sympy.html">sympy</a></li>
+        <li><a href="../../../../../tags/syntax.html">syntax</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../../../../../types/log.html">log</a></li>
+        <li><a href="../../../../../types/person.html">person</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../../../../../changelog.html"  >Changelog</a></li>
+        <li><a href="https://github.com/geometor/codes" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://github.com/geometor/codes/issues" target="_blank" rel="noopener">Support</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../../../../../_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="../../../../../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../../../../../_static/js/collection_directory.js?v=2422530d"></script>
+  <script src="../../../../../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script src="../../../../../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

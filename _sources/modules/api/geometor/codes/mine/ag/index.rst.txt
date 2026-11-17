@@ -1,0 +1,54 @@
+geometor.codes.mine.ag
+======================
+
+.. py:module:: geometor.codes.mine.ag
+
+.. autoapi-nested-parse::
+
+   AlphaGeometry miner: deduction rules (``rules.txt``) and constructions (``defs.txt``).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.mine.ag.parse_rules
+   geometor.codes.mine.ag.parse_defs
+   geometor.codes.mine.ag.mine_alphageometry
+
+
+Module Contents
+---------------
+
+.. py:function:: parse_rules(path: pathlib.Path, workspace_root: pathlib.Path) -> list[geometor.codes.mine.schema.Decl]
+
+   Parse ``rules.txt`` into rule declarations.
+
+   :param path: Path to ``rules.txt``.
+   :param workspace_root: Workspace root for relative source paths.
+
+   :returns: List of rule `Decl` objects.
+
+
+.. py:function:: parse_defs(path: pathlib.Path, workspace_root: pathlib.Path) -> list[geometor.codes.mine.schema.Decl]
+
+   Parse ``defs.txt`` into construction declarations.
+
+   :param path: Path to ``defs.txt``.
+   :param workspace_root: Workspace root for relative source paths.
+
+   :returns: List of construction `Decl` objects.
+
+
+.. py:function:: mine_alphageometry(root: pathlib.Path, workspace_root: pathlib.Path) -> geometor.codes.mine.schema.MinedSystem
+
+   Mine AlphaGeometry's ``rules.txt`` and ``defs.txt``.
+
+   :param root: AlphaGeometry checkout root (``_refs/alphageometry``).
+   :param workspace_root: Workspace root.
+
+   :returns: A `MinedSystem`.
+
+

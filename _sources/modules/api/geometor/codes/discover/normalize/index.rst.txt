@@ -1,0 +1,86 @@
+geometor.codes.discover.normalize
+=================================
+
+.. py:module:: geometor.codes.discover.normalize
+
+.. autoapi-nested-parse::
+
+   Normalize base declarations into canonical predicate atoms.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.codes.discover.normalize.Atom
+   geometor.codes.discover.normalize.CanonicalForm
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.discover.normalize.normalize_decl
+
+
+Module Contents
+---------------
+
+.. py:class:: Atom
+
+   One canonical predicate atom ``pred(arg1, arg2, ...)``.
+
+
+   .. py:attribute:: pred
+      :type:  str
+
+
+   .. py:attribute:: args
+      :type:  tuple[str, ...]
+
+
+   .. py:method:: format() -> str
+
+      Return ``pred(a, b, ...)`` string.
+
+
+
+.. py:class:: CanonicalForm
+
+   Normalized ``premises => conclusions`` representation of a declaration.
+
+
+   .. py:attribute:: premises
+      :type:  tuple[Atom, ...]
+
+
+   .. py:attribute:: conclusions
+      :type:  tuple[Atom, ...]
+
+
+   .. py:attribute:: lexicon_concept
+      :type:  str
+      :value: ''
+
+
+
+   .. py:method:: format() -> str
+
+      Return a readable canonical formula.
+
+
+
+.. py:function:: normalize_decl(decl: geometor.codes.mine.schema.Decl, lexicon: geometor.codes.lexicon.Lexicon | None = None) -> CanonicalForm
+
+   Normalize a mined `Decl` into a `CanonicalForm`.
+
+   :param decl: Mined declaration.
+   :param lexicon: Optional loaded `Lexicon` for concept resolution.
+
+   :returns: A `CanonicalForm` (possibly empty if the declaration is purely
+             natural-language or non-equational).
+
+

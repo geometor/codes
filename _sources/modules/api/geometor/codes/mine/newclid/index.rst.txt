@@ -1,0 +1,43 @@
+geometor.codes.mine.newclid
+===========================
+
+.. py:module:: geometor.codes.mine.newclid
+
+.. autoapi-nested-parse::
+
+   Newclid miner: AST extraction of ``all_rules.py`` without importing Newclid.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.mine.newclid.parse_newclid_rules
+   geometor.codes.mine.newclid.mine_newclid
+
+
+Module Contents
+---------------
+
+.. py:function:: parse_newclid_rules(path: pathlib.Path, workspace_root: pathlib.Path) -> list[geometor.codes.mine.schema.Decl]
+
+   Parse ``all_rules.py`` via AST into rule declarations.
+
+   :param path: Path to ``all_rules.py``.
+   :param workspace_root: Workspace root for relative source paths.
+
+   :returns: List of `Decl` objects.
+
+
+.. py:function:: mine_newclid(root: pathlib.Path, workspace_root: pathlib.Path) -> geometor.codes.mine.schema.MinedSystem
+
+   Mine Newclid's ``all_rules.py``.
+
+   :param root: Newclid checkout root (``_refs/Newclid``).
+   :param workspace_root: Workspace root.
+
+   :returns: A `MinedSystem`.
+
+

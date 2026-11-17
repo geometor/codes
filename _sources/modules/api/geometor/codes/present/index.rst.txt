@@ -1,0 +1,42 @@
+geometor.codes.present
+======================
+
+.. py:module:: geometor.codes.present
+
+.. autoapi-nested-parse::
+
+   Phase 5: Generate ETC-style RST principle pages, exact SVGs, and catalog views.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   geometor.codes.present.PILOT_IDS
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.present.build_principles_docs
+
+
+Module Contents
+---------------
+
+.. py:data:: PILOT_IDS
+   :type:  tuple[str, ...]
+   :value: ('equilateral_apex', 'sas_congruence', 'isosceles_base_angles', 'sss_congruence',...
+
+
+.. py:function:: build_principles_docs(catalog: geometor.codes.discover.cluster.Catalog | None = None, docsrc_dir: pathlib.Path | None = None, mined_dir: pathlib.Path | None = None) -> dict[str, int]
+
+   Generate ``docsrc/principles/`` pages, SVGs, and catalog views.
+
+   :returns: Counts of generated pages by category.
+
+

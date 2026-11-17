@@ -1,0 +1,34 @@
+geometor.codes.link.match
+=========================
+
+.. py:module:: geometor.codes.link.match
+
+.. autoapi-nested-parse::
+
+   Match discovered principles against indexed linked libraries.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.link.match.match_linked_to_catalog
+
+
+Module Contents
+---------------
+
+.. py:function:: match_linked_to_catalog(catalog: geometor.codes.discover.cluster.Catalog, linked_dir: pathlib.Path | None = None, lexicon: geometor.codes.lexicon.Lexicon | None = None, top_k: int = 3) -> dict[str, int]
+
+   Attach ranked linked-library matches to each principle in ``catalog``.
+
+   :param catalog: Discovered `Catalog` (updated in place).
+   :param linked_dir: Directory containing ``<system>.jsonl`` snapshots.
+   :param lexicon: Optional `Lexicon`.
+   :param top_k: Maximum matches kept per linked system per principle.
+
+   :returns: Count of linked matches attached per system.
+
+

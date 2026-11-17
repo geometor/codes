@@ -1,0 +1,239 @@
+geometor.codes.discover.cluster
+===============================
+
+.. py:module:: geometor.codes.discover.cluster
+
+.. autoapi-nested-parse::
+
+   Cluster normalized base declarations into proposed principles.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.codes.discover.cluster.PrincipleMember
+   geometor.codes.discover.cluster.PrincipleRelation
+   geometor.codes.discover.cluster.Principle
+   geometor.codes.discover.cluster.OutOfScopeItem
+   geometor.codes.discover.cluster.Catalog
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.discover.cluster.discover_principles
+   geometor.codes.discover.cluster.save_catalog
+   geometor.codes.discover.cluster.load_catalog
+
+
+Module Contents
+---------------
+
+.. py:class:: PrincipleMember
+
+   One base-system declaration belonging to a principle.
+
+
+   .. py:attribute:: key
+      :type:  str
+
+
+   .. py:attribute:: system
+      :type:  str
+
+
+   .. py:attribute:: id
+      :type:  str
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: kind
+      :type:  str
+
+
+   .. py:attribute:: statement
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: canonical_form
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: source
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: line
+      :type:  int
+      :value: 0
+
+
+
+.. py:class:: PrincipleRelation
+
+   Directed relation between two principles.
+
+
+   .. py:attribute:: relation
+      :type:  str
+
+
+   .. py:attribute:: target_id
+      :type:  str
+
+
+.. py:class:: Principle
+
+   A proposed or accepted geometric principle.
+
+
+   .. py:attribute:: id
+      :type:  str
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: kind
+      :type:  str
+
+
+   .. py:attribute:: family
+      :type:  str
+
+
+   .. py:attribute:: statement
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: canonical_form
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: fingerprint
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: status
+      :type:  str
+      :value: 'proposed'
+
+
+
+   .. py:attribute:: euclid_refs
+      :type:  list[str]
+      :value: []
+
+
+
+   .. py:attribute:: members
+      :type:  list[PrincipleMember]
+      :value: []
+
+
+
+   .. py:attribute:: relations
+      :type:  list[PrincipleRelation]
+      :value: []
+
+
+
+   .. py:attribute:: linked
+      :type:  list[dict[str, Any]]
+      :value: []
+
+
+
+.. py:class:: OutOfScopeItem
+
+   A base declaration explicitly marked out of scope for the code canon.
+
+
+   .. py:attribute:: key
+      :type:  str
+
+
+   .. py:attribute:: system
+      :type:  str
+
+
+   .. py:attribute:: id
+      :type:  str
+
+
+   .. py:attribute:: kind
+      :type:  str
+
+
+   .. py:attribute:: reason
+      :type:  str
+
+
+.. py:class:: Catalog
+
+   Complete discovery catalog covering 100% of base items.
+
+
+   .. py:attribute:: principles
+      :type:  list[Principle]
+
+
+   .. py:attribute:: out_of_scope
+      :type:  list[OutOfScopeItem]
+
+
+   .. py:attribute:: stats
+      :type:  dict[str, int]
+
+
+   .. py:method:: by_id(pid: str) -> Principle | None
+
+      Return principle by ID.
+
+
+
+.. py:function:: discover_principles(snap_dir: pathlib.Path | None = None, lexicon: geometor.codes.lexicon.Lexicon | None = None, manifest: geometor.codes.context.ContextManifest | None = None) -> Catalog
+
+   Run Phase 2 discovery across all mined base snapshots.
+
+   Every base declaration is either assigned to a `Principle` cluster or
+   recorded in `out_of_scope`.
+
+   :param snap_dir: Snapshot directory (defaults to ``resources/mined``).
+   :param lexicon: Optional `Lexicon`.
+   :param manifest: Optional `ContextManifest`.
+
+   :returns: A `Catalog`.
+
+
+.. py:function:: save_catalog(catalog: Catalog, path: pathlib.Path | None = None) -> pathlib.Path
+
+   Write the discovered catalog deterministically to JSON.
+
+
+.. py:function:: load_catalog(path: pathlib.Path | None = None) -> Catalog
+
+   Load a saved discovery catalog from JSON.
+
+

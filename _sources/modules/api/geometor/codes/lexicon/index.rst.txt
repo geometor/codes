@@ -1,0 +1,217 @@
+geometor.codes.lexicon
+======================
+
+.. py:module:: geometor.codes.lexicon
+
+.. autoapi-nested-parse::
+
+   Canonical lexicon: one name per geometric concept, aliased across systems.
+
+   The lexicon lives in ``resources/lexicon/lexicon.toml`` and is seeded from the
+   function vocabulary of ``geometor.etc`` (``ops.py``). See
+   ``resources/lexicon/conventions.md`` for the naming rules.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   geometor.codes.lexicon.KINDS
+   geometor.codes.lexicon.AUDIT_REPOS
+   geometor.codes.lexicon.OWNED_SYSTEMS
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.codes.lexicon.LexiconEntry
+   geometor.codes.lexicon.Lexicon
+   geometor.codes.lexicon.RenameProposal
+   geometor.codes.lexicon.AuditReport
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.lexicon.audit_lexicon
+
+
+Module Contents
+---------------
+
+.. py:data:: KINDS
+   :value: ('object', 'relation', 'measure', 'construction', 'center', 'triangle', 'circle', 'operator', 'property')
+
+
+.. py:data:: AUDIT_REPOS
+   :value: ('etc', 'elements', 'model', 'explorer', 'pappus', 'wildberger', 'fundamentals', 'divine')
+
+
+.. py:data:: OWNED_SYSTEMS
+   :value: ('etc', 'elements', 'model')
+
+
+.. py:class:: LexiconEntry
+
+   A canonical concept with its aliases in each system.
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: kind
+      :type:  str
+
+
+   .. py:attribute:: family
+      :type:  str
+
+
+   .. py:attribute:: summary
+      :type:  str
+
+
+   .. py:attribute:: aliases
+      :type:  dict[str, tuple[str, ...]]
+
+
+   .. py:attribute:: etc_x
+      :type:  int | None
+      :value: None
+
+
+
+   .. py:method:: all_aliases() -> list[tuple[str, str]]
+
+      Return ``(system, alias)`` pairs in deterministic order.
+
+
+
+.. py:class:: Lexicon
+
+   The loaded canonical lexicon.
+
+
+   .. py:attribute:: entries
+      :type:  dict[str, LexiconEntry]
+
+
+   .. py:attribute:: systems
+      :type:  tuple[str, ...]
+
+
+   .. py:attribute:: families
+      :type:  tuple[str, ...]
+
+
+   .. py:attribute:: etc_infrastructure
+      :type:  tuple[str, ...]
+
+
+   .. py:method:: load(path: pathlib.Path | None = None) -> Lexicon
+      :classmethod:
+
+
+      Load the lexicon TOML.
+
+      :param path: Optional path to ``lexicon.toml``; defaults to the packaged resource.
+
+      :returns: A populated `Lexicon`.
+
+
+
+   .. py:method:: resolve(system: str, name: str) -> LexiconEntry | None
+
+      Return the canonical entry that ``name`` denotes in ``system``.
+
+      :param system: System key (e.g. ``"alphageometry"``).
+      :param name: The system's own identifier.
+
+      :returns: The matching `LexiconEntry`, or ``None``.
+
+
+
+   .. py:method:: search(query: str) -> list[LexiconEntry]
+
+      Case-insensitive search over names, aliases and summaries.
+
+      :param query: Substring to look for.
+
+      :returns: Matching entries sorted by name.
+
+
+
+   .. py:method:: validate() -> list[str]
+
+      Check structural rules of the lexicon.
+
+      :returns: A list of human-readable problems (empty when valid).
+
+
+
+.. py:class:: RenameProposal
+
+   A proposal to align a GEOMETOR identifier with the canonical name.
+
+
+   .. py:attribute:: system
+      :type:  str
+
+
+   .. py:attribute:: current
+      :type:  str
+
+
+   .. py:attribute:: canonical
+      :type:  str
+
+
+   .. py:attribute:: where
+      :type:  str
+
+
+.. py:class:: AuditReport
+
+   Result of `audit_lexicon`.
+
+
+   .. py:attribute:: problems
+      :type:  list[str]
+
+
+   .. py:attribute:: etc_missing
+      :type:  list[str]
+
+
+   .. py:attribute:: proposals
+      :type:  list[RenameProposal]
+
+
+   .. py:attribute:: unresolved_sympy
+      :type:  list[str]
+
+
+   .. py:attribute:: stats
+      :type:  dict[str, int]
+
+
+.. py:function:: audit_lexicon(lexicon: Lexicon | None = None, workspace_root: pathlib.Path | None = None) -> AuditReport
+
+   Audit the lexicon and propose canonical renames across GEOMETOR repos.
+
+   No files are modified. Proposals are informational: any adopted rename must
+   keep the old name as an alias.
+
+   :param lexicon: Lexicon to audit (loaded from resources when omitted).
+   :param workspace_root: GEOMETOR workspace root (``/home/phi/PROJECTS/geometor``).
+
+   :returns: An `AuditReport`.
+
+

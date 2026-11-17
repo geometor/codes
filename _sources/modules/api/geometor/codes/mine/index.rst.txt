@@ -1,0 +1,270 @@
+geometor.codes.mine
+===================
+
+.. py:module:: geometor.codes.mine
+
+.. autoapi-nested-parse::
+
+   Mining layer: extract declarations from the base-context systems.
+
+   Each miner turns one system into a list of `Decl` records. Snapshots are
+   written as deterministic JSONL under ``resources/mined/`` so that ``codes``
+   works without ``_refs/`` checkouts (for example on CI).
+
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /modules/api/geometor/codes/mine/ag/index
+   /modules/api/geometor/codes/mine/euclid/index
+   /modules/api/geometor/codes/mine/geometor_model/index
+   /modules/api/geometor/codes/mine/lean/index
+   /modules/api/geometor/codes/mine/newclid/index
+   /modules/api/geometor/codes/mine/schema/index
+   /modules/api/geometor/codes/mine/sympy_geo/index
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.codes.mine.Decl
+   geometor.codes.mine.MinedSystem
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.mine.load_snapshot
+   geometor.codes.mine.write_snapshot
+
+
+Package Contents
+----------------
+
+.. py:class:: Decl
+
+   One declaration mined from a system.
+
+   .. attribute:: system
+
+      System key from ``context.toml`` (e.g. ``"leaneuclid"``).
+
+   .. attribute:: id
+
+      Identifier unique within the system (e.g. ``"Elements.Book1.proposition_5"``).
+
+   .. attribute:: name
+
+      Short display name.
+
+   .. attribute:: kind
+
+      Declaration kind (``axiom``, ``theorem``, ``rule``, ``construction``,
+      ``definition``, ``postulate``, ``common_notion``, ``relation``, ``sort``,
+      ``predicate``, ``measure``, ``method``, ``foundation``).
+
+   .. attribute:: module
+
+      Hierarchical location inside the system (path-like).
+
+   .. attribute:: family
+
+      Grouping used by the system itself (file, book, category).
+
+   .. attribute:: statement
+
+      Formal statement as written in the system.
+
+   .. attribute:: text
+
+      Natural-language text (docstring, description, enunciation).
+
+   .. attribute:: premises
+
+      Premise atoms (rule-like systems), raw syntax.
+
+   .. attribute:: conclusions
+
+      Conclusion atoms, raw syntax.
+
+   .. attribute:: uses
+
+      Other declarations cited by this one (proof trace / dependencies).
+
+   .. attribute:: source
+
+      Source file relative to the workspace root.
+
+   .. attribute:: line
+
+      1-based line number in ``source``.
+
+   .. attribute:: extra
+
+      System-specific fields.
+
+
+   .. py:attribute:: system
+      :type:  str
+
+
+   .. py:attribute:: id
+      :type:  str
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: kind
+      :type:  str
+
+
+   .. py:attribute:: module
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: family
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: statement
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: text
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: premises
+      :type:  list[str]
+      :value: []
+
+
+
+   .. py:attribute:: conclusions
+      :type:  list[str]
+      :value: []
+
+
+
+   .. py:attribute:: uses
+      :type:  list[str]
+      :value: []
+
+
+
+   .. py:attribute:: source
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: line
+      :type:  int
+      :value: 0
+
+
+
+   .. py:attribute:: extra
+      :type:  dict[str, Any]
+
+
+   .. py:property:: key
+      :type: str
+
+
+      Return the globally unique key ``system:id``.
+
+
+   .. py:method:: to_dict() -> dict[str, Any]
+
+      Return a JSON-serializable dict with empty fields dropped.
+
+
+
+   .. py:method:: from_dict(data: dict[str, Any]) -> Decl
+      :classmethod:
+
+
+      Build a `Decl` from `to_dict` output.
+
+      :param data: Serialized declaration.
+
+      :returns: The reconstructed `Decl`.
+
+
+
+.. py:class:: MinedSystem
+
+   A system's mined declarations plus provenance.
+
+
+   .. py:attribute:: system
+      :type:  str
+
+
+   .. py:attribute:: decls
+      :type:  list[Decl]
+
+
+   .. py:attribute:: source
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: commit
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: version
+      :type:  str
+      :value: ''
+
+
+
+   .. py:method:: counts() -> dict[str, int]
+
+      Return declaration counts by kind (sorted).
+
+
+
+.. py:function:: load_snapshot(system: str, snap_dir: pathlib.Path) -> list[Decl]
+
+   Load a system's declarations from its JSONL snapshot.
+
+   :param system: System key.
+   :param snap_dir: Snapshot directory.
+
+   :returns: Declarations in snapshot order (empty if the snapshot is missing).
+
+
+.. py:function:: write_snapshot(mined: MinedSystem, out_dir: pathlib.Path) -> pathlib.Path
+
+   Write ``<system>.jsonl`` and update ``manifest.json`` deterministically.
+
+   :param mined: The mined system.
+   :param out_dir: Snapshot directory (``resources/mined``).
+
+   :returns: Path of the written JSONL file.
+
+

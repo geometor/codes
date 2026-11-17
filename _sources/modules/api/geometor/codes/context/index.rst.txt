@@ -1,0 +1,119 @@
+geometor.codes.context
+======================
+
+.. py:module:: geometor.codes.context
+
+.. autoapi-nested-parse::
+
+   Context manifest loader and base-context mining orchestrator.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.codes.context.ContextSystem
+   geometor.codes.context.ContextManifest
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.context.mine_system
+   geometor.codes.context.mine_all_base
+
+
+Module Contents
+---------------
+
+.. py:class:: ContextSystem
+
+   One entry in ``resources/context.toml``.
+
+
+   .. py:attribute:: id
+      :type:  str
+
+
+   .. py:attribute:: role
+      :type:  str
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: source
+      :type:  str
+
+
+   .. py:attribute:: miner
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: upstream
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: not_yet_in_canon
+      :type:  tuple[str, ...]
+      :value: ()
+
+
+
+.. py:class:: ContextManifest
+
+   Loaded ``context.toml`` manifest separating base and linked systems.
+
+
+   .. py:attribute:: systems
+      :type:  dict[str, ContextSystem]
+
+
+   .. py:method:: load(path: pathlib.Path | None = None) -> ContextManifest
+      :classmethod:
+
+
+      Load the context manifest from TOML.
+
+      :param path: Optional path to ``context.toml``.
+
+      :returns: A populated `ContextManifest`.
+
+
+
+   .. py:method:: by_role(role: str) -> list[ContextSystem]
+
+      Return systems matching ``role`` (``"base"`` or ``"linked"``).
+
+
+
+.. py:function:: mine_system(spec: ContextSystem, workspace_root: pathlib.Path) -> geometor.codes.mine.schema.MinedSystem
+
+   Run the appropriate miner for one `ContextSystem`.
+
+   :param spec: System specification from `context.toml`.
+   :param workspace_root: Workspace root.
+
+   :returns: The `MinedSystem` result.
+
+
+.. py:function:: mine_all_base(workspace_root: pathlib.Path | None = None, out_dir: pathlib.Path | None = None, manifest: ContextManifest | None = None) -> list[geometor.codes.mine.schema.MinedSystem]
+
+   Mine every ``role = "base"`` system and write deterministic snapshots.
+
+   :param workspace_root: Workspace root (defaults to parent of ``codes``).
+   :param out_dir: Output directory (defaults to ``resources/mined``).
+   :param manifest: Optional preloaded `ContextManifest`.
+
+   :returns: List of `MinedSystem` results in manifest order.
+
+

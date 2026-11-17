@@ -1,0 +1,123 @@
+geometor.codes.link
+===================
+
+.. py:module:: geometor.codes.link
+
+.. autoapi-nested-parse::
+
+   Linked-library indexing and candidate-matching for Phase 3.
+
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /modules/api/geometor/codes/link/indexers/index
+   /modules/api/geometor/codes/link/match/index
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.codes.link.LinkedEntry
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.link.index_all_linked
+   geometor.codes.link.load_linked_snapshot
+   geometor.codes.link.match_linked_to_catalog
+
+
+Package Contents
+----------------
+
+.. py:class:: LinkedEntry
+
+   One indexed declaration from a linked library.
+
+
+   .. py:attribute:: system
+      :type:  str
+
+
+   .. py:attribute:: id
+      :type:  str
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: kind
+      :type:  str
+
+
+   .. py:attribute:: statement
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: doc
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: source
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: line
+      :type:  int
+      :value: 0
+
+
+
+   .. py:attribute:: url
+      :type:  str
+      :value: ''
+
+
+
+   .. py:method:: to_dict() -> dict[str, Any]
+
+      Serialize to JSON-ready dict.
+
+
+
+.. py:function:: index_all_linked(workspace_root: pathlib.Path | None = None, out_dir: pathlib.Path | None = None, manifest: geometor.codes.context.ContextManifest | None = None) -> dict[str, int]
+
+   Index every ``role = "linked"`` system and write deterministic snapshots.
+
+   :returns: Mapping ``system_id -> entry_count``.
+
+
+.. py:function:: load_linked_snapshot(system: str, snap_dir: pathlib.Path | None = None) -> list[LinkedEntry]
+
+   Load a linked library snapshot from ``resources/linked/<system>.jsonl``.
+
+
+.. py:function:: match_linked_to_catalog(catalog: geometor.codes.discover.cluster.Catalog, linked_dir: pathlib.Path | None = None, lexicon: geometor.codes.lexicon.Lexicon | None = None, top_k: int = 3) -> dict[str, int]
+
+   Attach ranked linked-library matches to each principle in ``catalog``.
+
+   :param catalog: Discovered `Catalog` (updated in place).
+   :param linked_dir: Directory containing ``<system>.jsonl`` snapshots.
+   :param lexicon: Optional `Lexicon`.
+   :param top_k: Maximum matches kept per linked system per principle.
+
+   :returns: Count of linked matches attached per system.
+
+

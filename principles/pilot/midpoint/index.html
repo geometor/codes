@@ -1,0 +1,661 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../../../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>midpoint — Geometric Codes &amp; Proportions • GEOMETOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="canonical" href="https://geometor.github.io/codes/principles/pilot/midpoint/" />
+  <meta name="description" content="midpoint · kind: construction · family: incidence · verification: verified" />
+  <meta property="og:site_name" content="GEOMETOR" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="midpoint — Geometric Codes &amp; Proportions • GEOMETOR" />
+  <meta property="og:description" content="midpoint · kind: construction · family: incidence · verification: verified" />
+  <meta property="og:url" content="https://geometor.github.io/codes/principles/pilot/midpoint/" />
+  <meta property="og:image" content="https://geometor.github.io/codes/_static/social/banner.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="640" />
+  <meta property="og:image:alt" content="Geometric Codes &amp; Proportions — GEOMETOR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="midpoint — Geometric Codes &amp; Proportions • GEOMETOR" />
+  <meta name="twitter:description" content="midpoint · kind: construction · family: incidence · verification: verified" />
+  <meta name="twitter:image" content="https://geometor.github.io/codes/_static/social/banner.png" />
+  <meta name="twitter:image:alt" content="Geometric Codes &amp; Proportions — GEOMETOR" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/css/styles.css?v=f1075037" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../../../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../../../index.html" title="Home">
+        <img src="../../../_static/logo.png" class="logo" alt="GEOMETOR codes"/>
+        <div class="org-repo">
+          <span class="org">GEOMETOR</span>
+          <span class="sep" aria-hidden="true">&bull;</span>
+          <span class="repo">codes</span>
+        </div>
+      </a>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../../../hierarchy/index.html"  >Hierarchy</a>
+        </li>
+        <li>
+          <a href="../../../people/index.html"  >People</a>
+        </li>
+        <li>
+          <a href="../../../bibliography.html"  >Bibliography</a>
+        </li>
+        <li>
+          <a href="../../../glossary.html"  >Glossary</a>
+        </li>
+        <li>
+          <a href="../../../syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a>
+        </li>
+        <li>
+          <a href="../../../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../../../systems/index.html"  >Systems</a>
+        </li>
+        <li>
+          <a href="../../../rosetta/index.html"  >Rosetta Stone Benchmarks</a>
+        </li>
+        <li>
+          <a href="../../../opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <nav class="book-breadcrumbs" aria-label="Breadcrumb">
+            <a class="book-section-home-link" href="../../index.html">Geometric Principles Catalog</a>
+            <span class="book-crumb-sep" aria-hidden="true">/</span>
+            <a class="book-crumb-link" href="../index.html">Pilot Principles (ETC-Style Entries)</a>
+            <span class="book-crumb-sep" aria-hidden="true">/</span>
+            <span class="book-crumb-current" aria-current="page">midpoint</span>
+          </nav>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../orthocenter_concurrence/index.html" title="orthocenter_concurrence">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../circumcenter_concurrence/index.html" title="circumcenter_concurrence"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="midpoint">
+        <span id="id1"></span><h1>midpoint<a class="headerlink" href="#midpoint" title="Link to this heading">¶</a></h1>
+        <p><strong>midpoint</strong> · kind: <code class="docutils literal notranslate"><span class="pre">construction</span></code> · family: <code class="docutils literal notranslate"><span class="pre">incidence</span></code> · verification: <code class="docutils literal notranslate"><span class="pre">verified</span></code></p>
+        <p><strong>Euclid:</strong> <code class="docutils literal notranslate"><span class="pre">I.10</span></code></p>
+        <div class="note admonition">
+        <p class="admonition-title">Statement</p>
+        <p>To bisect a given finite straight line.</p>
+        </div>
+        <section class="level-2" id="canonical-form">
+        <h2>Canonical Form<a class="headerlink" href="#canonical-form" title="Link to this heading">¶</a></h2>
+        <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cong(a, d, d, b), between(a, d, b)
+        </pre></div>
+        </div>
+        </section>
+        <section class="level-2" id="exact-witness-figure">
+        <h2>Exact Witness Figure<a class="headerlink" href="#exact-witness-figure" title="Link to this heading">¶</a></h2>
+        <figure class="align-center" id="id3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="euclid-graphic codes-diagram" viewBox="-0.8000 -2.8000 5.6000 3.6000">
+          <style>
+        svg.codes-diagram {
+            background-color: #111318;
+            border: 1px solid #2e3440;
+            border-radius: 6px;
+            width: 100%;
+            height: auto;
+            max-height: 560px;
+            display: block;
+            margin: 0.75rem auto;
+            user-select: none;
+            overflow: hidden;
+            cursor: grab;
+        }
+        svg.codes-diagram:active {
+            cursor: grabbing;
+        }
+        @media (prefers-color-scheme: light) {
+            svg.codes-diagram {
+                background-color: #fbfbfd;
+                border-color: #d8dee9;
+            }
+            svg.codes-diagram .Point {
+                stroke: #fbfbfd !important;
+            }
+            svg.codes-diagram .Point.given {
+                fill: #1a1d24 !important;
+            }
+            svg.codes-diagram .label-halo {
+                stroke: #fbfbfd !important;
+            }
+            svg.codes-diagram .label-fill {
+                fill: #1a1d24 !important;
+            }
+            svg.codes-diagram .Line,
+            svg.codes-diagram .Segment {
+                stroke: #4c566a;
+            }
+            svg.codes-diagram .callout-box {
+                fill: rgba(255, 255, 255, 0.92);
+            }
+            svg.codes-diagram .callout-text {
+                fill: #1a1d24;
+            }
+        }
+        .Line, .Segment {
+            stroke: #9aa5b4;
+            stroke-linecap: round;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.35px;
+            fill: none;
+            opacity: 0.84;
+            transition: stroke-width 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
+        }
+        .Circle {
+            stroke: #c678dd;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.45px;
+            fill: none;
+            opacity: 0.86;
+            transition: stroke-width 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
+        }
+        .Polygon {
+            fill: rgba(97, 175, 239, 0.09);
+            stroke: #61afef;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.85px;
+            stroke-linejoin: round;
+            transition: stroke-width 0.15s ease, fill-opacity 0.15s ease;
+        }
+        .Polygon.golden {
+            fill: rgba(229, 192, 123, 0.14);
+            stroke: #e5c07b;
+        }
+        .Point {
+            fill: #e5c07b;
+            stroke: #111318;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1.4px;
+            transition: r 0.15s ease, filter 0.15s ease;
+        }
+        .Point.given {
+            fill: #ffffff;
+        }
+        .Point.result, .Point.center, .Point.target {
+            fill: #00e5ff;
+        }
+        .Point.golden {
+            fill: #f0c674;
+        }
+        .Point.midpoint, .Point.foot {
+            fill: #98c379;
+        }
+        .Line.guide, .Circle.guide, .Segment.guide, .Point.guide {
+            stroke-dasharray: 4 4;
+            opacity: 0.42;
+            stroke-width: 0.95px;
+        }
+        .Line.axis, .Segment.axis, .Line.euler, .Segment.euler {
+            stroke: #e06c75;
+            stroke-width: 1.9px;
+            opacity: 0.94;
+        }
+        .Line.bisector, .Segment.bisector, .Line.altitude, .Segment.altitude, .Line.median, .Segment.median {
+            stroke: #98c379;
+            stroke-width: 1.5px;
+            opacity: 0.88;
+        }
+        .Line.golden, .Segment.golden, .Circle.golden {
+            stroke: #e5c07b;
+            stroke-width: 1.85px;
+        }
+        .Circle.circumcircle {
+            stroke: #e06c75;
+            stroke-width: 1.55px;
+        }
+        .Circle.ninepoint {
+            stroke: #61afef;
+            stroke-width: 1.65px;
+        }
+        .Circle.incircle {
+            stroke: #e5c07b;
+            stroke-width: 1.55px;
+        }
+        .callout-box {
+            fill: rgba(24, 28, 36, 0.88);
+            stroke: #61afef;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 1px;
+            rx: 3px;
+        }
+        .callout-box.spread-box {
+            stroke: #e5c07b;
+        }
+        .callout-box.paradigm-box {
+            stroke: #c678dd;
+        }
+        .callout-text {
+            fill: #eceff4;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-weight: 600;
+            text-anchor: middle;
+            dominant-baseline: central;
+            pointer-events: none;
+        }
+        .element-group {
+            cursor: pointer;
+        }
+        .element-group.svg-hovered .Line,
+        .element-group.svg-hovered .Segment,
+        .element-group.svg-hovered .Circle,
+        .element-group.svg-hovered .Polygon {
+            stroke: #00e5ff !important;
+            stroke-width: 2.8px !important;
+            opacity: 1.0 !important;
+            filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.75));
+        }
+        .element-group.svg-hovered .Point {
+            fill: #00e5ff !important;
+            filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.9));
+        }
+        .svg-control-btn {
+            cursor: pointer;
+        }
+        .svg-control-btn rect {
+            fill: rgba(30, 34, 42, 0.85);
+            stroke: #5c6370;
+            stroke-width: 1px;
+            vector-effect: non-scaling-stroke;
+            rx: 3px;
+        }
+        .svg-control-btn:hover rect {
+            fill: rgba(55, 62, 76, 0.95);
+            stroke: #00e5ff;
+        }
+        .svg-control-btn text {
+            fill: #e5e9f0;
+            font-family: sans-serif;
+            font-weight: 600;
+            text-anchor: middle;
+            dominant-baseline: central;
+            pointer-events: none;
+        }
+        svg.hide-labels .labels-layer,
+        svg.hide-labels .callouts-layer {
+            display: none;
+        }
+        svg.hide-guides .guide {
+            display: none;
+        }
+        </style>
+          <g class="svg-viewport">
+            <g class="polygons-layer">
+            </g>
+            <g class="circles-layer">
+            </g>
+            <g class="lines-layer">
+            <g class="element-group" data-ref="/ A B /"><path class="Segment " d="M 0.0000,-0.0000 L 2.0000,-1.0000 L 4.0000,-2.0000" data-quadrance="20"><title>/ A B / (Q = 20)</title></path></g>
+            </g>
+            <g class="points-layer">
+            <g class="element-group" data-ref="A"><circle class="Point " cx="0.0000" cy="-0.0000" r="0.0644" data-latex-xy="(0, 0)" data-exact-xy="[0, 0]"><title>A = [0, 0]</title></circle></g>
+            <g class="element-group" data-ref="B"><circle class="Point " cx="4.0000" cy="-2.0000" r="0.0644" data-latex-xy="(4, 2)" data-exact-xy="[4, 2]"><title>B = [4, 2]</title></circle></g>
+            <g class="element-group" data-ref="M"><circle class="Point result" cx="2.0000" cy="-1.0000" r="0.0805" data-latex-xy="(2, 1)" data-exact-xy="[2, 1]"><title>M = [2, 1]</title></circle></g>
+            </g>
+            <g class="callouts-layer">
+            </g>
+            <g class="labels-layer">
+            <g class="element-group" data-ref="A"><text class="label-halo" x="0.1063" y="-0.0934" font-family="sans-serif" font-size="0.1596" font-weight="600" stroke="#111318" stroke-width="0.0399" stroke-linejoin="round" fill="none">A</text><text class="label-fill" x="0.1063" y="-0.0934" font-family="sans-serif" font-size="0.1596" font-weight="600" fill="#f0f4f8">A</text></g>
+            <g class="element-group" data-ref="B"><text class="label-halo" x="4.1063" y="-2.0934" font-family="sans-serif" font-size="0.1596" font-weight="600" stroke="#111318" stroke-width="0.0399" stroke-linejoin="round" fill="none">B</text><text class="label-fill" x="4.1063" y="-2.0934" font-family="sans-serif" font-size="0.1596" font-weight="600" fill="#f0f4f8">B</text></g>
+            <g class="element-group" data-ref="M"><text class="label-halo" x="2.1063" y="-1.0934" font-family="sans-serif" font-size="0.1596" font-weight="600" stroke="#111318" stroke-width="0.0399" stroke-linejoin="round" fill="none">M</text><text class="label-fill" x="2.1063" y="-1.0934" font-family="sans-serif" font-size="0.1596" font-weight="600" fill="#f0f4f8">M</text></g>
+            </g>
+          </g>
+          <g class="svg-controls">
+            <g class="svg-control-btn" data-action="zoom-in"><rect x="2.7444" y="-2.7365" width="0.3646" height="0.2352" /><text x="2.9266" y="-2.6189" style="font-size:0.1058px">+</text></g>
+            <g class="svg-control-btn" data-action="zoom-out"><rect x="3.1512" y="-2.7365" width="0.3646" height="0.2352" /><text x="3.3335" y="-2.6189" style="font-size:0.1058px">−</text></g>
+            <g class="svg-control-btn" data-action="reset"><rect x="3.5581" y="-2.7365" width="0.3646" height="0.2352" /><text x="3.7404" y="-2.6189" style="font-size:0.1058px">⟲</text></g>
+            <g class="svg-control-btn" data-action="labels"><rect x="3.9650" y="-2.7365" width="0.3646" height="0.2352" /><text x="4.1473" y="-2.6189" style="font-size:0.1058px">Lbl</text></g>
+            <g class="svg-control-btn" data-action="guides"><rect x="4.3719" y="-2.7365" width="0.3646" height="0.2352" /><text x="4.5542" y="-2.6189" style="font-size:0.1058px">Gde</text></g>
+          </g>
+          <script>
+        (function() {
+          if (window.__codesSvgInit) return;
+          window.__codesSvgInit = true;
+
+          function initDiagram(svg) {
+            if (svg.dataset.initialized) return;
+            svg.dataset.initialized = "true";
+            const vp = svg.querySelector(".svg-viewport");
+            if (!vp) return;
+
+            let scale = 1, tx = 0, ty = 0;
+            let dragging = false, startX = 0, startY = 0;
+
+            function applyTransform() {
+              vp.setAttribute("transform", `translate(${tx},${ty}) scale(${scale})`);
+            }
+
+            svg.addEventListener("wheel", function(e) {
+              e.preventDefault();
+              const rect = svg.getBoundingClientRect();
+              const vb = svg.viewBox.baseVal;
+              const mx = vb.x + ((e.clientX - rect.left) / rect.width) * vb.width;
+              const my = vb.y + ((e.clientY - rect.top) / rect.height) * vb.height;
+              const factor = e.deltaY > 0 ? 1 / 1.15 : 1.15;
+              const newScale = Math.min(Math.max(scale * factor, 0.25), 12);
+              tx = mx - (mx - tx) * (newScale / scale);
+              ty = my - (my - ty) * (newScale / scale);
+              scale = newScale;
+              applyTransform();
+            }, { passive: false });
+
+            svg.addEventListener("mousedown", function(e) {
+              if (e.target.closest(".svg-controls")) return;
+              dragging = true;
+              startX = e.clientX;
+              startY = e.clientY;
+            });
+
+            window.addEventListener("mousemove", function(e) {
+              if (!dragging) return;
+              const rect = svg.getBoundingClientRect();
+              const vb = svg.viewBox.baseVal;
+              const dx = ((e.clientX - startX) / rect.width) * vb.width;
+              const dy = ((e.clientY - startY) / rect.height) * vb.height;
+              startX = e.clientX;
+              startY = e.clientY;
+              tx += dx;
+              ty += dy;
+              applyTransform();
+            });
+
+            window.addEventListener("mouseup", function() {
+              dragging = false;
+            });
+
+            svg.querySelectorAll(".svg-control-btn").forEach(function(btn) {
+              btn.addEventListener("click", function(e) {
+                e.stopPropagation();
+                const action = btn.dataset.action;
+                if (action === "zoom-in") { scale = Math.min(scale * 1.25, 12); applyTransform(); }
+                else if (action === "zoom-out") { scale = Math.max(scale / 1.25, 0.25); applyTransform(); }
+                else if (action === "reset") { scale = 1; tx = 0; ty = 0; applyTransform(); }
+                else if (action === "labels") { svg.classList.toggle("hide-labels"); }
+                else if (action === "guides") { svg.classList.toggle("hide-guides"); }
+              });
+            });
+          }
+
+          function setupHoverSync() {
+            document.querySelectorAll("svg.codes-diagram").forEach(initDiagram);
+
+            document.addEventListener("mouseover", function(e) {
+              const refEl = e.target.closest("[data-ref]");
+              if (!refEl) return;
+              const ref = refEl.dataset.ref;
+              if (!ref) return;
+              document.querySelectorAll(`.element-group[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.add("svg-hovered"));
+              document.querySelectorAll(`.geom-ref[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.add("ref-hovered"));
+            });
+
+            document.addEventListener("mouseout", function(e) {
+              const refEl = e.target.closest("[data-ref]");
+              if (!refEl) return;
+              const ref = refEl.dataset.ref;
+              if (!ref) return;
+              document.querySelectorAll(`.element-group[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.remove("svg-hovered"));
+              document.querySelectorAll(`.geom-ref[data-ref="${CSS.escape(ref)}"]`).forEach(el => el.classList.remove("ref-hovered"));
+            });
+          }
+
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", setupHoverSync);
+          } else {
+            setupHoverSync();
+          }
+        })();
+        </script>
+        </svg>
+
+        <figcaption>
+        <p><span class="caption-text">Exact witness verified (3 points, 0 lines, 0 circles)</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        </section>
+        <section class="level-2" id="base-system-realizations">
+        <h2>Base System Realizations<a class="headerlink" href="#base-system-realizations" title="Link to this heading">¶</a></h2>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 16.0%" />
+        <col style="width: 24.0%" />
+        <col style="width: 60.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>System</p></th>
+        <th class="head"><p>Identifier</p></th>
+        <th class="head"><p>Statement / Form</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">euclid</span></code></p></td>
+        <td><p><code class="docutils literal notranslate"><span class="pre">I.10</span></code></p></td>
+        <td><p>I.10</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">leaneuclid</span></code></p></td>
+        <td><p><code class="docutils literal notranslate"><span class="pre">Elements.Book1.proposition_10</span></code></p></td>
+        <td><p>∀ (a b : Point) (AB : Line), distinctPointsOnLine a b AB → ∃ d : Point, (between a d b) ∧ (|(a─d)| = |(d─b)|)</p></td>
+        </tr>
+        <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">alphageometry</span></code></p></td>
+        <td><p><code class="docutils literal notranslate"><span class="pre">def.midpoint</span></code></p></td>
+        <td><p>midpoint x a b</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sympy</span></code></p></td>
+        <td><p><code class="docutils literal notranslate"><span class="pre">Point.midpoint</span></code></p></td>
+        <td><p>Point.midpoint(self, p)</p></td>
+        </tr>
+        <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sympy</span></code></p></td>
+        <td><p><code class="docutils literal notranslate"><span class="pre">Segment.midpoint</span></code></p></td>
+        <td><p>&#64;property Segment.midpoint</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="proof-traces">
+        <h2>Proof Traces<a class="headerlink" href="#proof-traces" title="Link to this heading">¶</a></h2>
+        <details class="book-collapse">
+        <summary class="book-collapse-summary"><span class="book-collapse-title"><span class="collapse-icon">▸</span> LeanEuclid ``Elements.Book1.proposition_10`` (10 steps)</span></summary>
+        <div class="book-collapse-body">
+        <div class="highlight-lean notranslate"><div class="highlight"><pre><span></span><span class="n">euclid_intros</span>
+        <span class="n">euclid_apply</span><span class="w"> </span><span class="o">(</span><span class="n">proposition_1</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">AB</span><span class="o">)</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">c</span>
+        <span class="n">euclid_apply</span><span class="w"> </span><span class="o">(</span><span class="n">line_from_points</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">a</span><span class="o">)</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">AC</span>
+        <span class="n">euclid_apply</span><span class="w"> </span><span class="o">(</span><span class="n">line_from_points</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">BC</span>
+        <span class="n">euclid_apply</span><span class="w"> </span><span class="o">(</span><span class="n">proposition_9'</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">AC</span><span class="w"> </span><span class="n">BC</span><span class="o">)</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">d'</span>
+        <span class="n">euclid_apply</span><span class="w"> </span><span class="o">(</span><span class="n">line_from_points</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">d'</span><span class="o">)</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">CD</span>
+        <span class="n">euclid_apply</span><span class="w"> </span><span class="o">(</span><span class="n">intersection_lines</span><span class="w"> </span><span class="n">CD</span><span class="w"> </span><span class="n">AB</span><span class="o">)</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">d</span>
+        <span class="n">euclid_apply</span><span class="w"> </span><span class="o">(</span><span class="n">proposition_4</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="n">AC</span><span class="w"> </span><span class="n">AB</span><span class="w"> </span><span class="n">CD</span><span class="w"> </span><span class="n">BC</span><span class="w"> </span><span class="n">AB</span><span class="w"> </span><span class="n">CD</span><span class="o">)</span>
+        <span class="n">use</span><span class="w"> </span><span class="n">d</span>
+        <span class="n">euclid_finish</span>
+        </pre></div>
+        </div>
+        </div>
+        </details>
+        </section>
+        <section class="level-2" id="linked-library-entries">
+        <h2>Linked Library Entries<a class="headerlink" href="#linked-library-entries" title="Link to this heading">¶</a></h2>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 14.0%" />
+        <col style="width: 28.0%" />
+        <col style="width: 12.0%" />
+        <col style="width: 46.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Library</p></th>
+        <th class="head"><p>Declaration</p></th>
+        <th class="head"><p>Confidence</p></th>
+        <th class="head"><p>Source</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">geocoq</span></code></p></td>
+        <td><p><code class="docutils literal notranslate"><span class="pre">proposition_10</span></code></p></td>
+        <td><p>1.0 (euclid_ref:proposition_10)</p></td>
+        <td><p><a class="reference external" href="https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Elements/OriginalProofs/proposition_10.v#L10">proposition_10</a></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">geocoq</span></code></p></td>
+        <td><p><code class="docutils literal notranslate"><span class="pre">bet'_midpoint</span></code></p></td>
+        <td><p>0.95 (lexicon:Midpoint)</p></td>
+        <td><p><a class="reference external" href="https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Algebraic/Counter_models/nD/counter_model_bet_inner_transitivity.v#L40">bet’_midpoint</a></p></td>
+        </tr>
+        <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">geocoq</span></code></p></td>
+        <td><p><code class="docutils literal notranslate"><span class="pre">coplanar_midpoint</span></code></p></td>
+        <td><p>0.95 (lexicon:Midpoint)</p></td>
+        <td><p><a class="reference external" href="https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Algebraic/Counter_models/nD/counter_model_bet_inner_transitivity.v#L181">coplanar_midpoint</a></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mathlib4</span></code></p></td>
+        <td><p><code class="docutils literal notranslate"><span class="pre">dist_eq_iff_eq_smul_rotation_pi_div_two_vadd_midpoint</span></code></p></td>
+        <td><p>0.95 (lexicon:midpoint)</p></td>
+        <td><p><a class="reference external" href="https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Oriented/Affine.lean#L727">dist_eq_iff_eq_smul_rotation_pi_div_two_vadd_midpoint</a></p></td>
+        </tr>
+        <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mathlib4</span></code></p></td>
+        <td><p><code class="docutils literal notranslate"><span class="pre">eulerPoint_eq_midpoint</span></code></p></td>
+        <td><p>0.95 (lexicon:midpoint)</p></td>
+        <td><p><a class="reference external" href="https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/NinePointCircle.lean#L226">eulerPoint_eq_midpoint</a></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mathlib4</span></code></p></td>
+        <td><p><code class="docutils literal notranslate"><span class="pre">oangle_midpoint_left</span></code></p></td>
+        <td><p>0.35 (tokens:1)</p></td>
+        <td><p><a class="reference external" href="https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Oriented/Affine.lean#L649">oangle_midpoint_left</a></p></td>
+        </tr>
+        <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cindyjs</span></code></p></td>
+        <td><p><code class="docutils literal notranslate"><span class="pre">midpoint</span></code></p></td>
+        <td><p>0.35 (tokens:1)</p></td>
+        <td><p><a class="reference external" href="https://github.com/CindyJS/CindyJS/blob/c5b87a373e574c0da6137cc95fbe48a8d6e534c5/src/js/libgeo/GeoOps.js#L218">midpoint</a></p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../orthocenter_concurrence/index.html" title="orthocenter_concurrence">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../../index.html">Geometric Principles Catalog</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../circumcenter_concurrence/index.html" title="circumcenter_concurrence"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../../../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../../../log/26.321-principles-catalog.html">26.321 — Principles Catalog & Cross-System Linker</a></li>
+        <li><a href="../../../log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="../../../tags/byrne.html">byrne</a></li>
+        <li><a href="../../../tags/formal-systems.html">formal-systems</a></li>
+        <li><a href="../../../tags/geometor-model.html">geometor-model</a></li>
+        <li><a href="../../../tags/opus.html">opus</a></li>
+        <li><a href="../../../tags/rosetta.html">rosetta</a></li>
+        <li><a href="../../../tags/sympy.html">sympy</a></li>
+        <li><a href="../../../tags/syntax.html">syntax</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../../../types/log.html">log</a></li>
+        <li><a href="../../../types/person.html">person</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../../../changelog.html"  >Changelog</a></li>
+        <li><a href="https://github.com/geometor/codes" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://github.com/geometor/codes/issues" target="_blank" rel="noopener">Support</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../../../_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../../../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../../../_static/js/collection_directory.js?v=2422530d"></script>
+  <script src="../../../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script src="../../../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

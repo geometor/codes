@@ -1,0 +1,61 @@
+geometor.codes.mine.lean
+========================
+
+.. py:module:: geometor.codes.mine.lean
+
+.. autoapi-nested-parse::
+
+   LeanEuclid miner: System E sorts, relations and axioms; Book I; UniGeo.
+
+   Parsing is purely textual (no Lean toolchain). It recovers each top-level
+   declaration with its namespace-qualified name, signature, docstring or
+   preceding comment, and, for theorems, the ``euclid_apply`` proof trace.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   geometor.codes.mine.lean.SCOPES
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.mine.lean.parse_lean_file
+   geometor.codes.mine.lean.mine_lean
+
+
+Module Contents
+---------------
+
+.. py:data:: SCOPES
+   :value: ('SystemE/Theory', 'Book', 'UniGeo')
+
+
+.. py:function:: parse_lean_file(path: pathlib.Path, root: pathlib.Path, workspace_root: pathlib.Path) -> list[geometor.codes.mine.schema.Decl]
+
+   Parse one Lean file into declarations.
+
+   :param path: The ``.lean`` file.
+   :param root: LeanEuclid checkout root.
+   :param workspace_root: Workspace root, for relative source paths.
+
+   :returns: Declarations in file order.
+
+
+.. py:function:: mine_lean(root: pathlib.Path, workspace_root: pathlib.Path) -> geometor.codes.mine.schema.MinedSystem
+
+   Mine LeanEuclid's System E theory, Book I and UniGeo.
+
+   :param root: LeanEuclid checkout root (``_refs/LeanEuclid``).
+   :param workspace_root: Workspace root.
+
+   :returns: A `MinedSystem`. UniGeo theorems carry their natural-language
+             statement (``texts/N.txt``) and proof (``proofs/N.txt``) in ``extra``.
+
+

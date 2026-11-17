@@ -1,0 +1,47 @@
+geometor.codes.mine.sympy_geo
+=============================
+
+.. py:module:: geometor.codes.mine.sympy_geo
+
+.. autoapi-nested-parse::
+
+   SymPy geometry miner: inspect ``sympy.geometry`` classes, methods, and functions.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   geometor.codes.mine.sympy_geo.TARGET_CLASSES
+   geometor.codes.mine.sympy_geo.TOP_FUNCTIONS
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.mine.sympy_geo.mine_sympy
+
+
+Module Contents
+---------------
+
+.. py:data:: TARGET_CLASSES
+   :value: ('Point', 'Point2D', 'Line', 'Line2D', 'Segment', 'Segment2D', 'Ray', 'Ray2D', 'Circle',...
+
+
+.. py:data:: TOP_FUNCTIONS
+   :value: ('intersection', 'centroid', 'are_similar', 'closest_points', 'convex_hull', 'farthest_points')
+
+
+.. py:function:: mine_sympy() -> geometor.codes.mine.schema.MinedSystem
+
+   Mine the installed ``sympy.geometry`` API.
+
+   :returns: A `MinedSystem` covering geometric classes, their own geometric
+             methods/properties, and module-level geometric functions.
+
+

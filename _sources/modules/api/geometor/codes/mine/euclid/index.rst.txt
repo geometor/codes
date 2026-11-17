@@ -1,0 +1,44 @@
+geometor.codes.mine.euclid
+==========================
+
+.. py:module:: geometor.codes.mine.euclid
+
+.. autoapi-nested-parse::
+
+   Euclid (Heath) loader: every enunciation as a base declaration.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.mine.euclid.roman_to_int
+   geometor.codes.mine.euclid.mine_euclid
+
+
+Module Contents
+---------------
+
+.. py:function:: roman_to_int(s: str) -> int
+
+   Convert a Roman numeral (I–XIII) to an integer.
+
+   :param s: Roman numeral.
+
+   :returns: Integer value.
+
+
+.. py:function:: mine_euclid(source: pathlib.Path, workspace_root: pathlib.Path, not_yet_in_canon: tuple[str, ...] = ()) -> geometor.codes.mine.schema.MinedSystem
+
+   Load Heath enunciations into declarations.
+
+   :param source: Path to ``enunciations.json``.
+   :param workspace_root: Workspace root, for relative source paths.
+   :param not_yet_in_canon: Book numerals marked as not yet in the code canon.
+
+   :returns: A `MinedSystem` with one `Decl` per definition, postulate, common
+             notion and proposition (section headers are skipped).
+
+

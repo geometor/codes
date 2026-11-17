@@ -1,0 +1,32 @@
+geometor.codes.mine.geometor_model
+==================================
+
+.. py:module:: geometor.codes.mine.geometor_model
+
+.. autoapi-nested-parse::
+
+   geometor.model miner: proof predicates, invariants, constructions, and spg foundation map.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.mine.geometor_model.mine_geometor_model
+
+
+Module Contents
+---------------
+
+.. py:function:: mine_geometor_model(root: pathlib.Path, workspace_root: pathlib.Path) -> geometor.codes.mine.schema.MinedSystem
+
+   Mine ``geometor.model`` public geometric API and its ``spg`` foundation map.
+
+   :param root: Path to ``model/src/geometor/model``.
+   :param workspace_root: Workspace root.
+
+   :returns: A `MinedSystem`.
+
+
