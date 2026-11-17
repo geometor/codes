@@ -1,0 +1,67 @@
+{
+  "canonical_form": "eq_angle(B, A, B, C, Q, P, Q, R), eq_angle(C, A, C, B, R, P, R, Q), ncoll(A, B, C) => sim_tri(A, B, C, P, Q, R)",
+  "euclid_refs": [
+    "VI.4"
+  ],
+  "family": "similarity",
+  "fingerprint": "eq_angle(P0,P2,P0,P1,P3,P5,P3,P4);eq_angle(P1,P2,P1,P0,P4,P5,P4,P3);ncoll(P2,P0,P1)=>sim_tri(P2,P0,P1,P5,P3,P4)",
+  "id": "aa_similarity",
+  "kind": "theorem",
+  "linked": [
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "kingdon.matrixreps.ordering_matrix",
+      "name": "ordering_matrix",
+      "relation": "candidate",
+      "statement": "function ordering_matrix",
+      "system": "kingdon",
+      "url": "https://github.com/tBuLi/kingdon/blob/87de1ee3fd8624bb2b1c8947f6e44f005d817ad9/kingdon/matrixreps.py#L26"
+    }
+  ],
+  "members": [
+    {
+      "canonical_form": "",
+      "id": "VI.4",
+      "key": "euclid:VI.4",
+      "kind": "theorem",
+      "line": 0,
+      "name": "VI.4",
+      "source": "euclid/resources/heath/enunciations.json",
+      "statement": "",
+      "system": "euclid"
+    },
+    {
+      "canonical_form": "eq_angle(B, A, B, C, Q, P, Q, R), eq_angle(C, A, C, B, R, P, R, Q), ncoll(A, B, C) => sim_tri(A, B, C, P, Q, R)",
+      "id": "rule.r34",
+      "key": "alphageometry:rule.r34",
+      "kind": "rule",
+      "line": 35,
+      "name": "r34",
+      "source": "_refs/alphageometry/rules.txt",
+      "statement": "eqangle6 B A B C Q P Q R, eqangle6 C A C B R P R Q, ncoll A B C => simtri A B C P Q R",
+      "system": "alphageometry"
+    },
+    {
+      "canonical_form": "eq_angle(B, A, B, C, Q, P, Q, R), eq_angle(C, A, C, B, R, P, R, Q), ncoll(A, B, C), same_clock(A, B, C, P, Q, R), diff(A, B, C), diff(P, Q, R) => sim_tri(A, B, C, P, Q, R)",
+      "id": "R34_AA_SIMILARITY_OF_TRIANGLES_DIRECT",
+      "key": "newclid:R34_AA_SIMILARITY_OF_TRIANGLES_DIRECT",
+      "kind": "rule",
+      "line": 391,
+      "name": "r34",
+      "source": "_refs/Newclid/newclid/src/newclid/all_rules.py",
+      "statement": "eqangle B A B C Q P Q R, eqangle C A C B R P R Q, ncoll A B C, sameclock A B C P Q R, diff A B C, diff P Q R => simtri A B C P Q R",
+      "system": "newclid"
+    }
+  ],
+  "relations": [],
+  "statement": "In equiangular triangles the sides about the equal angles are proportional, and those are corresponding sides which subtend the equal angles.",
+  "status": "proposed",
+  "title": "aa similarity",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "aa_similarity",
+    "status": "verified",
+    "summary": "Exact witness verified (6 points, 0 lines, 0 circles)"
+  }
+}

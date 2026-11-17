@@ -1,0 +1,137 @@
+{
+  "canonical_form": "on_line(c, AB) => on_line(h, AB)",
+  "euclid_refs": [
+    "I.12"
+  ],
+  "family": "congruence",
+  "fingerprint": "on_line(P0,P1)=>on_line(P2,P1)",
+  "id": "perpendicular_foot",
+  "kind": "construction",
+  "linked": [
+    {
+      "confidence": 1.0,
+      "evidence": "euclid_ref:proposition_12",
+      "id": "Elements.OriginalProofs.proposition_12.proposition_12",
+      "name": "proposition_12",
+      "relation": "equivalent",
+      "statement": "proposition_12 :",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Elements/OriginalProofs/proposition_12.v#L7"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Axioms.parallel_postulates.perpendicular_transversal_postulate",
+      "name": "perpendicular_transversal_postulate",
+      "relation": "candidate",
+      "statement": "perpendicular_transversal_postulate := forall A B C D P Q,",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L81"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Axioms.parallel_postulates.postulate_of_parallelism_of_perpendicular_transversals",
+      "name": "postulate_of_parallelism_of_perpendicular_transversals",
+      "relation": "candidate",
+      "statement": "postulate_of_parallelism_of_perpendicular_transversals :=",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L87"
+    },
+    {
+      "confidence": 0.95,
+      "evidence": "lexicon:EuclideanGeometry.orthogonalProjection",
+      "id": "Mathlib.Geometry.Euclidean.Projection.orthogonalProjection",
+      "name": "orthogonalProjection",
+      "relation": "equivalent",
+      "statement": "orthogonalProjection (s : AffineSubspace 𝕜 P) [Nonempty s]",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Projection.lean#L42"
+    },
+    {
+      "confidence": 0.7,
+      "evidence": "tokens:2",
+      "id": "Mathlib.Geometry.Euclidean.Altitude.inner_vsub_altitudeFoot_vsub_altitudeFoot_eq_zero",
+      "name": "inner_vsub_altitudeFoot_vsub_altitudeFoot_eq_zero",
+      "relation": "candidate",
+      "statement": "inner_vsub_altitudeFoot_vsub_altitudeFoot_eq_zero {i j : Fin (n + 1)} (h : i ≠ j) :",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Altitude.lean#L313"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Mathlib.Geometry.Euclidean.PerpBisector.perpBisector",
+      "name": "perpBisector",
+      "relation": "candidate",
+      "statement": "perpBisector (p₁ p₂ : P) : AffineSubspace ℝ P :=",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/PerpBisector.lean#L40"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "main.java.gprover.CST.ge_lt_foot",
+      "name": "ge_lt_foot",
+      "relation": "candidate",
+      "statement": "public static int ge_lt_foot(int t, int[] p) {",
+      "system": "jgex",
+      "url": "https://github.com/kovzol/Java-Geometry-Expert/blob/5489aacb40afc91b5c5ca539db853cca216e1165/src/main/java/gprover/CST.java#L964"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "main.java.gprover.GDDAux.cal_ax_foot",
+      "name": "cal_ax_foot",
+      "relation": "candidate",
+      "statement": "public void cal_ax_foot(ProPoint pt, int p1, int p2, int p3) {",
+      "system": "jgex",
+      "url": "https://github.com/kovzol/Java-Geometry-Expert/blob/5489aacb40afc91b5c5ca539db853cca216e1165/src/main/java/gprover/GDDAux.java#L1608"
+    }
+  ],
+  "members": [
+    {
+      "canonical_form": "",
+      "id": "I.12",
+      "key": "euclid:I.12",
+      "kind": "problem",
+      "line": 0,
+      "name": "I.12",
+      "source": "euclid/resources/heath/enunciations.json",
+      "statement": "",
+      "system": "euclid"
+    },
+    {
+      "canonical_form": "on_line(c, AB) => on_line(h, AB)",
+      "id": "Elements.Book1.proposition_12",
+      "key": "leaneuclid:Elements.Book1.proposition_12",
+      "kind": "theorem",
+      "line": 7,
+      "name": "proposition_12",
+      "source": "_refs/LeanEuclid/Book/Prop12.lean",
+      "statement": "∀ (a b c : Point) (AB : Line), distinctPointsOnLine a b AB ∧ ¬(c.onLine AB) → exists h : Point, h.onLine AB ∧ (∠ a:h:c = ∟ ∨ ∠ b:h:c = ∟)",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "ncoll(A, B, C) => perp(X, A, B, C), coll(X, B, C)",
+      "id": "def.foot",
+      "key": "alphageometry:def.foot",
+      "kind": "construction",
+      "line": 61,
+      "name": "foot",
+      "source": "_refs/alphageometry/defs.txt",
+      "statement": "foot x a b c",
+      "system": "alphageometry"
+    }
+  ],
+  "relations": [],
+  "statement": "To a given infinite straight line, from a given point which is not on it, to draw a perpendicular straight line.",
+  "status": "proposed",
+  "title": "perpendicular foot",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "perpendicular_foot",
+    "status": "verified",
+    "summary": "Exact witness verified (4 points, 2 lines, 0 circles)"
+  }
+}

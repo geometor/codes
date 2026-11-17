@@ -1,0 +1,97 @@
+{
+  "canonical_form": "form_triangle(a, b, c, AB, BC, AC) => cong(b, c, b, a)",
+  "euclid_refs": [
+    "I.47"
+  ],
+  "family": "area",
+  "fingerprint": "form_triangle(P0,P1,P2,P3,P4,P5)=>cong(P1,P2,P1,P0)",
+  "id": "pythagorean",
+  "kind": "theorem",
+  "linked": [
+    {
+      "confidence": 1.0,
+      "evidence": "euclid_ref:proposition_47",
+      "id": "Elements.OriginalProofs.proposition_47.proposition_47",
+      "name": "proposition_47",
+      "relation": "equivalent",
+      "statement": "proposition_47 :",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Elements/OriginalProofs/proposition_47.v#L10"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Unoriented.RightAngle.dist_sq_eq_dist_sq_add_dist_sq_iff_angle_eq_pi_div_two",
+      "name": "dist_sq_eq_dist_sq_add_dist_sq_iff_angle_eq_pi_div_two",
+      "relation": "candidate",
+      "statement": "dist_sq_eq_dist_sq_add_dist_sq_iff_angle_eq_pi_div_two (p₁ p₂ p₃ : P) :",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Unoriented/RightAngle.lean#L326"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Unoriented.RightAngle.norm_add_sq_eq_norm_sq_add_norm_sq'",
+      "name": "norm_add_sq_eq_norm_sq_add_norm_sq'",
+      "relation": "candidate",
+      "statement": "norm_add_sq_eq_norm_sq_add_norm_sq' (x y : V) (h : angle x y = π / 2) :",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Unoriented/RightAngle.lean#L49"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Unoriented.RightAngle.norm_add_sq_eq_norm_sq_add_norm_sq_iff_angle_eq_pi_div_two",
+      "name": "norm_add_sq_eq_norm_sq_add_norm_sq_iff_angle_eq_pi_div_two",
+      "relation": "candidate",
+      "statement": "norm_add_sq_eq_norm_sq_add_norm_sq_iff_angle_eq_pi_div_two (x y : V) :",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Unoriented/RightAngle.lean#L43"
+    }
+  ],
+  "members": [
+    {
+      "canonical_form": "",
+      "id": "I.47",
+      "key": "euclid:I.47",
+      "kind": "theorem",
+      "line": 0,
+      "name": "I.47",
+      "source": "euclid/resources/heath/enunciations.json",
+      "statement": "",
+      "system": "euclid"
+    },
+    {
+      "canonical_form": "form_triangle(a, b, c, AB, BC, AC) => cong(b, c, b, a)",
+      "id": "Elements.Book1.proposition_47",
+      "key": "leaneuclid:Elements.Book1.proposition_47",
+      "kind": "theorem",
+      "line": 16,
+      "name": "proposition_47",
+      "source": "_refs/LeanEuclid/Book/Prop47.lean",
+      "statement": "∀ (a b c: Point) (AB BC AC : Line), formTriangle a b c AB BC AC ∧ (∠ b:a:c : ℝ) = ∟ → |(b─c)| * |(b─c)| = |(b─a)| * |(b─a)| + |(a─c)| * |(a─c)|",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "PythagoreanPremises(A, B, C) => PythagoreanConclusions(A, B, C)",
+      "id": "R57_PYTHAGORAS_THEOREM",
+      "key": "newclid:R57_PYTHAGORAS_THEOREM",
+      "kind": "rule",
+      "line": 641,
+      "name": "r57",
+      "source": "_refs/Newclid/newclid/src/newclid/all_rules.py",
+      "statement": "PythagoreanPremises A B C => PythagoreanConclusions A B C",
+      "system": "newclid"
+    }
+  ],
+  "relations": [],
+  "statement": "In right-angled triangles the square on the side subtending the right angle is equal to the squares on the sides containing the right angle.",
+  "status": "proposed",
+  "title": "pythagorean",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "pythagorean",
+    "status": "verified",
+    "summary": "Exact witness verified (3 points, 2 lines, 0 circles)"
+  }
+}

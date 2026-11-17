@@ -1,0 +1,97 @@
+{
+  "canonical_form": "para(A, B, C, D), coll(O, A, C), coll(O, B, D) => eq_ratio(A, B, C, D, O, O)",
+  "euclid_refs": [
+    "VI.2"
+  ],
+  "family": "similarity",
+  "fingerprint": "coll(P0,P1,P3);coll(P0,P2,P4);para(P1,P2,P3,P4)=>eq_ratio(P1,P2,P3,P4,P0,P0)",
+  "id": "thales_intercept",
+  "kind": "theorem",
+  "linked": [
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Axioms.parallel_postulates.existential_thales_postulate",
+      "name": "existential_thales_postulate",
+      "relation": "candidate",
+      "statement": "existential_thales_postulate :=",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L208"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Axioms.parallel_postulates.thales_converse_postulate",
+      "name": "thales_converse_postulate",
+      "relation": "candidate",
+      "statement": "thales_converse_postulate := forall A B C M,",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L203"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Axioms.parallel_postulates.thales_postulate",
+      "name": "thales_postulate",
+      "relation": "candidate",
+      "statement": "thales_postulate := forall A B C M,",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L198"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Sphere.angle_eq_pi_div_two_iff_mem_sphere_of_isDiameter",
+      "name": "angle_eq_pi_div_two_iff_mem_sphere_of_isDiameter",
+      "relation": "candidate",
+      "statement": "angle_eq_pi_div_two_iff_mem_sphere_of_isDiameter {p₁ p₂ p₃ : P} {s : Sphere P}",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Sphere.lean#L79"
+    }
+  ],
+  "members": [
+    {
+      "canonical_form": "",
+      "id": "VI.2",
+      "key": "euclid:VI.2",
+      "kind": "theorem",
+      "line": 0,
+      "name": "VI.2",
+      "source": "euclid/resources/heath/enunciations.json",
+      "statement": "",
+      "system": "euclid"
+    },
+    {
+      "canonical_form": "para(A, B, C, D), coll(O, A, C), coll(O, B, D) => eq_ratio(A, B, C, D, O, O)",
+      "id": "rule.r07",
+      "key": "alphageometry:rule.r07",
+      "kind": "rule",
+      "line": 8,
+      "name": "r07",
+      "source": "_refs/alphageometry/rules.txt",
+      "statement": "para A B C D, coll O A C, coll O B D => eqratio3 A B C D O O",
+      "system": "alphageometry"
+    },
+    {
+      "canonical_form": "para(A, B, C, D), coll(O, A, C), coll(O, B, D), ncoll(O, A, B) => sim_tri(O, A, B, O, C, D), eq_ratio(O, A, C, A, O, B, B, D), eq_ratio(O, C, A, C, O, D, B, D)",
+      "id": "R07_THALES_THEOREM_1",
+      "key": "newclid:R07_THALES_THEOREM_1",
+      "kind": "rule",
+      "line": 182,
+      "name": "r07",
+      "source": "_refs/Newclid/newclid/src/newclid/all_rules.py",
+      "statement": "para A B C D, coll O A C, coll O B D, ncoll O A B => simtri O A B O C D, eqratio O A C A O B B D, eqratio O C A C O D B D",
+      "system": "newclid"
+    }
+  ],
+  "relations": [],
+  "statement": "If a straight line be drawn parallel to one of the sides of a triangle, it will cut the sides of the triangle proportionally; and, if the sides of the triangle be cut proportionally, the line joining the points of section will be parallel to the remaining side of the triangle.",
+  "status": "proposed",
+  "title": "thales intercept",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "thales_intercept",
+    "status": "verified",
+    "summary": "Exact witness verified (5 points, 2 lines, 0 circles)"
+  }
+}

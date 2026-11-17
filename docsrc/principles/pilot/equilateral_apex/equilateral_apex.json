@@ -1,0 +1,128 @@
+{
+  "canonical_form": "cong(c, a, a, b), cong(c, b, a, b)",
+  "euclid_refs": [
+    "I.1"
+  ],
+  "family": "congruence",
+  "fingerprint": "=>cong(P0,P1,P1,P2);cong(P0,P2,P1,P2)",
+  "id": "equilateral_apex",
+  "kind": "construction",
+  "linked": [
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Elements.OriginalProofs.euclidean_defs.equilateral",
+      "name": "equilateral",
+      "relation": "candidate",
+      "statement": "equilateral A B C := Cong A B B C /\\ Cong B C C A",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Elements/OriginalProofs/euclidean_defs.v#L35"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Main.Highschool.triangles.conga3_equilateral",
+      "name": "conga3_equilateral",
+      "relation": "candidate",
+      "statement": "conga3_equilateral :",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Main/Highschool/triangles.v#L327"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Main.Highschool.triangles.equilateral",
+      "name": "equilateral",
+      "relation": "candidate",
+      "statement": "equilateral A B C :=",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Main/Highschool/triangles.v#L101"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Sphere.abs_oangle_center_left_toReal_lt_pi_div_two",
+      "name": "abs_oangle_center_left_toReal_lt_pi_div_two",
+      "relation": "candidate",
+      "statement": "abs_oangle_center_left_toReal_lt_pi_div_two {s : Sphere P} {p₁ p₂ : P} (hp₁ : p₁ ∈ s)",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Sphere.lean#L325"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Sphere.abs_oangle_center_right_toReal_lt_pi_div_two",
+      "name": "abs_oangle_center_right_toReal_lt_pi_div_two",
+      "relation": "candidate",
+      "statement": "abs_oangle_center_right_toReal_lt_pi_div_two {s : Sphere P} {p₁ p₂ : P} (hp₁ : p₁ ∈ s)",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Sphere.lean#L331"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Sphere.oangle_eq_pi_sub_two_zsmul_oangle_center_left",
+      "name": "oangle_eq_pi_sub_two_zsmul_oangle_center_left",
+      "relation": "candidate",
+      "statement": "oangle_eq_pi_sub_two_zsmul_oangle_center_left {s : Sphere P} {p₁ p₂ : P} (hp₁ : p₁ ∈ s)",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Sphere.lean#L271"
+    }
+  ],
+  "members": [
+    {
+      "canonical_form": "",
+      "id": "I.1",
+      "key": "euclid:I.1",
+      "kind": "problem",
+      "line": 0,
+      "name": "I.1",
+      "source": "euclid/resources/heath/enunciations.json",
+      "statement": "",
+      "system": "euclid"
+    },
+    {
+      "canonical_form": "cong(c, a, a, b), cong(c, b, a, b)",
+      "id": "Elements.Book1.proposition_1",
+      "key": "leaneuclid:Elements.Book1.proposition_1",
+      "kind": "theorem",
+      "line": 5,
+      "name": "proposition_1",
+      "source": "_refs/LeanEuclid/Book/Prop01.lean",
+      "statement": "∀ (a b : Point) (AB : Line), distinctPointsOnLine a b AB → ∃ c : Point, |(c─a)| = |(a─b)| ∧ |(c─b)| = |(a─b)|",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "on_line(x, AB) => cong(c, a, a, b), cong(c, b, a, b), opposite_sides(c, x, AB)",
+      "id": "Elements.Book1.proposition_1'",
+      "key": "leaneuclid:Elements.Book1.proposition_1'",
+      "kind": "theorem",
+      "line": 18,
+      "name": "proposition_1'",
+      "source": "_refs/LeanEuclid/Book/Prop01.lean",
+      "statement": "∀ (a b x : Point) (AB : Line), distinctPointsOnLine a b AB ∧ ¬(x.onLine AB) → ∃ c : Point, |(c─a)| = |(a─b)| ∧ |(c─b)| = |(a─b)| ∧ (c.opposingSides x AB)",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "diff(B, C) => cong(X, B, B, C), cong(B, C, C, X), eq_angle(B, X, B, C, C, B, C, X), eq_angle(X, C, X, B, B, X, B, C)",
+      "id": "def.eq_triangle",
+      "key": "alphageometry:def.eq_triangle",
+      "kind": "construction",
+      "line": 37,
+      "name": "eq_triangle",
+      "source": "_refs/alphageometry/defs.txt",
+      "statement": "eq_triangle x b c",
+      "system": "alphageometry"
+    }
+  ],
+  "relations": [],
+  "statement": "On a given finite straight line to construct an equilateral triangle.",
+  "status": "proposed",
+  "title": "equilateral apex",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "equilateral_apex",
+    "status": "verified",
+    "summary": "Exact witness verified (3 points, 0 lines, 2 circles)"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "canonical_form": "circle_center(O, A, B, C), coll(O, A, C) => perp(A, B, B, C)",
+  "euclid_refs": [
+    "III.31"
+  ],
+  "family": "circle",
+  "fingerprint": "circle_center(P0,P1,P2,P3);coll(P0,P1,P3)=>perp(P1,P2,P2,P3)",
+  "id": "thales_semicircle",
+  "kind": "theorem",
+  "linked": [
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Axioms.parallel_postulates.existential_thales_postulate",
+      "name": "existential_thales_postulate",
+      "relation": "candidate",
+      "statement": "existential_thales_postulate :=",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L208"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Axioms.parallel_postulates.thales_converse_postulate",
+      "name": "thales_converse_postulate",
+      "relation": "candidate",
+      "statement": "thales_converse_postulate := forall A B C M,",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L203"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Axioms.parallel_postulates.thales_postulate",
+      "name": "thales_postulate",
+      "relation": "candidate",
+      "statement": "thales_postulate := forall A B C M,",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L198"
+    },
+    {
+      "confidence": 0.7,
+      "evidence": "tokens:2",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Sphere.angle_eq_pi_div_two_iff_mem_sphere_of_isDiameter",
+      "name": "angle_eq_pi_div_two_iff_mem_sphere_of_isDiameter",
+      "relation": "candidate",
+      "statement": "angle_eq_pi_div_two_iff_mem_sphere_of_isDiameter {p₁ p₂ p₃ : P} {s : Sphere P}",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Sphere.lean#L79"
+    }
+  ],
+  "members": [
+    {
+      "canonical_form": "",
+      "id": "III.31",
+      "key": "euclid:III.31",
+      "kind": "theorem",
+      "line": 0,
+      "name": "III.31",
+      "source": "euclid/resources/heath/enunciations.json",
+      "statement": "",
+      "system": "euclid"
+    },
+    {
+      "canonical_form": "circle_center(O, A, B, C), coll(O, A, C) => perp(A, B, B, C)",
+      "id": "rule.r20",
+      "key": "alphageometry:rule.r20",
+      "kind": "rule",
+      "line": 21,
+      "name": "r20",
+      "source": "_refs/alphageometry/rules.txt",
+      "statement": "circle O A B C, coll O A C => perp A B B C",
+      "system": "alphageometry"
+    },
+    {
+      "canonical_form": "circle_center(O, A, B, C), coll(O, A, C) => perp(A, B, B, C)",
+      "id": "R20_DIAMETER_IS_HYPOTENUSE",
+      "key": "newclid:R20_DIAMETER_IS_HYPOTENUSE",
+      "kind": "rule",
+      "line": 288,
+      "name": "r20",
+      "source": "_refs/Newclid/newclid/src/newclid/all_rules.py",
+      "statement": "circle O A B C, coll O A C => perp A B B C",
+      "system": "newclid"
+    }
+  ],
+  "relations": [],
+  "statement": "In a circle the angle in the semicircle is right, that in a greater segment less than a right angle, and that in a less segment greater than a right angle; and further the angle of the greater segment is greater than a right angle, and the angle of the less segment less than a right angle.",
+  "status": "proposed",
+  "title": "thales semicircle",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "thales_semicircle",
+    "status": "verified",
+    "summary": "Exact witness verified (5 points, 2 lines, 1 circles)"
+  }
+}

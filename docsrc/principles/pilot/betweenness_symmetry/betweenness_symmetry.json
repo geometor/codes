@@ -1,0 +1,32 @@
+{
+  "canonical_form": "between(a, b, c) => between(c, b, a), between(b, a, c)",
+  "euclid_refs": [],
+  "family": "order",
+  "fingerprint": "between(P0,P1,P2)=>between(P1,P0,P2);between(P2,P1,P0)",
+  "id": "betweenness_symmetry",
+  "kind": "axiom",
+  "linked": [],
+  "members": [
+    {
+      "canonical_form": "between(a, b, c) => between(c, b, a), between(b, a, c)",
+      "id": "between_symm",
+      "key": "leaneuclid:between_symm",
+      "kind": "axiom",
+      "line": 45,
+      "name": "between_symm",
+      "source": "_refs/LeanEuclid/SystemE/Theory/Inferences/Diagrammatic.lean",
+      "statement": "∀ (a b c : Point), between a b c → (between c b a) ∧ (a ≠ b) ∧ (a ≠ c) ∧ ¬(between b a c)",
+      "system": "leaneuclid"
+    }
+  ],
+  "relations": [],
+  "statement": "between axioms If b is  between a and c then b is  between c and a, a != b, a != c, and a is not a. between bnd c",
+  "status": "proposed",
+  "title": "betweenness symmetry",
+  "verification": {
+    "gap_reason": "Requires ternary between(A, B, C) order relation in geometor.model.proof.",
+    "principle_id": "betweenness_symmetry",
+    "status": "gap",
+    "summary": "Not yet expressible in geometor.model.proof"
+  }
+}

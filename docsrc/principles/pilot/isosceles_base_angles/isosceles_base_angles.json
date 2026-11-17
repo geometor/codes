@@ -1,0 +1,189 @@
+{
+  "canonical_form": "cong(a, b, a, c), between(a, b, d), between(a, c, e), form_triangle(a, b, c, AB, BC, AC) => eq_angle(a, b, c, a, c, b), eq_angle(c, b, d, b, c, e)",
+  "euclid_refs": [
+    "I.5"
+  ],
+  "family": "congruence",
+  "fingerprint": "between(P0,P1,P3);between(P0,P2,P4);cong(P0,P1,P0,P2);form_triangle(P0,P1,P2,P5,P6,P7)=>eq_angle(P0,P1,P2,P0,P2,P1);eq_angle(P2,P1,P3,P1,P2,P4)",
+  "id": "isosceles_base_angles",
+  "kind": "theorem",
+  "linked": [
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Axioms.parallel_postulates.alternate_interior_angles_postulate",
+      "name": "alternate_interior_angles_postulate",
+      "relation": "candidate",
+      "statement": "alternate_interior_angles_postulate := forall A B C D,",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L70"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Axioms.parallel_postulates.consecutive_interior_angles_postulate",
+      "name": "consecutive_interior_angles_postulate",
+      "relation": "candidate",
+      "statement": "consecutive_interior_angles_postulate := forall A B C D,",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L76"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Axioms.parallel_postulates.postulate_of_existence_of_a_triangle_whose_angles_sum_to_two_rights",
+      "name": "postulate_of_existence_of_a_triangle_whose_angles_sum_to_two_rights",
+      "relation": "candidate",
+      "statement": "postulate_of_existence_of_a_triangle_whose_angles_sum_to_two_rights :=",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L175"
+    },
+    {
+      "confidence": 0.7,
+      "evidence": "tokens:2",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Oriented.Affine.abs_oangle_left_toReal_lt_pi_div_two_of_dist_eq",
+      "name": "abs_oangle_left_toReal_lt_pi_div_two_of_dist_eq",
+      "relation": "candidate",
+      "statement": "abs_oangle_left_toReal_lt_pi_div_two_of_dist_eq {p₁ p₂ p₃ : P}",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Oriented/Affine.lean#L379"
+    },
+    {
+      "confidence": 0.7,
+      "evidence": "tokens:2",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Oriented.Affine.abs_oangle_right_toReal_lt_pi_div_two_of_dist_eq",
+      "name": "abs_oangle_right_toReal_lt_pi_div_two_of_dist_eq",
+      "relation": "candidate",
+      "statement": "abs_oangle_right_toReal_lt_pi_div_two_of_dist_eq {p₁ p₂ p₃ : P}",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Oriented/Affine.lean#L372"
+    },
+    {
+      "confidence": 0.7,
+      "evidence": "tokens:2",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Oriented.Basic.abs_oangle_sub_left_toReal_lt_pi_div_two",
+      "name": "abs_oangle_sub_left_toReal_lt_pi_div_two",
+      "relation": "candidate",
+      "statement": "abs_oangle_sub_left_toReal_lt_pi_div_two {x y : V} (h : ‖x‖ = ‖y‖) :",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Oriented/Basic.lean#L1026"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "main.java.gprover.Angles",
+      "name": "Angles",
+      "relation": "candidate",
+      "statement": "public class Angles extends CClass",
+      "system": "jgex",
+      "url": "https://github.com/kovzol/Java-Geometry-Expert/blob/5489aacb40afc91b5c5ca539db853cca216e1165/src/main/java/gprover/Angles.java#L8"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "main.java.wprover.CProperty.Panel_Base",
+      "name": "Panel_Base",
+      "relation": "candidate",
+      "statement": "class Panel_Base extends JPanel {",
+      "system": "jgex",
+      "url": "https://github.com/kovzol/Java-Geometry-Expert/blob/5489aacb40afc91b5c5ca539db853cca216e1165/src/main/java/wprover/CProperty.java#L806"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "galgebra.atoms.BasisBaseSymbol",
+      "name": "BasisBaseSymbol",
+      "relation": "candidate",
+      "statement": "class BasisBaseSymbol",
+      "system": "galgebra",
+      "url": "https://github.com/pygae/galgebra/blob/d160238c6ddbedce676e633d69840fdaab83ab86/galgebra/atoms.py#L89"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "galgebra.ga.BaseProductFunction",
+      "name": "BaseProductFunction",
+      "relation": "candidate",
+      "statement": "class BaseProductFunction",
+      "system": "galgebra",
+      "url": "https://github.com/pygae/galgebra/blob/d160238c6ddbedce676e633d69840fdaab83ab86/galgebra/ga.py#L412"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "galgebra.ga.BladeProductFunction",
+      "name": "BladeProductFunction",
+      "relation": "candidate",
+      "statement": "class BladeProductFunction",
+      "system": "galgebra",
+      "url": "https://github.com/pygae/galgebra/blob/d160238c6ddbedce676e633d69840fdaab83ab86/galgebra/ga.py#L212"
+    }
+  ],
+  "members": [
+    {
+      "canonical_form": "",
+      "id": "I.5",
+      "key": "euclid:I.5",
+      "kind": "theorem",
+      "line": 0,
+      "name": "I.5",
+      "source": "euclid/resources/heath/enunciations.json",
+      "statement": "",
+      "system": "euclid"
+    },
+    {
+      "canonical_form": "cong(a, b, a, c), between(a, b, d), between(a, c, e), form_triangle(a, b, c, AB, BC, AC) => eq_angle(a, b, c, a, c, b), eq_angle(c, b, d, b, c, e)",
+      "id": "Elements.Book1.proposition_5",
+      "key": "leaneuclid:Elements.Book1.proposition_5",
+      "kind": "theorem",
+      "line": 7,
+      "name": "proposition_5",
+      "source": "_refs/LeanEuclid/Book/Prop05.lean",
+      "statement": "∀ (a b c d e : Point) (AB BC AC : Line), formTriangle a b c AB BC AC ∧ (|(a─b)| = |(a─c)|) ∧ (between a b d) ∧ (between a c e) → (∠ a:b:c = ∠ a:c:b) ∧ (∠ c:b:d = ∠ b:c:e)",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "cong(a, b, a, c), form_triangle(a, b, c, AB, BC, AC) => eq_angle(a, b, c, a, c, b)",
+      "id": "Elements.Book1.proposition_5'",
+      "key": "leaneuclid:Elements.Book1.proposition_5'",
+      "kind": "theorem",
+      "line": 26,
+      "name": "proposition_5'",
+      "source": "_refs/LeanEuclid/Book/Prop05.lean",
+      "statement": "∀ (a b c : Point) (AB BC AC : Line), formTriangle a b c AB BC AC ∧ (|(a─b)| = |(a─c)|) → (∠ a:b:c = ∠ a:c:b)",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "cong(O, A, O, B), ncoll(O, A, B) => eq_angle(O, A, A, B, A, B, O, B)",
+      "id": "rule.r13",
+      "key": "alphageometry:rule.r13",
+      "kind": "rule",
+      "line": 14,
+      "name": "r13",
+      "source": "_refs/alphageometry/rules.txt",
+      "statement": "cong O A O B, ncoll O A B => eqangle O A A B A B O B",
+      "system": "alphageometry"
+    },
+    {
+      "canonical_form": "cong(O, A, O, B), ncoll(O, A, B) => eq_angle(O, A, A, B, A, B, O, B)",
+      "id": "R13_ISOSCELES_TRIANGLE_EQUAL_ANGLES",
+      "key": "newclid:R13_ISOSCELES_TRIANGLE_EQUAL_ANGLES",
+      "kind": "rule",
+      "line": 239,
+      "name": "r13",
+      "source": "_refs/Newclid/newclid/src/newclid/all_rules.py",
+      "statement": "cong O A O B, ncoll O A B => eqangle O A A B A B O B",
+      "system": "newclid"
+    }
+  ],
+  "relations": [],
+  "statement": "In isosceles triangles the angles at the base are equal to one another, and, if the equal straight lines be produced further, the angles under the base will be equal to one another.",
+  "status": "proposed",
+  "title": "isosceles base angles",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "isosceles_base_angles",
+    "status": "verified",
+    "summary": "Exact witness verified (3 points, 0 lines, 0 circles)"
+  }
+}

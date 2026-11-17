@@ -1,0 +1,74 @@
+{
+  "alphageometry": {
+    "by_kind": {
+      "construction": 72,
+      "rule": 43
+    },
+    "commit": "6777cb586cbb46beed28db12dc72c69770b68337",
+    "count": 115,
+    "source": "_refs/alphageometry",
+    "version": ""
+  },
+  "euclid": {
+    "by_kind": {
+      "common_notion": 5,
+      "definition": 153,
+      "postulate": 5,
+      "problem": 95,
+      "theorem": 370
+    },
+    "commit": "e7744a52dc38ebd78eda63aea41e4e4f3b1aa5a7",
+    "count": 628,
+    "source": "euclid/resources/heath/enunciations.json",
+    "version": ""
+  },
+  "geometor_model": {
+    "by_kind": {
+      "construction": 14,
+      "foundation": 6,
+      "measure": 20,
+      "method": 15,
+      "predicate": 13
+    },
+    "commit": "0dbd464e6e5660e2882febd20bb559f8ade1d10e",
+    "count": 68,
+    "source": "model/src/geometor/model",
+    "version": ""
+  },
+  "leaneuclid": {
+    "by_kind": {
+      "axiom": 104,
+      "definition": 13,
+      "measure": 4,
+      "relation": 10,
+      "sort": 6,
+      "theorem": 172
+    },
+    "commit": "33a72c0fa83914202532998a2e7b8771295c3cc7",
+    "count": 309,
+    "source": "_refs/LeanEuclid",
+    "version": ""
+  },
+  "newclid": {
+    "by_kind": {
+      "rule": 87
+    },
+    "commit": "ac6550732a950564cf7614d605b5bf1eadd29701",
+    "count": 87,
+    "source": "_refs/Newclid",
+    "version": ""
+  },
+  "sympy": {
+    "by_kind": {
+      "construction": 62,
+      "measure": 25,
+      "method": 86,
+      "predicate": 29,
+      "sort": 16
+    },
+    "commit": "",
+    "count": 218,
+    "source": "python:sympy.geometry",
+    "version": "1.14.0"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "canonical_form": "between(a, b, c), same_side(a, c, L) => same_side(a, b, L)",
+  "euclid_refs": [],
+  "family": "order",
+  "fingerprint": "between(P0,P1,P2);same_side(P0,P2,P3)=>same_side(P0,P1,P3)",
+  "id": "pasch",
+  "kind": "axiom",
+  "linked": [
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Algebraic.Counter_models.Planar.counter_model_bet_inner_transitivity.inner_pasch",
+      "name": "inner_pasch",
+      "relation": "candidate",
+      "statement": "inner_pasch : inner_paschP Point Bet",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Algebraic/Counter_models/Planar/counter_model_bet_inner_transitivity.v#L34"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Algebraic.Counter_models.Planar.counter_model_bet_symmetry.inner_pasch",
+      "name": "inner_pasch",
+      "relation": "candidate",
+      "statement": "inner_pasch : inner_paschP Point bet'",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Algebraic/Counter_models/Planar/counter_model_bet_symmetry.v#L132"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Algebraic.Counter_models.Planar.counter_model_cong_identity.inner_pasch",
+      "name": "inner_pasch",
+      "relation": "candidate",
+      "statement": "inner_pasch : inner_paschP Point Bet",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Algebraic/Counter_models/Planar/counter_model_cong_identity.v#L43"
+    }
+  ],
+  "members": [
+    {
+      "canonical_form": "between(a, b, c), same_side(a, c, L) => same_side(a, b, L)",
+      "id": "pasch_1",
+      "key": "leaneuclid:pasch_1",
+      "kind": "axiom",
+      "line": 145,
+      "name": "pasch_1",
+      "source": "_refs/LeanEuclid/SystemE/Theory/Inferences/Diagrammatic.lean",
+      "statement": "∀ (a b c : Point) (L : Line), (between a b c) ∧ (a.sameSide c L) → a.sameSide b L",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "between(a, b, c), on_line(a, L), on_line(b, L) => same_side(b, c, L)",
+      "id": "pasch_2",
+      "key": "leaneuclid:pasch_2",
+      "kind": "axiom",
+      "line": 153,
+      "name": "pasch_2",
+      "source": "_refs/LeanEuclid/SystemE/Theory/Inferences/Diagrammatic.lean",
+      "statement": "∀ (a b c : Point) (L : Line), (between a b c) ∧ (a.onLine L) ∧ ¬(b.onLine L) → b.sameSide c L",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "between(a, b, c), on_line(b, L) => same_side(a, c, L)",
+      "id": "pasch_3",
+      "key": "leaneuclid:pasch_3",
+      "kind": "axiom",
+      "line": 163,
+      "name": "pasch_3",
+      "source": "_refs/LeanEuclid/SystemE/Theory/Inferences/Diagrammatic.lean",
+      "statement": "∀ (a b c : Point) (L : Line), (between a b c) ∧ (b.onLine L) → ¬(a.sameSide c L)",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "on_line(b, L), on_line(b, M), same_side(a, c, L) => between(a, b, c)",
+      "id": "pasch_4",
+      "key": "leaneuclid:pasch_4",
+      "kind": "axiom",
+      "line": 173,
+      "name": "pasch_4",
+      "source": "_refs/LeanEuclid/SystemE/Theory/Inferences/Diagrammatic.lean",
+      "statement": "∀ (a b c : Point) (L M : Line), (L ≠ M) ∧ (b.onLine L) ∧ (b.onLine M) ∧ distinctPointsOnLine a c M ∧ (a ≠ b) ∧ (c ≠ b) ∧ ¬(a.sameSide c L) → between a b c",
+      "system": "leaneuclid"
+    }
+  ],
+  "relations": [],
+  "statement": "If b is  between a and c and a and c are on the same side of L, then a and b are on the same side of L",
+  "status": "proposed",
+  "title": "pasch",
+  "verification": {
+    "gap_reason": "Requires 1D betweenness / half-plane order predicates not yet native in geometor.model.proof.",
+    "principle_id": "pasch",
+    "status": "gap",
+    "summary": "Not yet expressible in geometor.model.proof"
+  }
+}

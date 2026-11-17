@@ -1,0 +1,32 @@
+{
+  "canonical_form": "midp(M, A, B), coll(M, X, C), midp(N, B, C), coll(N, X, A), midp(P, C, A) => coll(X, P, B)",
+  "euclid_refs": [],
+  "family": "triangle_center",
+  "fingerprint": "coll(P0,P2,P3);coll(P1,P2,P4);midp(P0,P4,P6);midp(P1,P6,P3);midp(P5,P3,P4)=>coll(P2,P5,P6)",
+  "id": "centroid_concurrence",
+  "kind": "theorem",
+  "linked": [],
+  "members": [
+    {
+      "canonical_form": "midp(M, A, B), coll(M, X, C), midp(N, B, C), coll(N, X, A), midp(P, C, A) => coll(X, P, B)",
+      "id": "R48_CENTROID_THEOREM",
+      "key": "newclid:R48_CENTROID_THEOREM",
+      "kind": "rule",
+      "line": 556,
+      "name": "r48",
+      "source": "_refs/Newclid/newclid/src/newclid/all_rules.py",
+      "statement": "midp M A B, coll M X C, midp N B C, coll N X A, midp P C A => coll X P B",
+      "system": "newclid"
+    }
+  ],
+  "relations": [],
+  "statement": "Centroid theorem",
+  "status": "proposed",
+  "title": "centroid concurrence",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "centroid_concurrence",
+    "status": "verified",
+    "summary": "Exact witness verified (7 points, 0 lines, 0 circles)"
+  }
+}

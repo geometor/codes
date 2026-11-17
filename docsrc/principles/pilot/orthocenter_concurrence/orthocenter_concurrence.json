@@ -1,0 +1,32 @@
+{
+  "canonical_form": "perp(A, B, C, D), perp(A, C, B, D), ncoll(A, B, C) => perp(A, D, B, C)",
+  "euclid_refs": [],
+  "family": "triangle_center",
+  "fingerprint": "ncoll(P0,P1,P2);perp(P0,P1,P2,P3);perp(P0,P2,P1,P3)=>perp(P0,P3,P1,P2)",
+  "id": "orthocenter_concurrence",
+  "kind": "theorem",
+  "linked": [],
+  "members": [
+    {
+      "canonical_form": "perp(A, B, C, D), perp(A, C, B, D), ncoll(A, B, C) => perp(A, D, B, C)",
+      "id": "R43_ORTHOCENTER_THEOREM",
+      "key": "newclid:R43_ORTHOCENTER_THEOREM",
+      "kind": "rule",
+      "line": 498,
+      "name": "r43",
+      "source": "_refs/Newclid/newclid/src/newclid/all_rules.py",
+      "statement": "perp A B C D, perp A C B D, ncoll A B C => perp A D B C",
+      "system": "newclid"
+    }
+  ],
+  "relations": [],
+  "statement": "Orthocenter theorem",
+  "status": "proposed",
+  "title": "orthocenter concurrence",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "orthocenter_concurrence",
+    "status": "verified",
+    "summary": "Exact witness verified (4 points, 6 lines, 0 circles)"
+  }
+}

@@ -7,6 +7,7 @@
    :hidden:
 
    hierarchy/index
+   principles/index
    syntax/index
    systems/index
    rosetta/index

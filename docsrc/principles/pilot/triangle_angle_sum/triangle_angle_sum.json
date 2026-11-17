@@ -1,0 +1,178 @@
+{
+  "canonical_form": "between(b, c, d), form_triangle(a, b, c, AB, BC, AC) => eq_angle(a, c, d, c, a, b)",
+  "euclid_refs": [
+    "I.32"
+  ],
+  "family": "parallel",
+  "fingerprint": "between(P0,P1,P2);form_triangle(P3,P0,P1,P4,P5,P6)=>eq_angle(P3,P1,P2,P1,P3,P0)",
+  "id": "triangle_angle_sum",
+  "kind": "theorem",
+  "linked": [
+    {
+      "confidence": 1.0,
+      "evidence": "euclid_ref:proposition_32",
+      "id": "Elements.OriginalProofs.proposition_32.proposition_32",
+      "name": "proposition_32",
+      "relation": "equivalent",
+      "statement": "proposition_32 :",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Elements/OriginalProofs/proposition_32.v#L10"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Axioms.parallel_postulates.postulate_of_existence_of_a_triangle_whose_angles_sum_to_two_rights",
+      "name": "postulate_of_existence_of_a_triangle_whose_angles_sum_to_two_rights",
+      "relation": "candidate",
+      "statement": "postulate_of_existence_of_a_triangle_whose_angles_sum_to_two_rights :=",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L175"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Axioms.parallel_postulates.triangle_circumscription_principle",
+      "name": "triangle_circumscription_principle",
+      "relation": "candidate",
+      "statement": "triangle_circumscription_principle := forall A B C,",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L126"
+    },
+    {
+      "confidence": 0.7,
+      "evidence": "tokens:2",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Incenter.angle_excenter_singleton",
+      "name": "angle_excenter_singleton",
+      "relation": "candidate",
+      "statement": "angle_excenter_singleton {i₁ i₂ i₃ : Fin 3} (h₁₂ : i₁ ≠ i₂) (h₁₃ : i₁ ≠ i₃)",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Incenter.lean#L330"
+    },
+    {
+      "confidence": 0.7,
+      "evidence": "tokens:2",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Incenter.angle_excenter_singleton_eq_angle_add_pi_div_two",
+      "name": "angle_excenter_singleton_eq_angle_add_pi_div_two",
+      "relation": "candidate",
+      "statement": "angle_excenter_singleton_eq_angle_add_pi_div_two {i₁ i₂ i₃ : Fin 3} (h₁₂ : i₁ ≠ i₂)",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Incenter.lean#L338"
+    },
+    {
+      "confidence": 0.7,
+      "evidence": "tokens:2",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Incenter.angle_excenter_singleton_eq_angle_div_two",
+      "name": "angle_excenter_singleton_eq_angle_div_two",
+      "relation": "candidate",
+      "statement": "angle_excenter_singleton_eq_angle_div_two {i₁ i₂ i₃ : Fin 3} (h₁₂ : i₁ ≠ i₂) (h₁₃ : i₁ ≠ i₃)",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Incenter.lean#L307"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "main.java.gprover.Full.angle_deduction",
+      "name": "angle_deduction",
+      "relation": "candidate",
+      "statement": "public void angle_deduction(CNdg c, List<Object> v4) {",
+      "system": "jgex",
+      "url": "https://github.com/kovzol/Java-Geometry-Expert/blob/5489aacb40afc91b5c5ca539db853cca216e1165/src/main/java/gprover/Full.java#L2506"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "main.java.gprover.Gib.check_angle_ls_90",
+      "name": "check_angle_ls_90",
+      "relation": "candidate",
+      "statement": "public boolean check_angle_ls_90(int p1, int p2, int p3) {",
+      "system": "jgex",
+      "url": "https://github.com/kovzol/Java-Geometry-Expert/blob/5489aacb40afc91b5c5ca539db853cca216e1165/src/main/java/gprover/Gib.java#L1624"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "main.java.wprover.CProperty.Panel_Angle",
+      "name": "Panel_Angle",
+      "relation": "candidate",
+      "statement": "class Panel_Angle extends JPanel implements ActionListener, TableModelListener {",
+      "system": "jgex",
+      "url": "https://github.com/kovzol/Java-Geometry-Expert/blob/5489aacb40afc91b5c5ca539db853cca216e1165/src/main/java/wprover/CProperty.java#L654"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "js.libgeo.GeoOps.get_angle",
+      "name": "get_angle",
+      "relation": "candidate",
+      "statement": "geoOps.PointOnCircle.get_angle = function (el) {",
+      "system": "cindyjs",
+      "url": "https://github.com/CindyJS/CindyJS/blob/c5b87a373e574c0da6137cc95fbe48a8d6e534c5/src/js/libgeo/GeoOps.js#L645"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "js.libgeo.GeoOps.set_angle",
+      "name": "set_angle",
+      "relation": "candidate",
+      "statement": "geoOps.Through.set_angle = function (el, value) {",
+      "system": "cindyjs",
+      "url": "https://github.com/CindyJS/CindyJS/blob/c5b87a373e574c0da6137cc95fbe48a8d6e534c5/src/js/libgeo/GeoOps.js#L417"
+    }
+  ],
+  "members": [
+    {
+      "canonical_form": "",
+      "id": "I.32",
+      "key": "euclid:I.32",
+      "kind": "theorem",
+      "line": 0,
+      "name": "I.32",
+      "source": "euclid/resources/heath/enunciations.json",
+      "statement": "",
+      "system": "euclid"
+    },
+    {
+      "canonical_form": "between(b, c, d), form_triangle(a, b, c, AB, BC, AC) => eq_angle(a, c, d, c, a, b)",
+      "id": "Elements.Book1.proposition_32",
+      "key": "leaneuclid:Elements.Book1.proposition_32",
+      "kind": "theorem",
+      "line": 9,
+      "name": "proposition_32",
+      "source": "_refs/LeanEuclid/Book/Prop32.lean",
+      "statement": "∀ (a b c d : Point) (AB BC AC : Line), formTriangle a b c AB BC AC ∧ (between b c d) → ∠ a:c:d = ∠ c:a:b + ∠ a:b:c ∧ ∠ a:b:c + ∠ b:c:a + ∠ c:a:b = ∟ + ∟",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "eq_angle(A, B, C, D, M, N, P, Q), eq_angle(C, D, E, F, P, Q, R, U) => eq_angle(A, B, E, F, M, N, R, U)",
+      "id": "rule.r09",
+      "key": "alphageometry:rule.r09",
+      "kind": "rule",
+      "line": 10,
+      "name": "r09",
+      "source": "_refs/alphageometry/rules.txt",
+      "statement": "eqangle a b c d m n p q, eqangle c d e f p q r u => eqangle a b e f m n r u",
+      "system": "alphageometry"
+    },
+    {
+      "canonical_form": "eq_angle(A, B, C, D, M, N, P, Q), eq_angle(C, D, E, F, P, Q, R, U), npara(A, B, E, F) => eq_angle(A, B, E, F, M, N, R, U)",
+      "id": "R09_SUM_OF_ANGLES_OF_A_TRIANGLE",
+      "key": "newclid:R09_SUM_OF_ANGLES_OF_A_TRIANGLE",
+      "kind": "rule",
+      "line": 200,
+      "name": "r09",
+      "source": "_refs/Newclid/newclid/src/newclid/all_rules.py",
+      "statement": "eqangle A B C D M N P Q, eqangle C D E F P Q R U, npara A B E F => eqangle A B E F M N R U",
+      "system": "newclid"
+    }
+  ],
+  "relations": [],
+  "statement": "In any triangle, if one of the sides be produced, the exterior angle is equal to the two interior and opposite angles, and the three interior angles of the triangle are equal to two right angles.",
+  "status": "proposed",
+  "title": "triangle angle sum",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "triangle_angle_sum",
+    "status": "verified",
+    "summary": "Exact witness verified (4 points, 2 lines, 0 circles)"
+  }
+}

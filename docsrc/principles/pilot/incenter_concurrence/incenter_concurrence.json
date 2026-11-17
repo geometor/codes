@@ -1,0 +1,32 @@
+{
+  "canonical_form": "eq_angle(A, B, A, X, A, X, A, C), eq_angle(B, A, B, X, B, X, B, C), ncoll(A, B, C) => eq_angle(C, B, C, X, C, X, C, A)",
+  "euclid_refs": [],
+  "family": "triangle_center",
+  "fingerprint": "eq_angle(P0,P1,P0,P2,P0,P2,P0,P3);eq_angle(P1,P0,P1,P2,P1,P2,P1,P3);ncoll(P0,P1,P3)=>eq_angle(P3,P1,P3,P2,P3,P2,P3,P0)",
+  "id": "incenter_concurrence",
+  "kind": "theorem",
+  "linked": [],
+  "members": [
+    {
+      "canonical_form": "eq_angle(A, B, A, X, A, X, A, C), eq_angle(B, A, B, X, B, X, B, C), ncoll(A, B, C) => eq_angle(C, B, C, X, C, X, C, A)",
+      "id": "R46_INCENTER_THEOREM",
+      "key": "newclid:R46_INCENTER_THEOREM",
+      "kind": "rule",
+      "line": 536,
+      "name": "r46",
+      "source": "_refs/Newclid/newclid/src/newclid/all_rules.py",
+      "statement": "eqangle A B A X A X A C, eqangle B A B X B X B C, ncoll A B C => eqangle C B C X C X C A",
+      "system": "newclid"
+    }
+  ],
+  "relations": [],
+  "statement": "Incenter theorem",
+  "status": "proposed",
+  "title": "incenter concurrence",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "incenter_concurrence",
+    "status": "verified",
+    "summary": "Exact witness verified (4 points, 0 lines, 0 circles)"
+  }
+}

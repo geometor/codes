@@ -1,0 +1,149 @@
+{
+  "canonical_form": "cong(a, d, d, b), between(a, d, b)",
+  "euclid_refs": [
+    "I.10"
+  ],
+  "family": "incidence",
+  "fingerprint": "=>between(P0,P1,P2);cong(P0,P1,P1,P2)",
+  "id": "midpoint",
+  "kind": "construction",
+  "linked": [
+    {
+      "confidence": 1.0,
+      "evidence": "euclid_ref:proposition_10",
+      "id": "Elements.OriginalProofs.proposition_10.proposition_10",
+      "name": "proposition_10",
+      "relation": "equivalent",
+      "statement": "proposition_10 :",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Elements/OriginalProofs/proposition_10.v#L10"
+    },
+    {
+      "confidence": 0.95,
+      "evidence": "lexicon:Midpoint",
+      "id": "Algebraic.Counter_models.nD.counter_model_bet_inner_transitivity.bet'_midpoint",
+      "name": "bet'_midpoint",
+      "relation": "equivalent",
+      "statement": "bet'_midpoint a b (m := midpoint a b) : a <> b -> bet' a m b",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Algebraic/Counter_models/nD/counter_model_bet_inner_transitivity.v#L40"
+    },
+    {
+      "confidence": 0.95,
+      "evidence": "lexicon:Midpoint",
+      "id": "Algebraic.Counter_models.nD.counter_model_bet_inner_transitivity.coplanar_midpoint",
+      "name": "coplanar_midpoint",
+      "relation": "equivalent",
+      "statement": "coplanar_midpoint a b (m := midpoint a b) :",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Algebraic/Counter_models/nD/counter_model_bet_inner_transitivity.v#L181"
+    },
+    {
+      "confidence": 0.95,
+      "evidence": "lexicon:midpoint",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Oriented.Affine.dist_eq_iff_eq_smul_rotation_pi_div_two_vadd_midpoint",
+      "name": "dist_eq_iff_eq_smul_rotation_pi_div_two_vadd_midpoint",
+      "relation": "equivalent",
+      "statement": "dist_eq_iff_eq_smul_rotation_pi_div_two_vadd_midpoint {p₁ p₂ p : P} (h : p₁ ≠ p₂) :",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Oriented/Affine.lean#L727"
+    },
+    {
+      "confidence": 0.95,
+      "evidence": "lexicon:midpoint",
+      "id": "Mathlib.Geometry.Euclidean.NinePointCircle.eulerPoint_eq_midpoint",
+      "name": "eulerPoint_eq_midpoint",
+      "relation": "equivalent",
+      "statement": "eulerPoint_eq_midpoint (s : Triangle ℝ P) (i : Fin 3) :",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/NinePointCircle.lean#L226"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Oriented.Affine.oangle_midpoint_left",
+      "name": "oangle_midpoint_left",
+      "relation": "candidate",
+      "statement": "oangle_midpoint_left (p₁ p₂ p₃ : P) : ∡ (midpoint ℝ p₁ p₂) p₂ p₃ = ∡ p₁ p₂ p₃ := by",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Oriented/Affine.lean#L649"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "js.libgeo.GeoOps.midpoint",
+      "name": "midpoint",
+      "relation": "candidate",
+      "statement": "geoOps._helper.midpoint = function (a, b) {",
+      "system": "cindyjs",
+      "url": "https://github.com/CindyJS/CindyJS/blob/c5b87a373e574c0da6137cc95fbe48a8d6e534c5/src/js/libgeo/GeoOps.js#L218"
+    }
+  ],
+  "members": [
+    {
+      "canonical_form": "",
+      "id": "I.10",
+      "key": "euclid:I.10",
+      "kind": "problem",
+      "line": 0,
+      "name": "I.10",
+      "source": "euclid/resources/heath/enunciations.json",
+      "statement": "",
+      "system": "euclid"
+    },
+    {
+      "canonical_form": "cong(a, d, d, b), between(a, d, b)",
+      "id": "Elements.Book1.proposition_10",
+      "key": "leaneuclid:Elements.Book1.proposition_10",
+      "kind": "theorem",
+      "line": 8,
+      "name": "proposition_10",
+      "source": "_refs/LeanEuclid/Book/Prop10.lean",
+      "statement": "∀ (a b : Point) (AB : Line), distinctPointsOnLine a b AB → ∃ d : Point, (between a d b) ∧ (|(a─d)| = |(d─b)|)",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "diff(A, B) => coll(X, A, B), cong(X, A, X, B)",
+      "id": "def.midpoint",
+      "key": "alphageometry:def.midpoint",
+      "kind": "construction",
+      "line": 163,
+      "name": "midpoint",
+      "source": "_refs/alphageometry/defs.txt",
+      "statement": "midpoint x a b",
+      "system": "alphageometry"
+    },
+    {
+      "canonical_form": "midpoint",
+      "id": "Point.midpoint",
+      "key": "sympy:Point.midpoint",
+      "kind": "construction",
+      "line": 0,
+      "name": "midpoint",
+      "source": "sympy.geometry.Point.midpoint",
+      "statement": "Point.midpoint(self, p)",
+      "system": "sympy"
+    },
+    {
+      "canonical_form": "midpoint",
+      "id": "Segment.midpoint",
+      "key": "sympy:Segment.midpoint",
+      "kind": "construction",
+      "line": 0,
+      "name": "midpoint",
+      "source": "sympy.geometry.Segment.midpoint",
+      "statement": "@property Segment.midpoint",
+      "system": "sympy"
+    }
+  ],
+  "relations": [],
+  "statement": "To bisect a given finite straight line.",
+  "status": "proposed",
+  "title": "midpoint",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "midpoint",
+    "status": "verified",
+    "summary": "Exact witness verified (3 points, 0 lines, 0 circles)"
+  }
+}

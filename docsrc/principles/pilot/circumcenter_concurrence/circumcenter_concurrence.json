@@ -1,0 +1,32 @@
+{
+  "canonical_form": "midp(M, A, B), perp(X, M, A, B), midp(N, B, C), perp(X, N, B, C), midp(P, C, A) => perp(X, P, C, A)",
+  "euclid_refs": [],
+  "family": "triangle_center",
+  "fingerprint": "midp(P0,P3,P5);midp(P1,P4,P3);midp(P2,P5,P4);perp(P6,P0,P3,P5);perp(P6,P1,P4,P3)=>perp(P6,P2,P5,P4)",
+  "id": "circumcenter_concurrence",
+  "kind": "theorem",
+  "linked": [],
+  "members": [
+    {
+      "canonical_form": "midp(M, A, B), perp(X, M, A, B), midp(N, B, C), perp(X, N, B, C), midp(P, C, A) => perp(X, P, C, A)",
+      "id": "R47_CIRCUMCENTER_THEOREM",
+      "key": "newclid:R47_CIRCUMCENTER_THEOREM",
+      "kind": "rule",
+      "line": 543,
+      "name": "r47",
+      "source": "_refs/Newclid/newclid/src/newclid/all_rules.py",
+      "statement": "midp M A B, perp X M A B, midp N B C, perp X N B C, midp P C A => perp X P C A",
+      "system": "newclid"
+    }
+  ],
+  "relations": [],
+  "statement": "Circumcenter theorem",
+  "status": "proposed",
+  "title": "circumcenter concurrence",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "circumcenter_concurrence",
+    "status": "verified",
+    "summary": "Exact witness verified (4 points, 0 lines, 0 circles)"
+  }
+}

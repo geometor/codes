@@ -1,0 +1,189 @@
+{
+  "canonical_form": "eq_angle(b, a, f, c, a, f)",
+  "euclid_refs": [
+    "I.9"
+  ],
+  "family": "congruence",
+  "fingerprint": "=>eq_angle(P0,P1,P2,P3,P1,P2)",
+  "id": "angle_bisector",
+  "kind": "construction",
+  "linked": [
+    {
+      "confidence": 0.7,
+      "evidence": "tokens:2",
+      "id": "Main.Tarski_dev.Ch11_angles.angle_bisector",
+      "name": "angle_bisector",
+      "relation": "candidate",
+      "statement": "angle_bisector : forall A B C, A <> B -> C <> B ->",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Main/Tarski_dev/Ch11_angles.v#L9944"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Main.Annexes.inscribed_angle.high_school_exterior_angle_theorem",
+      "name": "high_school_exterior_angle_theorem",
+      "relation": "candidate",
+      "statement": "high_school_exterior_angle_theorem : forall A B C B', A <> B -> B <> C -> A <> C -> A <> B' ->",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Main/Annexes/inscribed_angle.v#L65"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Main.Annexes.inscribed_angle.inscribed_angle",
+      "name": "inscribed_angle",
+      "relation": "candidate",
+      "statement": "inscribed_angle : forall O P A B C,",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Main/Annexes/inscribed_angle.v#L253"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Mathlib.Geometry.Euclidean.Altitude.abs_inner_vsub_altitudeFoot_lt_mul",
+      "name": "abs_inner_vsub_altitudeFoot_lt_mul",
+      "relation": "candidate",
+      "statement": "abs_inner_vsub_altitudeFoot_lt_mul {i j : Fin (n + 1)} (hij : i ≠ j) :",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Altitude.lean#L341"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Bisector.dist_orthogonalProjection_eq_iff_angle_eq",
+      "name": "dist_orthogonalProjection_eq_iff_angle_eq",
+      "relation": "candidate",
+      "statement": "dist_orthogonalProjection_eq_iff_angle_eq {p p' : P} {s₁ s₂ : AffineSubspace ℝ P}",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Bisector.lean#L74"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Bisector.dist_orthogonalProjection_eq_iff_angle_eq_aux",
+      "name": "dist_orthogonalProjection_eq_iff_angle_eq_aux",
+      "relation": "candidate",
+      "statement": "dist_orthogonalProjection_eq_iff_angle_eq_aux {p p' : P}",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Bisector.lean#L56"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "main.java.gprover.Full.angle_deduction",
+      "name": "angle_deduction",
+      "relation": "candidate",
+      "statement": "public void angle_deduction(CNdg c, List<Object> v4) {",
+      "system": "jgex",
+      "url": "https://github.com/kovzol/Java-Geometry-Expert/blob/5489aacb40afc91b5c5ca539db853cca216e1165/src/main/java/gprover/Full.java#L2506"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "main.java.gprover.Gib.check_angle_ls_90",
+      "name": "check_angle_ls_90",
+      "relation": "candidate",
+      "statement": "public boolean check_angle_ls_90(int p1, int p2, int p3) {",
+      "system": "jgex",
+      "url": "https://github.com/kovzol/Java-Geometry-Expert/blob/5489aacb40afc91b5c5ca539db853cca216e1165/src/main/java/gprover/Gib.java#L1624"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "main.java.wprover.CProperty.Panel_Angle",
+      "name": "Panel_Angle",
+      "relation": "candidate",
+      "statement": "class Panel_Angle extends JPanel implements ActionListener, TableModelListener {",
+      "system": "jgex",
+      "url": "https://github.com/kovzol/Java-Geometry-Expert/blob/5489aacb40afc91b5c5ca539db853cca216e1165/src/main/java/wprover/CProperty.java#L654"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "js.libgeo.GeoOps.get_angle",
+      "name": "get_angle",
+      "relation": "candidate",
+      "statement": "geoOps.PointOnCircle.get_angle = function (el) {",
+      "system": "cindyjs",
+      "url": "https://github.com/CindyJS/CindyJS/blob/c5b87a373e574c0da6137cc95fbe48a8d6e534c5/src/js/libgeo/GeoOps.js#L645"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "js.libgeo.GeoOps.set_angle",
+      "name": "set_angle",
+      "relation": "candidate",
+      "statement": "geoOps.Through.set_angle = function (el, value) {",
+      "system": "cindyjs",
+      "url": "https://github.com/CindyJS/CindyJS/blob/c5b87a373e574c0da6137cc95fbe48a8d6e534c5/src/js/libgeo/GeoOps.js#L417"
+    }
+  ],
+  "members": [
+    {
+      "canonical_form": "",
+      "id": "I.9",
+      "key": "euclid:I.9",
+      "kind": "problem",
+      "line": 0,
+      "name": "I.9",
+      "source": "euclid/resources/heath/enunciations.json",
+      "statement": "",
+      "system": "euclid"
+    },
+    {
+      "canonical_form": "eq_angle(b, a, f, c, a, f)",
+      "id": "Elements.Book1.proposition_9",
+      "key": "leaneuclid:Elements.Book1.proposition_9",
+      "kind": "theorem",
+      "line": 10,
+      "name": "proposition_9",
+      "source": "_refs/LeanEuclid/Book/Prop09.lean",
+      "statement": "∀ (a b c : Point) (AB AC : Line), formRectilinearAngle b a c AB AC ∧ AB ≠ AC → ∃ f : Point, f ≠ a ∧ (∠ b:a:f = ∠ c:a:f)",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "eq_angle(b, a, f, c, a, f), same_side(f, c, AB), same_side(f, b, AC)",
+      "id": "Elements.Book1.proposition_9'",
+      "key": "leaneuclid:Elements.Book1.proposition_9'",
+      "kind": "theorem",
+      "line": 36,
+      "name": "proposition_9'",
+      "source": "_refs/LeanEuclid/Book/Prop09.lean",
+      "statement": "∀ (a b c : Point) (AB AC : Line), formRectilinearAngle b a c AB AC ∧ AB ≠ AC → ∃ f : Point, (f.sameSide c AB) ∧ (f.sameSide b AC) ∧ (∠ b:a:f = ∠ c:a:f)",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "ncoll(A, B, C) => eq_angle(B, A, B, X, B, X, B, C)",
+      "id": "def.angle_bisector",
+      "key": "alphageometry:def.angle_bisector",
+      "kind": "construction",
+      "line": 1,
+      "name": "angle_bisector",
+      "source": "_refs/alphageometry/defs.txt",
+      "statement": "angle_bisector x a b c",
+      "system": "alphageometry"
+    },
+    {
+      "canonical_form": "angle_bisector",
+      "id": "Triangle.bisectors",
+      "key": "sympy:Triangle.bisectors",
+      "kind": "construction",
+      "line": 0,
+      "name": "bisectors",
+      "source": "sympy.geometry.Triangle.bisectors",
+      "statement": "Triangle.bisectors(self)",
+      "system": "sympy"
+    }
+  ],
+  "relations": [],
+  "statement": "To bisect a given rectilineal angle.",
+  "status": "proposed",
+  "title": "angle bisector",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "angle_bisector",
+    "status": "verified",
+    "summary": "Exact witness verified (4 points, 3 lines, 0 circles)"
+  }
+}

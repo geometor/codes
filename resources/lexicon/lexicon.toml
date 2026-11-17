@@ -1,0 +1,946 @@
+# Canonical lexicon for geometor.codes.
+#
+# One table per canonical concept: [entry.<canonical_name>]
+# Fields: kind, family, summary, optional etc_x (ETC center number), and alias
+# lists per system: etc, elements, model, alphageometry, newclid, sympy,
+# system_e, geocoq, mathlib4, gibert.
+# Conventions: resources/lexicon/conventions.md
+
+[meta]
+version = 1
+seed = "geometor.etc ops.py"
+systems = ["etc", "elements", "model", "alphageometry", "newclid", "sympy", "system_e", "geocoq", "mathlib4", "gibert"]
+families = ["primitive", "incidence", "order", "congruence", "parallel", "circle", "similarity", "area", "measure", "triangle", "triangle_center", "transformation", "projective", "coordinates"]
+
+# etc ops.py functions that are API plumbing rather than geometric concepts.
+[meta.etc_infrastructure]
+names = [
+  "get_center_concordance", "create_model", "add_point", "add_line", "add_circle",
+  "add_polygon", "add_segment", "promote_point_to_top", "construct_reference_triangle",
+  "construct_baseline_triangle", "exact_center_point", "build_symbolic_collection_1_model",
+  "eval_barycentric_point", "eval_trilinear_point",
+]
+
+# ---------------------------------------------------------------- objects
+
+[entry.point]
+kind = "object"
+family = "primitive"
+summary = "A location; that which has no part."
+sympy = ["Point", "Point2D"]
+system_e = ["Point"]
+geocoq = ["Tpoint"]
+
+[entry.line]
+kind = "object"
+family = "primitive"
+summary = "An infinite straight line."
+sympy = ["Line", "Line2D"]
+system_e = ["Line"]
+model = ["construct_line"]
+alphageometry = ["line"]
+
+[entry.segment]
+kind = "object"
+family = "primitive"
+summary = "A bounded straight line between two endpoints."
+sympy = ["Segment", "Segment2D"]
+system_e = ["Segment"]
+model = ["set_segment"]
+elements = ["segment"]
+
+[entry.ray]
+kind = "object"
+family = "primitive"
+summary = "A half-line from an origin through a point."
+sympy = ["Ray", "Ray2D"]
+geocoq = ["Out"]
+
+[entry.circle]
+kind = "object"
+family = "primitive"
+summary = "Locus of points at a given distance from a center."
+sympy = ["Circle"]
+system_e = ["Circle"]
+model = ["construct_circle"]
+elements = ["circle"]
+mathlib4 = ["EuclideanGeometry.Sphere"]
+
+[entry.angle]
+kind = "object"
+family = "primitive"
+summary = "The inclination of two rays from a common vertex."
+system_e = ["Angle"]
+model = ["set_angle"]
+mathlib4 = ["EuclideanGeometry.angle"]
+
+[entry.triangle]
+kind = "object"
+family = "primitive"
+summary = "Three non-collinear points and their sides."
+sympy = ["Triangle"]
+system_e = ["Triangle"]
+alphageometry = ["triangle"]
+
+[entry.polygon]
+kind = "object"
+family = "primitive"
+summary = "A closed chain of segments."
+sympy = ["Polygon"]
+model = ["set_polygon"]
+
+[entry.ellipse]
+kind = "object"
+family = "primitive"
+summary = "A conic with eccentricity less than one."
+sympy = ["Ellipse"]
+
+[entry.parabola]
+kind = "object"
+family = "primitive"
+summary = "A conic with eccentricity one."
+sympy = ["Parabola"]
+
+# -------------------------------------------------------------- relations
+
+[entry.on_line]
+kind = "relation"
+family = "incidence"
+summary = "Point P lies on line L."
+system_e = ["Point.onLine"]
+model = ["assert_incident"]
+sympy = ["Line.contains"]
+
+[entry.on_circle]
+kind = "relation"
+family = "circle"
+summary = "Point P lies on circle C."
+system_e = ["Point.onCircle"]
+geocoq = ["OnCircle"]
+sympy = ["Circle.encloses_point"]
+
+[entry.inside_circle]
+kind = "relation"
+family = "circle"
+summary = "Point P lies strictly inside circle C."
+system_e = ["Point.insideCircle"]
+
+[entry.is_center]
+kind = "relation"
+family = "circle"
+summary = "Point O is the center of circle C."
+system_e = ["Point.isCentre"]
+
+[entry.collinear]
+kind = "relation"
+family = "incidence"
+summary = "Three or more points lie on one line."
+model = ["assert_collinear"]
+alphageometry = ["coll"]
+newclid = ["coll"]
+sympy = ["Point.is_collinear"]
+system_e = ["collinear"]
+geocoq = ["Col"]
+mathlib4 = ["Collinear"]
+
+[entry.not_collinear]
+kind = "relation"
+family = "incidence"
+summary = "Nondegeneracy: three points do not lie on one line."
+alphageometry = ["ncoll"]
+newclid = ["ncoll"]
+
+[entry.concyclic]
+kind = "relation"
+family = "circle"
+summary = "Four or more points lie on one circle."
+model = ["assert_concyclic"]
+alphageometry = ["cyclic"]
+newclid = ["cyclic"]
+sympy = ["Point.is_concyclic"]
+geocoq = ["Concyclic"]
+mathlib4 = ["EuclideanGeometry.Concyclic", "EuclideanGeometry.Cospherical"]
+
+[entry.parallel]
+kind = "relation"
+family = "parallel"
+summary = "Two lines do not meet (or coincide)."
+model = ["assert_parallel"]
+alphageometry = ["para"]
+newclid = ["para"]
+sympy = ["Line.is_parallel"]
+geocoq = ["Par", "Par_strict"]
+elements = ["straight_lines_parallel"]
+
+[entry.not_parallel]
+kind = "relation"
+family = "parallel"
+summary = "Nondegeneracy: two lines meet."
+alphageometry = ["npara"]
+newclid = ["npara"]
+system_e = ["Line.intersectsLine"]
+
+[entry.perpendicular]
+kind = "relation"
+family = "congruence"
+summary = "Two lines meet at right angles."
+model = ["assert_perpendicular"]
+alphageometry = ["perp"]
+newclid = ["perp"]
+sympy = ["Line.is_perpendicular"]
+geocoq = ["Perp", "Per", "Perp_at"]
+
+[entry.congruent_segments]
+kind = "relation"
+family = "congruence"
+summary = "Two segments have equal length."
+alphageometry = ["cong"]
+newclid = ["cong"]
+geocoq = ["Cong"]
+model = ["assert_equal"]
+
+[entry.equal_angles]
+kind = "relation"
+family = "congruence"
+summary = "Two angles are equal (AG: directed angles between lines)."
+alphageometry = ["eqangle", "eqangle6"]
+newclid = ["eqangle"]
+geocoq = ["CongA"]
+model = ["assert_spread_equal"]
+
+[entry.equal_ratios]
+kind = "relation"
+family = "similarity"
+summary = "Two ratios of lengths are equal."
+alphageometry = ["eqratio", "eqratio6", "eqratio3"]
+newclid = ["eqratio"]
+
+[entry.congruent_triangles]
+kind = "relation"
+family = "congruence"
+summary = "Two triangles have equal corresponding sides and angles."
+alphageometry = ["contri", "contri2"]
+newclid = ["contri", "contrir"]
+model = ["assert_congruent"]
+geocoq = ["Cong3"]
+system_e = ["Triangle.congruent"]
+
+[entry.similar_triangles]
+kind = "relation"
+family = "similarity"
+summary = "Two triangles have equal corresponding angles."
+alphageometry = ["simtri", "simtri2"]
+newclid = ["simtri", "simtrir"]
+sympy = ["Triangle.is_similar", "are_similar"]
+system_e = ["Triangle.similar"]
+
+[entry.between]
+kind = "relation"
+family = "order"
+summary = "Point B lies strictly between A and C."
+system_e = ["between"]
+geocoq = ["Bet", "BetS"]
+mathlib4 = ["Sbtw", "Wbtw"]
+
+[entry.same_side]
+kind = "relation"
+family = "order"
+summary = "Two points lie on the same side of a line."
+system_e = ["Point.sameSide"]
+alphageometry = ["sameside"]
+newclid = ["sameside"]
+geocoq = ["OS"]
+
+[entry.opposite_sides]
+kind = "relation"
+family = "order"
+summary = "Two points lie on opposite sides of a line."
+system_e = ["Point.opposingSides"]
+geocoq = ["TS"]
+
+[entry.equal_area]
+kind = "relation"
+family = "area"
+summary = "Two figures have equal area."
+model = ["assert_area_equal"]
+
+[entry.concurrent]
+kind = "relation"
+family = "incidence"
+summary = "Three or more lines pass through one point."
+sympy = ["Line.are_concurrent"]
+
+[entry.tangent]
+kind = "relation"
+family = "circle"
+summary = "A line (or circle) touches a circle at exactly one point."
+sympy = ["Circle.is_tangent"]
+
+# --------------------------------------------------------------- measures
+
+[entry.length]
+kind = "measure"
+family = "measure"
+summary = "Euclidean distance between two points."
+sympy = ["Point.distance", "Segment.length"]
+system_e = ["Segment.length"]
+model = ["length"]
+
+[entry.quadrance]
+kind = "measure"
+family = "measure"
+summary = "Squared distance (Wildberger)."
+
+[entry.triangle_side_quadrances]
+kind = "measure"
+family = "measure"
+summary = "The three side quadrances of a triangle."
+etc = ["triangle_side_quadrances"]
+
+[entry.spread]
+kind = "measure"
+family = "measure"
+summary = "Squared sine of the angle between two lines (Wildberger)."
+model = ["spread"]
+
+[entry.angle_measure]
+kind = "measure"
+family = "measure"
+summary = "Angle size between two lines or at a vertex."
+sympy = ["Line.angle_between", "Line.smallest_angle_between"]
+system_e = ["Angle.degree"]
+
+[entry.area]
+kind = "measure"
+family = "area"
+summary = "Signed or unsigned area of a figure."
+sympy = ["Polygon.area"]
+system_e = ["Triangle.area"]
+model = ["area"]
+
+[entry.triangle_signed_area]
+kind = "measure"
+family = "area"
+summary = "Signed area of a triangle from its vertices."
+etc = ["triangle_signed_area"]
+
+[entry.triangle_side_lengths]
+kind = "measure"
+family = "measure"
+summary = "The three side lengths of a triangle."
+etc = ["triangle_side_lengths"]
+
+# ---------------------------------------------------------- constructions
+
+[entry.line_through]
+kind = "construction"
+family = "incidence"
+summary = "The line through two distinct points (Postulate 1)."
+system_e = ["line_from_points"]
+
+[entry.circle_through]
+kind = "construction"
+family = "circle"
+summary = "The circle with given center through a given point (Postulate 3)."
+system_e = ["circle_from_points"]
+
+[entry.extension]
+kind = "construction"
+family = "order"
+summary = "A point beyond an endpoint on the line of a segment (Postulate 2)."
+system_e = ["extend_point"]
+elements = ["extend"]
+
+[entry.midpoint]
+kind = "construction"
+family = "incidence"
+summary = "The point halfway between two points."
+etc = ["midpoint"]
+elements = ["bisect_segment"]
+alphageometry = ["midpoint", "midp"]
+newclid = ["midp"]
+sympy = ["Point.midpoint", "Segment.midpoint"]
+geocoq = ["Midpoint"]
+mathlib4 = ["midpoint"]
+
+[entry.perpendicular_foot]
+kind = "construction"
+family = "congruence"
+summary = "Foot of the perpendicular from a point to a line."
+etc = ["perpendicular_foot"]
+elements = ["perpendicular_from"]
+alphageometry = ["foot"]
+sympy = ["Line.projection"]
+mathlib4 = ["EuclideanGeometry.orthogonalProjection"]
+
+[entry.perpendicular_line]
+kind = "construction"
+family = "congruence"
+summary = "The line through a point perpendicular to a given line."
+elements = ["perpendicular_at"]
+alphageometry = ["on_tline"]
+sympy = ["Line.perpendicular_line"]
+
+[entry.parallel_line]
+kind = "construction"
+family = "parallel"
+summary = "The line through a point parallel to a given line."
+elements = ["parallel_line"]
+alphageometry = ["on_pline"]
+sympy = ["Line.parallel_line"]
+
+[entry.perpendicular_bisector]
+kind = "construction"
+family = "congruence"
+summary = "Locus of points equidistant from two points."
+alphageometry = ["on_bline"]
+sympy = ["Segment.perpendicular_bisector"]
+
+[entry.angle_bisector]
+kind = "construction"
+family = "congruence"
+summary = "The line bisecting an angle."
+elements = ["bisect_angle"]
+alphageometry = ["angle_bisector"]
+sympy = ["Triangle.bisectors"]
+
+[entry.equilateral_apex]
+kind = "construction"
+family = "congruence"
+summary = "Apex of the equilateral triangle on a segment (Euclid I.1)."
+etc = ["equilateral_apex"]
+elements = ["equilateral_triangle"]
+alphageometry = ["eq_triangle"]
+
+[entry.copy_angle]
+kind = "construction"
+family = "congruence"
+summary = "An angle equal to a given angle at a given point and line (I.23)."
+elements = ["copy_angle"]
+
+[entry.cut_equal_segment]
+kind = "construction"
+family = "congruence"
+summary = "Cut off from a greater segment a part equal to a lesser (I.3)."
+elements = ["cut_equal_segment"]
+
+[entry.intersection]
+kind = "construction"
+family = "incidence"
+summary = "Meet of two lines, line and circle, or two circles."
+sympy = ["intersection"]
+model = ["intersect"]
+
+[entry.intersect_lines]
+kind = "construction"
+family = "incidence"
+summary = "The meet point of two non-parallel lines."
+etc = ["intersect_lines"]
+system_e = ["intersection_lines"]
+
+[entry.reflection]
+kind = "construction"
+family = "transformation"
+summary = "Mirror image of a point in a line."
+sympy = ["Point.reflect"]
+mathlib4 = ["EuclideanGeometry.reflection"]
+
+[entry.reflection_in_point]
+kind = "construction"
+family = "transformation"
+summary = "Half-turn image of a point about a center."
+etc = ["reflection_in_point"]
+
+[entry.circle_inverse]
+kind = "operator"
+family = "transformation"
+summary = "Inversion of a point in a circle."
+mathlib4 = ["EuclideanGeometry.inversion"]
+gibert = ["i"]
+
+[entry.circle_center]
+kind = "construction"
+family = "circle"
+summary = "Recover the center of a given circle (III.1)."
+elements = ["find_circle_center"]
+
+[entry.mean_proportional]
+kind = "construction"
+family = "similarity"
+summary = "Segment x with a:x = x:b (VI.13)."
+elements = ["mean_proportional"]
+
+[entry.third_proportional]
+kind = "construction"
+family = "similarity"
+summary = "Segment x with a:b = b:x (VI.11)."
+elements = ["third_proportional"]
+
+[entry.square_on_segment]
+kind = "construction"
+family = "area"
+summary = "The square described on a segment (I.46)."
+elements = ["square_on_segment"]
+
+[entry.tangent_lines]
+kind = "construction"
+family = "circle"
+summary = "Tangent lines from a point to a circle (III.17)."
+sympy = ["Circle.tangent_lines"]
+
+# ------------------------------------------------- coordinates & helpers
+
+[entry.barycentrics_of]
+kind = "construction"
+family = "coordinates"
+summary = "Barycentric coordinates of a point relative to a triangle."
+etc = ["barycentrics_of"]
+
+[entry.point_from_barycentrics]
+kind = "construction"
+family = "coordinates"
+summary = "Point with given barycentric coordinates."
+etc = ["point_from_barycentrics"]
+
+[entry.point_from_trilinears]
+kind = "construction"
+family = "coordinates"
+summary = "Point with given trilinear coordinates."
+etc = ["point_from_trilinears"]
+
+# ------------------------------------------------------ triangle centers
+
+[entry.incenter]
+kind = "center"
+family = "triangle_center"
+etc_x = 1
+summary = "Meet of the internal angle bisectors."
+etc = ["incenter"]
+alphageometry = ["incenter"]
+sympy = ["Triangle.incenter"]
+mathlib4 = ["Affine.Simplex.incenter"]
+
+[entry.centroid]
+kind = "center"
+family = "triangle_center"
+etc_x = 2
+summary = "Meet of the medians."
+etc = ["centroid"]
+alphageometry = ["centroid"]
+sympy = ["Triangle.centroid", "centroid"]
+mathlib4 = ["Affine.Simplex.centroid"]
+
+[entry.circumcenter]
+kind = "center"
+family = "triangle_center"
+etc_x = 3
+summary = "Center of the circle through the vertices."
+etc = ["circumcenter"]
+alphageometry = ["circumcenter", "circle"]
+newclid = ["circle"]
+sympy = ["Triangle.circumcenter"]
+mathlib4 = ["Affine.Simplex.circumcenter"]
+
+[entry.orthocenter]
+kind = "center"
+family = "triangle_center"
+etc_x = 4
+summary = "Meet of the altitudes."
+etc = ["orthocenter"]
+alphageometry = ["orthocenter"]
+sympy = ["Triangle.orthocenter"]
+mathlib4 = ["Affine.Triangle.orthocenter", "Affine.Simplex.mongePoint"]
+
+[entry.nine_point_center]
+kind = "center"
+family = "triangle_center"
+etc_x = 5
+summary = "Center of the nine-point circle."
+etc = ["nine_point_center"]
+
+[entry.symmedian_point]
+kind = "center"
+family = "triangle_center"
+etc_x = 6
+summary = "Meet of the symmedians (Lemoine point)."
+etc = ["symmedian_point"]
+
+[entry.gergonne_point]
+kind = "center"
+family = "triangle_center"
+etc_x = 7
+summary = "Perspector of the intouch triangle."
+etc = ["gergonne_point"]
+
+[entry.nagel_point]
+kind = "center"
+family = "triangle_center"
+etc_x = 8
+summary = "Perspector of the extouch triangle."
+etc = ["nagel_point"]
+
+[entry.mittenpunkt]
+kind = "center"
+family = "triangle_center"
+etc_x = 9
+summary = "Symmedian point of the excentral triangle."
+etc = ["mittenpunkt"]
+
+[entry.spieker_center]
+kind = "center"
+family = "triangle_center"
+etc_x = 10
+summary = "Incenter of the medial triangle."
+etc = ["spieker_center"]
+
+[entry.feuerbach_point]
+kind = "center"
+family = "triangle_center"
+etc_x = 11
+summary = "Tangency point of the incircle and nine-point circle."
+etc = ["feuerbach_point"]
+
+[entry.harmonic_feuerbach_point]
+kind = "center"
+family = "triangle_center"
+etc_x = 12
+summary = "Harmonic conjugate of X(11) with respect to X(1) and X(5)."
+etc = ["harmonic_feuerbach_point"]
+
+[entry.fermat_point]
+kind = "center"
+family = "triangle_center"
+etc_x = 13
+summary = "First isogonic center."
+etc = ["fermat_point"]
+
+[entry.second_isogonic_center]
+kind = "center"
+family = "triangle_center"
+etc_x = 14
+summary = "Second isogonic center."
+etc = ["second_isogonic_center"]
+
+[entry.first_isodynamic_point]
+kind = "center"
+family = "triangle_center"
+etc_x = 15
+summary = "First isodynamic point."
+etc = ["first_isodynamic_point"]
+
+[entry.second_isodynamic_point]
+kind = "center"
+family = "triangle_center"
+etc_x = 16
+summary = "Second isodynamic point."
+etc = ["second_isodynamic_point"]
+
+[entry.first_napoleon_point]
+kind = "center"
+family = "triangle_center"
+etc_x = 17
+summary = "First Napoleon point."
+etc = ["first_napoleon_point"]
+
+[entry.second_napoleon_point]
+kind = "center"
+family = "triangle_center"
+etc_x = 18
+summary = "Second Napoleon point."
+etc = ["second_napoleon_point"]
+
+[entry.clawson_point]
+kind = "center"
+family = "triangle_center"
+etc_x = 19
+summary = "Clawson point."
+etc = ["clawson_point"]
+
+[entry.de_longchamps_point]
+kind = "center"
+family = "triangle_center"
+etc_x = 20
+summary = "Reflection of the orthocenter in the circumcenter."
+etc = ["de_longchamps_point"]
+
+[entry.circumcircle_inverse_of_incenter]
+kind = "center"
+family = "triangle_center"
+etc_x = 36
+summary = "Inverse of the incenter in the circumcircle."
+etc = ["circumcircle_inverse_of_incenter"]
+
+[entry.bevan_point]
+kind = "center"
+family = "triangle_center"
+etc_x = 40
+summary = "Circumcenter of the excentral triangle."
+etc = ["bevan_point"]
+
+[entry.isotomic_conjugate_of_incenter]
+kind = "center"
+family = "triangle_center"
+etc_x = 75
+summary = "Isotomic conjugate of the incenter."
+etc = ["isotomic_conjugate_of_incenter"]
+
+[entry.excenters]
+kind = "construction"
+family = "triangle_center"
+summary = "The three excenters of a triangle."
+sympy = ["Triangle.excenters"]
+mathlib4 = ["Affine.Simplex.excenter"]
+
+[entry.perspector]
+kind = "construction"
+family = "projective"
+summary = "Center of perspective of two perspective triangles."
+etc = ["perspector"]
+
+# ------------------------------------------------------ derived triangles
+
+[entry.medial_triangle]
+kind = "triangle"
+family = "triangle"
+summary = "Triangle of the side midpoints."
+etc = ["medial_triangle"]
+sympy = ["Triangle.medial"]
+
+[entry.anticomplementary_triangle]
+kind = "triangle"
+family = "triangle"
+summary = "Triangle whose medial triangle is the reference triangle."
+etc = ["anticomplementary_triangle"]
+
+[entry.orthic_triangle]
+kind = "triangle"
+family = "triangle"
+summary = "Triangle of the feet of the altitudes."
+etc = ["orthic_triangle"]
+
+[entry.incentral_triangle]
+kind = "triangle"
+family = "triangle"
+summary = "Cevian triangle of the incenter."
+etc = ["incentral_triangle"]
+
+[entry.intouch_triangle]
+kind = "triangle"
+family = "triangle"
+summary = "Triangle of incircle tangency points."
+etc = ["intouch_triangle"]
+
+[entry.extouch_triangle]
+kind = "triangle"
+family = "triangle"
+summary = "Triangle of excircle tangency points on the sides."
+etc = ["extouch_triangle"]
+
+[entry.excentral_triangle]
+kind = "triangle"
+family = "triangle"
+summary = "Triangle of the three excenters."
+etc = ["excentral_triangle"]
+
+[entry.tangential_triangle]
+kind = "triangle"
+family = "triangle"
+summary = "Triangle of circumcircle tangents at the vertices."
+etc = ["tangential_triangle"]
+
+[entry.symmedial_triangle]
+kind = "triangle"
+family = "triangle"
+summary = "Cevian triangle of the symmedian point."
+etc = ["symmedial_triangle"]
+
+[entry.feuerbach_triangle]
+kind = "triangle"
+family = "triangle"
+summary = "Triangle of the nine-point circle's tangency points with the excircles."
+etc = ["feuerbach_triangle"]
+
+[entry.outer_equilateral_triangles]
+kind = "triangle"
+family = "triangle"
+summary = "Equilateral triangles erected outward on the sides."
+etc = ["outer_equilateral_triangles"]
+
+[entry.inner_equilateral_triangles]
+kind = "triangle"
+family = "triangle"
+summary = "Equilateral triangles erected inward on the sides."
+etc = ["inner_equilateral_triangles"]
+
+[entry.outer_napoleon_triangle]
+kind = "triangle"
+family = "triangle"
+summary = "Centers of the outer equilateral triangles."
+etc = ["outer_napoleon_triangle"]
+
+[entry.inner_napoleon_triangle]
+kind = "triangle"
+family = "triangle"
+summary = "Centers of the inner equilateral triangles."
+etc = ["inner_napoleon_triangle"]
+
+[entry.pedal_triangle]
+kind = "triangle"
+family = "triangle"
+summary = "Feet of perpendiculars from a point to the sides."
+etc = ["pedal_triangle"]
+
+[entry.cevian_triangle]
+kind = "triangle"
+family = "triangle"
+summary = "Traces of the cevians through a point."
+etc = ["cevian_triangle"]
+
+[entry.medians]
+kind = "construction"
+family = "triangle"
+summary = "Segments from vertices to opposite side midpoints."
+sympy = ["Triangle.medians"]
+mathlib4 = ["Affine.Simplex.median"]
+
+[entry.altitudes]
+kind = "construction"
+family = "triangle"
+summary = "Perpendiculars from vertices to opposite sides."
+sympy = ["Triangle.altitudes"]
+mathlib4 = ["Affine.Simplex.altitude"]
+
+# -------------------------------------------------------- derived circles
+
+[entry.circumcircle]
+kind = "circle"
+family = "circle"
+summary = "Circle through the three vertices."
+etc = ["circumcircle"]
+sympy = ["Triangle.circumcircle"]
+
+[entry.incircle]
+kind = "circle"
+family = "circle"
+summary = "Circle tangent internally to the three sides."
+etc = ["incircle"]
+sympy = ["Triangle.incircle"]
+
+[entry.nine_point_circle]
+kind = "circle"
+family = "circle"
+summary = "Circle through the side midpoints and altitude feet."
+etc = ["nine_point_circle"]
+sympy = ["Triangle.nine_point_circle"]
+mathlib4 = ["Affine.Simplex.ninePointCircle"]
+
+[entry.spieker_circle]
+kind = "circle"
+family = "circle"
+summary = "Incircle of the medial triangle."
+etc = ["spieker_circle"]
+
+[entry.orthocentroidal_circle]
+kind = "circle"
+family = "circle"
+summary = "Circle on the segment from centroid to orthocenter as diameter."
+etc = ["orthocentroidal_circle"]
+
+[entry.apollonian_circles]
+kind = "circle"
+family = "circle"
+summary = "The three Apollonian circles of a triangle."
+etc = ["apollonian_circles"]
+
+[entry.euler_line]
+kind = "construction"
+family = "triangle"
+summary = "Line through circumcenter, centroid and orthocenter."
+sympy = ["Triangle.eulerline"]
+
+[entry.central_line]
+kind = "construction"
+family = "triangle"
+summary = "Line with given trilinear coefficients (ETC central line)."
+etc = ["central_line"]
+
+# ------------------------------------------------------------- operators
+
+[entry.isogonal_conjugate]
+kind = "operator"
+family = "transformation"
+summary = "Reflect cevians in the angle bisectors."
+etc = ["isogonal_conjugate"]
+gibert = ["g"]
+
+[entry.isotomic_conjugate]
+kind = "operator"
+family = "transformation"
+summary = "Reflect cevian traces in the side midpoints."
+etc = ["isotomic_conjugate"]
+gibert = ["t"]
+
+[entry.complement]
+kind = "operator"
+family = "transformation"
+summary = "Homothety h(G, -1/2)."
+etc = ["complement"]
+gibert = ["c"]
+
+[entry.anticomplement]
+kind = "operator"
+family = "transformation"
+summary = "Homothety h(G, -2)."
+etc = ["anticomplement"]
+gibert = ["a"]
+
+[entry.ceva_conjugate]
+kind = "operator"
+family = "transformation"
+summary = "Ceva conjugate P-cross-Q."
+etc = ["ceva_conjugate"]
+
+[entry.crosspoint]
+kind = "operator"
+family = "transformation"
+summary = "Crosspoint of two points."
+etc = ["crosspoint"]
+
+[entry.cevapoint]
+kind = "operator"
+family = "transformation"
+summary = "Cevapoint of two points."
+etc = ["cevapoint"]
+
+# -------------------------------------------------------------- properties
+
+[entry.is_isosceles]
+kind = "property"
+family = "congruence"
+summary = "Triangle with two equal sides."
+sympy = ["Triangle.is_isosceles"]
+
+[entry.is_equilateral]
+kind = "property"
+family = "congruence"
+summary = "Triangle with three equal sides."
+sympy = ["Triangle.is_equilateral"]
+
+[entry.is_right]
+kind = "property"
+family = "congruence"
+summary = "Triangle with a right angle."
+sympy = ["Triangle.is_right"]
+model = ["is_right"]
+
+[entry.is_scalene]
+kind = "property"
+family = "congruence"
+summary = "Triangle with three unequal sides."
+sympy = ["Triangle.is_scalene"]
+
+[entry.is_golden]
+kind = "property"
+family = "similarity"
+summary = "Section in the golden ratio."
+model = ["is_golden"]

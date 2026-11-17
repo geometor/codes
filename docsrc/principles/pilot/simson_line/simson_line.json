@@ -1,0 +1,32 @@
+{
+  "canonical_form": "cyclic(A, B, C, P), coll(A, L, C), perp(P, L, A, C), coll(M, B, C), perp(P, M, B, C), coll(N, A, B), perp(P, N, A, B) => coll(L, M, N)",
+  "euclid_refs": [],
+  "family": "circle",
+  "fingerprint": "coll(P0,P4,P5);coll(P1,P3,P5);coll(P2,P0,P3);cyclic(P0,P3,P5,P6);perp(P6,P1,P3,P5);perp(P6,P2,P0,P3);perp(P6,P4,P0,P5)=>coll(P4,P1,P2)",
+  "id": "simson_line",
+  "kind": "theorem",
+  "linked": [],
+  "members": [
+    {
+      "canonical_form": "cyclic(A, B, C, P), coll(A, L, C), perp(P, L, A, C), coll(M, B, C), perp(P, M, B, C), coll(N, A, B), perp(P, N, A, B) => coll(L, M, N)",
+      "id": "R45_SIMSONS_LINE_THEOREM",
+      "key": "newclid:R45_SIMSONS_LINE_THEOREM",
+      "kind": "rule",
+      "line": 521,
+      "name": "r45",
+      "source": "_refs/Newclid/newclid/src/newclid/all_rules.py",
+      "statement": "cyclic A B C P, coll A L C, perp P L A C, coll M B C, perp P M B C, coll N A B, perp P N A B => coll L M N",
+      "system": "newclid"
+    }
+  ],
+  "relations": [],
+  "statement": "Simson's line theorem",
+  "status": "proposed",
+  "title": "simson line",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "simson_line",
+    "status": "verified",
+    "summary": "Exact witness verified (7 points, 1 lines, 0 circles)"
+  }
+}

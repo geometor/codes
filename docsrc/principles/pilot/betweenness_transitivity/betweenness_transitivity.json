@@ -1,0 +1,74 @@
+{
+  "canonical_form": "between(a, b, c), between(a, d, b) => between(a, d, c)",
+  "euclid_refs": [],
+  "family": "order",
+  "fingerprint": "between(P0,P1,P3);between(P0,P2,P1)=>between(P0,P2,P3)",
+  "id": "betweenness_transitivity",
+  "kind": "axiom",
+  "linked": [
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Algebraic.Counter_models.Planar.counter_model_bet_inner_transitivity.bet_inner_transitivity",
+      "name": "bet_inner_transitivity",
+      "relation": "candidate",
+      "statement": "bet_inner_transitivity : ~ bet_inner_transitivityP Point Bet",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Algebraic/Counter_models/Planar/counter_model_bet_inner_transitivity.v#L11"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Algebraic.Counter_models.Planar.counter_model_bet_inner_transitivity.cong_inner_transitivity",
+      "name": "cong_inner_transitivity",
+      "relation": "candidate",
+      "statement": "cong_inner_transitivity : cong_inner_transitivityP Point Cong",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Algebraic/Counter_models/Planar/counter_model_bet_inner_transitivity.v#L31"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Algebraic.Counter_models.Planar.counter_model_bet_symmetry.bet_inner_transitivity",
+      "name": "bet_inner_transitivity",
+      "relation": "candidate",
+      "statement": "bet_inner_transitivity : bet_inner_transitivityP Point bet'",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Algebraic/Counter_models/Planar/counter_model_bet_symmetry.v#L113"
+    }
+  ],
+  "members": [
+    {
+      "canonical_form": "between(a, b, c), between(a, d, b) => between(a, d, c)",
+      "id": "between_trans_in",
+      "key": "leaneuclid:between_trans_in",
+      "kind": "axiom",
+      "line": 69,
+      "name": "between_trans_in",
+      "source": "_refs/LeanEuclid/SystemE/Theory/Inferences/Diagrammatic.lean",
+      "statement": "∀ (a b c d : Point), (between a b c) ∧ (between a d b) → between a d c",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "between(a, b, c), between(b, c, d) => between(a, b, d)",
+      "id": "between_trans_out",
+      "key": "leaneuclid:between_trans_out",
+      "kind": "axiom",
+      "line": 78,
+      "name": "between_trans_out",
+      "source": "_refs/LeanEuclid/SystemE/Theory/Inferences/Diagrammatic.lean",
+      "statement": "∀ (a b c d : Point), (between a b c) ∧ (between b c d) → (between a b d)",
+      "system": "leaneuclid"
+    }
+  ],
+  "relations": [],
+  "statement": "If b is  between a and c and d is  between a and b then d is  between a and c",
+  "status": "proposed",
+  "title": "betweenness transitivity",
+  "verification": {
+    "gap_reason": "Requires ternary between(A, B, C) order relation in geometor.model.proof.",
+    "principle_id": "betweenness_transitivity",
+    "status": "gap",
+    "summary": "Not yet expressible in geometor.model.proof"
+  }
+}

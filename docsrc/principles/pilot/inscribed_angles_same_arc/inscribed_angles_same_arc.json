@@ -1,0 +1,127 @@
+{
+  "canonical_form": "cyclic(A, B, P, Q) => eq_angle(P, A, P, B, Q, A, Q, B)",
+  "euclid_refs": [
+    "III.21"
+  ],
+  "family": "circle",
+  "fingerprint": "cyclic(P0,P1,P2,P3)=>eq_angle(P2,P0,P2,P1,P3,P0,P3,P1)",
+  "id": "inscribed_angles_same_arc",
+  "kind": "theorem",
+  "linked": [
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Axioms.Definitions.Same_dir",
+      "name": "Same_dir",
+      "relation": "candidate",
+      "statement": "Same_dir A B C D :=",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/Definitions.v#L592"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Axioms.parallel_postulates.alternate_interior_angles_postulate",
+      "name": "alternate_interior_angles_postulate",
+      "relation": "candidate",
+      "statement": "alternate_interior_angles_postulate := forall A B C D,",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L70"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Axioms.parallel_postulates.consecutive_interior_angles_postulate",
+      "name": "consecutive_interior_angles_postulate",
+      "relation": "candidate",
+      "statement": "consecutive_interior_angles_postulate := forall A B C D,",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L76"
+    },
+    {
+      "confidence": 0.7,
+      "evidence": "tokens:2",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Oriented.Affine._root_.Sbtw.oangle_sign_eq_of_sbtw",
+      "name": "_root_.Sbtw.oangle_sign_eq_of_sbtw",
+      "relation": "candidate",
+      "statement": "_root_.Sbtw.oangle_sign_eq_of_sbtw {p p₁ p₂ p₃ p₄ : P} (hp₁₃ : Sbtw ℝ p₁ p p₃)",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Oriented/Affine.lean#L869"
+    },
+    {
+      "confidence": 0.7,
+      "evidence": "tokens:2",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Oriented.Affine._root_.Sbtw.oangle_sign_eq_of_sbtw_left",
+      "name": "_root_.Sbtw.oangle_sign_eq_of_sbtw_left",
+      "relation": "candidate",
+      "statement": "_root_.Sbtw.oangle_sign_eq_of_sbtw_left {p p₁ p₂ p₃ p₄ : P} (hp₁₃ : Sbtw ℝ p p₁ p₃)",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Oriented/Affine.lean#L878"
+    },
+    {
+      "confidence": 0.7,
+      "evidence": "tokens:2",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Oriented.Affine.two_zsmul_oangle_iff_vectorSpan_eq",
+      "name": "two_zsmul_oangle_iff_vectorSpan_eq",
+      "relation": "candidate",
+      "statement": "two_zsmul_oangle_iff_vectorSpan_eq {p₁ p₂ p₃ p₄ : P}",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Oriented/Affine.lean#L289"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "main.java.gprover.Angles",
+      "name": "Angles",
+      "relation": "candidate",
+      "statement": "public class Angles extends CClass",
+      "system": "jgex",
+      "url": "https://github.com/kovzol/Java-Geometry-Expert/blob/5489aacb40afc91b5c5ca539db853cca216e1165/src/main/java/gprover/Angles.java#L8"
+    }
+  ],
+  "members": [
+    {
+      "canonical_form": "",
+      "id": "III.21",
+      "key": "euclid:III.21",
+      "kind": "theorem",
+      "line": 0,
+      "name": "III.21",
+      "source": "euclid/resources/heath/enunciations.json",
+      "statement": "",
+      "system": "euclid"
+    },
+    {
+      "canonical_form": "cyclic(A, B, P, Q) => eq_angle(P, A, P, B, Q, A, Q, B)",
+      "id": "rule.r03",
+      "key": "alphageometry:rule.r03",
+      "kind": "rule",
+      "line": 4,
+      "name": "r03",
+      "source": "_refs/alphageometry/rules.txt",
+      "statement": "cyclic A B P Q => eqangle P A P B Q A Q B",
+      "system": "alphageometry"
+    },
+    {
+      "canonical_form": "cyclic(A, B, P, Q) => eq_angle(P, A, P, B, Q, A, Q, B), eq_angle(A, Q, A, P, B, Q, B, P), eq_angle(A, B, B, Q, A, P, P, Q), eq_angle(A, B, A, P, Q, B, Q, P)",
+      "id": "R03_ARC_DETERMINES_INTERNAL_ANGLES",
+      "key": "newclid:R03_ARC_DETERMINES_INTERNAL_ANGLES",
+      "kind": "rule",
+      "line": 149,
+      "name": "r03",
+      "source": "_refs/Newclid/newclid/src/newclid/all_rules.py",
+      "statement": "cyclic A B P Q => eqangle P A P B Q A Q B, eqangle A Q A P B Q B P, eqangle A B B Q A P P Q, eqangle A B A P Q B Q P",
+      "system": "newclid"
+    }
+  ],
+  "relations": [],
+  "statement": "In a circle the angles in the same segment are equal to one another.",
+  "status": "proposed",
+  "title": "inscribed angles same arc",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "inscribed_angles_same_arc",
+    "status": "verified",
+    "summary": "Exact witness verified (4 points, 0 lines, 0 circles)"
+  }
+}

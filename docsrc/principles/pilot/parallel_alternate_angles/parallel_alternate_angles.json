@@ -1,0 +1,171 @@
+{
+  "canonical_form": "between(a, g, b), between(c, h, d), between(e, g, h), between(g, h, f), same_side(b, d, EF), para(AB, CD) => eq_angle(a, g, h, g, h, d), eq_angle(e, g, b, g, h, d)",
+  "euclid_refs": [
+    "I.29"
+  ],
+  "family": "parallel",
+  "fingerprint": "between(P0,P4,P7);between(P1,P4,P5);between(P2,P1,P4);between(P3,P1,P6);para(P8,P9);same_side(P6,P7,P10)=>eq_angle(P2,P1,P6,P1,P4,P7);eq_angle(P3,P1,P4,P1,P4,P7)",
+  "id": "parallel_alternate_angles",
+  "kind": "theorem",
+  "linked": [
+    {
+      "confidence": 1.0,
+      "evidence": "euclid_ref:proposition_29",
+      "id": "Elements.OriginalProofs.proposition_29.proposition_29",
+      "name": "proposition_29",
+      "relation": "equivalent",
+      "statement": "proposition_29 :",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Elements/OriginalProofs/proposition_29.v#L11"
+    },
+    {
+      "confidence": 0.7,
+      "evidence": "tokens:2",
+      "id": "Axioms.parallel_postulates.alternate_interior_angles_postulate",
+      "name": "alternate_interior_angles_postulate",
+      "relation": "candidate",
+      "statement": "alternate_interior_angles_postulate := forall A B C D,",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L70"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Axioms.parallel_postulates.alternative_strong_parallel_postulate",
+      "name": "alternative_strong_parallel_postulate",
+      "relation": "candidate",
+      "statement": "alternative_strong_parallel_postulate := forall A B C D P Q R,",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L160"
+    },
+    {
+      "confidence": 0.7,
+      "evidence": "tokens:2",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Oriented.Affine.parallel_of_two_zsmul_oangle",
+      "name": "parallel_of_two_zsmul_oangle",
+      "relation": "candidate",
+      "statement": "parallel_of_two_zsmul_oangle {p₁ p₂ p₃ p₄ : P}",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Oriented/Affine.lean#L301"
+    },
+    {
+      "confidence": 0.7,
+      "evidence": "tokens:2",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Oriented.Affine.two_zsmul_oangle_iff_parallel",
+      "name": "two_zsmul_oangle_iff_parallel",
+      "relation": "candidate",
+      "statement": "two_zsmul_oangle_iff_parallel {p₁ p₂ p₃ p₄ : P}",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Oriented/Affine.lean#L310"
+    },
+    {
+      "confidence": 0.7,
+      "evidence": "tokens:2",
+      "id": "Mathlib.Geometry.Euclidean.Angle.Oriented.Affine.two_zsmul_oangle_of_parallel",
+      "name": "two_zsmul_oangle_of_parallel",
+      "relation": "candidate",
+      "statement": "two_zsmul_oangle_of_parallel {p₁ p₂ p₃ p₄ p₅ p₆ : P}",
+      "system": "mathlib4",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Oriented/Affine.lean#L244"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "main.java.gprover.Angles",
+      "name": "Angles",
+      "relation": "candidate",
+      "statement": "public class Angles extends CClass",
+      "system": "jgex",
+      "url": "https://github.com/kovzol/Java-Geometry-Expert/blob/5489aacb40afc91b5c5ca539db853cca216e1165/src/main/java/gprover/Angles.java#L8"
+    }
+  ],
+  "members": [
+    {
+      "canonical_form": "",
+      "id": "I.29",
+      "key": "euclid:I.29",
+      "kind": "theorem",
+      "line": 0,
+      "name": "I.29",
+      "source": "euclid/resources/heath/enunciations.json",
+      "statement": "",
+      "system": "euclid"
+    },
+    {
+      "canonical_form": "between(a, g, b), between(c, h, d), between(e, g, h), between(g, h, f), same_side(b, d, EF), para(AB, CD) => eq_angle(a, g, h, g, h, d), eq_angle(e, g, b, g, h, d)",
+      "id": "Elements.Book1.proposition_29",
+      "key": "leaneuclid:Elements.Book1.proposition_29",
+      "kind": "theorem",
+      "line": 7,
+      "name": "proposition_29",
+      "source": "_refs/LeanEuclid/Book/Prop29.lean",
+      "statement": "∀ (a b c d e f g h : Point) (AB CD EF : Line), distinctPointsOnLine a b AB ∧ distinctPointsOnLine c d CD ∧ distinctPointsOnLine e f EF ∧ (between a g b) ∧ (between c h d) ∧ (between e g h) ∧ (between g h f) ∧ (b.sameSide d EF) ∧ ¬(AB.intersectsLine CD) → ∠ a:g:h = ∠ g:h:d ∧ ∠ e:g:b = ∠ g:h:d ∧ ∠ b:g:h + ∠ g:h:d = ∟ + ∟",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "between(a, g, b), between(c, h, d), between(e, g, h), same_side(b, d, EF), para(AB, CD) => eq_angle(a, g, h, g, h, d), eq_angle(e, g, b, g, h, d)",
+      "id": "Elements.Book1.proposition_29'",
+      "key": "leaneuclid:Elements.Book1.proposition_29'",
+      "kind": "theorem",
+      "line": 31,
+      "name": "proposition_29'",
+      "source": "_refs/LeanEuclid/Book/Prop29.lean",
+      "statement": "∀ (a b c d e g h : Point) (AB CD EF : Line), distinctPointsOnLine a b AB ∧ distinctPointsOnLine c d CD ∧ distinctPointsOnLine g h EF ∧ (between a g b) ∧ (between c h d) ∧ (between e g h) ∧ (b.sameSide d EF) ∧ ¬(AB.intersectsLine CD) → ∠ a:g:h = ∠ g:h:d ∧ ∠ e:g:b = ∠ g:h:d ∧ ∠ b:g:h + ∠ g:h:d = ∟ + ∟",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "between(a, g, b), same_side(b, d, GH), para(AB, CD) => eq_angle(a, g, h, g, h, d)",
+      "id": "Elements.Book1.proposition_29''",
+      "key": "leaneuclid:Elements.Book1.proposition_29''",
+      "kind": "theorem",
+      "line": 41,
+      "name": "proposition_29''",
+      "source": "_refs/LeanEuclid/Book/Prop29.lean",
+      "statement": "∀ (a b d g h : Point) (AB CD GH : Line), distinctPointsOnLine a b AB ∧ distinctPointsOnLine h d CD ∧ distinctPointsOnLine g h GH ∧ (between a g b) ∧ (b.sameSide d GH) ∧ ¬(AB.intersectsLine CD) → ∠ a:g:h = ∠ g:h:d ∧ ∠ b:g:h + ∠ g:h:d = ∟ + ∟",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "opposite_sides(a, d, GH), para(AB, CD) => eq_angle(a, g, h, g, h, d)",
+      "id": "Elements.Book1.proposition_29'''",
+      "key": "leaneuclid:Elements.Book1.proposition_29'''",
+      "kind": "theorem",
+      "line": 53,
+      "name": "proposition_29'''",
+      "source": "_refs/LeanEuclid/Book/Prop29.lean",
+      "statement": "∀ (a d g h : Point) (AB CD GH : Line), distinctPointsOnLine a g AB ∧ distinctPointsOnLine h d CD ∧ distinctPointsOnLine g h GH ∧ a.opposingSides d GH ∧ ¬(AB.intersectsLine CD) → ∠ a:g:h = ∠ g:h:d",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "between(e, g, h), same_side(b, d, EF), para(AB, CD) => eq_angle(e, g, b, g, h, d)",
+      "id": "Elements.Book1.proposition_29''''",
+      "key": "leaneuclid:Elements.Book1.proposition_29''''",
+      "kind": "theorem",
+      "line": 63,
+      "name": "proposition_29''''",
+      "source": "_refs/LeanEuclid/Book/Prop29.lean",
+      "statement": "∀ (b d e g h : Point) (AB CD EF : Line), distinctPointsOnLine g b AB ∧ distinctPointsOnLine h d CD ∧ distinctPointsOnLine e h EF ∧ between e g h ∧ b.sameSide d EF ∧ ¬(AB.intersectsLine CD) → ∠ e:g:b = ∠ g:h:d",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "same_side(b, d, EF), para(AB, CD)",
+      "id": "Elements.Book1.proposition_29'''''",
+      "key": "leaneuclid:Elements.Book1.proposition_29'''''",
+      "kind": "theorem",
+      "line": 75,
+      "name": "proposition_29'''''",
+      "source": "_refs/LeanEuclid/Book/Prop29.lean",
+      "statement": "∀ (b d g h : Point) (AB CD EF : Line), distinctPointsOnLine g b AB ∧ distinctPointsOnLine h d CD ∧ distinctPointsOnLine g h EF ∧ b.sameSide d EF ∧ ¬(AB.intersectsLine CD) → ∠ b:g:h + ∠ g:h:d = ∟ + ∟",
+      "system": "leaneuclid"
+    }
+  ],
+  "relations": [],
+  "statement": "A straight line falling on parallel straight lines makes the alternate angles equal to one another, the exterior angle equal to the interior and opposite angle, and the interior angles on the same side equal to two right angles.",
+  "status": "proposed",
+  "title": "parallel alternate angles",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "parallel_alternate_angles",
+    "status": "verified",
+    "summary": "Exact witness verified (6 points, 3 lines, 0 circles)"
+  }
+}

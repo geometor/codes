@@ -1,0 +1,26 @@
+{
+  "cindyjs": {
+    "commit": "c5b87a373e574c0da6137cc95fbe48a8d6e534c5",
+    "count": 937
+  },
+  "galgebra": {
+    "commit": "d160238c6ddbedce676e633d69840fdaab83ab86",
+    "count": 107
+  },
+  "geocoq": {
+    "commit": "87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6",
+    "count": 5435
+  },
+  "jgex": {
+    "commit": "5489aacb40afc91b5c5ca539db853cca216e1165",
+    "count": 791
+  },
+  "kingdon": {
+    "commit": "87de1ee3fd8624bb2b1c8947f6e44f005d817ad9",
+    "count": 94
+  },
+  "mathlib4": {
+    "commit": "b97762998b0ee14aea85f37006d06dfff25a6afa",
+    "count": 1567
+  }
+}

@@ -1,0 +1,28 @@
+:type: log
+:date: 26.321-113400
+:author: phi
+
+=============================================
+26.321 — Principles Catalog & Cross-System Linker
+=============================================
+
+Implemented the end-to-end **GEOMETOR Principles Catalog** (``v0.2.0``):
+
+- **Canonical Lexicon**: Seeded 127 concepts and 271 aliases from
+  ``geometor.etc`` ``ops.py``, with ``codes lexicon audit`` verifying
+  alias uniqueness and installed SymPy resolution.
+- **Base Context Mining**: Extracted 1,425 declarations across Euclid (Heath),
+  LeanEuclid (System E + Book I + UniGeo), AlphaGeometry, Newclid,
+  ``sympy.geometry``, and ``geometor.model`` into deterministic JSONL
+  snapshots so ``codes`` runs standalone without ``_refs/``.
+- **Discovery & Linked Libraries**: Normalized statements, computed
+  relabeling-invariant fingerprints, clustered all 1,425 items into 667
+  candidate principles (107 multi-system, 0 unassigned), and indexed 8,931
+  declarations across GeoCoq, mathlib4, JGEX, kingdon, galgebra, and CindyJS.
+- **Exact Witness Pilot**: Verified 20 core principles in ``geometor.model``
+  with zero ``sp.Float`` coordinates (and 3 explicit order/betweenness gaps),
+  rendering ETC-style entry pages and ``.euclid-graphic`` SVGs under
+  ``docsrc/principles/``.
+
+Verification gates: ``pytest`` (19 passed), ``ruff check src tests demos``
+(clean), and ``publish build`` (clean).

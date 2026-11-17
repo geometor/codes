@@ -1,0 +1,98 @@
+{
+  "canonical_form": "cong(b, c, e, f), cong(a, b, d, e), eq_angle(a, b, c, d, e, f), eq_angle(b, c, a, e, f, d), form_triangle(a, b, c, AB, BC, AC), form_triangle(d, e, f, DE, EF, DF) => cong(a, b, d, e), cong(b, c, e, f), cong(a, c, d, f), eq_angle(b, a, c, e, d, f)",
+  "euclid_refs": [
+    "I.26"
+  ],
+  "family": "congruence",
+  "fingerprint": "cong(P0,P2,P3,P5);cong(P1,P0,P4,P3);eq_angle(P0,P2,P1,P3,P5,P4);eq_angle(P1,P0,P2,P4,P3,P5);form_triangle(P1,P0,P2,P6,P8,P10);form_triangle(P4,P3,P5,P7,P9,P11)=>cong(P0,P2,P3,P5);cong(P1,P0,P4,P3);cong(P1,P2,P4,P5);eq_angle(P0,P1,P2,P3,P4,P5)",
+  "id": "asa_aas_congruence",
+  "kind": "theorem",
+  "linked": [
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Main.Meta_theory.Decidability.equivalence_between_decidability_properties_of_basic_relations.decidability_of_congruence_of_points",
+      "name": "decidability_of_congruence_of_points",
+      "relation": "candidate",
+      "statement": "decidability_of_congruence_of_points := forall A B C D:Tpoint,",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Main/Meta_theory/Decidability/equivalence_between_decidability_properties_of_basic_relations.v#L47"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Main.Tarski_dev.Ch16_coordinates.characterization_of_congruence",
+      "name": "characterization_of_congruence",
+      "relation": "candidate",
+      "statement": "characterization_of_congruence :",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Main/Tarski_dev/Ch16_coordinates.v#L696"
+    },
+    {
+      "confidence": 0.35,
+      "evidence": "tokens:1",
+      "id": "Main.Tarski_dev.Ch16_coordinates_with_functions.characterization_of_congruence_F",
+      "name": "characterization_of_congruence_F",
+      "relation": "candidate",
+      "statement": "characterization_of_congruence_F : forall A B C D,",
+      "system": "geocoq",
+      "url": "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Main/Tarski_dev/Ch16_coordinates_with_functions.v#L871"
+    }
+  ],
+  "members": [
+    {
+      "canonical_form": "",
+      "id": "I.26",
+      "key": "euclid:I.26",
+      "kind": "theorem",
+      "line": 0,
+      "name": "I.26",
+      "source": "euclid/resources/heath/enunciations.json",
+      "statement": "",
+      "system": "euclid"
+    },
+    {
+      "canonical_form": "cong(b, c, e, f), cong(a, b, d, e), eq_angle(a, b, c, d, e, f), eq_angle(b, c, a, e, f, d), form_triangle(a, b, c, AB, BC, AC), form_triangle(d, e, f, DE, EF, DF) => cong(a, b, d, e), cong(b, c, e, f), cong(a, c, d, f), eq_angle(b, a, c, e, d, f)",
+      "id": "Elements.Book1.proposition_26",
+      "key": "leaneuclid:Elements.Book1.proposition_26",
+      "kind": "theorem",
+      "line": 8,
+      "name": "proposition_26",
+      "source": "_refs/LeanEuclid/Book/Prop26.lean",
+      "statement": "∀ (a b c d e f : Point) (AB BC AC DE EF DF : Line), formTriangle a b c AB BC AC ∧ formTriangle d e f DE EF DF ∧ (∠ a:b:c = ∠ d:e:f) ∧ (∠ b:c:a = ∠ e:f:d) ∧ (|(b─c)| = |(e─f)| ∨ |(a─b)| = |(d─e)|) → (|(a─b)| = |(d─e)|) ∧ (|(b─c)| = |(e─f)|) ∧ (|(a─c)| = |(d─f)|) ∧ (∠ b:a:c = ∠ e:d:f)",
+      "system": "leaneuclid"
+    },
+    {
+      "canonical_form": "eq_angle(B, A, B, C, Q, P, Q, R), eq_angle(C, A, C, B, R, P, R, Q), ncoll(A, B, C), cong(A, B, P, Q) => con_tri(A, B, C, P, Q, R)",
+      "id": "rule.r36",
+      "key": "alphageometry:rule.r36",
+      "kind": "rule",
+      "line": 37,
+      "name": "r36",
+      "source": "_refs/alphageometry/rules.txt",
+      "statement": "eqangle6 B A B C Q P Q R, eqangle6 C A C B R P R Q, ncoll A B C, cong A B P Q => contri A B C P Q R",
+      "system": "alphageometry"
+    },
+    {
+      "canonical_form": "eq_angle(B, A, B, C, Q, P, Q, R), eq_angle(C, A, C, B, R, P, R, Q), ncoll(A, B, C), cong(A, B, P, Q), same_clock(A, B, C, P, Q, R), diff(A, B, C), diff(P, Q, R) => con_tri(A, B, C, P, Q, R)",
+      "id": "R36_ASA_CONGRUENCE_OF_TRIANGLES_DIRECT",
+      "key": "newclid:R36_ASA_CONGRUENCE_OF_TRIANGLES_DIRECT",
+      "kind": "rule",
+      "line": 421,
+      "name": "r36",
+      "source": "_refs/Newclid/newclid/src/newclid/all_rules.py",
+      "statement": "eqangle B A B C Q P Q R, eqangle C A C B R P R Q, ncoll A B C, cong A B P Q, sameclock A B C P Q R, diff A B C, diff P Q R => contri A B C P Q R",
+      "system": "newclid"
+    }
+  ],
+  "relations": [],
+  "statement": "If two triangles have the two angles equal to two angles respectively, and one side equal to one side, namely, either the side adjoining the equal angles, or that subtending one of the equal angles, they will also have the remaining sides equal to the remaining sides and the remaining angle to the remaining angle.",
+  "status": "proposed",
+  "title": "asa aas congruence",
+  "verification": {
+    "gap_reason": "",
+    "principle_id": "asa_aas_congruence",
+    "status": "verified",
+    "summary": "Exact witness verified (6 points, 0 lines, 0 circles)"
+  }
+}

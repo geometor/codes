@@ -1,0 +1,86 @@
+# Context manifest for geometor.codes principle discovery.
+#
+# role = "base"   : mined in depth; items become candidate principles.
+# role = "linked" : indexed lightly; entries are linked to principles, never create them.
+#
+# Paths are relative to the GEOMETOR workspace root (/home/phi/PROJECTS/geometor).
+# Moving a system from "linked" to "base" turns on full mining.
+
+[systems.euclid]
+role = "base"
+name = "Euclid, Elements (Heath)"
+source = "euclid/resources/heath/enunciations.json"
+miner = "euclid"
+# Books whose content is not yet in the code canon (marked, not dropped).
+not_yet_in_canon = ["V", "VII", "VIII", "IX", "X", "XI", "XII", "XIII"]
+
+[systems.leaneuclid]
+role = "base"
+name = "LeanEuclid (System E + Book I + UniGeo)"
+source = "_refs/LeanEuclid"
+miner = "lean"
+upstream = "https://github.com/loganrjmurphy/LeanEuclid"
+
+[systems.alphageometry]
+role = "base"
+name = "AlphaGeometry (rules + constructions)"
+source = "_refs/alphageometry"
+miner = "alphageometry"
+upstream = "https://github.com/google-deepmind/alphageometry"
+
+[systems.newclid]
+role = "base"
+name = "Newclid (named rules)"
+source = "_refs/Newclid"
+miner = "newclid"
+upstream = "https://github.com/LMCRC/Newclid"
+
+[systems.sympy]
+role = "base"
+name = "SymPy geometry"
+source = "python:sympy.geometry"
+miner = "sympy"
+upstream = "https://github.com/sympy/sympy"
+
+[systems.geometor_model]
+role = "base"
+name = "geometor.model"
+source = "model/src/geometor/model"
+miner = "model"
+upstream = "https://github.com/geometor/model"
+
+[systems.geocoq]
+role = "linked"
+name = "GeoCoq"
+source = "_refs/GeoCoq/theories"
+upstream = "https://github.com/GeoCoq/GeoCoq"
+
+[systems.mathlib4]
+role = "linked"
+name = "Mathlib4 Euclidean geometry"
+source = "_refs/mathlib4/Mathlib/Geometry/Euclidean"
+upstream = "https://github.com/leanprover-community/mathlib4"
+
+[systems.jgex]
+role = "linked"
+name = "Java Geometry Expert"
+source = "_refs/Java-Geometry-Expert"
+upstream = "https://github.com/kovzol/Java-Geometry-Expert"
+
+[systems.kingdon]
+role = "linked"
+name = "kingdon (geometric algebra)"
+source = "_refs/kingdon"
+upstream = "https://github.com/tBuLi/kingdon"
+
+[systems.galgebra]
+role = "linked"
+name = "galgebra (geometric algebra)"
+source = "_refs/galgebra"
+upstream = "https://github.com/pygae/galgebra"
+
+[systems.cindyjs]
+role = "linked"
+name = "CindyJS"
+source = "_refs/CindyJS"
+upstream = "https://github.com/CindyJS/CindyJS"
