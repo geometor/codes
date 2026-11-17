@@ -3,6 +3,11 @@ GEOMETOR • codes
 
 **Visit the Online Archive:** https://geometor.github.io/codes/
 
+.. image:: docsrc/_static/figures/01-seven-ontologies.svg
+   :alt: GEOMETOR • codes featured geometric construction
+   :target: https://geometor.github.io/codes/
+   :align: center
+
 **Geometric Codes • Theorem-Proving Engines & Symbolic Grammars • semantic digital archive**
 
 Mission
