@@ -12,7 +12,7 @@
    rosetta/index
    opus/index
    glossary
-   persons
+   people/index
    bibliography
    log/index
    modules/index
