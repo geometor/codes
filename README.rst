@@ -24,6 +24,18 @@ Catalogs in This Archive
 - `Systems <https://geometor.github.io/codes/systems/>`_ — Architectural and forensic dossiers on 11 formal, visual, and neuro-symbolic geometry engines.
 - `Hierarchy <https://geometor.github.io/codes/hierarchy/>`_ — Eight foundational mathematical paradigms and structural hierarchy of geometric formalisms.
 
+Python Package & Modules
+------------------------
+
+The ``geometor-codes`` Python package (``import geometor.codes``) provides the executable symbolic geometry, construction, and compilation modules powering this archive:
+
+- ``figures.py`` — Exact ``geometor.model`` SVG figure generators for GEOMETOR Codes.
+- ``registry.py`` — Typed registries, cross-system query helpers, and optional ``_refs/`` inspector.
+- ``render.py`` — Interactive ``.euclid-graphic`` SVG renderer for GEOMETOR Codes.
+- ``cli.py`` — Command-line interface (``codes``) for GEOMETOR Codes.
+
+See the `API Reference <https://geometor.github.io/codes/modules/>`_ for full module documentation.
+
 Repository Contents
 -------------------
 
