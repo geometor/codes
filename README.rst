@@ -18,11 +18,11 @@ Mission
 Catalogs in This Archive
 ------------------------
 
-- **`Opus Coverage Matrix (69 Topics x 11 Systems) <https://geometor.github.io/codes/opus/>`_** — Comprehensive comparative coverage matrix mapping 69 classical and modern geometric theorems across 11 formal systems.
-- **`Rosetta Stone Benchmarks <https://geometor.github.io/codes/rosetta/>`_** — Canonical constructions and proofs implemented side-by-side across all 11 surveyed architectures with interactive vector figures.
-- **`Syntax Field Guide & Symbol Decoder <https://geometor.github.io/codes/syntax/>`_** — Systematic decoder for 60 formal binders, predicates, blade operators, and Byrne chromatic glyphs.
-- **`Systems <https://geometor.github.io/codes/systems/>`_** — Architectural and forensic dossiers on 11 formal, visual, and neuro-symbolic geometry engines.
-- **`Hierarchy <https://geometor.github.io/codes/hierarchy/>`_** — Eight foundational mathematical paradigms and structural hierarchy of geometric formalisms.
+- `Opus Coverage Matrix (69 Topics x 11 Systems) <https://geometor.github.io/codes/opus/>`_ — Comprehensive comparative coverage matrix mapping 69 classical and modern geometric theorems across 11 formal systems.
+- `Rosetta Stone Benchmarks <https://geometor.github.io/codes/rosetta/>`_ — Canonical constructions and proofs implemented side-by-side across all 11 surveyed architectures with interactive vector figures.
+- `Syntax Field Guide & Symbol Decoder <https://geometor.github.io/codes/syntax/>`_ — Systematic decoder for 60 formal binders, predicates, blade operators, and Byrne chromatic glyphs.
+- `Systems <https://geometor.github.io/codes/systems/>`_ — Architectural and forensic dossiers on 11 formal, visual, and neuro-symbolic geometry engines.
+- `Hierarchy <https://geometor.github.io/codes/hierarchy/>`_ — Eight foundational mathematical paradigms and structural hierarchy of geometric formalisms.
 
 Repository Contents
 -------------------
