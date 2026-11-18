@@ -1,0 +1,356 @@
+# Showcase: one theorem, many foundations.
+#
+# Each theorem is realized side by side across systems. `status` says what kind of
+# truth the system assigns to it:
+#   prose    – stated and proved by a human reader (Euclid)
+#   theorem  – proved inside the system from its assumptions
+#   axiom    – assumed (an axiom or postulate of the system)
+#   rule     – a hard-coded inference rule of a deduction engine (assumed sound)
+#   witness  – checked exactly on one concrete figure (Truth Ladder L1)
+#   generic  – checked by an algebraic decision method (true off a degenerate set)
+#   gap      – the system cannot express the statement
+#   absent   – expressible, but not present in the surveyed source
+#
+# Excerpts are copied verbatim from local source clones under _refs/ (pinned commits
+# recorded in resources/linked/ and resources/mined/manifest.json).
+
+[showcase.isosceles_base_angles]
+title = "Pons asinorum"
+euclid = "I.5"
+statement = "In an isosceles triangle the angles at the base are equal."
+why = "Every system can say it, so it is the clean baseline. The differences are entirely in *why* each system believes it: a proof, a rule, a junk-value convention, or an exact figure."
+
+[[showcase.isosceles_base_angles.realizations]]
+system = "euclid"
+ident = "Elements I.5"
+status = "prose"
+lang = "text"
+code = """In isosceles triangles the angles at the base are equal to one another, and, if the
+equal straight lines be produced further, the angles under the base will be equal to
+one another."""
+source = "euclid/resources/heath/enunciations.json"
+note = "Proved from I.4 (SAS) on the produced sides; checked by readers, relies on the diagram for order facts."
+
+[[showcase.isosceles_base_angles.realizations]]
+system = "leaneuclid"
+ident = "proposition_5"
+status = "theorem"
+lang = "lean"
+code = """theorem proposition_5 : ∀ (a b c d e : Point) (AB BC AC : Line),
+  formTriangle a b c AB BC AC ∧ (|(a─b)| = |(a─c)|) ∧
+  (between a b d) ∧ (between a c e) →
+  (∠ a:b:c = ∠ a:c:b) ∧ (∠ c:b:d = ∠ b:c:e) :="""
+source = "https://github.com/loganrjmurphy/LeanEuclid/blob/33a72c0fa83914202532998a2e7b8771295c3cc7/Book/Prop05.lean#L7-L10"
+note = "Kernel checks each euclid_apply rule step, but premises are discharged by euclid_finish → SMT_VERIF (an unsound oracle axiom)."
+
+[[showcase.isosceles_base_angles.realizations]]
+system = "geocoq"
+ident = "proposition_05"
+status = "theorem"
+lang = "coq"
+code = """Context `{Ax:euclidean_neutral_ruler_compass}.
+
+Lemma proposition_05 :
+   forall A B C,
+   isosceles A B C ->
+   CongA A B C A C B."""
+source = "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Elements/OriginalProofs/proposition_05.v#L6-L11"
+note = "Kernel-checked from the Beeson-style Euclid axiom class (via proposition_04), relative to the class hypotheses."
+
+[[showcase.isosceles_base_angles.realizations]]
+system = "mathlib4"
+ident = "EuclideanGeometry.angle_eq_angle_of_dist_eq"
+status = "theorem"
+lang = "lean"
+code = """/-- **Isosceles Triangle Theorem**: Pons asinorum, angle-at-point form. -/
+theorem angle_eq_angle_of_dist_eq {p₁ p₂ p₃ : P} (h : dist p₁ p₂ = dist p₁ p₃) :
+    ∠ p₁ p₂ p₃ = ∠ p₁ p₃ p₂ := by"""
+source = "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Triangle.lean#L280-L282"
+note = "No geometric axioms and no distinctness hypothesis: degenerate angles take the junk value π/2, so the degenerate cases hold by convention."
+
+[[showcase.isosceles_base_angles.realizations]]
+system = "alphageometry"
+ident = "rules.txt r13"
+status = "rule"
+lang = "text"
+code = """cong O A O B, ncoll O A B => eqangle O A A B A B O B"""
+source = "https://github.com/google-deepmind/alphageometry/blob/6777cb586cbb46beed28db12dc72c69770b68337/rules.txt"
+note = "Not proved: it is one of the 43 inference rules the DD engine assumes."
+
+[[showcase.isosceles_base_angles.realizations]]
+system = "newclid"
+ident = "R13_ISOSCELES_TRIANGLE_EQUAL_ANGLES"
+status = "rule"
+lang = "python"
+code = """premises:    cong O A O B, ncoll O A B
+conclusions: eqangle O A A B A B O B"""
+source = "https://github.com/LMCRC/Newclid/blob/ac6550732a950564cf7614d605b5bf1eadd29701/newclid/src/newclid/all_rules.py"
+note = "Inherited verbatim from AlphaGeometry r13."
+
+[[showcase.isosceles_base_angles.realizations]]
+system = "geometor_model"
+ident = "verify._build_isosceles_base_angles"
+status = "witness"
+lang = "python"
+code = """A = m.set_point(2, 3, label="A")
+B = m.set_point(0, 0, label="B")
+C = m.set_point(4, 0, label="C")
+m.assert_equal((A, B), (A, C), by="Given", label="AB = AC")
+m.assert_spread_equal((A, B, C), (A, C, B), by="I.5", label="angle B = angle C")"""
+source = "codes/src/geometor/codes/verify.py"
+note = "Exact zero-test on one concrete figure (L1). The generic witness below lifts it to L2."
+
+
+[showcase.pythagorean]
+title = "Pythagorean theorem"
+euclid = "I.47"
+statement = "In a right triangle the square on the hypotenuse equals the sum of the squares on the legs."
+why = "Splits the field: area/analytic methods find it trivial, Euclid needs the Bride's Chair, and the AlphaGeometry rule calculus cannot even state a² + b² = c²."
+
+[[showcase.pythagorean.realizations]]
+system = "euclid"
+ident = "Elements I.47"
+status = "prose"
+lang = "text"
+code = """In right-angled triangles the square on the side subtending the right angle is equal
+to the squares on the sides containing the right angle."""
+source = "euclid/resources/heath/enunciations.json"
+note = "The Bride's Chair: an equality of *areas*, not of numbers."
+
+[[showcase.pythagorean.realizations]]
+system = "leaneuclid"
+ident = "proposition_47"
+status = "theorem"
+lang = "lean"
+code = """theorem proposition_47 : ∀ (a b c: Point) (AB BC AC : Line),
+  formTriangle a b c AB BC AC ∧ (∠ b:a:c : ℝ) = ∟ →
+  |(b─c)| * |(b─c)| = |(b─a)| * |(b─a)| + |(a─c)| * |(a─c)| :="""
+source = "https://github.com/loganrjmurphy/LeanEuclid/blob/33a72c0fa83914202532998a2e7b8771295c3cc7/Book/Prop47.lean#L16-L18"
+note = "Stated metrically (lengths in ℝ); the proof isolates orientation lemmas Euclid left implicit. SMT_VERIF-dependent."
+
+[[showcase.pythagorean.realizations]]
+system = "geocoq"
+ident = "proposition_47"
+status = "theorem"
+lang = "coq"
+code = """Lemma proposition_47 :
+   forall A B C D E F G H K,
+   Triangle A B C -> Per B A C -> SQ A B F G -> TS G B A C -> SQ A C K H -> TS H C A B -> SQ B C E D -> TS D C B A ->
+   exists X Y, PG B X Y D /\\ BetS B X C /\\ PG X C E Y /\\ BetS D Y E /\\ EF A B F G B X Y D /\\ EF A C K H X C E Y."""
+source = "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Elements/OriginalProofs/proposition_47.v#L10-L13"
+note = "Faithful to Euclid: equal *figures* (EF), with area axioms derived from the Euclidean class."
+
+[[showcase.pythagorean.realizations]]
+system = "mathlib4"
+ident = "EuclideanGeometry.dist_sq_eq_dist_sq_add_dist_sq_iff_angle_eq_pi_div_two"
+status = "theorem"
+lang = "lean"
+code = """theorem dist_sq_eq_dist_sq_add_dist_sq_iff_angle_eq_pi_div_two (p₁ p₂ p₃ : P) :
+    dist p₁ p₃ * dist p₁ p₃ = dist p₁ p₂ * dist p₁ p₂ + dist p₃ p₂ * dist p₃ p₂ ↔
+      ∠ p₁ p₂ p₃ = π / 2 := by"""
+source = "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Unoriented/RightAngle.lean#L326-L328"
+note = "An iff, in any real inner-product space; reduces to the vector identity ‖x−y‖² = ‖x‖² + ‖y‖² when ⟪x,y⟫ = 0."
+
+[[showcase.pythagorean.realizations]]
+system = "alphageometry"
+ident = "—"
+status = "gap"
+note = "DD+AR's algebraic reasoning is linear over angle, ratio, and distance tables; a² + b² = c² is not expressible."
+
+[[showcase.pythagorean.realizations]]
+system = "newclid"
+ident = "R57_PYTHAGORAS_THEOREM"
+status = "rule"
+lang = "python"
+code = """PythagoreanPremises A B C => PythagoreanConclusions A B C
+# DEACTIVATED_RULES = { R57_PYTHAGORAS_THEOREM }"""
+source = "https://github.com/LMCRC/Newclid/blob/ac6550732a950564cf7614d605b5bf1eadd29701/newclid/src/newclid/all_rules.py"
+note = "Added as a special rule, then deactivated by default as problematic."
+
+[[showcase.pythagorean.realizations]]
+system = "jgex"
+ident = "examples/visual-proofs/pythagoras.gex"
+status = "generic"
+source = "https://github.com/kovzol/Java-Geometry-Expert/tree/5489aacb40afc91b5c5ca539db853cca216e1165/src/main/resources/docs/examples"
+note = "Algebraic methods (Wu / Gröbner / area) certify it generically; in the area method it is immediate from the Pythagoras difference P_BAC = 0."
+
+[[showcase.pythagorean.realizations]]
+system = "geometor_model"
+ident = "verify._build_pythagorean"
+status = "witness"
+lang = "python"
+code = """A, B, C = m.set_point(0, 0), m.set_point(3, 0), m.set_point(0, 4)
+m.assert_perpendicular(m.construct_line(A, B), m.construct_line(A, C), by="Given")
+sp.simplify(quadrance(A, B) + quadrance(A, C) - quadrance(B, C)) == 0"""
+source = "codes/src/geometor/codes/verify.py"
+note = "Exact quadrance identity on the 3-4-5 figure (L1)."
+
+
+[showcase.thales_semicircle]
+title = "Angle in a semicircle"
+euclid = "III.31"
+statement = "An angle inscribed in a semicircle is a right angle."
+why = "A theorem in one system is an axiom in another: in GeoCoq's neutral geometry, Thales' statement is one of the equivalent forms of the parallel postulate."
+
+[[showcase.thales_semicircle.realizations]]
+system = "euclid"
+ident = "Elements III.31"
+status = "prose"
+lang = "text"
+code = """In a circle the angle in the semicircle is right, that in a greater segment less than
+a right angle, and that in a less segment greater than a right angle; ..."""
+source = "euclid/resources/heath/enunciations.json"
+note = "Depends on I.32 (angle sum), hence on the parallel postulate."
+
+[[showcase.thales_semicircle.realizations]]
+system = "geocoq"
+ident = "thales_postulate"
+status = "axiom"
+lang = "coq"
+code = """Definition thales_postulate := forall A B C M,
+  Midpoint M A B -> Cong M A M C -> Per A C B."""
+source = "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/parallel_postulates.v#L198-L199"
+note = "Proved equivalent to Euclid's fifth postulate over neutral geometry — a postulate, not a lemma."
+
+[[showcase.thales_semicircle.realizations]]
+system = "mathlib4"
+ident = "EuclideanGeometry.Sphere.angle_eq_pi_div_two_iff_mem_sphere_of_isDiameter"
+status = "theorem"
+lang = "lean"
+code = """/-- **Thales' theorem**: The angle inscribed in a semicircle is a right angle. -/
+theorem angle_eq_pi_div_two_iff_mem_sphere_of_isDiameter {p₁ p₂ p₃ : P} {s : Sphere P}
+    (hd : s.IsDiameter p₁ p₃) :
+    ∠ p₁ p₂ p₃ = π / 2 ↔ p₂ ∈ s := by"""
+source = "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Angle/Sphere.lean#L78-L81"
+note = "Iff form, any dimension; proved from the inner product."
+
+[[showcase.thales_semicircle.realizations]]
+system = "alphageometry"
+ident = "rules.txt r20"
+status = "rule"
+lang = "text"
+code = """circle O A B C, coll O A C => perp A B B C"""
+source = "https://github.com/google-deepmind/alphageometry/blob/6777cb586cbb46beed28db12dc72c69770b68337/rules.txt"
+note = "An assumed inference rule."
+
+[[showcase.thales_semicircle.realizations]]
+system = "newclid"
+ident = "R20_DIAMETER_IS_HYPOTENUSE"
+status = "rule"
+lang = "python"
+code = """premises:    circle O A B C, coll O A C
+conclusions: perp A B B C"""
+source = "https://github.com/LMCRC/Newclid/blob/ac6550732a950564cf7614d605b5bf1eadd29701/newclid/src/newclid/all_rules.py"
+note = "Inherited from AlphaGeometry r20."
+
+[[showcase.thales_semicircle.realizations]]
+system = "leaneuclid"
+ident = "—"
+status = "absent"
+note = "LeanEuclid formalizes Book I only; III.31 is outside its benchmark."
+
+[[showcase.thales_semicircle.realizations]]
+system = "geometor_model"
+ident = "verify._build_thales_semicircle"
+status = "witness"
+lang = "python"
+code = """O, A, B, P = m.set_point(0, 0), m.set_point(-5, 0), m.set_point(5, 0), m.set_point(3, 4)
+m.assert_collinear(A, O, B, by="Given", label="AB is a diameter")
+m.assert_perpendicular(m.construct_line(A, P), m.construct_line(B, P), by="III.31")"""
+source = "codes/src/geometor/codes/verify.py"
+note = "Exact check on the 3-4-5 point of the radius-5 circle (L1)."
+
+
+[showcase.simson_line]
+title = "Simson line"
+euclid = ""
+statement = "The feet of the perpendiculars from a point on the circumcircle to the sides of a triangle are collinear."
+why = "Post-Euclidean and the native territory of algebraic provers. A rule engine can hard-code it, and Newclid then removes it again as redundant."
+
+[[showcase.simson_line.realizations]]
+system = "euclid"
+ident = "—"
+status = "absent"
+note = "Not in the Elements (Wallace, 1799)."
+
+[[showcase.simson_line.realizations]]
+system = "newclid"
+ident = "R45_SIMSONS_LINE_THEOREM"
+status = "rule"
+lang = "python"
+code = """premises:    cyclic A B C P, coll A L C, perp P L A C,
+             coll M B C, perp P M B C, coll N A B, perp P N A B
+conclusions: coll L M N"""
+source = "https://github.com/LMCRC/Newclid/blob/ac6550732a950564cf7614d605b5bf1eadd29701/newclid/src/newclid/all_rules.py#L521-L534"
+note = "Listed in TRIAGE_LEAVE_RULE_OUT: provable from other rules, so left out of the default rule set."
+
+[[showcase.simson_line.realizations]]
+system = "jgex"
+ident = "examples/Showcase/simson.gex"
+status = "generic"
+source = "https://github.com/kovzol/Java-Geometry-Expert/tree/5489aacb40afc91b5c5ca539db853cca216e1165/src/main/resources/docs/examples"
+note = "A classic Wu-method / Gröbner example; certified off the non-degeneracy conditions."
+
+[[showcase.simson_line.realizations]]
+system = "mathlib4"
+ident = "—"
+status = "absent"
+note = "No Simson line in Mathlib/Geometry/Euclidean at the surveyed commit."
+
+[[showcase.simson_line.realizations]]
+system = "geometor_model"
+ident = "verify._build_simson_line"
+status = "witness"
+lang = "python"
+code = """A, B, C, P = (5, 0), (-5, 0), (3, 4), (0, 5)   # on x² + y² = 25
+F1, F2, F3 = feet of perpendiculars from P to AB, BC, CA
+m.assert_concyclic(A, B, C, P, by="Given")
+m.assert_collinear(F1, F2, F3, by="Simson")"""
+source = "codes/src/geometor/codes/verify.py"
+note = "Exact on one cyclic quadrilateral (L1)."
+
+
+[showcase.pasch]
+title = "Pasch's axiom"
+euclid = ""
+statement = "A line entering a triangle through one side, and missing the vertices, leaves through another side."
+why = "The foundations themselves disagree. Euclid uses it silently, System E and Tarski assume it, a rule engine sees order only numerically, and exact algebra over a field cannot express it at all."
+
+[[showcase.pasch.realizations]]
+system = "euclid"
+ident = "—"
+status = "gap"
+note = "Used tacitly via the diagram; not among Euclid's postulates. Pasch made it explicit in 1882."
+
+[[showcase.pasch.realizations]]
+system = "leaneuclid"
+ident = "pasch_1"
+status = "axiom"
+lang = "lean"
+code = """axiom pasch_1: ∀ (a b c : Point) (L : Line),
+  (between a b c) ∧ (a.sameSide c L) → a.sameSide b L"""
+source = "https://github.com/loganrjmurphy/LeanEuclid/blob/33a72c0fa83914202532998a2e7b8771295c3cc7/SystemE/Theory/Inferences/Diagrammatic.lean#L145-L146"
+note = "One of System E's 36 diagrammatic inference axioms."
+
+[[showcase.pasch.realizations]]
+system = "geocoq"
+ident = "Tarski_neutral_dimensionless.inner_pasch"
+status = "axiom"
+lang = "coq"
+code = """inner_pasch : forall A B C P Q,
+   Bet A P C -> Bet B Q C ->
+   exists X, Bet P X B /\\ Bet Q X A;"""
+source = "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/tarski_axioms.v#L29-L31"
+note = "A field of the Tarski axiom class (inner form of Pasch)."
+
+[[showcase.pasch.realizations]]
+system = "alphageometry"
+ident = "—"
+status = "gap"
+note = "No order predicates in the rule language; side and betweenness facts come only from the numeric diagram."
+
+[[showcase.pasch.realizations]]
+system = "geometor_model"
+ident = "KNOWN_GAPS['pasch']"
+status = "gap"
+note = "No betweenness or half-plane predicate. Order needs an ordered field, which polynomial identities cannot express."

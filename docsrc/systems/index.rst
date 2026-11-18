@@ -1,5 +1,5 @@
 :navigation: header
-:order: 30
+:order: 4
 
 .. _systems-index:
 
@@ -8,6 +8,12 @@ Systems
 =======
 
 Deep architectural and forensic dossiers on all **11 formal, visual, and symbolic geometry systems** surveyed in **GEOMETOR Codes**—each audited directly from source code on disk down to exact file paths, line numbers, verification kernels, opus coverage, and live bugs.
+
+.. tip::
+
+   For a one-page, side-by-side view of each system's trusted core, see the
+   :doc:`system cards </foundations/cards/index>` and the :doc:`Truth Foundations </foundations/index>` overview.
+   The dossiers below are the long-form forensic evidence behind those cards.
 
 .. list-table::
    :widths: 26 30 22 22

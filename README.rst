@@ -13,16 +13,16 @@ GEOMETOR • codes
 Mission
 -------
 
-``geometor/codes`` is part of the interconnected `GEOMETOR <https://geometor.com>`_ semantic digital archive. It provides a comprehensive comparative audit of 11 formal, visual, and symbolic geometric languages—from Euclid and Oliver Byrne's chromatic visual pseudocode to modern interactive theorem provers (LeanEuclid, GeoCoq, mathlib4), neuro-symbolic engines (AlphaGeometry, Newclid, JGEX), and Clifford algebras (PGA/CGA). By analyzing these systems across 69 canonical topics and side-by-side Rosetta Stone benchmarks, the archive establishes an empirical foundation for automated theorem proving and symbolic geometry across the GEOMETOR corpus.
+``geometor/codes`` is part of the interconnected `GEOMETOR <https://geometor.com>`_ semantic digital archive. It compares 12 geometric systems—from Euclid's prose to interactive theorem provers (LeanEuclid, GeoCoq, mathlib4), neuro-symbolic engines (AlphaGeometry, Newclid, JGEX), computer algebra (SymPy, ``geometor.model``), Clifford algebras (kingdon, galgebra), and dynamic geometry (CindyJS)—by their **truth foundation**: what exists, what is assumed, how new truths are derived, what evidence is left behind, and what must be trusted. Each system is placed on a seven-layer **Trust Stack** and a **Truth Ladder** (L0 Plausible → L5 Foundational).
 
 Catalogs in This Archive
 ------------------------
 
-- `Opus Coverage Matrix (69 Topics x 11 Systems) <https://geometor.github.io/codes/opus/>`_ — Comprehensive comparative coverage matrix mapping 69 classical and modern geometric theorems across 11 formal systems.
-- `Rosetta Stone Benchmarks <https://geometor.github.io/codes/rosetta/>`_ — Canonical constructions and proofs implemented side-by-side across all 11 surveyed architectures with interactive vector figures.
-- `Syntax Field Guide & Symbol Decoder <https://geometor.github.io/codes/syntax/>`_ — Systematic decoder for 60 formal binders, predicates, blade operators, and Byrne chromatic glyphs.
+- `Truth Foundations <https://geometor.github.io/codes/foundations/>`_ — The Truth Ladder, Trust Stack, system cards, comparison axes, and graphs of bridges, lifts, and shared trusted components.
+- `Showcase <https://geometor.github.io/codes/showcase/>`_ — One theorem, many foundations: Euclid I.5, I.47, III.31, the Simson line, and Pasch side by side, with exact L1 and L2 witnesses.
+- `Principle Catalog <https://geometor.github.io/codes/catalog/>`_ — 667 candidate principles mined from 1,425 declarations, searchable by text, family, and system.
 - `Systems <https://geometor.github.io/codes/systems/>`_ — Architectural and forensic dossiers on 11 formal, visual, and neuro-symbolic geometry engines.
-- `Hierarchy <https://geometor.github.io/codes/hierarchy/>`_ — Eight foundational mathematical paradigms and structural hierarchy of geometric formalisms.
+- `Opus Coverage Matrix <https://geometor.github.io/codes/opus/>`_, `Rosetta Stone Benchmarks <https://geometor.github.io/codes/rosetta/>`_, `Syntax Field Guide <https://geometor.github.io/codes/syntax/>`_, and `Hierarchy <https://geometor.github.io/codes/hierarchy/>`_ — the original v0.1 comparative study.
 
 
 Repository Contents

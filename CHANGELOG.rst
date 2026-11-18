@@ -2,6 +2,29 @@
 Changelog
 =========
 
+0.3.0 (2026-11-18)
+------------------
+
+- **added** Truth Foundations model (`resources/foundations.toml`,
+  `geometor.codes.foundations`): a seven-layer Trust Stack and a Truth Ladder
+  (L0 Plausible → L5 Foundational, plus H Human) placing 12 systems, 12 trusted
+  components, 11 bridges, and 4 lifts, with `codes foundations` audit.
+- **added** Graphviz graph builders (`geometor.codes.graphs`): truth ladder,
+  per-system trust chains, who-trusts-what, bridges, ontology map, shared
+  principle overlap, and per-theorem realization graphs.
+- **added** Showcase (`resources/showcase.toml`): Euclid I.5, I.47, III.31, the
+  Simson line, and Pasch realized side by side with commit-pinned source excerpts.
+- **added** L2 generic witnesses in exact SymPy (`geometor.codes.generic`,
+  `codes generic`) for four showcase theorems; Pasch recorded as an order gap.
+- **changed** Site restructured around an interactive Atlas, system cards,
+  comparison axes, connections, and findings; the 667-principle catalog is now a
+  single searchable appendix (`codes build-site`; `build-principles` kept as an
+  alias). Legacy `docsrc/principles/` pages removed.
+- **changed** Header navigation leads with Foundations, Showcase, Catalog, and
+  Systems; Hierarchy, Syntax, Rosetta, and Opus moved to the footer.
+- **fixed** Sphinx build now reports 0 warnings (napoleon `ivar` duplicates,
+  heading lengths, docstring formatting).
+
 0.2.0 (2026-11-17)
 ------------------
 

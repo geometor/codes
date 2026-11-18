@@ -1,4 +1,4 @@
-:navigation: header
+:navigation: footer
 :order: 10
 
 .. _hierarchy-index:

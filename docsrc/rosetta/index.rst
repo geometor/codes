@@ -1,4 +1,4 @@
-:navigation: header
+:navigation: footer
 :order: 40
 
 .. _rosetta-index:

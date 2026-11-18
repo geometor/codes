@@ -29,8 +29,8 @@ def fingerprint_form(
     """Compute a structural fingerprint invariant under point relabeling.
 
     Args:
-        premises: Premise `Atom`s.
-        conclusions: Conclusion `Atom`s.
+        premises: Premise ``Atom`` objects.
+        conclusions: Conclusion ``Atom`` objects.
 
     Returns:
         A canonical string fingerprint, or ``""`` when both sides are empty.

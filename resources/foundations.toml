@@ -1,0 +1,781 @@
+# Truth foundations of the surveyed geometric systems.
+#
+# One record per system answers: why should I believe a statement this system
+# certifies? Every system is described with the same seven Trust Stack layers,
+# placed on one rung of the Truth Ladder, and linked to the trusted components
+# it depends on. This file is the single source of truth for the cards, graphs,
+# comparison table, and Atlas widget (see geometor.codes.present).
+#
+# Evidence: local source clones under _refs/ (commits pinned in
+# resources/mined/manifest.json and resources/linked/), audited 2026-11-18.
+# Approximate sizes are line counts of core engine files (`wc -l`), or flagged
+# estimates.
+
+[meta]
+thesis = "Every geometric system answers one question differently: why should I believe this is true? CODES compares systems by their truth foundation — what exists, what is assumed, how truths are derived, what evidence remains, and what must be trusted."
+
+# --- Truth Ladder (weak → strong claim). Order matters. -----------------------
+
+[levels.L0]
+name = "Plausible"
+claim = "looks true numerically"
+color = "#dcdcdc"
+
+[levels.L1]
+name = "Instance"
+claim = "true for this exact figure"
+color = "#9cc3f0"
+
+[levels.L2]
+name = "Generic"
+claim = "true off a degenerate set (NDG)"
+color = "#7fd1c7"
+
+[levels.L3]
+name = "Rule-closed"
+claim = "derivable from an assumed rule list"
+color = "#f6b26b"
+
+[levels.L4]
+name = "Axiom-checked"
+claim = "kernel-checked from geometric axioms"
+color = "#9fd8a8"
+
+[levels.L5]
+name = "Foundational"
+claim = "geometry derived; no geometric axioms"
+color = "#c5b3e6"
+
+[levels.H]
+name = "Human"
+claim = "checked by readers from postulates"
+color = "#e8d9b5"
+
+# --- Trusted components --------------------------------------------------------
+
+[trusted.reader]
+name = "Human readers"
+kind = "human"
+size = "2,300 years"
+note = "Proofs are checked by people; tacit diagram reasoning (order, continuity) is accepted without statement."
+
+[trusted.lean_kernel]
+name = "Lean 4 kernel"
+kind = "kernel"
+size = "~8k lines C++ (estimate)"
+note = "Type-checks dependent type theory terms; independent re-checkers exist (lean4lean, nanoda, lean4checker)."
+
+[trusted.smt_verif]
+name = "SMT_VERIF oracle"
+kind = "solver"
+size = "z3/cvc5 + hand-written E theory"
+note = "LeanEuclid SystemE/Meta/Smt/Solver.lean:44-54 — `axiom SMT_VERIF (P : Prop) : P` admits any goal the solver reports unsat; no proof reconstruction."
+
+[trusted.coq_kernel]
+name = "Coq kernel"
+kind = "kernel"
+size = "~10-30k lines OCaml (estimate)"
+note = "Checks CIC proof terms; GeoCoq's reflective tactics (ColR, CongR) also trust the VM conversion check."
+
+[trusted.ag_engine]
+name = "AG DD+AR engine"
+kind = "engine"
+size = "~9.7k lines Python"
+note = "Forward chaining over 43 rules plus Gaussian elimination over exact Fractions; premise selection uses float linprog."
+
+[trusted.newclid_engine]
+name = "Newclid DDARN"
+kind = "engine"
+size = "~15.4k lines Python (+~15k C++ Yuclid)"
+note = "Restructured AG loop; AR tables via sympy.solve; optional Yuclid C++ solver."
+
+[trusted.numeric_diagram]
+name = "Numeric diagram"
+kind = "float"
+size = "tol 1e-12 (AG) · rel 1e-3 (Newclid)"
+note = "ncoll / npara / nperp / sameside premises are decided numerically on a random float diagram, not deduced."
+
+[trusted.jgex_prover]
+name = "JGEX gprover"
+kind = "engine"
+size = "~38k lines Java"
+note = "GDD, full-angle, area, Wu characteristic sets, Gröbner bases over BigInteger polynomials."
+
+[trusted.sympy_cas]
+name = "SymPy simplification"
+kind = "cas"
+size = "core heuristics + mpmath"
+note = "simplify / expand / equals heuristics; sympy.geometry's affine_rank uses a 2-digit numeric zero test (point.py:333)."
+
+[trusted.model_zero_test]
+name = "model zero_test"
+kind = "cas"
+size = "~3.5k lines + SymPy"
+note = "Tiered oracle (algebra.py:160-253): exact expansion, field arithmetic, minimal_polynomial — plus a numeric acceptance branch |evalf(80)| < 1e-65 for large expressions."
+
+[trusted.ga_codegen]
+name = "GA product engines"
+kind = "cas"
+size = "kingdon ~5.2k · galgebra ~9.5k lines"
+note = "Clifford products expanded over SymPy; equality via expand/simplify (galgebra mv.py:479) or structural comparison (kingdon)."
+
+[trusted.ieee_float]
+name = "IEEE-754 floats"
+kind = "float"
+size = "eps 1e-10"
+note = "All computation in double precision; CindyJS's prover keeps conjectures that survive 3 random perturbations."
+
+# --- Systems --------------------------------------------------------------------
+
+[systems.euclid]
+name = "Euclid, Elements (Heath)"
+short = "Euclid"
+ladder = "H"
+archetype = "synthetic-human"
+core = true
+summary = "Believe it because it follows, step by step, from five postulates and five common notions — as checked by readers, with the diagram doing silent work."
+upstream = "https://geometor.github.io/euclid"
+primitives = ["Point", "Line", "Circle", "Angle", "Area"]
+trusts = ["reader"]
+findings = [
+  "Order and continuity facts (Pasch, circle–circle intersection in I.1) are read off the diagram, never stated.",
+  "Equality of areas (I.35–I.47) is a primitive notion, not a number.",
+]
+refs = [
+  { label = "Heath edition (GEOMETOR)", url = "https://geometor.github.io/euclid" },
+]
+
+[systems.euclid.stack]
+ontology = "Points, straight lines, circles, angles, and plane figures."
+language = "Greek prose enunciations: protasis, ekthesis, diorismos, construction, proof, conclusion."
+assumptions = "5 postulates, 5 common notions, 23 definitions (Book I)."
+engine = "Human deduction citing earlier propositions; constructions by ruler and compass."
+certificate = "The written proof."
+checker = "The reader."
+semantics = "Intended: the physical plane; modern reading: a Euclidean plane over a Euclidean field (Hilbert, Tarski)."
+
+[systems.euclid.axes]
+logic = "Informal deductive"
+exactness = "Exact (no numbers)"
+decidable = "None"
+diagram = "Essential and tacit"
+degeneracy = "Ignored"
+tcb_size = "Human"
+
+[systems.euclid.example]
+lang = "text"
+code = """I.5  In isosceles triangles the angles at the base are equal to one another, and, if
+     the equal straight lines be produced further, the angles under the base will be
+     equal to one another."""
+source = "euclid/resources/heath/enunciations.json"
+
+
+[systems.leaneuclid]
+name = "LeanEuclid (System E in Lean 4)"
+short = "LeanEuclid"
+ladder = "L3"
+archetype = "synthetic-formal"
+core = true
+summary = "Believe it because Lean's kernel checked every rule application from System E's axioms — except that premise-discharging steps are admitted by an SMT oracle axiom."
+upstream = "https://github.com/loganrjmurphy/LeanEuclid"
+dossier = "systems/leaneuclid"
+primitives = ["Point", "Line", "Circle", "Segment", "Angle", "Triangle", "Betweenness", "Real number"]
+trusts = ["lean_kernel", "smt_verif"]
+findings = [
+  "euclid_finish closes goals with `axiom SMT_VERIF (P : Prop) : P` (SystemE/Meta/Smt/Solver.lean:44-54) — inconsistent as a Lean axiom; solver timeouts fall back to `sorry`.",
+  "The SMT background theory (Meta/Smt/EuclidTheory.lean, ~111 asserts) is hand-written, not derived from the Lean axioms.",
+  "104 `axiom` declarations under SystemE/Theory: 3 sorts + 101 rules (36 diagrammatic, 23 transfer, 21+7+2 construction, 11 metric, 1 superposition).",
+  "Book/Prop47.lean isolates orientation lemmas Euclid's Bride's Chair leaves implicit.",
+]
+refs = [
+  { label = "Murphy et al., Autoformalizing Euclidean Geometry (ICML 2024)", url = "https://arxiv.org/abs/2405.17216" },
+  { label = "Avigad, Dean, Mumma, A formal system for Euclid's Elements (RSL 2009)", url = "https://doi.org/10.1017/S1755020309990098" },
+  { label = "Solver.lean SMT_VERIF", url = "https://github.com/loganrjmurphy/LeanEuclid/blob/33a72c0fa83914202532998a2e7b8771295c3cc7/SystemE/Meta/Smt/Solver.lean#L44-L54" },
+]
+
+[systems.leaneuclid.stack]
+ontology = "Axiomatized sorts Point, Line, Circle (+ Segment, Angle, Triangle); opaque relations onLine, sameSide, between, onCircle; magnitudes in ℝ."
+language = "Lean 4 propositions in System E syntax: ∀ a b c : Point, formTriangle … → ∠ a:b:c = ∠ a:c:b."
+assumptions = "System E as 101 Lean axiom declarations (construction, diagrammatic, metric, transfer, superposition) + hand-written SMT theory."
+engine = "euclid_apply (kernel-checked rule instance) with premises closed by euclid_finish → z3/cvc5."
+certificate = "Lean proof term with opaque SMT_VERIF leaves."
+checker = "Lean 4 kernel + SMT_VERIF oracle (solver, translator, hand-written theory)."
+semantics = "Avigad–Dean–Mumma: E is sound and complete for ruler-and-compass Euclidean planes (not formalized in LeanEuclid)."
+
+[systems.leaneuclid.axes]
+logic = "Dependent type theory + axioms"
+exactness = "Exact (symbolic)"
+decidable = "SMT on the diagrammatic fragment (oracle)"
+diagram = "Formalized: 36 diagrammatic + 23 transfer axioms"
+degeneracy = "Explicit hypotheses (formTriangle, a ≠ b)"
+tcb_size = "Lean kernel + SMT stack (unbounded)"
+
+[systems.leaneuclid.example]
+lang = "lean"
+code = """theorem proposition_5 : ∀ (a b c d e : Point) (AB BC AC : Line),
+  formTriangle a b c AB BC AC ∧ (|(a─b)| = |(a─c)|) ∧
+  (between a b d) ∧ (between a c e) →
+  (∠ a:b:c = ∠ a:c:b) ∧ (∠ c:b:d = ∠ b:c:e) :="""
+source = "https://github.com/loganrjmurphy/LeanEuclid/blob/33a72c0fa83914202532998a2e7b8771295c3cc7/Book/Prop05.lean#L7-L10"
+
+
+[systems.mathlib4]
+name = "mathlib4 Euclidean geometry"
+short = "mathlib4"
+ladder = "L5"
+archetype = "analytic-formal"
+core = true
+summary = "Believe it because geometry is defined from real inner-product spaces and every theorem is a kernel-checked consequence of Lean's logic alone."
+upstream = "https://github.com/leanprover-community/mathlib4"
+dossier = "systems/mathlib4"
+primitives = ["Point", "Vector", "Affine subspace", "Sphere", "Simplex", "Real number"]
+trusts = ["lean_kernel"]
+findings = [
+  "Zero `axiom`, `sorry`, or `native_decide` in Geometry/Euclidean and LinearAlgebra/AffineSpace.",
+  "Junk values make statements total: angle 0 x = π/2, so pons asinorum needs no distinctness hypothesis.",
+  "Dimension-polymorphic results (Monge point, sphere power, inversion) but no radical axis, cross ratio, Menelaus, Pappus, or Desargues.",
+]
+refs = [
+  { label = "Mathlib/Geometry/Euclidean", url = "https://github.com/leanprover-community/mathlib4/tree/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean" },
+]
+
+[systems.mathlib4.stack]
+ontology = "Real inner-product space V acting on a metric space P (NormedAddTorsor); AffineSubspace, Sphere, Affine.Simplex."
+language = "Lean 4 propositions over P: dist p₁ p₂ = dist p₁ p₃ → ∠ p₁ p₂ p₃ = ∠ p₁ p₃ p₂."
+assumptions = "None geometric: only Lean's logical axioms (propext, choice, Quot.sound); ℝ is constructed."
+engine = "Tactics (simp, linarith, nlinarith, field_simp, linear_combination) producing kernel terms."
+certificate = "Lean proof term."
+checker = "Lean 4 kernel only."
+semantics = "By construction: any real inner-product affine space, including ℝⁿ."
+
+[systems.mathlib4.axes]
+logic = "Dependent type theory"
+exactness = "Exact (real analysis)"
+decidable = "Tactic search; kernel checks result"
+diagram = "None"
+degeneracy = "Junk values or explicit hypotheses"
+tcb_size = "~8k lines (kernel)"
+
+[systems.mathlib4.example]
+lang = "lean"
+code = """/-- **Isosceles Triangle Theorem**: Pons asinorum, angle-at-point form. -/
+theorem angle_eq_angle_of_dist_eq {p₁ p₂ p₃ : P} (h : dist p₁ p₂ = dist p₁ p₃) :
+    ∠ p₁ p₂ p₃ = ∠ p₁ p₃ p₂ := by"""
+source = "https://github.com/leanprover-community/mathlib4/blob/b97762998b0ee14aea85f37006d06dfff25a6afa/Mathlib/Geometry/Euclidean/Triangle.lean#L280-L282"
+
+
+[systems.geocoq]
+name = "GeoCoq"
+short = "GeoCoq"
+ladder = "L4"
+archetype = "synthetic-formal"
+core = true
+summary = "Believe it because the Coq kernel checked it from Tarski's (or Hilbert's, or Euclid's) axioms — and GeoCoq proves those axiom systems interpret one another and hold in ℝ²."
+upstream = "https://github.com/GeoCoq/GeoCoq"
+dossier = "systems/geocoq"
+primitives = ["Point", "Betweenness", "Congruence", "Line"]
+trusts = ["coq_kernel"]
+findings = [
+  "No Coq `Axiom`, `Parameter`, or `Admitted` in theories/: axiom systems are type-class fields, so every theorem is relative to its class.",
+  "Mutual interpretation Tarski ⇔ Hilbert ⇔ Euclid (Beeson axioms); Book I proofs in Elements/OriginalProofs.",
+  "35 parallel-postulate variants proved equivalent in the Euclidean context; Thales' theorem is one of them.",
+  "Models: Tarski's axioms hold in coordinate spaces over any real closed field (Algebraic/POF_to_Tarski.v).",
+]
+refs = [
+  { label = "Boutry, Gries, Narboux et al., GeoCoq", url = "https://geocoq.github.io/GeoCoq/" },
+  { label = "tarski_axioms.v", url = "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Axioms/tarski_axioms.v" },
+]
+
+[systems.geocoq.stack]
+ontology = "Tarski: one sort of points with Bet (3-ary) and Cong (4-ary); Hilbert: points, lines, planes with incidence, order, congruence."
+language = "Coq propositions inside an axiom-class context: forall A B C, isosceles A B C -> CongA A B C A C B."
+assumptions = "Axiom classes: Tarski neutral (8) + dimension + Euclid + continuity options; Hilbert classes; Beeson's Euclid axioms."
+engine = "Ltac proofs; reflective deciders ColR / CongR (vm_compute); nsatz (Gröbner) in coordinate chapters."
+certificate = "Coq proof term (.vo)."
+checker = "Coq kernel (+ VM conversion for reflective steps)."
+semantics = "Formal models: Tarski ⇐ ℝⁿ over any real closed field; independence counter-models."
+
+[systems.geocoq.axes]
+logic = "Calculus of Inductive Constructions"
+exactness = "Exact (synthetic)"
+decidable = "Reflective Col/Cong deciders; nsatz"
+diagram = "None (diagram facts are proved)"
+degeneracy = "Explicit (~Col, A <> B); degenerate-tolerant Bet"
+tcb_size = "~10-30k lines (kernel)"
+
+[systems.geocoq.example]
+lang = "coq"
+code = """Lemma proposition_05 :
+   forall A B C,
+   isosceles A B C ->
+   CongA A B C A C B."""
+source = "https://github.com/GeoCoq/GeoCoq/blob/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Elements/OriginalProofs/proposition_05.v#L8-L11"
+
+
+[systems.alphageometry]
+name = "AlphaGeometry"
+short = "AlphaGeometry"
+ladder = "L3"
+archetype = "rule-engine"
+core = true
+summary = "Believe it because a deduction engine derived it from 43 assumed rules — with side conditions (non-collinear, same side) read off a random numeric diagram."
+upstream = "https://github.com/google-deepmind/alphageometry"
+dossier = "systems/alphageometry-newclid"
+primitives = ["Point", "Predicate"]
+trusts = ["ag_engine", "numeric_diagram"]
+findings = [
+  "ncoll, npara, nperp, and sameside premises are decided numerically (dd.py:864-892), not deduced.",
+  "build_problem resamples the diagram until the goal holds numerically (graph.py:500-523).",
+  "The AR algebra is linear over angle/ratio/distance tables, so a² + b² = c² is not expressible.",
+  "The language model only proposes auxiliary points; it is outside the trusted core.",
+]
+refs = [
+  { label = "Trinh et al., Solving olympiad geometry without human demonstrations (Nature 2024)", url = "https://doi.org/10.1038/s41586-023-06747-5" },
+]
+
+[systems.alphageometry.stack]
+ontology = "Named points with predicates (coll, para, perp, cong, eqangle, eqratio, cyclic, midp, simtri); hidden float coordinates."
+language = "Construction clauses and a goal: a b c = triangle a b c; h = orthocenter h a b c; ? perp a h b c."
+assumptions = "43 Horn rules (rules.txt) + ~71 construction definitions (defs.txt)."
+engine = "DD+AR: forward chaining to a fixpoint + Gaussian elimination over exact Fractions; LM proposes auxiliaries."
+certificate = "Deduction trace naming the rule for each step."
+checker = "Python engine + rule soundness + numeric diagram (tol 1e-12)."
+semantics = "The real Euclidean plane, sampled as one random float diagram; directed angles mod π."
+
+[systems.alphageometry.axes]
+logic = "Horn-clause forward chaining"
+exactness = "Exact algebra; numeric side conditions"
+decidable = "Saturation over a finite rule set"
+diagram = "Essential: decides side conditions"
+degeneracy = "Numeric filters; no NDG output"
+tcb_size = "~9.7k lines Python"
+
+[systems.alphageometry.example]
+lang = "text"
+code = """cong O A O B, ncoll O A B => eqangle O A A B A B O B"""
+source = "https://github.com/google-deepmind/alphageometry/blob/6777cb586cbb46beed28db12dc72c69770b68337/rules.txt"
+
+
+[systems.newclid]
+name = "Newclid"
+short = "Newclid"
+ladder = "L3"
+archetype = "rule-engine"
+core = false
+summary = "Believe it because the DDARN engine derived it from a curated rule set descended from AlphaGeometry — again with numerically checked side conditions."
+upstream = "https://github.com/LMCRC/Newclid"
+dossier = "systems/alphageometry-newclid"
+primitives = ["Point", "Predicate"]
+trusts = ["newclid_engine", "sympy_cas", "numeric_diagram"]
+findings = [
+  "87 live rules (r00–r42 from AlphaGeometry); about 58 active by default after DEACTIVATED and TRIAGE sets.",
+  "R57 Pythagoras is deactivated; R45 Simson is left out as provable from other rules.",
+  "Numeric tolerance REL_TOL = 0.001 (numerical/__init__.py) — far looser than AG's 1e-12.",
+]
+refs = [
+  { label = "Newclid: a user-friendly replacement for AlphaGeometry (arXiv 2411.11938)", url = "https://arxiv.org/abs/2411.11938" },
+]
+
+[systems.newclid.stack]
+ontology = "AG predicates plus metric ones (pythagoras, obtuse_angle, sameclock)."
+language = "JGEX/AG-style construction text wrapped in Python (JGEXFormulation.from_text)."
+assumptions = "87 Rule objects; DEFAULT_RULES = ALL − DEACTIVATED − TRIAGE (~58)."
+engine = "DDARN: rule matching + sympy.solve AR tables; optional Yuclid C++ solver."
+certificate = "Justification graph and written proof."
+checker = "Python + SymPy + rule soundness + numeric checks (rel tol 1e-3)."
+semantics = "As AlphaGeometry: one float diagram of the real plane."
+
+[systems.newclid.axes]
+logic = "Horn-clause forward chaining"
+exactness = "Exact algebra; numeric side conditions"
+decidable = "Saturation over a finite rule set"
+diagram = "Essential: every predicate checked numerically first"
+degeneracy = "Numeric filters"
+tcb_size = "~15.4k lines Python (+15k C++)"
+
+[systems.newclid.example]
+lang = "python"
+code = """R45_SIMSONS_LINE_THEOREM = Rule(
+    id="r45",
+    premises_txt=("cyclic A B C P", "coll A L C", "perp P L A C",
+                  "coll M B C", "perp P M B C", "coll N A B", "perp P N A B"),
+    conclusions_txt=("coll L M N",),
+)"""
+source = "https://github.com/LMCRC/Newclid/blob/ac6550732a950564cf7614d605b5bf1eadd29701/newclid/src/newclid/all_rules.py#L521-L534"
+
+
+[systems.jgex]
+name = "Java Geometry Expert (JGEX)"
+short = "JGEX"
+ladder = "L2"
+archetype = "algebraic-decision"
+core = true
+summary = "Believe it because the hypothesis polynomials reduce the conclusion to zero (Wu / Gröbner) — true generically, provided the printed non-degeneracy conditions hold."
+upstream = "https://github.com/kovzol/Java-Geometry-Expert"
+dossier = "systems/jgex-area-method"
+primitives = ["Point", "Predicate", "Polynomial"]
+trusts = ["jgex_prover"]
+findings = [
+  "Five methods: GDD deductive database (43 rules), full-angle (29 rules), area, Wu characteristic sets, Gröbner bases.",
+  "Wu prints the pseudo-remainder chain ending in 'Remainder = 0' together with NDG conditions.",
+  "Area.java is an unfinished port; its GUI tab is commented out (PanelProve.java).",
+]
+refs = [
+  { label = "Chou, Gao, Zhang, Machine Proofs in Geometry (1994)", url = "https://doi.org/10.1142/2196" },
+]
+
+[systems.jgex.stack]
+ontology = "Constructed points; hypotheses become polynomials with BigInteger coefficients."
+language = "Text problems: POINT A B C O D … CIRCUMCENTER O A B C … SHOW: COLLINEAR P Q R."
+assumptions = "Field axioms over ℂ (Wu / Gröbner); GDD and full-angle rule sets for readable proofs."
+engine = "Pseudo-division (Wu), Gröbner reduction, area-method elimination, forward chaining (GDD)."
+certificate = "Remainder-zero chain + NDG list; readable proof trees for GDD / full-angle."
+checker = "JGEX Java prover (~38k lines)."
+semantics = "Generic truth over an algebraically closed field, conditional on NDGs."
+
+[systems.jgex.axes]
+logic = "Polynomial ideal membership"
+exactness = "Exact (BigInteger polynomials)"
+decidable = "Yes, for equational statements (generic truth)"
+diagram = "Input and display only"
+degeneracy = "Explicit NDG conditions"
+tcb_size = "~38k lines Java"
+
+[systems.jgex.example]
+lang = "text"
+code = """POINT A B C O D R P Q
+CIRCUMCENTER O A B C
+ON_CIRCLE D O A
+FOOT R D A B ...
+SHOW: COLLINEAR P Q R"""
+source = "https://github.com/kovzol/Java-Geometry-Expert/tree/5489aacb40afc91b5c5ca539db853cca216e1165/src/main/resources/docs/examples/3_JAR"
+
+
+[systems.sympy]
+name = "SymPy geometry"
+short = "SymPy"
+ladder = "L1"
+archetype = "analytic-cas"
+core = false
+summary = "Believe it because exact arithmetic on concrete coordinates evaluates the predicate to True — subject to SymPy's simplification heuristics."
+upstream = "https://github.com/sympy/sympy"
+dossier = "systems/sympy-geometry"
+primitives = ["Point", "Line", "Circle", "Polygon"]
+trusts = ["sympy_cas"]
+findings = [
+  "Point.affine_rank (behind is_collinear) zero-tests with abs(x.n(2)) < 1e-12 — a 2-digit numeric test, marked 'XXX fragile' (point.py:333-334).",
+  "Float inputs are silently rationalized via nsimplify (point.py:165-168).",
+  "Triangle.excenters has a live formula bug (polygon.py:2714-2726).",
+]
+refs = [
+  { label = "sympy.geometry 1.14.0", url = "https://docs.sympy.org/latest/modules/geometry/index.html" },
+]
+
+[systems.sympy.stack]
+ontology = "Coordinate entities: Point, Line, Segment, Circle, Polygon over SymPy expressions."
+language = "Python predicates: Point.is_collinear(A, B, C), Point.is_concyclic(…)."
+assumptions = "Field arithmetic over exact SymPy numbers."
+engine = "Expression evaluation; simplify / equals; rank with a numeric zero test."
+certificate = "A boolean."
+checker = "SymPy simplification heuristics + mpmath."
+semantics = "One concrete figure (or symbolic coordinates)."
+
+[systems.sympy.axes]
+logic = "Evaluation"
+exactness = "Exact inputs; heuristic zero tests"
+decidable = "Heuristic (simplify)"
+diagram = "The object is the computation"
+degeneracy = "Visible in the instance"
+tcb_size = "~12k lines + SymPy core"
+
+[systems.sympy.example]
+lang = "python"
+code = """from sympy import Point
+Point.is_collinear(Point(0, 0), Point(1, 1), Point(2, 2))   # True"""
+source = "https://github.com/sympy/sympy/blob/master/sympy/geometry/point.py"
+
+
+[systems.geometor_model]
+name = "geometor.model"
+short = "geometor.model"
+ladder = "L1"
+archetype = "analytic-cas"
+core = true
+summary = "Believe it because the figure is built exactly — algebraic coordinates from ruler-and-compass intersections — and every asserted relation reduces to zero."
+upstream = "https://github.com/geometor/model"
+dossier = "systems/geometor-model"
+primitives = ["Point", "Line", "Circle", "Polygon", "Algebraic number"]
+trusts = ["model_zero_test", "sympy_cas"]
+findings = [
+  "zero_test is the single truth oracle for every assert_*; `by=` citations are recorded, not checked.",
+  "zero_test is exact on most paths (expansion, ℚ(φ)/ℚ(√φ) field arithmetic, minimal_polynomial) but accepts |evalf(80)| < 1e-65 for large constant expressions (algebra.py:247-251) — a candidate for a strict mode.",
+  "A witness certifies one figure (L1); with free symbolic coordinates the same check certifies generic truth (L2) — see the showcase generic witnesses.",
+  "No order predicates (betweenness, same side): Pasch-type statements are out of reach.",
+]
+refs = [
+  { label = "geometor.model", url = "https://github.com/geometor/model" },
+  { label = "algebra.zero_test", url = "https://github.com/geometor/model/blob/0dbd464e6e5660e2882febd20bb559f8ade1d10e/src/geometor/model/algebra.py#L160-L253" },
+]
+
+[systems.geometor_model.stack]
+ontology = "Exact SymPy points, lines, circles, polygons in a construction DAG; coordinates in ℚ, ℚ(√d), ℚ(φ), radical towers."
+language = "Python construction + assertions: m.assert_collinear(A, B, C, by=\"I.1\")."
+assumptions = "Exact algebraic numbers; closed-form ruler-and-compass intersections."
+engine = "Exact construction + quadrance / spread / determinant identities reduced by zero_test."
+certificate = "Step ledger of assertions (citations unchecked) and the exact figure."
+checker = "zero_test (exact tiers + numeric acceptance branch) + SymPy."
+semantics = "One exact figure in ℝ² over real algebraic numbers."
+
+[systems.geometor_model.axes]
+logic = "Evaluation on an exact instance"
+exactness = "Exact (one numeric acceptance branch)"
+decidable = "Yes for constant algebraic expressions (minimal polynomial)"
+diagram = "The figure is the proof object"
+degeneracy = "Visible in the instance"
+tcb_size = "~3.5k lines + SymPy"
+
+[systems.geometor_model.example]
+lang = "python"
+code = """m = Model("I.5", auto_intersect=False)
+A, B, C = m.set_point(2, 3), m.set_point(0, 0), m.set_point(4, 0)
+m.assert_equal((A, B), (A, C), by="Given")
+m.assert_spread_equal((A, B, C), (A, C, B), by="I.5")"""
+source = "codes/src/geometor/codes/verify.py"
+
+
+[systems.kingdon]
+name = "kingdon (geometric algebra)"
+short = "kingdon"
+ladder = "L2"
+archetype = "geometric-algebra"
+core = false
+summary = "Believe it because the identity expands to zero in the Clifford algebra — universally, when computed symbolically without division."
+upstream = "https://github.com/tBuLi/kingdon"
+dossier = "systems/pga-cga"
+primitives = ["Multivector"]
+trusts = ["ga_codegen", "sympy_cas"]
+findings = [
+  "Generated product code over exact RationalPolynomial; default coefficient simplifier is sympy.simplify(sympy.expand(v)).",
+  "2D CGA: circle power is -2*(kappa | P), circumcenter C * ni * ~C, inversion C >> P.",
+]
+refs = [
+  { label = "kingdon", url = "https://github.com/tBuLi/kingdon" },
+]
+
+[systems.kingdon.stack]
+ontology = "Multivectors of Cl(p, q, r): points, lines, circles as blades (PGA / CGA)."
+language = "Python operators: alg = Algebra(3, 0, 1); b.cp(v); a ^ b; C >> P."
+assumptions = "Clifford algebra axioms with a diagonal metric signature."
+engine = "Code-generated geometric products over symbolic or numeric coefficients."
+certificate = "An expression (zero or not)."
+checker = "kingdon codegen + SymPy simplify."
+semantics = "PGA / CGA models of the Euclidean plane or space."
+
+[systems.kingdon.axes]
+logic = "Algebraic identity"
+exactness = "Exact symbolic or float"
+decidable = "Polynomial expansion (no division)"
+diagram = "None"
+degeneracy = "Appears as zero / ideal elements"
+tcb_size = "~5.2k lines + SymPy"
+
+[systems.kingdon.example]
+lang = "python"
+code = """alg = Algebra(3, 0, 1)
+b = alg.bivector(name='b'); v = alg.vector(name='v')
+b.cp(v)"""
+source = "https://github.com/tBuLi/kingdon/blob/master/README.rst"
+
+
+[systems.galgebra]
+name = "galgebra (geometric algebra)"
+short = "galgebra"
+ladder = "L2"
+archetype = "geometric-algebra"
+core = false
+summary = "Believe it because the multivector difference simplifies to zero for an arbitrary (possibly symbolic) metric — as far as SymPy's simplify can tell."
+upstream = "https://github.com/pygae/galgebra"
+dossier = "systems/pga-cga"
+primitives = ["Multivector", "Metric"]
+trusts = ["ga_codegen", "sympy_cas"]
+findings = [
+  "Mv.__eq__ computes (self - A).expand().simplify() and compares with zero (mv.py:479-483).",
+  ".dual() fails for degenerate metrics (PGA, I² = 0); no regressive join.",
+]
+refs = [
+  { label = "galgebra", url = "https://github.com/pygae/galgebra" },
+]
+
+[systems.galgebra.stack]
+ontology = "Multivectors over Ga with an arbitrary metric tensor and coordinates; geometric calculus operators."
+language = "Python: o3d = Ga('e', g=[1, 1, 1], coords=symbols('x y z', real=True))."
+assumptions = "Clifford algebra axioms for the metric g."
+engine = "Symbolic geometric products; equality by expand + simplify."
+certificate = "An expression."
+checker = "galgebra core + SymPy simplify."
+semantics = "Geometric algebra over a symbolic metric."
+
+[systems.galgebra.axes]
+logic = "Algebraic identity"
+exactness = "Exact symbolic"
+decidable = "Heuristic (simplify)"
+diagram = "None"
+degeneracy = "Degenerate metrics unsupported in dual"
+tcb_size = "~9.5k lines + SymPy"
+
+[systems.galgebra.example]
+lang = "python"
+code = """o3d = Ga('e', g=[1, 1, 1], coords=symbols('x,y,z', real=True))"""
+source = "https://github.com/pygae/galgebra/blob/master/README.md"
+
+
+[systems.cindyjs]
+name = "CindyJS"
+short = "CindyJS"
+ladder = "L0"
+archetype = "numeric-interactive"
+core = false
+summary = "Believe it because it keeps looking true while you drag — floating-point projective geometry with randomized conjecture checks, and no proof."
+upstream = "https://github.com/CindyJS/CindyJS"
+dossier = "systems/cindyjs"
+primitives = ["Homogeneous coords", "Point", "Line", "Conic"]
+trusts = ["ieee_float"]
+findings = [
+  "The 'prover' guesses incidences within 1e-6, perturbs free elements 3 times, and keeps survivors (libgeo/Prover.js).",
+  "Complex tracing keeps branches continuous across singularities (libgeo/Tracing.js).",
+]
+refs = [
+  { label = "CindyJS", url = "https://cindyjs.org" },
+]
+
+[systems.cindyjs.stack]
+ontology = "Homogeneous complex projective coordinates (ℂP²): points, lines, conics."
+language = "Declarative scene ({type: \"Meet\", args: [\"a\", \"b\"]}) or CindyScript: meet(join(A, B), …)."
+assumptions = "IEEE-754 arithmetic (eps 1e-10, epsbig 1e-6)."
+engine = "Numeric construction with complex tracing; randomized conjecture checking."
+certificate = "None."
+checker = "Floating-point arithmetic."
+semantics = "Continuous configuration space over ℂP²."
+
+[systems.cindyjs.axes]
+logic = "None (numeric evidence)"
+exactness = "Float"
+decidable = "Probabilistic"
+diagram = "The diagram is the system"
+degeneracy = "Singularity heuristics in tracing"
+tcb_size = "~5.8k lines JS (float)"
+
+[systems.cindyjs.example]
+lang = "javascript"
+code = """{ name: "D", type: "Meet", args: ["a", "b"] }"""
+source = "https://github.com/CindyJS/CindyJS"
+
+
+# --- Bridges between systems -----------------------------------------------------
+
+[[bridges]]
+source = "geocoq"
+target = "euclid"
+kind = "formalizes"
+label = "Book I (Beeson–Narboux–Wiedijk)"
+evidence = "https://github.com/GeoCoq/GeoCoq/tree/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Elements/OriginalProofs"
+
+[[bridges]]
+source = "leaneuclid"
+target = "euclid"
+kind = "formalizes"
+label = "Book I 1–48 in System E"
+evidence = "https://github.com/loganrjmurphy/LeanEuclid/tree/33a72c0fa83914202532998a2e7b8771295c3cc7/Book"
+
+[[bridges]]
+source = "mathlib4"
+target = "leaneuclid"
+kind = "builds_on"
+label = "supplies ℝ only (sorts axiomatized)"
+evidence = "https://github.com/loganrjmurphy/LeanEuclid/blob/33a72c0fa83914202532998a2e7b8771295c3cc7/SystemE/Theory/Sorts/Primitives.lean"
+
+[[bridges]]
+source = "alphageometry"
+target = "newclid"
+kind = "lineage"
+label = "rules r00–r42"
+evidence = "https://github.com/LMCRC/Newclid/blob/ac6550732a950564cf7614d605b5bf1eadd29701/newclid/src/newclid/all_rules.py"
+
+[[bridges]]
+source = "jgex"
+target = "alphageometry"
+kind = "lineage"
+label = "construction language · jgex_ag_231"
+evidence = "https://github.com/google-deepmind/alphageometry/blob/6777cb586cbb46beed28db12dc72c69770b68337/jgex_ag_231.txt"
+
+[[bridges]]
+source = "jgex"
+target = "newclid"
+kind = "lineage"
+label = "JGEXFormulation"
+evidence = "https://github.com/LMCRC/Newclid"
+
+[[bridges]]
+source = "sympy"
+target = "geometor_model"
+kind = "builds_on"
+label = "sympy.geometry + exact zero_test"
+evidence = "https://github.com/geometor/model"
+
+[[bridges]]
+source = "galgebra"
+target = "kingdon"
+kind = "translates"
+label = "interop Cl(p,q,r) factory"
+evidence = "https://github.com/pygae/galgebra/blob/master/galgebra/interop/kingdon.py"
+
+[[bridges]]
+source = "geometor_model"
+target = "euclid"
+kind = "benchmark"
+label = "exact witnesses of propositions"
+evidence = ""
+
+[[bridges]]
+source = "geometor_model"
+target = "mathlib4"
+kind = "translates"
+label = "certificate export (linear_combination)"
+status = "proposed"
+
+[[bridges]]
+source = "alphageometry"
+target = "mathlib4"
+kind = "proves"
+label = "prove the 43 rules as lemmas"
+status = "proposed"
+
+# --- Lifts: routes up the Truth Ladder ---------------------------------------------
+
+[[lifts]]
+system = "geometor_model"
+from_level = "L1"
+to_level = "L2"
+via = "symbolic parameters"
+status = "partial"
+
+[[lifts]]
+system = "geometor_model"
+from_level = "L1"
+to_level = "L5"
+via = "Lean certificate export"
+status = "proposed"
+
+[[lifts]]
+system = "leaneuclid"
+from_level = "L3"
+to_level = "L4"
+via = "SMT proof reconstruction"
+status = "proposed"
+
+[[lifts]]
+system = "alphageometry"
+from_level = "L3"
+to_level = "L5"
+via = "rules proved in mathlib"
+status = "proposed"

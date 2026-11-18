@@ -62,7 +62,10 @@ for _sister in (
 
 html_theme = "foundation"
 html_static_path: list[str] = ["_static"]
+html_css_files: list[str] = ["codes/codes.css"]
+html_js_files: list[str] = ["codes/codes.js"]
 autoapi_add_toctree_entry = False
+napoleon_use_ivar = True
 if "intro.rst" not in exclude_patterns:  # noqa: F405
     exclude_patterns.append("intro.rst")  # noqa: F405
 suppress_warnings = ["autoapi.python_import_resolution", "toc.not_included"]

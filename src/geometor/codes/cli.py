@@ -62,8 +62,42 @@ def build_parser() -> argparse.ArgumentParser:
 
     sub.add_parser("coverage", help="Display base-item and multi-system coverage stats.")
     sub.add_parser("verify", help="Run exact geometor.model verification on pilot principles.")
-    sub.add_parser("build-principles", help="Generate docsrc/principles/ pages and SVGs.")
+    sub.add_parser("build-site", help="Generate docsrc/ foundations, showcase, and catalog pages.")
+    sub.add_parser("build-principles", help="Alias of build-site (backward compatible).")
+    sub.add_parser("foundations", help="Show the Truth Ladder and audit foundations/showcase data.")
+    sub.add_parser("generic", help="Run symbolic-parameter (L2) witnesses for showcase theorems.")
     return parser
+
+
+def _cmd_foundations(console: Console) -> int:
+    from geometor.codes.foundations import audit_foundations, load_foundations, load_showcase
+
+    fnd = load_foundations()
+    showcase = load_showcase()
+    table = Table(title="Truth Ladder — what each system certifies")
+    table.add_column("Level", style="bold")
+    table.add_column("Claim", style="magenta")
+    table.add_column("Systems", style="cyan")
+    table.add_column("Trusted core", style="yellow")
+    for lv in sorted(fnd.levels, key=lambda x: -x.rank):
+        members = fnd.systems_at(lv.id)
+        cores = sorted({t for s in members for t in s.trusts})
+        table.add_row(
+            f"{lv.id} {lv.name}",
+            lv.claim,
+            ", ".join(s.short for s in members) or "—",
+            ", ".join(cores) or "—",
+        )
+    console.print(table)
+    problems = audit_foundations(fnd, showcase)
+    for p in problems:
+        console.print(f"[red]✗[/red] {escape(p)}")
+    if not problems:
+        console.print(
+            f"[green]✓ {len(fnd.systems)} systems, {len(fnd.bridges)} bridges, "
+            f"{len(showcase)} showcase theorems — consistent[/green]"
+        )
+    return 1 if problems else 0
 
 
 def _cmd_summary(reg: CodesRegistry, console: Console) -> int:
@@ -354,14 +388,31 @@ def run_cli(argv: Sequence[str] | None = None) -> int:
             console.print(f"[{color}]{r.status:8s}[/{color}] {r.principle_id:28s} {escape(r.summary)}")
         return 0
 
-    if args.command == "build-principles":
+    if args.command in ("build-site", "build-principles"):
         import logging
 
-        from geometor.codes.present import build_principles_docs
+        from geometor.codes.present import build_site_docs
 
         logging.disable(logging.INFO)
-        counts = build_principles_docs()
-        console.print(f"[green]Generated docsrc/principles/:[/green] {counts}")
+        counts = build_site_docs()
+        console.print(f"[green]Generated docsrc/ foundations, showcase, catalog:[/green] {counts}")
+        return 0
+
+    if args.command == "foundations":
+        return _cmd_foundations(console)
+
+    if args.command == "generic":
+        from geometor.codes.generic import GENERIC_BUILDERS, GENERIC_GAPS
+
+        for pid, builder in GENERIC_BUILDERS.items():
+            w = builder()
+            color = "green" if w.proved else "red"
+            console.print(
+                f"[{color}]{'proved' if w.proved else 'FAILED':7s}[/{color}] {pid:24s} "
+                f"params={','.join(w.parameters)}  NDG: {escape('; '.join(w.ndg))}"
+            )
+        for pid, reason in GENERIC_GAPS.items():
+            console.print(f"[yellow]gap    [/yellow] {pid:24s} {escape(reason)}")
         return 0
 
     reg = CodesRegistry()

@@ -12,7 +12,7 @@ from geometor.codes.figures import FIGURE_SPECS, FigureSpec, build_all_figures
 from geometor.codes.registry import CodesRegistry
 from geometor.codes.render import render_svg
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
 __all__ = [
     "FIGURE_SPECS",

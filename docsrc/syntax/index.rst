@@ -1,4 +1,4 @@
-:navigation: header
+:navigation: footer
 :order: 20
 
 .. _syntax-index:

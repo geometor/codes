@@ -30,7 +30,7 @@ EXPECTED_SYSTEM_IDS: tuple[str, ...] = (
 
 def test_version_string() -> None:
     """Verify package exposes semantic version string."""
-    assert __version__ == "0.2.0"
+    assert __version__ == "0.3.0"
 
 
 def test_registry_systems_and_offline_resilience(tmp_path: Path) -> None:
