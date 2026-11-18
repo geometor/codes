@@ -1,4 +1,4 @@
-:navigation: header
+:navigation: footer
 :order: 50
 
 .. _opus-index:

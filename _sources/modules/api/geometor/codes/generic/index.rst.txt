@@ -1,0 +1,140 @@
+geometor.codes.generic
+======================
+
+.. py:module:: geometor.codes.generic
+
+.. autoapi-nested-parse::
+
+   Generic (L2) witnesses: showcase theorems checked with free symbolic parameters.
+
+   A ``geometor.model`` witness certifies a theorem for *one* exact figure (Truth
+   Ladder L1). Replacing the concrete coordinates by free symbols and reducing the
+   conclusion to ``0`` certifies it for *every* figure outside a degenerate set
+   (L2) — the regime of Wu's method and Gröbner bases. Hypotheses are satisfied
+   *by construction* (coordinates are chosen so the hypotheses hold identically);
+   the degenerate set is recorded as explicit non-degeneracy conditions (NDG).
+
+   Everything is exact SymPy: no floats are introduced.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   geometor.codes.generic.Vec
+   geometor.codes.generic.GENERIC_BUILDERS
+   geometor.codes.generic.GENERIC_GAPS
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.codes.generic.GenericWitness
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.generic.isosceles_base_angles
+   geometor.codes.generic.pythagorean
+   geometor.codes.generic.thales_semicircle
+   geometor.codes.generic.simson_line
+   geometor.codes.generic.generic_witness
+
+
+Module Contents
+---------------
+
+.. py:data:: Vec
+
+.. py:class:: GenericWitness
+
+   Result of a symbolic-parameter check.
+
+   :ivar principle: Catalog principle id.
+   :ivar parameters: Free symbols of the configuration.
+   :ivar construction: How the hypotheses are built into the coordinates.
+   :ivar conclusion: The conclusion polynomial / rational expression (as text).
+   :ivar residual: Simplified conclusion; ``"0"`` when proved.
+   :ivar ndg: Non-degeneracy conditions under which the identity is meaningful.
+   :ivar proved: Whether the residual simplified to exactly zero.
+
+
+
+   .. py:attribute:: principle
+      :type:  str
+
+
+   .. py:attribute:: parameters
+      :type:  list[str]
+
+
+   .. py:attribute:: construction
+      :type:  str
+
+
+   .. py:attribute:: conclusion
+      :type:  str
+
+
+   .. py:attribute:: residual
+      :type:  str
+
+
+   .. py:attribute:: ndg
+      :type:  list[str]
+      :value: []
+
+
+
+   .. py:attribute:: proved
+      :type:  bool
+      :value: False
+
+
+
+.. py:function:: isosceles_base_angles() -> GenericWitness
+
+   Euclid I.5 with apex ``A = (u, v)`` over base ``B = (0, 0)``, ``C = (2u, 0)``.
+
+
+.. py:function:: pythagorean() -> GenericWitness
+
+   Euclid I.47 with ``A = (x, y)``, ``B = A + (p, q)``, ``C = A + t(-q, p)``.
+
+
+.. py:function:: thales_semicircle() -> GenericWitness
+
+   Euclid III.31 on the circle of radius ``r`` with ``P`` rationally parametrized.
+
+
+.. py:function:: simson_line() -> GenericWitness
+
+   Simson line: pedal feet of ``P`` on the circumcircle of ``ABC`` are collinear.
+
+
+.. py:data:: GENERIC_BUILDERS
+   :type:  dict[str, collections.abc.Callable[[], GenericWitness]]
+
+   Principle id → generic (symbolic-parameter) witness builder.
+
+.. py:data:: GENERIC_GAPS
+   :type:  dict[str, str]
+
+   Principles that cannot be lifted to L2 by polynomial identities, with reasons.
+
+.. py:function:: generic_witness(principle_id: str) -> GenericWitness | None
+
+   Build the generic witness for ``principle_id`` if one is defined.
+
+   :param principle_id: Catalog principle id.
+
+   :returns: The witness, or ``None`` when no generic builder exists.
+
+

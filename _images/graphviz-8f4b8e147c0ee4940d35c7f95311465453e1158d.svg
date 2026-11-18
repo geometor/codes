@@ -1,0 +1,130 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="450pt" height="375pt" viewBox="0.00 0.00 450.00 375.00">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 371)">
+<ns0:title>showcase_thales_semicircle</ns0:title>
+
+<ns0:g id="node1" class="node">
+<ns0:title>thm</ns0:title>
+<ns0:ellipse fill="#ffffff" stroke="#555a62" stroke-width="1.6" cx="102.08" cy="-183.5" rx="102.08" ry="18" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="102.08" y="-179.8" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">III.31 &#160;Angle in a semicircle</ns0:text>
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>r0</ns0:title>
+<ns0:g id="a_node2"><ns0:a ns1:href="../foundations/cards/euclid.html" ns1:title="Depends on I.32 (angle sum), hence on the parallel postulate." target="_top">
+<ns0:path fill="#e8d9b5" stroke="#555a62" stroke-width="0.8" d="M382.41,-367C382.41,-367 321.41,-367 321.41,-367 315.41,-367 309.41,-361 309.41,-355 309.41,-355 309.41,-342 309.41,-342 309.41,-336 315.41,-330 321.41,-330 321.41,-330 382.41,-330 382.41,-330 388.41,-330 394.41,-336 394.41,-342 394.41,-342 394.41,-355 394.41,-355 394.41,-361 388.41,-367 382.41,-367" />
+<ns0:text xml:space="preserve" text-anchor="start" x="333.53" y="-353.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">Euclid</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="317.41" y="-344.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">Elements III.31</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="339.53" y="-335.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">prose</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>thm-&gt;r0</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M119.34,-201.91C146.25,-231.28 202.96,-288.78 262.16,-321.5 274.52,-328.33 288.83,-333.65 302.3,-337.7" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="301.45,-339.64 307.8,-339.28 302.61,-335.6 301.45,-339.64" />
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>r1</ns0:title>
+<ns0:g id="a_node3"><ns0:a ns1:href="../foundations/cards/geocoq.html" ns1:title="Proved equivalent to Euclid's fifth postulate over neutral geometry &#8212; a postulate, not a lemma." target="_top">
+<ns0:path fill="#f4d58d" stroke="#555a62" stroke-width="0.8" d="M384.66,-312C384.66,-312 319.16,-312 319.16,-312 313.16,-312 307.16,-306 307.16,-300 307.16,-300 307.16,-287 307.16,-287 307.16,-281 313.16,-275 319.16,-275 319.16,-275 384.66,-275 384.66,-275 390.66,-275 396.66,-281 396.66,-287 396.66,-287 396.66,-300 396.66,-300 396.66,-306 390.66,-312 384.66,-312" />
+<ns0:text xml:space="preserve" text-anchor="start" x="328.28" y="-298.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">GeoCoq</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="315.16" y="-289.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">thales_postulate</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="338.41" y="-280.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">axiom</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>thm-&gt;r1</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M133.07,-201.3C164.47,-219.41 215.59,-247.46 262.16,-266.5 274.23,-271.44 287.55,-275.95 300.12,-279.82" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="299.21,-281.74 305.56,-281.46 300.42,-277.72 299.21,-281.74" />
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>r2</ns0:title>
+<ns0:g id="a_node4"><ns0:a ns1:href="../foundations/cards/mathlib4.html" ns1:title="Iff form, any dimension; proved from the inner product." target="_top">
+<ns0:path fill="#9fd8a8" stroke="#555a62" stroke-width="0.8" d="M429.66,-257C429.66,-257 274.16,-257 274.16,-257 268.16,-257 262.16,-251 262.16,-245 262.16,-245 262.16,-232 262.16,-232 262.16,-226 268.16,-220 274.16,-220 274.16,-220 429.66,-220 429.66,-220 435.66,-220 441.66,-226 441.66,-232 441.66,-232 441.66,-245 441.66,-245 441.66,-251 435.66,-257 429.66,-257" />
+<ns0:text xml:space="preserve" text-anchor="start" x="324.91" y="-243.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">mathlib4</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="270.16" y="-234.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">EuclideanGeometry.Sphere.angle_&#8230;</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="332.78" y="-225.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">theorem</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>thm-&gt;r2</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M167.87,-197.88C195.62,-204.04 228.54,-211.34 258.75,-218.05" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="258.17,-220.07 264.48,-219.32 259.08,-215.97 258.17,-220.07" />
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>r3</ns0:title>
+<ns0:g id="a_node5"><ns0:a ns1:href="../foundations/cards/alphageometry.html" ns1:title="An assumed inference rule." target="_top">
+<ns0:path fill="#f6b26b" stroke="#555a62" stroke-width="0.8" d="M395.53,-202C395.53,-202 308.28,-202 308.28,-202 302.28,-202 296.28,-196 296.28,-190 296.28,-190 296.28,-177 296.28,-177 296.28,-171 302.28,-165 308.28,-165 308.28,-165 395.53,-165 395.53,-165 401.53,-165 407.53,-171 407.53,-177 407.53,-177 407.53,-190 407.53,-190 407.53,-196 401.53,-202 395.53,-202" />
+<ns0:text xml:space="preserve" text-anchor="start" x="304.28" y="-188.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">AlphaGeometry</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="323.78" y="-179.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">rules.txt r20</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="343.28" y="-170.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">rule</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>thm-&gt;r3</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M204.95,-183.5C233.39,-183.5 263.42,-183.5 288.8,-183.5" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="288.66,-185.6 294.66,-183.5 288.66,-181.4 288.66,-185.6" />
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>r4</ns0:title>
+<ns0:g id="a_node6"><ns0:a ns1:href="../foundations/cards/newclid.html" ns1:title="Inherited from AlphaGeometry r20." target="_top">
+<ns0:path fill="#f6b26b" stroke="#555a62" stroke-width="0.8" d="M421.78,-147C421.78,-147 282.03,-147 282.03,-147 276.03,-147 270.03,-141 270.03,-135 270.03,-135 270.03,-122 270.03,-122 270.03,-116 276.03,-110 282.03,-110 282.03,-110 421.78,-110 421.78,-110 427.78,-110 433.78,-116 433.78,-122 433.78,-122 433.78,-135 433.78,-135 433.78,-141 427.78,-147 421.78,-147" />
+<ns0:text xml:space="preserve" text-anchor="start" x="327.53" y="-133.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">Newclid</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="278.03" y="-124.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">R20_DIAMETER_IS_HYPOTENUSE</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="343.28" y="-115.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">rule</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>thm-&gt;r4</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M167.87,-169.12C196.94,-162.67 231.67,-154.96 263.03,-148" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="263.21,-150.11 268.61,-146.76 262.3,-146.01 263.21,-150.11" />
+</ns0:g>
+
+<ns0:g id="node7" class="node">
+<ns0:title>r5</ns0:title>
+<ns0:g id="a_node7"><ns0:a ns1:href="../foundations/cards/leaneuclid.html" ns1:title="LeanEuclid formalizes Book I only; III.31 is outside its benchmark." target="_top">
+<ns0:path fill="#dddddd" stroke="#555a62" stroke-width="0.8" d="M380.91,-92C380.91,-92 322.91,-92 322.91,-92 316.91,-92 310.91,-86 310.91,-80 310.91,-80 310.91,-67 310.91,-67 310.91,-61 316.91,-55 322.91,-55 322.91,-55 380.91,-55 380.91,-55 386.91,-55 392.91,-61 392.91,-67 392.91,-67 392.91,-80 392.91,-80 392.91,-86 386.91,-92 380.91,-92" />
+<ns0:text xml:space="preserve" text-anchor="start" x="318.91" y="-78.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">LeanEuclid</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="347.41" y="-69.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">&#8212;</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="336.53" y="-60.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">absent</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge6" class="edge">
+<ns0:title>thm-&gt;r5</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" stroke-dasharray="5,2" d="M133.73,-165.71C165.23,-147.9 216.05,-120.5 262.16,-101.5 275.39,-96.05 290.09,-91.02 303.65,-86.77" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="304.07,-88.84 309.18,-85.07 302.83,-84.83 304.07,-88.84" />
+</ns0:g>
+
+<ns0:g id="node8" class="node">
+<ns0:title>r6</ns0:title>
+<ns0:g id="a_node8"><ns0:a ns1:href="../foundations/cards/geometor_model.html" ns1:title="Exact check on the 3-4-5 point of the radius-5 circle (L1)." target="_top">
+<ns0:path fill="#9cc3f0" stroke="#555a62" stroke-width="0.8" d="M415.03,-37C415.03,-37 288.78,-37 288.78,-37 282.78,-37 276.78,-31 276.78,-25 276.78,-25 276.78,-12 276.78,-12 276.78,-6 282.78,0 288.78,0 288.78,0 415.03,0 415.03,0 421.03,0 427.03,-6 427.03,-12 427.03,-12 427.03,-25 427.03,-25 427.03,-31 421.03,-37 415.03,-37" />
+<ns0:text xml:space="preserve" text-anchor="start" x="302.03" y="-23.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">geometor.model</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="284.78" y="-14.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">verify._build_thales_semicircle</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="335.03" y="-5.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">witness</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge7" class="edge">
+<ns0:title>thm-&gt;r6</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M119.41,-165.3C146.41,-136.25 203.25,-79.32 262.16,-46.5 266.14,-44.28 270.32,-42.21 274.61,-40.28" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="275.35,-42.25 280.04,-37.97 273.7,-38.39 275.35,-42.25" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>

@@ -53,63 +53,23 @@ Package Contents
 
    One declaration mined from a system.
 
-   .. attribute:: system
+   :ivar system: System key from ``context.toml`` (e.g. ``"leaneuclid"``).
+   :ivar id: Identifier unique within the system (e.g. ``"Elements.Book1.proposition_5"``).
+   :ivar name: Short display name.
+   :ivar kind: Declaration kind (``axiom``, ``theorem``, ``rule``, ``construction``,
+               ``definition``, ``postulate``, ``common_notion``, ``relation``, ``sort``,
+               ``predicate``, ``measure``, ``method``, ``foundation``).
+   :ivar module: Hierarchical location inside the system (path-like).
+   :ivar family: Grouping used by the system itself (file, book, category).
+   :ivar statement: Formal statement as written in the system.
+   :ivar text: Natural-language text (docstring, description, enunciation).
+   :ivar premises: Premise atoms (rule-like systems), raw syntax.
+   :ivar conclusions: Conclusion atoms, raw syntax.
+   :ivar uses: Other declarations cited by this one (proof trace / dependencies).
+   :ivar source: Source file relative to the workspace root.
+   :ivar line: 1-based line number in ``source``.
+   :ivar extra: System-specific fields.
 
-      System key from ``context.toml`` (e.g. ``"leaneuclid"``).
-
-   .. attribute:: id
-
-      Identifier unique within the system (e.g. ``"Elements.Book1.proposition_5"``).
-
-   .. attribute:: name
-
-      Short display name.
-
-   .. attribute:: kind
-
-      Declaration kind (``axiom``, ``theorem``, ``rule``, ``construction``,
-      ``definition``, ``postulate``, ``common_notion``, ``relation``, ``sort``,
-      ``predicate``, ``measure``, ``method``, ``foundation``).
-
-   .. attribute:: module
-
-      Hierarchical location inside the system (path-like).
-
-   .. attribute:: family
-
-      Grouping used by the system itself (file, book, category).
-
-   .. attribute:: statement
-
-      Formal statement as written in the system.
-
-   .. attribute:: text
-
-      Natural-language text (docstring, description, enunciation).
-
-   .. attribute:: premises
-
-      Premise atoms (rule-like systems), raw syntax.
-
-   .. attribute:: conclusions
-
-      Conclusion atoms, raw syntax.
-
-   .. attribute:: uses
-
-      Other declarations cited by this one (proof trace / dependencies).
-
-   .. attribute:: source
-
-      Source file relative to the workspace root.
-
-   .. attribute:: line
-
-      1-based line number in ``source``.
-
-   .. attribute:: extra
-
-      System-specific fields.
 
 
    .. py:attribute:: system

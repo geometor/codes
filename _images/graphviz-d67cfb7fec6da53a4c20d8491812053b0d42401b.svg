@@ -1,0 +1,365 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="465pt" height="839pt" viewBox="0.00 0.00 465.00 839.00">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 835)">
+<ns0:title>trust</ns0:title>
+<ns0:g id="clust1" class="cluster">
+<ns0:title>cluster_sys</ns0:title>
+</ns0:g>
+<ns0:g id="clust2" class="cluster">
+<ns0:title>cluster_tcb</ns0:title>
+</ns0:g>
+
+<ns0:g id="node1" class="node">
+<ns0:title>sys_euclid</ns0:title>
+<ns0:g id="a_node1"><ns0:a ns1:href="../foundations/cards/euclid.html" ns1:title="Believe it because it follows, step by step, from five postulates and five common notions &#8212; as checked by readers, with the diagram doing silent work." target="_top">
+<ns0:path fill="#e8d9b5" stroke="#555a62" stroke-width="0.8" d="M84,-172C84,-172 54,-172 54,-172 48,-172 42,-166 42,-160 42,-160 42,-148 42,-148 42,-142 48,-136 54,-136 54,-136 84,-136 84,-136 90,-136 96,-142 96,-148 96,-148 96,-160 96,-160 96,-166 90,-172 84,-172" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="69" y="-150.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">Euclid</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node13" class="node">
+<ns0:title>tcb_reader</ns0:title>
+<ns0:g id="a_node13"><ns0:a ns1:title="Proofs are checked by people; tacit diagram reasoning (order, continuity) is accepted without statement.">
+<ns0:path fill="#e8d9b5" stroke="#555a62" stroke-width="0.8" d="M371.5,-59.69C371.5,-62.1 348.92,-64.06 321.12,-64.06 293.33,-64.06 270.75,-62.1 270.75,-59.69 270.75,-59.69 270.75,-20.31 270.75,-20.31 270.75,-17.9 293.33,-15.94 321.12,-15.94 348.92,-15.94 371.5,-17.9 371.5,-20.31 371.5,-20.31 371.5,-59.69 371.5,-59.69" />
+<ns0:path fill="none" stroke="#555a62" stroke-width="0.8" d="M371.5,-59.69C371.5,-57.27 348.92,-55.31 321.12,-55.31 293.33,-55.31 270.75,-57.27 270.75,-59.69" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-43.05" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">Human readers</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-29.55" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">2,300 years</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>sys_euclid-&gt;tcb_reader</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M92.7,-135.72C116.43,-117.44 155.38,-89.72 193,-73 215.19,-63.14 240.91,-55.77 263.39,-50.53" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="263.7,-52.61 269.09,-49.24 262.77,-48.52 263.7,-52.61" />
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>sys_leaneuclid</ns0:title>
+<ns0:g id="a_node2"><ns0:a ns1:href="../foundations/cards/leaneuclid.html" ns1:title="Believe it because Lean's kernel checked every rule application from System E's axioms &#8212; except that premise-discharging steps are admitted by an SMT oracle axiom." target="_top">
+<ns0:path fill="#f6b26b" stroke="#555a62" stroke-width="0.8" d="M94.25,-226C94.25,-226 43.75,-226 43.75,-226 37.75,-226 31.75,-220 31.75,-214 31.75,-214 31.75,-202 31.75,-202 31.75,-196 37.75,-190 43.75,-190 43.75,-190 94.25,-190 94.25,-190 100.25,-190 106.25,-196 106.25,-202 106.25,-202 106.25,-214 106.25,-214 106.25,-220 100.25,-226 94.25,-226" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="69" y="-204.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">LeanEuclid</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node14" class="node">
+<ns0:title>tcb_lean_kernel</ns0:title>
+<ns0:g id="a_node14"><ns0:a ns1:title="Type-checks dependent type theory terms; independent re-checkers exist (lean4lean, nanoda, lean4checker).">
+<ns0:path fill="#9fd8a8" stroke="#555a62" stroke-width="0.8" d="M400,-191.69C400,-194.1 364.65,-196.06 321.12,-196.06 277.6,-196.06 242.25,-194.1 242.25,-191.69 242.25,-191.69 242.25,-152.31 242.25,-152.31 242.25,-149.9 277.6,-147.94 321.12,-147.94 364.65,-147.94 400,-149.9 400,-152.31 400,-152.31 400,-191.69 400,-191.69" />
+<ns0:path fill="none" stroke="#555a62" stroke-width="0.8" d="M400,-191.69C400,-189.27 364.65,-187.31 321.12,-187.31 277.6,-187.31 242.25,-189.27 242.25,-191.69" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-175.05" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">Lean 4 kernel</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-161.55" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">~8k lines C++ (estimate)</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>sys_leaneuclid-&gt;tcb_lean_kernel</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M106.64,-202.73C140.19,-197.9 191.11,-190.57 234.82,-184.28" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="234.91,-186.39 240.54,-183.45 234.31,-182.23 234.91,-186.39" />
+</ns0:g>
+
+<ns0:g id="node15" class="node">
+<ns0:title>tcb_smt_verif</ns0:title>
+<ns0:g id="a_node15"><ns0:a ns1:title="LeanEuclid SystemE/Meta/Smt/Solver.lean:44-54 &#8212; `axiom SMT_VERIF (P : Prop) : P` admits any goal the solver reports unsat; no proof reconstruction.">
+<ns0:path fill="#f4d58d" stroke="#555a62" stroke-width="0.8" d="M418.38,-125.69C418.38,-128.1 374.79,-130.06 321.12,-130.06 267.46,-130.06 223.88,-128.1 223.88,-125.69 223.88,-125.69 223.88,-86.31 223.88,-86.31 223.88,-83.9 267.46,-81.94 321.12,-81.94 374.79,-81.94 418.38,-83.9 418.38,-86.31 418.38,-86.31 418.38,-125.69 418.38,-125.69" />
+<ns0:path fill="none" stroke="#555a62" stroke-width="0.8" d="M418.38,-125.69C418.38,-123.27 374.79,-121.31 321.12,-121.31 267.46,-121.31 223.88,-123.27 223.88,-125.69" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-109.05" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">SMT_VERIF oracle</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-95.55" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">z3/cvc5 + hand-written E theory</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>sys_leaneuclid-&gt;tcb_smt_verif</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M106.64,-192.67C114.47,-189.08 122.6,-185.09 130,-181 159.44,-164.71 162.29,-152.75 193,-139 200.56,-135.61 208.53,-132.53 216.65,-129.72" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="217.04,-131.8 222.07,-127.9 215.71,-127.82 217.04,-131.8" />
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>sys_mathlib4</ns0:title>
+<ns0:g id="a_node3"><ns0:a ns1:href="../foundations/cards/mathlib4.html" ns1:title="Believe it because geometry is defined from real inner-product spaces and every theorem is a kernel-checked consequence of Lean's logic alone." target="_top">
+<ns0:path fill="#c5b3e6" stroke="#555a62" stroke-width="0.8" d="M89,-280C89,-280 49,-280 49,-280 43,-280 37,-274 37,-268 37,-268 37,-256 37,-256 37,-250 43,-244 49,-244 49,-244 89,-244 89,-244 95,-244 101,-250 101,-256 101,-256 101,-268 101,-268 101,-274 95,-280 89,-280" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="69" y="-258.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">mathlib4</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>sys_mathlib4-&gt;tcb_lean_kernel</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M101.2,-248.11C110.49,-243.94 120.67,-239.32 130,-235 158.14,-221.97 163.86,-215.61 193,-205 206.44,-200.11 220.93,-195.63 235.14,-191.66" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="235.4,-193.76 240.63,-190.15 234.29,-189.71 235.4,-193.76" />
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>sys_geocoq</ns0:title>
+<ns0:g id="a_node4"><ns0:a ns1:href="../foundations/cards/geocoq.html" ns1:title="Believe it because the Coq kernel checked it from Tarski's (or Hilbert's, or Euclid's) axioms &#8212; and GeoCoq proves those axiom systems interpret one another and hold in &#8477;&#178;." target="_top">
+<ns0:path fill="#9fd8a8" stroke="#555a62" stroke-width="0.8" d="M86.38,-334C86.38,-334 51.62,-334 51.62,-334 45.62,-334 39.62,-328 39.62,-322 39.62,-322 39.62,-310 39.62,-310 39.62,-304 45.62,-298 51.62,-298 51.62,-298 86.38,-298 86.38,-298 92.38,-298 98.38,-304 98.38,-310 98.38,-310 98.38,-322 98.38,-322 98.38,-328 92.38,-334 86.38,-334" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="69" y="-312.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">GeoCoq</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node16" class="node">
+<ns0:title>tcb_coq_kernel</ns0:title>
+<ns0:g id="a_node16"><ns0:a ns1:title="Checks CIC proof terms; GeoCoq's reflective tactics (ColR, CongR) also trust the VM conversion check.">
+<ns0:path fill="#9fd8a8" stroke="#555a62" stroke-width="0.8" d="M417.62,-257.69C417.62,-260.1 374.37,-262.06 321.12,-262.06 267.88,-262.06 224.62,-260.1 224.62,-257.69 224.62,-257.69 224.62,-218.31 224.62,-218.31 224.62,-215.9 267.88,-213.94 321.12,-213.94 374.37,-213.94 417.62,-215.9 417.62,-218.31 417.62,-218.31 417.62,-257.69 417.62,-257.69" />
+<ns0:path fill="none" stroke="#555a62" stroke-width="0.8" d="M417.62,-257.69C417.62,-255.27 374.37,-253.31 321.12,-253.31 267.88,-253.31 224.62,-255.27 224.62,-257.69" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-241.05" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">Coq kernel</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-227.55" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">~10-30k lines OCaml (estimate)</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>sys_geocoq-&gt;tcb_coq_kernel</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M98.56,-304.66C123.32,-295.04 160.22,-281.22 193,-271 202.2,-268.13 211.82,-265.31 221.48,-262.6" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="221.83,-264.68 227.05,-261.05 220.71,-260.64 221.83,-264.68" />
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>sys_alphageometry</ns0:title>
+<ns0:g id="a_node5"><ns0:a ns1:href="../foundations/cards/alphageometry.html" ns1:title="Believe it because a deduction engine derived it from 43 assumed rules &#8212; with side conditions (non-collinear, same side) read off a random numeric diagram." target="_top">
+<ns0:path fill="#f6b26b" stroke="#555a62" stroke-width="0.8" d="M107.75,-388C107.75,-388 30.25,-388 30.25,-388 24.25,-388 18.25,-382 18.25,-376 18.25,-376 18.25,-364 18.25,-364 18.25,-358 24.25,-352 30.25,-352 30.25,-352 107.75,-352 107.75,-352 113.75,-352 119.75,-358 119.75,-364 119.75,-364 119.75,-376 119.75,-376 119.75,-382 113.75,-388 107.75,-388" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="69" y="-366.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">AlphaGeometry</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node17" class="node">
+<ns0:title>tcb_ag_engine</ns0:title>
+<ns0:g id="a_node17"><ns0:a ns1:title="Forward chaining over 43 rules plus Gaussian elimination over exact Fractions; premise selection uses float linprog.">
+<ns0:path fill="#f6b26b" stroke="#555a62" stroke-width="0.8" d="M380.88,-323.69C380.88,-326.1 354.09,-328.06 321.12,-328.06 288.16,-328.06 261.38,-326.1 261.38,-323.69 261.38,-323.69 261.38,-284.31 261.38,-284.31 261.38,-281.9 288.16,-279.94 321.12,-279.94 354.09,-279.94 380.88,-281.9 380.88,-284.31 380.88,-284.31 380.88,-323.69 380.88,-323.69" />
+<ns0:path fill="none" stroke="#555a62" stroke-width="0.8" d="M380.88,-323.69C380.88,-321.27 354.09,-319.31 321.12,-319.31 288.16,-319.31 261.38,-321.27 261.38,-323.69" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-307.05" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">AG DD+AR engine</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-293.55" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">~9.7k lines Python</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge6" class="edge">
+<ns0:title>sys_alphageometry-&gt;tcb_ag_engine</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M119.95,-356.5C142.28,-350.49 168.95,-343.35 193,-337 212.83,-331.77 234.42,-326.14 254.09,-321.03" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="254.49,-323.1 259.77,-319.56 253.44,-319.03 254.49,-323.1" />
+</ns0:g>
+
+<ns0:g id="node19" class="node">
+<ns0:title>tcb_numeric_diagram</ns0:title>
+<ns0:g id="a_node19"><ns0:a ns1:title="ncoll / npara / nperp / sameside premises are decided numerically on a random float diagram, not deduced.">
+<ns0:path fill="#dddddd" stroke="#555a62" stroke-width="0.8" d="M422.12,-389.69C422.12,-392.1 376.86,-394.06 321.12,-394.06 265.39,-394.06 220.12,-392.1 220.12,-389.69 220.12,-389.69 220.12,-350.31 220.12,-350.31 220.12,-347.9 265.39,-345.94 321.12,-345.94 376.86,-345.94 422.12,-347.9 422.12,-350.31 422.12,-350.31 422.12,-389.69 422.12,-389.69" />
+<ns0:path fill="none" stroke="#555a62" stroke-width="0.8" d="M422.12,-389.69C422.12,-387.27 376.86,-385.31 321.12,-385.31 265.39,-385.31 220.12,-387.27 220.12,-389.69" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-373.05" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">Numeric diagram</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-359.55" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">tol 1e-12 (AG) &#183; rel 1e-3 (Newclid)</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge7" class="edge">
+<ns0:title>sys_alphageometry-&gt;tcb_numeric_diagram</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M120.02,-370C146.59,-370 180.34,-370 212.51,-370" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="212.27,-372.1 218.27,-370 212.27,-367.9 212.27,-372.1" />
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>sys_newclid</ns0:title>
+<ns0:g id="a_node6"><ns0:a ns1:href="../foundations/cards/newclid.html" ns1:title="Believe it because the DDARN engine derived it from a curated rule set descended from AlphaGeometry &#8212; again with numerically checked side conditions." target="_top">
+<ns0:path fill="#f6b26b" stroke="#555a62" stroke-width="0.8" d="M86.38,-442C86.38,-442 51.62,-442 51.62,-442 45.62,-442 39.62,-436 39.62,-430 39.62,-430 39.62,-418 39.62,-418 39.62,-412 45.62,-406 51.62,-406 51.62,-406 86.38,-406 86.38,-406 92.38,-406 98.38,-412 98.38,-418 98.38,-418 98.38,-430 98.38,-430 98.38,-436 92.38,-442 86.38,-442" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="69" y="-420.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">Newclid</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node18" class="node">
+<ns0:title>tcb_newclid_engine</ns0:title>
+<ns0:g id="a_node18"><ns0:a ns1:title="Restructured AG loop; AR tables via sympy.solve; optional Yuclid C++ solver.">
+<ns0:path fill="#f6b26b" stroke="#555a62" stroke-width="0.8" d="M441.25,-455.69C441.25,-458.1 387.41,-460.06 321.12,-460.06 254.84,-460.06 201,-458.1 201,-455.69 201,-455.69 201,-416.31 201,-416.31 201,-413.9 254.84,-411.94 321.12,-411.94 387.41,-411.94 441.25,-413.9 441.25,-416.31 441.25,-416.31 441.25,-455.69 441.25,-455.69" />
+<ns0:path fill="none" stroke="#555a62" stroke-width="0.8" d="M441.25,-455.69C441.25,-453.27 387.41,-451.31 321.12,-451.31 254.84,-451.31 201,-453.27 201,-455.69" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-439.05" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">Newclid DDARN</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-425.55" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">~15.4k lines Python (+~15k C++ Yuclid)</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge8" class="edge">
+<ns0:title>sys_newclid-&gt;tcb_newclid_engine</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M98.69,-425.38C122.45,-426.52 157.99,-428.22 193.67,-429.93" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="193.2,-432.01 199.29,-430.2 193.4,-427.82 193.2,-432.01" />
+</ns0:g>
+
+<ns0:g id="edge10" class="edge">
+<ns0:title>sys_newclid-&gt;tcb_numeric_diagram</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M98.69,-417.81C126.65,-411.77 170.92,-402.21 212.55,-393.22" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="212.84,-395.31 218.26,-391.99 211.96,-391.2 212.84,-395.31" />
+</ns0:g>
+
+<ns0:g id="node21" class="node">
+<ns0:title>tcb_sympy_cas</ns0:title>
+<ns0:g id="a_node21"><ns0:a ns1:title="simplify / expand / equals heuristics; sympy.geometry's affine_rank uses a 2-digit numeric zero test (point.py:333).">
+<ns0:path fill="#9cc3f0" stroke="#555a62" stroke-width="0.8" d="M400.75,-653.69C400.75,-656.1 365.06,-658.06 321.12,-658.06 277.19,-658.06 241.5,-656.1 241.5,-653.69 241.5,-653.69 241.5,-614.31 241.5,-614.31 241.5,-611.9 277.19,-609.94 321.12,-609.94 365.06,-609.94 400.75,-611.9 400.75,-614.31 400.75,-614.31 400.75,-653.69 400.75,-653.69" />
+<ns0:path fill="none" stroke="#555a62" stroke-width="0.8" d="M400.75,-653.69C400.75,-651.27 365.06,-649.31 321.12,-649.31 277.19,-649.31 241.5,-651.27 241.5,-653.69" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-637.05" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">SymPy simplification</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-623.55" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">core heuristics + mpmath</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge9" class="edge">
+<ns0:title>sys_newclid-&gt;tcb_sympy_cas</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M98.64,-431.9C109.59,-436.1 121.47,-442.25 130,-451 180.48,-502.77 138.33,-553.67 193,-601 204.81,-611.22 219.4,-618.34 234.44,-623.28" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="233.58,-625.21 239.93,-624.95 234.81,-621.19 233.58,-625.21" />
+</ns0:g>
+
+<ns0:g id="node7" class="node">
+<ns0:title>sys_jgex</ns0:title>
+<ns0:g id="a_node7"><ns0:a ns1:href="../foundations/cards/jgex.html" ns1:title="Believe it because the hypothesis polynomials reduce the conclusion to zero (Wu / Gr&#246;bner) &#8212; true generically, provided the printed non-degeneracy conditions hold." target="_top">
+<ns0:path fill="#7fd1c7" stroke="#555a62" stroke-width="0.8" d="M84,-496C84,-496 54,-496 54,-496 48,-496 42,-490 42,-484 42,-484 42,-472 42,-472 42,-466 48,-460 54,-460 54,-460 84,-460 84,-460 90,-460 96,-466 96,-472 96,-472 96,-484 96,-484 96,-490 90,-496 84,-496" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="69" y="-474.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">JGEX</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node20" class="node">
+<ns0:title>tcb_jgex_prover</ns0:title>
+<ns0:g id="a_node20"><ns0:a ns1:title="GDD, full-angle, area, Wu characteristic sets, Gr&#246;bner bases over BigInteger polynomials.">
+<ns0:path fill="#f6b26b" stroke="#555a62" stroke-width="0.8" d="M371.5,-521.69C371.5,-524.1 348.92,-526.06 321.12,-526.06 293.33,-526.06 270.75,-524.1 270.75,-521.69 270.75,-521.69 270.75,-482.31 270.75,-482.31 270.75,-479.9 293.33,-477.94 321.12,-477.94 348.92,-477.94 371.5,-479.9 371.5,-482.31 371.5,-482.31 371.5,-521.69 371.5,-521.69" />
+<ns0:path fill="none" stroke="#555a62" stroke-width="0.8" d="M371.5,-521.69C371.5,-519.27 348.92,-517.31 321.12,-517.31 293.33,-517.31 270.75,-519.27 270.75,-521.69" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-505.05" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">JGEX gprover</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-491.55" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">~38k lines Java</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge11" class="edge">
+<ns0:title>sys_jgex-&gt;tcb_jgex_prover</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M96.3,-480.52C135.71,-484.3 211.05,-491.53 263.37,-496.55" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="262.92,-498.62 269.09,-497.1 263.32,-494.44 262.92,-498.62" />
+</ns0:g>
+
+<ns0:g id="node8" class="node">
+<ns0:title>sys_sympy</ns0:title>
+<ns0:g id="a_node8"><ns0:a ns1:href="../foundations/cards/sympy.html" ns1:title="Believe it because exact arithmetic on concrete coordinates evaluates the predicate to True &#8212; subject to SymPy's simplification heuristics." target="_top">
+<ns0:path fill="#9cc3f0" stroke="#555a62" stroke-width="0.8" d="M84,-604C84,-604 54,-604 54,-604 48,-604 42,-598 42,-592 42,-592 42,-580 42,-580 42,-574 48,-568 54,-568 54,-568 84,-568 84,-568 90,-568 96,-574 96,-580 96,-580 96,-592 96,-592 96,-598 90,-604 84,-604" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="69" y="-582.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">SymPy</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge12" class="edge">
+<ns0:title>sys_sympy-&gt;tcb_sympy_cas</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M96.3,-591.05C128.75,-597.27 185.55,-608.18 233.82,-617.44" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="233.4,-619.5 239.69,-618.56 234.19,-615.37 233.4,-619.5" />
+</ns0:g>
+
+<ns0:g id="node9" class="node">
+<ns0:title>sys_geometor_model</ns0:title>
+<ns0:g id="a_node9"><ns0:a ns1:href="../foundations/cards/geometor_model.html" ns1:title="Believe it because the figure is built exactly &#8212; algebraic coordinates from ruler-and-compass intersections &#8212; and every asserted relation reduces to zero." target="_top">
+<ns0:path fill="#9cc3f0" stroke="#555a62" stroke-width="0.8" d="M110,-550C110,-550 28,-550 28,-550 22,-550 16,-544 16,-538 16,-538 16,-526 16,-526 16,-520 22,-514 28,-514 28,-514 110,-514 110,-514 116,-514 122,-520 122,-526 122,-526 122,-538 122,-538 122,-544 116,-550 110,-550" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="69" y="-528.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">geometor.model</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge14" class="edge">
+<ns0:title>sys_geometor_model-&gt;tcb_sympy_cas</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M113.04,-550.32C118.81,-553.09 124.6,-556.01 130,-559 159.44,-575.29 162.29,-587.25 193,-601 206.06,-606.85 220.35,-611.81 234.48,-615.97" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="233.6,-617.9 239.95,-617.53 234.76,-613.86 233.6,-617.9" />
+</ns0:g>
+
+<ns0:g id="node22" class="node">
+<ns0:title>tcb_model_zero_test</ns0:title>
+<ns0:g id="a_node22"><ns0:a ns1:title="Tiered oracle (algebra.py:160-253): exact expansion, field arithmetic, minimal_polynomial &#8212; plus a numeric acceptance branch |evalf(80)| &lt; 1e-65 for large expressions.">
+<ns0:path fill="#9cc3f0" stroke="#555a62" stroke-width="0.8" d="M386.88,-587.69C386.88,-590.1 357.4,-592.06 321.12,-592.06 284.85,-592.06 255.38,-590.1 255.38,-587.69 255.38,-587.69 255.38,-548.31 255.38,-548.31 255.38,-545.9 284.85,-543.94 321.12,-543.94 357.4,-543.94 386.88,-545.9 386.88,-548.31 386.88,-548.31 386.88,-587.69 386.88,-587.69" />
+<ns0:path fill="none" stroke="#555a62" stroke-width="0.8" d="M386.88,-587.69C386.88,-585.27 357.4,-583.31 321.12,-583.31 284.85,-583.31 255.38,-585.27 255.38,-587.69" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-571.05" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">model zero_test</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-557.55" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">~3.5k lines + SymPy</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge13" class="edge">
+<ns0:title>sys_geometor_model-&gt;tcb_model_zero_test</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M122.13,-539.5C158.52,-544.74 207.58,-551.8 247.75,-557.58" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="247.41,-559.66 253.65,-558.43 248.01,-555.5 247.41,-559.66" />
+</ns0:g>
+
+<ns0:g id="node10" class="node">
+<ns0:title>sys_kingdon</ns0:title>
+<ns0:g id="a_node10"><ns0:a ns1:href="../foundations/cards/kingdon.html" ns1:title="Believe it because the identity expands to zero in the Clifford algebra &#8212; universally, when computed symbolically without division." target="_top">
+<ns0:path fill="#7fd1c7" stroke="#555a62" stroke-width="0.8" d="M86.38,-658C86.38,-658 51.62,-658 51.62,-658 45.62,-658 39.62,-652 39.62,-646 39.62,-646 39.62,-634 39.62,-634 39.62,-628 45.62,-622 51.62,-622 51.62,-622 86.38,-622 86.38,-622 92.38,-622 98.38,-628 98.38,-634 98.38,-634 98.38,-646 98.38,-646 98.38,-652 92.38,-658 86.38,-658" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="69" y="-636.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">kingdon</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge16" class="edge">
+<ns0:title>sys_kingdon-&gt;tcb_sympy_cas</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M98.69,-639.31C131.46,-638.53 186.62,-637.2 233.68,-636.07" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="233.7,-638.17 239.65,-635.93 233.6,-633.98 233.7,-638.17" />
+</ns0:g>
+
+<ns0:g id="node23" class="node">
+<ns0:title>tcb_ga_codegen</ns0:title>
+<ns0:g id="a_node23"><ns0:a ns1:title="Clifford products expanded over SymPy; equality via expand/simplify (galgebra mv.py:479) or structural comparison (kingdon).">
+<ns0:path fill="#9cc3f0" stroke="#555a62" stroke-width="0.8" d="M430.75,-719.69C430.75,-722.1 381.61,-724.06 321.12,-724.06 260.64,-724.06 211.5,-722.1 211.5,-719.69 211.5,-719.69 211.5,-680.31 211.5,-680.31 211.5,-677.9 260.64,-675.94 321.12,-675.94 381.61,-675.94 430.75,-677.9 430.75,-680.31 430.75,-680.31 430.75,-719.69 430.75,-719.69" />
+<ns0:path fill="none" stroke="#555a62" stroke-width="0.8" d="M430.75,-719.69C430.75,-717.27 381.61,-715.31 321.12,-715.31 260.64,-715.31 211.5,-717.27 211.5,-719.69" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-703.05" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">GA product engines</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-689.55" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">kingdon ~5.2k &#183; galgebra ~9.5k lines</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge15" class="edge">
+<ns0:title>sys_kingdon-&gt;tcb_ga_codegen</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M98.69,-646.88C126.35,-653.52 169.96,-663.98 211.19,-673.87" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="210.53,-675.87 216.85,-675.23 211.51,-671.78 210.53,-675.87" />
+</ns0:g>
+
+<ns0:g id="node11" class="node">
+<ns0:title>sys_galgebra</ns0:title>
+<ns0:g id="a_node11"><ns0:a ns1:href="../foundations/cards/galgebra.html" ns1:title="Believe it because the multivector difference simplifies to zero for an arbitrary (possibly symbolic) metric &#8212; as far as SymPy's simplify can tell." target="_top">
+<ns0:path fill="#7fd1c7" stroke="#555a62" stroke-width="0.8" d="M89,-712C89,-712 49,-712 49,-712 43,-712 37,-706 37,-700 37,-700 37,-688 37,-688 37,-682 43,-676 49,-676 49,-676 89,-676 89,-676 95,-676 101,-682 101,-688 101,-688 101,-700 101,-700 101,-706 95,-712 89,-712" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="69" y="-690.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">galgebra</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge18" class="edge">
+<ns0:title>sys_galgebra-&gt;tcb_sympy_cas</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M101.17,-686.52C134.24,-678.59 187.94,-665.71 233.88,-654.69" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="234.37,-656.73 239.71,-653.29 233.39,-652.65 234.37,-656.73" />
+</ns0:g>
+
+<ns0:g id="edge17" class="edge">
+<ns0:title>sys_galgebra-&gt;tcb_ga_codegen</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M101.17,-694.75C127.31,-695.37 166.34,-696.31 204.24,-697.22" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="203.74,-699.31 209.78,-697.35 203.84,-695.11 203.74,-699.31" />
+</ns0:g>
+
+<ns0:g id="node12" class="node">
+<ns0:title>sys_cindyjs</ns0:title>
+<ns0:g id="a_node12"><ns0:a ns1:href="../foundations/cards/cindyjs.html" ns1:title="Believe it because it keeps looking true while you drag &#8212; floating-point projective geometry with randomized conjecture checks, and no proof." target="_top">
+<ns0:path fill="#dcdcdc" stroke="#555a62" stroke-width="0.8" d="M85.25,-766C85.25,-766 52.75,-766 52.75,-766 46.75,-766 40.75,-760 40.75,-754 40.75,-754 40.75,-742 40.75,-742 40.75,-736 46.75,-730 52.75,-730 52.75,-730 85.25,-730 85.25,-730 91.25,-730 97.25,-736 97.25,-742 97.25,-742 97.25,-754 97.25,-754 97.25,-760 91.25,-766 85.25,-766" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="69" y="-744.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">CindyJS</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node24" class="node">
+<ns0:title>tcb_ieee_float</ns0:title>
+<ns0:g id="a_node24"><ns0:a ns1:title="All computation in double precision; CindyJS's prover keeps conjectures that survive 3 random perturbations.">
+<ns0:path fill="#dddddd" stroke="#555a62" stroke-width="0.8" d="M370,-785.69C370,-788.1 348.09,-790.06 321.12,-790.06 294.16,-790.06 272.25,-788.1 272.25,-785.69 272.25,-785.69 272.25,-746.31 272.25,-746.31 272.25,-743.9 294.16,-741.94 321.12,-741.94 348.09,-741.94 370,-743.9 370,-746.31 370,-746.31 370,-785.69 370,-785.69" />
+<ns0:path fill="none" stroke="#555a62" stroke-width="0.8" d="M370,-785.69C370,-783.27 348.09,-781.31 321.12,-781.31 294.16,-781.31 272.25,-783.27 272.25,-785.69" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-769.05" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">IEEE-754 floats</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="middle" x="321.12" y="-755.55" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">eps 1e-10</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge19" class="edge">
+<ns0:title>sys_cindyjs-&gt;tcb_ieee_float</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M97.24,-749.96C137.19,-752.84 212.53,-758.26 264.48,-762" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="264.32,-764.09 270.46,-762.43 264.63,-759.9 264.32,-764.09" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>

@@ -1,0 +1,96 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="325pt" height="265pt" viewBox="0.00 0.00 325.00 265.00">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 261)">
+<ns0:title>showcase_simson_line</ns0:title>
+
+<ns0:g id="node1" class="node">
+<ns0:title>thm</ns0:title>
+<ns0:ellipse fill="#ffffff" stroke="#555a62" stroke-width="1.6" cx="49.25" cy="-128.5" rx="49.25" ry="18" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="49.25" y="-124.8" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">Simson line</ns0:text>
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>r0</ns0:title>
+<ns0:g id="a_node2"><ns0:a ns1:href="../foundations/cards/euclid.html" ns1:title="Not in the Elements (Wallace, 1799)." target="_top">
+<ns0:path fill="#dddddd" stroke="#555a62" stroke-width="0.8" d="M251.87,-257C251.87,-257 221.87,-257 221.87,-257 215.87,-257 209.87,-251 209.87,-245 209.87,-245 209.87,-232 209.87,-232 209.87,-226 215.87,-220 221.87,-220 221.87,-220 251.87,-220 251.87,-220 257.87,-220 263.87,-226 263.87,-232 263.87,-232 263.87,-245 263.87,-245 263.87,-251 257.87,-257 251.87,-257" />
+<ns0:text xml:space="preserve" text-anchor="start" x="218.49" y="-243.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">Euclid</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="232.37" y="-234.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">&#8212;</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="221.49" y="-225.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">absent</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>thm-&gt;r0</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" stroke-dasharray="5,2" d="M68.1,-145.55C88.2,-163.96 122.52,-193.14 156.49,-211.5 170.91,-219.29 188,-225.45 202.62,-229.91" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="201.77,-231.85 208.12,-231.53 202.96,-227.82 201.77,-231.85" />
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>r1</ns0:title>
+<ns0:g id="a_node3"><ns0:a ns1:href="../foundations/cards/newclid.html" ns1:title="Listed in TRIAGE_LEAVE_RULE_OUT: provable from other rules, so left out of the default rule set." target="_top">
+<ns0:path fill="#f6b26b" stroke="#555a62" stroke-width="0.8" d="M302.24,-202C302.24,-202 171.49,-202 171.49,-202 165.49,-202 159.49,-196 159.49,-190 159.49,-190 159.49,-177 159.49,-177 159.49,-171 165.49,-165 171.49,-165 171.49,-165 302.24,-165 302.24,-165 308.24,-165 314.24,-171 314.24,-177 314.24,-177 314.24,-190 314.24,-190 314.24,-196 308.24,-202 302.24,-202" />
+<ns0:text xml:space="preserve" text-anchor="start" x="212.49" y="-188.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">Newclid</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="167.49" y="-179.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">R45_SIMSONS_LINE_THEOREM</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="228.24" y="-170.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">rule</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>thm-&gt;r1</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M88.71,-139.9C110.84,-146.45 139.33,-154.89 165.34,-162.6" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="164.45,-164.53 170.8,-164.22 165.64,-160.5 164.45,-164.53" />
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>r2</ns0:title>
+<ns0:g id="a_node4"><ns0:a ns1:href="../foundations/cards/jgex.html" ns1:title="A classic Wu-method / Gr&#246;bner example; certified off the non-degeneracy conditions." target="_top">
+<ns0:path fill="#7fd1c7" stroke="#555a62" stroke-width="0.8" d="M305.24,-147C305.24,-147 168.49,-147 168.49,-147 162.49,-147 156.49,-141 156.49,-135 156.49,-135 156.49,-122 156.49,-122 156.49,-116 162.49,-110 168.49,-110 168.49,-110 305.24,-110 305.24,-110 311.24,-110 317.24,-116 317.24,-122 317.24,-122 317.24,-135 317.24,-135 317.24,-141 311.24,-147 305.24,-147" />
+<ns0:text xml:space="preserve" text-anchor="start" x="222.62" y="-133.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">JGEX</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="164.49" y="-124.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">examples/Showcase/simson.gex</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="219.99" y="-115.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">generic</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>thm-&gt;r2</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M99.02,-128.5C114.34,-128.5 131.74,-128.5 148.88,-128.5" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="148.69,-130.6 154.69,-128.5 148.69,-126.4 148.69,-130.6" />
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>r3</ns0:title>
+<ns0:g id="a_node5"><ns0:a ns1:href="../foundations/cards/mathlib4.html" ns1:title="No Simson line in Mathlib/Geometry/Euclidean at the surveyed commit." target="_top">
+<ns0:path fill="#dddddd" stroke="#555a62" stroke-width="0.8" d="M259.87,-92C259.87,-92 213.87,-92 213.87,-92 207.87,-92 201.87,-86 201.87,-80 201.87,-80 201.87,-67 201.87,-67 201.87,-61 207.87,-55 213.87,-55 213.87,-55 259.87,-55 259.87,-55 265.87,-55 271.87,-61 271.87,-67 271.87,-67 271.87,-80 271.87,-80 271.87,-86 265.87,-92 259.87,-92" />
+<ns0:text xml:space="preserve" text-anchor="start" x="209.87" y="-78.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">mathlib4</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="232.37" y="-69.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">&#8212;</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="221.49" y="-60.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">absent</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>thm-&gt;r3</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" stroke-dasharray="5,2" d="M88.71,-117.1C119.61,-107.95 162.92,-95.11 194.55,-85.74" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="194.91,-87.83 200.07,-84.11 193.72,-83.8 194.91,-87.83" />
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>r4</ns0:title>
+<ns0:g id="a_node6"><ns0:a ns1:href="../foundations/cards/geometor_model.html" ns1:title="Exact on one cyclic quadrilateral (L1)." target="_top">
+<ns0:path fill="#9cc3f0" stroke="#555a62" stroke-width="0.8" d="M287.62,-37C287.62,-37 186.12,-37 186.12,-37 180.12,-37 174.12,-31 174.12,-25 174.12,-25 174.12,-12 174.12,-12 174.12,-6 180.12,0 186.12,0 186.12,0 287.62,0 287.62,0 293.62,0 299.62,-6 299.62,-12 299.62,-12 299.62,-25 299.62,-25 299.62,-31 293.62,-37 287.62,-37" />
+<ns0:text xml:space="preserve" text-anchor="start" x="186.99" y="-23.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">geometor.model</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="182.12" y="-14.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">verify._build_simson_line</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="219.99" y="-5.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">witness</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>thm-&gt;r4</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M68.54,-111.42C88.76,-93.28 122.93,-64.76 156.49,-46.5 160.54,-44.3 164.79,-42.22 169.13,-40.26" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="169.96,-42.19 174.63,-37.88 168.29,-38.33 169.96,-42.19" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>

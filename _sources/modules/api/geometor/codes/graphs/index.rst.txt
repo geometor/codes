@@ -1,0 +1,139 @@
+geometor.codes.graphs
+=====================
+
+.. py:module:: geometor.codes.graphs
+
+.. autoapi-nested-parse::
+
+   Graphviz DOT builders for the foundations views.
+
+   Every function returns a DOT source string suitable for Sphinx's
+   ``.. graphviz::`` directive (rendered to SVG). Graphs are theme-neutral:
+   transparent background, filled nodes with dark text, grey edges.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   geometor.codes.graphs.BRIDGE_STYLES
+   geometor.codes.graphs.STATUS_COLORS
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.codes.graphs.ladder_graph
+   geometor.codes.graphs.chain_graph
+   geometor.codes.graphs.trust_graph
+   geometor.codes.graphs.bridges_graph
+   geometor.codes.graphs.ontology_graph
+   geometor.codes.graphs.overlap_graph
+   geometor.codes.graphs.showcase_graph
+   geometor.codes.graphs.shared_principles
+
+
+Module Contents
+---------------
+
+.. py:data:: BRIDGE_STYLES
+   :type:  dict[str, tuple[str, str]]
+
+   Edge color and style per bridge kind.
+
+.. py:data:: STATUS_COLORS
+   :type:  dict[str, str]
+
+   Node fill per showcase realization status.
+
+.. py:function:: ladder_graph(fnd: geometor.codes.foundations.Foundations, depth: int = 1) -> str
+
+   Truth Ladder: rungs bottom-to-top with systems placed on each rung.
+
+   Dashed edges show *lifts* — routes by which a system's claims could climb.
+
+   :param fnd: Loaded foundations.
+   :param depth: Directory depth of the page embedding the graph (for node links).
+
+   :returns: DOT source.
+
+
+.. py:function:: chain_graph(fnd: geometor.codes.foundations.Foundations, system: geometor.codes.foundations.System) -> str
+
+   Trust chain for one system: the seven Trust Stack layers left to right.
+
+   The ``checker`` node (what must be trusted) is emphasized.
+
+   :param fnd: Loaded foundations.
+   :param system: The system to draw.
+
+   :returns: DOT source.
+
+
+.. py:function:: trust_graph(fnd: geometor.codes.foundations.Foundations, depth: int = 1) -> str
+
+   Who trusts what: systems on the left, trusted components on the right.
+
+   Shared components (e.g. the Lean kernel) become visible hubs.
+
+   :param fnd: Loaded foundations.
+   :param depth: Directory depth of the embedding page.
+
+   :returns: DOT source.
+
+
+.. py:function:: bridges_graph(fnd: geometor.codes.foundations.Foundations, depth: int = 1) -> str
+
+   Translations, embeddings, and lineage between systems.
+
+   :param fnd: Loaded foundations.
+   :param depth: Directory depth of the embedding page.
+
+   :returns: DOT source.
+
+
+.. py:function:: ontology_graph(fnd: geometor.codes.foundations.Foundations) -> str
+
+   Systems linked to the primitive sorts of their ontology.
+
+   :param fnd: Loaded foundations.
+
+   :returns: DOT source (undirected).
+
+
+.. py:function:: overlap_graph(fnd: geometor.codes.foundations.Foundations, shared: dict[tuple[str, str], int], totals: dict[str, int]) -> str
+
+   Shared-principle graph: edge weight = principles realized in both systems.
+
+   :param fnd: Loaded foundations (for colors and labels).
+   :param shared: Mapping of sorted system-id pairs to shared principle counts.
+   :param totals: Principle counts per system (node labels).
+
+   :returns: DOT source (undirected, neato layout).
+
+
+.. py:function:: showcase_graph(fnd: geometor.codes.foundations.Foundations, sc: geometor.codes.foundations.Showcase, depth: int = 2) -> str
+
+   Star graph for one showcase theorem: realizations colored by status.
+
+   :param fnd: Loaded foundations.
+   :param sc: Showcase theorem.
+   :param depth: Directory depth of the embedding page.
+
+   :returns: DOT source.
+
+
+.. py:function:: shared_principles(members_by_principle: dict[str, set[str]]) -> tuple[dict[tuple[str, str], int], dict[str, int]]
+
+   Count principles shared by each pair of systems.
+
+   :param members_by_principle: Principle id → set of system ids realizing it.
+
+   :returns: ``(shared, totals)`` where ``shared`` maps sorted system pairs to counts
+             and ``totals`` maps each system to its principle count.
+
+

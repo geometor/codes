@@ -6,10 +6,12 @@
    :maxdepth: 2
    :hidden:
 
-   hierarchy/index
-   principles/index
-   syntax/index
+   foundations/index
+   showcase/index
+   catalog/index
    systems/index
+   hierarchy/index
+   syntax/index
    rosetta/index
    opus/index
    glossary

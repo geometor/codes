@@ -1,0 +1,96 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="348pt" height="265pt" viewBox="0.00 0.00 348.00 265.00">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 261)">
+<ns0:title>showcase_pasch</ns0:title>
+
+<ns0:g id="node1" class="node">
+<ns0:title>thm</ns0:title>
+<ns0:ellipse fill="#ffffff" stroke="#555a62" stroke-width="1.6" cx="58.6" cy="-128.5" rx="58.6" ry="18" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="58.6" y="-124.8" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">Pasch's axiom</ns0:text>
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>r0</ns0:title>
+<ns0:g id="a_node2"><ns0:a ns1:href="../foundations/cards/euclid.html" ns1:title="Used tacitly via the diagram; not among Euclid's postulates. Pasch made it explicit in 1882." target="_top">
+<ns0:path fill="#f19c9c" stroke="#555a62" stroke-width="0.8" d="M272.82,-257C272.82,-257 242.82,-257 242.82,-257 236.82,-257 230.82,-251 230.82,-245 230.82,-245 230.82,-232 230.82,-232 230.82,-226 236.82,-220 242.82,-220 242.82,-220 272.82,-220 272.82,-220 278.82,-220 284.82,-226 284.82,-232 284.82,-232 284.82,-245 284.82,-245 284.82,-251 278.82,-257 272.82,-257" />
+<ns0:text xml:space="preserve" text-anchor="start" x="239.45" y="-243.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">Euclid</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="253.32" y="-234.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">&#8212;</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="249.2" y="-225.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">gap</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>thm-&gt;r0</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" stroke-dasharray="5,2" d="M79.67,-145.83C101.8,-164.22 139.09,-193.11 175.2,-211.5 190.4,-219.24 208.3,-225.45 223.45,-229.96" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="222.85,-231.97 229.2,-231.61 224.01,-227.93 222.85,-231.97" />
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>r1</ns0:title>
+<ns0:g id="a_node3"><ns0:a ns1:href="../foundations/cards/leaneuclid.html" ns1:title="One of System E's 36 diagrammatic inference axioms." target="_top">
+<ns0:path fill="#f4d58d" stroke="#555a62" stroke-width="0.8" d="M286.82,-202C286.82,-202 228.82,-202 228.82,-202 222.82,-202 216.82,-196 216.82,-190 216.82,-190 216.82,-177 216.82,-177 216.82,-171 222.82,-165 228.82,-165 228.82,-165 286.82,-165 286.82,-165 292.82,-165 298.82,-171 298.82,-177 298.82,-177 298.82,-190 298.82,-190 298.82,-196 292.82,-202 286.82,-202" />
+<ns0:text xml:space="preserve" text-anchor="start" x="224.82" y="-188.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">LeanEuclid</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="239.07" y="-179.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">pasch_1</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="244.32" y="-170.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">axiom</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>thm-&gt;r1</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M103.37,-140.71C134.81,-149.47 177.15,-161.28 209.4,-170.27" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="208.73,-172.27 215.07,-171.86 209.86,-168.22 208.73,-172.27" />
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>r2</ns0:title>
+<ns0:g id="a_node4"><ns0:a ns1:href="../foundations/cards/geocoq.html" ns1:title="A field of the Tarski axiom class (inner form of Pasch)." target="_top">
+<ns0:path fill="#f4d58d" stroke="#555a62" stroke-width="0.8" d="M328.45,-147C328.45,-147 187.2,-147 187.2,-147 181.2,-147 175.2,-141 175.2,-135 175.2,-135 175.2,-122 175.2,-122 175.2,-116 181.2,-110 187.2,-110 187.2,-110 328.45,-110 328.45,-110 334.45,-110 340.45,-116 340.45,-122 340.45,-122 340.45,-135 340.45,-135 340.45,-141 334.45,-147 328.45,-147" />
+<ns0:text xml:space="preserve" text-anchor="start" x="234.2" y="-133.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">GeoCoq</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="183.2" y="-124.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">Tarski_neutral_dimensionless.in&#8230;</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="244.32" y="-115.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">axiom</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>thm-&gt;r2</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M117.97,-128.5C133.57,-128.5 150.8,-128.5 167.66,-128.5" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="167.34,-130.6 173.34,-128.5 167.34,-126.4 167.34,-130.6" />
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>r3</ns0:title>
+<ns0:g id="a_node5"><ns0:a ns1:href="../foundations/cards/alphageometry.html" ns1:title="No order predicates in the rule language; side and betweenness facts come only from the numeric diagram." target="_top">
+<ns0:path fill="#f19c9c" stroke="#555a62" stroke-width="0.8" d="M301.45,-92C301.45,-92 214.2,-92 214.2,-92 208.2,-92 202.2,-86 202.2,-80 202.2,-80 202.2,-67 202.2,-67 202.2,-61 208.2,-55 214.2,-55 214.2,-55 301.45,-55 301.45,-55 307.45,-55 313.45,-61 313.45,-67 313.45,-67 313.45,-80 313.45,-80 313.45,-86 307.45,-92 301.45,-92" />
+<ns0:text xml:space="preserve" text-anchor="start" x="210.2" y="-78.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">AlphaGeometry</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="253.32" y="-69.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">&#8212;</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="249.2" y="-60.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">gap</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>thm-&gt;r3</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" stroke-dasharray="5,2" d="M103.37,-116.29C130.26,-108.79 165.14,-99.07 194.85,-90.78" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="195.21,-92.86 200.43,-89.23 194.08,-88.82 195.21,-92.86" />
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>r4</ns0:title>
+<ns0:g id="a_node6"><ns0:a ns1:href="../foundations/cards/geometor_model.html" ns1:title="No betweenness or half-plane predicate. Order needs an ordered field, which polynomial identities cannot express." target="_top">
+<ns0:path fill="#f19c9c" stroke="#555a62" stroke-width="0.8" d="M305.2,-37C305.2,-37 210.45,-37 210.45,-37 204.45,-37 198.45,-31 198.45,-25 198.45,-25 198.45,-12 198.45,-12 198.45,-6 204.45,0 210.45,0 210.45,0 305.2,0 305.2,0 311.2,0 317.2,-6 317.2,-12 317.2,-12 317.2,-25 317.2,-25 317.2,-31 311.2,-37 305.2,-37" />
+<ns0:text xml:space="preserve" text-anchor="start" x="207.95" y="-23.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">geometor.model</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="206.45" y="-14.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">KNOWN_GAPS['pasch']</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="249.2" y="-5.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">gap</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>thm-&gt;r4</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" stroke-dasharray="5,2" d="M80.15,-111.14C102.4,-93.04 139.51,-64.8 175.2,-46.5 180.47,-43.8 186.06,-41.26 191.74,-38.91" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="192.25,-40.97 197.04,-36.79 190.68,-37.07 192.25,-40.97" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>

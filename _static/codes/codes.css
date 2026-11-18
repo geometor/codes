@@ -1,0 +1,116 @@
+/* GEOMETOR Codes — Atlas, catalog, tabs, and status badges (theme-neutral). */
+
+.codes-atlas, .codes-catalog { margin: 1.2em 0 2em; font-size: 0.92em; }
+.codes-atlas, .codes-catalog {
+  --codes-room: calc(100vw - 3rem);
+  position: relative;
+  width: max(100%, min(1280px, var(--codes-room)));
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* Match the theme grid: one sidebar from 48em landscape, two from 72em landscape. */
+@media (min-width: 48em) and (orientation: landscape) {
+  .codes-atlas, .codes-catalog { --codes-room: calc(100vw - var(--col, 16rem) - 4rem); }
+}
+@media (min-width: 72em) and (orientation: landscape) {
+  .codes-atlas, .codes-catalog { --codes-room: calc(100vw - 2 * var(--col, 16rem) - 4rem); }
+}
+
+.codes-atlas-controls { display: flex; flex-wrap: wrap; gap: 0.35em; align-items: center; margin: 0.4em 0 0.8em; }
+.codes-sep { width: 1px; height: 1.4em; background: currentColor; opacity: 0.2; margin: 0 0.3em; }
+
+.codes-chip {
+  --chip: transparent;
+  border: 1px solid rgba(128, 128, 128, 0.45);
+  background: transparent;
+  color: inherit;
+  border-radius: 999px;
+  padding: 0.18em 0.75em;
+  font: inherit;
+  font-size: 0.88em;
+  cursor: pointer;
+  box-shadow: inset 0.55em 0 0 -0.2em var(--chip);
+}
+.codes-chip:hover { border-color: currentColor; }
+.codes-chip.active { background: rgba(128, 128, 128, 0.22); border-color: currentColor; font-weight: 600; }
+
+.codes-atlas-grid { overflow-x: auto; }
+.codes-atlas-table { border-collapse: collapse; width: 100%; table-layout: fixed; }
+.codes-atlas-table th, .codes-atlas-table td {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+  padding: 0.35em 0.45em;
+  vertical-align: top;
+  text-align: left;
+}
+.codes-atlas-table th { font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.8; }
+.codes-atlas-table th:first-child, .codes-atlas-table td:first-child { width: 10.5em; }
+.codes-atlas-table tbody tr { cursor: pointer; }
+.codes-atlas-table tbody tr:hover { background: rgba(128, 128, 128, 0.08); }
+.codes-atlas-table tbody tr.selected { background: rgba(128, 128, 128, 0.16); }
+.codes-atlas-cell div {
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  font-size: 0.9em; line-height: 1.3;
+}
+.codes-atlas-cell.checker div { font-weight: 600; }
+.codes-atlas-sys { white-space: nowrap; }
+.codes-atlas-sys a { margin-left: 0.4em; }
+
+.codes-badge {
+  display: inline-block; min-width: 1.9em; text-align: center;
+  border-radius: 4px; padding: 0 0.3em; font-size: 0.8em; font-weight: 700; color: #1d1f23;
+}
+
+.codes-atlas-detail { margin-top: 0.8em; }
+.codes-detail-box { border-left: 6px solid; padding: 0.4em 1em; background: rgba(128, 128, 128, 0.07); border-radius: 4px; }
+.codes-detail-box h4 { margin: 0.3em 0; }
+.codes-summary { font-style: italic; }
+.codes-dl { display: grid; grid-template-columns: 9em 1fr; gap: 0.2em 0.8em; margin: 0.6em 0; }
+.codes-dl dt { font-weight: 600; }
+.codes-dl dd { margin: 0; }
+.codes-example { font-size: 0.85em; white-space: pre-wrap; padding: 0.5em; background: rgba(128, 128, 128, 0.1); border-radius: 4px; }
+.codes-hint { opacity: 0.7; font-size: 0.9em; }
+
+.codes-catalog-bar { display: flex; gap: 0.5em; flex-wrap: wrap; }
+.codes-search, .codes-select {
+  font: inherit; color: inherit; background: transparent;
+  border: 1px solid rgba(128, 128, 128, 0.45); border-radius: 6px; padding: 0.35em 0.6em;
+}
+.codes-search { flex: 1 1 20em; }
+.codes-select option { color: #1d1f23; }
+.codes-catalog-table td { overflow-wrap: anywhere; }
+.codes-catalog-table td code { white-space: normal; overflow-wrap: anywhere; }
+.codes-catalog-table th:first-child, .codes-catalog-table td:first-child { width: 15em; }
+.codes-catalog-table th:nth-child(2), .codes-catalog-table td:nth-child(2) { width: 10em; }
+.codes-catalog-table th:nth-child(3), .codes-catalog-table td:nth-child(3) { width: 11em; }
+.codes-catalog-table th:nth-child(4), .codes-catalog-table td:nth-child(4) { width: 5.5em; }
+.codes-catalog-table tbody tr { cursor: default; }
+.codes-sub { font-size: 0.85em; opacity: 0.75; }
+.codes-form { font-size: 0.82em; word-break: break-word; white-space: normal; }
+
+/* Tabs (showcase realizations) */
+.codes-tabbar { display: flex; flex-wrap: wrap; gap: 0.3em; margin-bottom: 0.6em; }
+.codes-tabbtn {
+  font: inherit; font-size: 0.88em; color: inherit; background: transparent; cursor: pointer;
+  border: 1px solid rgba(128, 128, 128, 0.4); border-radius: 6px 6px 0 0; padding: 0.25em 0.8em;
+  border-bottom-width: 4px;
+}
+.codes-tabbtn.active { background: rgba(128, 128, 128, 0.18); font-weight: 600; }
+.codes-tabs.ready .codes-tab > .rubric { display: none; }
+
+/* Status colors (shared with graphs.STATUS_COLORS) */
+.status-theorem { border-bottom-color: #9fd8a8 !important; }
+.status-axiom { border-bottom-color: #f4d58d !important; }
+.status-rule { border-bottom-color: #f6b26b !important; }
+.status-witness { border-bottom-color: #9cc3f0 !important; }
+.status-generic { border-bottom-color: #7fd1c7 !important; }
+.status-gap { border-bottom-color: #f19c9c !important; }
+.status-absent { border-bottom-color: #bbbbbb !important; }
+.status-prose { border-bottom-color: #e8d9b5 !important; }
+
+span.codes-status {
+  display: inline-block; border-radius: 4px; padding: 0 0.45em; font-size: 0.82em; font-weight: 600; color: #1d1f23;
+}
+
+/* Graphviz figures: keep them readable on dark themes */
+div.graphviz object, div.graphviz img, div.graphviz svg { max-width: 100%; height: auto; }
+div.graphviz { overflow-x: auto; }

@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../../../../../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>geometor.codes.graphs — Geometric Codes &amp; Proportions • GEOMETOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="canonical" href="https://geometor.github.io/codes/modules/api/geometor/codes/graphs/" />
+  <meta name="description" content="Graphviz DOT builders for the foundations views." />
+  <meta property="og:site_name" content="GEOMETOR" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="geometor.codes.graphs — Geometric Codes &amp; Proportions • GEOMETOR" />
+  <meta property="og:description" content="Graphviz DOT builders for the foundations views." />
+  <meta property="og:url" content="https://geometor.github.io/codes/modules/api/geometor/codes/graphs/" />
+  <meta property="og:image" content="https://geometor.github.io/codes/_static/social/banner.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="640" />
+  <meta property="og:image:alt" content="Geometric Codes &amp; Proportions — GEOMETOR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="geometor.codes.graphs — Geometric Codes &amp; Proportions • GEOMETOR" />
+  <meta name="twitter:description" content="Graphviz DOT builders for the foundations views." />
+  <meta name="twitter:image" content="https://geometor.github.io/codes/_static/social/banner.png" />
+  <meta name="twitter:image:alt" content="Geometric Codes &amp; Proportions — GEOMETOR" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/css/styles.css?v=f1075037" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/codes/codes.css?v=f4f20763" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../../../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../../../../../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../../../../../index.html" title="Home">
+        <img src="../../../../../_static/logo.png" class="logo" alt="GEOMETOR codes"/>
+        <div class="org-repo">
+          <span class="org">GEOMETOR</span>
+          <span class="sep" aria-hidden="true">&bull;</span>
+          <span class="repo">codes</span>
+        </div>
+      </a>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../../../../../foundations/index.html"  >Foundations</a>
+        </li>
+        <li>
+          <a href="../../../../../showcase/index.html"  >Showcase</a>
+        </li>
+        <li>
+          <a href="../../../../../catalog/index.html"  >Catalog</a>
+        </li>
+        <li>
+          <a href="../../../../../systems/index.html"  >Systems</a>
+        </li>
+        <li>
+          <a href="../../../../../people/index.html"  >People</a>
+        </li>
+        <li>
+          <a href="../../../../../bibliography.html"  >Bibliography</a>
+        </li>
+        <li>
+          <a href="../../../../../glossary.html"  >Glossary</a>
+        </li>
+        <li>
+          <a href="../../../../../log/index.html"  >Log</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <nav class="book-breadcrumbs" aria-label="Breadcrumb">
+            <a class="book-section-home-link" href="../../../../index.html">Modules</a>
+            <span class="book-crumb-sep" aria-hidden="true">/</span>
+            <span class="book-crumb-current" aria-current="page">geometor.codes.graphs</span>
+          </nav>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="module-geometor.codes.graphs">
+        <span id="geometor-codes-graphs"></span><h1>geometor.codes.graphs<a class="headerlink" href="#module-geometor.codes.graphs" title="Link to this heading">¶</a></h1>
+        <p>Graphviz DOT builders for the foundations views.</p>
+        <p>Every function returns a DOT source string suitable for Sphinx’s
+        <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">graphviz::</span></code> directive (rendered to SVG). Graphs are theme-neutral:
+        transparent background, filled nodes with dark text, grey edges.</p>
+        <section class="level-2" id="attributes">
+        <h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.graphs.BRIDGE_STYLES" title="geometor.codes.graphs.BRIDGE_STYLES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BRIDGE_STYLES</span></code></a></p></td>
+        <td><p>Edge color and style per bridge kind.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.graphs.STATUS_COLORS" title="geometor.codes.graphs.STATUS_COLORS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">STATUS_COLORS</span></code></a></p></td>
+        <td><p>Node fill per showcase realization status.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="functions">
+        <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.graphs.ladder_graph" title="geometor.codes.graphs.ladder_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ladder_graph</span></code></a>(fnd[, depth]) → str</p></td>
+        <td><p>Truth Ladder: rungs bottom-to-top with systems placed on each rung.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.graphs.chain_graph" title="geometor.codes.graphs.chain_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chain_graph</span></code></a>(fnd, system) → str</p></td>
+        <td><p>Trust chain for one system: the seven Trust Stack layers left to right.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.graphs.trust_graph" title="geometor.codes.graphs.trust_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trust_graph</span></code></a>(fnd[, depth]) → str</p></td>
+        <td><p>Who trusts what: systems on the left, trusted components on the right.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.graphs.bridges_graph" title="geometor.codes.graphs.bridges_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bridges_graph</span></code></a>(fnd[, depth]) → str</p></td>
+        <td><p>Translations, embeddings, and lineage between systems.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.graphs.ontology_graph" title="geometor.codes.graphs.ontology_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ontology_graph</span></code></a>(fnd) → str</p></td>
+        <td><p>Systems linked to the primitive sorts of their ontology.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.graphs.overlap_graph" title="geometor.codes.graphs.overlap_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">overlap_graph</span></code></a>(fnd, shared, totals) → str</p></td>
+        <td><p>Shared-principle graph: edge weight = principles realized in both systems.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.codes.graphs.showcase_graph" title="geometor.codes.graphs.showcase_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">showcase_graph</span></code></a>(fnd, sc[, depth]) → str</p></td>
+        <td><p>Star graph for one showcase theorem: realizations colored by status.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.codes.graphs.shared_principles" title="geometor.codes.graphs.shared_principles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shared_principles</span></code></a>(members_by_principle) → tuple[dict[tuple[str, str], int], dict[str, int]]</p></td>
+        <td><p>Count principles shared by each pair of systems.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="module-contents">
+        <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+        <dl class="py data">
+        <dt class="sig sig-object py" id="geometor.codes.graphs.BRIDGE_STYLES">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.graphs.</span></span><span class="sig-name descname"><span class="pre">BRIDGE_STYLES</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.codes.graphs.BRIDGE_STYLES" title="Link to this definition">¶</a></dt>
+        <dd><p>Edge color and style per bridge kind.</p>
+        </dd></dl>
+
+        <dl class="py data">
+        <dt class="sig sig-object py" id="geometor.codes.graphs.STATUS_COLORS">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.graphs.</span></span><span class="sig-name descname"><span class="pre">STATUS_COLORS</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.codes.graphs.STATUS_COLORS" title="Link to this definition">¶</a></dt>
+        <dd><p>Node fill per showcase realization status.</p>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.graphs.ladder_graph">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.graphs.</span></span><span class="sig-name descname"><span class="pre">ladder_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fnd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../foundations/index.html#geometor.codes.foundations.Foundations" title="geometor.codes.foundations.Foundations"><span class="pre">geometor.codes.foundations.Foundations</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#geometor.codes.graphs.ladder_graph" title="Link to this definition">¶</a></dt>
+        <dd><p>Truth Ladder: rungs bottom-to-top with systems placed on each rung.</p>
+        <p>Dashed edges show <em>lifts</em> — routes by which a system’s claims could climb.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>fnd</strong> – Loaded foundations.</p></li>
+        <li><p><strong>depth</strong> – Directory depth of the page embedding the graph (for node links).</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>DOT source.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.graphs.chain_graph">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.graphs.</span></span><span class="sig-name descname"><span class="pre">chain_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fnd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../foundations/index.html#geometor.codes.foundations.Foundations" title="geometor.codes.foundations.Foundations"><span class="pre">geometor.codes.foundations.Foundations</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">system</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../foundations/index.html#geometor.codes.foundations.System" title="geometor.codes.foundations.System"><span class="pre">geometor.codes.foundations.System</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#geometor.codes.graphs.chain_graph" title="Link to this definition">¶</a></dt>
+        <dd><p>Trust chain for one system: the seven Trust Stack layers left to right.</p>
+        <p>The <code class="docutils literal notranslate"><span class="pre">checker</span></code> node (what must be trusted) is emphasized.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>fnd</strong> – Loaded foundations.</p></li>
+        <li><p><strong>system</strong> – The system to draw.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>DOT source.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.graphs.trust_graph">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.graphs.</span></span><span class="sig-name descname"><span class="pre">trust_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fnd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../foundations/index.html#geometor.codes.foundations.Foundations" title="geometor.codes.foundations.Foundations"><span class="pre">geometor.codes.foundations.Foundations</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#geometor.codes.graphs.trust_graph" title="Link to this definition">¶</a></dt>
+        <dd><p>Who trusts what: systems on the left, trusted components on the right.</p>
+        <p>Shared components (e.g. the Lean kernel) become visible hubs.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>fnd</strong> – Loaded foundations.</p></li>
+        <li><p><strong>depth</strong> – Directory depth of the embedding page.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>DOT source.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.graphs.bridges_graph">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.graphs.</span></span><span class="sig-name descname"><span class="pre">bridges_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fnd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../foundations/index.html#geometor.codes.foundations.Foundations" title="geometor.codes.foundations.Foundations"><span class="pre">geometor.codes.foundations.Foundations</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#geometor.codes.graphs.bridges_graph" title="Link to this definition">¶</a></dt>
+        <dd><p>Translations, embeddings, and lineage between systems.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>fnd</strong> – Loaded foundations.</p></li>
+        <li><p><strong>depth</strong> – Directory depth of the embedding page.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>DOT source.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.graphs.ontology_graph">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.graphs.</span></span><span class="sig-name descname"><span class="pre">ontology_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fnd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../foundations/index.html#geometor.codes.foundations.Foundations" title="geometor.codes.foundations.Foundations"><span class="pre">geometor.codes.foundations.Foundations</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#geometor.codes.graphs.ontology_graph" title="Link to this definition">¶</a></dt>
+        <dd><p>Systems linked to the primitive sorts of their ontology.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>fnd</strong> – Loaded foundations.</p>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>DOT source (undirected).</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.graphs.overlap_graph">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.graphs.</span></span><span class="sig-name descname"><span class="pre">overlap_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fnd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../foundations/index.html#geometor.codes.foundations.Foundations" title="geometor.codes.foundations.Foundations"><span class="pre">geometor.codes.foundations.Foundations</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">totals</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#geometor.codes.graphs.overlap_graph" title="Link to this definition">¶</a></dt>
+        <dd><p>Shared-principle graph: edge weight = principles realized in both systems.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>fnd</strong> – Loaded foundations (for colors and labels).</p></li>
+        <li><p><strong>shared</strong> – Mapping of sorted system-id pairs to shared principle counts.</p></li>
+        <li><p><strong>totals</strong> – Principle counts per system (node labels).</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>DOT source (undirected, neato layout).</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.graphs.showcase_graph">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.graphs.</span></span><span class="sig-name descname"><span class="pre">showcase_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fnd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../foundations/index.html#geometor.codes.foundations.Foundations" title="geometor.codes.foundations.Foundations"><span class="pre">geometor.codes.foundations.Foundations</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../foundations/index.html#geometor.codes.foundations.Showcase" title="geometor.codes.foundations.Showcase"><span class="pre">geometor.codes.foundations.Showcase</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#geometor.codes.graphs.showcase_graph" title="Link to this definition">¶</a></dt>
+        <dd><p>Star graph for one showcase theorem: realizations colored by status.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>fnd</strong> – Loaded foundations.</p></li>
+        <li><p><strong>sc</strong> – Showcase theorem.</p></li>
+        <li><p><strong>depth</strong> – Directory depth of the embedding page.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>DOT source.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.codes.graphs.shared_principles">
+        <span class="sig-prename descclassname"><span class="pre">geometor.codes.graphs.</span></span><span class="sig-name descname"><span class="pre">shared_principles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">members_by_principle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.codes.graphs.shared_principles" title="Link to this definition">¶</a></dt>
+        <dd><p>Count principles shared by each pair of systems.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>members_by_principle</strong> – Principle id → set of system ids realizing it.</p>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">(shared,</span> <span class="pre">totals)</span></code> where <code class="docutils literal notranslate"><span class="pre">shared</span></code> maps sorted system pairs to counts
+        and <code class="docutils literal notranslate"><span class="pre">totals</span></code> maps each system to its principle count.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../../../../index.html">Modules</a>
+          </div>
+          <div class="book-nav-next">
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../../../../../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../../../../../log/26.322-truth-foundations.html">26.322 — Truth Foundations: Ladder, Stack, Graphs</a></li>
+        <li><a href="../../../../../log/26.321-principles-catalog.html">26.321 — Principles Catalog & Cross-System Linker</a></li>
+        <li><a href="../../../../../log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="../../../../../tags/byrne.html">byrne</a></li>
+        <li><a href="../../../../../tags/formal-systems.html">formal-systems</a></li>
+        <li><a href="../../../../../tags/geometor-model.html">geometor-model</a></li>
+        <li><a href="../../../../../tags/opus.html">opus</a></li>
+        <li><a href="../../../../../tags/rosetta.html">rosetta</a></li>
+        <li><a href="../../../../../tags/sympy.html">sympy</a></li>
+        <li><a href="../../../../../tags/syntax.html">syntax</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../../../../../types/log.html">log</a></li>
+        <li><a href="../../../../../types/person.html">person</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../../../../../hierarchy/index.html"  >Hierarchy</a></li>
+        <li><a href="../../../../../changelog.html"  >Changelog</a></li>
+        <li><a href="../../../../../syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a></li>
+        <li><a href="../../../../../rosetta/index.html"  >Rosetta Stone Benchmarks</a></li>
+        <li><a href="../../../../../opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a></li>
+        <li><a href="https://github.com/geometor/codes" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://github.com/geometor/codes/issues" target="_blank" rel="noopener">Support</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../../../../../_static/documentation_options.js?v=e259d695"></script>
+  <script src="../../../../../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../../../../../_static/js/collection_directory.js?v=2422530d"></script>
+  <script src="../../../../../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script src="../../../../../_static/codes/codes.js?v=2fc1b9c9"></script>
+  <script src="../../../../../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

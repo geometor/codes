@@ -11,11 +11,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="canonical" href="https://geometor.github.io/codes/" />
-  <meta name="description" content="The mathematical catalog provides a forensic comparative study across eleven formal, visual, and symbolic geometric languages—from Byrne’s colored diagrams and Tarski’s point-only axiomatics to…" />
+  <meta name="description" content="Why should I believe this is true? Every geometric system answers that question differently. Euclid points to the postulates and the reader. LeanEuclid and GeoCoq point to a proof kernel and a…" />
   <meta property="og:site_name" content="GEOMETOR" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Geometric Codes &amp; Proportions • GEOMETOR" />
-  <meta property="og:description" content="The mathematical catalog provides a forensic comparative study across eleven formal, visual, and symbolic geometric languages—from Byrne’s colored diagrams and Tarski’s point-only axiomatics to…" />
+  <meta property="og:description" content="Why should I believe this is true? Every geometric system answers that question differently. Euclid points to the postulates and the reader. LeanEuclid and GeoCoq point to a proof kernel and a…" />
   <meta property="og:url" content="https://geometor.github.io/codes/" />
   <meta property="og:image" content="https://geometor.github.io/codes/_static/social/banner.png" />
   <meta property="og:image:type" content="image/png" />
@@ -24,7 +24,7 @@
   <meta property="og:image:alt" content="Geometric Codes &amp; Proportions — GEOMETOR" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Geometric Codes &amp; Proportions • GEOMETOR" />
-  <meta name="twitter:description" content="The mathematical catalog provides a forensic comparative study across eleven formal, visual, and symbolic geometric languages—from Byrne’s colored diagrams and Tarski’s point-only axiomatics to…" />
+  <meta name="twitter:description" content="Why should I believe this is true? Every geometric system answers that question differently. Euclid points to the postulates and the reader. LeanEuclid and GeoCoq point to a proof kernel and a…" />
   <meta name="twitter:image" content="https://geometor.github.io/codes/_static/social/banner.png" />
   <meta name="twitter:image:alt" content="Geometric Codes &amp; Proportions — GEOMETOR" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,6 +33,7 @@
   <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=ea5fcf70" />
   <link rel="stylesheet" type="text/css" href="_static/css/styles.css?v=f1075037" />
   <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="_static/codes/codes.css?v=f4f20763" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -57,7 +58,16 @@
       <label for="nav-Header-toggle" >Header</label>
       <ul>
         <li>
-          <a href="hierarchy/index.html"  >Hierarchy</a>
+          <a href="foundations/index.html"  >Foundations</a>
+        </li>
+        <li>
+          <a href="showcase/index.html"  >Showcase</a>
+        </li>
+        <li>
+          <a href="catalog/index.html"  >Catalog</a>
+        </li>
+        <li>
+          <a href="systems/index.html"  >Systems</a>
         </li>
         <li>
           <a href="people/index.html"  >People</a>
@@ -69,19 +79,7 @@
           <a href="glossary.html"  >Glossary</a>
         </li>
         <li>
-          <a href="syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a>
-        </li>
-        <li>
           <a href="log/index.html"  >Log</a>
-        </li>
-        <li>
-          <a href="systems/index.html"  >Systems</a>
-        </li>
-        <li>
-          <a href="rosetta/index.html"  >Rosetta Stone Benchmarks</a>
-        </li>
-        <li>
-          <a href="opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a>
         </li>
       </ul>
     </nav>
@@ -95,7 +93,632 @@
         </div>
         <section class="level-1" id="geometric-codes-proportions">
         <h1>Geometric Codes &amp; Proportions<a class="headerlink" href="#geometric-codes-proportions" title="Link to this heading">¶</a></h1>
-        <p>The mathematical catalog provides a forensic comparative study across eleven formal, visual, and symbolic geometric languages—from Byrne’s colored diagrams and Tarski’s point-only axiomatics to LeanEuclid, AlphaGeometry, and Conformal Geometric Algebra. Within the interconnected <a class="reference external" href="https://geometor.com/books/">GEOMETOR</a> semantic digital archive, these systems are analyzed across 69 canonical topics and 7 Rosetta Stone benchmarks, distilling an exact computational blueprint that informs symbolic engines and theorem-proving formalisms across the GEOMETOR corpus.</p>
+        <p><strong>Why should I believe this is true?</strong> Every geometric system answers that question
+        differently. Euclid points to the postulates and the reader. LeanEuclid and GeoCoq
+        point to a proof kernel and a set of geometric axioms. mathlib points to the real
+        numbers alone. AlphaGeometry points to a rule list and a numeric diagram. A CAS such
+        as <code class="docutils literal notranslate"><span class="pre">geometor.model</span></code> points to an exact figure whose relations reduce to zero.</p>
+        <p>CODES compares twelve systems by their <strong>truth foundation</strong>: what exists, what is
+        assumed, how new truths are derived, what evidence is left behind, and what must be
+        trusted. Exploring the Atlas below is the quickest way in. Click a row to expand a
+        system, or switch to <em>Comparison axes</em>.</p>
+        <div class="codes-atlas" data-src="codes-atlas-data"></div><script type="application/json" id="codes-atlas-data">
+        {
+        "layers": [
+        {
+        "key": "ontology",
+        "label": "Ontology",
+        "question": "What exists?"
+        },
+        {
+        "key": "language",
+        "label": "Language",
+        "question": "How is a statement written?"
+        },
+        {
+        "key": "assumptions",
+        "label": "Assumptions",
+        "question": "What is taken as given?"
+        },
+        {
+        "key": "engine",
+        "label": "Engine",
+        "question": "How are new truths derived?"
+        },
+        {
+        "key": "certificate",
+        "label": "Certificate",
+        "question": "What evidence is left behind?"
+        },
+        {
+        "key": "checker",
+        "label": "Checker",
+        "question": "What must be trusted?"
+        },
+        {
+        "key": "semantics",
+        "label": "Semantics",
+        "question": "What model makes it sound?"
+        }
+        ],
+        "axes": [
+        {
+        "key": "logic",
+        "label": "Logic / calculus"
+        },
+        {
+        "key": "exactness",
+        "label": "Exact vs numeric"
+        },
+        {
+        "key": "decidable",
+        "label": "Decision procedure"
+        },
+        {
+        "key": "diagram",
+        "label": "Role of the diagram"
+        },
+        {
+        "key": "degeneracy",
+        "label": "Degeneracy handling"
+        },
+        {
+        "key": "tcb_size",
+        "label": "Trusted base (size)"
+        }
+        ],
+        "levels": [
+        {
+        "id": "L0",
+        "name": "Plausible",
+        "claim": "looks true numerically",
+        "color": "#dcdcdc",
+        "rank": 0
+        },
+        {
+        "id": "L1",
+        "name": "Instance",
+        "claim": "true for this exact figure",
+        "color": "#9cc3f0",
+        "rank": 1
+        },
+        {
+        "id": "L2",
+        "name": "Generic",
+        "claim": "true off a degenerate set (NDG)",
+        "color": "#7fd1c7",
+        "rank": 2
+        },
+        {
+        "id": "L3",
+        "name": "Rule-closed",
+        "claim": "derivable from an assumed rule list",
+        "color": "#f6b26b",
+        "rank": 3
+        },
+        {
+        "id": "L4",
+        "name": "Axiom-checked",
+        "claim": "kernel-checked from geometric axioms",
+        "color": "#9fd8a8",
+        "rank": 4
+        },
+        {
+        "id": "L5",
+        "name": "Foundational",
+        "claim": "geometry derived; no geometric axioms",
+        "color": "#c5b3e6",
+        "rank": 5
+        },
+        {
+        "id": "H",
+        "name": "Human",
+        "claim": "checked by readers from postulates",
+        "color": "#e8d9b5",
+        "rank": 6
+        }
+        ],
+        "trusted": [
+        {
+        "id": "reader",
+        "name": "Human readers",
+        "kind": "human",
+        "size": "2,300 years",
+        "note": "Proofs are checked by people; tacit diagram reasoning (order, continuity) is accepted without statement."
+        },
+        {
+        "id": "lean_kernel",
+        "name": "Lean 4 kernel",
+        "kind": "kernel",
+        "size": "~8k lines C++ (estimate)",
+        "note": "Type-checks dependent type theory terms; independent re-checkers exist (lean4lean, nanoda, lean4checker)."
+        },
+        {
+        "id": "smt_verif",
+        "name": "SMT_VERIF oracle",
+        "kind": "solver",
+        "size": "z3/cvc5 + hand-written E theory",
+        "note": "LeanEuclid SystemE/Meta/Smt/Solver.lean:44-54 — `axiom SMT_VERIF (P : Prop) : P` admits any goal the solver reports unsat; no proof reconstruction."
+        },
+        {
+        "id": "coq_kernel",
+        "name": "Coq kernel",
+        "kind": "kernel",
+        "size": "~10-30k lines OCaml (estimate)",
+        "note": "Checks CIC proof terms; GeoCoq's reflective tactics (ColR, CongR) also trust the VM conversion check."
+        },
+        {
+        "id": "ag_engine",
+        "name": "AG DD+AR engine",
+        "kind": "engine",
+        "size": "~9.7k lines Python",
+        "note": "Forward chaining over 43 rules plus Gaussian elimination over exact Fractions; premise selection uses float linprog."
+        },
+        {
+        "id": "newclid_engine",
+        "name": "Newclid DDARN",
+        "kind": "engine",
+        "size": "~15.4k lines Python (+~15k C++ Yuclid)",
+        "note": "Restructured AG loop; AR tables via sympy.solve; optional Yuclid C++ solver."
+        },
+        {
+        "id": "numeric_diagram",
+        "name": "Numeric diagram",
+        "kind": "float",
+        "size": "tol 1e-12 (AG) · rel 1e-3 (Newclid)",
+        "note": "ncoll / npara / nperp / sameside premises are decided numerically on a random float diagram, not deduced."
+        },
+        {
+        "id": "jgex_prover",
+        "name": "JGEX gprover",
+        "kind": "engine",
+        "size": "~38k lines Java",
+        "note": "GDD, full-angle, area, Wu characteristic sets, Gröbner bases over BigInteger polynomials."
+        },
+        {
+        "id": "sympy_cas",
+        "name": "SymPy simplification",
+        "kind": "cas",
+        "size": "core heuristics + mpmath",
+        "note": "simplify / expand / equals heuristics; sympy.geometry's affine_rank uses a 2-digit numeric zero test (point.py:333)."
+        },
+        {
+        "id": "model_zero_test",
+        "name": "model zero_test",
+        "kind": "cas",
+        "size": "~3.5k lines + SymPy",
+        "note": "Tiered oracle (algebra.py:160-253): exact expansion, field arithmetic, minimal_polynomial — plus a numeric acceptance branch |evalf(80)| < 1e-65 for large expressions."
+        },
+        {
+        "id": "ga_codegen",
+        "name": "GA product engines",
+        "kind": "cas",
+        "size": "kingdon ~5.2k · galgebra ~9.5k lines",
+        "note": "Clifford products expanded over SymPy; equality via expand/simplify (galgebra mv.py:479) or structural comparison (kingdon)."
+        },
+        {
+        "id": "ieee_float",
+        "name": "IEEE-754 floats",
+        "kind": "float",
+        "size": "eps 1e-10",
+        "note": "All computation in double precision; CindyJS's prover keeps conjectures that survive 3 random perturbations."
+        }
+        ],
+        "systems": [
+        {
+        "id": "euclid",
+        "name": "Euclid, Elements (Heath)",
+        "short": "Euclid",
+        "ladder": "H",
+        "archetype": "synthetic-human",
+        "core": true,
+        "summary": "Believe it because it follows, step by step, from five postulates and five common notions — as checked by readers, with the diagram doing silent work.",
+        "trusts": [
+        "reader"
+        ],
+        "stack": {
+        "ontology": "Points, straight lines, circles, angles, and plane figures.",
+        "language": "Greek prose enunciations: protasis, ekthesis, diorismos, construction, proof, conclusion.",
+        "assumptions": "5 postulates, 5 common notions, 23 definitions (Book I).",
+        "engine": "Human deduction citing earlier propositions; constructions by ruler and compass.",
+        "certificate": "The written proof.",
+        "checker": "The reader.",
+        "semantics": "Intended: the physical plane; modern reading: a Euclidean plane over a Euclidean field (Hilbert, Tarski)."
+        },
+        "axes": {
+        "logic": "Informal deductive",
+        "exactness": "Exact (no numbers)",
+        "decidable": "None",
+        "diagram": "Essential and tacit",
+        "degeneracy": "Ignored",
+        "tcb_size": "Human"
+        },
+        "example_lang": "text",
+        "example_code": "I.5  In isosceles triangles the angles at the base are equal to one another, and, if\n     the equal straight lines be produced further, the angles under the base will be\n     equal to one another.",
+        "card": "foundations/cards/euclid"
+        },
+        {
+        "id": "leaneuclid",
+        "name": "LeanEuclid (System E in Lean 4)",
+        "short": "LeanEuclid",
+        "ladder": "L3",
+        "archetype": "synthetic-formal",
+        "core": true,
+        "summary": "Believe it because Lean's kernel checked every rule application from System E's axioms — except that premise-discharging steps are admitted by an SMT oracle axiom.",
+        "trusts": [
+        "lean_kernel",
+        "smt_verif"
+        ],
+        "stack": {
+        "ontology": "Axiomatized sorts Point, Line, Circle (+ Segment, Angle, Triangle); opaque relations onLine, sameSide, between, onCircle; magnitudes in ℝ.",
+        "language": "Lean 4 propositions in System E syntax: ∀ a b c : Point, formTriangle … → ∠ a:b:c = ∠ a:c:b.",
+        "assumptions": "System E as 101 Lean axiom declarations (construction, diagrammatic, metric, transfer, superposition) + hand-written SMT theory.",
+        "engine": "euclid_apply (kernel-checked rule instance) with premises closed by euclid_finish → z3/cvc5.",
+        "certificate": "Lean proof term with opaque SMT_VERIF leaves.",
+        "checker": "Lean 4 kernel + SMT_VERIF oracle (solver, translator, hand-written theory).",
+        "semantics": "Avigad–Dean–Mumma: E is sound and complete for ruler-and-compass Euclidean planes (not formalized in LeanEuclid)."
+        },
+        "axes": {
+        "logic": "Dependent type theory + axioms",
+        "exactness": "Exact (symbolic)",
+        "decidable": "SMT on the diagrammatic fragment (oracle)",
+        "diagram": "Formalized: 36 diagrammatic + 23 transfer axioms",
+        "degeneracy": "Explicit hypotheses (formTriangle, a ≠ b)",
+        "tcb_size": "Lean kernel + SMT stack (unbounded)"
+        },
+        "example_lang": "lean",
+        "example_code": "theorem proposition_5 : ∀ (a b c d e : Point) (AB BC AC : Line),\n  formTriangle a b c AB BC AC ∧ (|(a─b)| = |(a─c)|) ∧\n  (between a b d) ∧ (between a c e) →\n  (∠ a:b:c = ∠ a:c:b) ∧ (∠ c:b:d = ∠ b:c:e) :=",
+        "card": "foundations/cards/leaneuclid"
+        },
+        {
+        "id": "mathlib4",
+        "name": "mathlib4 Euclidean geometry",
+        "short": "mathlib4",
+        "ladder": "L5",
+        "archetype": "analytic-formal",
+        "core": true,
+        "summary": "Believe it because geometry is defined from real inner-product spaces and every theorem is a kernel-checked consequence of Lean's logic alone.",
+        "trusts": [
+        "lean_kernel"
+        ],
+        "stack": {
+        "ontology": "Real inner-product space V acting on a metric space P (NormedAddTorsor); AffineSubspace, Sphere, Affine.Simplex.",
+        "language": "Lean 4 propositions over P: dist p₁ p₂ = dist p₁ p₃ → ∠ p₁ p₂ p₃ = ∠ p₁ p₃ p₂.",
+        "assumptions": "None geometric: only Lean's logical axioms (propext, choice, Quot.sound); ℝ is constructed.",
+        "engine": "Tactics (simp, linarith, nlinarith, field_simp, linear_combination) producing kernel terms.",
+        "certificate": "Lean proof term.",
+        "checker": "Lean 4 kernel only.",
+        "semantics": "By construction: any real inner-product affine space, including ℝⁿ."
+        },
+        "axes": {
+        "logic": "Dependent type theory",
+        "exactness": "Exact (real analysis)",
+        "decidable": "Tactic search; kernel checks result",
+        "diagram": "None",
+        "degeneracy": "Junk values or explicit hypotheses",
+        "tcb_size": "~8k lines (kernel)"
+        },
+        "example_lang": "lean",
+        "example_code": "/-- **Isosceles Triangle Theorem**: Pons asinorum, angle-at-point form. -/\ntheorem angle_eq_angle_of_dist_eq {p₁ p₂ p₃ : P} (h : dist p₁ p₂ = dist p₁ p₃) :\n    ∠ p₁ p₂ p₃ = ∠ p₁ p₃ p₂ := by",
+        "card": "foundations/cards/mathlib4"
+        },
+        {
+        "id": "geocoq",
+        "name": "GeoCoq",
+        "short": "GeoCoq",
+        "ladder": "L4",
+        "archetype": "synthetic-formal",
+        "core": true,
+        "summary": "Believe it because the Coq kernel checked it from Tarski's (or Hilbert's, or Euclid's) axioms — and GeoCoq proves those axiom systems interpret one another and hold in ℝ².",
+        "trusts": [
+        "coq_kernel"
+        ],
+        "stack": {
+        "ontology": "Tarski: one sort of points with Bet (3-ary) and Cong (4-ary); Hilbert: points, lines, planes with incidence, order, congruence.",
+        "language": "Coq propositions inside an axiom-class context: forall A B C, isosceles A B C -> CongA A B C A C B.",
+        "assumptions": "Axiom classes: Tarski neutral (8) + dimension + Euclid + continuity options; Hilbert classes; Beeson's Euclid axioms.",
+        "engine": "Ltac proofs; reflective deciders ColR / CongR (vm_compute); nsatz (Gröbner) in coordinate chapters.",
+        "certificate": "Coq proof term (.vo).",
+        "checker": "Coq kernel (+ VM conversion for reflective steps).",
+        "semantics": "Formal models: Tarski ⇐ ℝⁿ over any real closed field; independence counter-models."
+        },
+        "axes": {
+        "logic": "Calculus of Inductive Constructions",
+        "exactness": "Exact (synthetic)",
+        "decidable": "Reflective Col/Cong deciders; nsatz",
+        "diagram": "None (diagram facts are proved)",
+        "degeneracy": "Explicit (~Col, A <> B); degenerate-tolerant Bet",
+        "tcb_size": "~10-30k lines (kernel)"
+        },
+        "example_lang": "coq",
+        "example_code": "Lemma proposition_05 :\n   forall A B C,\n   isosceles A B C ->\n   CongA A B C A C B.",
+        "card": "foundations/cards/geocoq"
+        },
+        {
+        "id": "alphageometry",
+        "name": "AlphaGeometry",
+        "short": "AlphaGeometry",
+        "ladder": "L3",
+        "archetype": "rule-engine",
+        "core": true,
+        "summary": "Believe it because a deduction engine derived it from 43 assumed rules — with side conditions (non-collinear, same side) read off a random numeric diagram.",
+        "trusts": [
+        "ag_engine",
+        "numeric_diagram"
+        ],
+        "stack": {
+        "ontology": "Named points with predicates (coll, para, perp, cong, eqangle, eqratio, cyclic, midp, simtri); hidden float coordinates.",
+        "language": "Construction clauses and a goal: a b c = triangle a b c; h = orthocenter h a b c; ? perp a h b c.",
+        "assumptions": "43 Horn rules (rules.txt) + ~71 construction definitions (defs.txt).",
+        "engine": "DD+AR: forward chaining to a fixpoint + Gaussian elimination over exact Fractions; LM proposes auxiliaries.",
+        "certificate": "Deduction trace naming the rule for each step.",
+        "checker": "Python engine + rule soundness + numeric diagram (tol 1e-12).",
+        "semantics": "The real Euclidean plane, sampled as one random float diagram; directed angles mod π."
+        },
+        "axes": {
+        "logic": "Horn-clause forward chaining",
+        "exactness": "Exact algebra; numeric side conditions",
+        "decidable": "Saturation over a finite rule set",
+        "diagram": "Essential: decides side conditions",
+        "degeneracy": "Numeric filters; no NDG output",
+        "tcb_size": "~9.7k lines Python"
+        },
+        "example_lang": "text",
+        "example_code": "cong O A O B, ncoll O A B => eqangle O A A B A B O B",
+        "card": "foundations/cards/alphageometry"
+        },
+        {
+        "id": "newclid",
+        "name": "Newclid",
+        "short": "Newclid",
+        "ladder": "L3",
+        "archetype": "rule-engine",
+        "core": false,
+        "summary": "Believe it because the DDARN engine derived it from a curated rule set descended from AlphaGeometry — again with numerically checked side conditions.",
+        "trusts": [
+        "newclid_engine",
+        "sympy_cas",
+        "numeric_diagram"
+        ],
+        "stack": {
+        "ontology": "AG predicates plus metric ones (pythagoras, obtuse_angle, sameclock).",
+        "language": "JGEX/AG-style construction text wrapped in Python (JGEXFormulation.from_text).",
+        "assumptions": "87 Rule objects; DEFAULT_RULES = ALL − DEACTIVATED − TRIAGE (~58).",
+        "engine": "DDARN: rule matching + sympy.solve AR tables; optional Yuclid C++ solver.",
+        "certificate": "Justification graph and written proof.",
+        "checker": "Python + SymPy + rule soundness + numeric checks (rel tol 1e-3).",
+        "semantics": "As AlphaGeometry: one float diagram of the real plane."
+        },
+        "axes": {
+        "logic": "Horn-clause forward chaining",
+        "exactness": "Exact algebra; numeric side conditions",
+        "decidable": "Saturation over a finite rule set",
+        "diagram": "Essential: every predicate checked numerically first",
+        "degeneracy": "Numeric filters",
+        "tcb_size": "~15.4k lines Python (+15k C++)"
+        },
+        "example_lang": "python",
+        "example_code": "R45_SIMSONS_LINE_THEOREM = Rule(\n    id=\"r45\",\n    premises_txt=(\"cyclic A B C P\", \"coll A L C\", \"perp P L A C\",\n                  \"coll M B C\", \"perp P M B C\", \"coll N A B\", \"perp P N A B\"),\n    conclusions_txt=(\"coll L M N\",),\n)",
+        "card": "foundations/cards/newclid"
+        },
+        {
+        "id": "jgex",
+        "name": "Java Geometry Expert (JGEX)",
+        "short": "JGEX",
+        "ladder": "L2",
+        "archetype": "algebraic-decision",
+        "core": true,
+        "summary": "Believe it because the hypothesis polynomials reduce the conclusion to zero (Wu / Gröbner) — true generically, provided the printed non-degeneracy conditions hold.",
+        "trusts": [
+        "jgex_prover"
+        ],
+        "stack": {
+        "ontology": "Constructed points; hypotheses become polynomials with BigInteger coefficients.",
+        "language": "Text problems: POINT A B C O D … CIRCUMCENTER O A B C … SHOW: COLLINEAR P Q R.",
+        "assumptions": "Field axioms over ℂ (Wu / Gröbner); GDD and full-angle rule sets for readable proofs.",
+        "engine": "Pseudo-division (Wu), Gröbner reduction, area-method elimination, forward chaining (GDD).",
+        "certificate": "Remainder-zero chain + NDG list; readable proof trees for GDD / full-angle.",
+        "checker": "JGEX Java prover (~38k lines).",
+        "semantics": "Generic truth over an algebraically closed field, conditional on NDGs."
+        },
+        "axes": {
+        "logic": "Polynomial ideal membership",
+        "exactness": "Exact (BigInteger polynomials)",
+        "decidable": "Yes, for equational statements (generic truth)",
+        "diagram": "Input and display only",
+        "degeneracy": "Explicit NDG conditions",
+        "tcb_size": "~38k lines Java"
+        },
+        "example_lang": "text",
+        "example_code": "POINT A B C O D R P Q\nCIRCUMCENTER O A B C\nON_CIRCLE D O A\nFOOT R D A B ...\nSHOW: COLLINEAR P Q R",
+        "card": "foundations/cards/jgex"
+        },
+        {
+        "id": "sympy",
+        "name": "SymPy geometry",
+        "short": "SymPy",
+        "ladder": "L1",
+        "archetype": "analytic-cas",
+        "core": false,
+        "summary": "Believe it because exact arithmetic on concrete coordinates evaluates the predicate to True — subject to SymPy's simplification heuristics.",
+        "trusts": [
+        "sympy_cas"
+        ],
+        "stack": {
+        "ontology": "Coordinate entities: Point, Line, Segment, Circle, Polygon over SymPy expressions.",
+        "language": "Python predicates: Point.is_collinear(A, B, C), Point.is_concyclic(…).",
+        "assumptions": "Field arithmetic over exact SymPy numbers.",
+        "engine": "Expression evaluation; simplify / equals; rank with a numeric zero test.",
+        "certificate": "A boolean.",
+        "checker": "SymPy simplification heuristics + mpmath.",
+        "semantics": "One concrete figure (or symbolic coordinates)."
+        },
+        "axes": {
+        "logic": "Evaluation",
+        "exactness": "Exact inputs; heuristic zero tests",
+        "decidable": "Heuristic (simplify)",
+        "diagram": "The object is the computation",
+        "degeneracy": "Visible in the instance",
+        "tcb_size": "~12k lines + SymPy core"
+        },
+        "example_lang": "python",
+        "example_code": "from sympy import Point\nPoint.is_collinear(Point(0, 0), Point(1, 1), Point(2, 2))   # True",
+        "card": "foundations/cards/sympy"
+        },
+        {
+        "id": "geometor_model",
+        "name": "geometor.model",
+        "short": "geometor.model",
+        "ladder": "L1",
+        "archetype": "analytic-cas",
+        "core": true,
+        "summary": "Believe it because the figure is built exactly — algebraic coordinates from ruler-and-compass intersections — and every asserted relation reduces to zero.",
+        "trusts": [
+        "model_zero_test",
+        "sympy_cas"
+        ],
+        "stack": {
+        "ontology": "Exact SymPy points, lines, circles, polygons in a construction DAG; coordinates in ℚ, ℚ(√d), ℚ(φ), radical towers.",
+        "language": "Python construction + assertions: m.assert_collinear(A, B, C, by=\"I.1\").",
+        "assumptions": "Exact algebraic numbers; closed-form ruler-and-compass intersections.",
+        "engine": "Exact construction + quadrance / spread / determinant identities reduced by zero_test.",
+        "certificate": "Step ledger of assertions (citations unchecked) and the exact figure.",
+        "checker": "zero_test (exact tiers + numeric acceptance branch) + SymPy.",
+        "semantics": "One exact figure in ℝ² over real algebraic numbers."
+        },
+        "axes": {
+        "logic": "Evaluation on an exact instance",
+        "exactness": "Exact (one numeric acceptance branch)",
+        "decidable": "Yes for constant algebraic expressions (minimal polynomial)",
+        "diagram": "The figure is the proof object",
+        "degeneracy": "Visible in the instance",
+        "tcb_size": "~3.5k lines + SymPy"
+        },
+        "example_lang": "python",
+        "example_code": "m = Model(\"I.5\", auto_intersect=False)\nA, B, C = m.set_point(2, 3), m.set_point(0, 0), m.set_point(4, 0)\nm.assert_equal((A, B), (A, C), by=\"Given\")\nm.assert_spread_equal((A, B, C), (A, C, B), by=\"I.5\")",
+        "card": "foundations/cards/geometor_model"
+        },
+        {
+        "id": "kingdon",
+        "name": "kingdon (geometric algebra)",
+        "short": "kingdon",
+        "ladder": "L2",
+        "archetype": "geometric-algebra",
+        "core": false,
+        "summary": "Believe it because the identity expands to zero in the Clifford algebra — universally, when computed symbolically without division.",
+        "trusts": [
+        "ga_codegen",
+        "sympy_cas"
+        ],
+        "stack": {
+        "ontology": "Multivectors of Cl(p, q, r): points, lines, circles as blades (PGA / CGA).",
+        "language": "Python operators: alg = Algebra(3, 0, 1); b.cp(v); a ^ b; C >> P.",
+        "assumptions": "Clifford algebra axioms with a diagonal metric signature.",
+        "engine": "Code-generated geometric products over symbolic or numeric coefficients.",
+        "certificate": "An expression (zero or not).",
+        "checker": "kingdon codegen + SymPy simplify.",
+        "semantics": "PGA / CGA models of the Euclidean plane or space."
+        },
+        "axes": {
+        "logic": "Algebraic identity",
+        "exactness": "Exact symbolic or float",
+        "decidable": "Polynomial expansion (no division)",
+        "diagram": "None",
+        "degeneracy": "Appears as zero / ideal elements",
+        "tcb_size": "~5.2k lines + SymPy"
+        },
+        "example_lang": "python",
+        "example_code": "alg = Algebra(3, 0, 1)\nb = alg.bivector(name='b'); v = alg.vector(name='v')\nb.cp(v)",
+        "card": "foundations/cards/kingdon"
+        },
+        {
+        "id": "galgebra",
+        "name": "galgebra (geometric algebra)",
+        "short": "galgebra",
+        "ladder": "L2",
+        "archetype": "geometric-algebra",
+        "core": false,
+        "summary": "Believe it because the multivector difference simplifies to zero for an arbitrary (possibly symbolic) metric — as far as SymPy's simplify can tell.",
+        "trusts": [
+        "ga_codegen",
+        "sympy_cas"
+        ],
+        "stack": {
+        "ontology": "Multivectors over Ga with an arbitrary metric tensor and coordinates; geometric calculus operators.",
+        "language": "Python: o3d = Ga('e', g=[1, 1, 1], coords=symbols('x y z', real=True)).",
+        "assumptions": "Clifford algebra axioms for the metric g.",
+        "engine": "Symbolic geometric products; equality by expand + simplify.",
+        "certificate": "An expression.",
+        "checker": "galgebra core + SymPy simplify.",
+        "semantics": "Geometric algebra over a symbolic metric."
+        },
+        "axes": {
+        "logic": "Algebraic identity",
+        "exactness": "Exact symbolic",
+        "decidable": "Heuristic (simplify)",
+        "diagram": "None",
+        "degeneracy": "Degenerate metrics unsupported in dual",
+        "tcb_size": "~9.5k lines + SymPy"
+        },
+        "example_lang": "python",
+        "example_code": "o3d = Ga('e', g=[1, 1, 1], coords=symbols('x,y,z', real=True))",
+        "card": "foundations/cards/galgebra"
+        },
+        {
+        "id": "cindyjs",
+        "name": "CindyJS",
+        "short": "CindyJS",
+        "ladder": "L0",
+        "archetype": "numeric-interactive",
+        "core": false,
+        "summary": "Believe it because it keeps looking true while you drag — floating-point projective geometry with randomized conjecture checks, and no proof.",
+        "trusts": [
+        "ieee_float"
+        ],
+        "stack": {
+        "ontology": "Homogeneous complex projective coordinates (ℂP²): points, lines, conics.",
+        "language": "Declarative scene ({type: \"Meet\", args: [\"a\", \"b\"]}) or CindyScript: meet(join(A, B), …).",
+        "assumptions": "IEEE-754 arithmetic (eps 1e-10, epsbig 1e-6).",
+        "engine": "Numeric construction with complex tracing; randomized conjecture checking.",
+        "certificate": "None.",
+        "checker": "Floating-point arithmetic.",
+        "semantics": "Continuous configuration space over ℂP²."
+        },
+        "axes": {
+        "logic": "None (numeric evidence)",
+        "exactness": "Float",
+        "decidable": "Probabilistic",
+        "diagram": "The diagram is the system",
+        "degeneracy": "Singularity heuristics in tracing",
+        "tcb_size": "~5.8k lines JS (float)"
+        },
+        "example_lang": "javascript",
+        "example_code": "{ name: \"D\", type: \"Meet\", args: [\"a\", \"b\"] }",
+        "card": "foundations/cards/cindyjs"
+        }
+        ]
+        }
+        </script><section class="level-2" id="the-truth-ladder">
+        <h2>The Truth Ladder<a class="headerlink" href="#the-truth-ladder" title="Link to this heading">¶</a></h2>
+        <p>The ladder ranks the <em>strength of the claim</em> each system certifies. It does not rank
+        the systems’ quality. Dashed edges show routes a system could take to climb.</p>
+        <div align="center" class="align-center"><div class="graphviz"><object data="_images/graphviz-88c656f632a729cdbbfb6aa1ae01d81427163b07.svg" type="image/svg+xml" class="graphviz">
+        <p class="warning">Truth Ladder</p></object></div>
+        </div>
+        </section>
+        <section class="level-2" id="start-here">
+        <h2>Start here<a class="headerlink" href="#start-here" title="Link to this heading">¶</a></h2>
+        <ul class="simple">
+        <li><p><a class="reference internal" href="foundations/index.html#foundations-index"><span class="std std-ref">Truth Foundations</span></a>: the Truth Ladder, the seven-layer Trust Stack, and
+        who trusts what.</p></li>
+        <li><p><a class="reference internal" href="foundations/cards/index.html#cards-index"><span class="std std-ref">System Cards</span></a>: one card per system, all with the same template.</p></li>
+        <li><p><a class="reference internal" href="showcase/index.html#showcase-index"><span class="std std-ref">Showcase: One Theorem, Many Foundations</span></a>: five theorems realized side by side, including exact L1
+        and generic L2 witnesses from GEOMETOR.</p></li>
+        <li><p><a class="reference internal" href="foundations/connections.html#foundations-connections"><span class="std std-ref">Connections</span></a>: lineage and translation bridges, shared
+        ontology, and shared principles, drawn as graphs.</p></li>
+        <li><p><a class="reference internal" href="catalog/index.html#catalog-index"><span class="std std-ref">Principle Catalog</span></a>: the searchable catalog of 667 discovered principles.</p></li>
+        <li><p><a class="reference internal" href="foundations/findings.html#foundations-findings"><span class="std std-ref">Findings</span></a>: the source-audit results behind every card.</p></li>
+        </ul>
         <figure class="align-center" id="id1">
         <a class="reference internal image-reference" href="_images/01-seven-ontologies.svg"><svg xmlns="http://www.w3.org/2000/svg" class="euclid-graphic codes-diagram" viewBox="-3.1000 -3.6000 7.7000 6.9500">
           <style>
@@ -430,30 +1053,20 @@
 
         </a>
         <figcaption>
-        <p><span class="caption-text"><strong>One Figure, Eleven Languages</strong> — Euclid’s opening <em>vesica piscis</em> (<span class="geom-ref" data-ref="A" title="A">A</span>, <span class="geom-ref" data-ref="B" title="B">B</span>, circles <span class="geom-ref" data-ref="( A B )" title="( A B )">AB</span> and <span class="geom-ref" data-ref="( B A )" title="( B A )">BA</span>, equidistant poles <span class="geom-ref" data-ref="F" title="F">F</span> and <span class="geom-ref" data-ref="E" title="E">E</span> on line <span class="geom-ref" data-ref="[ A B ]" title="[ A B ]">AB</span>) viewed simultaneously through diagrammatic <a class="term-ref glossary-term" id="occ-term-formal-system-e-1" href="glossary.html#term-formal-system-e" data-term="formal-system-e" title="Term: formal-system-e">Formal System E</a>, Tarski’s <a class="term-ref glossary-term" id="occ-term-point-only-ontology-1" href="glossary.html#term-point-only-ontology" data-term="point-only-ontology" title="Term: point-only-ontology">point-only ontology</a>, <code class="docutils literal notranslate"><span class="pre">mathlib4</span></code> <a class="term-ref glossary-term" id="occ-term-affine-torsor-1" href="glossary.html#term-affine-torsor" data-term="affine-torsor" title="Term: affine-torsor">affine torsor</a> spaces, <code class="docutils literal notranslate"><span class="pre">DD+AR</span></code> clauses, 2D <a class="term-ref glossary-term" id="occ-term-conformal-geometric-algebra-1" href="glossary.html#term-conformal-geometric-algebra" data-term="conformal-geometric-algebra" title="Term: conformal-geometric-algebra">Conformal Geometric Algebra</a> null-cone blades, <span class="math notranslate nohighlight">\(\mathbb{CP}^2\)</span> homogeneous matrices, <a class="person-ref" id="occ-person-byrne-1" href="people/byrne.html#person-byrne" data-person="byrne" title="Person: byrne">Oliver Byrne</a>’s <a class="term-ref glossary-term" id="occ-term-chromatic-value-token-1" href="glossary.html#term-chromatic-value-token" data-term="chromatic-value-token" title="Term: chromatic-value-token">chromatic value-token</a> glyphs, and <code class="docutils literal notranslate"><span class="pre">geometor.model</span></code>’s exact <span class="math notranslate nohighlight">\(\mathbb{Q}(\sqrt{3})\)</span> DAG. Hover any <cite>:g:</cite> badge or diagram locus to illuminate its corresponding element.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+        <p><span class="caption-text"><strong>One Figure, Eleven Languages</strong>: Euclid’s opening <em>vesica piscis</em> (<span class="geom-ref" data-ref="A" title="A">A</span>, <span class="geom-ref" data-ref="B" title="B">B</span>, circles <span class="geom-ref" data-ref="( A B )" title="( A B )">AB</span> and <span class="geom-ref" data-ref="( B A )" title="( B A )">BA</span>, equidistant poles <span class="geom-ref" data-ref="F" title="F">F</span> and <span class="geom-ref" data-ref="E" title="E">E</span> on line <span class="geom-ref" data-ref="[ A B ]" title="[ A B ]">AB</span>) viewed simultaneously through diagrammatic <a class="term-ref glossary-term" id="occ-term-formal-system-e-1" href="glossary.html#term-formal-system-e" data-term="formal-system-e" title="Term: formal-system-e">Formal System E</a>, Tarski’s <a class="term-ref glossary-term" id="occ-term-point-only-ontology-1" href="glossary.html#term-point-only-ontology" data-term="point-only-ontology" title="Term: point-only-ontology">point-only ontology</a>, <code class="docutils literal notranslate"><span class="pre">mathlib4</span></code> <a class="term-ref glossary-term" id="occ-term-affine-torsor-1" href="glossary.html#term-affine-torsor" data-term="affine-torsor" title="Term: affine-torsor">affine torsor</a> spaces, <code class="docutils literal notranslate"><span class="pre">DD+AR</span></code> clauses, 2D <a class="term-ref glossary-term" id="occ-term-conformal-geometric-algebra-1" href="glossary.html#term-conformal-geometric-algebra" data-term="conformal-geometric-algebra" title="Term: conformal-geometric-algebra">Conformal Geometric Algebra</a> null-cone blades, <span class="math notranslate nohighlight">\(\mathbb{CP}^2\)</span> homogeneous matrices, <a class="person-ref" id="occ-person-byrne-1" href="people/byrne.html#person-byrne" data-person="byrne" title="Person: byrne">Oliver Byrne</a>’s <a class="term-ref glossary-term" id="occ-term-chromatic-value-token-1" href="glossary.html#term-chromatic-value-token" data-term="chromatic-value-token" title="Term: chromatic-value-token">chromatic value-token</a> glyphs, and <code class="docutils literal notranslate"><span class="pre">geometor.model</span></code>’s exact <span class="math notranslate nohighlight">\(\mathbb{Q}(\sqrt{3})\)</span> DAG. Hover any <cite>:g:</cite> badge or diagram locus to illuminate its corresponding element.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
         </figcaption>
         </figure>
-        <section class="level-2" id="headline-forensic-discoveries">
-        <h2>Headline Forensic Discoveries<a class="headerlink" href="#headline-forensic-discoveries" title="Link to this heading">¶</a></h2>
-        <ol class="arabic simple">
-        <li><p><strong>Unverified Trust Oracle &amp; Six Missing Lemmas in LeanEuclid</strong>: <code class="docutils literal notranslate"><span class="pre">LeanEuclid</span></code> (<a class="citation-ref" id="occ-cite-murphy2024-1" href="bibliography.html#cite-murphy2024" data-cite="murphy2024" title="Citation: murphy2024">Murphy2024</a>) faithfully separates constructive steps (<code class="docutils literal notranslate"><span class="pre">euclid_apply</span></code>) from diagrammatic topology, and its 7 rules in <code class="docutils literal notranslate"><span class="pre">Intersections.lean</span></code> correspond 1-to-1 with <code class="docutils literal notranslate"><span class="pre">geometor.model.intersect</span></code>’s selectors (<code class="docutils literal notranslate"><span class="pre">side_of</span></code>, <code class="docutils literal notranslate"><span class="pre">between</span></code>, <code class="docutils literal notranslate"><span class="pre">beyond</span></code>). Yet source inspection of <code class="docutils literal notranslate"><span class="pre">SystemE/Meta/Smt/Solver.lean:44-55</span></code> reveals that <code class="docutils literal notranslate"><span class="pre">euclid_finish</span></code> closes goals via <code class="docutils literal notranslate"><span class="pre">private</span> <span class="pre">axiom</span> <span class="pre">SMT_VERIF</span> <span class="pre">(P</span> <span class="pre">:</span> <span class="pre">Prop)</span> <span class="pre">:</span> <span class="pre">P</span></code> without reconstructing proof terms in the Lean 4 kernel, while <code class="docutils literal notranslate"><span class="pre">Book/Prop47.lean:25-60</span></code> isolates <strong>six topological square-orientation lemmas missed by Euclid</strong> in the Bride’s Chair proof.</p></li>
-        <li><p><strong>Metatheoretic Gold &amp; Classical Gaps in GeoCoq</strong>: Across <cite>481</cite> Coq files and <cite>4,671</cite> kernel-checked lemmas (<a class="citation-ref" id="occ-cite-boutry2019-1" href="bibliography.html#cite-boutry2019" data-cite="boutry2019" title="Citation: boutry2019">Boutry2019</a>), <code class="docutils literal notranslate"><span class="pre">GeoCoq</span></code> proves bidirectional equivalences between Tarski, Hilbert, and Euclid, <strong>34 equivalent parallel postulates</strong>, neutral-geometry midpoint existence <em>without circles</em>, and an explicit proof of <code class="docutils literal notranslate"><span class="pre">False</span></code> when non-collinearity is omitted from cut-and-paste area axioms—yet omits the Nine-Point Circle <code class="docutils literal notranslate"><span class="pre">X(5)</span></code>, Steiner circle power, radical axes, circle inversion, pole–polar reciprocity, conics, and the golden ratio.</p></li>
-        <li><p><strong>Dimension-Polymorphic Elegance vs. Noncomputable Projective Gaps in Mathlib4</strong>: <code class="docutils literal notranslate"><span class="pre">Mathlib/Geometry/Euclidean/</span></code> (<a class="citation-ref" id="occ-cite-mathlib2020-1" href="bibliography.html#cite-mathlib2020" data-cite="mathlib2020" title="Citation: mathlib2020">Mathlib2020</a>) generalizes the orthocenter (<code class="docutils literal notranslate"><span class="pre">mongePoint</span></code>), the <span class="math notranslate nohighlight">\(3(n+1)\)</span>-point Feuerbach sphere, <code class="docutils literal notranslate"><span class="pre">Sphere.power</span></code>, <code class="docutils literal notranslate"><span class="pre">inversion</span></code>, and 1-line La Hire pole–polar reciprocity to arbitrary dimension <span class="math notranslate nohighlight">\(n\)</span>—yet is pervasively <code class="docutils literal notranslate"><span class="pre">noncomputable</span></code>, lacks a constructive <code class="docutils literal notranslate"><span class="pre">Euclid</span> <span class="pre">I.1</span></code> theorem, documents a 20-line cyclic-order <code class="docutils literal notranslate"><span class="pre">TODO</span></code> in <code class="docutils literal notranslate"><span class="pre">Sphere/Ptolemy.lean:22-41</span></code>, and contains <strong>zero</strong> <code class="docutils literal notranslate"><span class="pre">radicalAxis</span></code>, <code class="docutils literal notranslate"><span class="pre">crossRatio</span></code>, <code class="docutils literal notranslate"><span class="pre">Menelaus</span></code>, <code class="docutils literal notranslate"><span class="pre">Pappus</span></code>, or <code class="docutils literal notranslate"><span class="pre">Desargues</span></code>.</p></li>
-        <li><p><strong>Log-Ratio Bug &amp; Expressiveness Walls in AlphaGeometry / Newclid</strong>: Source audit of <code class="docutils literal notranslate"><span class="pre">alphageometry/ar.py:425-431,</span> <span class="pre">570-574</span></code> (<a class="citation-ref" id="occ-cite-trinh2024-1" href="bibliography.html#cite-trinh2024" data-cite="trinh2024" title="Citation: trinh2024">Trinh2024</a>) uncovers a live bug where <code class="docutils literal notranslate"><span class="pre">RatioTable.add_const_ratio</span></code> encodes <span class="math notranslate nohighlight">\(m \log|s_1| - n \log|s_2| = 0\)</span> (<span class="math notranslate nohighlight">\(|s_1|^m = |s_2|^n\)</span> instead of <span class="math notranslate nohighlight">\(|s_1|/|s_2| = m/n\)</span>), alongside silent drops of unprefixed post-<code class="docutils literal notranslate"><span class="pre">;</span></code> clauses in 12 <code class="docutils literal notranslate"><span class="pre">defs.txt</span></code> stanzas. Architecturally, pure <code class="docutils literal notranslate"><span class="pre">DD+AR</span></code> cannot state <span class="math notranslate nohighlight">\(a^2 + b^2 = c^2\)</span> or disjoint radical axes (fixed in C++ <code class="docutils literal notranslate"><span class="pre">Yuclid</span></code>’s squared-length AR) and <strong>cannot prove Pappus or Desargues without auxiliary parallel lines</strong> (forcing <code class="docutils literal notranslate"><span class="pre">Newclid</span></code> to hardcode <code class="docutils literal notranslate"><span class="pre">R44_PAPPUS_THEOREM</span></code> and <code class="docutils literal notranslate"><span class="pre">R70_PROJECTIVE_HARMONIC_CONJUGATE</span></code> as axioms).</p></li>
-        <li><p><strong>The Unfinished Area Method in JGEX</strong>: <a class="person-ref" id="occ-person-chou-1" href="people/chou.html#person-chou" data-person="chou" title="Person: chou">Shang-Ching Chou</a>, <a class="person-ref" id="occ-person-gao-1" href="people/gao.html#person-gao" data-person="gao" title="Person: gao">Xiao-Shan Gao</a>, and <a class="person-ref" id="occ-person-zhang-1" href="people/zhang.html#person-zhang" data-person="zhang" title="Person: zhang">Jing-Zhong Zhang</a>’s coordinate-free <a class="term-ref glossary-term" id="occ-term-area-method-1" href="glossary.html#term-area-method" data-term="area-method" title="Term: area-method">Area Method</a> (<a class="citation-ref" id="occ-cite-chougaozhang1994-1" href="bibliography.html#cite-chougaozhang1994" data-cite="chougaozhang1994" title="Citation: chougaozhang1994">ChouGaoZhang1994</a>) proves Pythagoras in 0 steps (<code class="docutils literal notranslate"><span class="pre">P_BAC</span> <span class="pre">=</span> <span class="pre">0</span></code> by definition), Orthocenter in 0 steps (Jacobi identity), and Pappus/La Hire/Cross-Ratio with zero auxiliary points—yet in <code class="docutils literal notranslate"><span class="pre">Java-Geometry-Expert</span></code>’s Java codebase, <code class="docutils literal notranslate"><span class="pre">Area.java</span></code> (<cite>213</cite> lines) is an unfinished port whose GUI tab is commented out in <code class="docutils literal notranslate"><span class="pre">PanelProve.java:112-116</span></code> (<code class="docutils literal notranslate"><span class="pre">TODO:</span> <span class="pre">Implement</span> <span class="pre">the</span> <span class="pre">area</span> <span class="pre">method</span></code>).</p></li>
-        <li><p><strong>Clifford Dual Traps in GAlgebra vs. Conformal Triumphs in Kingdon</strong>: <code class="docutils literal notranslate"><span class="pre">galgebra</span></code> crashes with <code class="docutils literal notranslate"><span class="pre">AttributeError</span></code> on <code class="docutils literal notranslate"><span class="pre">.dual()</span></code> for every degenerate <a class="term-ref glossary-term" id="occ-term-projective-geometric-algebra-1" href="glossary.html#term-projective-geometric-algebra" data-term="projective-geometric-algebra" title="Term: projective-geometric-algebra">Projective Geometric Algebra</a> (<span class="math notranslate nohighlight">\(I^2 = 0\)</span>), omits the regressive join <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, and overloads <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> as a commutator rather than a sandwich product. By contrast, <code class="docutils literal notranslate"><span class="pre">kingdon</span></code> compiles exact SymPy polynomial blades where 2D CGA circle power is <code class="docutils literal notranslate"><span class="pre">-2*(kappa</span> <span class="pre">|</span> <span class="pre">P)</span></code>, radical axis is <code class="docutils literal notranslate"><span class="pre">kappa1</span> <span class="pre">-</span> <span class="pre">kappa2</span></code>, circumcenter is <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">*</span> <span class="pre">ni</span> <span class="pre">*</span> <span class="pre">~C</span></code>, and circle inversion is <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">&gt;&gt;</span> <span class="pre">P</span></code>.</p></li>
-        <li><p><strong>Live Symbolic Bugs in SymPy Geometry (`1.14.0`)</strong>: Source inspection of <code class="docutils literal notranslate"><span class="pre">sympy/geometry/</span></code> reveals (a) a <strong>double live bug in ``Triangle.excenters``</strong> (<cite>polygon.py:2714-2726</cite>: missing numerator parentheses <code class="docutils literal notranslate"><span class="pre">-a*x[0]</span> <span class="pre">+</span> <span class="pre">b*x[1]</span> <span class="pre">+</span> <span class="pre">c*x[2]/(-a+b+c)</span></code> <em>plus</em> wrong side-vertex pairing) and (b) a <strong>2-digit float zero-test bug in ``Point.affine_rank``</strong> (<cite>point.py:331-335</cite>: <code class="docutils literal notranslate"><span class="pre">abs(x.n(2))</span> <span class="pre">&lt;</span> <span class="pre">1e-12</span></code>) causing exact rational non-collinear points to falsely test collinear, alongside <code class="docutils literal notranslate"><span class="pre">solve()</span></code> bottlenecks and missing <code class="docutils literal notranslate"><span class="pre">Hyperbola</span></code>, <code class="docutils literal notranslate"><span class="pre">inversion</span></code>, <code class="docutils literal notranslate"><span class="pre">radical_axis</span></code>, <code class="docutils literal notranslate"><span class="pre">polar</span></code>, and <code class="docutils literal notranslate"><span class="pre">cross_ratio</span></code>.</p></li>
-        <li><p><strong>Byrne’s Pointer-Free Visual Pseudocode &amp; The Universal Golden Blind Spot</strong>: Across <code class="docutils literal notranslate"><span class="pre">LeanEuclid</span></code>, <code class="docutils literal notranslate"><span class="pre">GeoCoq</span></code>, <code class="docutils literal notranslate"><span class="pre">mathlib4</span></code> Geometry, <code class="docutils literal notranslate"><span class="pre">AlphaGeometry</span></code>, and <code class="docutils literal notranslate"><span class="pre">Newclid</span></code>, the <strong>Golden Ratio (:math:`phi`)</strong> and <strong>Book XIII Platonic Solids</strong> have <strong>zero</strong> geometric coverage. Remarkably, <a class="person-ref" id="occ-person-byrne-2" href="people/byrne.html#person-byrne" data-person="byrne" title="Person: byrne">Oliver Byrne</a>’s 1847 <em>Coloured Euclid</em> (<a class="citation-ref" id="occ-cite-byrne1847-1" href="bibliography.html#cite-byrne1847" data-cite="byrne1847" title="Citation: byrne1847">Byrne1847</a>; revived interactively by <a class="person-ref" id="occ-person-rougeux-1" href="people/rougeux.html#person-rougeux" data-person="rougeux" title="Person: rougeux">Nicholas Rougeux</a>, <a class="citation-ref" id="occ-cite-rougeux2018-1" href="bibliography.html#cite-rougeux2018" data-cite="rougeux2018" title="Citation: rougeux2018">Rougeux2018</a>) not only pioneered pointer-free visual pseudocode (<cite>Given</cite> / <cite>To Prove</cite> / <cite>Construction</cite> / <cite>Proof</cite> with inline chromatic value-tokens), it also formalized Book II gnomons, Book III circle power, Book IV pentagons, and Book VI golden-ratio cuts—directly inspiring GEOMETOR’s synthesis of exact symbolic identifiers with interactive visual tokens.</p></li>
-        </ol>
         </section>
-        <section class="level-2" id="guided-navigation">
-        <h2>Guided Navigation<a class="headerlink" href="#guided-navigation" title="Link to this heading">¶</a></h2>
+        <section class="level-2" id="reference">
+        <h2>Reference<a class="headerlink" href="#reference" title="Link to this heading">¶</a></h2>
         <ul class="simple">
-        <li><p><a class="reference internal" href="hierarchy/index.html#hierarchy-index"><span class="std std-ref">Hierarchy</span></a> — The 8 mathematical paradigms of geometric formalization and the 7-layer, 33-repository GEOMETOR architecture with 11 prioritized upgrades.</p></li>
-        <li><p><a class="reference internal" href="syntax/index.html#syntax-index"><span class="std std-ref">Syntax Field Guide &amp; Symbol Decoder</span></a> — Beginner-to-expert decoder for 60 formal symbols, dependent binders, Tarski predicates, Clifford blades, clause stanzas, and Byrne chromatic value-tokens.</p></li>
-        <li><p><a class="reference internal" href="systems/index.html#systems-index"><span class="std std-ref">Systems</span></a> — Ten deep architectural and forensic dossiers covering all 11 surveyed systems.</p></li>
-        <li><p><a class="reference internal" href="rosetta/index.html#rosetta-index"><span class="std std-ref">Rosetta Stone Benchmarks</span></a> — Seven canonical constructions and theorems implemented side-by-side across all 11 systems with interactive <code class="docutils literal notranslate"><span class="pre">.euclid-graphic</span></code> SVGs.</p></li>
-        <li><p><a class="reference internal" href="opus/index.html#opus-index"><span class="std std-ref">Opus Coverage Matrix (69 Topics x 11 Systems)</span></a> — The complete 69-topic <span class="math notranslate nohighlight">\(\times\)</span> 11-system Opus Coverage Matrix across 8 geometric domains.</p></li>
+        <li><p><a class="reference internal" href="hierarchy/index.html#hierarchy-index"><span class="std std-ref">Hierarchy</span></a>: paradigms of geometric formalization and the GEOMETOR
+        architecture.</p></li>
+        <li><p><a class="reference internal" href="syntax/index.html#syntax-index"><span class="std std-ref">Syntax Field Guide &amp; Symbol Decoder</span></a>: a decoder for formal symbols, binders, predicates, blades,
+        and Byrne’s value-tokens.</p></li>
+        <li><p><a class="reference internal" href="systems/index.html#systems-index"><span class="std std-ref">Systems</span></a>: long-form dossiers for each system.</p></li>
+        <li><p><a class="reference internal" href="rosetta/index.html#rosetta-index"><span class="std std-ref">Rosetta Stone Benchmarks</span></a>: seven constructions implemented across systems.</p></li>
+        <li><p><a class="reference internal" href="opus/index.html#opus-index"><span class="std std-ref">Opus Coverage Matrix (69 Topics x 11 Systems)</span></a>: the topic × system coverage matrix.</p></li>
         </ul>
         <div class="toctree-wrapper compound">
         </div>
@@ -490,6 +1103,7 @@
     <aside class="aside-recent-logs">
       <h3>Recent Logs</h3>
       <ul>
+        <li><a href="log/26.322-truth-foundations.html">26.322 — Truth Foundations: Ladder, Stack, Graphs</a></li>
         <li><a href="log/26.321-principles-catalog.html">26.321 — Principles Catalog & Cross-System Linker</a></li>
         <li><a href="log/26.316-initial-study.html">Initial Comparative Study Across 11 Formal, Visual & Symbolic Geometry Systems</a></li>
       </ul>
@@ -517,7 +1131,11 @@
   <footer>
     <div class="footer-nav">
       <ul>
+        <li><a href="hierarchy/index.html"  >Hierarchy</a></li>
         <li><a href="changelog.html"  >Changelog</a></li>
+        <li><a href="syntax/index.html"  >Syntax Field Guide & Symbol Decoder</a></li>
+        <li><a href="rosetta/index.html"  >Rosetta Stone Benchmarks</a></li>
+        <li><a href="opus/index.html"  >Opus Coverage Matrix (69 Topics x 11 Systems)</a></li>
         <li><a href="https://github.com/geometor/codes" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://github.com/geometor/codes/issues" target="_blank" rel="noopener">Support</a></li>
       </ul>
@@ -532,13 +1150,14 @@
 
   <script src="_static/jquery.js?v=5d32c60e"></script>
   <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-  <script src="_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="_static/documentation_options.js?v=e259d695"></script>
   <script src="_static/doctools.js?v=fd6eb6e6"></script>
   <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
   <script src="_static/js/collection_controls.js?v=b6b5297a"></script>
   <script src="_static/js/collection_directory.js?v=2422530d"></script>
   <script src="_static/js/geometor_interactive.js?v=b2892320"></script>
   <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="_static/codes/codes.js?v=2fc1b9c9"></script>
   <script src="_static/js/search_highlight.js"></script>
 
 </body>

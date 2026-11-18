@@ -5,7 +5,20 @@ geometor.codes.present
 
 .. autoapi-nested-parse::
 
-   Phase 5: Generate ETC-style RST principle pages, exact SVGs, and catalog views.
+   Generate the CODES documentation views from curated data and the catalog.
+
+   The site is organized around *how each system knows* (truth foundations), not
+   around the raw principle catalog:
+
+   * ``foundations/`` — Truth Ladder, Trust Stack, trusted-component graph,
+     one card per system, a side-by-side comparison, and the connections graphs.
+   * ``showcase/`` — a few theorems realized side by side ("one theorem, many
+     foundations"), with exact L1 witnesses and symbolic L2 (generic) witnesses.
+   * ``catalog/`` — the discovered principle catalog as one searchable page plus
+     the exact witness entries.
+
+   Everything is generated from ``resources/foundations.toml``,
+   ``resources/showcase.toml``, and ``resources/discovered/catalog.json``.
 
 
 
@@ -15,6 +28,7 @@ Attributes
 .. autoapisummary::
 
    geometor.codes.present.PILOT_IDS
+   geometor.codes.present.build_principles_docs
 
 
 Functions
@@ -22,7 +36,7 @@ Functions
 
 .. autoapisummary::
 
-   geometor.codes.present.build_principles_docs
+   geometor.codes.present.build_site_docs
 
 
 Module Contents
@@ -33,10 +47,18 @@ Module Contents
    :value: ('equilateral_apex', 'sas_congruence', 'isosceles_base_angles', 'sss_congruence',...
 
 
-.. py:function:: build_principles_docs(catalog: geometor.codes.discover.cluster.Catalog | None = None, docsrc_dir: pathlib.Path | None = None, mined_dir: pathlib.Path | None = None) -> dict[str, int]
+.. py:function:: build_site_docs(docsrc_dir: pathlib.Path | None = None, catalog: geometor.codes.discover.cluster.Catalog | None = None, mined_dir: pathlib.Path | None = None) -> dict[str, int]
 
-   Generate ``docsrc/principles/`` pages, SVGs, and catalog views.
+   Generate ``foundations/``, ``showcase/``, and ``catalog/`` under ``docsrc``.
 
-   :returns: Counts of generated pages by category.
+   :param docsrc_dir: Sphinx source root (defaults to the repository ``docsrc``).
+   :param catalog: Optional pre-loaded catalog.
+   :param mined_dir: Optional mined-snapshot directory.
 
+   :returns: Counts of generated items by category.
+
+
+.. py:data:: build_principles_docs
+
+   Backward-compatible alias for :func:`build_site_docs`.
 

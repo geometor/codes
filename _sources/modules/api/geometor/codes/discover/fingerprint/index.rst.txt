@@ -25,8 +25,8 @@ Module Contents
 
    Compute a structural fingerprint invariant under point relabeling.
 
-   :param premises: Premise `Atom`s.
-   :param conclusions: Conclusion `Atom`s.
+   :param premises: Premise ``Atom`` objects.
+   :param conclusions: Conclusion ``Atom`` objects.
 
    :returns: A canonical string fingerprint, or ``""`` when both sides are empty.
 

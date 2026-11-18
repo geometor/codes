@@ -1,0 +1,130 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="413pt" height="375pt" viewBox="0.00 0.00 413.00 375.00">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 371)">
+<ns0:title>showcase_isosceles_base_angles</ns0:title>
+
+<ns0:g id="node1" class="node">
+<ns0:title>thm</ns0:title>
+<ns0:ellipse fill="#ffffff" stroke="#555a62" stroke-width="1.6" cx="73.09" cy="-183.5" rx="73.09" ry="18" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="73.09" y="-179.8" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">I.5 &#160;Pons asinorum</ns0:text>
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>r0</ns0:title>
+<ns0:g id="a_node2"><ns0:a ns1:href="../foundations/cards/euclid.html" ns1:title="Proved from I.4 (SAS) on the produced sides; checked by readers, relies on the diagram for order facts." target="_top">
+<ns0:path fill="#e8d9b5" stroke="#555a62" stroke-width="0.8" d="M328.93,-367C328.93,-367 279.93,-367 279.93,-367 273.93,-367 267.93,-361 267.93,-355 267.93,-355 267.93,-342 267.93,-342 267.93,-336 273.93,-330 279.93,-330 279.93,-330 328.93,-330 328.93,-330 334.93,-330 340.93,-336 340.93,-342 340.93,-342 340.93,-355 340.93,-355 340.93,-361 334.93,-367 328.93,-367" />
+<ns0:text xml:space="preserve" text-anchor="start" x="286.06" y="-353.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">Euclid</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="275.93" y="-344.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">Elements I.5</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="292.06" y="-335.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">prose</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>thm-&gt;r0</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M86.17,-201.75C106.79,-231.42 151.66,-290 204.18,-321.5 221.22,-331.72 242.19,-338.15 260.46,-342.16" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="259.79,-344.17 266.09,-343.33 260.64,-340.06 259.79,-344.17" />
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>r1</ns0:title>
+<ns0:g id="a_node3"><ns0:a ns1:href="../foundations/cards/leaneuclid.html" ns1:title="Kernel checks each euclid_apply rule step, but premises are discharged by euclid_finish &#8594; SMT_VERIF (an unsound oracle axiom)." target="_top">
+<ns0:path fill="#9fd8a8" stroke="#555a62" stroke-width="0.8" d="M333.43,-312C333.43,-312 275.43,-312 275.43,-312 269.43,-312 263.43,-306 263.43,-300 263.43,-300 263.43,-287 263.43,-287 263.43,-281 269.43,-275 275.43,-275 275.43,-275 333.43,-275 333.43,-275 339.43,-275 345.43,-281 345.43,-287 345.43,-287 345.43,-300 345.43,-300 345.43,-306 339.43,-312 333.43,-312" />
+<ns0:text xml:space="preserve" text-anchor="start" x="271.43" y="-298.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">LeanEuclid</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="274.06" y="-289.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">proposition_5</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="285.31" y="-280.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">theorem</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>thm-&gt;r1</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M96.85,-201.06C121.92,-219.65 164.01,-248.71 204.18,-266.5 220.61,-273.77 239.46,-279.5 256.29,-283.77" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="255.57,-285.76 261.89,-285.15 256.57,-281.68 255.57,-285.76" />
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>r2</ns0:title>
+<ns0:g id="a_node4"><ns0:a ns1:href="../foundations/cards/geocoq.html" ns1:title="Kernel-checked from the Beeson-style Euclid axiom class (via proposition_04), relative to the class hypotheses." target="_top">
+<ns0:path fill="#9fd8a8" stroke="#555a62" stroke-width="0.8" d="M333.81,-257C333.81,-257 275.06,-257 275.06,-257 269.06,-257 263.06,-251 263.06,-245 263.06,-245 263.06,-232 263.06,-232 263.06,-226 269.06,-220 275.06,-220 275.06,-220 333.81,-220 333.81,-220 339.81,-220 345.81,-226 345.81,-232 345.81,-232 345.81,-245 345.81,-245 345.81,-251 339.81,-257 333.81,-257" />
+<ns0:text xml:space="preserve" text-anchor="start" x="280.81" y="-243.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">GeoCoq</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="271.06" y="-234.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">proposition_05</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="285.31" y="-225.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">theorem</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>thm-&gt;r2</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M127.28,-196.26C165.99,-205.54 217.96,-218 255.41,-226.98" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="254.9,-229.02 261.22,-228.38 255.88,-224.94 254.9,-229.02" />
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>r3</ns0:title>
+<ns0:g id="a_node5"><ns0:a ns1:href="../foundations/cards/mathlib4.html" ns1:title="No geometric axioms and no distinctness hypothesis: degenerate angles take the junk value &#960;/2, so the degenerate cases hold by convention." target="_top">
+<ns0:path fill="#9fd8a8" stroke="#555a62" stroke-width="0.8" d="M382.18,-202C382.18,-202 226.68,-202 226.68,-202 220.68,-202 214.68,-196 214.68,-190 214.68,-190 214.68,-177 214.68,-177 214.68,-171 220.68,-165 226.68,-165 226.68,-165 382.18,-165 382.18,-165 388.18,-165 394.18,-171 394.18,-177 394.18,-177 394.18,-190 394.18,-190 394.18,-196 388.18,-202 382.18,-202" />
+<ns0:text xml:space="preserve" text-anchor="start" x="277.43" y="-188.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">mathlib4</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="222.68" y="-179.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">EuclideanGeometry.angle_eq_angl&#8230;</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="285.31" y="-170.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">theorem</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>thm-&gt;r3</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M146.97,-183.5C166.13,-183.5 187.09,-183.5 207.27,-183.5" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="207.15,-185.6 213.15,-183.5 207.15,-181.4 207.15,-185.6" />
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>r4</ns0:title>
+<ns0:g id="a_node6"><ns0:a ns1:href="../foundations/cards/alphageometry.html" ns1:title="Not proved: it is one of the 43 inference rules the DD engine assumes." target="_top">
+<ns0:path fill="#f6b26b" stroke="#555a62" stroke-width="0.8" d="M348.06,-147C348.06,-147 260.81,-147 260.81,-147 254.81,-147 248.81,-141 248.81,-135 248.81,-135 248.81,-122 248.81,-122 248.81,-116 254.81,-110 260.81,-110 260.81,-110 348.06,-110 348.06,-110 354.06,-110 360.06,-116 360.06,-122 360.06,-122 360.06,-135 360.06,-135 360.06,-141 354.06,-147 348.06,-147" />
+<ns0:text xml:space="preserve" text-anchor="start" x="256.81" y="-133.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">AlphaGeometry</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="276.31" y="-124.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">rules.txt r13</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="295.81" y="-115.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">rule</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>thm-&gt;r4</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M127.28,-170.74C161.4,-162.56 205.82,-151.91 241.52,-143.35" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="241.72,-145.46 247.06,-142.02 240.74,-141.38 241.72,-145.46" />
+</ns0:g>
+
+<ns0:g id="node7" class="node">
+<ns0:title>r5</ns0:title>
+<ns0:g id="a_node7"><ns0:a ns1:href="../foundations/cards/newclid.html" ns1:title="Inherited verbatim from AlphaGeometry r13." target="_top">
+<ns0:path fill="#f6b26b" stroke="#555a62" stroke-width="0.8" d="M392.68,-92C392.68,-92 216.18,-92 216.18,-92 210.18,-92 204.18,-86 204.18,-80 204.18,-80 204.18,-67 204.18,-67 204.18,-61 210.18,-55 216.18,-55 216.18,-55 392.68,-55 392.68,-55 398.68,-55 404.68,-61 404.68,-67 404.68,-67 404.68,-80 404.68,-80 404.68,-86 398.68,-92 392.68,-92" />
+<ns0:text xml:space="preserve" text-anchor="start" x="280.06" y="-78.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">Newclid</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="212.18" y="-69.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">R13_ISOSCELES_TRIANGLE_EQUAL_AN&#8230;</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="295.81" y="-60.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">rule</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge6" class="edge">
+<ns0:title>thm-&gt;r5</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M97.38,-165.9C122.56,-147.6 164.43,-119.19 204.18,-101.5 209.59,-99.09 215.26,-96.84 221.03,-94.74" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="221.44,-96.82 226.41,-92.85 220.05,-92.86 221.44,-96.82" />
+</ns0:g>
+
+<ns0:g id="node8" class="node">
+<ns0:title>r6</ns0:title>
+<ns0:g id="a_node8"><ns0:a ns1:href="../foundations/cards/geometor_model.html" ns1:title="Exact zero-test on one concrete figure (L1). The generic witness below lifts it to L2." target="_top">
+<ns0:path fill="#9cc3f0" stroke="#555a62" stroke-width="0.8" d="M373.93,-37C373.93,-37 234.93,-37 234.93,-37 228.93,-37 222.93,-31 222.93,-25 222.93,-25 222.93,-12 222.93,-12 222.93,-6 228.93,0 234.93,0 234.93,0 373.93,0 373.93,0 379.93,0 385.93,-6 385.93,-12 385.93,-12 385.93,-25 385.93,-25 385.93,-31 379.93,-37 373.93,-37" />
+<ns0:text xml:space="preserve" text-anchor="start" x="254.56" y="-23.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">geometor.model</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="230.93" y="-14.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">verify._build_isosceles_base_an&#8230;</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="287.56" y="-5.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">witness</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge7" class="edge">
+<ns0:title>thm-&gt;r6</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M86.24,-165.44C106.95,-136.06 151.95,-78.03 204.18,-46.5 208.01,-44.19 212.02,-42.07 216.17,-40.12" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="216.75,-42.15 221.38,-37.8 215.05,-38.32 216.75,-42.15" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>

@@ -1,0 +1,147 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="445pt" height="430pt" viewBox="0.00 0.00 445.00 430.00">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 426)">
+<ns0:title>showcase_pythagorean</ns0:title>
+
+<ns0:g id="node1" class="node">
+<ns0:title>thm</ns0:title>
+<ns0:ellipse fill="#ffffff" stroke="#555a62" stroke-width="1.6" cx="102.08" cy="-210.5" rx="102.08" ry="18" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="102.08" y="-206.8" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">I.47 &#160;Pythagorean theorem</ns0:text>
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>r0</ns0:title>
+<ns0:g id="a_node2"><ns0:a ns1:href="../foundations/cards/euclid.html" ns1:title="The Bride's Chair: an equality of *areas*, not of numbers." target="_top">
+<ns0:path fill="#e8d9b5" stroke="#555a62" stroke-width="0.8" d="M377.16,-422C377.16,-422 322.16,-422 322.16,-422 316.16,-422 310.16,-416 310.16,-410 310.16,-410 310.16,-397 310.16,-397 310.16,-391 316.16,-385 322.16,-385 322.16,-385 377.16,-385 377.16,-385 383.16,-385 389.16,-391 389.16,-397 389.16,-397 389.16,-410 389.16,-410 389.16,-416 383.16,-422 377.16,-422" />
+<ns0:text xml:space="preserve" text-anchor="start" x="331.28" y="-408.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">Euclid</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="318.16" y="-399.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">Elements I.47</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="337.28" y="-390.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">prose</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>thm-&gt;r0</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M115.72,-228.87C140.1,-262.95 197.01,-336.14 262.16,-376.5 274.46,-384.12 289.08,-389.75 302.78,-393.83" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="302.03,-395.81 308.38,-395.42 303.18,-391.77 302.03,-395.81" />
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>r1</ns0:title>
+<ns0:g id="a_node3"><ns0:a ns1:href="../foundations/cards/leaneuclid.html" ns1:title="Stated metrically (lengths in &#8477;); the proof isolates orientation lemmas Euclid left implicit. SMT_VERIF-dependent." target="_top">
+<ns0:path fill="#9fd8a8" stroke="#555a62" stroke-width="0.8" d="M379.03,-367C379.03,-367 320.28,-367 320.28,-367 314.28,-367 308.28,-361 308.28,-355 308.28,-355 308.28,-342 308.28,-342 308.28,-336 314.28,-330 320.28,-330 320.28,-330 379.03,-330 379.03,-330 385.03,-330 391.03,-336 391.03,-342 391.03,-342 391.03,-355 391.03,-355 391.03,-361 385.03,-367 379.03,-367" />
+<ns0:text xml:space="preserve" text-anchor="start" x="316.66" y="-353.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">LeanEuclid</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="316.28" y="-344.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">proposition_47</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="330.53" y="-335.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">theorem</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>thm-&gt;r1</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M124.63,-228.81C154.02,-252.97 209.09,-295.48 262.16,-321.5 274.31,-327.46 288.07,-332.47 300.98,-336.48" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="300.25,-338.46 306.6,-338.18 301.46,-334.43 300.25,-338.46" />
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>r2</ns0:title>
+<ns0:g id="a_node4"><ns0:a ns1:href="../foundations/cards/geocoq.html" ns1:title="Faithful to Euclid: equal *figures* (EF), with area axioms derived from the Euclidean class." target="_top">
+<ns0:path fill="#9fd8a8" stroke="#555a62" stroke-width="0.8" d="M379.03,-312C379.03,-312 320.28,-312 320.28,-312 314.28,-312 308.28,-306 308.28,-300 308.28,-300 308.28,-287 308.28,-287 308.28,-281 314.28,-275 320.28,-275 320.28,-275 379.03,-275 379.03,-275 385.03,-275 391.03,-281 391.03,-287 391.03,-287 391.03,-300 391.03,-300 391.03,-306 385.03,-312 379.03,-312" />
+<ns0:text xml:space="preserve" text-anchor="start" x="326.03" y="-298.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">GeoCoq</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="316.28" y="-289.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">proposition_47</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="330.53" y="-280.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">theorem</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>thm-&gt;r2</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M148.87,-227.11C180.58,-238.49 223.81,-253.77 262.16,-266.5 274.76,-270.68 288.45,-275.04 301.14,-279" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="300.28,-280.94 306.63,-280.71 301.53,-276.93 300.28,-280.94" />
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>r3</ns0:title>
+<ns0:g id="a_node5"><ns0:a ns1:href="../foundations/cards/mathlib4.html" ns1:title="An iff, in any real inner-product space; reduces to the vector identity &#8214;x&#8722;y&#8214;&#178; = &#8214;x&#8214;&#178; + &#8214;y&#8214;&#178; when &#10218;x,y&#10219; = 0." target="_top">
+<ns0:path fill="#9fd8a8" stroke="#555a62" stroke-width="0.8" d="M425.16,-257C425.16,-257 274.16,-257 274.16,-257 268.16,-257 262.16,-251 262.16,-245 262.16,-245 262.16,-232 262.16,-232 262.16,-226 268.16,-220 274.16,-220 274.16,-220 425.16,-220 425.16,-220 431.16,-220 437.16,-226 437.16,-232 437.16,-232 437.16,-245 437.16,-245 437.16,-251 431.16,-257 425.16,-257" />
+<ns0:text xml:space="preserve" text-anchor="start" x="322.66" y="-243.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">mathlib4</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="270.16" y="-234.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">EuclideanGeometry.dist_sq_eq_di&#8230;</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="330.53" y="-225.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">theorem</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>thm-&gt;r3</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M189.32,-220.33C210.42,-222.74 233.12,-225.33 254.57,-227.77" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="254.1,-229.83 260.3,-228.43 254.57,-225.66 254.1,-229.83" />
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>r4</ns0:title>
+<ns0:g id="a_node6"><ns0:a ns1:href="../foundations/cards/alphageometry.html" ns1:title="DD+AR's algebraic reasoning is linear over angle, ratio, and distance tables; a&#178; + b&#178; = c&#178; is not expressible." target="_top">
+<ns0:path fill="#f19c9c" stroke="#555a62" stroke-width="0.8" d="M393.28,-202C393.28,-202 306.03,-202 306.03,-202 300.03,-202 294.03,-196 294.03,-190 294.03,-190 294.03,-177 294.03,-177 294.03,-171 300.03,-165 306.03,-165 306.03,-165 393.28,-165 393.28,-165 399.28,-165 405.28,-171 405.28,-177 405.28,-177 405.28,-190 405.28,-190 405.28,-196 399.28,-202 393.28,-202" />
+<ns0:text xml:space="preserve" text-anchor="start" x="302.03" y="-188.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">AlphaGeometry</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="345.16" y="-179.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">&#8212;</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="341.03" y="-170.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">gap</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>thm-&gt;r4</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" stroke-dasharray="5,2" d="M190.35,-200.9C222.13,-197.41 257.37,-193.54 286.52,-190.33" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="286.56,-192.44 292.29,-189.7 286.1,-188.27 286.56,-192.44" />
+</ns0:g>
+
+<ns0:g id="node7" class="node">
+<ns0:title>r5</ns0:title>
+<ns0:g id="a_node7"><ns0:a ns1:href="../foundations/cards/newclid.html" ns1:title="Added as a special rule, then deactivated by default as problematic." target="_top">
+<ns0:path fill="#f6b26b" stroke="#555a62" stroke-width="0.8" d="M411.28,-147C411.28,-147 288.03,-147 288.03,-147 282.03,-147 276.03,-141 276.03,-135 276.03,-135 276.03,-122 276.03,-122 276.03,-116 282.03,-110 288.03,-110 288.03,-110 411.28,-110 411.28,-110 417.28,-110 423.28,-116 423.28,-122 423.28,-122 423.28,-135 423.28,-135 423.28,-141 417.28,-147 411.28,-147" />
+<ns0:text xml:space="preserve" text-anchor="start" x="325.28" y="-133.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">Newclid</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="284.03" y="-124.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">R57_PYTHAGORAS_THEOREM</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="341.03" y="-115.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">rule</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge6" class="edge">
+<ns0:title>thm-&gt;r5</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M151.05,-194.02C182.59,-183.23 224.78,-168.89 262.16,-156.5 268.9,-154.26 275.94,-151.95 282.98,-149.65" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="283.5,-151.69 288.55,-147.83 282.2,-147.7 283.5,-151.69" />
+</ns0:g>
+
+<ns0:g id="node8" class="node">
+<ns0:title>r6</ns0:title>
+<ns0:g id="a_node8"><ns0:a ns1:href="../foundations/cards/jgex.html" ns1:title="Algebraic methods (Wu / Gr&#246;bner / area) certify it generically; in the area method it is immediate from the Pythagoras difference P_BAC = 0." target="_top">
+<ns0:path fill="#7fd1c7" stroke="#555a62" stroke-width="0.8" d="M423.28,-92C423.28,-92 276.03,-92 276.03,-92 270.03,-92 264.03,-86 264.03,-80 264.03,-80 264.03,-67 264.03,-67 264.03,-61 270.03,-55 276.03,-55 276.03,-55 423.28,-55 423.28,-55 429.28,-55 435.28,-61 435.28,-67 435.28,-67 435.28,-80 435.28,-80 435.28,-86 429.28,-92 423.28,-92" />
+<ns0:text xml:space="preserve" text-anchor="start" x="335.41" y="-78.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">JGEX</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="272.03" y="-69.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">examples/visual-proofs/pythagor&#8230;</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="332.78" y="-60.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">generic</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge7" class="edge">
+<ns0:title>thm-&gt;r6</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M125.24,-192.23C154.86,-168.56 209.73,-127.27 262.16,-101.5 266.83,-99.2 271.74,-97.03 276.74,-94.99" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="277.38,-97 282.2,-92.85 275.85,-93.09 277.38,-97" />
+</ns0:g>
+
+<ns0:g id="node9" class="node">
+<ns0:title>r7</ns0:title>
+<ns0:g id="a_node9"><ns0:a ns1:href="../foundations/cards/geometor_model.html" ns1:title="Exact quadrance identity on the 3-4-5 figure (L1)." target="_top">
+<ns0:path fill="#9cc3f0" stroke="#555a62" stroke-width="0.8" d="M403.41,-37C403.41,-37 295.91,-37 295.91,-37 289.91,-37 283.91,-31 283.91,-25 283.91,-25 283.91,-12 283.91,-12 283.91,-6 289.91,0 295.91,0 295.91,0 403.41,0 403.41,0 409.41,0 415.41,-6 415.41,-12 415.41,-12 415.41,-25 415.41,-25 415.41,-31 409.41,-37 403.41,-37" />
+<ns0:text xml:space="preserve" text-anchor="start" x="299.78" y="-23.55" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" fill="#1d1f23">geometor.model</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="291.91" y="-14.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#1d1f23">verify._build_pythagorean</ns0:text>
+<ns0:text xml:space="preserve" text-anchor="start" x="332.78" y="-5.45" font-family="Helvetica,sans-Serif" font-style="italic" font-size="9.00" fill="#1d1f23">witness</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge8" class="edge">
+<ns0:title>thm-&gt;r7</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" d="M116.2,-191.89C140.94,-158.12 197.84,-86.54 262.16,-46.5 266.87,-43.57 271.92,-40.91 277.12,-38.51" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="277.73,-40.54 282.4,-36.21 276.06,-36.69 277.73,-40.54" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>

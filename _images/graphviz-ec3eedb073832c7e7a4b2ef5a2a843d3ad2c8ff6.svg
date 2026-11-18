@@ -1,0 +1,229 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="1421pt" height="311pt" viewBox="0.00 0.00 1421.00 311.00">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 307)">
+<ns0:title>bridges</ns0:title>
+
+<ns0:g id="node1" class="node">
+<ns0:title>euclid</ns0:title>
+<ns0:g id="a_node1"><ns0:a ns1:href="../foundations/cards/euclid.html" ns1:title="Believe it because it follows, step by step, from five postulates and five common notions &#8212; as checked by readers, with the diagram doing silent work." target="_top">
+<ns0:path fill="#e8d9b5" stroke="#555a62" stroke-width="0.8" d="M1400.75,-92C1400.75,-92 1351.75,-92 1351.75,-92 1345.75,-92 1339.75,-86 1339.75,-80 1339.75,-80 1339.75,-68 1339.75,-68 1339.75,-62 1345.75,-56 1351.75,-56 1351.75,-56 1400.75,-56 1400.75,-56 1406.75,-56 1412.75,-62 1412.75,-68 1412.75,-68 1412.75,-80 1412.75,-80 1412.75,-86 1406.75,-92 1400.75,-92" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="1376.25" y="-70.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">Euclid &#160;(H)</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>leaneuclid</ns0:title>
+<ns0:g id="a_node2"><ns0:a ns1:href="../foundations/cards/leaneuclid.html" ns1:title="Believe it because Lean's kernel checked every rule application from System E's axioms &#8212; except that premise-discharging steps are admitted by an SMT oracle axiom." target="_top">
+<ns0:path fill="#f6b26b" stroke="#555a62" stroke-width="0.8" d="M1111.75,-148C1111.75,-148 1032,-148 1032,-148 1026,-148 1020,-142 1020,-136 1020,-136 1020,-124 1020,-124 1020,-118 1026,-112 1032,-112 1032,-112 1111.75,-112 1111.75,-112 1117.75,-112 1123.75,-118 1123.75,-124 1123.75,-124 1123.75,-136 1123.75,-136 1123.75,-142 1117.75,-148 1111.75,-148" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="1071.88" y="-126.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">LeanEuclid &#160;(L3)</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>leaneuclid-&gt;euclid</ns0:title>
+<ns0:g id="a_edge2"><ns0:a ns1:href="https://github.com/loganrjmurphy/LeanEuclid/tree/33a72c0fa83914202532998a2e7b8771295c3cc7/Book" ns1:title="Book I 1&#8211;48 in System E" target="_blank">
+<ns0:path fill="none" stroke="#2e8b57" d="M1123.82,-123.64C1171.41,-117.3 1244.28,-106.56 1306.75,-93 1315.14,-91.18 1324.02,-88.95 1332.51,-86.66" />
+<ns0:polygon fill="#2e8b57" stroke="#2e8b57" points="1332.84,-88.75 1338.07,-85.13 1331.73,-84.7 1332.84,-88.75" />
+</ns0:a>
+</ns0:g>
+<ns0:g id="a_edge2-label"><ns0:a ns1:href="https://github.com/loganrjmurphy/LeanEuclid/tree/33a72c0fa83914202532998a2e7b8771295c3cc7/Book" ns1:title="Book I 1&#8211;48 in System E" target="_blank">
+<ns0:text xml:space="preserve" text-anchor="middle" x="1231.75" y="-121.78" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#2e8b57">Book I 1&#8211;48 in System E</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>mathlib4</ns0:title>
+<ns0:g id="a_node3"><ns0:a ns1:href="../foundations/cards/mathlib4.html" ns1:title="Believe it because geometry is defined from real inner-product spaces and every theorem is a kernel-checked consequence of Lean's logic alone." target="_top">
+<ns0:path fill="#c5b3e6" stroke="#555a62" stroke-width="0.8" d="M783.75,-148C783.75,-148 714.5,-148 714.5,-148 708.5,-148 702.5,-142 702.5,-136 702.5,-136 702.5,-124 702.5,-124 702.5,-118 708.5,-112 714.5,-112 714.5,-112 783.75,-112 783.75,-112 789.75,-112 795.75,-118 795.75,-124 795.75,-124 795.75,-136 795.75,-136 795.75,-142 789.75,-148 783.75,-148" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="749.12" y="-126.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">mathlib4 &#160;(L5)</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>mathlib4-&gt;leaneuclid</ns0:title>
+<ns0:g id="a_edge3"><ns0:a ns1:href="https://github.com/loganrjmurphy/LeanEuclid/blob/33a72c0fa83914202532998a2e7b8771295c3cc7/SystemE/Theory/Sorts/Primitives.lean" ns1:title="supplies &#8477; only (sorts axiomatized)" target="_blank">
+<ns0:path fill="none" stroke="#b5651d" d="M796.08,-130C853.01,-130 950.07,-130 1012.29,-130" />
+<ns0:polygon fill="#b5651d" stroke="#b5651d" points="1012.19,-132.1 1018.19,-130 1012.19,-127.9 1012.19,-132.1" />
+</ns0:a>
+</ns0:g>
+<ns0:g id="a_edge3-label"><ns0:a ns1:href="https://github.com/loganrjmurphy/LeanEuclid/blob/33a72c0fa83914202532998a2e7b8771295c3cc7/SystemE/Theory/Sorts/Primitives.lean" ns1:title="supplies &#8477; only (sorts axiomatized)" target="_blank">
+<ns0:text xml:space="preserve" text-anchor="middle" x="907.88" y="-132.7" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#b5651d">supplies &#8477; only (sorts axiomatized)</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>geocoq</ns0:title>
+<ns0:g id="a_node4"><ns0:a ns1:href="../foundations/cards/geocoq.html" ns1:title="Believe it because the Coq kernel checked it from Tarski's (or Hilbert's, or Euclid's) axioms &#8212; and GeoCoq proves those axiom systems interpret one another and hold in &#8477;&#178;." target="_top">
+<ns0:path fill="#9fd8a8" stroke="#555a62" stroke-width="0.8" d="M1103.88,-36C1103.88,-36 1039.88,-36 1039.88,-36 1033.88,-36 1027.88,-30 1027.88,-24 1027.88,-24 1027.88,-12 1027.88,-12 1027.88,-6 1033.88,0 1039.88,0 1039.88,0 1103.88,0 1103.88,0 1109.88,0 1115.88,-6 1115.88,-12 1115.88,-12 1115.88,-24 1115.88,-24 1115.88,-30 1109.88,-36 1103.88,-36" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="1071.88" y="-14.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">GeoCoq &#160;(L4)</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>geocoq-&gt;euclid</ns0:title>
+<ns0:g id="a_edge1"><ns0:a ns1:href="https://github.com/GeoCoq/GeoCoq/tree/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Elements/OriginalProofs" ns1:title="Book I (Beeson&#8211;Narboux&#8211;Wiedijk)" target="_blank">
+<ns0:path fill="none" stroke="#2e8b57" d="M1115.85,-18.81C1163.32,-20.61 1241.66,-26.24 1306.75,-43.75 1315.37,-46.07 1324.29,-49.32 1332.73,-52.83" />
+<ns0:polygon fill="#2e8b57" stroke="#2e8b57" points="1331.65,-54.66 1338,-55.1 1333.32,-50.8 1331.65,-54.66" />
+</ns0:a>
+</ns0:g>
+<ns0:g id="a_edge1-label"><ns0:a ns1:href="https://github.com/GeoCoq/GeoCoq/tree/87e8f9c3bc9cb2f782b86153bcf8d5bac52d7ef6/theories/Elements/OriginalProofs" ns1:title="Book I (Beeson&#8211;Narboux&#8211;Wiedijk)" target="_blank">
+<ns0:text xml:space="preserve" text-anchor="middle" x="1231.75" y="-46.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#2e8b57">Book I (Beeson&#8211;Narboux&#8211;Wiedijk)</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>alphageometry</ns0:title>
+<ns0:g id="a_node5"><ns0:a ns1:href="../foundations/cards/alphageometry.html" ns1:title="Believe it because a deduction engine derived it from 43 assumed rules &#8212; with side conditions (non-collinear, same side) read off a random numeric diagram." target="_top">
+<ns0:path fill="#f6b26b" stroke="#555a62" stroke-width="0.8" d="M448.25,-178C448.25,-178 341.5,-178 341.5,-178 335.5,-178 329.5,-172 329.5,-166 329.5,-166 329.5,-154 329.5,-154 329.5,-148 335.5,-142 341.5,-142 341.5,-142 448.25,-142 448.25,-142 454.25,-142 460.25,-148 460.25,-154 460.25,-154 460.25,-166 460.25,-166 460.25,-172 454.25,-178 448.25,-178" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="394.88" y="-156.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">AlphaGeometry &#160;(L3)</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge11" class="edge">
+<ns0:title>alphageometry-&gt;mathlib4</ns0:title>
+<ns0:path fill="none" stroke="#2e8b57" stroke-dasharray="1,5" d="M460.48,-154.5C527.76,-148.77 631.92,-139.9 694.71,-134.55" />
+<ns0:polygon fill="#2e8b57" stroke="#2e8b57" points="694.85,-136.65 700.65,-134.04 694.49,-132.46 694.85,-136.65" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="582.5" y="-153.84" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#2e8b57">prove the 43 rules as lemmas</ns0:text>
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>newclid</ns0:title>
+<ns0:g id="a_node6"><ns0:a ns1:href="../foundations/cards/newclid.html" ns1:title="Believe it because the DDARN engine derived it from a curated rule set descended from AlphaGeometry &#8212; again with numerically checked side conditions." target="_top">
+<ns0:path fill="#f6b26b" stroke="#555a62" stroke-width="0.8" d="M781.12,-231C781.12,-231 717.12,-231 717.12,-231 711.12,-231 705.12,-225 705.12,-219 705.12,-219 705.12,-207 705.12,-207 705.12,-201 711.12,-195 717.12,-195 717.12,-195 781.12,-195 781.12,-195 787.12,-195 793.12,-201 793.12,-207 793.12,-207 793.12,-219 793.12,-219 793.12,-225 787.12,-231 781.12,-231" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="749.12" y="-209.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">Newclid &#160;(L3)</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>alphageometry-&gt;newclid</ns0:title>
+<ns0:g id="a_edge4"><ns0:a ns1:href="https://github.com/LMCRC/Newclid/blob/ac6550732a950564cf7614d605b5bf1eadd29701/newclid/src/newclid/all_rules.py" ns1:title="rules r00&#8211;r42" target="_blank">
+<ns0:path fill="none" stroke="#d08c3a" d="M460.43,-167.9C515.97,-174.93 598.18,-185.92 669.5,-197.75 678.68,-199.27 688.44,-201.04 697.84,-202.82" />
+<ns0:polygon fill="#d08c3a" stroke="#d08c3a" points="697.17,-204.83 703.46,-203.9 697.96,-200.71 697.17,-204.83" />
+</ns0:a>
+</ns0:g>
+<ns0:g id="a_edge4-label"><ns0:a ns1:href="https://github.com/LMCRC/Newclid/blob/ac6550732a950564cf7614d605b5bf1eadd29701/newclid/src/newclid/all_rules.py" ns1:title="rules r00&#8211;r42" target="_blank">
+<ns0:text xml:space="preserve" text-anchor="middle" x="582.5" y="-200.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#d08c3a">rules r00&#8211;r42</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node7" class="node">
+<ns0:title>jgex</ns0:title>
+<ns0:g id="a_node7"><ns0:a ns1:href="../foundations/cards/jgex.html" ns1:title="Believe it because the hypothesis polynomials reduce the conclusion to zero (Wu / Gr&#246;bner) &#8212; true generically, provided the printed non-degeneracy conditions hold." target="_top">
+<ns0:path fill="#7fd1c7" stroke="#555a62" stroke-width="0.8" d="M70,-210C70,-210 23.25,-210 23.25,-210 17.25,-210 11.25,-204 11.25,-198 11.25,-198 11.25,-186 11.25,-186 11.25,-180 17.25,-174 23.25,-174 23.25,-174 70,-174 70,-174 76,-174 82,-180 82,-186 82,-186 82,-198 82,-198 82,-204 76,-210 70,-210" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="46.62" y="-188.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">JGEX &#160;(L2)</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>jgex-&gt;alphageometry</ns0:title>
+<ns0:g id="a_edge5"><ns0:a ns1:href="https://github.com/google-deepmind/alphageometry/blob/6777cb586cbb46beed28db12dc72c69770b68337/jgex_ag_231.txt" ns1:title="construction language &#183; jgex_ag_231" target="_blank">
+<ns0:path fill="none" stroke="#d08c3a" d="M82.09,-188.81C137.74,-183.67 248.55,-173.43 321.95,-166.65" />
+<ns0:polygon fill="#d08c3a" stroke="#d08c3a" points="322.09,-168.74 327.87,-166.1 321.7,-164.56 322.09,-168.74" />
+</ns0:a>
+</ns0:g>
+<ns0:g id="a_edge5-label"><ns0:a ns1:href="https://github.com/google-deepmind/alphageometry/blob/6777cb586cbb46beed28db12dc72c69770b68337/jgex_ag_231.txt" ns1:title="construction language &#183; jgex_ag_231" target="_blank">
+<ns0:text xml:space="preserve" text-anchor="middle" x="210.25" y="-186.97" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#d08c3a">construction language &#183; jgex_ag_231</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge6" class="edge">
+<ns0:title>jgex-&gt;newclid</ns0:title>
+<ns0:g id="a_edge6"><ns0:a ns1:href="https://github.com/LMCRC/Newclid" ns1:title="JGEXFormulation" target="_blank">
+<ns0:path fill="none" stroke="#d08c3a" d="M82.38,-197.2C96.03,-199.03 111.84,-200.91 126.25,-202 338.13,-218.01 591.71,-215.91 697.7,-214.08" />
+<ns0:polygon fill="#d08c3a" stroke="#d08c3a" points="697.6,-216.18 703.56,-213.97 697.52,-211.98 697.6,-216.18" />
+</ns0:a>
+</ns0:g>
+<ns0:g id="a_edge6-label"><ns0:a ns1:href="https://github.com/LMCRC/Newclid" ns1:title="JGEXFormulation" target="_blank">
+<ns0:text xml:space="preserve" text-anchor="middle" x="394.88" y="-217.47" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#d08c3a">JGEXFormulation</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node8" class="node">
+<ns0:title>sympy</ns0:title>
+<ns0:g id="a_node8"><ns0:a ns1:href="../foundations/cards/sympy.html" ns1:title="Believe it because exact arithmetic on concrete coordinates evaluates the predicate to True &#8212; subject to SymPy's simplification heuristics." target="_top">
+<ns0:path fill="#9cc3f0" stroke="#555a62" stroke-width="0.8" d="M76,-105C76,-105 17.25,-105 17.25,-105 11.25,-105 5.25,-99 5.25,-93 5.25,-93 5.25,-81 5.25,-81 5.25,-75 11.25,-69 17.25,-69 17.25,-69 76,-69 76,-69 82,-69 88,-75 88,-81 88,-81 88,-93 88,-93 88,-99 82,-105 76,-105" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="46.62" y="-83.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">SymPy &#160;(L1)</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node9" class="node">
+<ns0:title>geometor_model</ns0:title>
+<ns0:g id="a_node9"><ns0:a ns1:href="../foundations/cards/geometor_model.html" ns1:title="Believe it because the figure is built exactly &#8212; algebraic coordinates from ruler-and-compass intersections &#8212; and every asserted relation reduces to zero." target="_top">
+<ns0:path fill="#9cc3f0" stroke="#555a62" stroke-width="0.8" d="M450.5,-105C450.5,-105 339.25,-105 339.25,-105 333.25,-105 327.25,-99 327.25,-93 327.25,-93 327.25,-81 327.25,-81 327.25,-75 333.25,-69 339.25,-69 339.25,-69 450.5,-69 450.5,-69 456.5,-69 462.5,-75 462.5,-81 462.5,-81 462.5,-93 462.5,-93 462.5,-99 456.5,-105 450.5,-105" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="394.88" y="-83.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">geometor.model &#160;(L1)</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge7" class="edge">
+<ns0:title>sympy-&gt;geometor_model</ns0:title>
+<ns0:g id="a_edge7"><ns0:a ns1:href="https://github.com/geometor/model" ns1:title="sympy.geometry + exact zero_test" target="_blank">
+<ns0:path fill="none" stroke="#b5651d" d="M88.36,-87C145.14,-87 249.03,-87 319.74,-87" />
+<ns0:polygon fill="#b5651d" stroke="#b5651d" points="319.39,-89.1 325.39,-87 319.39,-84.9 319.39,-89.1" />
+</ns0:a>
+</ns0:g>
+<ns0:g id="a_edge7-label"><ns0:a ns1:href="https://github.com/geometor/model" ns1:title="sympy.geometry + exact zero_test" target="_blank">
+<ns0:text xml:space="preserve" text-anchor="middle" x="210.25" y="-89.7" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#b5651d">sympy.geometry + exact zero_test</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge9" class="edge">
+<ns0:title>geometor_model-&gt;euclid</ns0:title>
+<ns0:path fill="none" stroke="#8a8f98" stroke-dasharray="1,5" d="M462.81,-86.11C650.48,-83.62 1178.11,-76.62 1332.38,-74.57" />
+<ns0:polygon fill="#8a8f98" stroke="#8a8f98" points="1331.95,-76.67 1337.93,-74.5 1331.9,-72.48 1331.95,-76.67" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="907.88" y="-83.95" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#8a8f98">exact witnesses of propositions</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge10" class="edge">
+<ns0:title>geometor_model-&gt;mathlib4</ns0:title>
+<ns0:path fill="none" stroke="#3a7bd5" stroke-dasharray="1,5" d="M462.81,-94.81C518.22,-101.33 599,-110.94 669.5,-119.75 677.74,-120.78 686.46,-121.89 694.98,-123" />
+<ns0:polygon fill="#3a7bd5" stroke="#3a7bd5" points="694.68,-125.07 700.9,-123.76 695.22,-120.91 694.68,-125.07" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="582.5" y="-122.45" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#3a7bd5">certificate export (linear_combination)</ns0:text>
+</ns0:g>
+
+<ns0:g id="node10" class="node">
+<ns0:title>kingdon</ns0:title>
+<ns0:g id="a_node10"><ns0:a ns1:href="../foundations/cards/kingdon.html" ns1:title="Believe it because the identity expands to zero in the Clifford algebra &#8212; universally, when computed symbolically without division." target="_top">
+<ns0:path fill="#7fd1c7" stroke="#555a62" stroke-width="0.8" d="M426.88,-303C426.88,-303 362.88,-303 362.88,-303 356.88,-303 350.88,-297 350.88,-291 350.88,-291 350.88,-279 350.88,-279 350.88,-273 356.88,-267 362.88,-267 362.88,-267 426.88,-267 426.88,-267 432.88,-267 438.88,-273 438.88,-279 438.88,-279 438.88,-291 438.88,-291 438.88,-297 432.88,-303 426.88,-303" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="394.88" y="-281.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">kingdon &#160;(L2)</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node11" class="node">
+<ns0:title>galgebra</ns0:title>
+<ns0:g id="a_node11"><ns0:a ns1:href="../foundations/cards/galgebra.html" ns1:title="Believe it because the multivector difference simplifies to zero for an arbitrary (possibly symbolic) metric &#8212; as far as SymPy's simplify can tell." target="_top">
+<ns0:path fill="#7fd1c7" stroke="#555a62" stroke-width="0.8" d="M81.25,-303C81.25,-303 12,-303 12,-303 6,-303 0,-297 0,-291 0,-291 0,-279 0,-279 0,-273 6,-267 12,-267 12,-267 81.25,-267 81.25,-267 87.25,-267 93.25,-273 93.25,-279 93.25,-279 93.25,-291 93.25,-291 93.25,-297 87.25,-303 81.25,-303" />
+<ns0:text xml:space="preserve" text-anchor="middle" x="46.62" y="-281.3" font-family="Helvetica,sans-Serif" font-size="11.00" fill="#1d1f23">galgebra &#160;(L2)</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge8" class="edge">
+<ns0:title>galgebra-&gt;kingdon</ns0:title>
+<ns0:g id="a_edge8"><ns0:a ns1:href="https://github.com/pygae/galgebra/blob/master/galgebra/interop/kingdon.py" ns1:title="interop Cl(p,q,r) factory" target="_blank">
+<ns0:path fill="none" stroke="#3a7bd5" stroke-dasharray="5,2" d="M93.6,-285C158.48,-285 276.43,-285 343.57,-285" />
+<ns0:polygon fill="#3a7bd5" stroke="#3a7bd5" points="343.19,-287.1 349.19,-285 343.19,-282.9 343.19,-287.1" />
+</ns0:a>
+</ns0:g>
+<ns0:g id="a_edge8-label"><ns0:a ns1:href="https://github.com/pygae/galgebra/blob/master/galgebra/interop/kingdon.py" ns1:title="interop Cl(p,q,r) factory" target="_blank">
+<ns0:text xml:space="preserve" text-anchor="middle" x="210.25" y="-287.7" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#3a7bd5">interop Cl(p,q,r) factory</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+</ns0:g>
+</ns0:svg>
