@@ -6,6 +6,10 @@
 Geometric Codes & Proportions
 =============================
 
+.. image:: _static/medallion.svg
+   :alt: Geometric Codes & Proportions Medallion
+   :class: repo-medallion-hero
+
 **Why should I believe this is true?** Every geometric system answers that question
 differently. Euclid points to the postulates and the reader. LeanEuclid and GeoCoq
 point to a proof kernel and a set of geometric axioms. mathlib points to the real
