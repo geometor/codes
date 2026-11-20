@@ -1,13 +1,13 @@
+.. image:: docsrc/_static/logo.png
+   :alt: GEOMETOR • codes Medallion
+   :target: https://geometor.github.io/codes/
+   :width: 150px
+   :align: right
+
 GEOMETOR • codes
 ================
 
 **Visit the Online Archive:** https://geometor.github.io/codes/
-
-.. image:: docsrc/_static/logo.png
-   :alt: GEOMETOR • codes Medallion
-   :target: https://geometor.github.io/codes/
-   :width: 180px
-   :align: center
 
 .. image:: docsrc/_static/figures/01-seven-ontologies.svg
    :alt: GEOMETOR • codes featured geometric construction
