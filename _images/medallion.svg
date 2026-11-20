@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-100 -108 200 200" width="512" height="512" class="euclid-graphic medallion-coin">
+  <style>
+    .medallion-coin {
+      --med-bg: #0d1017;
+      --med-fg: #eef2f7;
+      --med-det: #8e9db2;
+      --med-scaf: #46566c;
+      --med-gold: #d4af37;
+    }
+    @media (prefers-color-scheme: light) {
+      .medallion-coin {
+        --med-bg: #f8f5ee;
+        --med-fg: #181c24;
+        --med-det: #556173;
+        --med-scaf: #9da8b8;
+        --med-gold: #b07f10;
+      }
+    }
+    body.light-mode .medallion-coin {
+      --med-bg: #f8f5ee;
+      --med-fg: #181c24;
+      --med-det: #556173;
+      --med-scaf: #9da8b8;
+      --med-gold: #b07f10;
+    }
+  </style>
+  <circle cx="0.00" cy="-8.00" r="95.20" fill="var(--med-bg, #0d1017)" class="layer-disc"/>
+  <g class="layer-scaffold" stroke="var(--med-scaf, #46566c)" stroke-width="0.44" stroke-linecap="round" fill="none" opacity="0.45">
+    <circle cx="0.00" cy="-8.00" r="92.00" fill="none"/>
+    <circle cx="0.00" cy="-8.00" r="78.00" fill="none"/>
+    <circle cx="0.00" cy="-8.00" r="52.00" fill="none"/>
+    <circle cx="0.00" cy="-8.00" r="26.00" fill="none"/>
+    <line x1="0.00" y1="-100.00" x2="0.00" y2="84.00"/>
+    <line x1="-92.00" y1="-8.00" x2="92.00" y2="-8.00"/>
+    <line x1="55.15" y1="47.15" x2="65.05" y2="57.05"/>
+    <line x1="-55.15" y1="47.15" x2="-65.05" y2="57.05"/>
+    <line x1="-55.15" y1="-63.15" x2="-65.05" y2="-73.05"/>
+    <line x1="55.15" y1="-63.15" x2="65.05" y2="-73.05"/>
+  </g>
+  <g class="layer-golden" stroke="var(--med-gold, #d4af37)" stroke-width="0.85" stroke-linecap="round" fill="none" opacity="0.92">
+    <line x1="68.00" y1="-8.00" x2="76.00" y2="-8.00"/>
+    <circle cx="77.60" cy="-8.00" r="1.15" fill="var(--med-gold, #d4af37)"/>
+    <line x1="0.00" y1="60.00" x2="0.00" y2="68.00"/>
+    <circle cx="0.00" cy="69.60" r="1.15" fill="var(--med-gold, #d4af37)"/>
+    <line x1="-68.00" y1="-8.00" x2="-76.00" y2="-8.00"/>
+    <circle cx="-77.60" cy="-8.00" r="1.15" fill="var(--med-gold, #d4af37)"/>
+    <line x1="-0.00" y1="-76.00" x2="-0.00" y2="-84.00"/>
+    <circle cx="-0.00" cy="-85.60" r="1.15" fill="var(--med-gold, #d4af37)"/>
+    <line x1="-30.00" y1="-58.00" x2="-2.96" y2="59.94"/>
+    <line x1="-30.00" y1="-58.00" x2="67.28" y2="1.86"/>
+    <line x1="-30.00" y1="-58.00" x2="31.50" y2="52.26"/>
+    <line x1="-57.69" y1="28.00" x2="57.69" y2="28.00"/>
+    <circle cx="-20.55" cy="-16.81" r="3.10" fill="none"/>
+    <circle cx="-20.55" cy="-16.81" r="1.55" fill="var(--med-gold, #d4af37)"/>
+    <circle cx="-4.00" cy="-42.00" r="3.10" fill="none"/>
+    <circle cx="-4.00" cy="-42.00" r="1.55" fill="var(--med-gold, #d4af37)"/>
+    <circle cx="0.40" cy="-3.50" r="3.10" fill="none"/>
+    <circle cx="0.40" cy="-3.50" r="1.55" fill="var(--med-gold, #d4af37)"/>
+    <circle cx="-16.26" cy="1.93" r="3.10" fill="none"/>
+    <circle cx="-16.26" cy="1.93" r="1.55" fill="var(--med-gold, #d4af37)"/>
+    <circle cx="20.82" cy="-26.73" r="3.10" fill="none"/>
+    <circle cx="20.82" cy="-26.73" r="1.55" fill="var(--med-gold, #d4af37)"/>
+    <circle cx="8.96" cy="11.85" r="3.10" fill="none"/>
+    <circle cx="8.96" cy="11.85" r="1.55" fill="var(--med-gold, #d4af37)"/>
+    <circle cx="-50.00" cy="28.00" r="4.20" fill="none"/>
+    <circle cx="-50.00" cy="28.00" r="2.15" fill="var(--med-gold, #d4af37)"/>
+    <circle cx="4.00" cy="28.00" r="4.20" fill="none"/>
+    <circle cx="4.00" cy="28.00" r="2.15" fill="var(--med-gold, #d4af37)"/>
+    <circle cx="50.00" cy="28.00" r="4.20" fill="none"/>
+    <circle cx="50.00" cy="28.00" r="2.15" fill="var(--med-gold, #d4af37)"/>
+    <circle cx="-30.00" cy="-58.00" r="4.80" fill="none"/>
+    <circle cx="-30.00" cy="-58.00" r="2.35" fill="var(--med-gold, #d4af37)"/>
+  </g>
+  <g class="layer-detail" stroke="var(--med-det, #8e9db2)" stroke-width="0.62" stroke-linecap="round" fill="none" opacity="0.84">
+    <circle cx="0.00" cy="-8.00" r="72.80" fill="none"/>
+    <line x1="68.05" y1="4.00" x2="71.69" y2="4.64"/>
+    <line x1="64.93" y1="15.63" x2="68.41" y2="16.90"/>
+    <line x1="58.89" y1="26.00" x2="64.26" y2="29.10"/>
+    <line x1="52.93" y1="36.42" x2="55.77" y2="38.79"/>
+    <line x1="44.42" y1="44.93" x2="46.79" y2="47.77"/>
+    <line x1="34.00" y1="50.89" x2="37.10" y2="56.26"/>
+    <line x1="23.63" y1="56.93" x2="24.90" y2="60.41"/>
+    <line x1="12.00" y1="60.05" x2="12.64" y2="63.69"/>
+    <line x1="-12.00" y1="60.05" x2="-12.64" y2="63.69"/>
+    <line x1="-23.63" y1="56.93" x2="-24.90" y2="60.41"/>
+    <line x1="-34.00" y1="50.89" x2="-37.10" y2="56.26"/>
+    <line x1="-44.42" y1="44.93" x2="-46.79" y2="47.77"/>
+    <line x1="-52.93" y1="36.42" x2="-55.77" y2="38.79"/>
+    <line x1="-58.89" y1="26.00" x2="-64.26" y2="29.10"/>
+    <line x1="-64.93" y1="15.63" x2="-68.41" y2="16.90"/>
+    <line x1="-68.05" y1="4.00" x2="-71.69" y2="4.64"/>
+    <line x1="-68.05" y1="-20.00" x2="-71.69" y2="-20.64"/>
+    <line x1="-64.93" y1="-31.63" x2="-68.41" y2="-32.90"/>
+    <line x1="-58.89" y1="-42.00" x2="-64.26" y2="-45.10"/>
+    <line x1="-52.93" y1="-52.42" x2="-55.77" y2="-54.79"/>
+    <line x1="-44.42" y1="-60.93" x2="-46.79" y2="-63.77"/>
+    <line x1="-34.00" y1="-66.89" x2="-37.10" y2="-72.26"/>
+    <line x1="-23.63" y1="-72.93" x2="-24.90" y2="-76.41"/>
+    <line x1="-12.00" y1="-76.05" x2="-12.64" y2="-79.69"/>
+    <line x1="12.00" y1="-76.05" x2="12.64" y2="-79.69"/>
+    <line x1="23.63" y1="-72.93" x2="24.90" y2="-76.41"/>
+    <line x1="34.00" y1="-66.89" x2="37.10" y2="-72.26"/>
+    <line x1="44.42" y1="-60.93" x2="46.79" y2="-63.77"/>
+    <line x1="52.93" y1="-52.42" x2="55.77" y2="-54.79"/>
+    <line x1="58.89" y1="-42.00" x2="64.26" y2="-45.10"/>
+    <line x1="64.93" y1="-31.63" x2="68.41" y2="-32.90"/>
+    <line x1="68.05" y1="-20.00" x2="71.69" y2="-20.64"/>
+    <line x1="-4.00" y1="-42.00" x2="-50.00" y2="28.00"/>
+    <line x1="20.82" y1="-26.73" x2="-50.00" y2="28.00"/>
+    <line x1="-4.00" y1="-42.00" x2="4.00" y2="28.00"/>
+    <line x1="20.82" y1="-26.73" x2="4.00" y2="28.00"/>
+    <line x1="-20.55" y1="-16.81" x2="50.00" y2="28.00"/>
+    <line x1="-16.26" y1="1.93" x2="50.00" y2="28.00"/>
+    <path d="M -18.09 -52.79 A 13.00 13.00 0 0 1 -28.89 -45.05"/>
+  </g>
+  <g class="layer-primary" stroke="var(--med-fg, #eef2f7)" stroke-width="1.15" stroke-linecap="round" fill="none" opacity="1.0">
+    <circle cx="0.00" cy="-8.00" r="68.00" fill="none"/>
+    <line x1="-20.55" y1="-16.81" x2="-4.00" y2="-42.00"/>
+    <line x1="-4.00" y1="-42.00" x2="0.40" y2="-3.50"/>
+    <line x1="0.40" y1="-3.50" x2="-20.55" y2="-16.81"/>
+    <line x1="-16.26" y1="1.93" x2="20.82" y2="-26.73"/>
+    <line x1="20.82" y1="-26.73" x2="8.96" y2="11.85"/>
+    <line x1="8.96" y1="11.85" x2="-16.26" y2="1.93"/>
+  </g>
+  <circle cx="0.00" cy="-8.00" r="95.20" stroke="var(--med-gold, #d4af37)" stroke-width="1.05" fill="none" opacity="0.88" class="layer-rim"/>
+</svg>
