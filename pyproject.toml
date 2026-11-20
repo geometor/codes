@@ -5,7 +5,7 @@ authors = [
   { name = "geometor", email = "github@geometor.com" },
 ]
 description = "Comparative Study of Formal Languages, Symbolic Architectures, Syntax, and Opus Across Geometric Logic."
-readme = "README.rst"
+readme = "README.md"
 requires-python = ">=3.13"
 classifiers = [
     "Programming Language :: Python :: 3",
