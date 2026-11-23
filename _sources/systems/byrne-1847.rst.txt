@@ -28,7 +28,7 @@ Byrne replaced indirect pointer dereferencing with **direct inline chromatic val
 2. Byrne's Surprising Opus Victory: Book II Gnomons & The Golden Ratio!
 -----------------------------------------------------------------------
 
-Comparing Byrne (`1847`) against modern theorem provers in our :ref:`Opus Matrix <opus-index>` yields an astonishing result. Whereas ``LeanEuclid``, ``GeoCoq``, ``mathlib4`` Geometry, ``AlphaGeometry``, and ``Newclid`` **all omit the Golden Ratio (:math:`\phi`) and Book II gnomonic algebra**, Byrne's 268-page opus covers **all of Books I–VI**, including:
+Comparing Byrne (`1847`) against modern theorem provers in our :ref:`Opus Matrix <opus-index>` yields an astonishing result. Whereas ``LeanEuclid``, ``GeoCoq``, ``mathlib4`` Geometry, ``AlphaGeometry``, and ``Newclid`` **all omit the Golden Ratio** (:math:`\phi`) **and Book II gnomonic algebra**, Byrne's 268-page opus covers **all of Books I–VI**, including:
 
 * **Book I (`Props. 1–48`)**: culminating in the iconic four-color Bride's Chair (`I.47`), where ``[red □] + [blue □] = [yellow ▭] + [black ▭]`` becomes visually transparent;
 * **Book II (`Props. 1–14`)**: geometric algebra of colored rectangles and gnomons, including **Book II, Prop. 11** (*cutting a line so the rectangle of whole and lesser equals the square on the greater*);
