@@ -54,7 +54,7 @@ No other software system in the world comes close to ``GeoCoq``'s metatheoretic 
 Because every line and circle must be unpacked into point quantifiers, ``GeoCoq`` slows dramatically once geometry moves past Book I and affine coordinatization:
 
 * ``Main/Highschool/`` covers ``incenter.v``, ``centroid.v``, ``circumcenter.v``, ``orthocenter.v``, and ``euler_line.v`` (collinearity only, omitting the :math:`2:1` ratio), **stopping short of Feuerbach's Nine-Point Circle (`X(5)`)**.
-* **Zero coverage** across all `481` files of Steiner circle power, radical axes, circle inversion, pole–polar reciprocity, general conics, projective cross-ratios, the **Golden Ratio (:math:`\phi`)**, regular pentagons, or Platonic solids.
+* **Zero coverage** across all `481` files of Steiner circle power, radical axes, circle inversion, pole–polar reciprocity, general conics, projective cross-ratios, the **Golden Ratio** (:math:`\phi`), regular pentagons, or Platonic solids.
 
 4. Takeaway for GEOMETOR
 ------------------------
